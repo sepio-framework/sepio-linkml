@@ -218,12 +218,12 @@
       Utility &lt;|-- RecordMetadata
         click Utility href "../Utility"
 
-      RecordMetadata : contributions
+      RecordMetadata : contributions_2
 
 
 
 
-    RecordMetadata --&gt; "*" Contribution : contributions
+    RecordMetadata --&gt; "*" Contribution : contributions_2
     click Contribution href "../Contribution"
 
 
@@ -280,7 +280,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../contributions/">contributions</a></td>
+<td><a href="../contributions_2/">contributions_2</a></td>
 <td>* <br/> <a href="../Contribution/">Contribution</a></td>
 <td>describes specific contributions made by an human or software agent to the cr...</td>
 <td>direct</td>
@@ -399,7 +399,7 @@ slots:
 - recordVersion
 - derivedFromRecord
 - dateRecordCreated
-- contributions
+- contributions_2
 slot_usage:
   recordIdentifier:
     name: recordIdentifier
@@ -440,8 +440,8 @@ slot_usage:
     range: date
     required: false
     multivalued: false
-  contributions:
-    name: contributions
+  contributions_2:
+    name: contributions_2
     description: describes specific contributions made by an human or software agent
       to the creation, modification, or administrative management of a data record
       or object
@@ -508,8 +508,8 @@ slot_usage:
     range: date
     required: false
     multivalued: false
-  contributions:
-    name: contributions
+  contributions_2:
+    name: contributions_2
     description: describes specific contributions made by an human or software agent
       to the creation, modification, or administrative management of a data record
       or object
@@ -581,18 +581,17 @@ attributes:
     range: date
     required: false
     multivalued: false
-  contributions:
-    name: contributions
+  contributions_2:
+    name: contributions_2
     description: describes specific contributions made by an human or software agent
       to the creation, modification, or administrative management of a data record
       or object
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Draft
     rank: 1000
-    alias: contributions
+    alias: contributions_2
     owner: RecordMetadata
     domain_of:
-    - InformationEntity
     - RecordMetadata
     range: Contribution
     required: false

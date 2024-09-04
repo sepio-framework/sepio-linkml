@@ -293,21 +293,21 @@
     click Agent href "../Agent"
 
 
-      Contribution : specifiedBy
+      Contribution : specifiedBy_2
 
 
 
 
-    Contribution --&gt; "*" Method : specifiedBy
+    Contribution --&gt; "*" Method : specifiedBy_2
     click Method href "../Method"
 
 
-      Contribution : subtype
+      Contribution : subtype_5
 
 
 
 
-    Contribution --&gt; "0..1" Coding : subtype
+    Contribution --&gt; "0..1" Coding : subtype_5
     click Coding href "../Coding"
 
 
@@ -355,7 +355,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subtype/">subtype</a></td>
+<td><a href="../subtype_5/">subtype_5</a></td>
 <td>0..1 <br/> <a href="../Coding/">Coding</a></td>
 <td>A specific type of activity the Activity instance represents</td>
 <td><a href="../Activity/">Activity</a></td>
@@ -373,7 +373,7 @@
 <td><a href="../Activity/">Activity</a></td>
 </tr>
 <tr>
-<td><a href="../specifiedBy/">specifiedBy</a></td>
+<td><a href="../specifiedBy_2/">specifiedBy_2</a></td>
 <td>* <br/> <a href="../Method/">Method</a></td>
 <td>A method that was followed in performing an Activity, that describes how it w...</td>
 <td><a href="../Activity/">Activity</a></td>
@@ -495,7 +495,7 @@
 </tr>
 <tr>
 <td><a href="../RecordMetadata/">RecordMetadata</a></td>
-<td><a href="../contributions/">contributions</a></td>
+<td><a href="../contributions_2/">contributions_2</a></td>
 <td>range</td>
 <td><a href="./">Contribution</a></td>
 </tr>
@@ -701,8 +701,8 @@ attributes:
     range: InformationEntity
     required: false
     multivalued: false
-  subtype:
-    name: subtype
+  subtype_5:
+    name: subtype_5
     description: A specific type of activity the Activity instance represents.
     comments:
     - This attribute can be used to report a specific type for the Activity, in cases
@@ -712,15 +712,10 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: subtype
+    alias: subtype_5
     owner: Contribution
     domain_of:
-    - Method
-    - Document
-    - DataItem
-    - DataSet
     - Activity
-    - Agent
     range: Coding
     required: false
     multivalued: false
@@ -754,17 +749,16 @@ attributes:
     range: Agent
     required: false
     multivalued: true
-  specifiedBy:
-    name: specifiedBy
+  specifiedBy_2:
+    name: specifiedBy_2
     description: A method that was followed in performing an Activity, that describes
       how it was executed.
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: specifiedBy
+    alias: specifiedBy_2
     owner: Contribution
     domain_of:
-    - InformationEntity
     - Activity
     range: Method
     required: false
@@ -879,7 +873,6 @@ attributes:
     owner: Contribution
     domain_of:
     - Entity
-    - Coding
     range: string
     required: false
     multivalued: false

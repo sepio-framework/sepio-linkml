@@ -266,21 +266,21 @@
     click Agent href "../Agent"
 
 
-      Activity : specifiedBy
+      Activity : specifiedBy_2
 
 
 
 
-    Activity --&gt; "*" Method : specifiedBy
+    Activity --&gt; "*" Method : specifiedBy_2
     click Method href "../Method"
 
 
-      Activity : subtype
+      Activity : subtype_5
 
 
 
 
-    Activity --&gt; "0..1" Coding : subtype
+    Activity --&gt; "0..1" Coding : subtype_5
     click Coding href "../Coding"
 
 
@@ -310,7 +310,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subtype/">subtype</a></td>
+<td><a href="../subtype_5/">subtype_5</a></td>
 <td>0..1 <br/> <a href="../Coding/">Coding</a></td>
 <td>A specific type of activity the Activity instance represents</td>
 <td>direct</td>
@@ -328,7 +328,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../specifiedBy/">specifiedBy</a></td>
+<td><a href="../specifiedBy_2/">specifiedBy_2</a></td>
 <td>* <br/> <a href="../Method/">Method</a></td>
 <td>A method that was followed in performing an Activity, that describes how it w...</td>
 <td>direct</td>
@@ -438,15 +438,15 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Entity
 slots:
-- subtype
+- subtype_5
 - date
 - performedBy
-- specifiedBy
+- specifiedBy_2
 - input
 - output
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_5:
+    name: subtype_5
     description: A specific type of activity the Activity instance represents.
     comments:
     - This attribute can be used to report a specific type for the Activity, in cases
@@ -475,8 +475,8 @@ slot_usage:
     range: Agent
     required: false
     multivalued: true
-  specifiedBy:
-    name: specifiedBy
+  specifiedBy_2:
+    name: specifiedBy_2
     description: A method that was followed in performing an Activity, that describes
       how it was executed.
     status: Informative
@@ -521,8 +521,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Entity
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_5:
+    name: subtype_5
     description: A specific type of activity the Activity instance represents.
     comments:
     - This attribute can be used to report a specific type for the Activity, in cases
@@ -551,8 +551,8 @@ slot_usage:
     range: Agent
     required: false
     multivalued: true
-  specifiedBy:
-    name: specifiedBy
+  specifiedBy_2:
+    name: specifiedBy_2
     description: A method that was followed in performing an Activity, that describes
       how it was executed.
     status: Informative
@@ -576,8 +576,8 @@ slot_usage:
     required: false
     multivalued: true
 attributes:
-  subtype:
-    name: subtype
+  subtype_5:
+    name: subtype_5
     description: A specific type of activity the Activity instance represents.
     comments:
     - This attribute can be used to report a specific type for the Activity, in cases
@@ -587,15 +587,10 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: subtype
+    alias: subtype_5
     owner: Activity
     domain_of:
-    - Method
-    - Document
-    - DataItem
-    - DataSet
     - Activity
-    - Agent
     range: Coding
     required: false
     multivalued: false
@@ -629,17 +624,16 @@ attributes:
     range: Agent
     required: false
     multivalued: true
-  specifiedBy:
-    name: specifiedBy
+  specifiedBy_2:
+    name: specifiedBy_2
     description: A method that was followed in performing an Activity, that describes
       how it was executed.
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: specifiedBy
+    alias: specifiedBy_2
     owner: Activity
     domain_of:
-    - InformationEntity
     - Activity
     range: Method
     required: false
@@ -754,7 +748,6 @@ attributes:
     owner: Activity
     domain_of:
     - Entity
-    - Coding
     range: string
     required: false
     multivalued: false

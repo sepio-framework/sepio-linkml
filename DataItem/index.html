@@ -308,12 +308,12 @@
 
       DataItem : specifiedBy
 
-      DataItem : subtype
+      DataItem : subtype_3
 
 
 
 
-    DataItem --&gt; "0..1" Coding : subtype
+    DataItem --&gt; "0..1" Coding : subtype_3
     click Coding href "../Coding"
 
 
@@ -363,7 +363,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subtype/">subtype</a></td>
+<td><a href="../subtype_3/">subtype_3</a></td>
 <td>0..1 <br/> <a href="../Coding/">Coding</a></td>
 <td>A specific type of data the DataItem instance represents (e</td>
 <td>direct</td>
@@ -577,15 +577,15 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: InformationEntity
 slots:
-- subtype
+- subtype_3
 - value
 - unit
 - variabilityMeasures
 - confidenceInterval
 - componentDataItem
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_3:
+    name: subtype_3
     description: A specific type of data the DataItem instance represents (e.g. a
       'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')
     comments:
@@ -679,8 +679,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: InformationEntity
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_3:
+    name: subtype_3
     description: A specific type of data the DataItem instance represents (e.g. a
       'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')
     comments:
@@ -758,8 +758,8 @@ slot_usage:
     required: false
     multivalued: true
 attributes:
-  subtype:
-    name: subtype
+  subtype_3:
+    name: subtype_3
     description: A specific type of data the DataItem instance represents (e.g. a
       'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')
     comments:
@@ -770,15 +770,10 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: subtype
+    alias: subtype_3
     owner: DataItem
     domain_of:
-    - Method
-    - Document
     - DataItem
-    - DataSet
-    - Activity
-    - Agent
     range: Coding
     required: false
     multivalued: false
@@ -793,9 +788,6 @@ attributes:
     owner: DataItem
     domain_of:
     - DataItem
-    - Qualifier
-    - Expression
-    - Extension
     range: string
     required: true
     multivalued: false
@@ -916,7 +908,6 @@ attributes:
     owner: DataItem
     domain_of:
     - InformationEntity
-    - RecordMetadata
     range: Contribution
     required: false
     multivalued: true
@@ -961,7 +952,6 @@ attributes:
     owner: DataItem
     domain_of:
     - InformationEntity
-    - Activity
     range: string
     required: false
     multivalued: true
@@ -1158,7 +1148,6 @@ attributes:
     owner: DataItem
     domain_of:
     - Entity
-    - Coding
     range: string
     required: false
     multivalued: false

@@ -220,9 +220,9 @@
 
       Extension : extensionDescription
 
-      Extension : name
+      Extension : name_3
 
-      Extension : value
+      Extension : value_4
 
 
 </div>
@@ -251,13 +251,13 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
+<td><a href="../name_3/">name_3</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>A name for the Extension</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../value/">value</a></td>
+<td><a href="../value_4/">value_4</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The value of the Extension - can be any primitive or structured object</td>
 <td>direct</td>
@@ -409,8 +409,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 is_a: Utility
 slots:
 - extensionDescription
-- name
-- value
+- name_3
+- value_4
 slot_usage:
   extensionDescription:
     name: extensionDescription
@@ -420,15 +420,15 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  name:
-    name: name
+  name_3:
+    name: name_3
     description: A name for the Extension. Should be indicative of its meaning and/or
       the type of information it value represents.
     range: string
     required: true
     multivalued: false
-  value:
-    name: value
+  value_4:
+    name: value_4
     description: The value of the Extension - can be any primitive or structured object
     required: true
     multivalued: false
@@ -459,15 +459,15 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  name:
-    name: name
+  name_3:
+    name: name_3
     description: A name for the Extension. Should be indicative of its meaning and/or
       the type of information it value represents.
     range: string
     required: true
     multivalued: false
-  value:
-    name: value
+  value_4:
+    name: value_4
     description: The value of the Extension - can be any primitive or structured object
     required: true
     multivalued: false
@@ -486,33 +486,27 @@ attributes:
     range: string
     required: false
     multivalued: false
-  name:
-    name: name
+  name_3:
+    name: name_3
     description: A name for the Extension. Should be indicative of its meaning and/or
       the type of information it value represents.
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     rank: 1000
-    alias: name
+    alias: name_3
     owner: Extension
     domain_of:
-    - Agent
-    - Qualifier
     - Extension
-    - Characteristic
     range: string
     required: true
     multivalued: false
-  value:
-    name: value
+  value_4:
+    name: value_4
     description: The value of the Extension - can be any primitive or structured object
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     rank: 1000
-    alias: value
+    alias: value_4
     owner: Extension
     domain_of:
-    - DataItem
-    - Qualifier
-    - Expression
     - Extension
     range: string
     required: true

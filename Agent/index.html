@@ -239,7 +239,7 @@
 
       Agent : name
 
-      Agent : subtype
+      Agent : subtype_6
 
       Agent : type
 
@@ -264,7 +264,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subtype/">subtype</a></td>
+<td><a href="../subtype_6/">subtype_6</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A specific type of agent the Agent object represents</td>
 <td>direct</td>
@@ -401,11 +401,11 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Entity
 slots:
-- subtype
+- subtype_6
 - name
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_6:
+    name: subtype_6
     description: A specific type of agent the Agent object represents. Must be one
       of {person, organization, software}
     comments:
@@ -447,8 +447,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Entity
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_6:
+    name: subtype_6
     description: A specific type of agent the Agent object represents. Must be one
       of {person, organization, software}
     comments:
@@ -468,8 +468,8 @@ slot_usage:
     required: false
     multivalued: false
 attributes:
-  subtype:
-    name: subtype
+  subtype_6:
+    name: subtype_6
     description: A specific type of agent the Agent object represents. Must be one
       of {person, organization, software}
     comments:
@@ -480,14 +480,9 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Draft
     rank: 1000
-    alias: subtype
+    alias: subtype_6
     owner: Agent
     domain_of:
-    - Method
-    - Document
-    - DataItem
-    - DataSet
-    - Activity
     - Agent
     range: string
     required: false
@@ -502,9 +497,6 @@ attributes:
     owner: Agent
     domain_of:
     - Agent
-    - Qualifier
-    - Extension
-    - Characteristic
     range: string
     required: false
     multivalued: false
@@ -590,7 +582,6 @@ attributes:
     owner: Agent
     domain_of:
     - Entity
-    - Coding
     range: string
     required: false
     multivalued: false

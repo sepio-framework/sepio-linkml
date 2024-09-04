@@ -215,9 +215,9 @@
 
       Expression : systemURL
 
-      Expression : systemVersion
+      Expression : systemVersion_2
 
-      Expression : value
+      Expression : value_3
 
 
 </div>
@@ -240,7 +240,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../value/">value</a></td>
+<td><a href="../value_3/">value_3</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>A free-text rendering of the expression used as a label for the entity</td>
 <td>direct</td>
@@ -252,7 +252,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../systemVersion/">systemVersion</a></td>
+<td><a href="../systemVersion_2/">systemVersion_2</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The version of the nomenclature system</td>
 <td>direct</td>
@@ -302,12 +302,12 @@ comments:
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 is_a: Utility
 slots:
-- value
+- value_3
 - systemURL
-- systemVersion
+- systemVersion_2
 slot_usage:
-  value:
-    name: value
+  value_3:
+    name: value_3
     description: A free-text rendering of the expression used as a label for the entity
     range: string
     required: true
@@ -318,8 +318,8 @@ slot_usage:
     range: uriorcurie
     required: false
     multivalued: false
-  systemVersion:
-    name: systemVersion
+  systemVersion_2:
+    name: systemVersion_2
     description: The version of the nomenclature system.
     range: string
     required: false
@@ -340,8 +340,8 @@ comments:
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 is_a: Utility
 slot_usage:
-  value:
-    name: value
+  value_3:
+    name: value_3
     description: A free-text rendering of the expression used as a label for the entity
     range: string
     required: true
@@ -352,25 +352,22 @@ slot_usage:
     range: uriorcurie
     required: false
     multivalued: false
-  systemVersion:
-    name: systemVersion
+  systemVersion_2:
+    name: systemVersion_2
     description: The version of the nomenclature system.
     range: string
     required: false
     multivalued: false
 attributes:
-  value:
-    name: value
+  value_3:
+    name: value_3
     description: A free-text rendering of the expression used as a label for the entity
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     rank: 1000
-    alias: value
+    alias: value_3
     owner: Expression
     domain_of:
-    - DataItem
-    - Qualifier
     - Expression
-    - Extension
     range: string
     required: true
     multivalued: false
@@ -386,15 +383,14 @@ attributes:
     range: uriorcurie
     required: false
     multivalued: false
-  systemVersion:
-    name: systemVersion
+  systemVersion_2:
+    name: systemVersion_2
     description: The version of the nomenclature system.
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     rank: 1000
-    alias: systemVersion
+    alias: systemVersion_2
     owner: Expression
     domain_of:
-    - Coding
     - Expression
     range: string
     required: false

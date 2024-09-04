@@ -291,12 +291,12 @@
 
       Document : specifiedBy
 
-      Document : subtype
+      Document : subtype_2
 
 
 
 
-    Document --&gt; "0..1" Coding : subtype
+    Document --&gt; "0..1" Coding : subtype_2
     click Coding href "../Coding"
 
 
@@ -304,7 +304,7 @@
 
       Document : type
 
-      Document : urls
+      Document : urls_2
 
 
 </div>
@@ -330,7 +330,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subtype/">subtype</a></td>
+<td><a href="../subtype_2/">subtype_2</a></td>
 <td>0..1 <br/> <a href="../Coding/">Coding</a></td>
 <td>A specific type of document that a Document instance represents (e</td>
 <td>direct</td>
@@ -342,7 +342,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../urls/">urls</a></td>
+<td><a href="../urls_2/">urls_2</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>The URL/web address from which the content of the Document can be retrieved</td>
 <td>direct</td>
@@ -508,15 +508,15 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
 slots:
-- subtype
+- subtype_2
 - title
-- urls
+- urls_2
 - pmid
 - doi
 - license
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_2:
+    name: subtype_2
     description: A specific type of document that a Document instance represents (e.g.  'publication',
       'patent', 'pathology report')
     comments:
@@ -534,8 +534,8 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  urls:
-    name: urls
+  urls_2:
+    name: urls_2
     description: The URL/web address from which the content of the Document can be
       retrieved.
     status: Draft
@@ -589,8 +589,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_2:
+    name: subtype_2
     description: A specific type of document that a Document instance represents (e.g.  'publication',
       'patent', 'pathology report')
     comments:
@@ -608,8 +608,8 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  urls:
-    name: urls
+  urls_2:
+    name: urls_2
     description: The URL/web address from which the content of the Document can be
       retrieved.
     status: Draft
@@ -646,8 +646,8 @@ slot_usage:
     required: false
     multivalued: false
 attributes:
-  subtype:
-    name: subtype
+  subtype_2:
+    name: subtype_2
     description: A specific type of document that a Document instance represents (e.g.  'publication',
       'patent', 'pathology report')
     comments:
@@ -658,15 +658,10 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Draft
     rank: 1000
-    alias: subtype
+    alias: subtype_2
     owner: Document
     domain_of:
-    - Method
     - Document
-    - DataItem
-    - DataSet
-    - Activity
-    - Agent
     range: Coding
     required: false
     multivalued: false
@@ -682,17 +677,16 @@ attributes:
     range: string
     required: false
     multivalued: false
-  urls:
-    name: urls
+  urls_2:
+    name: urls_2
     description: The URL/web address from which the content of the Document can be
       retrieved.
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Draft
     rank: 1000
-    alias: urls
+    alias: urls_2
     owner: Document
     domain_of:
-    - Method
     - Document
     range: string
     required: false
@@ -741,7 +735,6 @@ attributes:
     owner: Document
     domain_of:
     - Document
-    - DataSet
     range: string
     required: false
     multivalued: false
@@ -781,7 +774,6 @@ attributes:
     owner: Document
     domain_of:
     - InformationEntity
-    - RecordMetadata
     range: Contribution
     required: false
     multivalued: true
@@ -826,7 +818,6 @@ attributes:
     owner: Document
     domain_of:
     - InformationEntity
-    - Activity
     range: string
     required: false
     multivalued: true
@@ -1023,7 +1014,6 @@ attributes:
     owner: Document
     domain_of:
     - Entity
-    - Coding
     range: string
     required: false
     multivalued: false

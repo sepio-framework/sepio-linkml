@@ -268,7 +268,7 @@
 
       DataSet : label
 
-      DataSet : license
+      DataSet : license_2
 
       DataSet : methodTypes
 
@@ -294,12 +294,12 @@
 
       DataSet : specifiedBy
 
-      DataSet : subtype
+      DataSet : subtype_4
 
 
 
 
-    DataSet --&gt; "0..1" Coding : subtype
+    DataSet --&gt; "0..1" Coding : subtype_4
     click Coding href "../Coding"
 
 
@@ -331,7 +331,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subtype/">subtype</a></td>
+<td><a href="../subtype_4/">subtype_4</a></td>
 <td>0..1 <br/> <a href="../Coding/">Coding</a></td>
 <td>A specific type of data set the DataSet instance represents (e</td>
 <td>direct</td>
@@ -349,7 +349,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../license/">license</a></td>
+<td><a href="../license_2/">license_2</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A specific license that dictates legal permissions for how a data set can be ...</td>
 <td>direct</td>
@@ -518,13 +518,13 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
 slots:
-- subtype
+- subtype_4
 - releaseDate
 - version
-- license
+- license_2
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_4:
+    name: subtype_4
     description: A specific type of data set the DataSet instance represents (e.g.
       a 'clinical data set', a 'sequencing data set', a 'gene expression data set',
       a 'genome annotation data set')
@@ -561,8 +561,8 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  license:
-    name: license
+  license_2:
+    name: license_2
     description: A specific license that dictates legal permissions for how a data
       set can be used (by whom, where, for what purposes, with what additional requirements,
       etc.)
@@ -594,8 +594,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
 slot_usage:
-  subtype:
-    name: subtype
+  subtype_4:
+    name: subtype_4
     description: A specific type of data set the DataSet instance represents (e.g.
       a 'clinical data set', a 'sequencing data set', a 'gene expression data set',
       a 'genome annotation data set')
@@ -632,8 +632,8 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  license:
-    name: license
+  license_2:
+    name: license_2
     description: A specific license that dictates legal permissions for how a data
       set can be used (by whom, where, for what purposes, with what additional requirements,
       etc.)
@@ -646,8 +646,8 @@ slot_usage:
     required: false
     multivalued: false
 attributes:
-  subtype:
-    name: subtype
+  subtype_4:
+    name: subtype_4
     description: A specific type of data set the DataSet instance represents (e.g.
       a 'clinical data set', a 'sequencing data set', a 'gene expression data set',
       a 'genome annotation data set')
@@ -659,15 +659,10 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: subtype
+    alias: subtype_4
     owner: DataSet
     domain_of:
-    - Method
-    - Document
-    - DataItem
     - DataSet
-    - Activity
-    - Agent
     range: Coding
     required: false
     multivalued: false
@@ -707,8 +702,8 @@ attributes:
     range: string
     required: false
     multivalued: false
-  license:
-    name: license
+  license_2:
+    name: license_2
     description: A specific license that dictates legal permissions for how a data
       set can be used (by whom, where, for what purposes, with what additional requirements,
       etc.)
@@ -719,10 +714,9 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: license
+    alias: license_2
     owner: DataSet
     domain_of:
-    - Document
     - DataSet
     range: string
     required: false
@@ -763,7 +757,6 @@ attributes:
     owner: DataSet
     domain_of:
     - InformationEntity
-    - RecordMetadata
     range: Contribution
     required: false
     multivalued: true
@@ -808,7 +801,6 @@ attributes:
     owner: DataSet
     domain_of:
     - InformationEntity
-    - Activity
     range: string
     required: false
     multivalued: true
@@ -1005,7 +997,6 @@ attributes:
     owner: DataSet
     domain_of:
     - Entity
-    - Coding
     range: string
     required: false
     multivalued: false

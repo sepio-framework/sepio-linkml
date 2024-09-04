@@ -239,29 +239,29 @@
 
       Proposition : negated
 
-      Proposition : object
+      Proposition : object_2
 
-      Proposition : predicate
-
-
+      Proposition : predicate_2
 
 
-    Proposition --&gt; "1" Coding : predicate
+
+
+    Proposition --&gt; "1" Coding : predicate_2
     click Coding href "../Coding"
 
 
       Proposition : propositionText
 
-      Proposition : qualifier
+      Proposition : qualifier_2
 
 
 
 
-    Proposition --&gt; "*" Qualifier : qualifier
+    Proposition --&gt; "*" Qualifier : qualifier_2
     click Qualifier href "../Qualifier"
 
 
-      Proposition : subject
+      Proposition : subject_2
 
       Proposition : type
 
@@ -292,25 +292,25 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject/">subject</a></td>
+<td><a href="../subject_2/">subject_2</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The Entity or concept about which the Proposition is made</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../predicate/">predicate</a></td>
+<td><a href="../predicate_2/">predicate_2</a></td>
 <td>1 <br/> <a href="../Coding/">Coding</a></td>
 <td>The relationship declared to hold between the subject and the object of the P...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../object/">object</a></td>
+<td><a href="../object_2/">object_2</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>An Entity or concept that is related to the subject of a Proposition via its ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../qualifier/">qualifier</a></td>
+<td><a href="../qualifier_2/">qualifier_2</a></td>
 <td>* <br/> <a href="../Qualifier/">Qualifier</a></td>
 <td>An additional piece of information that extends or refines the meaning of a P...</td>
 <td>direct</td>
@@ -443,10 +443,10 @@ status: Informative
 is_a: Entity
 slots:
 - propositionText
-- subject
-- predicate
-- object
-- qualifier
+- subject_2
+- predicate_2
+- object_2
+- qualifier_2
 - negated
 slot_usage:
   propositionText:
@@ -457,8 +457,8 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  subject:
-    name: subject
+  subject_2:
+    name: subject_2
     description: The Entity or concept about which the Proposition is made.
     comments:
     - While the Core Information Model is domain-agnostic, and supports Propositions
@@ -471,8 +471,8 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-  predicate:
-    name: predicate
+  predicate_2:
+    name: predicate_2
     description: The relationship declared to hold between the subject and the object
       of the Proposition.
     comments:
@@ -487,8 +487,8 @@ slot_usage:
     range: Coding
     required: true
     multivalued: false
-  object:
-    name: object
+  object_2:
+    name: object_2
     description: An Entity or concept that is related to the subject of a Proposition
       via its predicate.
     comments:
@@ -499,8 +499,8 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-  qualifier:
-    name: qualifier
+  qualifier_2:
+    name: qualifier_2
     description: An additional piece of information that extends or refines the meaning
       of a Propositions's core subject - predicate - object 'triple' - by providing
       additional detail, or constraining the statement to apply in a particular context.
@@ -576,8 +576,8 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  subject:
-    name: subject
+  subject_2:
+    name: subject_2
     description: The Entity or concept about which the Proposition is made.
     comments:
     - While the Core Information Model is domain-agnostic, and supports Propositions
@@ -590,8 +590,8 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-  predicate:
-    name: predicate
+  predicate_2:
+    name: predicate_2
     description: The relationship declared to hold between the subject and the object
       of the Proposition.
     comments:
@@ -606,8 +606,8 @@ slot_usage:
     range: Coding
     required: true
     multivalued: false
-  object:
-    name: object
+  object_2:
+    name: object_2
     description: An Entity or concept that is related to the subject of a Proposition
       via its predicate.
     comments:
@@ -618,8 +618,8 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-  qualifier:
-    name: qualifier
+  qualifier_2:
+    name: qualifier_2
     description: An additional piece of information that extends or refines the meaning
       of a Propositions's core subject - predicate - object 'triple' - by providing
       additional detail, or constraining the statement to apply in a particular context.
@@ -678,8 +678,8 @@ attributes:
     range: string
     required: false
     multivalued: false
-  subject:
-    name: subject
+  subject_2:
+    name: subject_2
     description: The Entity or concept about which the Proposition is made.
     comments:
     - While the Core Information Model is domain-agnostic, and supports Propositions
@@ -691,16 +691,15 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: subject
+    alias: subject_2
     owner: Proposition
     domain_of:
-    - Statement
     - Proposition
     range: string
     required: true
     multivalued: false
-  predicate:
-    name: predicate
+  predicate_2:
+    name: predicate_2
     description: The relationship declared to hold between the subject and the object
       of the Proposition.
     comments:
@@ -714,16 +713,15 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: predicate
+    alias: predicate_2
     owner: Proposition
     domain_of:
-    - Statement
     - Proposition
     range: Coding
     required: true
     multivalued: false
-  object:
-    name: object
+  object_2:
+    name: object_2
     description: An Entity or concept that is related to the subject of a Proposition
       via its predicate.
     comments:
@@ -733,16 +731,15 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: object
+    alias: object_2
     owner: Proposition
     domain_of:
-    - Statement
     - Proposition
     range: string
     required: true
     multivalued: false
-  qualifier:
-    name: qualifier
+  qualifier_2:
+    name: qualifier_2
     description: An additional piece of information that extends or refines the meaning
       of a Propositions's core subject - predicate - object 'triple' - by providing
       additional detail, or constraining the statement to apply in a particular context.
@@ -772,10 +769,9 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: qualifier
+    alias: qualifier_2
     owner: Proposition
     domain_of:
-    - Statement
     - Proposition
     range: Qualifier
     required: false
@@ -881,7 +877,6 @@ attributes:
     owner: Proposition
     domain_of:
     - Entity
-    - Coding
     range: string
     required: false
     multivalued: false

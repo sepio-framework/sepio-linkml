@@ -218,7 +218,7 @@
       Utility &lt;|-- Characteristic
         click Utility href "../Utility"
 
-      Characteristic : name
+      Characteristic : name_4
 
       Characteristic : valueOperator
 
@@ -245,7 +245,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../name/">name</a></td>
+<td><a href="../name_4/">name_4</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The type of the trait or role described by the trait (e</td>
 <td>direct</td>
@@ -329,12 +329,12 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Utility
 slots:
-- name
+- name_4
 - values
 - valueOperator
 slot_usage:
-  name:
-    name: name
+  name_4:
+    name: name_4
     description: The type of the trait or role described by the trait (e.g. 'ethnicity',
       'sex', 'age', 'disease status').
     status: Draft
@@ -381,8 +381,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Utility
 slot_usage:
-  name:
-    name: name
+  name_4:
+    name: name_4
     description: The type of the trait or role described by the trait (e.g. 'ethnicity',
       'sex', 'age', 'disease status').
     status: Draft
@@ -411,19 +411,16 @@ slot_usage:
     required: false
     multivalued: false
 attributes:
-  name:
-    name: name
+  name_4:
+    name: name_4
     description: The type of the trait or role described by the trait (e.g. 'ethnicity',
       'sex', 'age', 'disease status').
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Draft
     rank: 1000
-    alias: name
+    alias: name_4
     owner: Characteristic
     domain_of:
-    - Agent
-    - Qualifier
-    - Extension
     - Characteristic
     range: string
     required: true

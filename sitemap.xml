@@ -205,6 +205,10 @@
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/contributions_2/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/contributor/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
@@ -309,7 +313,15 @@
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/label_2/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/license/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/license_2/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
@@ -325,11 +337,27 @@
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/name_2/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/name_3/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/name_4/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/negated/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/object/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/object_2/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
@@ -349,6 +377,10 @@
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/predicate_2/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/proposition/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
@@ -358,6 +390,10 @@
     </url>
     <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/qualifier/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/qualifier_2/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
@@ -401,6 +437,10 @@
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/specifiedBy_2/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/statementText/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
@@ -425,7 +465,31 @@
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/subject_2/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/subtype/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_2/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_3/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_4/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_5/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_6/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
@@ -438,6 +502,10 @@
     </url>
     <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/systemVersion/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/systemVersion_2/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
@@ -461,11 +529,27 @@
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/urls_2/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/value/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/valueOperator/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/value_2/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/value_3/</loc>
+         <lastmod>2024-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://sepio-framework.github.io/sepio-linkml/value_4/</loc>
          <lastmod>2024-09-04</lastmod>
     </url>
     <url>

@@ -218,9 +218,9 @@
       Utility &lt;|-- Qualifier
         click Utility href "../Utility"
 
-      Qualifier : name
+      Qualifier : name_2
 
-      Qualifier : value
+      Qualifier : value_2
 
 
 </div>
@@ -243,13 +243,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../name/">name</a></td>
+<td><a href="../name_2/">name_2</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>A descriptive name that describes the type of information captured in the Qua...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../value/">value</a></td>
+<td><a href="../value_2/">value_2</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The value of the qualifier - holding information that refines/extends the mea...</td>
 <td>direct</td>
@@ -275,7 +275,7 @@
 </tr>
 <tr>
 <td><a href="../Proposition/">Proposition</a></td>
-<td><a href="../qualifier/">qualifier</a></td>
+<td><a href="../qualifier_2/">qualifier_2</a></td>
 <td>range</td>
 <td><a href="./">Qualifier</a></td>
 </tr>
@@ -332,11 +332,11 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Utility
 slots:
-- name
-- value
+- name_2
+- value_2
 slot_usage:
-  name:
-    name: name
+  name_2:
+    name: name_2
     description: A descriptive name that describes the type of information captured
       in the Qualifier value.
     comments:
@@ -347,8 +347,8 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-  value:
-    name: value
+  value_2:
+    name: value_2
     description: The value of the qualifier - holding information that refines/extends
       the meaning of the Statement.
     comments:
@@ -381,8 +381,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Utility
 slot_usage:
-  name:
-    name: name
+  name_2:
+    name: name_2
     description: A descriptive name that describes the type of information captured
       in the Qualifier value.
     comments:
@@ -393,8 +393,8 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-  value:
-    name: value
+  value_2:
+    name: value_2
     description: The value of the qualifier - holding information that refines/extends
       the meaning of the Statement.
     comments:
@@ -404,8 +404,8 @@ slot_usage:
     required: true
     multivalued: false
 attributes:
-  name:
-    name: name
+  name_2:
+    name: name_2
     description: A descriptive name that describes the type of information captured
       in the Qualifier value.
     comments:
@@ -415,18 +415,15 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: name
+    alias: name_2
     owner: Qualifier
     domain_of:
-    - Agent
     - Qualifier
-    - Extension
-    - Characteristic
     range: string
     required: true
     multivalued: false
-  value:
-    name: value
+  value_2:
+    name: value_2
     description: The value of the qualifier - holding information that refines/extends
       the meaning of the Statement.
     comments:
@@ -435,13 +432,10 @@ attributes:
     from_schema: https://w3id.org/sepio-framework/sepio-linkml
     status: Informative
     rank: 1000
-    alias: value
+    alias: value_2
     owner: Qualifier
     domain_of:
-    - DataItem
     - Qualifier
-    - Expression
-    - Extension
     range: string
     required: true
     multivalued: false

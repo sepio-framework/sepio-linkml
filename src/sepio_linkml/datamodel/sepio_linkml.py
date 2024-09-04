@@ -1,5 +1,5 @@
 # Auto generated from sepio_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-09-04T10:57:30
+# Generation date: 2024-09-04T11:47:14
 # Schema: sepio-linkml
 #
 # id: https://w3id.org/sepio-framework/sepio-linkml

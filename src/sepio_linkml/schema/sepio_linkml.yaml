@@ -1,0 +1,23 @@
+---
+id: https://w3id.org/sepio-framework/sepio-linkml
+name: sepio-linkml
+title: sepio-linkml
+description: |-
+  LinkML-based specification of the SEPIO information model.
+license: Apache Software License 2.0
+see_also:
+  - https://sepio-framework.github.io/sepio-linkml
+
+prefixes:
+  sepio_linkml: https://w3id.org/sepio-framework/sepio-linkml/
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  example: https://example.org/
+default_prefix: sepio_linkml
+default_range: string
+
+imports:
+  - linkml:types
+  - release_subset_v1

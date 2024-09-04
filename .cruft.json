@@ -1,0 +1,27 @@
+{
+  "template": "https://github.com/linkml/linkml-project-cookiecutter",
+  "commit": "b2da87eb7835bfec748a76823d098cac85e8363a",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "sepio-linkml",
+      "__project_slug": "sepio_linkml",
+      "github_org": "sepio-framework",
+      "__source_path": "src/sepio_linkml/schema/sepio_linkml.yaml",
+      "project_description": "LinkML-based specification of the SEPIO information model.",
+      "full_name": "Corey Cox",
+      "email": "corey@tislab.org",
+      "__author": "Corey Cox <corey@tislab.org>",
+      "license": "Apache Software License 2.0",
+      "main_schema_class": "Entity",
+      "create_python_classes": "Yes",
+      "use_schemasheets": "Yes",
+      "google_sheet_id": "1PDuQlMgQTEdZgJz4KAJeTReDPjeyLqRAgh7xKgXwZB4",
+      "google_sheet_tabs": "release_subset_v1",
+      "__google_sheet_module": "release_subset_v1",
+      "github_token_for_pypi_deployment": "PYPI_PASSWORD",
+      "_template": "https://github.com/linkml/linkml-project-cookiecutter"
+    }
+  },
+  "directory": null
+}

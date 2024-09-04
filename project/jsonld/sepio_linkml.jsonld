@@ -4264,7 +4264,7 @@
   "source_file": "sepio_linkml.yaml",
   "source_file_date": "2024-09-04T09:44:10",
   "source_file_size": 620,
-  "generation_date": "2024-09-04T11:47:13",
+  "generation_date": "2024-09-04T11:48:08",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/sepio_linkml.context.jsonld",

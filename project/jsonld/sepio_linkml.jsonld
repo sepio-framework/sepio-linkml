@@ -391,10 +391,9 @@
       "definition_uri": "https://example.org/sepio-model/label",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/label",
-      "owner": "Coding",
+      "owner": "Entity",
       "domain_of": [
-        "Entity",
-        "Coding"
+        "Entity"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -452,10 +451,9 @@
       "definition_uri": "https://example.org/sepio-model/contributions",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/contributions",
-      "owner": "RecordMetadata",
+      "owner": "InformationEntity",
       "domain_of": [
-        "InformationEntity",
-        "RecordMetadata"
+        "InformationEntity"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -477,10 +475,9 @@
       "definition_uri": "https://example.org/sepio-model/specifiedBy",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/specifiedBy",
-      "owner": "Activity",
+      "owner": "InformationEntity",
       "domain_of": [
-        "InformationEntity",
-        "Activity"
+        "InformationEntity"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -550,14 +547,9 @@
       "definition_uri": "https://example.org/sepio-model/subtype",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/subtype",
-      "owner": "Agent",
+      "owner": "Method",
       "domain_of": [
-        "Method",
-        "Document",
-        "DataItem",
-        "DataSet",
-        "Activity",
-        "Agent"
+        "Method"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -567,9 +559,20 @@
       "definition_uri": "https://example.org/sepio-model/urls",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/urls",
+      "owner": "Method",
+      "domain_of": [
+        "Method"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "subtype_2",
+      "definition_uri": "https://example.org/sepio-model/subtype_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/subtype_2",
       "owner": "Document",
       "domain_of": [
-        "Method",
         "Document"
       ],
       "range": "string",
@@ -580,6 +583,18 @@
       "definition_uri": "https://example.org/sepio-model/title",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/title",
+      "owner": "Document",
+      "domain_of": [
+        "Document"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "urls_2",
+      "definition_uri": "https://example.org/sepio-model/urls_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/urls_2",
       "owner": "Document",
       "domain_of": [
         "Document"
@@ -616,10 +631,21 @@
       "definition_uri": "https://example.org/sepio-model/license",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/license",
-      "owner": "DataSet",
+      "owner": "Document",
       "domain_of": [
-        "Document",
-        "DataSet"
+        "Document"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "subtype_3",
+      "definition_uri": "https://example.org/sepio-model/subtype_3",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/subtype_3",
+      "owner": "DataItem",
+      "domain_of": [
+        "DataItem"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -629,12 +655,9 @@
       "definition_uri": "https://example.org/sepio-model/value",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/value",
-      "owner": "Extension",
+      "owner": "DataItem",
       "domain_of": [
-        "DataItem",
-        "Qualifier",
-        "Expression",
-        "Extension"
+        "DataItem"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -688,6 +711,18 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "subtype_4",
+      "definition_uri": "https://example.org/sepio-model/subtype_4",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/subtype_4",
+      "owner": "DataSet",
+      "domain_of": [
+        "DataSet"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "releaseDate",
       "definition_uri": "https://example.org/sepio-model/releaseDate",
       "from_schema": "https://w3id.org/sepio-model",
@@ -712,6 +747,30 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "license_2",
+      "definition_uri": "https://example.org/sepio-model/license_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/license_2",
+      "owner": "DataSet",
+      "domain_of": [
+        "DataSet"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "subtype_5",
+      "definition_uri": "https://example.org/sepio-model/subtype_5",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/subtype_5",
+      "owner": "Activity",
+      "domain_of": [
+        "Activity"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "date",
       "definition_uri": "https://example.org/sepio-model/date",
       "from_schema": "https://w3id.org/sepio-model",
@@ -728,6 +787,18 @@
       "definition_uri": "https://example.org/sepio-model/performedBy",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/performedBy",
+      "owner": "Activity",
+      "domain_of": [
+        "Activity"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "specifiedBy_2",
+      "definition_uri": "https://example.org/sepio-model/specifiedBy_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/specifiedBy_2",
       "owner": "Activity",
       "domain_of": [
         "Activity"
@@ -796,16 +867,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "subtype_6",
+      "definition_uri": "https://example.org/sepio-model/subtype_6",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/subtype_6",
+      "owner": "Agent",
+      "domain_of": [
+        "Agent"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "name",
       "definition_uri": "https://example.org/sepio-model/name",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/name",
-      "owner": "Characteristic",
+      "owner": "Agent",
       "domain_of": [
-        "Agent",
-        "Qualifier",
-        "Extension",
-        "Characteristic"
+        "Agent"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -839,10 +919,9 @@
       "definition_uri": "https://example.org/sepio-model/subject",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/subject",
-      "owner": "Proposition",
+      "owner": "Statement",
       "domain_of": [
-        "Statement",
-        "Proposition"
+        "Statement"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -852,10 +931,9 @@
       "definition_uri": "https://example.org/sepio-model/predicate",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/predicate",
-      "owner": "Proposition",
+      "owner": "Statement",
       "domain_of": [
-        "Statement",
-        "Proposition"
+        "Statement"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -865,10 +943,9 @@
       "definition_uri": "https://example.org/sepio-model/object",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/object",
-      "owner": "Proposition",
+      "owner": "Statement",
       "domain_of": [
-        "Statement",
-        "Proposition"
+        "Statement"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -878,10 +955,9 @@
       "definition_uri": "https://example.org/sepio-model/qualifier",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/qualifier",
-      "owner": "Proposition",
+      "owner": "Statement",
       "domain_of": [
-        "Statement",
-        "Proposition"
+        "Statement"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -1115,6 +1191,54 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "subject_2",
+      "definition_uri": "https://example.org/sepio-model/subject_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/subject_2",
+      "owner": "Proposition",
+      "domain_of": [
+        "Proposition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "predicate_2",
+      "definition_uri": "https://example.org/sepio-model/predicate_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/predicate_2",
+      "owner": "Proposition",
+      "domain_of": [
+        "Proposition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "object_2",
+      "definition_uri": "https://example.org/sepio-model/object_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/object_2",
+      "owner": "Proposition",
+      "domain_of": [
+        "Proposition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "qualifier_2",
+      "definition_uri": "https://example.org/sepio-model/qualifier_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/qualifier_2",
+      "owner": "Proposition",
+      "domain_of": [
+        "Proposition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "negated",
       "definition_uri": "https://example.org/sepio-model/negated",
       "from_schema": "https://w3id.org/sepio-model",
@@ -1175,6 +1299,18 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "label_2",
+      "definition_uri": "https://example.org/sepio-model/label_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/label_2",
+      "owner": "Coding",
+      "domain_of": [
+        "Coding"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "system",
       "definition_uri": "https://example.org/sepio-model/system",
       "from_schema": "https://w3id.org/sepio-model",
@@ -1191,9 +1327,44 @@
       "definition_uri": "https://example.org/sepio-model/systemVersion",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/systemVersion",
+      "owner": "Coding",
+      "domain_of": [
+        "Coding"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "name_2",
+      "definition_uri": "https://example.org/sepio-model/name_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/name_2",
+      "owner": "Qualifier",
+      "domain_of": [
+        "Qualifier"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "value_2",
+      "definition_uri": "https://example.org/sepio-model/value_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/value_2",
+      "owner": "Qualifier",
+      "domain_of": [
+        "Qualifier"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "value_3",
+      "definition_uri": "https://example.org/sepio-model/value_3",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/value_3",
       "owner": "Expression",
       "domain_of": [
-        "Coding",
         "Expression"
       ],
       "range": "string",
@@ -1212,10 +1383,46 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "systemVersion_2",
+      "definition_uri": "https://example.org/sepio-model/systemVersion_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/systemVersion_2",
+      "owner": "Expression",
+      "domain_of": [
+        "Expression"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "extensionDescription",
       "definition_uri": "https://example.org/sepio-model/extensionDescription",
       "from_schema": "https://w3id.org/sepio-model",
       "slot_uri": "https://example.org/sepio-model/extensionDescription",
+      "owner": "Extension",
+      "domain_of": [
+        "Extension"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "name_3",
+      "definition_uri": "https://example.org/sepio-model/name_3",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/name_3",
+      "owner": "Extension",
+      "domain_of": [
+        "Extension"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "value_4",
+      "definition_uri": "https://example.org/sepio-model/value_4",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/value_4",
       "owner": "Extension",
       "domain_of": [
         "Extension"
@@ -1267,6 +1474,30 @@
       "owner": "RecordMetadata",
       "domain_of": [
         "RecordMetadata"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "contributions_2",
+      "definition_uri": "https://example.org/sepio-model/contributions_2",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/contributions_2",
+      "owner": "RecordMetadata",
+      "domain_of": [
+        "RecordMetadata"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "name_4",
+      "definition_uri": "https://example.org/sepio-model/name_4",
+      "from_schema": "https://w3id.org/sepio-model",
+      "slot_uri": "https://example.org/sepio-model/name_4",
+      "owner": "Characteristic",
+      "domain_of": [
+        "Characteristic"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -1696,24 +1927,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Document_subtype",
-      "definition_uri": "https://example.org/sepio-model/subtype",
+      "name": "Document_subtype_2",
+      "definition_uri": "https://example.org/sepio-model/subtype_2",
       "description": "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')",
       "comments": [
         "This attribute can be used to report a specific type for the Document, in cases where a model does not define Document subclasses for this purpose.  Implementers can define their own set of document type codes/terms, to match the needs of the domain or application."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "is_a": "subtype",
+      "is_a": "subtype_2",
       "domain": "Document",
-      "slot_uri": "https://example.org/sepio-model/subtype",
-      "alias": "subtype",
+      "slot_uri": "https://example.org/sepio-model/subtype_2",
+      "alias": "subtype_2",
       "owner": "Document",
       "domain_of": [
         "Document"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subtype",
+      "usage_slot_name": "subtype_2",
       "range": "Coding",
       "inlined": true,
       "@type": "SlotDefinition"
@@ -1737,21 +1968,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Document_urls",
-      "definition_uri": "https://example.org/sepio-model/urls",
+      "name": "Document_urls_2",
+      "definition_uri": "https://example.org/sepio-model/urls_2",
       "description": "The URL/web address from which the content of the Document can be retrieved.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "is_a": "urls",
+      "is_a": "urls_2",
       "domain": "Document",
-      "slot_uri": "https://example.org/sepio-model/urls",
-      "alias": "urls",
+      "slot_uri": "https://example.org/sepio-model/urls_2",
+      "alias": "urls_2",
       "owner": "Document",
       "domain_of": [
         "Document"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "urls",
+      "usage_slot_name": "urls_2",
       "range": "string",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -1817,24 +2048,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "DataItem_subtype",
-      "definition_uri": "https://example.org/sepio-model/subtype",
+      "name": "DataItem_subtype_3",
+      "definition_uri": "https://example.org/sepio-model/subtype_3",
       "description": "A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')",
       "comments": [
         "This attribute can be used to report a specific type for the DataItem, in cases where a model does not define DataItem subclasses for this purpose.  Implementers can define their own set of data item type codes/terms, to match the needs of the domain or application."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "subtype",
+      "is_a": "subtype_3",
       "domain": "DataItem",
-      "slot_uri": "https://example.org/sepio-model/subtype",
-      "alias": "subtype",
+      "slot_uri": "https://example.org/sepio-model/subtype_3",
+      "alias": "subtype_3",
       "owner": "DataItem",
       "domain_of": [
         "DataItem"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subtype",
+      "usage_slot_name": "subtype_3",
       "range": "Coding",
       "inlined": true,
       "@type": "SlotDefinition"
@@ -1954,24 +2185,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "DataSet_subtype",
-      "definition_uri": "https://example.org/sepio-model/subtype",
+      "name": "DataSet_subtype_4",
+      "definition_uri": "https://example.org/sepio-model/subtype_4",
       "description": "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')",
       "comments": [
         "This attribute can be used to report a specific type for the DataSet, in cases where a model does not define DataSet subclasses for this purpose.  Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "subtype",
+      "is_a": "subtype_4",
       "domain": "DataSet",
-      "slot_uri": "https://example.org/sepio-model/subtype",
-      "alias": "subtype",
+      "slot_uri": "https://example.org/sepio-model/subtype_4",
+      "alias": "subtype_4",
       "owner": "DataSet",
       "domain_of": [
         "DataSet"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subtype",
+      "usage_slot_name": "subtype_4",
       "range": "Coding",
       "inlined": true,
       "@type": "SlotDefinition"
@@ -2021,46 +2252,46 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "DataSet_license",
-      "definition_uri": "https://example.org/sepio-model/license",
+      "name": "DataSet_license_2",
+      "definition_uri": "https://example.org/sepio-model/license_2",
       "description": "A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)",
       "comments": [
         "Where possible, provide a URL pointing to the license or a description of it (e.g. \"https://creativecommons.org/licenses/by/4.0/\"). Otherwise, provide a free-text name or description of the license (e.g. \"CC-BY\")."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "license",
+      "is_a": "license_2",
       "domain": "DataSet",
-      "slot_uri": "https://example.org/sepio-model/license",
-      "alias": "license",
+      "slot_uri": "https://example.org/sepio-model/license_2",
+      "alias": "license_2",
       "owner": "DataSet",
       "domain_of": [
         "DataSet"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "license",
+      "usage_slot_name": "license_2",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "Activity_subtype",
-      "definition_uri": "https://example.org/sepio-model/subtype",
+      "name": "Activity_subtype_5",
+      "definition_uri": "https://example.org/sepio-model/subtype_5",
       "description": "A specific type of activity the Activity instance represents.",
       "comments": [
         "This attribute can be used to report a specific type for the Activity, in cases where a model does not define Activity subclasses for this purpose.  Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "subtype",
+      "is_a": "subtype_5",
       "domain": "Activity",
-      "slot_uri": "https://example.org/sepio-model/subtype",
-      "alias": "subtype",
+      "slot_uri": "https://example.org/sepio-model/subtype_5",
+      "alias": "subtype_5",
       "owner": "Activity",
       "domain_of": [
         "Activity"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subtype",
+      "usage_slot_name": "subtype_5",
       "range": "Coding",
       "inlined": true,
       "@type": "SlotDefinition"
@@ -2109,21 +2340,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Activity_specifiedBy",
-      "definition_uri": "https://example.org/sepio-model/specifiedBy",
+      "name": "Activity_specifiedBy_2",
+      "definition_uri": "https://example.org/sepio-model/specifiedBy_2",
       "description": "A method that was followed in performing an Activity, that describes how it was executed.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "specifiedBy",
+      "is_a": "specifiedBy_2",
       "domain": "Activity",
-      "slot_uri": "https://example.org/sepio-model/specifiedBy",
-      "alias": "specifiedBy",
+      "slot_uri": "https://example.org/sepio-model/specifiedBy_2",
+      "alias": "specifiedBy_2",
       "owner": "Activity",
       "domain_of": [
         "Activity"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "specifiedBy",
+      "usage_slot_name": "specifiedBy_2",
       "range": "Method",
       "multivalued": true,
       "inlined": true,
@@ -2239,24 +2470,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Agent_subtype",
-      "definition_uri": "https://example.org/sepio-model/subtype",
+      "name": "Agent_subtype_6",
+      "definition_uri": "https://example.org/sepio-model/subtype_6",
       "description": "A specific type of agent the Agent object represents. Must be one of {person, organization, software}",
       "comments": [
         "At present, there are no subclasses in the model representing the three high level types of Agent (person, organization, or software). If it is determined that there are enough unique properties that need to be defined for these subtypes, separate classes may be defined in a future release."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "is_a": "subtype",
+      "is_a": "subtype_6",
       "domain": "Agent",
-      "slot_uri": "https://example.org/sepio-model/subtype",
-      "alias": "subtype",
+      "slot_uri": "https://example.org/sepio-model/subtype_6",
+      "alias": "subtype_6",
       "owner": "Agent",
       "domain_of": [
         "Agent"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subtype",
+      "usage_slot_name": "subtype_6",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -2840,94 +3071,94 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Proposition_subject",
-      "definition_uri": "https://example.org/sepio-model/subject",
+      "name": "Proposition_subject_2",
+      "definition_uri": "https://example.org/sepio-model/subject_2",
       "description": "The Entity or concept about which the Proposition is made.",
       "comments": [
         "While the Core Information Model is domain-agnostic, and supports Propositions about any type of Entity, for most VA use cases, the subject will be  some type of genetic variation. But data creators may want to make statements about other entities or concepts that represent evidence for a statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "subject",
+      "is_a": "subject_2",
       "domain": "Proposition",
-      "slot_uri": "https://example.org/sepio-model/subject",
-      "alias": "subject",
+      "slot_uri": "https://example.org/sepio-model/subject_2",
+      "alias": "subject_2",
       "owner": "Proposition",
       "domain_of": [
         "Proposition"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subject",
+      "usage_slot_name": "subject_2",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Proposition_predicate",
-      "definition_uri": "https://example.org/sepio-model/predicate",
+      "name": "Proposition_predicate_2",
+      "definition_uri": "https://example.org/sepio-model/predicate_2",
       "description": "The relationship declared to hold between the subject and the object of the Proposition.",
       "comments": [
         "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "predicate",
+      "is_a": "predicate_2",
       "domain": "Proposition",
-      "slot_uri": "https://example.org/sepio-model/predicate",
-      "alias": "predicate",
+      "slot_uri": "https://example.org/sepio-model/predicate_2",
+      "alias": "predicate_2",
       "owner": "Proposition",
       "domain_of": [
         "Proposition"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "predicate",
+      "usage_slot_name": "predicate_2",
       "range": "Coding",
       "required": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Proposition_object",
-      "definition_uri": "https://example.org/sepio-model/object",
+      "name": "Proposition_object_2",
+      "definition_uri": "https://example.org/sepio-model/object_2",
       "description": "An Entity or concept that is related to the subject of a Proposition via its predicate.",
       "comments": [
         "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects this is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "object",
+      "is_a": "object_2",
       "domain": "Proposition",
-      "slot_uri": "https://example.org/sepio-model/object",
-      "alias": "object",
+      "slot_uri": "https://example.org/sepio-model/object_2",
+      "alias": "object_2",
       "owner": "Proposition",
       "domain_of": [
         "Proposition"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "object",
+      "usage_slot_name": "object_2",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Proposition_qualifier",
-      "definition_uri": "https://example.org/sepio-model/qualifier",
+      "name": "Proposition_qualifier_2",
+      "definition_uri": "https://example.org/sepio-model/qualifier_2",
       "description": "An additional piece of information that extends or refines the meaning of a Propositions's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.",
       "comments": [
         "The qualifier attribute allows representation of more complex, n-ary propositions that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if a triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. Qualifiers can also add information that quantifies aspects of a Statement - e.g. for an SPO triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest. Profiles of specific proposition types may define more than one qualifier, as needed to capture different types of qualifying information. \n\nThe SEPIO core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Statement. But in practice, profiles for specific Proposition types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers. For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier' attribute that is required, and a named 'geneContextQualifier' attribute that is optional - both of which conceptually specialize the core-im 'qualifier' property. Under this approach, the core 'qualifier' acts as a placeholder to seed such specializations, but is not used directly in profiles."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "qualifier",
+      "is_a": "qualifier_2",
       "domain": "Proposition",
-      "slot_uri": "https://example.org/sepio-model/qualifier",
-      "alias": "qualifier",
+      "slot_uri": "https://example.org/sepio-model/qualifier_2",
+      "alias": "qualifier_2",
       "owner": "Proposition",
       "domain_of": [
         "Proposition"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "qualifier",
+      "usage_slot_name": "qualifier_2",
       "range": "Qualifier",
       "multivalued": true,
       "inlined": true,
@@ -3035,20 +3266,20 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Coding_label",
-      "definition_uri": "https://example.org/sepio-model/label",
+      "name": "Coding_label_2",
+      "definition_uri": "https://example.org/sepio-model/label_2",
       "description": "The human-readable name for the coded concept, as defined by the code system.",
       "from_schema": "https://w3id.org/sepio-model",
-      "is_a": "label",
+      "is_a": "label_2",
       "domain": "Coding",
-      "slot_uri": "https://example.org/sepio-model/label",
-      "alias": "label",
+      "slot_uri": "https://example.org/sepio-model/label_2",
+      "alias": "label_2",
       "owner": "Coding",
       "domain_of": [
         "Coding"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "label",
+      "usage_slot_name": "label_2",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -3089,66 +3320,66 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Qualifier_name",
-      "definition_uri": "https://example.org/sepio-model/name",
+      "name": "Qualifier_name_2",
+      "definition_uri": "https://example.org/sepio-model/name_2",
       "description": "A descriptive name that describes the type of information captured in the Qualifier value.",
       "comments": [
         "Recommended convention is to treat this like the name of an attribute in the model - use snake case syntax, and append 'Qualifier' to the end of the name. e.g. 'diseaseContextQualifier', or 'alleleOriginQualifier'."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "name",
+      "is_a": "name_2",
       "domain": "Qualifier",
-      "slot_uri": "https://example.org/sepio-model/name",
-      "alias": "name",
+      "slot_uri": "https://example.org/sepio-model/name_2",
+      "alias": "name_2",
       "owner": "Qualifier",
       "domain_of": [
         "Qualifier"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "name",
+      "usage_slot_name": "name_2",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Qualifier_value",
-      "definition_uri": "https://example.org/sepio-model/value",
+      "name": "Qualifier_value_2",
+      "definition_uri": "https://example.org/sepio-model/value_2",
       "description": "The value of the qualifier - holding information that refines/extends the meaning of the Statement.",
       "comments": [
         "Value can be of any data type - a string, an integer or float, a uriorcurie, a Coding, etc."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "is_a": "value",
+      "is_a": "value_2",
       "domain": "Qualifier",
-      "slot_uri": "https://example.org/sepio-model/value",
-      "alias": "value",
+      "slot_uri": "https://example.org/sepio-model/value_2",
+      "alias": "value_2",
       "owner": "Qualifier",
       "domain_of": [
         "Qualifier"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "value",
+      "usage_slot_name": "value_2",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Expression_value",
-      "definition_uri": "https://example.org/sepio-model/value",
+      "name": "Expression_value_3",
+      "definition_uri": "https://example.org/sepio-model/value_3",
       "description": "A free-text rendering of the expression used as a label for the entity",
       "from_schema": "https://w3id.org/sepio-model",
-      "is_a": "value",
+      "is_a": "value_3",
       "domain": "Expression",
-      "slot_uri": "https://example.org/sepio-model/value",
-      "alias": "value",
+      "slot_uri": "https://example.org/sepio-model/value_3",
+      "alias": "value_3",
       "owner": "Expression",
       "domain_of": [
         "Expression"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "value",
+      "usage_slot_name": "value_3",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -3172,20 +3403,20 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Expression_systemVersion",
-      "definition_uri": "https://example.org/sepio-model/systemVersion",
+      "name": "Expression_systemVersion_2",
+      "definition_uri": "https://example.org/sepio-model/systemVersion_2",
       "description": "The version of the nomenclature system.",
       "from_schema": "https://w3id.org/sepio-model",
-      "is_a": "systemVersion",
+      "is_a": "systemVersion_2",
       "domain": "Expression",
-      "slot_uri": "https://example.org/sepio-model/systemVersion",
-      "alias": "systemVersion",
+      "slot_uri": "https://example.org/sepio-model/systemVersion_2",
+      "alias": "systemVersion_2",
       "owner": "Expression",
       "domain_of": [
         "Expression"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "systemVersion",
+      "usage_slot_name": "systemVersion_2",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -3208,39 +3439,39 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Extension_name",
-      "definition_uri": "https://example.org/sepio-model/name",
+      "name": "Extension_name_3",
+      "definition_uri": "https://example.org/sepio-model/name_3",
       "description": "A name for the Extension. Should be indicative of its meaning and/or the type of information it value represents.",
       "from_schema": "https://w3id.org/sepio-model",
-      "is_a": "name",
+      "is_a": "name_3",
       "domain": "Extension",
-      "slot_uri": "https://example.org/sepio-model/name",
-      "alias": "name",
+      "slot_uri": "https://example.org/sepio-model/name_3",
+      "alias": "name_3",
       "owner": "Extension",
       "domain_of": [
         "Extension"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "name",
+      "usage_slot_name": "name_3",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Extension_value",
-      "definition_uri": "https://example.org/sepio-model/value",
+      "name": "Extension_value_4",
+      "definition_uri": "https://example.org/sepio-model/value_4",
       "description": "The value of the Extension - can be any primitive or structured object",
       "from_schema": "https://w3id.org/sepio-model",
-      "is_a": "value",
+      "is_a": "value_4",
       "domain": "Extension",
-      "slot_uri": "https://example.org/sepio-model/value",
-      "alias": "value",
+      "slot_uri": "https://example.org/sepio-model/value_4",
+      "alias": "value_4",
       "owner": "Extension",
       "domain_of": [
         "Extension"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "value",
+      "usage_slot_name": "value_4",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -3329,42 +3560,42 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "RecordMetadata_contributions",
-      "definition_uri": "https://example.org/sepio-model/contributions",
+      "name": "RecordMetadata_contributions_2",
+      "definition_uri": "https://example.org/sepio-model/contributions_2",
       "description": "describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "is_a": "contributions",
+      "is_a": "contributions_2",
       "domain": "RecordMetadata",
-      "slot_uri": "https://example.org/sepio-model/contributions",
-      "alias": "contributions",
+      "slot_uri": "https://example.org/sepio-model/contributions_2",
+      "alias": "contributions_2",
       "owner": "RecordMetadata",
       "domain_of": [
         "RecordMetadata"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "contributions",
+      "usage_slot_name": "contributions_2",
       "range": "Contribution",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Characteristic_name",
-      "definition_uri": "https://example.org/sepio-model/name",
+      "name": "Characteristic_name_4",
+      "definition_uri": "https://example.org/sepio-model/name_4",
       "description": "The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status').",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "is_a": "name",
+      "is_a": "name_4",
       "domain": "Characteristic",
-      "slot_uri": "https://example.org/sepio-model/name",
-      "alias": "name",
+      "slot_uri": "https://example.org/sepio-model/name_4",
+      "alias": "name_4",
       "owner": "Characteristic",
       "domain_of": [
         "Characteristic"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "name",
+      "usage_slot_name": "name_4",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -3535,9 +3766,9 @@
         "InformationEntity_reportedIn",
         "InformationEntity_informationQuality",
         "InformationEntity_recordMetadata",
-        "Document_subtype",
+        "Document_subtype_2",
         "Document_title",
-        "Document_urls",
+        "Document_urls_2",
         "Document_pmid",
         "Document_doi",
         "Document_license"
@@ -3574,7 +3805,7 @@
         "InformationEntity_reportedIn",
         "InformationEntity_informationQuality",
         "InformationEntity_recordMetadata",
-        "DataItem_subtype",
+        "DataItem_subtype_3",
         "DataItem_value",
         "DataItem_unit",
         "DataItem_variabilityMeasures",
@@ -3613,10 +3844,10 @@
         "InformationEntity_reportedIn",
         "InformationEntity_informationQuality",
         "InformationEntity_recordMetadata",
-        "DataSet_subtype",
+        "DataSet_subtype_4",
         "DataSet_releaseDate",
         "DataSet_version",
-        "DataSet_license"
+        "DataSet_license_2"
       ],
       "slot_usage": {},
       "class_uri": "https://example.org/sepio-model/DataSet",
@@ -3641,10 +3872,10 @@
         "Entity_alternativeLabels",
         "Entity_description",
         "Entity_extensions",
-        "Activity_subtype",
+        "Activity_subtype_5",
         "Activity_date",
         "Activity_performedBy",
-        "Activity_specifiedBy",
+        "Activity_specifiedBy_2",
         "Activity_input",
         "Activity_output"
       ],
@@ -3671,10 +3902,10 @@
         "Entity_alternativeLabels",
         "Entity_description",
         "Entity_extensions",
-        "Activity_subtype",
+        "Activity_subtype_5",
         "Activity_date",
         "Activity_performedBy",
-        "Activity_specifiedBy",
+        "Activity_specifiedBy_2",
         "Activity_input",
         "Activity_output",
         "Contribution_contributor",
@@ -3704,7 +3935,7 @@
         "Entity_alternativeLabels",
         "Entity_description",
         "Entity_extensions",
-        "Agent_subtype",
+        "Agent_subtype_6",
         "Agent_name"
       ],
       "slot_usage": {},
@@ -3857,10 +4088,10 @@
         "Entity_description",
         "Entity_extensions",
         "Proposition_propositionText",
-        "Proposition_subject",
-        "Proposition_predicate",
-        "Proposition_object",
-        "Proposition_qualifier",
+        "Proposition_subject_2",
+        "Proposition_predicate_2",
+        "Proposition_object_2",
+        "Proposition_qualifier_2",
         "Proposition_negated"
       ],
       "slot_usage": {},
@@ -3921,7 +4152,7 @@
       "is_a": "Utility",
       "slots": [
         "Coding_code",
-        "Coding_label",
+        "Coding_label_2",
         "Coding_system",
         "Coding_systemVersion"
       ],
@@ -3941,8 +4172,8 @@
       "status": "Informative",
       "is_a": "Utility",
       "slots": [
-        "Qualifier_name",
-        "Qualifier_value"
+        "Qualifier_name_2",
+        "Qualifier_value_2"
       ],
       "slot_usage": {},
       "class_uri": "https://example.org/sepio-model/Qualifier",
@@ -3959,9 +4190,9 @@
       "from_schema": "https://w3id.org/sepio-model",
       "is_a": "Utility",
       "slots": [
-        "Expression_value",
+        "Expression_value_3",
         "Expression_systemURL",
-        "Expression_systemVersion"
+        "Expression_systemVersion_2"
       ],
       "slot_usage": {},
       "class_uri": "https://example.org/sepio-model/Expression",
@@ -3979,8 +4210,8 @@
       "is_a": "Utility",
       "slots": [
         "Extension_extensionDescription",
-        "Extension_name",
-        "Extension_value"
+        "Extension_name_3",
+        "Extension_value_4"
       ],
       "slot_usage": {},
       "class_uri": "https://example.org/sepio-model/Extension",
@@ -4002,7 +4233,7 @@
         "RecordMetadata_recordVersion",
         "RecordMetadata_derivedFromRecord",
         "RecordMetadata_dateRecordCreated",
-        "RecordMetadata_contributions"
+        "RecordMetadata_contributions_2"
       ],
       "slot_usage": {},
       "class_uri": "https://example.org/sepio-model/RecordMetadata",
@@ -4020,7 +4251,7 @@
       "status": "Draft",
       "is_a": "Utility",
       "slots": [
-        "Characteristic_name",
+        "Characteristic_name_4",
         "Characteristic_values",
         "Characteristic_valueOperator"
       ],
@@ -4033,7 +4264,7 @@
   "source_file": "sepio_linkml.yaml",
   "source_file_date": "2024-09-04T09:44:10",
   "source_file_size": 620,
-  "generation_date": "2024-09-04T10:17:27",
+  "generation_date": "2024-09-04T10:55:26",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/sepio_linkml.context.jsonld",

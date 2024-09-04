@@ -8,10 +8,10 @@ type Activity
     alternativeLabels: [String]
     description: String
     extensions: [Extension]
-    subtype: Coding
+    subtype5: Coding
     date: Date
     performedBy: [Agent]
-    specifiedBy: [Method]
+    specifiedBy2: [Method]
     input: [Entity]
     output: [Entity]
   }
@@ -25,13 +25,13 @@ type Agent
     alternativeLabels: [String]
     description: String
     extensions: [Extension]
-    subtype: String
+    subtype6: String
     name: String
   }
 
 type Characteristic
   {
-    name: String!
+    name4: String!
     values: [String]!
     valueOperator: String
   }
@@ -39,7 +39,7 @@ type Characteristic
 type Coding
   {
     code: String
-    label: String
+    label2: String
     system: String
     systemVersion: String
   }
@@ -53,10 +53,10 @@ type Contribution
     alternativeLabels: [String]
     description: String
     extensions: [Extension]
-    subtype: Coding
+    subtype5: Coding
     date: Date
     performedBy: [Agent]
-    specifiedBy: [Method]
+    specifiedBy2: [Method]
     input: [Entity]
     output: [Entity]
     contributor: Agent
@@ -82,7 +82,7 @@ type DataItem
     reportedIn: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
-    subtype: Coding
+    subtype3: Coding
     value: String!
     unit: Coding
     variabilityMeasures: [DataItem]
@@ -108,10 +108,10 @@ type DataSet
     reportedIn: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
-    subtype: Coding
+    subtype4: Coding
     releaseDate: Date
     version: String
-    license: String
+    license2: String
   }
 
 type Document
@@ -132,9 +132,9 @@ type Document
     reportedIn: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
-    subtype: Coding
+    subtype2: Coding
     title: String
-    urls: [String]
+    urls2: [String]
     pmid: String
     doi: String
     license: String
@@ -178,16 +178,16 @@ type EvidenceLine
 
 type Expression
   {
-    value: String!
+    value3: String!
     systemURL: Uriorcurie
-    systemVersion: String
+    systemVersion2: String
   }
 
 type Extension
   {
     extensionDescription: String
-    name: String!
-    value: String!
+    name3: String!
+    value4: String!
   }
 
 type InformationEntity
@@ -242,17 +242,17 @@ type Proposition
     description: String
     extensions: [Extension]
     propositionText: String
-    subject: String!
-    predicate: Coding!
-    object: String!
-    qualifier: [Qualifier]
+    subject2: String!
+    predicate2: Coding!
+    object2: String!
+    qualifier2: [Qualifier]
     negated: Boolean
   }
 
 type Qualifier
   {
-    name: String!
-    value: String!
+    name2: String!
+    value2: String!
   }
 
 type RecordMetadata
@@ -261,7 +261,7 @@ type RecordMetadata
     recordVersion: String
     derivedFromRecord: [String]
     dateRecordCreated: Date
-    contributions: [Contribution]
+    contributions2: [Contribution]
   }
 
 type Statement

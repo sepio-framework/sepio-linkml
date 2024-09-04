@@ -48,10 +48,10 @@ sepio-model:Activity  (
     CLOSED {
        (  $sepio-model:Activity_tes (  &sepio-model:Entity_tes ;
              rdf:type [ sepio-model:Entity ] ? ;
-             sepio-model:subtype @sepio-model:Coding ? ;
+             sepio-model:subtype_5 @sepio-model:Coding ? ;
              sepio-model:date @linkml:Date ? ;
              sepio-model:performedBy @sepio-model:Agent * ;
-             sepio-model:specifiedBy @sepio-model:Method * ;
+             sepio-model:specifiedBy_2 @sepio-model:Method * ;
              sepio-model:input @sepio-model:Entity * ;
              sepio-model:output @sepio-model:Entity *
           ) ;
@@ -63,7 +63,7 @@ sepio-model:Activity  (
 sepio-model:Agent CLOSED {
     (  $sepio-model:Agent_tes (  &sepio-model:Entity_tes ;
           rdf:type [ sepio-model:Entity ] ? ;
-          sepio-model:subtype @linkml:String ? ;
+          sepio-model:subtype_6 @linkml:String ? ;
           sepio-model:name @linkml:String ?
        ) ;
        rdf:type [ sepio-model:Agent ] ?
@@ -73,7 +73,7 @@ sepio-model:Agent CLOSED {
 sepio-model:Characteristic CLOSED {
     (  $sepio-model:Characteristic_tes (  &sepio-model:Utility_tes ;
           rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:name @linkml:String ;
+          sepio-model:name_4 @linkml:String ;
           sepio-model:values @linkml:String + ;
           sepio-model:valueOperator @linkml:String ?
        ) ;
@@ -85,7 +85,7 @@ sepio-model:Coding CLOSED {
     (  $sepio-model:Coding_tes (  &sepio-model:Utility_tes ;
           rdf:type [ sepio-model:Utility ] ? ;
           sepio-model:code @linkml:String ? ;
-          sepio-model:label @linkml:String ? ;
+          sepio-model:label_2 @linkml:String ? ;
           sepio-model:system @linkml:String ? ;
           sepio-model:systemVersion @linkml:String ?
        ) ;
@@ -107,7 +107,7 @@ sepio-model:Contribution CLOSED {
 sepio-model:DataItem CLOSED {
     (  $sepio-model:DataItem_tes (  &sepio-model:InformationEntity_tes ;
           rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:subtype @sepio-model:Coding ? ;
+          sepio-model:subtype_3 @sepio-model:Coding ? ;
           sepio-model:value @linkml:String ;
           sepio-model:unit @sepio-model:Coding ? ;
           sepio-model:variabilityMeasures @sepio-model:DataItem * ;
@@ -121,10 +121,10 @@ sepio-model:DataItem CLOSED {
 sepio-model:DataSet CLOSED {
     (  $sepio-model:DataSet_tes (  &sepio-model:InformationEntity_tes ;
           rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:subtype @sepio-model:Coding ? ;
+          sepio-model:subtype_4 @sepio-model:Coding ? ;
           sepio-model:releaseDate @linkml:Date ? ;
           sepio-model:version @linkml:String ? ;
-          sepio-model:license @linkml:String ?
+          sepio-model:license_2 @linkml:String ?
        ) ;
        rdf:type [ sepio-model:DataSet ] ?
     )
@@ -133,9 +133,9 @@ sepio-model:DataSet CLOSED {
 sepio-model:Document CLOSED {
     (  $sepio-model:Document_tes (  &sepio-model:InformationEntity_tes ;
           rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:subtype @sepio-model:Coding ? ;
+          sepio-model:subtype_2 @sepio-model:Coding ? ;
           sepio-model:title @linkml:String ? ;
-          sepio-model:urls @linkml:String * ;
+          sepio-model:urls_2 @linkml:String * ;
           sepio-model:pmid @linkml:String ? ;
           sepio-model:doi @linkml:String ? ;
           sepio-model:license @linkml:String ?
@@ -176,9 +176,9 @@ sepio-model:EvidenceLine CLOSED {
 sepio-model:Expression CLOSED {
     (  $sepio-model:Expression_tes (  &sepio-model:Utility_tes ;
           rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:value @linkml:String ;
+          sepio-model:value_3 @linkml:String ;
           sepio-model:systemURL @linkml:Uriorcurie ? ;
-          sepio-model:systemVersion @linkml:String ?
+          sepio-model:systemVersion_2 @linkml:String ?
        ) ;
        rdf:type [ sepio-model:Expression ] ?
     )
@@ -188,8 +188,8 @@ sepio-model:Extension CLOSED {
     (  $sepio-model:Extension_tes (  &sepio-model:Utility_tes ;
           rdf:type [ sepio-model:Utility ] ? ;
           sepio-model:extensionDescription @linkml:String ? ;
-          sepio-model:name @linkml:String ;
-          sepio-model:value @linkml:String
+          sepio-model:name_3 @linkml:String ;
+          sepio-model:value_4 @linkml:String
        ) ;
        rdf:type [ sepio-model:Extension ] ?
     )
@@ -229,10 +229,10 @@ sepio-model:Proposition CLOSED {
     (  $sepio-model:Proposition_tes (  &sepio-model:Entity_tes ;
           rdf:type [ sepio-model:Entity ] ? ;
           sepio-model:propositionText @linkml:String ? ;
-          sepio-model:subject @linkml:String ;
-          sepio-model:predicate @sepio-model:Coding ;
-          sepio-model:object @linkml:String ;
-          sepio-model:qualifier @sepio-model:Qualifier * ;
+          sepio-model:subject_2 @linkml:String ;
+          sepio-model:predicate_2 @sepio-model:Coding ;
+          sepio-model:object_2 @linkml:String ;
+          sepio-model:qualifier_2 @sepio-model:Qualifier * ;
           sepio-model:negated @linkml:Boolean ?
        ) ;
        rdf:type [ sepio-model:Proposition ] ?
@@ -242,8 +242,8 @@ sepio-model:Proposition CLOSED {
 sepio-model:Qualifier CLOSED {
     (  $sepio-model:Qualifier_tes (  &sepio-model:Utility_tes ;
           rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:name @linkml:String ;
-          sepio-model:value @linkml:String
+          sepio-model:name_2 @linkml:String ;
+          sepio-model:value_2 @linkml:String
        ) ;
        rdf:type [ sepio-model:Qualifier ] ?
     )
@@ -256,7 +256,7 @@ sepio-model:RecordMetadata CLOSED {
           sepio-model:recordVersion @linkml:String ? ;
           sepio-model:derivedFromRecord @linkml:String * ;
           sepio-model:dateRecordCreated @linkml:Date ? ;
-          sepio-model:contributions @sepio-model:Contribution *
+          sepio-model:contributions_2 @sepio-model:Contribution *
        ) ;
        rdf:type [ sepio-model:RecordMetadata ] ?
     )

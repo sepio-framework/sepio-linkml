@@ -90,7 +90,7 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "specifiedBy_2": {
                     "description": "A method that was followed in performing an Activity, that describes how it was executed.",
                     "items": {
                         "$ref": "#/$defs/Method"
@@ -100,7 +100,7 @@
                         "null"
                     ]
                 },
-                "subtype": {
+                "subtype_5": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -182,7 +182,7 @@
                         "null"
                     ]
                 },
-                "subtype": {
+                "subtype_6": {
                     "description": "A specific type of agent the Agent object represents. Must be one of {person, organization, software}",
                     "type": [
                         "string",
@@ -205,7 +205,7 @@
             "additionalProperties": false,
             "description": "An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup.",
             "properties": {
-                "name": {
+                "name_4": {
                     "description": "The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status').",
                     "type": "string"
                 },
@@ -225,7 +225,7 @@
                 }
             },
             "required": [
-                "name",
+                "name_4",
                 "values"
             ],
             "title": "Characteristic",
@@ -242,7 +242,7 @@
                         "null"
                     ]
                 },
-                "label": {
+                "label_2": {
                     "description": "The human-readable name for the coded concept, as defined by the code system.",
                     "type": [
                         "string",
@@ -389,7 +389,7 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "specifiedBy_2": {
                     "description": "A method that was followed in performing an Activity, that describes how it was executed.",
                     "items": {
                         "$ref": "#/$defs/Method"
@@ -399,7 +399,7 @@
                         "null"
                     ]
                 },
-                "subtype": {
+                "subtype_5": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -584,7 +584,7 @@
                         "null"
                     ]
                 },
-                "subtype": {
+                "subtype_3": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -733,7 +733,7 @@
                         "null"
                     ]
                 },
-                "license": {
+                "license_2": {
                     "description": "A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)",
                     "type": [
                         "string",
@@ -789,7 +789,7 @@
                         "null"
                     ]
                 },
-                "subtype": {
+                "subtype_4": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -981,7 +981,7 @@
                         "null"
                     ]
                 },
-                "subtype": {
+                "subtype_2": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -1003,7 +1003,7 @@
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
                     "type": "string"
                 },
-                "urls": {
+                "urls_2": {
                     "description": "The URL/web address from which the content of the Document can be retrieved.",
                     "items": {
                         "type": "string"
@@ -1291,20 +1291,20 @@
                         "null"
                     ]
                 },
-                "systemVersion": {
+                "systemVersion_2": {
                     "description": "The version of the nomenclature system.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "value": {
+                "value_3": {
                     "description": "A free-text rendering of the expression used as a label for the entity",
                     "type": "string"
                 }
             },
             "required": [
-                "value"
+                "value_3"
             ],
             "title": "Expression",
             "type": "object"
@@ -1320,18 +1320,18 @@
                         "null"
                     ]
                 },
-                "name": {
+                "name_3": {
                     "description": "A name for the Extension. Should be indicative of its meaning and/or the type of information it value represents.",
                     "type": "string"
                 },
-                "value": {
+                "value_4": {
                     "description": "The value of the Extension - can be any primitive or structured object",
                     "type": "string"
                 }
             },
             "required": [
-                "name",
-                "value"
+                "name_3",
+                "value_4"
             ],
             "title": "Extension",
             "type": "object"
@@ -1722,11 +1722,11 @@
                         "null"
                     ]
                 },
-                "object": {
+                "object_2": {
                     "description": "An Entity or concept that is related to the subject of a Proposition via its predicate.",
                     "type": "string"
                 },
-                "predicate": {
+                "predicate_2": {
                     "$ref": "#/$defs/Coding",
                     "description": "The relationship declared to hold between the subject and the object of the Proposition."
                 },
@@ -1737,7 +1737,7 @@
                         "null"
                     ]
                 },
-                "qualifier": {
+                "qualifier_2": {
                     "description": "An additional piece of information that extends or refines the meaning of a Propositions's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.",
                     "items": {
                         "$ref": "#/$defs/Qualifier"
@@ -1747,7 +1747,7 @@
                         "null"
                     ]
                 },
-                "subject": {
+                "subject_2": {
                     "description": "The Entity or concept about which the Proposition is made.",
                     "type": "string"
                 },
@@ -1757,9 +1757,9 @@
                 }
             },
             "required": [
-                "subject",
-                "predicate",
-                "object",
+                "subject_2",
+                "predicate_2",
+                "object_2",
                 "id",
                 "type"
             ],
@@ -1770,18 +1770,18 @@
             "additionalProperties": false,
             "description": "A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.",
             "properties": {
-                "name": {
+                "name_2": {
                     "description": "A descriptive name that describes the type of information captured in the Qualifier value.",
                     "type": "string"
                 },
-                "value": {
+                "value_2": {
                     "description": "The value of the qualifier - holding information that refines/extends the meaning of the Statement.",
                     "type": "string"
                 }
             },
             "required": [
-                "name",
-                "value"
+                "name_2",
+                "value_2"
             ],
             "title": "Qualifier",
             "type": "object"
@@ -1790,7 +1790,7 @@
             "additionalProperties": false,
             "description": "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents).",
             "properties": {
-                "contributions": {
+                "contributions_2": {
                     "description": "describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object",
                     "items": {
                         "$ref": "#/$defs/Contribution"

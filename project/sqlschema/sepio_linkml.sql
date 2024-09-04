@@ -34,7 +34,7 @@
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
---     * Slot: subtype_id Description: A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')
+--     * Slot: subtype_2_id Description: A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')
 --     * Slot: informationQuality_id Description: A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected.
 --     * Slot: recordMetadata_id Description: Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries.
 -- # Class: "DataItem" Description: "An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something."
@@ -45,7 +45,7 @@
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
---     * Slot: subtype_id Description: A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')
+--     * Slot: subtype_3_id Description: A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')
 --     * Slot: unit_id Description: A unit of measure for the value (e.g. meters, grams, fluorescent units, seconds, mg/ml, etc.)
 --     * Slot: confidenceInterval_uid Description: A measure of the probability that a parameter of interest will fall within a defined range of values around a mean or other statistical calculation.
 --     * Slot: informationQuality_id Description: A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected.
@@ -54,13 +54,13 @@
 --     * Slot: uid Description: 
 --     * Slot: releaseDate Description: Indicates when a version of a DataSet was formally released.
 --     * Slot: version Description: The version of the DataSet, as assigned by its creator.
---     * Slot: license Description: A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)
+--     * Slot: license_2 Description: A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)
 --     * Slot: dateAuthored Description: Indicates when the information content expressed in the Information Entity was generated.
 --     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
---     * Slot: subtype_id Description: A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')
+--     * Slot: subtype_4_id Description: A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')
 --     * Slot: informationQuality_id Description: A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected.
 --     * Slot: recordMetadata_id Description: Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries.
 -- # Class: "Activity" Description: "An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities."
@@ -70,7 +70,7 @@
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
---     * Slot: subtype_id Description: A specific type of activity the Activity instance represents.
+--     * Slot: subtype_5_id Description: A specific type of activity the Activity instance represents.
 -- # Class: "Contribution" Description: "An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.)"
 --     * Slot: uid Description: 
 --     * Slot: date Description: The date that the Activity was completed.
@@ -80,10 +80,10 @@
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: contributor_uid Description: The Agent that made the contribution.
 --     * Slot: contributionMadeTo_uid Description: The artifact toward which the contribution was made.
---     * Slot: subtype_id Description: A specific type of activity the Activity instance represents.
+--     * Slot: subtype_5_id Description: A specific type of activity the Activity instance represents.
 -- # Class: "Agent" Description: "An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent’s activity."
 --     * Slot: uid Description: 
---     * Slot: subtype Description: A specific type of agent the Agent object represents. Must be one of {person, organization, software}
+--     * Slot: subtype_6 Description: A specific type of agent the Agent object represents. Must be one of {person, organization, software}
 --     * Slot: name Description: The given name of the Agent.
 --     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
@@ -135,14 +135,14 @@
 -- # Class: "Proposition" Description: "An abstract entity representing a possible fact that is either true or false."
 --     * Slot: uid Description: 
 --     * Slot: propositionText Description: A natural-language expression of the Proposition's meaning (i.e. the 'possible fact' it expresses).
---     * Slot: subject Description: The Entity or concept about which the Proposition is made.
---     * Slot: object Description: An Entity or concept that is related to the subject of a Proposition via its predicate.
+--     * Slot: subject_2 Description: The Entity or concept about which the Proposition is made.
+--     * Slot: object_2 Description: An Entity or concept that is related to the subject of a Proposition via its predicate.
 --     * Slot: negated Description: A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate, object, and qualifier(s) (e.g. that "Variant X is NOT pathogenic for Disease Y")
 --     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
---     * Slot: predicate_id Description: The relationship declared to hold between the subject and the object of the Proposition.
+--     * Slot: predicate_2_id Description: The relationship declared to hold between the subject and the object of the Proposition.
 -- # Class: "StudyGroup" Description: "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income) May be referred to as a 'cohort' or 'population' in specific research settings."
 --     * Slot: uid Description: 
 --     * Slot: memberCount Description: The total number of individual members in the StudyGroup.
@@ -155,23 +155,23 @@
 -- # Class: "Coding" Description: "A structured representation of a code for a defined concept in a terminology or code system."
 --     * Slot: id Description: 
 --     * Slot: code Description: A symbol uniquely identifying the concept, as in a syntax defined by the code system.  CURIE format is preferred where possible (e.g. ‘SO:0000704’ is the CURIE form of the Sequence Ontology code for 'gene').
---     * Slot: label Description: The human-readable name for the coded concept, as defined by the code system.
+--     * Slot: label_2 Description: The human-readable name for the coded concept, as defined by the code system.
 --     * Slot: system Description: The terminology/code system that defined the code.  May be reported as a free-text name (e.g. ‘Sequence Ontology’), but it is preferable to provide  a uri/url for the system. When the 'code' is reported as a CURIE, the 'system' should be reported as the uri that the CURIE's prefix expands to (e.g. 'http://purl.obofoundry.org/so.owl/' for the Sequence Ontology).
 --     * Slot: systemVersion Description: Version of the terminology or code system that provided the code.
 -- # Class: "Qualifier" Description: "A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context."
 --     * Slot: id Description: 
---     * Slot: name Description: A descriptive name that describes the type of information captured in the Qualifier value.
---     * Slot: value Description: The value of the qualifier - holding information that refines/extends the meaning of the Statement.
+--     * Slot: name_2 Description: A descriptive name that describes the type of information captured in the Qualifier value.
+--     * Slot: value_2 Description: The value of the qualifier - holding information that refines/extends the meaning of the Statement.
 -- # Class: "Expression" Description: "A structure for labels representing systematic expressions that describe an entity, as generated by formal nomenclatures (e.g. HGVS for genetic variants, ISCN for karyotypes, HLA nomenclature for HLA genes/alleles)."
 --     * Slot: id Description: 
---     * Slot: value Description: A free-text rendering of the expression used as a label for the entity
+--     * Slot: value_3 Description: A free-text rendering of the expression used as a label for the entity
 --     * Slot: systemURL Description: A URL for the nomenclature system
---     * Slot: systemVersion Description: The version of the nomenclature system.
+--     * Slot: systemVersion_2 Description: The version of the nomenclature system.
 -- # Class: "Extension" Description: "A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification."
 --     * Slot: id Description: 
 --     * Slot: extensionDescription Description: A free text description of the intended meaning and use of the extension element, which may include the types of values it takes, and how to interpret these values in the context of the parent Class.
---     * Slot: name Description: A name for the Extension. Should be indicative of its meaning and/or the type of information it value represents.
---     * Slot: value Description: The value of the Extension - can be any primitive or structured object
+--     * Slot: name_3 Description: A name for the Extension. Should be indicative of its meaning and/or the type of information it value represents.
+--     * Slot: value_4 Description: The value of the Extension - can be any primitive or structured object
 -- # Class: "RecordMetadata" Description: "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents)."
 --     * Slot: id Description: 
 --     * Slot: recordIdentifier Description: The identifier of the record described in the RecordMetadata object (required when the record described is not the one in the present system)
@@ -179,7 +179,7 @@
 --     * Slot: dateRecordCreated Description: The date the record was initially created.
 -- # Class: "Characteristic" Description: "An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup."
 --     * Slot: id Description: 
---     * Slot: name Description: The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status').
+--     * Slot: name_4 Description: The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status').
 --     * Slot: valueOperator Description: An operation that defines how to logically interpret a set of more than one Characteristic values ('AND', 'OR', 'NOT')
 -- # Class: "Entity_identifiers" Description: ""
 --     * Slot: Entity_uid Description: Autocreated FK slot
@@ -247,9 +247,9 @@
 -- # Class: "Method_extensions" Description: ""
 --     * Slot: Method_uid Description: Autocreated FK slot
 --     * Slot: extensions_id Description: A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
--- # Class: "Document_urls" Description: ""
+-- # Class: "Document_urls_2" Description: ""
 --     * Slot: Document_uid Description: Autocreated FK slot
---     * Slot: urls Description: The URL/web address from which the content of the Document can be retrieved.
+--     * Slot: urls_2 Description: The URL/web address from which the content of the Document can be retrieved.
 -- # Class: "Document_isAbout" Description: ""
 --     * Slot: Document_uid Description: Autocreated FK slot
 --     * Slot: isAbout Description: An entity or concept in the world that the information entity describes/is about.
@@ -340,9 +340,9 @@
 -- # Class: "Activity_performedBy" Description: ""
 --     * Slot: Activity_uid Description: Autocreated FK slot
 --     * Slot: performedBy_uid Description: An Agent who participated in executing the Activity.
--- # Class: "Activity_specifiedBy" Description: ""
+-- # Class: "Activity_specifiedBy_2" Description: ""
 --     * Slot: Activity_uid Description: Autocreated FK slot
---     * Slot: specifiedBy_uid Description: A method that was followed in performing an Activity, that describes how it was executed.
+--     * Slot: specifiedBy_2_uid Description: A method that was followed in performing an Activity, that describes how it was executed.
 -- # Class: "Activity_input" Description: ""
 --     * Slot: Activity_uid Description: Autocreated FK slot
 --     * Slot: input_uid Description: An entity that was input into the Activity (could be material or information)
@@ -364,9 +364,9 @@
 -- # Class: "Contribution_performedBy" Description: ""
 --     * Slot: Contribution_uid Description: Autocreated FK slot
 --     * Slot: performedBy_uid Description: An Agent who participated in executing the Activity.
--- # Class: "Contribution_specifiedBy" Description: ""
+-- # Class: "Contribution_specifiedBy_2" Description: ""
 --     * Slot: Contribution_uid Description: Autocreated FK slot
---     * Slot: specifiedBy_uid Description: A method that was followed in performing an Activity, that describes how it was executed.
+--     * Slot: specifiedBy_2_uid Description: A method that was followed in performing an Activity, that describes how it was executed.
 -- # Class: "Contribution_input" Description: ""
 --     * Slot: Contribution_uid Description: Autocreated FK slot
 --     * Slot: input_uid Description: An entity that was input into the Activity (could be material or information)
@@ -496,9 +496,9 @@
 -- # Class: "EvidenceLine_extensions" Description: ""
 --     * Slot: EvidenceLine_uid Description: Autocreated FK slot
 --     * Slot: extensions_id Description: A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
--- # Class: "Proposition_qualifier" Description: ""
+-- # Class: "Proposition_qualifier_2" Description: ""
 --     * Slot: Proposition_uid Description: Autocreated FK slot
---     * Slot: qualifier_id Description: An additional piece of information that extends or refines the meaning of a Propositions's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.
+--     * Slot: qualifier_2_id Description: An additional piece of information that extends or refines the meaning of a Propositions's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.
 -- # Class: "Proposition_identifiers" Description: ""
 --     * Slot: Proposition_uid Description: Autocreated FK slot
 --     * Slot: identifiers Description: A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.
@@ -526,9 +526,9 @@
 -- # Class: "RecordMetadata_derivedFromRecord" Description: ""
 --     * Slot: RecordMetadata_id Description: Autocreated FK slot
 --     * Slot: derivedFromRecord Description: Another data record from which the record described here was derived, through a data ingest and/or transformation process.
--- # Class: "RecordMetadata_contributions" Description: ""
+-- # Class: "RecordMetadata_contributions_2" Description: ""
 --     * Slot: RecordMetadata_id Description: Autocreated FK slot
---     * Slot: contributions_uid Description: describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object
+--     * Slot: contributions_2_uid Description: describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object
 -- # Class: "Characteristic_values" Description: ""
 --     * Slot: Characteristic_id Description: Autocreated FK slot
 --     * Slot: values Description: The specific value(s) that the indicated traitor role  holds in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer').
@@ -543,7 +543,7 @@ CREATE TABLE "Entity" (
 );
 CREATE TABLE "Agent" (
 	uid INTEGER NOT NULL, 
-	subtype TEXT, 
+	subtype_6 TEXT, 
 	name TEXT, 
 	id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
@@ -567,29 +567,29 @@ CREATE TABLE "Utility" (
 CREATE TABLE "Coding" (
 	id INTEGER NOT NULL, 
 	code TEXT, 
-	label TEXT, 
+	label_2 TEXT, 
 	system TEXT, 
 	"systemVersion" TEXT, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Qualifier" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
-	value TEXT NOT NULL, 
+	name_2 TEXT NOT NULL, 
+	value_2 TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Expression" (
 	id INTEGER NOT NULL, 
-	value TEXT NOT NULL, 
+	value_3 TEXT NOT NULL, 
 	"systemURL" TEXT, 
-	"systemVersion" TEXT, 
+	"systemVersion_2" TEXT, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Extension" (
 	id INTEGER NOT NULL, 
 	"extensionDescription" TEXT, 
-	name TEXT NOT NULL, 
-	value TEXT NOT NULL, 
+	name_3 TEXT NOT NULL, 
+	value_4 TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "RecordMetadata" (
@@ -601,7 +601,7 @@ CREATE TABLE "RecordMetadata" (
 );
 CREATE TABLE "Characteristic" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	name_4 TEXT NOT NULL, 
 	"valueOperator" TEXT, 
 	PRIMARY KEY (id)
 );
@@ -644,11 +644,11 @@ CREATE TABLE "Document" (
 	type TEXT NOT NULL, 
 	label TEXT, 
 	description TEXT, 
-	subtype_id INTEGER, 
+	subtype_2_id INTEGER, 
 	"informationQuality_id" INTEGER, 
 	"recordMetadata_id" INTEGER, 
 	PRIMARY KEY (uid), 
-	FOREIGN KEY(subtype_id) REFERENCES "Coding" (id), 
+	FOREIGN KEY(subtype_2_id) REFERENCES "Coding" (id), 
 	FOREIGN KEY("informationQuality_id") REFERENCES "Coding" (id), 
 	FOREIGN KEY("recordMetadata_id") REFERENCES "RecordMetadata" (id)
 );
@@ -660,13 +660,13 @@ CREATE TABLE "DataItem" (
 	type TEXT NOT NULL, 
 	label TEXT, 
 	description TEXT, 
-	subtype_id INTEGER, 
+	subtype_3_id INTEGER, 
 	unit_id INTEGER, 
 	"confidenceInterval_uid" INTEGER, 
 	"informationQuality_id" INTEGER, 
 	"recordMetadata_id" INTEGER, 
 	PRIMARY KEY (uid), 
-	FOREIGN KEY(subtype_id) REFERENCES "Coding" (id), 
+	FOREIGN KEY(subtype_3_id) REFERENCES "Coding" (id), 
 	FOREIGN KEY(unit_id) REFERENCES "Coding" (id), 
 	FOREIGN KEY("confidenceInterval_uid") REFERENCES "DataItem" (uid), 
 	FOREIGN KEY("informationQuality_id") REFERENCES "Coding" (id), 
@@ -676,17 +676,17 @@ CREATE TABLE "DataSet" (
 	uid INTEGER NOT NULL, 
 	"releaseDate" DATE, 
 	version TEXT, 
-	license TEXT, 
+	license_2 TEXT, 
 	"dateAuthored" TEXT, 
 	id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
 	label TEXT, 
 	description TEXT, 
-	subtype_id INTEGER, 
+	subtype_4_id INTEGER, 
 	"informationQuality_id" INTEGER, 
 	"recordMetadata_id" INTEGER, 
 	PRIMARY KEY (uid), 
-	FOREIGN KEY(subtype_id) REFERENCES "Coding" (id), 
+	FOREIGN KEY(subtype_4_id) REFERENCES "Coding" (id), 
 	FOREIGN KEY("informationQuality_id") REFERENCES "Coding" (id), 
 	FOREIGN KEY("recordMetadata_id") REFERENCES "RecordMetadata" (id)
 );
@@ -697,9 +697,9 @@ CREATE TABLE "Activity" (
 	type TEXT NOT NULL, 
 	label TEXT, 
 	description TEXT, 
-	subtype_id INTEGER, 
+	subtype_5_id INTEGER, 
 	PRIMARY KEY (uid), 
-	FOREIGN KEY(subtype_id) REFERENCES "Coding" (id)
+	FOREIGN KEY(subtype_5_id) REFERENCES "Coding" (id)
 );
 CREATE TABLE "StudyResult" (
 	uid INTEGER NOT NULL, 
@@ -722,16 +722,16 @@ CREATE TABLE "StudyResult" (
 CREATE TABLE "Proposition" (
 	uid INTEGER NOT NULL, 
 	"propositionText" TEXT, 
-	subject TEXT NOT NULL, 
-	object TEXT NOT NULL, 
+	subject_2 TEXT NOT NULL, 
+	object_2 TEXT NOT NULL, 
 	negated BOOLEAN, 
 	id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
 	label TEXT, 
 	description TEXT, 
-	predicate_id INTEGER NOT NULL, 
+	predicate_2_id INTEGER NOT NULL, 
 	PRIMARY KEY (uid), 
-	FOREIGN KEY(predicate_id) REFERENCES "Coding" (id)
+	FOREIGN KEY(predicate_2_id) REFERENCES "Coding" (id)
 );
 CREATE TABLE "Entity_identifiers" (
 	"Entity_uid" INTEGER, 
@@ -825,11 +825,11 @@ CREATE TABLE "Contribution" (
 	description TEXT, 
 	contributor_uid INTEGER, 
 	"contributionMadeTo_uid" INTEGER, 
-	subtype_id INTEGER, 
+	subtype_5_id INTEGER, 
 	PRIMARY KEY (uid), 
 	FOREIGN KEY(contributor_uid) REFERENCES "Agent" (uid), 
 	FOREIGN KEY("contributionMadeTo_uid") REFERENCES "InformationEntity" (uid), 
-	FOREIGN KEY(subtype_id) REFERENCES "Coding" (id)
+	FOREIGN KEY(subtype_5_id) REFERENCES "Coding" (id)
 );
 CREATE TABLE "Statement" (
 	uid INTEGER NOT NULL, 
@@ -982,10 +982,10 @@ CREATE TABLE "Method_extensions" (
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid), 
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE TABLE "Document_urls" (
+CREATE TABLE "Document_urls_2" (
 	"Document_uid" INTEGER, 
-	urls TEXT, 
-	PRIMARY KEY ("Document_uid", urls), 
+	urls_2 TEXT, 
+	PRIMARY KEY ("Document_uid", urls_2), 
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid)
 );
 CREATE TABLE "Document_isAbout" (
@@ -1162,12 +1162,12 @@ CREATE TABLE "Activity_performedBy" (
 	FOREIGN KEY("Activity_uid") REFERENCES "Activity" (uid), 
 	FOREIGN KEY("performedBy_uid") REFERENCES "Agent" (uid)
 );
-CREATE TABLE "Activity_specifiedBy" (
+CREATE TABLE "Activity_specifiedBy_2" (
 	"Activity_uid" INTEGER, 
-	"specifiedBy_uid" INTEGER, 
-	PRIMARY KEY ("Activity_uid", "specifiedBy_uid"), 
+	"specifiedBy_2_uid" INTEGER, 
+	PRIMARY KEY ("Activity_uid", "specifiedBy_2_uid"), 
 	FOREIGN KEY("Activity_uid") REFERENCES "Activity" (uid), 
-	FOREIGN KEY("specifiedBy_uid") REFERENCES "Method" (uid)
+	FOREIGN KEY("specifiedBy_2_uid") REFERENCES "Method" (uid)
 );
 CREATE TABLE "Activity_input" (
 	"Activity_uid" INTEGER, 
@@ -1274,12 +1274,12 @@ CREATE TABLE "StudyResult_extensions" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid), 
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE TABLE "Proposition_qualifier" (
+CREATE TABLE "Proposition_qualifier_2" (
 	"Proposition_uid" INTEGER, 
-	qualifier_id INTEGER, 
-	PRIMARY KEY ("Proposition_uid", qualifier_id), 
+	qualifier_2_id INTEGER, 
+	PRIMARY KEY ("Proposition_uid", qualifier_2_id), 
 	FOREIGN KEY("Proposition_uid") REFERENCES "Proposition" (uid), 
-	FOREIGN KEY(qualifier_id) REFERENCES "Qualifier" (id)
+	FOREIGN KEY(qualifier_2_id) REFERENCES "Qualifier" (id)
 );
 CREATE TABLE "Proposition_identifiers" (
 	"Proposition_uid" INTEGER, 
@@ -1349,12 +1349,12 @@ CREATE TABLE "Contribution_performedBy" (
 	FOREIGN KEY("Contribution_uid") REFERENCES "Contribution" (uid), 
 	FOREIGN KEY("performedBy_uid") REFERENCES "Agent" (uid)
 );
-CREATE TABLE "Contribution_specifiedBy" (
+CREATE TABLE "Contribution_specifiedBy_2" (
 	"Contribution_uid" INTEGER, 
-	"specifiedBy_uid" INTEGER, 
-	PRIMARY KEY ("Contribution_uid", "specifiedBy_uid"), 
+	"specifiedBy_2_uid" INTEGER, 
+	PRIMARY KEY ("Contribution_uid", "specifiedBy_2_uid"), 
 	FOREIGN KEY("Contribution_uid") REFERENCES "Contribution" (uid), 
-	FOREIGN KEY("specifiedBy_uid") REFERENCES "Method" (uid)
+	FOREIGN KEY("specifiedBy_2_uid") REFERENCES "Method" (uid)
 );
 CREATE TABLE "Contribution_input" (
 	"Contribution_uid" INTEGER, 
@@ -1546,10 +1546,10 @@ CREATE TABLE "EvidenceLine_extensions" (
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid), 
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE TABLE "RecordMetadata_contributions" (
+CREATE TABLE "RecordMetadata_contributions_2" (
 	"RecordMetadata_id" INTEGER, 
-	contributions_uid INTEGER, 
-	PRIMARY KEY ("RecordMetadata_id", contributions_uid), 
+	contributions_2_uid INTEGER, 
+	PRIMARY KEY ("RecordMetadata_id", contributions_2_uid), 
 	FOREIGN KEY("RecordMetadata_id") REFERENCES "RecordMetadata" (id), 
-	FOREIGN KEY(contributions_uid) REFERENCES "Contribution" (uid)
+	FOREIGN KEY(contributions_2_uid) REFERENCES "Contribution" (uid)
 );

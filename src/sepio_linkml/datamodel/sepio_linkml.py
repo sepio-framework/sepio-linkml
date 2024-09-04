@@ -1,5 +1,5 @@
 # Auto generated from sepio_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-09-04T10:17:28
+# Generation date: 2024-09-04T10:55:27
 # Schema: sepio-linkml
 #
 # id: https://w3id.org/sepio-framework/sepio-linkml
@@ -93,7 +93,7 @@ class Entity(YAMLRoot):
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
 
-        self._normalize_inlined_as_dict(slot_name="extensions", slot_type=Extension, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="extensions", slot_type=Extension, key_name="name_3", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -201,23 +201,23 @@ class Document(InformationEntity):
 
     id: str = None
     type: str = None
-    subtype: Optional[Union[dict, "Coding"]] = None
+    subtype_2: Optional[Union[dict, "Coding"]] = None
     title: Optional[str] = None
-    urls: Optional[Union[str, List[str]]] = empty_list()
+    urls_2: Optional[Union[str, List[str]]] = empty_list()
     pmid: Optional[str] = None
     doi: Optional[str] = None
     license: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subtype is not None and not isinstance(self.subtype, Coding):
-            self.subtype = Coding(**as_dict(self.subtype))
+        if self.subtype_2 is not None and not isinstance(self.subtype_2, Coding):
+            self.subtype_2 = Coding(**as_dict(self.subtype_2))
 
         if self.title is not None and not isinstance(self.title, str):
             self.title = str(self.title)
 
-        if not isinstance(self.urls, list):
-            self.urls = [self.urls] if self.urls is not None else []
-        self.urls = [v if isinstance(v, str) else str(v) for v in self.urls]
+        if not isinstance(self.urls_2, list):
+            self.urls_2 = [self.urls_2] if self.urls_2 is not None else []
+        self.urls_2 = [v if isinstance(v, str) else str(v) for v in self.urls_2]
 
         if self.pmid is not None and not isinstance(self.pmid, str):
             self.pmid = str(self.pmid)
@@ -247,7 +247,7 @@ class DataItem(InformationEntity):
     id: str = None
     type: str = None
     value: str = None
-    subtype: Optional[Union[dict, "Coding"]] = None
+    subtype_3: Optional[Union[dict, "Coding"]] = None
     unit: Optional[Union[dict, "Coding"]] = None
     variabilityMeasures: Optional[Union[Union[dict, "DataItem"], List[Union[dict, "DataItem"]]]] = empty_list()
     confidenceInterval: Optional[Union[dict, "DataItem"]] = None
@@ -259,8 +259,8 @@ class DataItem(InformationEntity):
         if not isinstance(self.value, str):
             self.value = str(self.value)
 
-        if self.subtype is not None and not isinstance(self.subtype, Coding):
-            self.subtype = Coding(**as_dict(self.subtype))
+        if self.subtype_3 is not None and not isinstance(self.subtype_3, Coding):
+            self.subtype_3 = Coding(**as_dict(self.subtype_3))
 
         if self.unit is not None and not isinstance(self.unit, Coding):
             self.unit = Coding(**as_dict(self.unit))
@@ -290,14 +290,14 @@ class DataSet(InformationEntity):
 
     id: str = None
     type: str = None
-    subtype: Optional[Union[dict, "Coding"]] = None
+    subtype_4: Optional[Union[dict, "Coding"]] = None
     releaseDate: Optional[Union[str, XSDDate]] = None
     version: Optional[str] = None
-    license: Optional[str] = None
+    license_2: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subtype is not None and not isinstance(self.subtype, Coding):
-            self.subtype = Coding(**as_dict(self.subtype))
+        if self.subtype_4 is not None and not isinstance(self.subtype_4, Coding):
+            self.subtype_4 = Coding(**as_dict(self.subtype_4))
 
         if self.releaseDate is not None and not isinstance(self.releaseDate, XSDDate):
             self.releaseDate = XSDDate(self.releaseDate)
@@ -305,8 +305,8 @@ class DataSet(InformationEntity):
         if self.version is not None and not isinstance(self.version, str):
             self.version = str(self.version)
 
-        if self.license is not None and not isinstance(self.license, str):
-            self.license = str(self.license)
+        if self.license_2 is not None and not isinstance(self.license_2, str):
+            self.license_2 = str(self.license_2)
 
         super().__post_init__(**kwargs)
 
@@ -326,23 +326,23 @@ class Activity(Entity):
 
     id: str = None
     type: str = None
-    subtype: Optional[Union[dict, "Coding"]] = None
+    subtype_5: Optional[Union[dict, "Coding"]] = None
     date: Optional[Union[str, XSDDate]] = None
     performedBy: Optional[Union[Union[dict, "Agent"], List[Union[dict, "Agent"]]]] = empty_list()
-    specifiedBy: Optional[Union[Union[dict, Method], List[Union[dict, Method]]]] = empty_list()
+    specifiedBy_2: Optional[Union[Union[dict, Method], List[Union[dict, Method]]]] = empty_list()
     input: Optional[Union[Union[dict, Entity], List[Union[dict, Entity]]]] = empty_list()
     output: Optional[Union[Union[dict, Entity], List[Union[dict, Entity]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subtype is not None and not isinstance(self.subtype, Coding):
-            self.subtype = Coding(**as_dict(self.subtype))
+        if self.subtype_5 is not None and not isinstance(self.subtype_5, Coding):
+            self.subtype_5 = Coding(**as_dict(self.subtype_5))
 
         if self.date is not None and not isinstance(self.date, XSDDate):
             self.date = XSDDate(self.date)
 
         self._normalize_inlined_as_dict(slot_name="performedBy", slot_type=Agent, key_name="id", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="specifiedBy", slot_type=Method, key_name="id", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="specifiedBy_2", slot_type=Method, key_name="id", keyed=False)
 
         self._normalize_inlined_as_dict(slot_name="input", slot_type=Entity, key_name="id", keyed=False)
 
@@ -399,12 +399,12 @@ class Agent(Entity):
 
     id: str = None
     type: str = None
-    subtype: Optional[str] = None
+    subtype_6: Optional[str] = None
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subtype is not None and not isinstance(self.subtype, str):
-            self.subtype = str(self.subtype)
+        if self.subtype_6 is not None and not isinstance(self.subtype_6, str):
+            self.subtype_6 = str(self.subtype_6)
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -458,7 +458,7 @@ class Statement(InformationEntity):
         if self.object is not None and not isinstance(self.object, str):
             self.object = str(self.object)
 
-        self._normalize_inlined_as_dict(slot_name="qualifier", slot_type=Qualifier, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="qualifier", slot_type=Qualifier, key_name="name_2", keyed=False)
 
         if self.direction is not None and not isinstance(self.direction, str):
             self.direction = str(self.direction)
@@ -578,33 +578,33 @@ class Proposition(Entity):
 
     id: str = None
     type: str = None
-    subject: str = None
-    predicate: Union[dict, "Coding"] = None
-    object: str = None
+    subject_2: str = None
+    predicate_2: Union[dict, "Coding"] = None
+    object_2: str = None
     propositionText: Optional[str] = None
-    qualifier: Optional[Union[Union[dict, "Qualifier"], List[Union[dict, "Qualifier"]]]] = empty_list()
+    qualifier_2: Optional[Union[Union[dict, "Qualifier"], List[Union[dict, "Qualifier"]]]] = empty_list()
     negated: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, str):
-            self.subject = str(self.subject)
+        if self._is_empty(self.subject_2):
+            self.MissingRequiredField("subject_2")
+        if not isinstance(self.subject_2, str):
+            self.subject_2 = str(self.subject_2)
 
-        if self._is_empty(self.predicate):
-            self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, Coding):
-            self.predicate = Coding(**as_dict(self.predicate))
+        if self._is_empty(self.predicate_2):
+            self.MissingRequiredField("predicate_2")
+        if not isinstance(self.predicate_2, Coding):
+            self.predicate_2 = Coding(**as_dict(self.predicate_2))
 
-        if self._is_empty(self.object):
-            self.MissingRequiredField("object")
-        if not isinstance(self.object, str):
-            self.object = str(self.object)
+        if self._is_empty(self.object_2):
+            self.MissingRequiredField("object_2")
+        if not isinstance(self.object_2, str):
+            self.object_2 = str(self.object_2)
 
         if self.propositionText is not None and not isinstance(self.propositionText, str):
             self.propositionText = str(self.propositionText)
 
-        self._normalize_inlined_as_dict(slot_name="qualifier", slot_type=Qualifier, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="qualifier_2", slot_type=Qualifier, key_name="name_2", keyed=False)
 
         if self.negated is not None and not isinstance(self.negated, Bool):
             self.negated = Bool(self.negated)
@@ -638,7 +638,7 @@ class StudyGroup(Entity):
 
         self._normalize_inlined_as_dict(slot_name="isSubsetOf", slot_type=StudyGroup, key_name="id", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="characteristics", slot_type=Characteristic, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="characteristics", slot_type=Characteristic, key_name="name_4", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -669,7 +669,7 @@ class Coding(Utility):
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Coding
 
     code: Optional[str] = None
-    label: Optional[str] = None
+    label_2: Optional[str] = None
     system: Optional[str] = None
     systemVersion: Optional[str] = None
 
@@ -677,8 +677,8 @@ class Coding(Utility):
         if self.code is not None and not isinstance(self.code, str):
             self.code = str(self.code)
 
-        if self.label is not None and not isinstance(self.label, str):
-            self.label = str(self.label)
+        if self.label_2 is not None and not isinstance(self.label_2, str):
+            self.label_2 = str(self.label_2)
 
         if self.system is not None and not isinstance(self.system, str):
             self.system = str(self.system)
@@ -703,19 +703,19 @@ class Qualifier(Utility):
     class_name: ClassVar[str] = "Qualifier"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Qualifier
 
-    name: str = None
-    value: str = None
+    name_2: str = None
+    value_2: str = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, str):
-            self.name = str(self.name)
+        if self._is_empty(self.name_2):
+            self.MissingRequiredField("name_2")
+        if not isinstance(self.name_2, str):
+            self.name_2 = str(self.name_2)
 
-        if self._is_empty(self.value):
-            self.MissingRequiredField("value")
-        if not isinstance(self.value, str):
-            self.value = str(self.value)
+        if self._is_empty(self.value_2):
+            self.MissingRequiredField("value_2")
+        if not isinstance(self.value_2, str):
+            self.value_2 = str(self.value_2)
 
         super().__post_init__(**kwargs)
 
@@ -733,21 +733,21 @@ class Expression(Utility):
     class_name: ClassVar[str] = "Expression"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Expression
 
-    value: str = None
+    value_3: str = None
     systemURL: Optional[Union[str, URIorCURIE]] = None
-    systemVersion: Optional[str] = None
+    systemVersion_2: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.value):
-            self.MissingRequiredField("value")
-        if not isinstance(self.value, str):
-            self.value = str(self.value)
+        if self._is_empty(self.value_3):
+            self.MissingRequiredField("value_3")
+        if not isinstance(self.value_3, str):
+            self.value_3 = str(self.value_3)
 
         if self.systemURL is not None and not isinstance(self.systemURL, URIorCURIE):
             self.systemURL = URIorCURIE(self.systemURL)
 
-        if self.systemVersion is not None and not isinstance(self.systemVersion, str):
-            self.systemVersion = str(self.systemVersion)
+        if self.systemVersion_2 is not None and not isinstance(self.systemVersion_2, str):
+            self.systemVersion_2 = str(self.systemVersion_2)
 
         super().__post_init__(**kwargs)
 
@@ -765,20 +765,20 @@ class Extension(Utility):
     class_name: ClassVar[str] = "Extension"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Extension
 
-    name: str = None
-    value: str = None
+    name_3: str = None
+    value_4: str = None
     extensionDescription: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, str):
-            self.name = str(self.name)
+        if self._is_empty(self.name_3):
+            self.MissingRequiredField("name_3")
+        if not isinstance(self.name_3, str):
+            self.name_3 = str(self.name_3)
 
-        if self._is_empty(self.value):
-            self.MissingRequiredField("value")
-        if not isinstance(self.value, str):
-            self.value = str(self.value)
+        if self._is_empty(self.value_4):
+            self.MissingRequiredField("value_4")
+        if not isinstance(self.value_4, str):
+            self.value_4 = str(self.value_4)
 
         if self.extensionDescription is not None and not isinstance(self.extensionDescription, str):
             self.extensionDescription = str(self.extensionDescription)
@@ -803,7 +803,7 @@ class RecordMetadata(Utility):
     recordVersion: Optional[str] = None
     derivedFromRecord: Optional[Union[str, List[str]]] = empty_list()
     dateRecordCreated: Optional[Union[str, XSDDate]] = None
-    contributions: Optional[Union[Union[dict, Contribution], List[Union[dict, Contribution]]]] = empty_list()
+    contributions_2: Optional[Union[Union[dict, Contribution], List[Union[dict, Contribution]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.recordIdentifier is not None and not isinstance(self.recordIdentifier, str):
@@ -819,7 +819,7 @@ class RecordMetadata(Utility):
         if self.dateRecordCreated is not None and not isinstance(self.dateRecordCreated, XSDDate):
             self.dateRecordCreated = XSDDate(self.dateRecordCreated)
 
-        self._normalize_inlined_as_dict(slot_name="contributions", slot_type=Contribution, key_name="id", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="contributions_2", slot_type=Contribution, key_name="id", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -836,15 +836,15 @@ class Characteristic(Utility):
     class_name: ClassVar[str] = "Characteristic"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Characteristic
 
-    name: str = None
+    name_4: str = None
     values: Union[str, List[str]] = None
     valueOperator: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, str):
-            self.name = str(self.name)
+        if self._is_empty(self.name_4):
+            self.MissingRequiredField("name_4")
+        if not isinstance(self.name_4, str):
+            self.name_4 = str(self.name_4)
 
         if self._is_empty(self.values):
             self.MissingRequiredField("values")
@@ -919,8 +919,14 @@ slots.subtype = Slot(uri=SEPIO-MODEL.subtype, name="subtype", curie=SEPIO-MODEL.
 slots.urls = Slot(uri=SEPIO-MODEL.urls, name="urls", curie=SEPIO-MODEL.curie('urls'),
                    model_uri=SEPIO_LINKML.urls, domain=None, range=Optional[str])
 
+slots.subtype_2 = Slot(uri=SEPIO-MODEL.subtype_2, name="subtype_2", curie=SEPIO-MODEL.curie('subtype_2'),
+                   model_uri=SEPIO_LINKML.subtype_2, domain=None, range=Optional[str])
+
 slots.title = Slot(uri=SEPIO-MODEL.title, name="title", curie=SEPIO-MODEL.curie('title'),
                    model_uri=SEPIO_LINKML.title, domain=None, range=Optional[str])
+
+slots.urls_2 = Slot(uri=SEPIO-MODEL.urls_2, name="urls_2", curie=SEPIO-MODEL.curie('urls_2'),
+                   model_uri=SEPIO_LINKML.urls_2, domain=None, range=Optional[str])
 
 slots.pmid = Slot(uri=SEPIO-MODEL.pmid, name="pmid", curie=SEPIO-MODEL.curie('pmid'),
                    model_uri=SEPIO_LINKML.pmid, domain=None, range=Optional[str])
@@ -930,6 +936,9 @@ slots.doi = Slot(uri=SEPIO-MODEL.doi, name="doi", curie=SEPIO-MODEL.curie('doi')
 
 slots.license = Slot(uri=SEPIO-MODEL.license, name="license", curie=SEPIO-MODEL.curie('license'),
                    model_uri=SEPIO_LINKML.license, domain=None, range=Optional[str])
+
+slots.subtype_3 = Slot(uri=SEPIO-MODEL.subtype_3, name="subtype_3", curie=SEPIO-MODEL.curie('subtype_3'),
+                   model_uri=SEPIO_LINKML.subtype_3, domain=None, range=Optional[str])
 
 slots.value = Slot(uri=SEPIO-MODEL.value, name="value", curie=SEPIO-MODEL.curie('value'),
                    model_uri=SEPIO_LINKML.value, domain=None, range=Optional[str])
@@ -946,17 +955,29 @@ slots.confidenceInterval = Slot(uri=SEPIO-MODEL.confidenceInterval, name="confid
 slots.componentDataItem = Slot(uri=SEPIO-MODEL.componentDataItem, name="componentDataItem", curie=SEPIO-MODEL.curie('componentDataItem'),
                    model_uri=SEPIO_LINKML.componentDataItem, domain=None, range=Optional[str])
 
+slots.subtype_4 = Slot(uri=SEPIO-MODEL.subtype_4, name="subtype_4", curie=SEPIO-MODEL.curie('subtype_4'),
+                   model_uri=SEPIO_LINKML.subtype_4, domain=None, range=Optional[str])
+
 slots.releaseDate = Slot(uri=SEPIO-MODEL.releaseDate, name="releaseDate", curie=SEPIO-MODEL.curie('releaseDate'),
                    model_uri=SEPIO_LINKML.releaseDate, domain=None, range=Optional[str])
 
 slots.version = Slot(uri=SEPIO-MODEL.version, name="version", curie=SEPIO-MODEL.curie('version'),
                    model_uri=SEPIO_LINKML.version, domain=None, range=Optional[str])
 
+slots.license_2 = Slot(uri=SEPIO-MODEL.license_2, name="license_2", curie=SEPIO-MODEL.curie('license_2'),
+                   model_uri=SEPIO_LINKML.license_2, domain=None, range=Optional[str])
+
+slots.subtype_5 = Slot(uri=SEPIO-MODEL.subtype_5, name="subtype_5", curie=SEPIO-MODEL.curie('subtype_5'),
+                   model_uri=SEPIO_LINKML.subtype_5, domain=None, range=Optional[str])
+
 slots.date = Slot(uri=SEPIO-MODEL.date, name="date", curie=SEPIO-MODEL.curie('date'),
                    model_uri=SEPIO_LINKML.date, domain=None, range=Optional[str])
 
 slots.performedBy = Slot(uri=SEPIO-MODEL.performedBy, name="performedBy", curie=SEPIO-MODEL.curie('performedBy'),
                    model_uri=SEPIO_LINKML.performedBy, domain=None, range=Optional[str])
+
+slots.specifiedBy_2 = Slot(uri=SEPIO-MODEL.specifiedBy_2, name="specifiedBy_2", curie=SEPIO-MODEL.curie('specifiedBy_2'),
+                   model_uri=SEPIO_LINKML.specifiedBy_2, domain=None, range=Optional[str])
 
 slots.input = Slot(uri=SEPIO-MODEL.input, name="input", curie=SEPIO-MODEL.curie('input'),
                    model_uri=SEPIO_LINKML.input, domain=None, range=Optional[str])
@@ -972,6 +993,9 @@ slots.activityType = Slot(uri=SEPIO-MODEL.activityType, name="activityType", cur
 
 slots.contributionMadeTo = Slot(uri=SEPIO-MODEL.contributionMadeTo, name="contributionMadeTo", curie=SEPIO-MODEL.curie('contributionMadeTo'),
                    model_uri=SEPIO_LINKML.contributionMadeTo, domain=None, range=Optional[str])
+
+slots.subtype_6 = Slot(uri=SEPIO-MODEL.subtype_6, name="subtype_6", curie=SEPIO-MODEL.curie('subtype_6'),
+                   model_uri=SEPIO_LINKML.subtype_6, domain=None, range=Optional[str])
 
 slots.name = Slot(uri=SEPIO-MODEL.name, name="name", curie=SEPIO-MODEL.curie('name'),
                    model_uri=SEPIO_LINKML.name, domain=None, range=Optional[str])
@@ -1051,6 +1075,18 @@ slots.scoreOfEvidenceProvided = Slot(uri=SEPIO-MODEL.scoreOfEvidenceProvided, na
 slots.propositionText = Slot(uri=SEPIO-MODEL.propositionText, name="propositionText", curie=SEPIO-MODEL.curie('propositionText'),
                    model_uri=SEPIO_LINKML.propositionText, domain=None, range=Optional[str])
 
+slots.subject_2 = Slot(uri=SEPIO-MODEL.subject_2, name="subject_2", curie=SEPIO-MODEL.curie('subject_2'),
+                   model_uri=SEPIO_LINKML.subject_2, domain=None, range=Optional[str])
+
+slots.predicate_2 = Slot(uri=SEPIO-MODEL.predicate_2, name="predicate_2", curie=SEPIO-MODEL.curie('predicate_2'),
+                   model_uri=SEPIO_LINKML.predicate_2, domain=None, range=Optional[str])
+
+slots.object_2 = Slot(uri=SEPIO-MODEL.object_2, name="object_2", curie=SEPIO-MODEL.curie('object_2'),
+                   model_uri=SEPIO_LINKML.object_2, domain=None, range=Optional[str])
+
+slots.qualifier_2 = Slot(uri=SEPIO-MODEL.qualifier_2, name="qualifier_2", curie=SEPIO-MODEL.curie('qualifier_2'),
+                   model_uri=SEPIO_LINKML.qualifier_2, domain=None, range=Optional[str])
+
 slots.negated = Slot(uri=SEPIO-MODEL.negated, name="negated", curie=SEPIO-MODEL.curie('negated'),
                    model_uri=SEPIO_LINKML.negated, domain=None, range=Optional[str])
 
@@ -1066,17 +1102,38 @@ slots.characteristics = Slot(uri=SEPIO-MODEL.characteristics, name="characterist
 slots.code = Slot(uri=SEPIO-MODEL.code, name="code", curie=SEPIO-MODEL.curie('code'),
                    model_uri=SEPIO_LINKML.code, domain=None, range=Optional[str])
 
+slots.label_2 = Slot(uri=SEPIO-MODEL.label_2, name="label_2", curie=SEPIO-MODEL.curie('label_2'),
+                   model_uri=SEPIO_LINKML.label_2, domain=None, range=Optional[str])
+
 slots.system = Slot(uri=SEPIO-MODEL.system, name="system", curie=SEPIO-MODEL.curie('system'),
                    model_uri=SEPIO_LINKML.system, domain=None, range=Optional[str])
 
 slots.systemVersion = Slot(uri=SEPIO-MODEL.systemVersion, name="systemVersion", curie=SEPIO-MODEL.curie('systemVersion'),
                    model_uri=SEPIO_LINKML.systemVersion, domain=None, range=Optional[str])
 
+slots.name_2 = Slot(uri=SEPIO-MODEL.name_2, name="name_2", curie=SEPIO-MODEL.curie('name_2'),
+                   model_uri=SEPIO_LINKML.name_2, domain=None, range=Optional[str])
+
+slots.value_2 = Slot(uri=SEPIO-MODEL.value_2, name="value_2", curie=SEPIO-MODEL.curie('value_2'),
+                   model_uri=SEPIO_LINKML.value_2, domain=None, range=Optional[str])
+
+slots.value_3 = Slot(uri=SEPIO-MODEL.value_3, name="value_3", curie=SEPIO-MODEL.curie('value_3'),
+                   model_uri=SEPIO_LINKML.value_3, domain=None, range=Optional[str])
+
 slots.systemURL = Slot(uri=SEPIO-MODEL.systemURL, name="systemURL", curie=SEPIO-MODEL.curie('systemURL'),
                    model_uri=SEPIO_LINKML.systemURL, domain=None, range=Optional[str])
 
+slots.systemVersion_2 = Slot(uri=SEPIO-MODEL.systemVersion_2, name="systemVersion_2", curie=SEPIO-MODEL.curie('systemVersion_2'),
+                   model_uri=SEPIO_LINKML.systemVersion_2, domain=None, range=Optional[str])
+
 slots.extensionDescription = Slot(uri=SEPIO-MODEL.extensionDescription, name="extensionDescription", curie=SEPIO-MODEL.curie('extensionDescription'),
                    model_uri=SEPIO_LINKML.extensionDescription, domain=None, range=Optional[str])
+
+slots.name_3 = Slot(uri=SEPIO-MODEL.name_3, name="name_3", curie=SEPIO-MODEL.curie('name_3'),
+                   model_uri=SEPIO_LINKML.name_3, domain=None, range=Optional[str])
+
+slots.value_4 = Slot(uri=SEPIO-MODEL.value_4, name="value_4", curie=SEPIO-MODEL.curie('value_4'),
+                   model_uri=SEPIO_LINKML.value_4, domain=None, range=Optional[str])
 
 slots.recordIdentifier = Slot(uri=SEPIO-MODEL.recordIdentifier, name="recordIdentifier", curie=SEPIO-MODEL.curie('recordIdentifier'),
                    model_uri=SEPIO_LINKML.recordIdentifier, domain=None, range=Optional[str])
@@ -1089,6 +1146,12 @@ slots.derivedFromRecord = Slot(uri=SEPIO-MODEL.derivedFromRecord, name="derivedF
 
 slots.dateRecordCreated = Slot(uri=SEPIO-MODEL.dateRecordCreated, name="dateRecordCreated", curie=SEPIO-MODEL.curie('dateRecordCreated'),
                    model_uri=SEPIO_LINKML.dateRecordCreated, domain=None, range=Optional[str])
+
+slots.contributions_2 = Slot(uri=SEPIO-MODEL.contributions_2, name="contributions_2", curie=SEPIO-MODEL.curie('contributions_2'),
+                   model_uri=SEPIO_LINKML.contributions_2, domain=None, range=Optional[str])
+
+slots.name_4 = Slot(uri=SEPIO-MODEL.name_4, name="name_4", curie=SEPIO-MODEL.curie('name_4'),
+                   model_uri=SEPIO_LINKML.name_4, domain=None, range=Optional[str])
 
 slots.values = Slot(uri=SEPIO-MODEL.values, name="values", curie=SEPIO-MODEL.curie('values'),
                    model_uri=SEPIO_LINKML.values, domain=None, range=Optional[str])
@@ -1150,14 +1213,14 @@ slots.Method_subtype = Slot(uri=SEPIO-MODEL.subtype, name="Method_subtype", curi
 slots.Method_urls = Slot(uri=SEPIO-MODEL.urls, name="Method_urls", curie=SEPIO-MODEL.curie('urls'),
                    model_uri=SEPIO_LINKML.Method_urls, domain=Method, range=Optional[Union[str, List[str]]])
 
-slots.Document_subtype = Slot(uri=SEPIO-MODEL.subtype, name="Document_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.Document_subtype, domain=Document, range=Optional[Union[dict, "Coding"]])
+slots.Document_subtype_2 = Slot(uri=SEPIO-MODEL.subtype_2, name="Document_subtype_2", curie=SEPIO-MODEL.curie('subtype_2'),
+                   model_uri=SEPIO_LINKML.Document_subtype_2, domain=Document, range=Optional[Union[dict, "Coding"]])
 
 slots.Document_title = Slot(uri=SEPIO-MODEL.title, name="Document_title", curie=SEPIO-MODEL.curie('title'),
                    model_uri=SEPIO_LINKML.Document_title, domain=Document, range=Optional[str])
 
-slots.Document_urls = Slot(uri=SEPIO-MODEL.urls, name="Document_urls", curie=SEPIO-MODEL.curie('urls'),
-                   model_uri=SEPIO_LINKML.Document_urls, domain=Document, range=Optional[Union[str, List[str]]])
+slots.Document_urls_2 = Slot(uri=SEPIO-MODEL.urls_2, name="Document_urls_2", curie=SEPIO-MODEL.curie('urls_2'),
+                   model_uri=SEPIO_LINKML.Document_urls_2, domain=Document, range=Optional[Union[str, List[str]]])
 
 slots.Document_pmid = Slot(uri=SEPIO-MODEL.pmid, name="Document_pmid", curie=SEPIO-MODEL.curie('pmid'),
                    model_uri=SEPIO_LINKML.Document_pmid, domain=Document, range=Optional[str])
@@ -1168,8 +1231,8 @@ slots.Document_doi = Slot(uri=SEPIO-MODEL.doi, name="Document_doi", curie=SEPIO-
 slots.Document_license = Slot(uri=SEPIO-MODEL.license, name="Document_license", curie=SEPIO-MODEL.curie('license'),
                    model_uri=SEPIO_LINKML.Document_license, domain=Document, range=Optional[str])
 
-slots.DataItem_subtype = Slot(uri=SEPIO-MODEL.subtype, name="DataItem_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.DataItem_subtype, domain=DataItem, range=Optional[Union[dict, "Coding"]])
+slots.DataItem_subtype_3 = Slot(uri=SEPIO-MODEL.subtype_3, name="DataItem_subtype_3", curie=SEPIO-MODEL.curie('subtype_3'),
+                   model_uri=SEPIO_LINKML.DataItem_subtype_3, domain=DataItem, range=Optional[Union[dict, "Coding"]])
 
 slots.DataItem_value = Slot(uri=SEPIO-MODEL.value, name="DataItem_value", curie=SEPIO-MODEL.curie('value'),
                    model_uri=SEPIO_LINKML.DataItem_value, domain=DataItem, range=str)
@@ -1186,8 +1249,8 @@ slots.DataItem_confidenceInterval = Slot(uri=SEPIO-MODEL.confidenceInterval, nam
 slots.DataItem_componentDataItem = Slot(uri=SEPIO-MODEL.componentDataItem, name="DataItem_componentDataItem", curie=SEPIO-MODEL.curie('componentDataItem'),
                    model_uri=SEPIO_LINKML.DataItem_componentDataItem, domain=DataItem, range=Optional[Union[Union[dict, "DataItem"], List[Union[dict, "DataItem"]]]])
 
-slots.DataSet_subtype = Slot(uri=SEPIO-MODEL.subtype, name="DataSet_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.DataSet_subtype, domain=DataSet, range=Optional[Union[dict, "Coding"]])
+slots.DataSet_subtype_4 = Slot(uri=SEPIO-MODEL.subtype_4, name="DataSet_subtype_4", curie=SEPIO-MODEL.curie('subtype_4'),
+                   model_uri=SEPIO_LINKML.DataSet_subtype_4, domain=DataSet, range=Optional[Union[dict, "Coding"]])
 
 slots.DataSet_releaseDate = Slot(uri=SEPIO-MODEL.releaseDate, name="DataSet_releaseDate", curie=SEPIO-MODEL.curie('releaseDate'),
                    model_uri=SEPIO_LINKML.DataSet_releaseDate, domain=DataSet, range=Optional[Union[str, XSDDate]])
@@ -1195,11 +1258,11 @@ slots.DataSet_releaseDate = Slot(uri=SEPIO-MODEL.releaseDate, name="DataSet_rele
 slots.DataSet_version = Slot(uri=SEPIO-MODEL.version, name="DataSet_version", curie=SEPIO-MODEL.curie('version'),
                    model_uri=SEPIO_LINKML.DataSet_version, domain=DataSet, range=Optional[str])
 
-slots.DataSet_license = Slot(uri=SEPIO-MODEL.license, name="DataSet_license", curie=SEPIO-MODEL.curie('license'),
-                   model_uri=SEPIO_LINKML.DataSet_license, domain=DataSet, range=Optional[str])
+slots.DataSet_license_2 = Slot(uri=SEPIO-MODEL.license_2, name="DataSet_license_2", curie=SEPIO-MODEL.curie('license_2'),
+                   model_uri=SEPIO_LINKML.DataSet_license_2, domain=DataSet, range=Optional[str])
 
-slots.Activity_subtype = Slot(uri=SEPIO-MODEL.subtype, name="Activity_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.Activity_subtype, domain=Activity, range=Optional[Union[dict, "Coding"]])
+slots.Activity_subtype_5 = Slot(uri=SEPIO-MODEL.subtype_5, name="Activity_subtype_5", curie=SEPIO-MODEL.curie('subtype_5'),
+                   model_uri=SEPIO_LINKML.Activity_subtype_5, domain=Activity, range=Optional[Union[dict, "Coding"]])
 
 slots.Activity_date = Slot(uri=SEPIO-MODEL.date, name="Activity_date", curie=SEPIO-MODEL.curie('date'),
                    model_uri=SEPIO_LINKML.Activity_date, domain=Activity, range=Optional[Union[str, XSDDate]])
@@ -1207,8 +1270,8 @@ slots.Activity_date = Slot(uri=SEPIO-MODEL.date, name="Activity_date", curie=SEP
 slots.Activity_performedBy = Slot(uri=SEPIO-MODEL.performedBy, name="Activity_performedBy", curie=SEPIO-MODEL.curie('performedBy'),
                    model_uri=SEPIO_LINKML.Activity_performedBy, domain=Activity, range=Optional[Union[Union[dict, "Agent"], List[Union[dict, "Agent"]]]])
 
-slots.Activity_specifiedBy = Slot(uri=SEPIO-MODEL.specifiedBy, name="Activity_specifiedBy", curie=SEPIO-MODEL.curie('specifiedBy'),
-                   model_uri=SEPIO_LINKML.Activity_specifiedBy, domain=Activity, range=Optional[Union[Union[dict, Method], List[Union[dict, Method]]]])
+slots.Activity_specifiedBy_2 = Slot(uri=SEPIO-MODEL.specifiedBy_2, name="Activity_specifiedBy_2", curie=SEPIO-MODEL.curie('specifiedBy_2'),
+                   model_uri=SEPIO_LINKML.Activity_specifiedBy_2, domain=Activity, range=Optional[Union[Union[dict, Method], List[Union[dict, Method]]]])
 
 slots.Activity_input = Slot(uri=SEPIO-MODEL.input, name="Activity_input", curie=SEPIO-MODEL.curie('input'),
                    model_uri=SEPIO_LINKML.Activity_input, domain=Activity, range=Optional[Union[Union[dict, Entity], List[Union[dict, Entity]]]])
@@ -1225,8 +1288,8 @@ slots.Contribution_activityType = Slot(uri=SEPIO-MODEL.activityType, name="Contr
 slots.Contribution_contributionMadeTo = Slot(uri=SEPIO-MODEL.contributionMadeTo, name="Contribution_contributionMadeTo", curie=SEPIO-MODEL.curie('contributionMadeTo'),
                    model_uri=SEPIO_LINKML.Contribution_contributionMadeTo, domain=Contribution, range=Optional[Union[dict, InformationEntity]])
 
-slots.Agent_subtype = Slot(uri=SEPIO-MODEL.subtype, name="Agent_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.Agent_subtype, domain=Agent, range=Optional[str])
+slots.Agent_subtype_6 = Slot(uri=SEPIO-MODEL.subtype_6, name="Agent_subtype_6", curie=SEPIO-MODEL.curie('subtype_6'),
+                   model_uri=SEPIO_LINKML.Agent_subtype_6, domain=Agent, range=Optional[str])
 
 slots.Agent_name = Slot(uri=SEPIO-MODEL.name, name="Agent_name", curie=SEPIO-MODEL.curie('name'),
                    model_uri=SEPIO_LINKML.Agent_name, domain=Agent, range=Optional[str])
@@ -1306,17 +1369,17 @@ slots.EvidenceLine_scoreOfEvidenceProvided = Slot(uri=SEPIO-MODEL.scoreOfEvidenc
 slots.Proposition_propositionText = Slot(uri=SEPIO-MODEL.propositionText, name="Proposition_propositionText", curie=SEPIO-MODEL.curie('propositionText'),
                    model_uri=SEPIO_LINKML.Proposition_propositionText, domain=Proposition, range=Optional[str])
 
-slots.Proposition_subject = Slot(uri=SEPIO-MODEL.subject, name="Proposition_subject", curie=SEPIO-MODEL.curie('subject'),
-                   model_uri=SEPIO_LINKML.Proposition_subject, domain=Proposition, range=str)
+slots.Proposition_subject_2 = Slot(uri=SEPIO-MODEL.subject_2, name="Proposition_subject_2", curie=SEPIO-MODEL.curie('subject_2'),
+                   model_uri=SEPIO_LINKML.Proposition_subject_2, domain=Proposition, range=str)
 
-slots.Proposition_predicate = Slot(uri=SEPIO-MODEL.predicate, name="Proposition_predicate", curie=SEPIO-MODEL.curie('predicate'),
-                   model_uri=SEPIO_LINKML.Proposition_predicate, domain=Proposition, range=Union[dict, "Coding"])
+slots.Proposition_predicate_2 = Slot(uri=SEPIO-MODEL.predicate_2, name="Proposition_predicate_2", curie=SEPIO-MODEL.curie('predicate_2'),
+                   model_uri=SEPIO_LINKML.Proposition_predicate_2, domain=Proposition, range=Union[dict, "Coding"])
 
-slots.Proposition_object = Slot(uri=SEPIO-MODEL.object, name="Proposition_object", curie=SEPIO-MODEL.curie('object'),
-                   model_uri=SEPIO_LINKML.Proposition_object, domain=Proposition, range=str)
+slots.Proposition_object_2 = Slot(uri=SEPIO-MODEL.object_2, name="Proposition_object_2", curie=SEPIO-MODEL.curie('object_2'),
+                   model_uri=SEPIO_LINKML.Proposition_object_2, domain=Proposition, range=str)
 
-slots.Proposition_qualifier = Slot(uri=SEPIO-MODEL.qualifier, name="Proposition_qualifier", curie=SEPIO-MODEL.curie('qualifier'),
-                   model_uri=SEPIO_LINKML.Proposition_qualifier, domain=Proposition, range=Optional[Union[Union[dict, "Qualifier"], List[Union[dict, "Qualifier"]]]])
+slots.Proposition_qualifier_2 = Slot(uri=SEPIO-MODEL.qualifier_2, name="Proposition_qualifier_2", curie=SEPIO-MODEL.curie('qualifier_2'),
+                   model_uri=SEPIO_LINKML.Proposition_qualifier_2, domain=Proposition, range=Optional[Union[Union[dict, "Qualifier"], List[Union[dict, "Qualifier"]]]])
 
 slots.Proposition_negated = Slot(uri=SEPIO-MODEL.negated, name="Proposition_negated", curie=SEPIO-MODEL.curie('negated'),
                    model_uri=SEPIO_LINKML.Proposition_negated, domain=Proposition, range=Optional[Union[bool, Bool]])
@@ -1333,8 +1396,8 @@ slots.StudyGroup_characteristics = Slot(uri=SEPIO-MODEL.characteristics, name="S
 slots.Coding_code = Slot(uri=SEPIO-MODEL.code, name="Coding_code", curie=SEPIO-MODEL.curie('code'),
                    model_uri=SEPIO_LINKML.Coding_code, domain=Coding, range=Optional[str])
 
-slots.Coding_label = Slot(uri=SEPIO-MODEL.label, name="Coding_label", curie=SEPIO-MODEL.curie('label'),
-                   model_uri=SEPIO_LINKML.Coding_label, domain=Coding, range=Optional[str])
+slots.Coding_label_2 = Slot(uri=SEPIO-MODEL.label_2, name="Coding_label_2", curie=SEPIO-MODEL.curie('label_2'),
+                   model_uri=SEPIO_LINKML.Coding_label_2, domain=Coding, range=Optional[str])
 
 slots.Coding_system = Slot(uri=SEPIO-MODEL.system, name="Coding_system", curie=SEPIO-MODEL.curie('system'),
                    model_uri=SEPIO_LINKML.Coding_system, domain=Coding, range=Optional[str])
@@ -1342,29 +1405,29 @@ slots.Coding_system = Slot(uri=SEPIO-MODEL.system, name="Coding_system", curie=S
 slots.Coding_systemVersion = Slot(uri=SEPIO-MODEL.systemVersion, name="Coding_systemVersion", curie=SEPIO-MODEL.curie('systemVersion'),
                    model_uri=SEPIO_LINKML.Coding_systemVersion, domain=Coding, range=Optional[str])
 
-slots.Qualifier_name = Slot(uri=SEPIO-MODEL.name, name="Qualifier_name", curie=SEPIO-MODEL.curie('name'),
-                   model_uri=SEPIO_LINKML.Qualifier_name, domain=Qualifier, range=str)
+slots.Qualifier_name_2 = Slot(uri=SEPIO-MODEL.name_2, name="Qualifier_name_2", curie=SEPIO-MODEL.curie('name_2'),
+                   model_uri=SEPIO_LINKML.Qualifier_name_2, domain=Qualifier, range=str)
 
-slots.Qualifier_value = Slot(uri=SEPIO-MODEL.value, name="Qualifier_value", curie=SEPIO-MODEL.curie('value'),
-                   model_uri=SEPIO_LINKML.Qualifier_value, domain=Qualifier, range=str)
+slots.Qualifier_value_2 = Slot(uri=SEPIO-MODEL.value_2, name="Qualifier_value_2", curie=SEPIO-MODEL.curie('value_2'),
+                   model_uri=SEPIO_LINKML.Qualifier_value_2, domain=Qualifier, range=str)
 
-slots.Expression_value = Slot(uri=SEPIO-MODEL.value, name="Expression_value", curie=SEPIO-MODEL.curie('value'),
-                   model_uri=SEPIO_LINKML.Expression_value, domain=Expression, range=str)
+slots.Expression_value_3 = Slot(uri=SEPIO-MODEL.value_3, name="Expression_value_3", curie=SEPIO-MODEL.curie('value_3'),
+                   model_uri=SEPIO_LINKML.Expression_value_3, domain=Expression, range=str)
 
 slots.Expression_systemURL = Slot(uri=SEPIO-MODEL.systemURL, name="Expression_systemURL", curie=SEPIO-MODEL.curie('systemURL'),
                    model_uri=SEPIO_LINKML.Expression_systemURL, domain=Expression, range=Optional[Union[str, URIorCURIE]])
 
-slots.Expression_systemVersion = Slot(uri=SEPIO-MODEL.systemVersion, name="Expression_systemVersion", curie=SEPIO-MODEL.curie('systemVersion'),
-                   model_uri=SEPIO_LINKML.Expression_systemVersion, domain=Expression, range=Optional[str])
+slots.Expression_systemVersion_2 = Slot(uri=SEPIO-MODEL.systemVersion_2, name="Expression_systemVersion_2", curie=SEPIO-MODEL.curie('systemVersion_2'),
+                   model_uri=SEPIO_LINKML.Expression_systemVersion_2, domain=Expression, range=Optional[str])
 
 slots.Extension_extensionDescription = Slot(uri=SEPIO-MODEL.extensionDescription, name="Extension_extensionDescription", curie=SEPIO-MODEL.curie('extensionDescription'),
                    model_uri=SEPIO_LINKML.Extension_extensionDescription, domain=Extension, range=Optional[str])
 
-slots.Extension_name = Slot(uri=SEPIO-MODEL.name, name="Extension_name", curie=SEPIO-MODEL.curie('name'),
-                   model_uri=SEPIO_LINKML.Extension_name, domain=Extension, range=str)
+slots.Extension_name_3 = Slot(uri=SEPIO-MODEL.name_3, name="Extension_name_3", curie=SEPIO-MODEL.curie('name_3'),
+                   model_uri=SEPIO_LINKML.Extension_name_3, domain=Extension, range=str)
 
-slots.Extension_value = Slot(uri=SEPIO-MODEL.value, name="Extension_value", curie=SEPIO-MODEL.curie('value'),
-                   model_uri=SEPIO_LINKML.Extension_value, domain=Extension, range=str)
+slots.Extension_value_4 = Slot(uri=SEPIO-MODEL.value_4, name="Extension_value_4", curie=SEPIO-MODEL.curie('value_4'),
+                   model_uri=SEPIO_LINKML.Extension_value_4, domain=Extension, range=str)
 
 slots.RecordMetadata_recordIdentifier = Slot(uri=SEPIO-MODEL.recordIdentifier, name="RecordMetadata_recordIdentifier", curie=SEPIO-MODEL.curie('recordIdentifier'),
                    model_uri=SEPIO_LINKML.RecordMetadata_recordIdentifier, domain=RecordMetadata, range=Optional[str])
@@ -1378,11 +1441,11 @@ slots.RecordMetadata_derivedFromRecord = Slot(uri=SEPIO-MODEL.derivedFromRecord,
 slots.RecordMetadata_dateRecordCreated = Slot(uri=SEPIO-MODEL.dateRecordCreated, name="RecordMetadata_dateRecordCreated", curie=SEPIO-MODEL.curie('dateRecordCreated'),
                    model_uri=SEPIO_LINKML.RecordMetadata_dateRecordCreated, domain=RecordMetadata, range=Optional[Union[str, XSDDate]])
 
-slots.RecordMetadata_contributions = Slot(uri=SEPIO-MODEL.contributions, name="RecordMetadata_contributions", curie=SEPIO-MODEL.curie('contributions'),
-                   model_uri=SEPIO_LINKML.RecordMetadata_contributions, domain=RecordMetadata, range=Optional[Union[Union[dict, Contribution], List[Union[dict, Contribution]]]])
+slots.RecordMetadata_contributions_2 = Slot(uri=SEPIO-MODEL.contributions_2, name="RecordMetadata_contributions_2", curie=SEPIO-MODEL.curie('contributions_2'),
+                   model_uri=SEPIO_LINKML.RecordMetadata_contributions_2, domain=RecordMetadata, range=Optional[Union[Union[dict, Contribution], List[Union[dict, Contribution]]]])
 
-slots.Characteristic_name = Slot(uri=SEPIO-MODEL.name, name="Characteristic_name", curie=SEPIO-MODEL.curie('name'),
-                   model_uri=SEPIO_LINKML.Characteristic_name, domain=Characteristic, range=str)
+slots.Characteristic_name_4 = Slot(uri=SEPIO-MODEL.name_4, name="Characteristic_name_4", curie=SEPIO-MODEL.curie('name_4'),
+                   model_uri=SEPIO_LINKML.Characteristic_name_4, domain=Characteristic, range=str)
 
 slots.Characteristic_values = Slot(uri=SEPIO-MODEL.values, name="Characteristic_values", curie=SEPIO-MODEL.curie('values'),
                    model_uri=SEPIO_LINKML.Characteristic_values, domain=Characteristic, range=Union[str, List[str]])

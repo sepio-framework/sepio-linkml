@@ -216,15 +216,7 @@ classes:
     aliases:
     - Thing
     status: Draft
-    slots:
-    - id
-    - identifiers
-    - type
-    - label
-    - alternativeLabels
-    - description
-    - extensions
-    slot_usage:
+    attributes:
       id:
         description: The 'logical' identifier of the entity in the system of record,
           e.g. a UUID.  This 'id' is unique within a given system, but may or may
@@ -242,6 +234,7 @@ classes:
           or authority for this purpose (e.g. an HGNC id for a Gene object) - as long
           as it is unique within the implementing system, and can be used to reference
           the identified object in this context.'
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: true
@@ -263,6 +256,7 @@ classes:
 
           Preferred values for this attribute are CURIEs or URIs - so the system that
           provisioned the identifier is clear.'
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: false
@@ -272,24 +266,28 @@ classes:
           the Entity.
         comments:
         - MUST be the label of a concrete class from the data model.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: true
         multivalued: false
       label:
         description: A primary name for the Entity.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
         multivalued: false
       alternativeLabels:
         description: Alternative name(s) for the Entity.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
         multivalued: true
       description:
         description: A free text description of the Entity.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -302,6 +300,7 @@ classes:
           of custom fields in the data itself. Extensions are not expected to be natively
           understood, but may be used for pre-negotiated exchange of message attributes
           between systems.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Extension
         required: false
@@ -324,17 +323,7 @@ classes:
     - Information Content Entity, ICE
     status: Draft
     is_a: Entity
-    slots:
-    - isAbout
-    - contributions
-    - dateAuthored
-    - specifiedBy
-    - methodTypes
-    - derivedFrom
-    - reportedIn
-    - informationQuality
-    - recordMetadata
-    slot_usage:
+    attributes:
       isAbout:
         description: An entity or concept in the world that the information entity
           describes/is about.
@@ -345,6 +334,7 @@ classes:
           object, and qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G
           is pathogenic for Breast Cancer" might be annotated to be about the variant
           'BRCA2 c.8023A>G', and the disease 'Breast Cancer'.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: false
@@ -356,6 +346,7 @@ classes:
         - This attribute holds one or more Contribution objects, which provide structured
           descriptions of a contribution made to the Information Entity by a particular
           agent.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Contribution
         required: false
@@ -372,6 +363,7 @@ classes:
           encoding of this information was created (e.g. as a written sentence, or
           a json object) would live in a RecordMetadata object attached to the Information
           Entity).
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -387,6 +379,7 @@ classes:
           (e.g. the specific electron microscopy method described in https://doi.org/10.1002/
           cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission
           Electron Microscopy').
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -401,6 +394,7 @@ classes:
 
           Implementers should define a relevant source or specific set of method type
           codes/terms to use here based on the needs of the domain or application.'
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Coding
         required: false
@@ -408,6 +402,7 @@ classes:
       derivedFrom:
         description: Another Information Entity from which this Information Entity
           is derived, in whole or in part
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: InformationEntity
         required: false
@@ -423,6 +418,7 @@ classes:
           a particular concrete encoding of this information was created (e.g. a written
           sentence in an article, or json object in a data stream) would live in a
           RecordMetadata object attached to the Information Entity).
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -449,6 +445,7 @@ classes:
 
           - Implementers should define a relevant source or specific set of terms
           to use here based on the needs of the domain or application.'
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Coding
         required: false
@@ -464,6 +461,7 @@ classes:
           modified; what upstream resources it was derived or retrieved from; and
           record-level administrative information such as versioning and lifecycle
           status.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: RecordMetadata
         required: false
@@ -476,10 +474,7 @@ classes:
     title: Method
     from_schema: https://w3id.org/sepio-model
     is_a: InformationEntity
-    slots:
-    - subtype
-    - urls
-    slot_usage:
+    attributes:
       subtype:
         description: A specific type of method that a Method instance represents (e.g.
           'Variant Interpretation Guideline', or 'Experimental Protocol')
@@ -488,12 +483,14 @@ classes:
           cases where a model does not define Method subclasses for this purpose.  Implementers
           can define their own set of method type codes/terms, to match the needs
           of the domain or application.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Coding
         required: false
         multivalued: false
       urls:
         description: The URL/web address from which the Method can be retrieved.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: false
@@ -510,14 +507,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: InformationEntity
-    slots:
-    - subtype_2
-    - title
-    - urls_2
-    - pmid
-    - doi
-    - license
-    slot_usage:
+    attributes:
       subtype_2:
         description: A specific type of document that a Document instance represents
           (e.g.  'publication', 'patent', 'pathology report')
@@ -526,18 +516,21 @@ classes:
           cases where a model does not define Document subclasses for this purpose.  Implementers
           can define their own set of document type codes/terms, to match the needs
           of the domain or application.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Coding
         required: false
         multivalued: false
       title:
         description: The official title given to the document by its authors.
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: false
         multivalued: false
       urls_2:
         description: The URL/web address from which the content of the Document can
           be retrieved.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -545,6 +538,7 @@ classes:
       pmid:
         description: A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_
           for the document.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -552,6 +546,7 @@ classes:
       doi:
         description: A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_`
           for the document.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -564,6 +559,7 @@ classes:
         - Where possible, provide a URL pointing to the license or a description of
           it (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide
           a free-text name or description of the license (e.g. "CC-BY").
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: false
@@ -580,14 +576,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     is_a: InformationEntity
-    slots:
-    - subtype_3
-    - value
-    - unit
-    - variabilityMeasures
-    - confidenceInterval
-    - componentDataItem
-    slot_usage:
+    attributes:
       subtype_3:
         description: A specific type of data the DataItem instance represents (e.g.
           a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')
@@ -596,6 +585,7 @@ classes:
           cases where a model does not define DataItem subclasses for this purpose.  Implementers
           can define their own set of data item type codes/terms, to match the needs
           of the domain or application.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Coding
         required: false
@@ -603,6 +593,7 @@ classes:
       value:
         description: The value of the data item (could be quantitative or qualitative
           depending on the type of data item).
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: true
@@ -613,6 +604,7 @@ classes:
         comments:
         - Implementers should define a relevant source or specific set of unit terms/codes
           to use here based on the needs of the domain or application.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Coding
         required: false
@@ -627,6 +619,7 @@ classes:
           Range, Variance, Standard Deviation, Standard Error. The type of variability
           measure used here represents should be reported in the DataItem instance
           created to represent it.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: DataItem
         required: false
@@ -646,6 +639,7 @@ classes:
           type of interval is reported (e.g. ''95% CI''), and will contain separate
           componentDataItems representing the upper and lower bounds of the interval
           (e.g. ''0.42'' and ''0.55'').'
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: DataItem
         required: false
@@ -658,6 +652,7 @@ classes:
           interval, which is comprised of data items representing its lower and upper
           bounds,  or a blood pressure reading, which is comprised of separate systolic
           and diastolic measurements.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: DataItem
         required: false
@@ -676,12 +671,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: InformationEntity
-    slots:
-    - subtype_4
-    - releaseDate
-    - version
-    - license_2
-    slot_usage:
+    attributes:
       subtype_4:
         description: A specific type of data set the DataSet instance represents (e.g.
           a 'clinical data set', a 'sequencing data set', a 'gene expression data
@@ -691,6 +681,7 @@ classes:
           cases where a model does not define DataSet subclasses for this purpose.  Implementers
           can define their own set of data set type codes/terms, to match the needs
           of the domain or application.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Coding
         required: false
@@ -701,6 +692,7 @@ classes:
         - This attribute may apply to version and distribution-level DataSet representations.
           It refers to when the data set was released, which may be different than
           the data set was generated.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: date
         required: false
@@ -714,6 +706,7 @@ classes:
           \ but don\u2019t change the identity of the resource. Use this attribute\
           \ in cases where version is not reflected in an identifier associated with\
           \ the data set"
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: false
@@ -726,6 +719,7 @@ classes:
         - Where possible, provide a URL pointing to the license or a description of
           it (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide
           a free-text name or description of the license (e.g. "CC-BY").
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: false
@@ -746,14 +740,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     is_a: Entity
-    slots:
-    - subtype_5
-    - date
-    - performedBy
-    - specifiedBy_2
-    - input
-    - output
-    slot_usage:
+    attributes:
       subtype_5:
         description: A specific type of activity the Activity instance represents.
         comments:
@@ -761,6 +748,7 @@ classes:
           cases where a model does not define Activity subclasses for this purpose.  Implementers
           can define their own set of data set type codes/terms, to match the needs
           of the domain or application.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Coding
         required: false
@@ -771,12 +759,14 @@ classes:
         - By convention, populate this attribute with the date the activity was completed
           (e.g.  in cases where the activity spans multiple days). The date SHOULD
           be formatted as a date string in ISO format "YYYY-MM-DD".
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: date
         required: false
         multivalued: false
       performedBy:
         description: An Agent who participated in executing the Activity.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Agent
         required: false
@@ -784,6 +774,7 @@ classes:
       specifiedBy_2:
         description: A method that was followed in performing an Activity, that describes
           how it was executed.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Method
         required: false
@@ -791,6 +782,7 @@ classes:
       input:
         description: An entity that was input into the Activity (could be material
           or information)
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Entity
         required: false
@@ -798,6 +790,7 @@ classes:
       output:
         description: An entity that was output from the Activity (could be material
           or information)
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Entity
         required: false
@@ -817,17 +810,14 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: Activity
-    slots:
-    - contributor
-    - activityType
-    - contributionMadeTo
-    slot_usage:
+    attributes:
       contributor:
         description: The Agent that made the contribution.
         comments:
         - Note that this must be a single agent (which can be a Person, or an Organization).  If
           multiple Agents contributed to an entity, a separate Contribution instances
           MUST be created for each.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Agent
         required: false
@@ -846,12 +836,14 @@ classes:
           \ data creators want to provide metadata specific to each activity (e.g.\
           \ when or how each was performed), then a separate Contribution object should\
           \ be created for each activity."
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Coding
         required: false
         multivalued: true
       contributionMadeTo:
         description: The artifact toward which the contribution was made.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: InformationEntity
         required: false
@@ -873,10 +865,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: Entity
-    slots:
-    - subtype_6
-    - name
-    slot_usage:
+    attributes:
       subtype_6:
         description: A specific type of agent the Agent object represents. Must be
           one of {person, organization, software}
@@ -885,12 +874,14 @@ classes:
           high level types of Agent (person, organization, or software). If it is
           determined that there are enough unique properties that need to be defined
           for these subtypes, separate classes may be defined in a future release.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
         multivalued: false
       name:
         description: The given name of the Agent.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -936,21 +927,7 @@ classes:
     - Assertion; Claim
     status: Draft
     is_a: InformationEntity
-    slots:
-    - statementText
-    - proposition
-    - subject
-    - predicate
-    - object
-    - qualifier
-    - direction
-    - strength
-    - score
-    - subjectClassification
-    - hasEvidenceOfTypes
-    - hasEvidenceLines
-    - hasEvidence
-    slot_usage:
+    attributes:
       statementText:
         description: A natural-language expression of what a Statement asserts to
           be true.
@@ -961,6 +938,7 @@ classes:
           Breast Cancer". This optional attribute can be used instead of, or as a
           complement to, a structured representation of Statement semantics that uses
           the subject-predicate-object-qualifier pattern.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -975,12 +953,14 @@ classes:
           properties on the Statement are not utilized. A given implementation should
           decide which pattern to follow and drop attributes not required for their
           approach.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Proposition
         required: false
         multivalued: false
       subject:
         description: The Entity or concept about which the Statement is made.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -996,6 +976,7 @@ classes:
           the predicate value set might include terms from the GENO ontology defining  'pathogenic
           for condition', 'benign for condition', and 'uncertain significance for
           condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845).
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Coding
         required: false
@@ -1007,6 +988,7 @@ classes:
         - The object of a Statement can be any Entity or concept that is related to
           the subject, e.g. for Genetic Variation subjects this is often a disease,
           drug, gene, molecular consequence, functional impact on gene or protein.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -1040,6 +1022,7 @@ classes:
           \ core-im 'qualifier' property. Under this approach, the core 'qualifier'\
           \ acts as a placeholder to seed such specializations, but is not used directly\
           \ in Statement profiles."
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Qualifier
         required: false
@@ -1060,6 +1043,7 @@ classes:
           or remains neutral (when conflicting or insufficient evidence exists to
           assert one direction or the other). (Enumerated values = 'supports', 'disputes',
           'neutral').
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -1087,6 +1071,7 @@ classes:
           vs 'weak evidence') - or they can chose values that don't commit to one
           or the other if they don't want to make the distinction (e.g. 'high' vs
           'medium' vs 'low').
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -1107,6 +1092,7 @@ classes:
           validity are captured in 'direction', 'strength', and 'score' attributes.  The
           'score' attribute serves the same purpose as 'strength', but allows for
           a quantitative assessment based on a numerical score.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: float
         required: false
@@ -1123,6 +1109,7 @@ classes:
           for Breast Cancer", and reporting a direction of 'supports' and strength
           of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation
           Guidelines would be used as a subject classification.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Coding
         required: false
@@ -1138,6 +1125,7 @@ classes:
           use of terms from ontologies such as the Evidence and Conclusion Ontology
           (ECO) to describe specific types of evidence (e.g. ECO:0000044 'sequence
           similarity evidence').
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: false
@@ -1163,6 +1151,7 @@ classes:
           in detail how information was  assessed as evidence to generate and score
           different arguments for or against a Statement''s proposition. Evidence
           Lines can be omitted if such information is not available or needed.'
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: EvidenceLine
         required: false
@@ -1185,6 +1174,7 @@ classes:
           \ that links a Statement directly to a piece of evidence supporting it,\
           \ bypassing the Evidence Line class - to be used data creators cannot or\
           \ do not wish to create an Evidence Line object."
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: InformationEntity
         required: false
@@ -1220,14 +1210,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: InformationEntity
-    slots:
-    - focus
-    - dataItems
-    - interpretation
-    - sourceDataSet
-    - componentResult
-    - studyGroup
-    slot_usage:
+    attributes:
       focus:
         description: A specific subject or experimental unit in a Study, that data
           in the StudyResult object is about - e.g. a particular variant in a population
@@ -1241,6 +1224,7 @@ classes:
           arm of a clinical study). Or it may be a variable defined as a unit of analysis
           in the study (e.g. 'exposure to nicotine' in an analysis correlating this
           variable with clinical outcomes).
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: false
         multivalued: false
@@ -1269,6 +1253,7 @@ classes:
           conceptually specialize the core-im ''dataItems'' property. Under this approach,
           the core ''dataITems'' acts as a placeholder to seed such specializations,
           but is not used directly in StudyResult profiles.'
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: DataItem
         required: false
@@ -1281,6 +1266,7 @@ classes:
         - This attribute allows basic interpretations / classifications to be included
           in a Study Result, such as binning a data item or items as being in or out
           of some normal range.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Coding
         required: false
@@ -1293,6 +1279,7 @@ classes:
           dataset - but it is possible multiple datasets related to a single study
           contain data about a particular focus that get collected into a single StudyResult
           instance.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: DataSet
         required: false
@@ -1309,6 +1296,7 @@ classes:
           be broken down into separate 'component' Results about distinct subpopulations
           of individuals in the source data (e.g. frequency of the allele in asian
           vs african subpopulations, or male vs female subgroups).
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: StudyResult
         required: false
@@ -1320,6 +1308,7 @@ classes:
         - For example, in a StudyResult holding allele frequency data, this attribute
           points to a StudyGroup object that describes characteristics of the population
           that the frequency data was generated from (e.g. 'East Asian', 'Female').
+        from_schema: https://w3id.org/sepio-model
         range: StudyGroup
         required: false
         multivalued: false
@@ -1367,13 +1356,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: InformationEntity
-    slots:
-    - targetProposition
-    - evidenceItems
-    - directionOfEvidenceProvided
-    - strengthOfEvidenceProvided
-    - scoreOfEvidenceProvided
-    slot_usage:
+    attributes:
       targetProposition:
         description: The possible fact against which evidence items contained in an
           Evidence Line were collectively evaluated, in determining the overall strength
@@ -1392,6 +1375,7 @@ classes:
           is deemed ''met'', this indicates that the population frequency evidence
           provides ''moderate'' (strength) ''support'' (direction) for this target
           proposition.'
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Proposition
         required: false
@@ -1411,6 +1395,7 @@ classes:
           \ BRCA2 c.8023A>G  becomes an Evidence Item when it is assessed for the\
           \ support it may offer for a target proposition (e.g. the prospect of the\
           \ variant\u2019s pathogenicity)."
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: InformationEntity
         required: false
@@ -1418,6 +1403,7 @@ classes:
       directionOfEvidenceProvided:
         description: The direction of support that the Evidence Line is determined
           to provide toward its target Proposition (supports, disputes, neutral)
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -1431,6 +1417,7 @@ classes:
           domain/application needs, but should be framed in qualitative terms (e.g.
           'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute can
           be used to report quantitative assessments of evidence provided.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -1443,6 +1430,7 @@ classes:
         comments:
         - A given profile or implementation can define a scoring scale and rules that
           meet the needs of their domain or application.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: float
         required: false
@@ -1466,17 +1454,11 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     is_a: Entity
-    slots:
-    - propositionText
-    - subject_2
-    - predicate_2
-    - object_2
-    - qualifier_2
-    - negated
-    slot_usage:
+    attributes:
       propositionText:
         description: A natural-language expression of the Proposition's meaning (i.e.
           the 'possible fact' it expresses).
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: false
@@ -1491,6 +1473,7 @@ classes:
           about variation (e.g. a statement that a gene is valid for some disease
           is one type of evidence that may support the pathogenicity of a variant
           that affects that gene).
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: true
@@ -1506,6 +1489,7 @@ classes:
           the predicate value set might include terms from the GENO ontology defining  'pathogenic
           for condition', 'benign for condition', and 'uncertain significance for
           condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845).
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Coding
         required: true
@@ -1517,6 +1501,7 @@ classes:
         - The object of a Proposition can be any Entity or concept that is related
           to the subject, e.g. for Genetic Variation subjects this is often a disease,
           drug, gene, molecular consequence, functional impact on gene or protein.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: true
@@ -1550,6 +1535,7 @@ classes:
           \ specialize the core-im 'qualifier' property. Under this approach, the\
           \ core 'qualifier' acts as a placeholder to seed such specializations, but\
           \ is not used directly in profiles."
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: Qualifier
         required: false
@@ -1562,6 +1548,7 @@ classes:
         - Along with the 'subject', predicate', 'object', and 'qualifier' attributes,
           the 'negated' element contributes to the semantics of the 'possible fact'
           that a Proposition expresses.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: boolean
         required: false
@@ -1581,19 +1568,17 @@ classes:
     - Population; Cohort
     status: Draft
     is_a: Entity
-    slots:
-    - memberCount
-    - isSubsetOf
-    - characteristics
-    slot_usage:
+    attributes:
       memberCount:
         description: The total number of individual members in the StudyGroup.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: integer
         required: false
         multivalued: false
       isSubsetOf:
         description: A larger StudyGroup of which this StudyGroup represents a subset.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: StudyGroup
         required: false
@@ -1601,6 +1586,7 @@ classes:
       characteristics:
         description: A feature or role shared by all members of the StudyGroup, representing
           a criterion for membership in the group.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Characteristic
         required: false
@@ -1629,22 +1615,19 @@ classes:
       requires additional tooling - as constraints are not defined in schema itself.'
     from_schema: https://w3id.org/sepio-model
     is_a: Utility
-    slots:
-    - code
-    - label_2
-    - system
-    - systemVersion
-    slot_usage:
+    attributes:
       code:
         description: "A symbol uniquely identifying the concept, as in a syntax defined\
           \ by the code system.  CURIE format is preferred where possible (e.g. \u2018\
           SO:0000704\u2019 is the CURIE form of the Sequence Ontology code for 'gene')."
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: false
         multivalued: false
       label_2:
         description: The human-readable name for the coded concept, as defined by
           the code system.
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: false
         multivalued: false
@@ -1655,11 +1638,13 @@ classes:
           \ CURIE, the 'system' should be reported as the uri that the CURIE's prefix\
           \ expands to (e.g. 'http://purl.obofoundry.org/so.owl/' for the Sequence\
           \ Ontology)."
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: false
         multivalued: false
       systemVersion:
         description: Version of the terminology or code system that provided the code.
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: false
         multivalued: false
@@ -1682,10 +1667,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     is_a: Utility
-    slots:
-    - name_2
-    - value_2
-    slot_usage:
+    attributes:
       name_2:
         description: A descriptive name that describes the type of information captured
           in the Qualifier value.
@@ -1693,6 +1675,7 @@ classes:
         - Recommended convention is to treat this like the name of an attribute in
           the model - use snake case syntax, and append 'Qualifier' to the end of
           the name. e.g. 'diseaseContextQualifier', or 'alleleOriginQualifier'.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: true
@@ -1703,6 +1686,7 @@ classes:
         comments:
         - Value can be of any data type - a string, an integer or float, a uriorcurie,
           a Coding, etc.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         required: true
         multivalued: false
@@ -1716,24 +1700,23 @@ classes:
       values, as opposed to human-readable names.
     from_schema: https://w3id.org/sepio-model
     is_a: Utility
-    slots:
-    - value_3
-    - systemURL
-    - systemVersion_2
-    slot_usage:
+    attributes:
       value_3:
         description: A free-text rendering of the expression used as a label for the
           entity
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: true
         multivalued: false
       systemURL:
         description: A URL for the nomenclature system
+        from_schema: https://w3id.org/sepio-model
         range: uriorcurie
         required: false
         multivalued: false
       systemVersion_2:
         description: The version of the nomenclature system.
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: false
         multivalued: false
@@ -1750,27 +1733,26 @@ classes:
       Speciufication - see https://build.fhir.org/extensibility.html'
     from_schema: https://w3id.org/sepio-model
     is_a: Utility
-    slots:
-    - extensionDescription
-    - name_3
-    - value_4
-    slot_usage:
+    attributes:
       extensionDescription:
         description: A free text description of the intended meaning and use of the
           extension element, which may include the types of values it takes, and how
           to interpret these values in the context of the parent Class.
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: false
         multivalued: false
       name_3:
         description: A name for the Extension. Should be indicative of its meaning
           and/or the type of information it value represents.
+        from_schema: https://w3id.org/sepio-model
         range: string
         required: true
         multivalued: false
       value_4:
         description: The value of the Extension - can be any primitive or structured
           object
+        from_schema: https://w3id.org/sepio-model
         required: true
         multivalued: false
   RecordMetadata:
@@ -1788,13 +1770,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: Utility
-    slots:
-    - recordIdentifier
-    - recordVersion
-    - derivedFromRecord
-    - dateRecordCreated
-    - contributions_2
-    slot_usage:
+    attributes:
       recordIdentifier:
         description: The identifier of the record described in the RecordMetadata
           object (required when the record described is not the one in the present
@@ -1807,12 +1783,14 @@ classes:
           ClinVar record was submitted and by whom.  A RecordMetadata object could
           be created that describes this upstream source record, including information
           about its submission to ClinVar.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
         multivalued: false
       recordVersion:
         description: The version number of the record-level artifact the object describes
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
@@ -1822,12 +1800,14 @@ classes:
           derived, through a data ingest and/or transformation process.
         comments:
         - Value should be a string representing the identifier of the source record.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: false
         multivalued: true
       dateRecordCreated:
         description: The date the record was initially created.
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: date
         required: false
@@ -1836,6 +1816,7 @@ classes:
         description: describes specific contributions made by an human or software
           agent to the creation, modification, or administrative management of a data
           record or object
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: Contribution
         required: false
@@ -1853,14 +1834,11 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: Utility
-    slots:
-    - name_4
-    - values
-    - valueOperator
-    slot_usage:
+    attributes:
       name_4:
         description: The type of the trait or role described by the trait (e.g. 'ethnicity',
           'sex', 'age', 'disease status').
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: true
@@ -1868,6 +1846,7 @@ classes:
       values:
         description: The specific value(s) that the indicated traitor role  holds
           in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer').
+        from_schema: https://w3id.org/sepio-model
         status: Draft
         range: string
         required: true
@@ -1880,6 +1859,7 @@ classes:
           values listed.  An 'OR' operator indicates the individual exhibits one or
           more of the characteristic values listed. A 'NOT' indicates that the individual
           does not exhibit the characteristic value or values listed.
+        from_schema: https://w3id.org/sepio-model
         status: Informative
         range: string
         required: false

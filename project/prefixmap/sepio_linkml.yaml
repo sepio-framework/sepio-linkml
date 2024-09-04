@@ -1,19 +1,72 @@
----
 {
    "PATO": "http://purl.obolibrary.org/obo/PATO_",
    "biolink": "https://w3id.org/biolink/",
-   "famrel": "http://example.org/famrel/",
+   "example": "https://example.org/",
    "linkml": "https://w3id.org/linkml/",
-   "my_datamodel": "https://w3id.org/my_org/my_datamodel",
-   "prov": "http://www.w3.org/ns/prov#",
    "schema": "http://schema.org/",
-   "Address": {
-      "@id": "schema:PostalAddress"
+   "sepio-model": "https://example.org/sepio-model/",
+   "sepio_linkml": "https://w3id.org/sepio-framework/sepio-linkml/",
+   "Activity": {
+      "@id": "sepio-model:Activity"
    },
-   "Organization": {
-      "@id": "schema:Organization"
+   "Agent": {
+      "@id": "sepio-model:Agent"
    },
-   "Person": {
-      "@id": "schema:Person"
+   "Characteristic": {
+      "@id": "sepio-model:Characteristic"
+   },
+   "Coding": {
+      "@id": "sepio-model:Coding"
+   },
+   "Contribution": {
+      "@id": "sepio-model:Contribution"
+   },
+   "DataItem": {
+      "@id": "sepio-model:DataItem"
+   },
+   "DataSet": {
+      "@id": "sepio-model:DataSet"
+   },
+   "Document": {
+      "@id": "sepio-model:Document"
+   },
+   "Entity": {
+      "@id": "sepio-model:Entity"
+   },
+   "EvidenceLine": {
+      "@id": "sepio-model:EvidenceLine"
+   },
+   "Expression": {
+      "@id": "sepio-model:Expression"
+   },
+   "Extension": {
+      "@id": "sepio-model:Extension"
+   },
+   "InformationEntity": {
+      "@id": "sepio-model:InformationEntity"
+   },
+   "Method": {
+      "@id": "sepio-model:Method"
+   },
+   "Proposition": {
+      "@id": "sepio-model:Proposition"
+   },
+   "Qualifier": {
+      "@id": "sepio-model:Qualifier"
+   },
+   "RecordMetadata": {
+      "@id": "sepio-model:RecordMetadata"
+   },
+   "Statement": {
+      "@id": "sepio-model:Statement"
+   },
+   "StudyGroup": {
+      "@id": "sepio-model:StudyGroup"
+   },
+   "StudyResult": {
+      "@id": "sepio-model:StudyResult"
+   },
+   "Utility": {
+      "@id": "sepio-model:Utility"
    }
 }

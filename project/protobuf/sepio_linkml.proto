@@ -1,60 +1,341 @@
-message Address
- {
-  string street = 0
-  string city = 0
-  string postalCode = 0
- }
-message FamilialRelationship
- {
-  date startedAtTime = 0
-  date endedAtTime = 0
-  string relatedTo = 0
-  familialRelationshipType type = 0
-  person relatedTo = 0
- }
-// A generic grouping for any identifiable entity
-message NamedThing
+ syntax="proto3";
+ package
+// metamodel_version: 1.7.0
+// An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities.
+message Activity
  {
   string id = 0
-  string name = 0
-  string description = 0
-  string image = 0
- }
-// An organization such as a company or university
-message Organization
- {
-  string id = 0
-  string name = 0
-  string description = 0
-  string image = 0
-  string missionStatement = 0
-  string foundingDate = 0
- repeated  string aliases = 0
- }
-// A person (alive, dead, undead, or fictional).
-message Person
- {
-  string id = 0
-  string name = 0
-  string description = 0
-  string image = 0
-  string primaryEmail = 0
-  string birthDate = 0
-  integer ageInYears = 0
-  address currentAddress = 0
- repeated  familialRelationship hasFamilialRelationships = 0
- repeated  string aliases = 0
- }
-// Top level data container
-message Registry
- {
- repeated  person persons = 0
- repeated  organization organizations = 0
- }
-message Relationship
- {
-  date startedAtTime = 0
-  date endedAtTime = 0
-  string relatedTo = 0
+ repeated  string identifiers = 0
   string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+  coding subtype = 0
+  date date = 0
+ repeated  agent performedBy = 0
+ repeated  method specifiedBy = 0
+ repeated  entity input = 0
+ repeated  entity output = 0
+ }
+// An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent’s activity.
+message Agent
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+  string subtype = 0
+  string name = 0
+ }
+// An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup.
+message Characteristic
+ {
+  string name = 0
+ repeated  string values = 0
+  string valueOperator = 0
+ }
+// A structured representation of a code for a defined concept in a terminology or code system.
+message Coding
+ {
+  string code = 0
+  string label = 0
+  string system = 0
+  string systemVersion = 0
+ }
+// An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.)
+message Contribution
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+  coding subtype = 0
+  date date = 0
+ repeated  agent performedBy = 0
+ repeated  method specifiedBy = 0
+ repeated  entity input = 0
+ repeated  entity output = 0
+  agent contributor = 0
+ repeated  coding activityType = 0
+  informationEntity contributionMadeTo = 0
+ }
+// An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something.
+message DataItem
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+ repeated  string isAbout = 0
+ repeated  contribution contributions = 0
+  string dateAuthored = 0
+ repeated  string specifiedBy = 0
+ repeated  coding methodTypes = 0
+ repeated  informationEntity derivedFrom = 0
+ repeated  string reportedIn = 0
+  coding informationQuality = 0
+  recordMetadata recordMetadata = 0
+  coding subtype = 0
+  string value = 0
+  coding unit = 0
+ repeated  dataItem variabilityMeasures = 0
+  dataItem confidenceInterval = 0
+ repeated  dataItem componentDataItem = 0
+ }
+// A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.
+message DataSet
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+ repeated  string isAbout = 0
+ repeated  contribution contributions = 0
+  string dateAuthored = 0
+ repeated  string specifiedBy = 0
+ repeated  coding methodTypes = 0
+ repeated  informationEntity derivedFrom = 0
+ repeated  string reportedIn = 0
+  coding informationQuality = 0
+  recordMetadata recordMetadata = 0
+  coding subtype = 0
+  date releaseDate = 0
+  string version = 0
+  string license = 0
+ }
+// A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole.
+message Document
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+ repeated  string isAbout = 0
+ repeated  contribution contributions = 0
+  string dateAuthored = 0
+ repeated  string specifiedBy = 0
+ repeated  coding methodTypes = 0
+ repeated  informationEntity derivedFrom = 0
+ repeated  string reportedIn = 0
+  coding informationQuality = 0
+  recordMetadata recordMetadata = 0
+  coding subtype = 0
+  string title = 0
+ repeated  string urls = 0
+  string pmid = 0
+  string doi = 0
+  string license = 0
+ }
+// Anything that exists, has existed, or will exist.
+message Entity
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+ }
+// An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition.
+message EvidenceLine
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+ repeated  string isAbout = 0
+ repeated  contribution contributions = 0
+  string dateAuthored = 0
+ repeated  string specifiedBy = 0
+ repeated  coding methodTypes = 0
+ repeated  informationEntity derivedFrom = 0
+ repeated  string reportedIn = 0
+  coding informationQuality = 0
+  recordMetadata recordMetadata = 0
+  proposition targetProposition = 0
+ repeated  informationEntity evidenceItems = 0
+  string directionOfEvidenceProvided = 0
+  string strengthOfEvidenceProvided = 0
+  float scoreOfEvidenceProvided = 0
+ }
+// A structure for labels representing systematic expressions that describe an entity, as generated by formal nomenclatures (e.g. HGVS for genetic variants, ISCN for karyotypes, HLA nomenclature for HLA genes/alleles).
+message Expression
+ {
+  string value = 0
+  uriorcurie systemURL = 0
+  string systemVersion = 0
+ }
+// A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification.
+message Extension
+ {
+  string extensionDescription = 0
+  string name = 0
+  string value = 0
+ }
+// An abstract (non-physical) entity that is about something. It represents the abstract 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs.
+message InformationEntity
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+ repeated  string isAbout = 0
+ repeated  contribution contributions = 0
+  string dateAuthored = 0
+ repeated  string specifiedBy = 0
+ repeated  coding methodTypes = 0
+ repeated  informationEntity derivedFrom = 0
+ repeated  string reportedIn = 0
+  coding informationQuality = 0
+  recordMetadata recordMetadata = 0
+ }
+// A set of instructions that specify how to achieve some objective. These may vary in the level of detail they provide, and in scientific research, these include things like experimental protocols, study designs, data analysis parameters,  curation guidelines, cohort selection criteria, and rule sets.
+message Method
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+ repeated  string isAbout = 0
+ repeated  contribution contributions = 0
+  string dateAuthored = 0
+ repeated  string specifiedBy = 0
+ repeated  coding methodTypes = 0
+ repeated  informationEntity derivedFrom = 0
+ repeated  string reportedIn = 0
+  coding informationQuality = 0
+  recordMetadata recordMetadata = 0
+  coding subtype = 0
+ repeated  string urls = 0
+ }
+// An abstract entity representing a possible fact that is either true or false.
+message Proposition
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+  string propositionText = 0
+  string subject = 0
+  coding predicate = 0
+  string object = 0
+ repeated  qualifier qualifier = 0
+  boolean negated = 0
+ }
+// A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.
+message Qualifier
+ {
+  string name = 0
+  string value = 0
+ }
+// A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents).
+message RecordMetadata
+ {
+  string recordIdentifier = 0
+  string recordVersion = 0
+ repeated  string derivedFromRecord = 0
+  date dateRecordCreated = 0
+ repeated  contribution contributions = 0
+ }
+// A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.
+message Statement
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+ repeated  string isAbout = 0
+ repeated  contribution contributions = 0
+  string dateAuthored = 0
+ repeated  string specifiedBy = 0
+ repeated  coding methodTypes = 0
+ repeated  informationEntity derivedFrom = 0
+ repeated  string reportedIn = 0
+  coding informationQuality = 0
+  recordMetadata recordMetadata = 0
+  string statementText = 0
+  proposition proposition = 0
+  string subject = 0
+  coding predicate = 0
+  string object = 0
+ repeated  qualifier qualifier = 0
+  string direction = 0
+  string strength = 0
+  float score = 0
+  coding subjectClassification = 0
+ repeated  string hasEvidenceOfTypes = 0
+ repeated  evidenceLine hasEvidenceLines = 0
+ repeated  informationEntity hasEvidence = 0
+ }
+// A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income) May be referred to as a 'cohort' or 'population' in specific research settings.
+message StudyGroup
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+  integer memberCount = 0
+ repeated  studyGroup isSubsetOf = 0
+ repeated  characteristic characteristics = 0
+ }
+// A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated.
+message StudyResult
+ {
+  string id = 0
+ repeated  string identifiers = 0
+  string type = 0
+  string label = 0
+ repeated  string alternativeLabels = 0
+  string description = 0
+ repeated  extension extensions = 0
+ repeated  string isAbout = 0
+ repeated  contribution contributions = 0
+  string dateAuthored = 0
+ repeated  string specifiedBy = 0
+ repeated  coding methodTypes = 0
+ repeated  informationEntity derivedFrom = 0
+ repeated  string reportedIn = 0
+  coding informationQuality = 0
+  recordMetadata recordMetadata = 0
+  string focus = 0
+ repeated  dataItem dataItems = 0
+  coding interpretation = 0
+ repeated  dataSet sourceDataSet = 0
+ repeated  studyResult componentResult = 0
+  studyGroup studyGroup = 0
  }

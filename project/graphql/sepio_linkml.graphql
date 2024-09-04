@@ -1,67 +1,343 @@
-type Address
-  {
-    street: String
-    city: String
-    postalCode: String
-  }
-
-type FamilialRelationship
-  {
-    startedAtTime: Date
-    endedAtTime: Date
-    relatedTo: String
-    type: FamilialRelationshipType!
-    relatedTo: Person!
-  }
-
-interface HasAliases
-  {
-    aliases: [String]
-  }
-
-type NamedThing
+# metamodel_version: 1.7.0
+type Activity
   {
     id: String!
-    name: String
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
     description: String
-    image: String
+    extensions: [Extension]
+    subtype: Coding
+    date: Date
+    performedBy: [Agent]
+    specifiedBy: [Method]
+    input: [Entity]
+    output: [Entity]
   }
 
-type Organization implements HasAliases
+type Agent
   {
     id: String!
-    name: String
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
     description: String
-    image: String
-    missionStatement: String
-    foundingDate: String
-    aliases: [String]
+    extensions: [Extension]
+    subtype: String
+    name: String
   }
 
-type Person implements HasAliases
+type Characteristic
+  {
+    name: String!
+    values: [String]!
+    valueOperator: String
+  }
+
+type Coding
+  {
+    code: String
+    label: String
+    system: String
+    systemVersion: String
+  }
+
+type Contribution
   {
     id: String!
-    name: String
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
     description: String
-    image: String
-    primaryEmail: String
-    birthDate: String
-    ageInYears: Integer
-    currentAddress: Address
-    hasFamilialRelationships: [FamilialRelationship]
-    aliases: [String]
+    extensions: [Extension]
+    subtype: Coding
+    date: Date
+    performedBy: [Agent]
+    specifiedBy: [Method]
+    input: [Entity]
+    output: [Entity]
+    contributor: Agent
+    activityType: [Coding]
+    contributionMadeTo: InformationEntity
   }
 
-type Registry
+type DataItem
   {
-    persons: [Person]
-    organizations: [Organization]
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    isAbout: [String]
+    contributions: [Contribution]
+    dateAuthored: String
+    specifiedBy: [String]
+    methodTypes: [Coding]
+    derivedFrom: [InformationEntity]
+    reportedIn: [String]
+    informationQuality: Coding
+    recordMetadata: RecordMetadata
+    subtype: Coding
+    value: String!
+    unit: Coding
+    variabilityMeasures: [DataItem]
+    confidenceInterval: DataItem
+    componentDataItem: [DataItem]
   }
 
-type Relationship
+type DataSet
   {
-    startedAtTime: Date
-    endedAtTime: Date
-    relatedTo: String
-    type: String
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    isAbout: [String]
+    contributions: [Contribution]
+    dateAuthored: String
+    specifiedBy: [String]
+    methodTypes: [Coding]
+    derivedFrom: [InformationEntity]
+    reportedIn: [String]
+    informationQuality: Coding
+    recordMetadata: RecordMetadata
+    subtype: Coding
+    releaseDate: Date
+    version: String
+    license: String
   }
+
+type Document
+  {
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    isAbout: [String]
+    contributions: [Contribution]
+    dateAuthored: String
+    specifiedBy: [String]
+    methodTypes: [Coding]
+    derivedFrom: [InformationEntity]
+    reportedIn: [String]
+    informationQuality: Coding
+    recordMetadata: RecordMetadata
+    subtype: Coding
+    title: String
+    urls: [String]
+    pmid: String
+    doi: String
+    license: String
+  }
+
+type Entity
+  {
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+  }
+
+type EvidenceLine
+  {
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    isAbout: [String]
+    contributions: [Contribution]
+    dateAuthored: String
+    specifiedBy: [String]
+    methodTypes: [Coding]
+    derivedFrom: [InformationEntity]
+    reportedIn: [String]
+    informationQuality: Coding
+    recordMetadata: RecordMetadata
+    targetProposition: Proposition
+    evidenceItems: [InformationEntity]
+    directionOfEvidenceProvided: String
+    strengthOfEvidenceProvided: String
+    scoreOfEvidenceProvided: Float
+  }
+
+type Expression
+  {
+    value: String!
+    systemURL: Uriorcurie
+    systemVersion: String
+  }
+
+type Extension
+  {
+    extensionDescription: String
+    name: String!
+    value: String!
+  }
+
+type InformationEntity
+  {
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    isAbout: [String]
+    contributions: [Contribution]
+    dateAuthored: String
+    specifiedBy: [String]
+    methodTypes: [Coding]
+    derivedFrom: [InformationEntity]
+    reportedIn: [String]
+    informationQuality: Coding
+    recordMetadata: RecordMetadata
+  }
+
+type Method
+  {
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    isAbout: [String]
+    contributions: [Contribution]
+    dateAuthored: String
+    specifiedBy: [String]
+    methodTypes: [Coding]
+    derivedFrom: [InformationEntity]
+    reportedIn: [String]
+    informationQuality: Coding
+    recordMetadata: RecordMetadata
+    subtype: Coding
+    urls: [String]
+  }
+
+type Proposition
+  {
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    propositionText: String
+    subject: String!
+    predicate: Coding!
+    object: String!
+    qualifier: [Qualifier]
+    negated: Boolean
+  }
+
+type Qualifier
+  {
+    name: String!
+    value: String!
+  }
+
+type RecordMetadata
+  {
+    recordIdentifier: String
+    recordVersion: String
+    derivedFromRecord: [String]
+    dateRecordCreated: Date
+    contributions: [Contribution]
+  }
+
+type Statement
+  {
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    isAbout: [String]
+    contributions: [Contribution]
+    dateAuthored: String
+    specifiedBy: [String]
+    methodTypes: [Coding]
+    derivedFrom: [InformationEntity]
+    reportedIn: [String]
+    informationQuality: Coding
+    recordMetadata: RecordMetadata
+    statementText: String
+    proposition: Proposition
+    subject: String
+    predicate: Coding
+    object: String
+    qualifier: [Qualifier]
+    direction: String
+    strength: String
+    score: Float
+    subjectClassification: Coding
+    hasEvidenceOfTypes: [String]
+    hasEvidenceLines: [EvidenceLine]
+    hasEvidence: [InformationEntity]
+  }
+
+type StudyGroup
+  {
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    memberCount: Integer
+    isSubsetOf: [StudyGroup]
+    characteristics: [Characteristic]
+  }
+
+type StudyResult
+  {
+    id: String!
+    identifiers: [String]
+    type: String!
+    label: String
+    alternativeLabels: [String]
+    description: String
+    extensions: [Extension]
+    isAbout: [String]
+    contributions: [Contribution]
+    dateAuthored: String
+    specifiedBy: [String]
+    methodTypes: [Coding]
+    derivedFrom: [InformationEntity]
+    reportedIn: [String]
+    informationQuality: Coding
+    recordMetadata: RecordMetadata
+    focus: String
+    dataItems: [DataItem]
+    interpretation: Coding
+    sourceDataSet: [DataSet]
+    componentResult: [StudyResult]
+    studyGroup: StudyGroup
+  }
+
+type Utility
+  {
+  }
+

@@ -1,243 +1,2424 @@
 {
-   "$defs": {
-      "Address": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "city": {
-               "type": "string"
+    "$defs": {
+        "Activity": {
+            "additionalProperties": false,
+            "description": "An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "date": {
+                    "description": "The date that the Activity was completed.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "input": {
+                    "description": "An entity that was input into the Activity (could be material or information)",
+                    "items": {
+                        "$ref": "#/$defs/Entity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "output": {
+                    "description": "An entity that was output from the Activity (could be material or information)",
+                    "items": {
+                        "$ref": "#/$defs/Entity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "performedBy": {
+                    "description": "An Agent who participated in executing the Activity.",
+                    "items": {
+                        "$ref": "#/$defs/Agent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A method that was followed in performing an Activity, that describes how it was executed.",
+                    "items": {
+                        "$ref": "#/$defs/Method"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subtype": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A specific type of activity the Activity instance represents."
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "postal_code": {
-               "type": "string"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "Activity",
+            "type": "object"
+        },
+        "Agent": {
+            "additionalProperties": false,
+            "description": "An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent\u2019s activity.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "The given name of the Agent.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subtype": {
+                    "description": "A specific type of agent the Agent object represents. Must be one of {person, organization, software}",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "street": {
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "Address",
-         "type": "object"
-      },
-      "FamilialRelationship": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "ended_at_time": {
-               "format": "date",
-               "type": "string"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "Agent",
+            "type": "object"
+        },
+        "Characteristic": {
+            "additionalProperties": false,
+            "description": "An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup.",
+            "properties": {
+                "name": {
+                    "description": "The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status').",
+                    "type": "string"
+                },
+                "valueOperator": {
+                    "description": "An operation that defines how to logically interpret a set of more than one Characteristic values ('AND', 'OR', 'NOT')",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "values": {
+                    "description": "The specific value(s) that the indicated traitor role  holds in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer').",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
             },
-            "related_to": {
-               "type": "string"
+            "required": [
+                "name",
+                "values"
+            ],
+            "title": "Characteristic",
+            "type": "object"
+        },
+        "Coding": {
+            "additionalProperties": false,
+            "description": "A structured representation of a code for a defined concept in a terminology or code system.",
+            "properties": {
+                "code": {
+                    "description": "A symbol uniquely identifying the concept, as in a syntax defined by the code system.  CURIE format is preferred where possible (e.g. \u2018SO:0000704\u2019 is the CURIE form of the Sequence Ontology code for 'gene').",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "The human-readable name for the coded concept, as defined by the code system.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "system": {
+                    "description": "The terminology/code system that defined the code.  May be reported as a free-text name (e.g. \u2018Sequence Ontology\u2019), but it is preferable to provide  a uri/url for the system. When the 'code' is reported as a CURIE, the 'system' should be reported as the uri that the CURIE's prefix expands to (e.g. 'http://purl.obofoundry.org/so.owl/' for the Sequence Ontology).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "systemVersion": {
+                    "description": "Version of the terminology or code system that provided the code.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
             },
-            "started_at_time": {
-               "format": "date",
-               "type": "string"
+            "title": "Coding",
+            "type": "object"
+        },
+        "Contribution": {
+            "additionalProperties": false,
+            "description": "An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.)",
+            "properties": {
+                "activityType": {
+                    "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc. . Values of this property may be framed as activities or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO).)",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contributionMadeTo": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/InformationEntity"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The artifact toward which the contribution was made."
+                },
+                "contributor": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Agent"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The Agent that made the contribution."
+                },
+                "date": {
+                    "description": "The date that the Activity was completed.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "input": {
+                    "description": "An entity that was input into the Activity (could be material or information)",
+                    "items": {
+                        "$ref": "#/$defs/Entity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "output": {
+                    "description": "An entity that was output from the Activity (could be material or information)",
+                    "items": {
+                        "$ref": "#/$defs/Entity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "performedBy": {
+                    "description": "An Agent who participated in executing the Activity.",
+                    "items": {
+                        "$ref": "#/$defs/Agent"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A method that was followed in performing an Activity, that describes how it was executed.",
+                    "items": {
+                        "$ref": "#/$defs/Method"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subtype": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A specific type of activity the Activity instance represents."
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "type": {
-               "$ref": "#/$defs/FamilialRelationshipType"
-            }
-         },
-         "required": [
-            "type",
-            "related_to"
-         ],
-         "title": "FamilialRelationship",
-         "type": "object"
-      },
-      "FamilialRelationshipType": {
-         "description": "",
-         "enum": [
-            "SIBLING_OF",
-            "PARENT_OF",
-            "CHILD_OF"
-         ],
-         "title": "FamilialRelationshipType",
-         "type": "string"
-      },
-      "NamedThing": {
-         "additionalProperties": false,
-         "description": "A generic grouping for any identifiable entity",
-         "properties": {
-            "description": {
-               "type": "string"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "Contribution",
+            "type": "object"
+        },
+        "DataItem": {
+            "additionalProperties": false,
+            "description": "An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "componentDataItem": {
+                    "description": "A more foundational data item that is a logical component of a compound data item.",
+                    "items": {
+                        "$ref": "#/$defs/DataItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "confidenceInterval": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/DataItem"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A measure of the probability that a parameter of interest will fall within a defined range of values around a mean or other statistical calculation."
+                },
+                "contributions": {
+                    "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Contribution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dateAuthored": {
+                    "description": "Indicates when the information content expressed in the Information Entity was generated.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivedFrom": {
+                    "description": "Another Information Entity from which this Information Entity is derived, in whole or in part",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "informationQuality": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
+                },
+                "isAbout": {
+                    "description": "An entity or concept in the world that the information entity describes/is about.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "methodTypes": {
+                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "recordMetadata": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RecordMetadata"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries."
+                },
+                "reportedIn": {
+                    "description": "A document in which the Information Entity is reported",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subtype": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')"
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                },
+                "unit": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A unit of measure for the value (e.g. meters, grams, fluorescent units, seconds, mg/ml, etc.)"
+                },
+                "value": {
+                    "description": "The value of the data item (could be quantitative or qualitative depending on the type of data item).",
+                    "type": "string"
+                },
+                "variabilityMeasures": {
+                    "description": "A statistical score describing the variability inherent in a data item representing a statistical summary of a set of observations/measurements (e.g. the standard deviation associated with a statistical mean calculated across several experimental replicates).",
+                    "items": {
+                        "$ref": "#/$defs/DataItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
             },
-            "id": {
-               "type": "string"
+            "required": [
+                "value",
+                "id",
+                "type"
+            ],
+            "title": "DataItem",
+            "type": "object"
+        },
+        "DataSet": {
+            "additionalProperties": false,
+            "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contributions": {
+                    "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Contribution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dateAuthored": {
+                    "description": "Indicates when the information content expressed in the Information Entity was generated.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivedFrom": {
+                    "description": "Another Information Entity from which this Information Entity is derived, in whole or in part",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "informationQuality": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
+                },
+                "isAbout": {
+                    "description": "An entity or concept in the world that the information entity describes/is about.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "license": {
+                    "description": "A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "methodTypes": {
+                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "recordMetadata": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RecordMetadata"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries."
+                },
+                "releaseDate": {
+                    "description": "Indicates when a version of a DataSet was formally released.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "reportedIn": {
+                    "description": "A document in which the Information Entity is reported",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subtype": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')"
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "The version of the DataSet, as assigned by its creator.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
             },
-            "image": {
-               "type": "string"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "DataSet",
+            "type": "object"
+        },
+        "Document": {
+            "additionalProperties": false,
+            "description": "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contributions": {
+                    "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Contribution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dateAuthored": {
+                    "description": "Indicates when the information content expressed in the Information Entity was generated.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivedFrom": {
+                    "description": "Another Information Entity from which this Information Entity is derived, in whole or in part",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "doi": {
+                    "description": "A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_` for the document.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "informationQuality": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
+                },
+                "isAbout": {
+                    "description": "An entity or concept in the world that the information entity describes/is about.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "license": {
+                    "description": "A specific license that dictates legal permissions for how a document can be used (by whom, where, for what purposes, with what additional requirements, etc.)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "methodTypes": {
+                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "pmid": {
+                    "description": "A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_ for the document.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "recordMetadata": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RecordMetadata"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries."
+                },
+                "reportedIn": {
+                    "description": "A document in which the Information Entity is reported",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subtype": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')"
+                },
+                "title": {
+                    "description": "The official title given to the document by its authors.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                },
+                "urls": {
+                    "description": "The URL/web address from which the content of the Document can be retrieved.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
             },
-            "name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id"
-         ],
-         "title": "NamedThing",
-         "type": "object"
-      },
-      "Organization": {
-         "additionalProperties": false,
-         "description": "An organization such as a company or university",
-         "properties": {
-            "aliases": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "Document",
+            "type": "object"
+        },
+        "Entity": {
+            "additionalProperties": false,
+            "description": "Anything that exists, has existed, or will exist.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "description": {
-               "type": "string"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "Entity",
+            "type": "object"
+        },
+        "EvidenceLine": {
+            "additionalProperties": false,
+            "description": "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contributions": {
+                    "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Contribution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dateAuthored": {
+                    "description": "Indicates when the information content expressed in the Information Entity was generated.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivedFrom": {
+                    "description": "Another Information Entity from which this Information Entity is derived, in whole or in part",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "directionOfEvidenceProvided": {
+                    "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "evidenceItems": {
+                    "description": "An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "informationQuality": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
+                },
+                "isAbout": {
+                    "description": "An entity or concept in the world that the information entity describes/is about.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "methodTypes": {
+                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "recordMetadata": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RecordMetadata"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries."
+                },
+                "reportedIn": {
+                    "description": "A document in which the Information Entity is reported",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "scoreOfEvidenceProvided": {
+                    "description": "A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "strengthOfEvidenceProvided": {
+                    "description": "The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "targetProposition": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Proposition"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that some variant is pathogenic for a specific disease."
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "founding_date": {
-               "type": "string"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "EvidenceLine",
+            "type": "object"
+        },
+        "Expression": {
+            "additionalProperties": false,
+            "description": "A structure for labels representing systematic expressions that describe an entity, as generated by formal nomenclatures (e.g. HGVS for genetic variants, ISCN for karyotypes, HLA nomenclature for HLA genes/alleles).",
+            "properties": {
+                "systemURL": {
+                    "description": "A URL for the nomenclature system",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "systemVersion": {
+                    "description": "The version of the nomenclature system.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "A free-text rendering of the expression used as a label for the entity",
+                    "type": "string"
+                }
             },
-            "id": {
-               "type": "string"
+            "required": [
+                "value"
+            ],
+            "title": "Expression",
+            "type": "object"
+        },
+        "Extension": {
+            "additionalProperties": false,
+            "description": "A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification.",
+            "properties": {
+                "extensionDescription": {
+                    "description": "A free text description of the intended meaning and use of the extension element, which may include the types of values it takes, and how to interpret these values in the context of the parent Class.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A name for the Extension. Should be indicative of its meaning and/or the type of information it value represents.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "The value of the Extension - can be any primitive or structured object",
+                    "type": "string"
+                }
             },
-            "image": {
-               "type": "string"
+            "required": [
+                "name",
+                "value"
+            ],
+            "title": "Extension",
+            "type": "object"
+        },
+        "InformationEntity": {
+            "additionalProperties": false,
+            "description": "An abstract (non-physical) entity that is about something. It represents the abstract 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contributions": {
+                    "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Contribution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dateAuthored": {
+                    "description": "Indicates when the information content expressed in the Information Entity was generated.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivedFrom": {
+                    "description": "Another Information Entity from which this Information Entity is derived, in whole or in part",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "informationQuality": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
+                },
+                "isAbout": {
+                    "description": "An entity or concept in the world that the information entity describes/is about.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "methodTypes": {
+                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "recordMetadata": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RecordMetadata"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries."
+                },
+                "reportedIn": {
+                    "description": "A document in which the Information Entity is reported",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "mission_statement": {
-               "type": "string"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "InformationEntity",
+            "type": "object"
+        },
+        "Method": {
+            "additionalProperties": false,
+            "description": "A set of instructions that specify how to achieve some objective. These may vary in the level of detail they provide, and in scientific research, these include things like experimental protocols, study designs, data analysis parameters,  curation guidelines, cohort selection criteria, and rule sets.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contributions": {
+                    "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Contribution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dateAuthored": {
+                    "description": "Indicates when the information content expressed in the Information Entity was generated.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivedFrom": {
+                    "description": "Another Information Entity from which this Information Entity is derived, in whole or in part",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "informationQuality": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
+                },
+                "isAbout": {
+                    "description": "An entity or concept in the world that the information entity describes/is about.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "methodTypes": {
+                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "recordMetadata": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RecordMetadata"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries."
+                },
+                "reportedIn": {
+                    "description": "A document in which the Information Entity is reported",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subtype": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol')"
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                },
+                "urls": {
+                    "description": "The URL/web address from which the Method can be retrieved.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
             },
-            "name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id"
-         ],
-         "title": "Organization",
-         "type": "object"
-      },
-      "Person": {
-         "additionalProperties": false,
-         "description": "A person (alive, dead, undead, or fictional).",
-         "properties": {
-            "age_in_years": {
-               "maximum": 999,
-               "minimum": 0,
-               "type": "integer"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "Method",
+            "type": "object"
+        },
+        "Proposition": {
+            "additionalProperties": false,
+            "description": "An abstract entity representing a possible fact that is either true or false.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "negated": {
+                    "description": "A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate, object, and qualifier(s) (e.g. that \"Variant X is NOT pathogenic for Disease Y\")",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "object": {
+                    "description": "An Entity or concept that is related to the subject of a Proposition via its predicate.",
+                    "type": "string"
+                },
+                "predicate": {
+                    "$ref": "#/$defs/Coding",
+                    "description": "The relationship declared to hold between the subject and the object of the Proposition."
+                },
+                "propositionText": {
+                    "description": "A natural-language expression of the Proposition's meaning (i.e. the 'possible fact' it expresses).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "qualifier": {
+                    "description": "An additional piece of information that extends or refines the meaning of a Propositions's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.",
+                    "items": {
+                        "$ref": "#/$defs/Qualifier"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subject": {
+                    "description": "The Entity or concept about which the Proposition is made.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "aliases": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+            "required": [
+                "subject",
+                "predicate",
+                "object",
+                "id",
+                "type"
+            ],
+            "title": "Proposition",
+            "type": "object"
+        },
+        "Qualifier": {
+            "additionalProperties": false,
+            "description": "A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.",
+            "properties": {
+                "name": {
+                    "description": "A descriptive name that describes the type of information captured in the Qualifier value.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "The value of the qualifier - holding information that refines/extends the meaning of the Statement.",
+                    "type": "string"
+                }
             },
-            "birth_date": {
-               "type": "string"
+            "required": [
+                "name",
+                "value"
+            ],
+            "title": "Qualifier",
+            "type": "object"
+        },
+        "RecordMetadata": {
+            "additionalProperties": false,
+            "description": "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents).",
+            "properties": {
+                "contributions": {
+                    "description": "describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object",
+                    "items": {
+                        "$ref": "#/$defs/Contribution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dateRecordCreated": {
+                    "description": "The date the record was initially created.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivedFromRecord": {
+                    "description": "Another data record from which the record described here was derived, through a data ingest and/or transformation process.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "recordIdentifier": {
+                    "description": "The identifier of the record described in the RecordMetadata object (required when the record described is not the one in the present system)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "recordVersion": {
+                    "description": "The version number of the record-level artifact the object describes",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
             },
-            "current_address": {
-               "$ref": "#/$defs/Address",
-               "description": "The address at which a person currently lives"
+            "title": "RecordMetadata",
+            "type": "object"
+        },
+        "Statement": {
+            "additionalProperties": false,
+            "description": "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contributions": {
+                    "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Contribution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dateAuthored": {
+                    "description": "Indicates when the information content expressed in the Information Entity was generated.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivedFrom": {
+                    "description": "Another Information Entity from which this Information Entity is derived, in whole or in part",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "direction": {
+                    "description": "A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "hasEvidence": {
+                    "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "hasEvidenceLines": {
+                    "description": "An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes  the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).",
+                    "items": {
+                        "$ref": "#/$defs/EvidenceLine"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "hasEvidenceOfTypes": {
+                    "description": "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "informationQuality": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
+                },
+                "isAbout": {
+                    "description": "An entity or concept in the world that the information entity describes/is about.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "methodTypes": {
+                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "object": {
+                    "description": "An Entity or concept that is related to the subject of a Statement via its predicate.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "predicate": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The relationship declared to hold between the subject and the object of the Statement."
+                },
+                "proposition": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Proposition"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A possible fact that the Statement assesses or puts forth as true."
+                },
+                "qualifier": {
+                    "description": "An additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.",
+                    "items": {
+                        "$ref": "#/$defs/Qualifier"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "recordMetadata": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RecordMetadata"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries."
+                },
+                "reportedIn": {
+                    "description": "A document in which the Information Entity is reported",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "score": {
+                    "description": "A quantitative score that indicates the strength of a Proposition's validity assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "statementText": {
+                    "description": "A natural-language expression of what a Statement asserts to be true.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "strength": {
+                    "description": "A term used to report the strength of a Proposition's validity assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a strength assessment may be framed in terms of how *confident* the agent is that the Proposition is true or false, or in terms of the *strength of evidence* they believe supports or disputes it.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject": {
+                    "description": "The Entity or concept about which the Statement is made.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subjectClassification": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject."
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "description": {
-               "type": "string"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "Statement",
+            "type": "object"
+        },
+        "StudyGroup": {
+            "additionalProperties": false,
+            "description": "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income) May be referred to as a 'cohort' or 'population' in specific research settings.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "characteristics": {
+                    "description": "A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group.",
+                    "items": {
+                        "$ref": "#/$defs/Characteristic"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "isSubsetOf": {
+                    "description": "A larger StudyGroup of which this StudyGroup represents a subset.",
+                    "items": {
+                        "$ref": "#/$defs/StudyGroup"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "memberCount": {
+                    "description": "The total number of individual members in the StudyGroup.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "has_familial_relationships": {
-               "items": {
-                  "$ref": "#/$defs/FamilialRelationship"
-               },
-               "type": "array"
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "StudyGroup",
+            "type": "object"
+        },
+        "StudyResult": {
+            "additionalProperties": false,
+            "description": "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated.",
+            "properties": {
+                "alternativeLabels": {
+                    "description": "Alternative name(s) for the Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "componentResult": {
+                    "description": "Another StudyResult comprised of data items about the same focus as its parent Result, but based on a more narrowly scoped analysis of the foundational data (e.g. an analysis based on data about a subset of the parent Results full study population) .",
+                    "items": {
+                        "$ref": "#/$defs/StudyResult"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contributions": {
+                    "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Contribution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dataItems": {
+                    "description": "A DataItem that is included in the StudyResult because it pertains to the entity that is the 'focus'. This data can directly describe this focus, or represent metadata about how data in the Result was generated.",
+                    "items": {
+                        "$ref": "#/$defs/DataItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dateAuthored": {
+                    "description": "Indicates when the information content expressed in the Information Entity was generated.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivedFrom": {
+                    "description": "Another Information Entity from which this Information Entity is derived, in whole or in part",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A free text description of the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extensions": {
+                    "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+                    "items": {
+                        "$ref": "#/$defs/Extension"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "focus": {
+                    "description": "A specific subject or experimental unit in a Study, that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "informationQuality": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
+                },
+                "interpretation": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Coding"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The outcome of an interpretation of lower-level data item(s) in a StudyResult, that express some broader conclusion or insight that was made (e.g. that data indicates a result to be is high, normal, or low)."
+                },
+                "isAbout": {
+                    "description": "An entity or concept in the world that the information entity describes/is about.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "A primary name for the Entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "methodTypes": {
+                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "recordMetadata": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RecordMetadata"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries."
+                },
+                "reportedIn": {
+                    "description": "A document in which the Information Entity is reported",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sourceDataSet": {
+                    "description": "A larger DataSet from which the content of the StudyResult was derived.",
+                    "items": {
+                        "$ref": "#/$defs/DataSet"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specifiedBy": {
+                    "description": "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "studyGroup": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/StudyGroup"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult."
+                },
+                "type": {
+                    "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "type": "string"
+                }
             },
-            "id": {
-               "type": "string"
-            },
-            "image": {
-               "type": "string"
-            },
-            "name": {
-               "type": "string"
-            },
-            "primary_email": {
-               "pattern": "^\\S+@[\\S+\\.]+\\S+",
-               "type": "string"
-            }
-         },
-         "required": [
-            "id"
-         ],
-         "title": "Person",
-         "type": "object"
-      },
-      "PersonStatus": {
-         "description": "",
-         "enum": [
-            "ALIVE",
-            "DEAD",
-            "UNKNOWN"
-         ],
-         "title": "PersonStatus",
-         "type": "string"
-      },
-      "Registry": {
-         "additionalProperties": false,
-         "description": "Top level data container",
-         "properties": {
-            "organizations": {
-               "items": {
-                  "$ref": "#/$defs/Organization"
-               },
-               "type": "array"
-            },
-            "persons": {
-               "items": {
-                  "$ref": "#/$defs/Person"
-               },
-               "type": "array"
-            }
-         },
-         "required": [],
-         "title": "Registry",
-         "type": "object"
-      },
-      "Relationship": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "ended_at_time": {
-               "format": "date",
-               "type": "string"
-            },
-            "related_to": {
-               "type": "string"
-            },
-            "started_at_time": {
-               "format": "date",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "Relationship",
-         "type": "object"
-      }
-   },
-   "$id": "https://w3id.org/my_org/my_datamodel",
-   "$schema": "http://json-schema.org/draft-07/schema#",
-   "additionalProperties": true,
-   "metamodel_version": "1.7.0",
-   "properties": {
-      "organizations": {
-         "items": {
-            "$ref": "#/$defs/Organization"
-         },
-         "type": "array"
-      },
-      "persons": {
-         "items": {
-            "$ref": "#/$defs/Person"
-         },
-         "type": "array"
-      }
-   },
-   "required": [],
-   "title": "my_datamodel",
-   "type": "object",
-   "version": null
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "StudyResult",
+            "type": "object"
+        },
+        "Utility": {
+            "additionalProperties": false,
+            "description": "An abstract organizational class that groups classes acting as complex datatypes in the model - providing reusable collections of fields that can be plugged into other objects to capture sets of related information.",
+            "title": "Utility",
+            "type": "object"
+        }
+    },
+    "$id": "https://w3id.org/sepio-framework/sepio-linkml",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "sepio-linkml",
+    "type": "object",
+    "version": null
 }

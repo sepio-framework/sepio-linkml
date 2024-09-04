@@ -1,164 +1,1640 @@
-@prefix famrel: <http://example.org/famrel/> .
-@prefix my_datamodel: <https://w3id.org/my_org/my_datamodel> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-my_datamodel:HasAliases a sh:NodeShape ;
+<https://example.org/sepio-model/Document> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/InformationEntity> ;
     sh:closed true ;
-    sh:description "A mixin applied to any class that can have aliases/alternateNames" ;
+    sh:description "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:order 0 ;
-            sh:path my_datamodel:aliases ] ;
-    sh:targetClass my_datamodel:HasAliases .
-
-my_datamodel:NamedThing a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A generic grouping for any identifiable entity" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path schema:identifier ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path schema:name ],
-        [ sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path schema:image ],
-        [ sh:maxCount 1 ;
+    sh:name "Document" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The URL/web address from which the content of the Document can be retrieved." ;
+            sh:nodeKind sh:Literal ;
             sh:order 2 ;
-            sh:path schema:description ] ;
-    sh:targetClass my_datamodel:NamedThing .
-
-my_datamodel:Registry a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Top level data container" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class schema:Person ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path my_datamodel:persons ],
-        [ sh:class schema:Organization ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path my_datamodel:organizations ] ;
-    sh:targetClass my_datamodel:Registry .
-
-my_datamodel:Relationship a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <http://www.w3.org/ns/prov#startedAtTime> ],
-        [ sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path my_datamodel:type ],
-        [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path my_datamodel:related_to ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <http://www.w3.org/ns/prov#endedAtTime> ] ;
-    sh:targetClass my_datamodel:Relationship .
-
-schema:Organization a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "An organization such as a company or university" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path my_datamodel:founding_date ],
-        [ sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema:description ],
-        [ sh:order 2 ;
-            sh:path my_datamodel:aliases ],
-        [ sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path schema:image ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path my_datamodel:mission_statement ],
-        [ sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path schema:identifier ],
-        [ sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema:name ] ;
-    sh:targetClass schema:Organization .
-
-schema:Person a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A person (alive, dead, undead, or fictional)." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path schema:identifier ],
-        [ sh:maxCount 1 ;
-            sh:order 8 ;
-            sh:path schema:description ],
-        [ sh:maxCount 1 ;
-            sh:order 9 ;
-            sh:path schema:image ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path schema:email ;
-            sh:pattern "^\\S+@[\\S+\\.]+\\S+" ],
-        [ sh:maxCount 1 ;
-            sh:maxInclusive 999 ;
-            sh:minInclusive 0 ;
-            sh:order 2 ;
-            sh:path my_datamodel:age_in_years ],
-        [ sh:class schema:PostalAddress ;
-            sh:description "The address at which a person currently lives" ;
+            sh:path <https://example.org/sepio-model/urls> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')" ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/subtype> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 20 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_ for the document." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
             sh:order 3 ;
-            sh:path my_datamodel:current_address ],
-        [ sh:class my_datamodel:FamilialRelationship ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 4 ;
-            sh:path my_datamodel:has_familial_relationships ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path schema:birthDate ],
-        [ sh:maxCount 1 ;
+            sh:path <https://example.org/sepio-model/pmid> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/dateAuthored> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "Types of methodological approaches used to collect, generate, or evaluate the reported information." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/methodTypes> ],
+        [ sh:class <https://example.org/sepio-model/Contribution> ;
+            sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 7 ;
-            sh:path schema:name ],
-        [ sh:order 5 ;
-            sh:path my_datamodel:aliases ] ;
-    sh:targetClass schema:Person .
-
-schema:PostalAddress a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path my_datamodel:city ],
-        [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path my_datamodel:postal_code ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path my_datamodel:street ] ;
-    sh:targetClass schema:PostalAddress .
-
-my_datamodel:FamilialRelationship a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <http://www.w3.org/ns/prov#endedAtTime> ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <http://www.w3.org/ns/prov#startedAtTime> ],
-        [ sh:in ( famrel:01 famrel:02 famrel:01 ) ;
+            sh:path <https://example.org/sepio-model/contributions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A document in which the Information Entity is reported" ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/reportedIn> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An entity or concept in the world that the information entity describes/is about." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/isAbout> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specific license that dictates legal permissions for how a document can be used (by whom, where, for what purposes, with what additional requirements, etc.)" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/license> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 3 ;
-            sh:path my_datamodel:type ],
-        [ sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 18 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:class <https://example.org/sepio-model/RecordMetadata> ;
+            sh:description "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path <https://example.org/sepio-model/recordMetadata> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 19 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification)." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The official title given to the document by its authors." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/title> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 17 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_` for the document." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/doi> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/derivedFrom> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 21 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path <https://example.org/sepio-model/informationQuality> ] ;
+    sh:targetClass <https://example.org/sepio-model/Document> .
+
+<https://example.org/sepio-model/Expression> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Utility> ;
+    sh:closed true ;
+    sh:description "A structure for labels representing systematic expressions that describe an entity, as generated by formal nomenclatures (e.g. HGVS for genetic variants, ISCN for karyotypes, HLA nomenclature for HLA genes/alleles)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Expression" ;
+    sh:property [ sh:datatype xsd:anyURI ;
+            sh:description "A URL for the nomenclature system" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/systemURL> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The version of the nomenclature system." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
             sh:order 2 ;
-            sh:path my_datamodel:related_to ] ;
-    sh:targetClass my_datamodel:FamilialRelationship .
+            sh:path <https://example.org/sepio-model/systemVersion> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free-text rendering of the expression used as a label for the entity" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/value> ] ;
+    sh:targetClass <https://example.org/sepio-model/Expression> .
+
+<https://example.org/sepio-model/Statement> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/InformationEntity> ;
+    sh:closed true ;
+    sh:description "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Statement" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A term used to report the strength of a Proposition's validity assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a strength assessment may be framed in terms of how *confident* the agent is that the Proposition is true or false, or in terms of the *strength of evidence* they believe supports or disputes it." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/strength> ],
+        [ sh:datatype xsd:float ;
+            sh:description "A quantitative score that indicates the strength of a Proposition's validity assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/score> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification)." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 18 ;
+            sh:path <https://example.org/sepio-model/derivedFrom> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/direction> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 28 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:class <https://example.org/sepio-model/Contribution> ;
+            sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path <https://example.org/sepio-model/contributions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The Entity or concept about which the Statement is made." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/subject> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 26 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A natural-language expression of what a Statement asserts to be true." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/statementText> ],
+        [ sh:class <https://example.org/sepio-model/EvidenceLine> ;
+            sh:description "An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes  the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items)." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/hasEvidenceLines> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/hasEvidence> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 22 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:class <https://example.org/sepio-model/Qualifier> ;
+            sh:description "An additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/qualifier> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/subjectClassification> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 23 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 24 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A document in which the Information Entity is reported" ;
+            sh:nodeKind sh:Literal ;
+            sh:order 19 ;
+            sh:path <https://example.org/sepio-model/reportedIn> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An Entity or concept that is related to the subject of a Statement via its predicate." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/object> ],
+        [ sh:class <https://example.org/sepio-model/Proposition> ;
+            sh:description "A possible fact that the Statement assesses or puts forth as true." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/proposition> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path <https://example.org/sepio-model/dateAuthored> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 27 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:class <https://example.org/sepio-model/RecordMetadata> ;
+            sh:description "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 21 ;
+            sh:path <https://example.org/sepio-model/recordMetadata> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "Types of methodological approaches used to collect, generate, or evaluate the reported information." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 17 ;
+            sh:path <https://example.org/sepio-model/methodTypes> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 25 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 20 ;
+            sh:path <https://example.org/sepio-model/informationQuality> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence')." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/hasEvidenceOfTypes> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An entity or concept in the world that the information entity describes/is about." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 13 ;
+            sh:path <https://example.org/sepio-model/isAbout> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "The relationship declared to hold between the subject and the object of the Statement." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/predicate> ] ;
+    sh:targetClass <https://example.org/sepio-model/Statement> .
+
+<https://example.org/sepio-model/Activity> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Entity> ;
+    sh:closed true ;
+    sh:description "An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Activity" ;
+    sh:property [ sh:class <https://example.org/sepio-model/Entity> ;
+            sh:description "An entity that was input into the Activity (could be material or information)" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/input> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:class <https://example.org/sepio-model/Entity> ;
+            sh:description "An entity that was output from the Activity (could be material or information)" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/output> ],
+        [ sh:class <https://example.org/sepio-model/Method> ;
+            sh:description "A method that was followed in performing an Activity, that describes how it was executed." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:datatype xsd:date ;
+            sh:description "The date that the Activity was completed." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/date> ],
+        [ sh:class <https://example.org/sepio-model/Agent> ;
+            sh:description "An Agent who participated in executing the Activity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/performedBy> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A specific type of activity the Activity instance represents." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/subtype> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/extensions> ] ;
+    sh:targetClass <https://example.org/sepio-model/Activity> .
+
+<https://example.org/sepio-model/Characteristic> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Utility> ;
+    sh:closed true ;
+    sh:description "An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Characteristic" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status')." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/name> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An operation that defines how to logically interpret a set of more than one Characteristic values ('AND', 'OR', 'NOT')" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/valueOperator> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The specific value(s) that the indicated traitor role  holds in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer')." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/values> ] ;
+    sh:targetClass <https://example.org/sepio-model/Characteristic> .
+
+<https://example.org/sepio-model/DataSet> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/InformationEntity> ;
+    sh:closed true ;
+    sh:description "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Data Set" ;
+    sh:property [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/informationQuality> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 19 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A document in which the Information Entity is reported" ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/reportedIn> ],
+        [ sh:class <https://example.org/sepio-model/RecordMetadata> ;
+            sh:description "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/recordMetadata> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 13 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "Types of methodological approaches used to collect, generate, or evaluate the reported information." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/methodTypes> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/dateAuthored> ],
+        [ sh:class <https://example.org/sepio-model/Contribution> ;
+            sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/contributions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An entity or concept in the world that the information entity describes/is about." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/isAbout> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 18 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/derivedFrom> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification)." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 17 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:datatype xsd:date ;
+            sh:description "Indicates when a version of a DataSet was formally released." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/releaseDate> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The version of the DataSet, as assigned by its creator." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/version> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/license> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/subtype> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 14 ;
+            sh:path <https://example.org/sepio-model/identifiers> ] ;
+    sh:targetClass <https://example.org/sepio-model/DataSet> .
+
+<https://example.org/sepio-model/EvidenceLine> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/InformationEntity> ;
+    sh:closed true ;
+    sh:description "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Evidence Line" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/strengthOfEvidenceProvided> ],
+        [ sh:class <https://example.org/sepio-model/Proposition> ;
+            sh:description "The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that some variant is pathogenic for a specific disease." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/targetProposition> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/derivedFrom> ],
+        [ sh:class <https://example.org/sepio-model/RecordMetadata> ;
+            sh:description "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path <https://example.org/sepio-model/recordMetadata> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 14 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/evidenceItems> ],
+        [ sh:datatype xsd:float ;
+            sh:description "A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/scoreOfEvidenceProvided> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A document in which the Information Entity is reported" ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/reportedIn> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 18 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/dateAuthored> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 20 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:class <https://example.org/sepio-model/Contribution> ;
+            sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/contributions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 17 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/directionOfEvidenceProvided> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 19 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification)." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An entity or concept in the world that the information entity describes/is about." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/isAbout> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/informationQuality> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "Types of methodological approaches used to collect, generate, or evaluate the reported information." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/methodTypes> ] ;
+    sh:targetClass <https://example.org/sepio-model/EvidenceLine> .
+
+<https://example.org/sepio-model/StudyResult> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/InformationEntity> ;
+    sh:closed true ;
+    sh:description "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Study Result" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 20 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:class <https://example.org/sepio-model/DataSet> ;
+            sh:description "A larger DataSet from which the content of the StudyResult was derived." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/sourceDataSet> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path <https://example.org/sepio-model/informationQuality> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 17 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 21 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specific subject or experimental unit in a Study, that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/focus> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 19 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/derivedFrom> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An entity or concept in the world that the information entity describes/is about." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/isAbout> ],
+        [ sh:class <https://example.org/sepio-model/DataItem> ;
+            sh:description "A DataItem that is included in the StudyResult because it pertains to the entity that is the 'focus'. This data can directly describe this focus, or represent metadata about how data in the Result was generated." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/dataItems> ],
+        [ sh:class <https://example.org/sepio-model/Contribution> ;
+            sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/contributions> ],
+        [ sh:class <https://example.org/sepio-model/StudyResult> ;
+            sh:description "Another StudyResult comprised of data items about the same focus as its parent Result, but based on a more narrowly scoped analysis of the foundational data (e.g. an analysis based on data about a subset of the parent Results full study population) ." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/componentResult> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 18 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/dateAuthored> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "Types of methodological approaches used to collect, generate, or evaluate the reported information." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/methodTypes> ],
+        [ sh:class <https://example.org/sepio-model/StudyGroup> ;
+            sh:description "A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/studyGroup> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A document in which the Information Entity is reported" ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/reportedIn> ],
+        [ sh:class <https://example.org/sepio-model/RecordMetadata> ;
+            sh:description "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path <https://example.org/sepio-model/recordMetadata> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "The outcome of an interpretation of lower-level data item(s) in a StudyResult, that express some broader conclusion or insight that was made (e.g. that data indicates a result to be is high, normal, or low)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/interpretation> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification)." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ] ;
+    sh:targetClass <https://example.org/sepio-model/StudyResult> .
+
+<https://example.org/sepio-model/Method> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/InformationEntity> ;
+    sh:closed true ;
+    sh:description "A set of instructions that specify how to achieve some objective. These may vary in the level of detail they provide, and in scientific research, these include things like experimental protocols, study designs, data analysis parameters,  curation guidelines, cohort selection criteria, and rule sets." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Method" ;
+    sh:property [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/derivedFrom> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "Types of methodological approaches used to collect, generate, or evaluate the reported information." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/methodTypes> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 13 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:class <https://example.org/sepio-model/Contribution> ;
+            sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/contributions> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol')" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/subtype> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 14 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 17 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The URL/web address from which the Method can be retrieved." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/urls> ],
+        [ sh:class <https://example.org/sepio-model/RecordMetadata> ;
+            sh:description "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/recordMetadata> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/informationQuality> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/dateAuthored> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A document in which the Information Entity is reported" ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/reportedIn> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An entity or concept in the world that the information entity describes/is about." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/isAbout> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification)." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path <https://example.org/sepio-model/description> ] ;
+    sh:targetClass <https://example.org/sepio-model/Method> .
+
+<https://example.org/sepio-model/Proposition> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Entity> ;
+    sh:closed true ;
+    sh:description "An abstract entity representing a possible fact that is either true or false." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Proposition" ;
+    sh:property [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A natural-language expression of the Proposition's meaning (i.e. the 'possible fact' it expresses)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/propositionText> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "The relationship declared to hold between the subject and the object of the Proposition." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/predicate> ],
+        [ sh:class <https://example.org/sepio-model/Qualifier> ;
+            sh:description "An additional piece of information that extends or refines the meaning of a Propositions's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/qualifier> ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate, object, and qualifier(s) (e.g. that \"Variant X is NOT pathogenic for Disease Y\")" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/negated> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The Entity or concept about which the Proposition is made." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/subject> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An Entity or concept that is related to the subject of a Proposition via its predicate." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/object> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/label> ] ;
+    sh:targetClass <https://example.org/sepio-model/Proposition> .
+
+<https://example.org/sepio-model/Qualifier> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Utility> ;
+    sh:closed true ;
+    sh:description "A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Qualifier" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A descriptive name that describes the type of information captured in the Qualifier value." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/name> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The value of the qualifier - holding information that refines/extends the meaning of the Statement." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/value> ] ;
+    sh:targetClass <https://example.org/sepio-model/Qualifier> .
+
+<https://example.org/sepio-model/StudyGroup> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Entity> ;
+    sh:closed true ;
+    sh:description "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income) May be referred to as a 'cohort' or 'population' in specific research settings." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Study Group" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:class <https://example.org/sepio-model/StudyGroup> ;
+            sh:description "A larger StudyGroup of which this StudyGroup represents a subset." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/isSubsetOf> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:class <https://example.org/sepio-model/Characteristic> ;
+            sh:description "A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/characteristics> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The total number of individual members in the StudyGroup." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/memberCount> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/label> ] ;
+    sh:targetClass <https://example.org/sepio-model/StudyGroup> .
+
+<https://example.org/sepio-model/Agent> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Entity> ;
+    sh:closed true ;
+    sh:description "An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent’s activity." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Agent" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The given name of the Agent." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/name> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specific type of agent the Agent object represents. Must be one of {person, organization, software}" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/subtype> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/description> ] ;
+    sh:targetClass <https://example.org/sepio-model/Agent> .
+
+<https://example.org/sepio-model/DataItem> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/InformationEntity> ;
+    sh:closed true ;
+    sh:description "An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Data Item" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 17 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A document in which the Information Entity is reported" ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/reportedIn> ],
+        [ sh:class <https://example.org/sepio-model/RecordMetadata> ;
+            sh:description "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 14 ;
+            sh:path <https://example.org/sepio-model/recordMetadata> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "Types of methodological approaches used to collect, generate, or evaluate the reported information." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/methodTypes> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A unit of measure for the value (e.g. meters, grams, fluorescent units, seconds, mg/ml, etc.)" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/unit> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 16 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/subtype> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 15 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:class <https://example.org/sepio-model/Contribution> ;
+            sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/contributions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The value of the data item (could be quantitative or qualitative depending on the type of data item)." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/value> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 18 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/dateAuthored> ],
+        [ sh:class <https://example.org/sepio-model/DataItem> ;
+            sh:description "A statistical score describing the variability inherent in a data item representing a statistical summary of a set of observations/measurements (e.g. the standard deviation associated with a statistical mean calculated across several experimental replicates)." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/variabilityMeasures> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification)." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ],
+        [ sh:class <https://example.org/sepio-model/DataItem> ;
+            sh:description "A measure of the probability that a parameter of interest will fall within a defined range of values around a mean or other statistical calculation." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/confidenceInterval> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/derivedFrom> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 21 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 19 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 20 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 13 ;
+            sh:path <https://example.org/sepio-model/informationQuality> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An entity or concept in the world that the information entity describes/is about." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/isAbout> ],
+        [ sh:class <https://example.org/sepio-model/DataItem> ;
+            sh:description "A more foundational data item that is a logical component of a compound data item." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/componentDataItem> ] ;
+    sh:targetClass <https://example.org/sepio-model/DataItem> .
+
+<https://example.org/sepio-model/Utility> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "An abstract organizational class that groups classes acting as complex datatypes in the model - providing reusable collections of fields that can be plugged into other objects to capture sets of related information." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass <https://example.org/sepio-model/Utility> .
+
+<https://example.org/sepio-model/RecordMetadata> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Utility> ;
+    sh:closed true ;
+    sh:description "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Record Metadata" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The identifier of the record described in the RecordMetadata object (required when the record described is not the one in the present system)" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/recordIdentifier> ],
+        [ sh:class <https://example.org/sepio-model/Contribution> ;
+            sh:description "describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/contributions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Another data record from which the record described here was derived, through a data ingest and/or transformation process." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/derivedFromRecord> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The version number of the record-level artifact the object describes" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/recordVersion> ],
+        [ sh:datatype xsd:date ;
+            sh:description "The date the record was initially created." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/dateRecordCreated> ] ;
+    sh:targetClass <https://example.org/sepio-model/RecordMetadata> .
+
+<https://example.org/sepio-model/Contribution> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Activity> ;
+    sh:closed true ;
+    sh:description "An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.)" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Contribution" ;
+    sh:property [ sh:class <https://example.org/sepio-model/Method> ;
+            sh:description "A method that was followed in performing an Activity, that describes how it was executed." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ],
+        [ sh:datatype xsd:date ;
+            sh:description "The date that the Activity was completed." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/date> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:class <https://example.org/sepio-model/Entity> ;
+            sh:description "An entity that was input into the Activity (could be material or information)" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/input> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 14 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:class <https://example.org/sepio-model/Agent> ;
+            sh:description "The Agent that made the contribution." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/contributor> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A specific type of activity the Activity instance represents." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/subtype> ],
+        [ sh:class <https://example.org/sepio-model/Entity> ;
+            sh:description "An entity that was output from the Activity (could be material or information)" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/output> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 13 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:class <https://example.org/sepio-model/Agent> ;
+            sh:description "An Agent who participated in executing the Activity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/performedBy> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "The artifact toward which the contribution was made." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/contributionMadeTo> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc. . Values of this property may be framed as activities or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO).)" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/activityType> ] ;
+    sh:targetClass <https://example.org/sepio-model/Contribution> .
+
+<https://example.org/sepio-model/Entity> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Anything that exists, has existed, or will exist." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Entity" ;
+    sh:property [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/identifiers> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/description> ] ;
+    sh:targetClass <https://example.org/sepio-model/Entity> .
+
+<https://example.org/sepio-model/Extension> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Utility> ;
+    sh:closed true ;
+    sh:description "A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Extension" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A free text description of the intended meaning and use of the extension element, which may include the types of values it takes, and how to interpret these values in the context of the parent Class." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/extensionDescription> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The value of the Extension - can be any primitive or structured object" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/value> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A name for the Extension. Should be indicative of its meaning and/or the type of information it value represents." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/name> ] ;
+    sh:targetClass <https://example.org/sepio-model/Extension> .
+
+<https://example.org/sepio-model/InformationEntity> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Entity> ;
+    sh:closed true ;
+    sh:description "An abstract (non-physical) entity that is about something. It represents the abstract 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Information Entity" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A document in which the Information Entity is reported" ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path <https://example.org/sepio-model/reportedIn> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A free text description of the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 14 ;
+            sh:path <https://example.org/sepio-model/description> ],
+        [ sh:class <https://example.org/sepio-model/Contribution> ;
+            sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/contributions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path <https://example.org/sepio-model/id> ],
+        [ sh:class <https://example.org/sepio-model/RecordMetadata> ;
+            sh:description "Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 8 ;
+            sh:path <https://example.org/sepio-model/recordMetadata> ],
+        [ sh:class <https://example.org/sepio-model/Extension> ;
+            sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 15 ;
+            sh:path <https://example.org/sepio-model/extensions> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Alternative name(s) for the Entity." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 13 ;
+            sh:path <https://example.org/sepio-model/alternativeLabels> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/dateAuthored> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "Types of methodological approaches used to collect, generate, or evaluate the reported information." ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 4 ;
+            sh:path <https://example.org/sepio-model/methodTypes> ],
+        [ sh:class <https://example.org/sepio-model/Coding> ;
+            sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 7 ;
+            sh:path <https://example.org/sepio-model/informationQuality> ],
+        [ sh:class <https://example.org/sepio-model/InformationEntity> ;
+            sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 5 ;
+            sh:path <https://example.org/sepio-model/derivedFrom> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification)." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/specifiedBy> ],
+        [ sh:datatype xsd:string ;
+            sh:description "An entity or concept in the world that the information entity describes/is about." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/isAbout> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A primary name for the Entity." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path <https://example.org/sepio-model/type> ],
+        [ sh:datatype xsd:string ;
+            sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path <https://example.org/sepio-model/identifiers> ] ;
+    sh:targetClass <https://example.org/sepio-model/InformationEntity> .
+
+<https://example.org/sepio-model/Coding> a sh:NodeShape ;
+    rdfs:subClassOf <https://example.org/sepio-model/Utility> ;
+    sh:closed true ;
+    sh:description "A structured representation of a code for a defined concept in a terminology or code system." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Coding" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A symbol uniquely identifying the concept, as in a syntax defined by the code system.  CURIE format is preferred where possible (e.g. ‘SO:0000704’ is the CURIE form of the Sequence Ontology code for 'gene')." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path <https://example.org/sepio-model/code> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The terminology/code system that defined the code.  May be reported as a free-text name (e.g. ‘Sequence Ontology’), but it is preferable to provide  a uri/url for the system. When the 'code' is reported as a CURIE, the 'system' should be reported as the uri that the CURIE's prefix expands to (e.g. 'http://purl.obofoundry.org/so.owl/' for the Sequence Ontology)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <https://example.org/sepio-model/system> ],
+        [ sh:datatype xsd:string ;
+            sh:description "The human-readable name for the coded concept, as defined by the code system." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path <https://example.org/sepio-model/label> ],
+        [ sh:datatype xsd:string ;
+            sh:description "Version of the terminology or code system that provided the code." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path <https://example.org/sepio-model/systemVersion> ] ;
+    sh:targetClass <https://example.org/sepio-model/Coding> .
+

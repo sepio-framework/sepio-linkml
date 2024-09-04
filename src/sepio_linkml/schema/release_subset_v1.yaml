@@ -242,6 +242,7 @@ classes:
           or authority for this purpose (e.g. an HGNC id for a Gene object) - as long
           as it is unique within the implementing system, and can be used to reference
           the identified object in this context.'
+        - 'Does this work?'
         status: Draft
         range: string
         required: true
@@ -431,23 +432,23 @@ classes:
         description: A qualitative term indicating the scientific rigor or reliability
           with which the information was generated/collected.
         comments:
-        - '- This is typically based on the quality of design and execution of the
+        - 'This is typically based on the quality of design and execution of the
           study or curation activity that generated it (e.g. were relevant controls
           assessed to show instruments were working, were all samples taken care of
-          and handled identically, are methods sound and well documented, etc.).
+          and handled identically, are methods sound and well documented, etc.).'
 
-          - The quality of information is intrinsic to the information itself, and
+        - 'The quality of information is intrinsic to the information itself, and
           not to a particular application of the information (e.g. as evidence for
-          making an Assertion)
+          making an Assertion)'
 
-          - The quality of information is one factor that goes into the confidence
+        - 'The quality of information is one factor that goes into the confidence
           we have in the information''s veracity (i.e. that it is an accurate reflection
           of reality it intends to measure or describe). Other factors informing confidence
           may include who did it (we may just not trust some Agents), when (if data
           created 500 years ago, we may have less confidence in it), and for Assertions,
-          the relevance and abundance of supporting evidence.
+          the relevance and abundance of supporting evidence.'
 
-          - Implementers should define a relevant source or specific set of terms
+        - 'Implementers should define a relevant source or specific set of terms
           to use here based on the needs of the domain or application.'
         status: Informative
         range: Coding

@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-studygroup">Slot: studyGroup</h1>
+<p><em>A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>For example, in a StudyResult holding allele frequency data, this attribute points to a StudyGroup object that describes characteristics of the population that the frequency data was generated from (e.g. 'East Asian', 'Female').</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/studyGroup">sepio_linkml:studyGroup</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,13 @@
 <tr>
 <td><a href="../StudyResult/">StudyResult</a></td>
 <td>A collection of data items from a single study that pertain to a particular s...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../StudyGroup/">StudyGroup</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +388,21 @@
 <details>
 
 <pre><code class="language-yaml">name: studyGroup
+description: A description of a specific group or population of subjects interrogated
+  in the ResearchStudy that produced the data captured in the StudyResult.
+comments:
+- For example, in a StudyResult holding allele frequency data, this attribute points
+  to a StudyGroup object that describes characteristics of the population that the
+  frequency data was generated from (e.g. 'East Asian', 'Female').
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 rank: 1000
 alias: studyGroup
+owner: StudyResult
 domain_of:
 - StudyResult
-range: string
+range: StudyGroup
+required: false
+multivalued: false
 
 </code></pre>
 

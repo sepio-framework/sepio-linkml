@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-system">Slot: system</h1>
+<p><em>The terminology/code system that defined the code.  May be reported as a free-text name (e.g. ‘Sequence Ontology’), but it is preferable to provide  a uri/url for the system. When the 'code' is reported as a CURIE, the 'system' should be reported as the uri that the CURIE's prefix expands to (e.g. 'http://purl.obofoundry.org/so.owl/' for the Sequence Ontology).</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/system">sepio_linkml:system</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +341,7 @@
 <tr>
 <td><a href="../Coding/">Coding</a></td>
 <td>A structured representation of a code for a defined concept in a terminology ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +377,20 @@
 <details>
 
 <pre><code class="language-yaml">name: system
+description: The terminology/code system that defined the code.  May be reported as
+  a free-text name (e.g. ‘Sequence Ontology’), but it is preferable to provide  a
+  uri/url for the system. When the 'code' is reported as a CURIE, the 'system' should
+  be reported as the uri that the CURIE's prefix expands to (e.g. 'http://purl.obofoundry.org/so.owl/'
+  for the Sequence Ontology).
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 rank: 1000
 alias: system
+owner: Coding
 domain_of:
 - Coding
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

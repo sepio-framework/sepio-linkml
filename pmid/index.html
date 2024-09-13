@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-pmid">Slot: pmid</h1>
+<p><em>A <code>PubMed unique identifier &lt;https://en.wikipedia.org/wiki/PubMed#PubMed_identifier&gt;</code></em> for the document._</p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/pmid">sepio_linkml:pmid</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +341,7 @@
 <tr>
 <td><a href="../Document/">Document</a></td>
 <td>A collection of information, usually in a text-based or graphic human-readabl...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +377,18 @@
 <details>
 
 <pre><code class="language-yaml">name: pmid
+description: A `PubMed unique identifier &lt;https://en.wikipedia.org/wiki/PubMed#PubMed_identifier&gt;`_
+  for the document.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: pmid
+owner: Document
 domain_of:
 - Document
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

@@ -274,19 +274,6 @@
     Identifier and Mapping Information
   </a>
   
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -338,9 +325,24 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../Extension/">Extension</a></td>
+<td>A data structure that allows custom attributes to be defined for an Entity, t...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Agent/">Agent</a></td>
 <td>An autonomous actor (person, organization, or software agent) that bears some...</td>
-<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Characteristic/">Characteristic</a></td>
+<td>An object holding a name-value pair used to describe a trait or role of an in...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Qualifier/">Qualifier</a></td>
+<td>A key-value object used to capture additional piece of information that exten...</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -349,10 +351,6 @@
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/sepio-framework/sepio-linkml</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -376,11 +374,12 @@
 <details>
 
 <pre><code class="language-yaml">name: name
-from_schema: https://w3id.org/sepio-framework/sepio-linkml
-rank: 1000
 alias: name
 domain_of:
 - Agent
+- Qualifier
+- Extension
+- Characteristic
 range: string
 
 </code></pre>

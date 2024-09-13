@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,12 @@
 
 
 <h1 id="slot-dataitems">Slot: dataItems</h1>
+<p><em>One or more data items that are included in the StudyResult because it pertains to the 'focus' of the result. This can be data that directly describes this 'focus' (e.g. the population frequency of an allele focus), or be metadata about how data about the 'focus' were generated (e.g the quality measures for the sequencing run used to determine this allele frequency).</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Any type of data item from a Study may be captured in a StudyResult - including raw experimental/observational data, derived calculations or quality measures, provenance information about how the data were generated in the study, or qualitative expert interpretations of the primary study data (e.g. the interpretation of a blood cholesterol value of 250 mg/dL as being 'high', or a Polyphen functional impact score of 0.115 as being 'deleterious').</li>
+<li>The model specifies use of a key-value based 'DataItem' object to capture the meaning and value of each type of data item captured in a given StudyResult. But in practice, profiles for specific StudyResult types may choose to define one or more specializations of the generic 'dataItems' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different data items. For example, a PopulaitonAlleleFrequencyStudyResult profile may define a named 'focusAlleleFrequency' attribute that is required, and a named 'focusAlleleCount' attribute that is optional - both of which conceptually specialize the core-im 'dataItems' property. Under this approach, the core 'dataItems' acts as a placeholder to seed such specializations, but is not used directly in StudyResult profiles.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/dataItems">sepio_linkml:dataItems</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +353,18 @@
 <tr>
 <td><a href="../StudyResult/">StudyResult</a></td>
 <td>A collection of data items from a single study that pertain to a particular s...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../DataItem/">DataItem</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +394,39 @@
 <details>
 
 <pre><code class="language-yaml">name: dataItems
+description: One or more data items that are included in the StudyResult because it
+  pertains to the 'focus' of the result. This can be data that directly describes
+  this 'focus' (e.g. the population frequency of an allele focus), or be metadata
+  about how data about the 'focus' were generated (e.g the quality measures for the
+  sequencing run used to determine this allele frequency).
+comments:
+- Any type of data item from a Study may be captured in a StudyResult - including
+  raw experimental/observational data, derived calculations or quality measures, provenance
+  information about how the data were generated in the study, or qualitative expert
+  interpretations of the primary study data (e.g. the interpretation of a blood cholesterol
+  value of 250 mg/dL as being 'high', or a Polyphen functional impact score of 0.115
+  as being 'deleterious').
+- The model specifies use of a key-value based 'DataItem' object to capture the meaning
+  and value of each type of data item captured in a given StudyResult. But in practice,
+  profiles for specific StudyResult types may choose to define one or more specializations
+  of the generic 'dataItems' property as named attributes. This makes the data more
+  succinct and parsable, and allows specific constraints to be applied and validated
+  for different data items. For example, a PopulaitonAlleleFrequencyStudyResult profile
+  may define a named 'focusAlleleFrequency' attribute that is required, and a named
+  'focusAlleleCount' attribute that is optional - both of which conceptually specialize
+  the core-im 'dataItems' property. Under this approach, the core 'dataItems' acts
+  as a placeholder to seed such specializations, but is not used directly in StudyResult
+  profiles.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: dataItems
+owner: StudyResult
 domain_of:
 - StudyResult
-range: string
+range: DataItem
+required: false
+multivalued: true
 
 </code></pre>
 

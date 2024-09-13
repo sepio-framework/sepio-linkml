@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-sourcedataset">Slot: sourceDataSet</h1>
+<p><em>A larger DataSet from which the content of the StudyResult was derived.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/sourceDataSet">sepio_linkml:sourceDataSet</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,18 @@
 <tr>
 <td><a href="../StudyResult/">StudyResult</a></td>
 <td>A collection of data items from a single study that pertain to a particular s...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../DataSet/">DataSet</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +393,21 @@
 <details>
 
 <pre><code class="language-yaml">name: sourceDataSet
+description: A larger DataSet from which the content of the StudyResult was derived.
+comments:
+- In most cases, a StudyResult will be generated using data from one source dataset
+  - but it is possible multiple datasets related to a single study contain data about
+  a particular focus that get collected into a single StudyResult instance.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: sourceDataSet
+owner: StudyResult
 domain_of:
 - StudyResult
-range: string
+range: DataSet
+required: false
+multivalued: true
 
 </code></pre>
 

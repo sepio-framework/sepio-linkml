@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-proposition">Slot: proposition</h1>
+<p><em>A possible fact that the Statement assesses or puts forth as true.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>This attribute supports an alternate modeling pattern where the structured semantics of the possible fact asserted or evaluated by a Statement is encapsulated in a separate 'Proposition' object. In such a case, the subject-predicate-object-qualifier properties on the Statement are not utilized. A given implementation should decide which pattern to follow and drop attributes not required for their approach.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/proposition">sepio_linkml:proposition</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,13 @@
 <tr>
 <td><a href="../Statement/">Statement</a></td>
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Proposition/">Proposition</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +388,23 @@
 <details>
 
 <pre><code class="language-yaml">name: proposition
+description: A possible fact that the Statement assesses or puts forth as true.
+comments:
+- This attribute supports an alternate modeling pattern where the structured semantics
+  of the possible fact asserted or evaluated by a Statement is encapsulated in a separate
+  'Proposition' object. In such a case, the subject-predicate-object-qualifier properties
+  on the Statement are not utilized. A given implementation should decide which pattern
+  to follow and drop attributes not required for their approach.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: proposition
+owner: Statement
 domain_of:
 - Statement
-range: string
+range: Proposition
+required: false
+multivalued: false
 
 </code></pre>
 

@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,11 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -211,6 +211,12 @@
 </a>
 <h1 id="class-evidence-line-evidenceline">Class: Evidence Line (EvidenceLine)</h1>
 <p><em>An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Evidence Lines are used to capture various pieces of information (i.e. 'evidence items') that are assessed together as an argument for or against some 'target proposition' - to report the direction (supports or disputes) and strength (e.g. strong, moderate, weak) that the argument is determined to make. For example, the various allele counts and population frequency calculations for the BRCA2 c.8023A&gt;G variant in the ExAC database are evidence items that may be collectively assessed to build an EvidenceLine making argument of 'moderate' strength that 'supports' a target proposition that the variant is pathogenic for Breast Cancer.</li>
+<li>Evidence Lines are flexible with respect to the granularity of arguments they support, and the scope of evidence items they can collectively assess. Narrow scoping will bucket available evidence into many, fine-grained Evidence Lines that make the most atomic independently meaningful arguments possible. The ACMG Variant Pathogenicity Interpretation Guidelines are an example of a fairly fine-grained evidence interpretation framework. Broader scoping approaches may organize the same available evidence into fewer Evidence Lines that build and assess less atomic arguments based on a wider and more diverse set of evidence items.  For example, CIViC curators assess the strength and direction of evidence items at the level of <em>all information reported in a publication for a specific study</em> - which can encompass many different results and evidence types that under more fine-grained interpretation approaches might be split apart and assessed as separate lines of evidence.</li>
+<li>This CIViC EID5682 record (https://civicdb.org/evidence/5682/summary) is a clear example of this - illustrating how ACMG-curated evidence assessed at a finer-grained level would lend itself to SEPIO representations that creates a larger number of more atomic Evidence Lines, as compared to how CIViC-curated evidence from the same source or publication would be represented. We see here that CIViC evidence assessments are performed at the level of all results reported in PMID:23143947 - which SEPIO would capture as a single Evidence Line that assigns a strength (level C) and direction (supports) to the collective argument made by this evidence. However, as detailed in the free-text summary of this EID, the more fine-grained ACMG framework breaks out and separately assess two arguments here - one based on criterion PP1 (disease co-segregation evidence), and one based on criterion PP4 (highly specific gene-phenotype information) - which SEPIO woudl capture as two distinct Evidence Lines.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/EvidenceLine">sepio_linkml:EvidenceLine</a></p>
 <div class="mermaid"> classDiagram
     class EvidenceLine
@@ -244,14 +250,7 @@
 
       EvidenceLine : directionOfEvidenceProvided
 
-      EvidenceLine : evidenceItems
-
-
-
-
-    EvidenceLine --&gt; "*" InformationEntity : evidenceItems
-    click InformationEntity href "../InformationEntity"
-
+      EvidenceLine : evidenceItemSources
 
       EvidenceLine : extensions
 
@@ -260,6 +259,15 @@
 
     EvidenceLine --&gt; "*" Extension : extensions
     click Extension href "../Extension"
+
+
+      EvidenceLine : hasEvidenceItems
+
+
+
+
+    EvidenceLine --&gt; "*" InformationEntity : hasEvidenceItems
+    click InformationEntity href "../InformationEntity"
 
 
       EvidenceLine : id
@@ -305,6 +313,15 @@
 
       EvidenceLine : strengthOfEvidenceProvided
 
+      EvidenceLine : subtype
+
+
+
+
+    EvidenceLine --&gt; "0..1" Coding : subtype
+    click Coding href "../Coding"
+
+
       EvidenceLine : targetProposition
 
 
@@ -340,13 +357,19 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../subtype/">subtype</a></td>
+<td>0..1 <br/> <a href="../Coding/">Coding</a></td>
+<td>A specific type of evidence the EvidenceLine instance represents (e</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../targetProposition/">targetProposition</a></td>
 <td>0..1 <br/> <a href="../Proposition/">Proposition</a></td>
 <td>The possible fact against which evidence items contained in an Evidence Line ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../evidenceItems/">evidenceItems</a></td>
+<td><a href="../hasEvidenceItems/">hasEvidenceItems</a></td>
 <td>* <br/> <a href="../InformationEntity/">InformationEntity</a></td>
 <td>An individual piece of information that was evaluated as evidence in building...</td>
 <td>direct</td>
@@ -367,6 +390,12 @@
 <td><a href="../scoreOfEvidenceProvided/">scoreOfEvidenceProvided</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>A quantitative score indicating the strength of support that an Evidence Line...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../evidenceItemSources/">evidenceItemSources</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>An information resource (e</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -420,7 +449,7 @@
 <tr>
 <td><a href="../recordMetadata/">recordMetadata</a></td>
 <td>0..1 <br/> <a href="../RecordMetadata/">RecordMetadata</a></td>
-<td>Provenance metadata about a specific concrete encoding/serialization of infor...</td>
+<td>Provenance metadata about a specific concrete record of information as encode...</td>
 <td><a href="../InformationEntity/">InformationEntity</a></td>
 </tr>
 <tr>
@@ -486,12 +515,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>Evidence Lines are used to capture various pieces of information (i.e. 'evidence items') that are assessed together as an argument for or against some 'target proposition' - to report the direction (supports or disputes) and strength (e.g. strong, moderate, weak) that the argument is determined to make. For example, the various allele counts and population frequency calculations for the BRCA2 c.8023A&gt;G variant in the ExAC database are evidence items that may be collectively assessed to build an EvidenceLine making argument of 'moderate' strength that 'supports' a target proposition that the variant is pathogenic for Breast Cancer. </li>
-</ul>
-<p>Evidence Lines are flexible with respect to the granularity of arguments they support, and the scope of evidence items they can collectively assess. Narrow scoping will bucket available evidence into many, fine-grained Evidence Lines that make the most atomic independently meaningful arguments possible. The ACMG Variant Pathogenicity Interpretation Guidelines are an example of a fairly fine-grained evidence interpretation framework. Broader scoping approaches may organize the same evidence into fewer Evidence Lines that build and assess less atomic arguments based on a wider and more diverse set of evidence items.  For example, CIViC curators assess the strength and direction of evidence items at the level of <em>all information reported in a publication for a specific study</em> - which can encompass many different results and evidence types that under more fine-grained interpretation approaches might be split apart and assessed as separate arguments. </p>
-<p>This CIViC EID5682 record (https://civicdb.org/evidence/5682/summary) is a clear example of this  as it illustrates how ACMG-curated evidence assessed at a finer-grained level would lend itself to SEPIO representations that creates a larger number of more atomic Evidence Lines, as compared to how CIViC-curated evidence from the same source or publication would be represented. We see here that CIViC evidence assessments are performed at the level of all results reported in PMID:23143947 - which SEPIO would capture as a single Evidence Line that assigns a strength (level C) and direction (supports) to the collective argument made by this evidence. However, as detailed in the free-text summary of this EID, the more fine-grained ACMG framework breaks out and separately assess two arguments here - one based on criterion PP1 (disease co-segregation evidence), and one based on criterion PP4 (highly specific gene-phenotype information) - which SEPIO woudl capture as two distinct Evidence Lines.</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -527,49 +550,67 @@ description: An independent, evidence-based argument that may support or refute 
   or against the target proposition.
 title: Evidence Line
 comments:
-- "Evidence Lines are used to capture various pieces of information (i.e. 'evidence\
-  \ items') that are assessed together as an argument for or against some 'target\
-  \ proposition' - to report the direction (supports or disputes) and strength (e.g.\
-  \ strong, moderate, weak) that the argument is determined to make. For example,\
-  \ the various allele counts and population frequency calculations for the BRCA2\
-  \ c.8023A&gt;G variant in the ExAC database are evidence items that may be collectively\
-  \ assessed to build an EvidenceLine making argument of 'moderate' strength that\
-  \ 'supports' a target proposition that the variant is pathogenic for Breast Cancer.\
-  \ \n\nEvidence Lines are flexible with respect to the granularity of arguments they\
-  \ support, and the scope of evidence items they can collectively assess. Narrow\
-  \ scoping will bucket available evidence into many, fine-grained Evidence Lines\
-  \ that make the most atomic independently meaningful arguments possible. The ACMG\
-  \ Variant Pathogenicity Interpretation Guidelines are an example of a fairly fine-grained\
-  \ evidence interpretation framework. Broader scoping approaches may organize the\
-  \ same evidence into fewer Evidence Lines that build and assess less atomic arguments\
-  \ based on a wider and more diverse set of evidence items.  For example, CIViC curators\
-  \ assess the strength and direction of evidence items at the level of *all information\
-  \ reported in a publication for a specific study* - which can encompass many different\
-  \ results and evidence types that under more fine-grained interpretation approaches\
-  \ might be split apart and assessed as separate arguments. \n\nThis CIViC EID5682\
-  \ record (https://civicdb.org/evidence/5682/summary) is a clear example of this\
-  \  as it illustrates how ACMG-curated evidence assessed at a finer-grained level\
-  \ would lend itself to SEPIO representations that creates a larger number of more\
-  \ atomic Evidence Lines, as compared to how CIViC-curated evidence from the same\
-  \ source or publication would be represented. We see here that CIViC evidence assessments\
-  \ are performed at the level of all results reported in PMID:23143947 - which SEPIO\
-  \ would capture as a single Evidence Line that assigns a strength (level C) and\
-  \ direction (supports) to the collective argument made by this evidence. However,\
-  \ as detailed in the free-text summary of this EID, the more fine-grained ACMG framework\
-  \ breaks out and separately assess two arguments here - one based on criterion PP1\
-  \ (disease co-segregation evidence), and one based on criterion PP4 (highly specific\
-  \ gene-phenotype information) - which SEPIO woudl capture as two distinct Evidence\
-  \ Lines."
+- Evidence Lines are used to capture various pieces of information (i.e. 'evidence
+  items') that are assessed together as an argument for or against some 'target proposition'
+  - to report the direction (supports or disputes) and strength (e.g. strong, moderate,
+  weak) that the argument is determined to make. For example, the various allele counts
+  and population frequency calculations for the BRCA2 c.8023A&gt;G variant in the ExAC
+  database are evidence items that may be collectively assessed to build an EvidenceLine
+  making argument of 'moderate' strength that 'supports' a target proposition that
+  the variant is pathogenic for Breast Cancer.
+- Evidence Lines are flexible with respect to the granularity of arguments they support,
+  and the scope of evidence items they can collectively assess. Narrow scoping will
+  bucket available evidence into many, fine-grained Evidence Lines that make the most
+  atomic independently meaningful arguments possible. The ACMG Variant Pathogenicity
+  Interpretation Guidelines are an example of a fairly fine-grained evidence interpretation
+  framework. Broader scoping approaches may organize the same available evidence into
+  fewer Evidence Lines that build and assess less atomic arguments based on a wider
+  and more diverse set of evidence items.  For example, CIViC curators assess the
+  strength and direction of evidence items at the level of *all information reported
+  in a publication for a specific study* - which can encompass many different results
+  and evidence types that under more fine-grained interpretation approaches might
+  be split apart and assessed as separate lines of evidence.
+- This CIViC EID5682 record (https://civicdb.org/evidence/5682/summary) is a clear
+  example of this - illustrating how ACMG-curated evidence assessed at a finer-grained
+  level would lend itself to SEPIO representations that creates a larger number of
+  more atomic Evidence Lines, as compared to how CIViC-curated evidence from the same
+  source or publication would be represented. We see here that CIViC evidence assessments
+  are performed at the level of all results reported in PMID:23143947 - which SEPIO
+  would capture as a single Evidence Line that assigns a strength (level C) and direction
+  (supports) to the collective argument made by this evidence. However, as detailed
+  in the free-text summary of this EID, the more fine-grained ACMG framework breaks
+  out and separately assess two arguments here - one based on criterion PP1 (disease
+  co-segregation evidence), and one based on criterion PP4 (highly specific gene-phenotype
+  information) - which SEPIO woudl capture as two distinct Evidence Lines.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
-slots:
-- targetProposition
-- evidenceItems
-- directionOfEvidenceProvided
-- strengthOfEvidenceProvided
-- scoreOfEvidenceProvided
-slot_usage:
+attributes:
+  subtype:
+    name: subtype
+    description: A specific type of evidence the EvidenceLine instance represents
+      (e.g. 'mutant phenotype evidence', 'evidence from manual interpretation', 'ACMG
+      PM2 evidence')
+    comments:
+    - Data creators may choose to define specific types of evidence lines relevant
+      for their domain/use case, based on the type of evidence items that comprise
+      it, the methodology that guided evidence interpretation, or the type of statement
+      the evidence line supports.  Terms from ontologies like the Evidence and Conclusion
+      Ontology (ECO), or categories from evidence interpretation frameworks like the
+      ACMG Variant Interpretation Guidelines, can be used as values here.
+    from_schema: https://w3id.org/sepio-model
+    status: Informative
+    domain_of:
+    - Method
+    - Document
+    - DataItem
+    - DataSet
+    - Activity
+    - Agent
+    - EvidenceLine
+    range: Coding
+    required: false
+    multivalued: false
   targetProposition:
     name: targetProposition
     description: The possible fact against which evidence items contained in an Evidence
@@ -588,34 +629,46 @@ slot_usage:
       is pathogenic for the disease of interest. If the PM2 criteria is deemed ''met'',
       this indicates that the population frequency evidence provides ''moderate''
       (strength) ''support'' (direction) for this target proposition.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - EvidenceLine
     range: Proposition
     required: false
     multivalued: false
-  evidenceItems:
-    name: evidenceItems
+  hasEvidenceItems:
+    name: hasEvidenceItems
     description: An individual piece of information that was evaluated as evidence
       in building the argument represented by an Evidence Line.
     comments:
-    - "A given Evidence Line may be supported by one or many individual evidence items.\
-      \ What matters is that all evidence items in a given Evidence Line get collectively\
-      \ assessed and assigned direction and strength  as a single argument for or\
-      \ against a target proposition. \n\nDifferent types and scales of information\
-      \ entity can serve as evidence (experimental measurements or observations, data\
-      \ tables or figures, images, prior assertions, etc.) Only when assessed as evidence\
-      \ do we consider the information to be an 'Evidence Item'.  For example, a piece\
-      \ of population frequency data about BRCA2 c.8023A&gt;G  becomes an Evidence Item\
-      \ when it is assessed for the support it may offer for a target proposition\
-      \ (e.g. the prospect of the variant’s pathogenicity)."
+    - A given Evidence Line may be supported by one or many individual evidence items.
+      What matters is that all evidence items in a given Evidence Line get collectively
+      assessed and assigned direction and strength  as a single argument for or against
+      a target proposition.
+    - Different types and scales of information entity can serve as evidence (experimental
+      measurements or observations, data tables or figures, images, prior assertions,
+      etc.) Only when assessed as evidence do we consider the information to be an
+      'Evidence Item'.  For example, a piece of population frequency data about BRCA2
+      c.8023A&gt;G  becomes an Evidence Item when it is assessed for the support it may
+      offer for a target proposition (e.g. the prospect of the variant’s pathogenicity).
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - EvidenceLine
     range: InformationEntity
     required: false
     multivalued: true
   directionOfEvidenceProvided:
     name: directionOfEvidenceProvided
     description: The direction of support that the Evidence Line is determined to
-      provide toward its target Proposition (supports, disputes, neutral)
+      provide toward its target Proposition (supports, disputes, neutral).
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - EvidenceLine
     range: string
     required: false
     multivalued: false
@@ -623,13 +676,17 @@ slot_usage:
     name: strengthOfEvidenceProvided
     description: The strength of support that an Evidence Line is determined to provide
       for or against its target Proposition, evaluated relative to the direction indicated
-      by the directionOfEvidenceProvided
+      by the directionOfEvidenceProvided.
     comments:
     - Values of this attribute can be defined by for a given profile based on domain/application
       needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate',
       'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative
       assessments of evidence provided.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - EvidenceLine
     range: string
     required: false
     multivalued: false
@@ -641,10 +698,33 @@ slot_usage:
     comments:
     - A given profile or implementation can define a scoring scale and rules that
       meet the needs of their domain or application.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - EvidenceLine
     range: float
     required: false
     multivalued: false
+  evidenceItemSources:
+    name: evidenceItemSources
+    description: An information resource (e.g. document, dataset, digital resource
+      such as a database or  knowledgebase) that provides information interpreted
+      as evidence in building an Evidence Line.
+    comments:
+    - This is a 'shortcut relation' that can be used to directly link an Evidence
+      Line to sources of its supporting Evidence Items, without having to represent
+      those Evidence Items directly. Populate with the name or uri or curie of a source
+      of information. Future work will define a more formal framework for referencing
+      information sources.
+    from_schema: https://w3id.org/sepio-model
+    status: Informative
+    rank: 1000
+    domain_of:
+    - EvidenceLine
+    range: string
+    required: false
+    multivalued: true
 
 </code></pre>
 </details>
@@ -657,119 +737,69 @@ description: An independent, evidence-based argument that may support or refute 
   or against the target proposition.
 title: Evidence Line
 comments:
-- "Evidence Lines are used to capture various pieces of information (i.e. 'evidence\
-  \ items') that are assessed together as an argument for or against some 'target\
-  \ proposition' - to report the direction (supports or disputes) and strength (e.g.\
-  \ strong, moderate, weak) that the argument is determined to make. For example,\
-  \ the various allele counts and population frequency calculations for the BRCA2\
-  \ c.8023A&gt;G variant in the ExAC database are evidence items that may be collectively\
-  \ assessed to build an EvidenceLine making argument of 'moderate' strength that\
-  \ 'supports' a target proposition that the variant is pathogenic for Breast Cancer.\
-  \ \n\nEvidence Lines are flexible with respect to the granularity of arguments they\
-  \ support, and the scope of evidence items they can collectively assess. Narrow\
-  \ scoping will bucket available evidence into many, fine-grained Evidence Lines\
-  \ that make the most atomic independently meaningful arguments possible. The ACMG\
-  \ Variant Pathogenicity Interpretation Guidelines are an example of a fairly fine-grained\
-  \ evidence interpretation framework. Broader scoping approaches may organize the\
-  \ same evidence into fewer Evidence Lines that build and assess less atomic arguments\
-  \ based on a wider and more diverse set of evidence items.  For example, CIViC curators\
-  \ assess the strength and direction of evidence items at the level of *all information\
-  \ reported in a publication for a specific study* - which can encompass many different\
-  \ results and evidence types that under more fine-grained interpretation approaches\
-  \ might be split apart and assessed as separate arguments. \n\nThis CIViC EID5682\
-  \ record (https://civicdb.org/evidence/5682/summary) is a clear example of this\
-  \  as it illustrates how ACMG-curated evidence assessed at a finer-grained level\
-  \ would lend itself to SEPIO representations that creates a larger number of more\
-  \ atomic Evidence Lines, as compared to how CIViC-curated evidence from the same\
-  \ source or publication would be represented. We see here that CIViC evidence assessments\
-  \ are performed at the level of all results reported in PMID:23143947 - which SEPIO\
-  \ would capture as a single Evidence Line that assigns a strength (level C) and\
-  \ direction (supports) to the collective argument made by this evidence. However,\
-  \ as detailed in the free-text summary of this EID, the more fine-grained ACMG framework\
-  \ breaks out and separately assess two arguments here - one based on criterion PP1\
-  \ (disease co-segregation evidence), and one based on criterion PP4 (highly specific\
-  \ gene-phenotype information) - which SEPIO woudl capture as two distinct Evidence\
-  \ Lines."
+- Evidence Lines are used to capture various pieces of information (i.e. 'evidence
+  items') that are assessed together as an argument for or against some 'target proposition'
+  - to report the direction (supports or disputes) and strength (e.g. strong, moderate,
+  weak) that the argument is determined to make. For example, the various allele counts
+  and population frequency calculations for the BRCA2 c.8023A&gt;G variant in the ExAC
+  database are evidence items that may be collectively assessed to build an EvidenceLine
+  making argument of 'moderate' strength that 'supports' a target proposition that
+  the variant is pathogenic for Breast Cancer.
+- Evidence Lines are flexible with respect to the granularity of arguments they support,
+  and the scope of evidence items they can collectively assess. Narrow scoping will
+  bucket available evidence into many, fine-grained Evidence Lines that make the most
+  atomic independently meaningful arguments possible. The ACMG Variant Pathogenicity
+  Interpretation Guidelines are an example of a fairly fine-grained evidence interpretation
+  framework. Broader scoping approaches may organize the same available evidence into
+  fewer Evidence Lines that build and assess less atomic arguments based on a wider
+  and more diverse set of evidence items.  For example, CIViC curators assess the
+  strength and direction of evidence items at the level of *all information reported
+  in a publication for a specific study* - which can encompass many different results
+  and evidence types that under more fine-grained interpretation approaches might
+  be split apart and assessed as separate lines of evidence.
+- This CIViC EID5682 record (https://civicdb.org/evidence/5682/summary) is a clear
+  example of this - illustrating how ACMG-curated evidence assessed at a finer-grained
+  level would lend itself to SEPIO representations that creates a larger number of
+  more atomic Evidence Lines, as compared to how CIViC-curated evidence from the same
+  source or publication would be represented. We see here that CIViC evidence assessments
+  are performed at the level of all results reported in PMID:23143947 - which SEPIO
+  would capture as a single Evidence Line that assigns a strength (level C) and direction
+  (supports) to the collective argument made by this evidence. However, as detailed
+  in the free-text summary of this EID, the more fine-grained ACMG framework breaks
+  out and separately assess two arguments here - one based on criterion PP1 (disease
+  co-segregation evidence), and one based on criterion PP4 (highly specific gene-phenotype
+  information) - which SEPIO woudl capture as two distinct Evidence Lines.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
-slot_usage:
-  targetProposition:
-    name: targetProposition
-    description: The possible fact against which evidence items contained in an Evidence
-      Line were collectively evaluated, in determining the overall strength and direction
-      of support they provide. For example, in an ACMG Guideline-based assessment
-      of variant pathogenicity, the support provided by distinct lines of evidence
-      are assessed against a target proposition that some variant is pathogenic for
-      a specific disease.
-    comments:
-    - 'An example based on the ACMG Guidelines for germline variant pathogenicity
-      interpretation: Consider a curator assessing the evidence provided by population
-      frequency data for a specific variant based on the ACMG criteria. In order to
-      assign a strength (e.g. moderate vs strong) and direction (supports vs disputes)
-      to this data as evidence, there must be some ''target proposition'' toward which
-      the evidence is assessed - which in this cases is the proposition that the variant
-      is pathogenic for the disease of interest. If the PM2 criteria is deemed ''met'',
-      this indicates that the population frequency evidence provides ''moderate''
-      (strength) ''support'' (direction) for this target proposition.'
-    status: Informative
-    range: Proposition
-    required: false
-    multivalued: false
-  evidenceItems:
-    name: evidenceItems
-    description: An individual piece of information that was evaluated as evidence
-      in building the argument represented by an Evidence Line.
-    comments:
-    - "A given Evidence Line may be supported by one or many individual evidence items.\
-      \ What matters is that all evidence items in a given Evidence Line get collectively\
-      \ assessed and assigned direction and strength  as a single argument for or\
-      \ against a target proposition. \n\nDifferent types and scales of information\
-      \ entity can serve as evidence (experimental measurements or observations, data\
-      \ tables or figures, images, prior assertions, etc.) Only when assessed as evidence\
-      \ do we consider the information to be an 'Evidence Item'.  For example, a piece\
-      \ of population frequency data about BRCA2 c.8023A&gt;G  becomes an Evidence Item\
-      \ when it is assessed for the support it may offer for a target proposition\
-      \ (e.g. the prospect of the variant’s pathogenicity)."
-    status: Draft
-    range: InformationEntity
-    required: false
-    multivalued: true
-  directionOfEvidenceProvided:
-    name: directionOfEvidenceProvided
-    description: The direction of support that the Evidence Line is determined to
-      provide toward its target Proposition (supports, disputes, neutral)
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  strengthOfEvidenceProvided:
-    name: strengthOfEvidenceProvided
-    description: The strength of support that an Evidence Line is determined to provide
-      for or against its target Proposition, evaluated relative to the direction indicated
-      by the directionOfEvidenceProvided
-    comments:
-    - Values of this attribute can be defined by for a given profile based on domain/application
-      needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate',
-      'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative
-      assessments of evidence provided.
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  scoreOfEvidenceProvided:
-    name: scoreOfEvidenceProvided
-    description: A quantitative score indicating the strength of support that an Evidence
-      Line is determined to provide for or against its target Proposition, evaluated
-      relative to the direction indicated by the directionOfEvidenceProvided value.
-    comments:
-    - A given profile or implementation can define a scoring scale and rules that
-      meet the needs of their domain or application.
-    status: Draft
-    range: float
-    required: false
-    multivalued: false
 attributes:
+  subtype:
+    name: subtype
+    description: A specific type of evidence the EvidenceLine instance represents
+      (e.g. 'mutant phenotype evidence', 'evidence from manual interpretation', 'ACMG
+      PM2 evidence')
+    comments:
+    - Data creators may choose to define specific types of evidence lines relevant
+      for their domain/use case, based on the type of evidence items that comprise
+      it, the methodology that guided evidence interpretation, or the type of statement
+      the evidence line supports.  Terms from ontologies like the Evidence and Conclusion
+      Ontology (ECO), or categories from evidence interpretation frameworks like the
+      ACMG Variant Interpretation Guidelines, can be used as values here.
+    from_schema: https://w3id.org/sepio-model
+    status: Informative
+    alias: subtype
+    owner: EvidenceLine
+    domain_of:
+    - Method
+    - Document
+    - DataItem
+    - DataSet
+    - Activity
+    - Agent
+    - EvidenceLine
+    range: Coding
+    required: false
+    multivalued: false
   targetProposition:
     name: targetProposition
     description: The possible fact against which evidence items contained in an Evidence
@@ -788,7 +818,7 @@ attributes:
       is pathogenic for the disease of interest. If the PM2 criteria is deemed ''met'',
       this indicates that the population frequency evidence provides ''moderate''
       (strength) ''support'' (direction) for this target proposition.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: targetProposition
@@ -798,25 +828,25 @@ attributes:
     range: Proposition
     required: false
     multivalued: false
-  evidenceItems:
-    name: evidenceItems
+  hasEvidenceItems:
+    name: hasEvidenceItems
     description: An individual piece of information that was evaluated as evidence
       in building the argument represented by an Evidence Line.
     comments:
-    - "A given Evidence Line may be supported by one or many individual evidence items.\
-      \ What matters is that all evidence items in a given Evidence Line get collectively\
-      \ assessed and assigned direction and strength  as a single argument for or\
-      \ against a target proposition. \n\nDifferent types and scales of information\
-      \ entity can serve as evidence (experimental measurements or observations, data\
-      \ tables or figures, images, prior assertions, etc.) Only when assessed as evidence\
-      \ do we consider the information to be an 'Evidence Item'.  For example, a piece\
-      \ of population frequency data about BRCA2 c.8023A&gt;G  becomes an Evidence Item\
-      \ when it is assessed for the support it may offer for a target proposition\
-      \ (e.g. the prospect of the variant’s pathogenicity)."
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - A given Evidence Line may be supported by one or many individual evidence items.
+      What matters is that all evidence items in a given Evidence Line get collectively
+      assessed and assigned direction and strength  as a single argument for or against
+      a target proposition.
+    - Different types and scales of information entity can serve as evidence (experimental
+      measurements or observations, data tables or figures, images, prior assertions,
+      etc.) Only when assessed as evidence do we consider the information to be an
+      'Evidence Item'.  For example, a piece of population frequency data about BRCA2
+      c.8023A&gt;G  becomes an Evidence Item when it is assessed for the support it may
+      offer for a target proposition (e.g. the prospect of the variant’s pathogenicity).
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: evidenceItems
+    alias: hasEvidenceItems
     owner: EvidenceLine
     domain_of:
     - EvidenceLine
@@ -826,8 +856,8 @@ attributes:
   directionOfEvidenceProvided:
     name: directionOfEvidenceProvided
     description: The direction of support that the Evidence Line is determined to
-      provide toward its target Proposition (supports, disputes, neutral)
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      provide toward its target Proposition (supports, disputes, neutral).
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: directionOfEvidenceProvided
@@ -841,13 +871,13 @@ attributes:
     name: strengthOfEvidenceProvided
     description: The strength of support that an Evidence Line is determined to provide
       for or against its target Proposition, evaluated relative to the direction indicated
-      by the directionOfEvidenceProvided
+      by the directionOfEvidenceProvided.
     comments:
     - Values of this attribute can be defined by for a given profile based on domain/application
       needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate',
       'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative
       assessments of evidence provided.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: strengthOfEvidenceProvided
@@ -865,7 +895,7 @@ attributes:
     comments:
     - A given profile or implementation can define a scoring scale and rules that
       meet the needs of their domain or application.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: scoreOfEvidenceProvided
@@ -875,18 +905,39 @@ attributes:
     range: float
     required: false
     multivalued: false
+  evidenceItemSources:
+    name: evidenceItemSources
+    description: An information resource (e.g. document, dataset, digital resource
+      such as a database or  knowledgebase) that provides information interpreted
+      as evidence in building an Evidence Line.
+    comments:
+    - This is a 'shortcut relation' that can be used to directly link an Evidence
+      Line to sources of its supporting Evidence Items, without having to represent
+      those Evidence Items directly. Populate with the name or uri or curie of a source
+      of information. Future work will define a more formal framework for referencing
+      information sources.
+    from_schema: https://w3id.org/sepio-model
+    status: Informative
+    rank: 1000
+    alias: evidenceItemSources
+    owner: EvidenceLine
+    domain_of:
+    - EvidenceLine
+    range: string
+    required: false
+    multivalued: true
   isAbout:
     name: isAbout
     description: An entity or concept in the world that the information entity describes/is
       about.
     comments:
-    - When used in the context of a Statement object, this field can be used to indicate
+    - e.g. In the context of a Statement object, this attribute may be used to indicate
       entities/concepts it is about, in lieu of providing a more precise description
       of what the Statement asserts to be true using subject, predicate, object, and
       qualifier properties. e.g. the Statement that "BRCA2 c.8023A&gt;G is pathogenic
       for Breast Cancer" might be annotated to be about the variant 'BRCA2 c.8023A&gt;G',
       and the disease 'Breast Cancer'.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: isAbout
@@ -904,13 +955,14 @@ attributes:
     - This attribute holds one or more Contribution objects, which provide structured
       descriptions of a contribution made to the Information Entity by a particular
       agent.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: contributions
     owner: EvidenceLine
     domain_of:
     - InformationEntity
+    - RecordMetadata
     range: Contribution
     required: false
     multivalued: true
@@ -924,9 +976,9 @@ attributes:
       in a specific language or format. e.g. for a Statement, this attribute captures
       when the information content expressed in the Statement was first generated
       by an agent.  Information about when a particular concrete encoding of this
-      information was created (e.g. as a written sentence, or a json object) would
-      live in a RecordMetadata object attached to the Information Entity).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      information was created (e.g. as row in a table, or object in a json document)
+      would live in a RecordMetadata object attached to the Information Entity).
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: dateAuthored
@@ -939,22 +991,23 @@ attributes:
   specifiedBy:
     name: specifiedBy
     description: A specification that describes all or part of the process that led
-      to creation of the Information Entity (e.g. a specific experimental protocol
-      or data analysis specification that describe how data were generated, or an
-      evidence interpretation guideline that describes steps taken to interpret data
-      in making a variant pathogenicity classification).
+      to creation of the Information Entity.
     comments:
+    - Examples - an experimental protocol or data analysis specification that describe
+      how data were generated, or an evidence interpretation guideline that describes
+      steps taken to interpret data in making a variant pathogenicity classification.
     - Note that this attribute captures specific *instances* of specifications/methods
       (e.g. the specific electron microscopy method described in https://doi.org/10.1002/
-      cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission
-      Electron Microscopy').
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission
+      Electron Microscopy").
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: specifiedBy
     owner: EvidenceLine
     domain_of:
     - InformationEntity
+    - Activity
     range: string
     required: false
     multivalued: true
@@ -963,13 +1016,11 @@ attributes:
     description: Types of methodological approaches used to collect, generate, or
       evaluate the reported information.
     comments:
-    - 'This field captures terms representing *types* of methods applied, vs the ''specifiedBy''
+    - This field captures terms representing *types* of methods applied, vs the "specifiedBy"
       attribute which captures specific instances of methods used.
-
-
-      Implementers should define a relevant source or specific set of method type
-      codes/terms to use here based on the needs of the domain or application.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - Implementers should define a relevant source of method type codes/terms to use
+      here based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: methodTypes
@@ -982,8 +1033,8 @@ attributes:
   derivedFrom:
     name: derivedFrom
     description: Another Information Entity from which this Information Entity is
-      derived, in whole or in part
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      derived, in whole or in part.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: derivedFrom
@@ -995,17 +1046,14 @@ attributes:
     multivalued: true
   reportedIn:
     name: reportedIn
-    description: A document in which the Information Entity is reported
+    description: A document in which the Information Entity is reported.
     comments:
-    - The term 'authored' is used in the model to refer to the generation of abstract
-      'information content', as opposed to creation of a concrete encoding of this
-      information in a specific language, format, or physical artifact. e.g. for a
-      Statement, this attribute captures when the information content expressed in
-      the Statement was first  generated by an agent, and metadata about when a particular
-      concrete encoding of this information was created (e.g. a written sentence in
-      an article, or json object in a data stream) would live in a RecordMetadata
-      object attached to the Information Entity).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - This attribute is used specifically to reference documents/publications where
+      the Information Entity is expressed or reported.  For a Statement, this might
+      be a publication where the authors express the statement in text.  For a Data
+      Item, this might be a publication with a table or figure that reports the value
+      of the  data.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: reportedIn
@@ -1020,25 +1068,22 @@ attributes:
     description: A qualitative term indicating the scientific rigor or reliability
       with which the information was generated/collected.
     comments:
-    - '- This is typically based on the quality of design and execution of the study
+    - This is typically based on the quality of design and execution of the study
       or curation activity that generated it (e.g. were relevant controls assessed
       to show instruments were working, were all samples taken care of and handled
       identically, are methods sound and well documented, etc.).
-
-      - The quality of information is intrinsic to the information itself, and not
-      to a particular application of the information (e.g. as evidence for making
-      an Assertion)
-
-      - The quality of information is one factor that goes into the confidence we
-      have in the information''s veracity (i.e. that it is an accurate reflection
-      of reality it intends to measure or describe). Other factors informing confidence
-      may include who did it (we may just not trust some Agents), when (if data created
-      500 years ago, we may have less confidence in it), and for Assertions, the relevance
-      and abundance of supporting evidence.
-
-      - Implementers should define a relevant source or specific set of terms to use
-      here based on the needs of the domain or application.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - The quality of information is intrinsic to the information itself, and not to
+      a particular application of the information (e.g. as evidence for making an
+      Assertion)
+    - The quality of information is one factor that goes into the confidence we have
+      in the information''s veracity (i.e. that it is an accurate reflection of reality
+      it intends to measure or describe). Other factors informing confidence may include
+      who did it (we may just not trust some Agents), when (if data created 500 years
+      ago, we may have less confidence in it), and for Assertions, the relevance and
+      abundance of supporting evidence.
+    - Implementers should define a relevant source of codes or terms to use here,
+      based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: informationQuality
@@ -1050,16 +1095,15 @@ attributes:
     multivalued: false
   recordMetadata:
     name: recordMetadata
-    description: Provenance metadata about a specific concrete encoding/serialization
-      of information (e.g. as a record in a specific data/knowledgebase, or an online
-      digital resource) - as opposed to provenance about the abstract information
-      content a record carries.
+    description: Provenance metadata about a specific concrete record of information
+      as encoded/serialized in a particular data set or object (as opposed to provenance
+      about the abstract information content the encoding carries).
     comments:
     - This attribute holds a structured RecordMetadata objects, which can be used
       to capture when, how, and by whom a record serialization was generated or modified;
       what upstream resources it was derived or retrieved from; and record-level administrative
       information such as versioning and lifecycle status.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: recordMetadata
@@ -1076,18 +1120,14 @@ attributes:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: id
@@ -1104,18 +1144,12 @@ attributes:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: identifiers
@@ -1131,7 +1165,7 @@ attributes:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: type
@@ -1144,20 +1178,21 @@ attributes:
   label:
     name: label
     description: A primary name for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: label
     owner: EvidenceLine
     domain_of:
     - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: alternativeLabels
@@ -1170,7 +1205,7 @@ attributes:
   description:
     name: description
     description: A free text description of the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: description
@@ -1189,7 +1224,7 @@ attributes:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: extensions

@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -331,7 +338,12 @@
 
 
 <h1 id="slot-date">Slot: date</h1>
-<p>URI: <a href="https://example.org/sepio-model/date">sepio-model:date</a></p>
+<p><em>The date that the Activity was completed.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>By convention, populate this attribute with the date the activity was completed (e.g.  in cases where the activity spans multiple days). The date SHOULD be formatted as a date string in ISO format "YYYY-MM-DD".</li>
+</ul>
+<p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/date">sepio_linkml:date</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -345,20 +357,20 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Contribution/">Contribution</a></td>
-<td>An action or actions taken by a particular agent in the creation, modificatio...</td>
+<td><a href="../Activity/">Activity</a></td>
+<td>An action or set of actions performed by an agent, that occurs over a period ...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Activity/">Activity</a></td>
-<td>An action or set of actions performed by an agent, that occurs over a period ...</td>
-<td>yes</td>
+<td><a href="../Contribution/">Contribution</a></td>
+<td>An action or actions taken by a particular agent in the creation, modificatio...</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="./">date</a></li>
 </ul>
 <h2 id="usages">Usages</h2>
 <table>
@@ -372,12 +384,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../DataSet/">DataSet</a></td>
-<td><a href="../releaseDate/">releaseDate</a></td>
-<td>range</td>
-<td><a href="./">date</a></td>
-</tr>
-<tr>
 <td><a href="../Activity/">Activity</a></td>
 <td><a href="./">date</a></td>
 <td>range</td>
@@ -389,18 +395,12 @@
 <td>range</td>
 <td><a href="./">date</a></td>
 </tr>
-<tr>
-<td><a href="../RecordMetadata/">RecordMetadata</a></td>
-<td><a href="../dateRecordCreated/">dateRecordCreated</a></td>
-<td>range</td>
-<td><a href="./">date</a></td>
-</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/sepio-model</li>
+<li>from schema: https://w3id.org/sepio-framework/sepio-linkml</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -413,11 +413,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>sepio-model:date</td>
+<td>sepio_linkml:date</td>
 </tr>
 <tr>
 <td>native</td>
-<td>sepio-model:date</td>
+<td>sepio_linkml:date</td>
 </tr>
 </tbody>
 </table>
@@ -425,12 +425,21 @@
 <details>
 
 <pre><code class="language-yaml">name: date
-from_schema: https://w3id.org/sepio-model
+description: The date that the Activity was completed.
+comments:
+- By convention, populate this attribute with the date the activity was completed
+  (e.g.  in cases where the activity spans multiple days). The date SHOULD be formatted
+  as a date string in ISO format &quot;YYYY-MM-DD&quot;.
+from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: date
+owner: Activity
 domain_of:
 - Activity
-range: string
+range: date
+required: false
+multivalued: false
 
 </code></pre>
 

@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,16 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#aliases">
-    Aliases
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -215,7 +210,11 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-study-group-studygroup">Class: Study Group (StudyGroup)</h1>
-<p><em>A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income) May be referred to as a 'cohort' or 'population' in specific research settings.</em></p>
+<p><em>A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>A Study Group may include all participants in a given study, or specific subsets that are designated based on shared roles or characteristics.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/StudyGroup">sepio_linkml:StudyGroup</a></p>
 <div class="mermaid"> classDiagram
     class StudyGroup
@@ -371,14 +370,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="aliases">Aliases</h2>
-<ul>
-<li>Population; Cohort</li>
-</ul>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>A Study Group may include all participants in a given study, or specific subsets that are designated based on shared roles or characteristics.</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -410,33 +401,35 @@
 <pre><code class="language-yaml">name: StudyGroup
 description: A collection of individuals or specimens from the same taxonomic class,
   selected for analysis in a scientific study based on their exhibiting one or more
-  common characteristics  (e.g. species, race, age, gender, disease state, income)
+  common characteristics  (e.g. species, race, age, gender, disease state, income).
   May be referred to as a 'cohort' or 'population' in specific research settings.
 title: Study Group
 comments:
 - A Study Group may include all participants in a given study, or specific subsets
   that are designated based on shared roles or characteristics.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
-aliases:
-- Population; Cohort
 status: Draft
 is_a: Entity
-slots:
-- memberCount
-- isSubsetOf
-- characteristics
-slot_usage:
+attributes:
   memberCount:
     name: memberCount
     description: The total number of individual members in the StudyGroup.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - StudyGroup
     range: integer
     required: false
     multivalued: false
   isSubsetOf:
     name: isSubsetOf
     description: A larger StudyGroup of which this StudyGroup represents a subset.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - StudyGroup
     range: StudyGroup
     required: false
     multivalued: true
@@ -444,7 +437,11 @@ slot_usage:
     name: characteristics
     description: A feature or role shared by all members of the StudyGroup, representing
       a criterion for membership in the group.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - StudyGroup
     range: Characteristic
     required: false
     multivalued: true
@@ -456,45 +453,20 @@ slot_usage:
 <pre><code class="language-yaml">name: StudyGroup
 description: A collection of individuals or specimens from the same taxonomic class,
   selected for analysis in a scientific study based on their exhibiting one or more
-  common characteristics  (e.g. species, race, age, gender, disease state, income)
+  common characteristics  (e.g. species, race, age, gender, disease state, income).
   May be referred to as a 'cohort' or 'population' in specific research settings.
 title: Study Group
 comments:
 - A Study Group may include all participants in a given study, or specific subsets
   that are designated based on shared roles or characteristics.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
-aliases:
-- Population; Cohort
 status: Draft
 is_a: Entity
-slot_usage:
-  memberCount:
-    name: memberCount
-    description: The total number of individual members in the StudyGroup.
-    status: Informative
-    range: integer
-    required: false
-    multivalued: false
-  isSubsetOf:
-    name: isSubsetOf
-    description: A larger StudyGroup of which this StudyGroup represents a subset.
-    status: Draft
-    range: StudyGroup
-    required: false
-    multivalued: true
-  characteristics:
-    name: characteristics
-    description: A feature or role shared by all members of the StudyGroup, representing
-      a criterion for membership in the group.
-    status: Draft
-    range: Characteristic
-    required: false
-    multivalued: true
 attributes:
   memberCount:
     name: memberCount
     description: The total number of individual members in the StudyGroup.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: memberCount
@@ -507,7 +479,7 @@ attributes:
   isSubsetOf:
     name: isSubsetOf
     description: A larger StudyGroup of which this StudyGroup represents a subset.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: isSubsetOf
@@ -521,7 +493,7 @@ attributes:
     name: characteristics
     description: A feature or role shared by all members of the StudyGroup, representing
       a criterion for membership in the group.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: characteristics
@@ -538,18 +510,14 @@ attributes:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: id
@@ -566,18 +534,12 @@ attributes:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: identifiers
@@ -593,7 +555,7 @@ attributes:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: type
@@ -606,20 +568,21 @@ attributes:
   label:
     name: label
     description: A primary name for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: label
     owner: StudyGroup
     domain_of:
     - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: alternativeLabels
@@ -632,7 +595,7 @@ attributes:
   description:
     name: description
     description: A free text description of the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: description
@@ -651,7 +614,7 @@ attributes:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: extensions

@@ -274,19 +274,6 @@
     Identifier and Mapping Information
   </a>
   
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -340,7 +327,12 @@
 <tr>
 <td><a href="../Statement/">Statement</a></td>
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
-<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Proposition/">Proposition</a></td>
+<td>An abstract entity representing a possible fact that is either true or false</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -349,10 +341,6 @@
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/sepio-framework/sepio-linkml</li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -376,11 +364,10 @@
 <details>
 
 <pre><code class="language-yaml">name: object
-from_schema: https://w3id.org/sepio-framework/sepio-linkml
-rank: 1000
 alias: object
 domain_of:
 - Statement
+- Proposition
 range: string
 
 </code></pre>

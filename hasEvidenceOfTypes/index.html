@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-hasevidenceoftypes">Slot: hasEvidenceOfTypes</h1>
+<p><em>A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>This contrasts with hasEvidence and hasEvidenceLine attributes that describe specific instances of evidence information, such as a particular data item, study result, or prior assertions, etc. Where possible, data cretors should use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO) to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity evidence').</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/hasEvidenceOfTypes">sepio_linkml:hasEvidenceOfTypes</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,18 @@
 <tr>
 <td><a href="../Statement/">Statement</a></td>
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +393,24 @@
 <details>
 
 <pre><code class="language-yaml">name: hasEvidenceOfTypes
+description: A term describing a type of evidence used to assess the validity of Statement's
+  proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').
+comments:
+- This contrasts with hasEvidence and hasEvidenceLine attributes that describe specific
+  instances of evidence information, such as a particular data item, study result,
+  or prior assertions, etc. Where possible, data cretors should use of terms from
+  ontologies such as the Evidence and Conclusion Ontology (ECO) to describe specific
+  types of evidence (e.g. ECO:0000044 'sequence similarity evidence').
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: hasEvidenceOfTypes
+owner: Statement
 domain_of:
 - Statement
 range: string
+required: false
+multivalued: true
 
 </code></pre>
 

@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-extensiondescription">Slot: extensionDescription</h1>
+<p><em>A free text description of the intended meaning and use of the extension element, which may include the types of values it takes, and how to interpret these values in the context of the parent Class.</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/extensionDescription">sepio_linkml:extensionDescription</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +341,7 @@
 <tr>
 <td><a href="../Extension/">Extension</a></td>
 <td>A data structure that allows custom attributes to be defined for an Entity, t...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +377,18 @@
 <details>
 
 <pre><code class="language-yaml">name: extensionDescription
+description: A free text description of the intended meaning and use of the extension
+  element, which may include the types of values it takes, and how to interpret these
+  values in the context of the parent Class.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 rank: 1000
 alias: extensionDescription
+owner: Extension
 domain_of:
 - Extension
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

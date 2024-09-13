@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-daterecordcreated">Slot: dateRecordCreated</h1>
+<p><em>The date the record was initially created.</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/dateRecordCreated">sepio_linkml:dateRecordCreated</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +341,7 @@
 <tr>
 <td><a href="../RecordMetadata/">RecordMetadata</a></td>
 <td>A reusable structure that encapsulates provenance metadata about a serialized...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +377,17 @@
 <details>
 
 <pre><code class="language-yaml">name: dateRecordCreated
+description: The date the record was initially created.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: dateRecordCreated
+owner: RecordMetadata
 domain_of:
 - RecordMetadata
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

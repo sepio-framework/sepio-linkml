@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,12 @@
 
 
 <h1 id="slot-confidenceinterval">Slot: confidenceInterval</h1>
+<p><em>A measure of the probability that a parameter of interest will fall within a defined range of values around a mean or other statistical calculation.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Confidence intervals reflect the degree of uncertainty in a sampling method. They may be bounded on one or both sides, and are  computed for a designated confidence level (most often 95% or 99%.. For example, a Hazard Ratio of 0.47 might have a 95% confidence interval between 0.42 and 0.55, with a p-value of = 0.001.</li>
+<li>The DataItem used to represent a confidence interval will indicate what type of interval is reported (e.g. ''95% CI''), and will contain separate componentDataItems representing the upper and lower bounds of the interval (e.g. ''0.42'' and ''0.55'').'</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/confidenceInterval">sepio_linkml:confidenceInterval</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +353,13 @@
 <tr>
 <td><a href="../DataItem/">DataItem</a></td>
 <td>An Information Entity representing an individual piece of data, generated or ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../DataItem/">DataItem</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +389,26 @@
 <details>
 
 <pre><code class="language-yaml">name: confidenceInterval
+description: A measure of the probability that a parameter of interest will fall within
+  a defined range of values around a mean or other statistical calculation.
+comments:
+- Confidence intervals reflect the degree of uncertainty in a sampling method. They
+  may be bounded on one or both sides, and are  computed for a designated confidence
+  level (most often 95% or 99%.. For example, a Hazard Ratio of 0.47 might have a
+  95% confidence interval between 0.42 and 0.55, with a p-value of = 0.001.
+- The DataItem used to represent a confidence interval will indicate what type of
+  interval is reported (e.g. ''95% CI''), and will contain separate componentDataItems
+  representing the upper and lower bounds of the interval (e.g. ''0.42'' and ''0.55'').'
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: confidenceInterval
+owner: DataItem
 domain_of:
 - DataItem
-range: string
+range: DataItem
+required: false
+multivalued: false
 
 </code></pre>
 

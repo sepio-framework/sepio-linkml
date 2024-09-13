@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-values">Slot: values</h1>
+<p><em>The specific value(s) that the indicated traitor role  holds in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer').</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/values">sepio_linkml:values</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +341,21 @@
 <tr>
 <td><a href="../Characteristic/">Characteristic</a></td>
 <td>An object holding a name-value pair used to describe a trait or role of an in...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
+<li>
+<p>Required: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +385,18 @@
 <details>
 
 <pre><code class="language-yaml">name: values
+description: The specific value(s) that the indicated traitor role  holds in all population
+  members (e.g. 'east asian', 'female', 'adolescent', 'cancer').
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: values
+owner: Characteristic
 domain_of:
 - Characteristic
 range: string
+required: true
+multivalued: true
 
 </code></pre>
 

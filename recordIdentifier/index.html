@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-recordidentifier">Slot: recordIdentifier</h1>
+<p><em>The identifier of the record described in the RecordMetadata object (required when the record described is not the one in the present system).</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>This is needed only when the RecordMetadata object describes an upstream source record, as opposed to the record in the present system, so it is clear what the metadata it contains is about.  e.g. when ClinGen ingests and transforms ClinVar data, it wants to maintain a record of when the source ClinVar record was submitted and by whom.  A RecordMetadata object could be created that describes this upstream source record, including information about its submission to ClinVar.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/recordIdentifier">sepio_linkml:recordIdentifier</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +352,7 @@
 <tr>
 <td><a href="../RecordMetadata/">RecordMetadata</a></td>
 <td>A reusable structure that encapsulates provenance metadata about a serialized...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +388,25 @@
 <details>
 
 <pre><code class="language-yaml">name: recordIdentifier
+description: The identifier of the record described in the RecordMetadata object (required
+  when the record described is not the one in the present system).
+comments:
+- This is needed only when the RecordMetadata object describes an upstream source
+  record, as opposed to the record in the present system, so it is clear what the
+  metadata it contains is about.  e.g. when ClinGen ingests and transforms ClinVar
+  data, it wants to maintain a record of when the source ClinVar record was submitted
+  and by whom.  A RecordMetadata object could be created that describes this upstream
+  source record, including information about its submission to ClinVar.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: recordIdentifier
+owner: RecordMetadata
 domain_of:
 - RecordMetadata
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

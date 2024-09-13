@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,11 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -211,6 +211,11 @@
 </a>
 <h1 id="class-proposition-proposition">Class: Proposition (Proposition)</h1>
 <p><em>An abstract entity representing a possible fact that is either true or false.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Propositions are taken to represent the semantic content of sentences or larger lexical entities formulated in some natural or artificial language.  As abstract entities, Propositions capture a 'sharable' piece of meaning that can be put forth as true or false in many different Statement instances made by different Agents on different occasions.  Their identity and existence are independent of space and time, and of whether they are ever asserted to be true by some agent.</li>
+<li>Propositions may be used in two contexts in this model: (1) in Statements to represent the possible fact that is put forth as true, or  that is subjected to an assessment of the level of evidence supporting it; (2) in Evidence Lines to represent the possible fact that an argument built from evidence items is evaluated against.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/Proposition">sepio_linkml:Proposition</a></p>
 <div class="mermaid"> classDiagram
     class Proposition
@@ -239,29 +244,29 @@
 
       Proposition : negated
 
-      Proposition : object_2
+      Proposition : object
 
-      Proposition : predicate_2
-
-
+      Proposition : predicate
 
 
-    Proposition --&gt; "1" Coding : predicate_2
+
+
+    Proposition --&gt; "1" Coding : predicate
     click Coding href "../Coding"
 
 
       Proposition : propositionText
 
-      Proposition : qualifier_2
+      Proposition : qualifier
 
 
 
 
-    Proposition --&gt; "*" Qualifier : qualifier_2
+    Proposition --&gt; "*" Qualifier : qualifier
     click Qualifier href "../Qualifier"
 
 
-      Proposition : subject_2
+      Proposition : subject
 
       Proposition : type
 
@@ -292,25 +297,25 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject_2/">subject_2</a></td>
+<td><a href="../subject/">subject</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The Entity or concept about which the Proposition is made</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../predicate_2/">predicate_2</a></td>
+<td><a href="../predicate/">predicate</a></td>
 <td>1 <br/> <a href="../Coding/">Coding</a></td>
 <td>The relationship declared to hold between the subject and the object of the P...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../object_2/">object_2</a></td>
+<td><a href="../object/">object</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>An Entity or concept that is related to the subject of a Proposition via its ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../qualifier_2/">qualifier_2</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
 <td>* <br/> <a href="../Qualifier/">Qualifier</a></td>
 <td>An additional piece of information that extends or refines the meaning of a P...</td>
 <td>direct</td>
@@ -390,11 +395,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>Propositions are taken to represent the semantic content of sentences or larger lexical entities formulated in some natural or artificial language.  As abstract entities, Propositions capture a 'sharable' piece of meaning that can be put forth as true or false in many different Statement instances made by different Agents on different occasions.  Their identity and existence are independent of space and time, and of whether they are ever asserted to be true by some agent. </li>
-</ul>
-<p>Propositions may be used in two contexts in this model: (1) in Statements to represent the possible fact that is put forth as true, or  that is subjected to an assessment of the level of evidence supporting it; (2) in Evidence Lines to represent the possible fact that an argument built from evidence items is evaluated against.</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -428,37 +428,34 @@ description: An abstract entity representing a possible fact that is either true
   false.
 title: Proposition
 comments:
-- "Propositions are taken to represent the semantic content of sentences or larger\
-  \ lexical entities formulated in some natural or artificial language.  As abstract\
-  \ entities, Propositions capture a 'sharable' piece of meaning that can be put forth\
-  \ as true or false in many different Statement instances made by different Agents\
-  \ on different occasions.  Their identity and existence are independent of space\
-  \ and time, and of whether they are ever asserted to be true by some agent. \n\n\
-  Propositions may be used in two contexts in this model: (1) in Statements to represent\
-  \ the possible fact that is put forth as true, or  that is subjected to an assessment\
-  \ of the level of evidence supporting it; (2) in Evidence Lines to represent the\
-  \ possible fact that an argument built from evidence items is evaluated against."
+- Propositions are taken to represent the semantic content of sentences or larger
+  lexical entities formulated in some natural or artificial language.  As abstract
+  entities, Propositions capture a 'sharable' piece of meaning that can be put forth
+  as true or false in many different Statement instances made by different Agents
+  on different occasions.  Their identity and existence are independent of space and
+  time, and of whether they are ever asserted to be true by some agent.
+- 'Propositions may be used in two contexts in this model: (1) in Statements to represent
+  the possible fact that is put forth as true, or  that is subjected to an assessment
+  of the level of evidence supporting it; (2) in Evidence Lines to represent the possible
+  fact that an argument built from evidence items is evaluated against.'
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Entity
-slots:
-- propositionText
-- subject_2
-- predicate_2
-- object_2
-- qualifier_2
-- negated
-slot_usage:
+attributes:
   propositionText:
     name: propositionText
     description: A natural-language expression of the Proposition's meaning (i.e.
       the 'possible fact' it expresses).
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - Proposition
     range: string
     required: false
     multivalued: false
-  subject_2:
-    name: subject_2
+  subject:
+    name: subject
     description: The Entity or concept about which the Proposition is made.
     comments:
     - While the Core Information Model is domain-agnostic, and supports Propositions
@@ -467,12 +464,16 @@ slot_usage:
       entities or concepts that represent evidence for a statement about variation
       (e.g. a statement that a gene is valid for some disease is one type of evidence
       that may support the pathogenicity of a variant that affects that gene).
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    domain_of:
+    - Statement
+    - Proposition
     range: string
     required: true
     multivalued: false
-  predicate_2:
-    name: predicate_2
+  predicate:
+    name: predicate
     description: The relationship declared to hold between the subject and the object
       of the Proposition.
     comments:
@@ -483,51 +484,62 @@ slot_usage:
       value set might include terms from the GENO ontology defining  'pathogenic for
       condition', 'benign for condition', and 'uncertain significance for condition'
       relationships (GENO:0000840, GENO:0000843, GENO:0000845).
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    domain_of:
+    - Statement
+    - Proposition
     range: Coding
     required: true
     multivalued: false
-  object_2:
-    name: object_2
+  object:
+    name: object
     description: An Entity or concept that is related to the subject of a Proposition
       via its predicate.
     comments:
     - The object of a Proposition can be any Entity or concept that is related to
       the subject, e.g. for Genetic Variation subjects this is often a disease, drug,
       gene, molecular consequence, functional impact on gene or protein.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    domain_of:
+    - Statement
+    - Proposition
     range: string
     required: true
     multivalued: false
-  qualifier_2:
-    name: qualifier_2
+  qualifier:
+    name: qualifier
     description: An additional piece of information that extends or refines the meaning
       of a Propositions's core subject - predicate - object 'triple' - by providing
       additional detail, or constraining the statement to apply in a particular context.
     comments:
-    - "The qualifier attribute allows representation of more complex, n-ary propositions\
-      \ that may not be accommodated by a simple subject-predicate-object (SPO) triple.\
-      \ For example, if a triple asserts that 'Variant X' - predicts sensitivity to\
-      \ - 'Treatment Y', a qualifier can be used to indicate that this applies in\
-      \ the context of a particular 'Disease Z'. Qualifiers can also add information\
-      \ that quantifies aspects of a Statement - e.g. for an SPO triple asserting\
-      \ that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add\
-      \ frequency/penetrance information that quantifies the percentage of carriers\
-      \ in which the phenotype is observed to manifest. Profiles of specific proposition\
-      \ types may define more than one qualifier, as needed to capture different types\
-      \ of qualifying information. \n\nThe SEPIO core model specifies use of a key-value\
-      \ 'Qualifier' object to capture the meaning and value of each type of qualifying\
-      \ information relevant for a given type of Statement. But in practice, profiles\
-      \ for specific Proposition types may choose to define one or more specializations\
-      \ of the generic 'qualifier' property as named attributes. This makes the data\
-      \ more succinct and parsable, and allows specific constraints to be applied\
-      \ and validated for different qualifiers. For example, a VariantPathogenicityStatement\
-      \ profile may define a named 'alleleOriginQualifier' attribute that is required,\
-      \ and a named 'geneContextQualifier' attribute that is optional - both of which\
-      \ conceptually specialize the core-im 'qualifier' property. Under this approach,\
-      \ the core 'qualifier' acts as a placeholder to seed such specializations, but\
-      \ is not used directly in profiles."
+    - The qualifier attribute allows representation of more complex, n-ary propositions
+      that may not be accommodated by a simple subject-predicate-object (SPO) triple.
+      For example, if a triple asserts that 'Variant X' - predicts sensitivity to
+      - 'Treatment Y', a qualifier can be used to indicate that this applies in the
+      context of a particular 'Disease Z'. Qualifiers can also add information that
+      quantifies aspects of a Statement - e.g. for an SPO triple asserting that a
+      'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance
+      information that quantifies the percentage of carriers in which the phenotype
+      is observed to manifest. Profiles of specific proposition types may define more
+      than one qualifier, as needed to capture different types of qualifying information.
+    - The SEPIO core model specifies use of a key-value 'Qualifier' object to capture
+      the meaning and value of each type of qualifying information relevant for a
+      given type of Statement. But in practice, profiles for specific Proposition
+      types may choose to define one or more specializations of the generic 'qualifier'
+      property as named attributes. This makes the data more succinct and parsable,
+      and allows specific constraints to be applied and validated for different qualifiers.
+      For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier'
+      attribute that is required, and a named 'geneContextQualifier' attribute that
+      is optional - both of which conceptually specialize the core-im 'qualifier'
+      property. Under this approach, the core 'qualifier' acts as a placeholder to
+      seed such specializations, but is not used directly in profiles.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    domain_of:
+    - Statement
+    - Proposition
     range: Qualifier
     required: false
     multivalued: true
@@ -540,7 +552,11 @@ slot_usage:
     - Along with the 'subject', predicate', 'object', and 'qualifier' attributes,
       the 'negated' element contributes to the semantics of the 'possible fact' that
       a Proposition expresses.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - Proposition
     range: boolean
     required: false
     multivalued: false
@@ -554,121 +570,25 @@ description: An abstract entity representing a possible fact that is either true
   false.
 title: Proposition
 comments:
-- "Propositions are taken to represent the semantic content of sentences or larger\
-  \ lexical entities formulated in some natural or artificial language.  As abstract\
-  \ entities, Propositions capture a 'sharable' piece of meaning that can be put forth\
-  \ as true or false in many different Statement instances made by different Agents\
-  \ on different occasions.  Their identity and existence are independent of space\
-  \ and time, and of whether they are ever asserted to be true by some agent. \n\n\
-  Propositions may be used in two contexts in this model: (1) in Statements to represent\
-  \ the possible fact that is put forth as true, or  that is subjected to an assessment\
-  \ of the level of evidence supporting it; (2) in Evidence Lines to represent the\
-  \ possible fact that an argument built from evidence items is evaluated against."
+- Propositions are taken to represent the semantic content of sentences or larger
+  lexical entities formulated in some natural or artificial language.  As abstract
+  entities, Propositions capture a 'sharable' piece of meaning that can be put forth
+  as true or false in many different Statement instances made by different Agents
+  on different occasions.  Their identity and existence are independent of space and
+  time, and of whether they are ever asserted to be true by some agent.
+- 'Propositions may be used in two contexts in this model: (1) in Statements to represent
+  the possible fact that is put forth as true, or  that is subjected to an assessment
+  of the level of evidence supporting it; (2) in Evidence Lines to represent the possible
+  fact that an argument built from evidence items is evaluated against.'
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Entity
-slot_usage:
-  propositionText:
-    name: propositionText
-    description: A natural-language expression of the Proposition's meaning (i.e.
-      the 'possible fact' it expresses).
-    status: Informative
-    range: string
-    required: false
-    multivalued: false
-  subject_2:
-    name: subject_2
-    description: The Entity or concept about which the Proposition is made.
-    comments:
-    - While the Core Information Model is domain-agnostic, and supports Propositions
-      about any type of Entity, for most VA use cases, the subject will be  some type
-      of genetic variation. But data creators may want to make statements about other
-      entities or concepts that represent evidence for a statement about variation
-      (e.g. a statement that a gene is valid for some disease is one type of evidence
-      that may support the pathogenicity of a variant that affects that gene).
-    status: Informative
-    range: string
-    required: true
-    multivalued: false
-  predicate_2:
-    name: predicate_2
-    description: The relationship declared to hold between the subject and the object
-      of the Proposition.
-    comments:
-    - When applied to represent a particular type of Proposition (via 'Profiling'),
-      implementers can define a value set of predicates for the relationships relevant
-      in the domain - ideally using terms from community ontologies or terminologies.
-      For example, in a  'Variant Pathogenicity Statement' Profile, the predicate
-      value set might include terms from the GENO ontology defining  'pathogenic for
-      condition', 'benign for condition', and 'uncertain significance for condition'
-      relationships (GENO:0000840, GENO:0000843, GENO:0000845).
-    status: Informative
-    range: Coding
-    required: true
-    multivalued: false
-  object_2:
-    name: object_2
-    description: An Entity or concept that is related to the subject of a Proposition
-      via its predicate.
-    comments:
-    - The object of a Proposition can be any Entity or concept that is related to
-      the subject, e.g. for Genetic Variation subjects this is often a disease, drug,
-      gene, molecular consequence, functional impact on gene or protein.
-    status: Informative
-    range: string
-    required: true
-    multivalued: false
-  qualifier_2:
-    name: qualifier_2
-    description: An additional piece of information that extends or refines the meaning
-      of a Propositions's core subject - predicate - object 'triple' - by providing
-      additional detail, or constraining the statement to apply in a particular context.
-    comments:
-    - "The qualifier attribute allows representation of more complex, n-ary propositions\
-      \ that may not be accommodated by a simple subject-predicate-object (SPO) triple.\
-      \ For example, if a triple asserts that 'Variant X' - predicts sensitivity to\
-      \ - 'Treatment Y', a qualifier can be used to indicate that this applies in\
-      \ the context of a particular 'Disease Z'. Qualifiers can also add information\
-      \ that quantifies aspects of a Statement - e.g. for an SPO triple asserting\
-      \ that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add\
-      \ frequency/penetrance information that quantifies the percentage of carriers\
-      \ in which the phenotype is observed to manifest. Profiles of specific proposition\
-      \ types may define more than one qualifier, as needed to capture different types\
-      \ of qualifying information. \n\nThe SEPIO core model specifies use of a key-value\
-      \ 'Qualifier' object to capture the meaning and value of each type of qualifying\
-      \ information relevant for a given type of Statement. But in practice, profiles\
-      \ for specific Proposition types may choose to define one or more specializations\
-      \ of the generic 'qualifier' property as named attributes. This makes the data\
-      \ more succinct and parsable, and allows specific constraints to be applied\
-      \ and validated for different qualifiers. For example, a VariantPathogenicityStatement\
-      \ profile may define a named 'alleleOriginQualifier' attribute that is required,\
-      \ and a named 'geneContextQualifier' attribute that is optional - both of which\
-      \ conceptually specialize the core-im 'qualifier' property. Under this approach,\
-      \ the core 'qualifier' acts as a placeholder to seed such specializations, but\
-      \ is not used directly in profiles."
-    status: Informative
-    range: Qualifier
-    required: false
-    multivalued: true
-  negated:
-    name: negated
-    description: A boolean flag set to 'true' to represent a negation of the proposition
-      expressed by the subject, predicate, object, and qualifier(s) (e.g. that "Variant
-      X is NOT pathogenic for Disease Y")
-    comments:
-    - Along with the 'subject', predicate', 'object', and 'qualifier' attributes,
-      the 'negated' element contributes to the semantics of the 'possible fact' that
-      a Proposition expresses.
-    status: Informative
-    range: boolean
-    required: false
-    multivalued: false
 attributes:
   propositionText:
     name: propositionText
     description: A natural-language expression of the Proposition's meaning (i.e.
       the 'possible fact' it expresses).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: propositionText
@@ -678,8 +598,8 @@ attributes:
     range: string
     required: false
     multivalued: false
-  subject_2:
-    name: subject_2
+  subject:
+    name: subject
     description: The Entity or concept about which the Proposition is made.
     comments:
     - While the Core Information Model is domain-agnostic, and supports Propositions
@@ -688,18 +608,18 @@ attributes:
       entities or concepts that represent evidence for a statement about variation
       (e.g. a statement that a gene is valid for some disease is one type of evidence
       that may support the pathogenicity of a variant that affects that gene).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: subject_2
+    alias: subject
     owner: Proposition
     domain_of:
+    - Statement
     - Proposition
     range: string
     required: true
     multivalued: false
-  predicate_2:
-    name: predicate_2
+  predicate:
+    name: predicate
     description: The relationship declared to hold between the subject and the object
       of the Proposition.
     comments:
@@ -710,68 +630,67 @@ attributes:
       value set might include terms from the GENO ontology defining  'pathogenic for
       condition', 'benign for condition', and 'uncertain significance for condition'
       relationships (GENO:0000840, GENO:0000843, GENO:0000845).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: predicate_2
+    alias: predicate
     owner: Proposition
     domain_of:
+    - Statement
     - Proposition
     range: Coding
     required: true
     multivalued: false
-  object_2:
-    name: object_2
+  object:
+    name: object
     description: An Entity or concept that is related to the subject of a Proposition
       via its predicate.
     comments:
     - The object of a Proposition can be any Entity or concept that is related to
       the subject, e.g. for Genetic Variation subjects this is often a disease, drug,
       gene, molecular consequence, functional impact on gene or protein.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: object_2
+    alias: object
     owner: Proposition
     domain_of:
+    - Statement
     - Proposition
     range: string
     required: true
     multivalued: false
-  qualifier_2:
-    name: qualifier_2
+  qualifier:
+    name: qualifier
     description: An additional piece of information that extends or refines the meaning
       of a Propositions's core subject - predicate - object 'triple' - by providing
       additional detail, or constraining the statement to apply in a particular context.
     comments:
-    - "The qualifier attribute allows representation of more complex, n-ary propositions\
-      \ that may not be accommodated by a simple subject-predicate-object (SPO) triple.\
-      \ For example, if a triple asserts that 'Variant X' - predicts sensitivity to\
-      \ - 'Treatment Y', a qualifier can be used to indicate that this applies in\
-      \ the context of a particular 'Disease Z'. Qualifiers can also add information\
-      \ that quantifies aspects of a Statement - e.g. for an SPO triple asserting\
-      \ that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add\
-      \ frequency/penetrance information that quantifies the percentage of carriers\
-      \ in which the phenotype is observed to manifest. Profiles of specific proposition\
-      \ types may define more than one qualifier, as needed to capture different types\
-      \ of qualifying information. \n\nThe SEPIO core model specifies use of a key-value\
-      \ 'Qualifier' object to capture the meaning and value of each type of qualifying\
-      \ information relevant for a given type of Statement. But in practice, profiles\
-      \ for specific Proposition types may choose to define one or more specializations\
-      \ of the generic 'qualifier' property as named attributes. This makes the data\
-      \ more succinct and parsable, and allows specific constraints to be applied\
-      \ and validated for different qualifiers. For example, a VariantPathogenicityStatement\
-      \ profile may define a named 'alleleOriginQualifier' attribute that is required,\
-      \ and a named 'geneContextQualifier' attribute that is optional - both of which\
-      \ conceptually specialize the core-im 'qualifier' property. Under this approach,\
-      \ the core 'qualifier' acts as a placeholder to seed such specializations, but\
-      \ is not used directly in profiles."
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - The qualifier attribute allows representation of more complex, n-ary propositions
+      that may not be accommodated by a simple subject-predicate-object (SPO) triple.
+      For example, if a triple asserts that 'Variant X' - predicts sensitivity to
+      - 'Treatment Y', a qualifier can be used to indicate that this applies in the
+      context of a particular 'Disease Z'. Qualifiers can also add information that
+      quantifies aspects of a Statement - e.g. for an SPO triple asserting that a
+      'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance
+      information that quantifies the percentage of carriers in which the phenotype
+      is observed to manifest. Profiles of specific proposition types may define more
+      than one qualifier, as needed to capture different types of qualifying information.
+    - The SEPIO core model specifies use of a key-value 'Qualifier' object to capture
+      the meaning and value of each type of qualifying information relevant for a
+      given type of Statement. But in practice, profiles for specific Proposition
+      types may choose to define one or more specializations of the generic 'qualifier'
+      property as named attributes. This makes the data more succinct and parsable,
+      and allows specific constraints to be applied and validated for different qualifiers.
+      For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier'
+      attribute that is required, and a named 'geneContextQualifier' attribute that
+      is optional - both of which conceptually specialize the core-im 'qualifier'
+      property. Under this approach, the core 'qualifier' acts as a placeholder to
+      seed such specializations, but is not used directly in profiles.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: qualifier_2
+    alias: qualifier
     owner: Proposition
     domain_of:
+    - Statement
     - Proposition
     range: Qualifier
     required: false
@@ -785,7 +704,7 @@ attributes:
     - Along with the 'subject', predicate', 'object', and 'qualifier' attributes,
       the 'negated' element contributes to the semantics of the 'possible fact' that
       a Proposition expresses.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: negated
@@ -802,18 +721,14 @@ attributes:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: id
@@ -830,18 +745,12 @@ attributes:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: identifiers
@@ -857,7 +766,7 @@ attributes:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: type
@@ -870,20 +779,21 @@ attributes:
   label:
     name: label
     description: A primary name for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: label
     owner: Proposition
     domain_of:
     - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: alternativeLabels
@@ -896,7 +806,7 @@ attributes:
   description:
     name: description
     description: A free text description of the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: description
@@ -915,7 +825,7 @@ attributes:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: extensions

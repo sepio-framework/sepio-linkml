@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-strengthofevidenceprovided">Slot: strengthOfEvidenceProvided</h1>
+<p><em>The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative assessments of evidence provided.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/strengthOfEvidenceProvided">sepio_linkml:strengthOfEvidenceProvided</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +352,7 @@
 <tr>
 <td><a href="../EvidenceLine/">EvidenceLine</a></td>
 <td>An independent, evidence-based argument that may support or refute the validi...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +388,24 @@
 <details>
 
 <pre><code class="language-yaml">name: strengthOfEvidenceProvided
+description: The strength of support that an Evidence Line is determined to provide
+  for or against its target Proposition, evaluated relative to the direction indicated
+  by the directionOfEvidenceProvided.
+comments:
+- Values of this attribute can be defined by for a given profile based on domain/application
+  needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak').
+  The 'scoreOfEvidenceProvided' attribute can be used to report quantitative assessments
+  of evidence provided.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: strengthOfEvidenceProvided
+owner: EvidenceLine
 domain_of:
 - EvidenceLine
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

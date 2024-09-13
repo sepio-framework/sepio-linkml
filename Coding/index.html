@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,11 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -211,6 +211,11 @@
 </a>
 <h1 id="class-coding-coding">Class: Coding (Coding)</h1>
 <p><em>A structured representation of a code for a defined concept in a terminology or code system.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Either a code, label, or both must be provided.</li>
+<li>Coding supports use of terms form ontologies/terminologies in structured object that reports id, label, and metadata about system it came from.  follows FHIR approach.  Used in model when implementers are free to create own value sets of terms which get reported within coding objects in SEPIO data. Validation requires additional tooling - as constraints are not defined in schema itself.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/Coding">sepio_linkml:Coding</a></p>
 <div class="mermaid"> classDiagram
     class Coding
@@ -220,7 +225,7 @@
 
       Coding : code
 
-      Coding : label_2
+      Coding : label
 
       Coding : system
 
@@ -253,7 +258,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../label_2/">label_2</a></td>
+<td><a href="../label/">label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The human-readable name for the coded concept, as defined by the code system</td>
 <td>direct</td>
@@ -315,7 +320,7 @@
 </tr>
 <tr>
 <td><a href="../Document/">Document</a></td>
-<td><a href="../subtype_2/">subtype_2</a></td>
+<td><a href="../subtype/">subtype</a></td>
 <td>range</td>
 <td><a href="./">Coding</a></td>
 </tr>
@@ -333,7 +338,7 @@
 </tr>
 <tr>
 <td><a href="../DataItem/">DataItem</a></td>
-<td><a href="../subtype_3/">subtype_3</a></td>
+<td><a href="../subtype/">subtype</a></td>
 <td>range</td>
 <td><a href="./">Coding</a></td>
 </tr>
@@ -357,7 +362,7 @@
 </tr>
 <tr>
 <td><a href="../DataSet/">DataSet</a></td>
-<td><a href="../subtype_4/">subtype_4</a></td>
+<td><a href="../subtype/">subtype</a></td>
 <td>range</td>
 <td><a href="./">Coding</a></td>
 </tr>
@@ -375,7 +380,7 @@
 </tr>
 <tr>
 <td><a href="../Activity/">Activity</a></td>
-<td><a href="../subtype_5/">subtype_5</a></td>
+<td><a href="../subtype/">subtype</a></td>
 <td>range</td>
 <td><a href="./">Coding</a></td>
 </tr>
@@ -387,7 +392,7 @@
 </tr>
 <tr>
 <td><a href="../Contribution/">Contribution</a></td>
-<td><a href="../subtype_5/">subtype_5</a></td>
+<td><a href="../subtype/">subtype</a></td>
 <td>range</td>
 <td><a href="./">Coding</a></td>
 </tr>
@@ -435,6 +440,12 @@
 </tr>
 <tr>
 <td><a href="../EvidenceLine/">EvidenceLine</a></td>
+<td><a href="../subtype/">subtype</a></td>
+<td>range</td>
+<td><a href="./">Coding</a></td>
+</tr>
+<tr>
+<td><a href="../EvidenceLine/">EvidenceLine</a></td>
 <td><a href="../methodTypes/">methodTypes</a></td>
 <td>range</td>
 <td><a href="./">Coding</a></td>
@@ -447,17 +458,12 @@
 </tr>
 <tr>
 <td><a href="../Proposition/">Proposition</a></td>
-<td><a href="../predicate_2/">predicate_2</a></td>
+<td><a href="../predicate/">predicate</a></td>
 <td>range</td>
 <td><a href="./">Coding</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>Either a code, label, or both must be provided.</li>
-</ul>
-<p>Coding supports use of terms form ontologies/terminologies in structured object that reports id, label, and metadata about system it came from.  follows FHIR approach.  Used in model when implementers are free to create own value sets of terms which get reported within coding objects in SEPIO data. Validation requires additional tooling - as constraints are not defined in schema itself.</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -491,34 +497,35 @@ description: A structured representation of a code for a defined concept in a te
   or code system.
 title: Coding
 comments:
-- 'Either a code, label, or both must be provided.
-
-
-  Coding supports use of terms form ontologies/terminologies in structured object
+- Either a code, label, or both must be provided.
+- Coding supports use of terms form ontologies/terminologies in structured object
   that reports id, label, and metadata about system it came from.  follows FHIR approach.  Used
   in model when implementers are free to create own value sets of terms which get
   reported within coding objects in SEPIO data. Validation requires additional tooling
-  - as constraints are not defined in schema itself.'
+  - as constraints are not defined in schema itself.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 is_a: Utility
-slots:
-- code
-- label_2
-- system
-- systemVersion
-slot_usage:
+attributes:
   code:
     name: code
     description: A symbol uniquely identifying the concept, as in a syntax defined
       by the code system.  CURIE format is preferred where possible (e.g. ‘SO:0000704’
       is the CURIE form of the Sequence Ontology code for 'gene').
+    from_schema: https://w3id.org/sepio-model
+    rank: 1000
+    domain_of:
+    - Coding
     range: string
     required: false
     multivalued: false
-  label_2:
-    name: label_2
+  label:
+    name: label
     description: The human-readable name for the coded concept, as defined by the
       code system.
+    from_schema: https://w3id.org/sepio-model
+    domain_of:
+    - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
@@ -529,12 +536,21 @@ slot_usage:
       uri/url for the system. When the 'code' is reported as a CURIE, the 'system'
       should be reported as the uri that the CURIE's prefix expands to (e.g. 'http://purl.obofoundry.org/so.owl/'
       for the Sequence Ontology).
+    from_schema: https://w3id.org/sepio-model
+    rank: 1000
+    domain_of:
+    - Coding
     range: string
     required: false
     multivalued: false
   systemVersion:
     name: systemVersion
     description: Version of the terminology or code system that provided the code.
+    from_schema: https://w3id.org/sepio-model
+    rank: 1000
+    domain_of:
+    - Coding
+    - Expression
     range: string
     required: false
     multivalued: false
@@ -548,55 +564,21 @@ description: A structured representation of a code for a defined concept in a te
   or code system.
 title: Coding
 comments:
-- 'Either a code, label, or both must be provided.
-
-
-  Coding supports use of terms form ontologies/terminologies in structured object
+- Either a code, label, or both must be provided.
+- Coding supports use of terms form ontologies/terminologies in structured object
   that reports id, label, and metadata about system it came from.  follows FHIR approach.  Used
   in model when implementers are free to create own value sets of terms which get
   reported within coding objects in SEPIO data. Validation requires additional tooling
-  - as constraints are not defined in schema itself.'
+  - as constraints are not defined in schema itself.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 is_a: Utility
-slot_usage:
-  code:
-    name: code
-    description: A symbol uniquely identifying the concept, as in a syntax defined
-      by the code system.  CURIE format is preferred where possible (e.g. ‘SO:0000704’
-      is the CURIE form of the Sequence Ontology code for 'gene').
-    range: string
-    required: false
-    multivalued: false
-  label_2:
-    name: label_2
-    description: The human-readable name for the coded concept, as defined by the
-      code system.
-    range: string
-    required: false
-    multivalued: false
-  system:
-    name: system
-    description: The terminology/code system that defined the code.  May be reported
-      as a free-text name (e.g. ‘Sequence Ontology’), but it is preferable to provide  a
-      uri/url for the system. When the 'code' is reported as a CURIE, the 'system'
-      should be reported as the uri that the CURIE's prefix expands to (e.g. 'http://purl.obofoundry.org/so.owl/'
-      for the Sequence Ontology).
-    range: string
-    required: false
-    multivalued: false
-  systemVersion:
-    name: systemVersion
-    description: Version of the terminology or code system that provided the code.
-    range: string
-    required: false
-    multivalued: false
 attributes:
   code:
     name: code
     description: A symbol uniquely identifying the concept, as in a syntax defined
       by the code system.  CURIE format is preferred where possible (e.g. ‘SO:0000704’
       is the CURIE form of the Sequence Ontology code for 'gene').
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     rank: 1000
     alias: code
     owner: Coding
@@ -605,15 +587,15 @@ attributes:
     range: string
     required: false
     multivalued: false
-  label_2:
-    name: label_2
+  label:
+    name: label
     description: The human-readable name for the coded concept, as defined by the
       code system.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
-    rank: 1000
-    alias: label_2
+    from_schema: https://w3id.org/sepio-model
+    alias: label
     owner: Coding
     domain_of:
+    - Entity
     - Coding
     range: string
     required: false
@@ -625,7 +607,7 @@ attributes:
       uri/url for the system. When the 'code' is reported as a CURIE, the 'system'
       should be reported as the uri that the CURIE's prefix expands to (e.g. 'http://purl.obofoundry.org/so.owl/'
       for the Sequence Ontology).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     rank: 1000
     alias: system
     owner: Coding
@@ -637,12 +619,13 @@ attributes:
   systemVersion:
     name: systemVersion
     description: Version of the terminology or code system that provided the code.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     rank: 1000
     alias: systemVersion
     owner: Coding
     domain_of:
     - Coding
+    - Expression
     range: string
     required: false
     multivalued: false

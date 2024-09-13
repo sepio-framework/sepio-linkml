@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-valueoperator">Slot: valueOperator</h1>
+<p><em>An operation that defines how to logically interpret a set of more than one Characteristic values ('AND', 'OR', 'NOT').</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>An 'AND' operator indicates that an individual exhibits all of the characteristic values listed.  An 'OR' operator indicates the individual exhibits one or more of the characteristic values listed. A 'NOT' indicates that the individual does not exhibit the characteristic value or values listed.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/valueOperator">sepio_linkml:valueOperator</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +352,7 @@
 <tr>
 <td><a href="../Characteristic/">Characteristic</a></td>
 <td>An object holding a name-value pair used to describe a trait or role of an in...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +388,23 @@
 <details>
 
 <pre><code class="language-yaml">name: valueOperator
+description: An operation that defines how to logically interpret a set of more than
+  one Characteristic values ('AND', 'OR', 'NOT').
+comments:
+- An 'AND' operator indicates that an individual exhibits all of the characteristic
+  values listed.  An 'OR' operator indicates the individual exhibits one or more of
+  the characteristic values listed. A 'NOT' indicates that the individual does not
+  exhibit the characteristic value or values listed.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: valueOperator
+owner: Characteristic
 domain_of:
 - Characteristic
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

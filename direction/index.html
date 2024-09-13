@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-direction">Slot: direction</h1>
+<p><em>A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject',  'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction', 'strength', and 'score' attributes. The 'direction'  attribute is used to indicate whether the Statement's Proposition is <em>supported</em> by the agent's assessment (when evidence favors its validity), is <em>disputed</em> by the agent's assessment (when evidence argues against its validity), or remains <em>neutral</em> (when conflicting or insufficient evidence exists to assert one direction or the other).  (Enumerated values = 'supports', 'disputes', 'neutral').</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/direction">sepio_linkml:direction</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +352,7 @@
 <tr>
 <td><a href="../Statement/">Statement</a></td>
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +388,30 @@
 <details>
 
 <pre><code class="language-yaml">name: direction
+description: A term indicating whether the Statement supports, disputes, or remains
+  neutral w.r.t. the validity of the Proposition it evaluates.
+comments:
+- Statements put forth a Proposition that expresses some possible fact about the world,
+  and may provide an assessment of this proposition's validity (i.e. how likely it
+  is to be true or false based on evaluated evidence). The semantics of the Proposition
+  are captured in the 'subject',  'predicate', 'object', and optional 'qualifier'
+  attributes. An assessment of the Proposition's validity can be captured using 'direction',
+  'strength', and 'score' attributes. The 'direction'  attribute is used to indicate
+  whether the Statement's Proposition is *supported* by the agent's assessment (when
+  evidence favors its validity), is *disputed* by the agent's assessment (when evidence
+  argues against its validity), or remains *neutral* (when conflicting or insufficient
+  evidence exists to assert one direction or the other).  (Enumerated values = 'supports',
+  'disputes', 'neutral').
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: direction
+owner: Statement
 domain_of:
 - Statement
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

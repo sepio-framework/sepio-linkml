@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-negated">Slot: negated</h1>
+<p><em>A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate, object, and qualifier(s) (e.g. that "Variant X is NOT pathogenic for Disease Y")</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Along with the 'subject', predicate', 'object', and 'qualifier' attributes, the 'negated' element contributes to the semantics of the 'possible fact' that a Proposition expresses.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/negated">sepio_linkml:negated</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,13 @@
 <tr>
 <td><a href="../Proposition/">Proposition</a></td>
 <td>An abstract entity representing a possible fact that is either true or false</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Boolean/">Boolean</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +388,23 @@
 <details>
 
 <pre><code class="language-yaml">name: negated
+description: A boolean flag set to 'true' to represent a negation of the proposition
+  expressed by the subject, predicate, object, and qualifier(s) (e.g. that &quot;Variant
+  X is NOT pathogenic for Disease Y&quot;)
+comments:
+- Along with the 'subject', predicate', 'object', and 'qualifier' attributes, the
+  'negated' element contributes to the semantics of the 'possible fact' that a Proposition
+  expresses.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: negated
+owner: Proposition
 domain_of:
 - Proposition
-range: string
+range: boolean
+required: false
+multivalued: false
 
 </code></pre>
 

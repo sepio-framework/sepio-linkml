@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-score">Slot: score</h1>
+<p><em>A quantitative score that indicates the strength of a Proposition's validity assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how <em>confident</em> that agent is that the Proposition is true or false, or the <em>strength of evidence</em> they believe supports or disputes it.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength', and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/score">sepio_linkml:score</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,13 @@
 <tr>
 <td><a href="../Statement/">Statement</a></td>
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Float/">Float</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +388,29 @@
 <details>
 
 <pre><code class="language-yaml">name: score
+description: A quantitative score that indicates the strength of a Proposition's validity
+  assessment in the direction indicated (i.e. how strongly supported or disputed the
+  Proposition is believed to be).  Depending on its implementation, a score may reflect
+  how *confident* that agent is that the Proposition is true or false, or the *strength
+  of evidence* they believe supports or disputes it.
+comments:
+- Statements put forth a Proposition that expresses some possible fact about the world,
+  and may provide an assessment of this proposition's validity (i.e. how likely it
+  is to be true or false based on evaluated evidence). The semantics of the Proposition
+  are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes.
+  The assessment of the Proposition's validity are captured in 'direction', 'strength',
+  and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength',
+  but allows for a quantitative assessment based on a numerical score.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: score
+owner: Statement
 domain_of:
 - Statement
-range: string
+range: float
+required: false
+multivalued: false
 
 </code></pre>
 

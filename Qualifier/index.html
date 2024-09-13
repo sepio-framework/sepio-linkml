@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,11 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -211,6 +211,10 @@
 </a>
 <h1 id="class-qualifier-qualifier">Class: Qualifier (Qualifier)</h1>
 <p><em>A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Qualifiers allow representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if a triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. Qualifiers can also add information that 'quantifies' aspects of a Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/Qualifier">sepio_linkml:Qualifier</a></p>
 <div class="mermaid"> classDiagram
     class Qualifier
@@ -218,9 +222,9 @@
       Utility &lt;|-- Qualifier
         click Utility href "../Utility"
 
-      Qualifier : name_2
+      Qualifier : name
 
-      Qualifier : value_2
+      Qualifier : value
 
 
 </div>
@@ -243,13 +247,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../name_2/">name_2</a></td>
+<td><a href="../name/">name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>A descriptive name that describes the type of information captured in the Qua...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../value_2/">value_2</a></td>
+<td><a href="../value/">value</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The value of the qualifier - holding information that refines/extends the mea...</td>
 <td>direct</td>
@@ -275,16 +279,12 @@
 </tr>
 <tr>
 <td><a href="../Proposition/">Proposition</a></td>
-<td><a href="../qualifier_2/">qualifier_2</a></td>
+<td><a href="../qualifier/">qualifier</a></td>
 <td>range</td>
 <td><a href="./">Qualifier</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>Qualifiers allow representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if a triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. Qualifiers can also add information that 'quantifies' aspects of a Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest.</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -331,30 +331,40 @@ comments:
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Utility
-slots:
-- name_2
-- value_2
-slot_usage:
-  name_2:
-    name: name_2
+attributes:
+  name:
+    name: name
     description: A descriptive name that describes the type of information captured
       in the Qualifier value.
     comments:
     - Recommended convention is to treat this like the name of an attribute in the
       model - use snake case syntax, and append 'Qualifier' to the end of the name.
       e.g. 'diseaseContextQualifier', or 'alleleOriginQualifier'.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    domain_of:
+    - Agent
+    - Qualifier
+    - Extension
+    - Characteristic
     range: string
     required: true
     multivalued: false
-  value_2:
-    name: value_2
+  value:
+    name: value
     description: The value of the qualifier - holding information that refines/extends
       the meaning of the Statement.
     comments:
     - Value can be of any data type - a string, an integer or float, a uriorcurie,
       a Coding, etc.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    domain_of:
+    - DataItem
+    - Qualifier
+    - Expression
+    - Extension
+    range: string
     required: true
     multivalued: false
 
@@ -380,62 +390,43 @@ comments:
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Utility
-slot_usage:
-  name_2:
-    name: name_2
-    description: A descriptive name that describes the type of information captured
-      in the Qualifier value.
-    comments:
-    - Recommended convention is to treat this like the name of an attribute in the
-      model - use snake case syntax, and append 'Qualifier' to the end of the name.
-      e.g. 'diseaseContextQualifier', or 'alleleOriginQualifier'.
-    status: Informative
-    range: string
-    required: true
-    multivalued: false
-  value_2:
-    name: value_2
-    description: The value of the qualifier - holding information that refines/extends
-      the meaning of the Statement.
-    comments:
-    - Value can be of any data type - a string, an integer or float, a uriorcurie,
-      a Coding, etc.
-    status: Informative
-    required: true
-    multivalued: false
 attributes:
-  name_2:
-    name: name_2
+  name:
+    name: name
     description: A descriptive name that describes the type of information captured
       in the Qualifier value.
     comments:
     - Recommended convention is to treat this like the name of an attribute in the
       model - use snake case syntax, and append 'Qualifier' to the end of the name.
       e.g. 'diseaseContextQualifier', or 'alleleOriginQualifier'.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: name_2
+    alias: name
     owner: Qualifier
     domain_of:
+    - Agent
     - Qualifier
+    - Extension
+    - Characteristic
     range: string
     required: true
     multivalued: false
-  value_2:
-    name: value_2
+  value:
+    name: value
     description: The value of the qualifier - holding information that refines/extends
       the meaning of the Statement.
     comments:
     - Value can be of any data type - a string, an integer or float, a uriorcurie,
       a Coding, etc.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: value_2
+    alias: value
     owner: Qualifier
     domain_of:
+    - DataItem
     - Qualifier
+    - Expression
+    - Extension
     range: string
     required: true
     multivalued: false

@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-code">Slot: code</h1>
+<p><em>A symbol uniquely identifying the concept, as in a syntax defined by the code system.  CURIE format is preferred where possible (e.g. ‘SO:0000704’ is the CURIE form of the Sequence Ontology code for 'gene').</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/code">sepio_linkml:code</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +341,7 @@
 <tr>
 <td><a href="../Coding/">Coding</a></td>
 <td>A structured representation of a code for a defined concept in a terminology ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +377,18 @@
 <details>
 
 <pre><code class="language-yaml">name: code
+description: A symbol uniquely identifying the concept, as in a syntax defined by
+  the code system.  CURIE format is preferred where possible (e.g. ‘SO:0000704’ is
+  the CURIE form of the Sequence Ontology code for 'gene').
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 rank: 1000
 alias: code
+owner: Coding
 domain_of:
 - Coding
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

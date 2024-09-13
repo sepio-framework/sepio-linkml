@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,11 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -211,6 +211,10 @@
 </a>
 <h1 id="class-record-metadata-recordmetadata">Class: Record Metadata (RecordMetadata)</h1>
 <p><em>A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents).</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Record-level metadata applies to a specific concrete encoding/serialization of information (e.g as a record in a specific data/knowlegebase, or an online digital resource). A RecordMetadata object can capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/RecordMetadata">sepio_linkml:RecordMetadata</a></p>
 <div class="mermaid"> classDiagram
     class RecordMetadata
@@ -218,12 +222,12 @@
       Utility &lt;|-- RecordMetadata
         click Utility href "../Utility"
 
-      RecordMetadata : contributions_2
+      RecordMetadata : contributions
 
 
 
 
-    RecordMetadata --&gt; "*" Contribution : contributions_2
+    RecordMetadata --&gt; "*" Contribution : contributions
     click Contribution href "../Contribution"
 
 
@@ -275,12 +279,12 @@
 </tr>
 <tr>
 <td><a href="../dateRecordCreated/">dateRecordCreated</a></td>
-<td>0..1 <br/> <a href="../date/">date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The date the record was initially created</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../contributions_2/">contributions_2</a></td>
+<td><a href="../contributions/">contributions</a></td>
 <td>* <br/> <a href="../Contribution/">Contribution</a></td>
 <td>describes specific contributions made by an human or software agent to the cr...</td>
 <td>direct</td>
@@ -348,10 +352,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>Record-level metadata applies to a specific concrete encoding/serialization of information (e.g as a record in a specific data/knowlegebase, or an online digital resource). A RecordMetadata object can capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status.</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -394,17 +394,11 @@ comments:
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Utility
-slots:
-- recordIdentifier
-- recordVersion
-- derivedFromRecord
-- dateRecordCreated
-- contributions_2
-slot_usage:
+attributes:
   recordIdentifier:
     name: recordIdentifier
     description: The identifier of the record described in the RecordMetadata object
-      (required when the record described is not the one in the present system)
+      (required when the record described is not the one in the present system).
     comments:
     - This is needed only when the RecordMetadata object describes an upstream source
       record, as opposed to the record in the present system, so it is clear what
@@ -412,14 +406,22 @@ slot_usage:
       ClinVar data, it wants to maintain a record of when the source ClinVar record
       was submitted and by whom.  A RecordMetadata object could be created that describes
       this upstream source record, including information about its submission to ClinVar.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - RecordMetadata
     range: string
     required: false
     multivalued: false
   recordVersion:
     name: recordVersion
-    description: The version number of the record-level artifact the object describes
+    description: The version number of the record-level artifact the object describes.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - RecordMetadata
     range: string
     required: false
     multivalued: false
@@ -429,23 +431,35 @@ slot_usage:
       through a data ingest and/or transformation process.
     comments:
     - Value should be a string representing the identifier of the source record.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - RecordMetadata
     range: string
     required: false
     multivalued: true
   dateRecordCreated:
     name: dateRecordCreated
     description: The date the record was initially created.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
-    range: date
+    rank: 1000
+    domain_of:
+    - RecordMetadata
+    range: string
     required: false
     multivalued: false
-  contributions_2:
-    name: contributions_2
+  contributions:
+    name: contributions
     description: describes specific contributions made by an human or software agent
       to the creation, modification, or administrative management of a data record
-      or object
+      or object.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    domain_of:
+    - InformationEntity
+    - RecordMetadata
     range: Contribution
     required: false
     multivalued: true
@@ -468,60 +482,11 @@ comments:
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Utility
-slot_usage:
-  recordIdentifier:
-    name: recordIdentifier
-    description: The identifier of the record described in the RecordMetadata object
-      (required when the record described is not the one in the present system)
-    comments:
-    - This is needed only when the RecordMetadata object describes an upstream source
-      record, as opposed to the record in the present system, so it is clear what
-      the metadata it contains is about.  e.g. when ClinGen ingests and transforms
-      ClinVar data, it wants to maintain a record of when the source ClinVar record
-      was submitted and by whom.  A RecordMetadata object could be created that describes
-      this upstream source record, including information about its submission to ClinVar.
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  recordVersion:
-    name: recordVersion
-    description: The version number of the record-level artifact the object describes
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  derivedFromRecord:
-    name: derivedFromRecord
-    description: Another data record from which the record described here was derived,
-      through a data ingest and/or transformation process.
-    comments:
-    - Value should be a string representing the identifier of the source record.
-    status: Draft
-    range: string
-    required: false
-    multivalued: true
-  dateRecordCreated:
-    name: dateRecordCreated
-    description: The date the record was initially created.
-    status: Draft
-    range: date
-    required: false
-    multivalued: false
-  contributions_2:
-    name: contributions_2
-    description: describes specific contributions made by an human or software agent
-      to the creation, modification, or administrative management of a data record
-      or object
-    status: Draft
-    range: Contribution
-    required: false
-    multivalued: true
 attributes:
   recordIdentifier:
     name: recordIdentifier
     description: The identifier of the record described in the RecordMetadata object
-      (required when the record described is not the one in the present system)
+      (required when the record described is not the one in the present system).
     comments:
     - This is needed only when the RecordMetadata object describes an upstream source
       record, as opposed to the record in the present system, so it is clear what
@@ -529,7 +494,7 @@ attributes:
       ClinVar data, it wants to maintain a record of when the source ClinVar record
       was submitted and by whom.  A RecordMetadata object could be created that describes
       this upstream source record, including information about its submission to ClinVar.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: recordIdentifier
@@ -541,8 +506,8 @@ attributes:
     multivalued: false
   recordVersion:
     name: recordVersion
-    description: The version number of the record-level artifact the object describes
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    description: The version number of the record-level artifact the object describes.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: recordVersion
@@ -558,7 +523,7 @@ attributes:
       through a data ingest and/or transformation process.
     comments:
     - Value should be a string representing the identifier of the source record.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: derivedFromRecord
@@ -571,27 +536,27 @@ attributes:
   dateRecordCreated:
     name: dateRecordCreated
     description: The date the record was initially created.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: dateRecordCreated
     owner: RecordMetadata
     domain_of:
     - RecordMetadata
-    range: date
+    range: string
     required: false
     multivalued: false
-  contributions_2:
-    name: contributions_2
+  contributions:
+    name: contributions
     description: describes specific contributions made by an human or software agent
       to the creation, modification, or administrative management of a data record
-      or object
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      or object.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
-    rank: 1000
-    alias: contributions_2
+    alias: contributions
     owner: RecordMetadata
     domain_of:
+    - InformationEntity
     - RecordMetadata
     range: Contribution
     required: false

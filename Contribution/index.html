@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,11 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -210,7 +210,12 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-contribution-contribution">Class: Contribution (Contribution)</h1>
-<p><em>An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.)</em></p>
+<p><em>An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.).</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Contributions are used to organize information about when, where, how (e.g. what roles were played), and on whose behalf these actions were performed.</li>
+<li>The scope of a Contribution instance includes only the actions of a single agent in contributing to a single artifact, which may be performed in one continuous effort, or several discontinuous sessions of work.  The agent can be an individual person, a software agent, or a group or organization of individuals acting together.'</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/Contribution">sepio_linkml:Contribution</a></p>
 <div class="mermaid"> classDiagram
     class Contribution
@@ -293,21 +298,21 @@
     click Agent href "../Agent"
 
 
-      Contribution : specifiedBy_2
+      Contribution : specifiedBy
 
 
 
 
-    Contribution --&gt; "*" Method : specifiedBy_2
+    Contribution --&gt; "*" Method : specifiedBy
     click Method href "../Method"
 
 
-      Contribution : subtype_5
+      Contribution : subtype
 
 
 
 
-    Contribution --&gt; "0..1" Coding : subtype_5
+    Contribution --&gt; "0..1" Coding : subtype
     click Coding href "../Coding"
 
 
@@ -355,7 +360,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subtype_5/">subtype_5</a></td>
+<td><a href="../subtype/">subtype</a></td>
 <td>0..1 <br/> <a href="../Coding/">Coding</a></td>
 <td>A specific type of activity the Activity instance represents</td>
 <td><a href="../Activity/">Activity</a></td>
@@ -373,7 +378,7 @@
 <td><a href="../Activity/">Activity</a></td>
 </tr>
 <tr>
-<td><a href="../specifiedBy_2/">specifiedBy_2</a></td>
+<td><a href="../specifiedBy/">specifiedBy</a></td>
 <td>* <br/> <a href="../Method/">Method</a></td>
 <td>A method that was followed in performing an Activity, that describes how it w...</td>
 <td><a href="../Activity/">Activity</a></td>
@@ -495,16 +500,12 @@
 </tr>
 <tr>
 <td><a href="../RecordMetadata/">RecordMetadata</a></td>
-<td><a href="../contributions_2/">contributions_2</a></td>
+<td><a href="../contributions/">contributions</a></td>
 <td>range</td>
 <td><a href="./">Contribution</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>The scope of a Contribution instance includes only the actions of a single agent in contributing to a single artifact, which may be performed in one continuous effort, or several discontinuous sessions of work.  The agent can be an individual person, a software agent, or a group or organization of individuals acting together. Contribution instances are used to organize information about when, where, how (e.g. what roles were played), and on whose behalf these actions were performed.</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -536,23 +537,19 @@
 <pre><code class="language-yaml">name: Contribution
 description: An action or actions taken by a particular agent in the creation, modification,
   assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet,
-  Publication, etc.)
+  Publication, etc.).
 title: Contribution
 comments:
+- Contributions are used to organize information about when, where, how (e.g. what
+  roles were played), and on whose behalf these actions were performed.
 - The scope of a Contribution instance includes only the actions of a single agent
   in contributing to a single artifact, which may be performed in one continuous effort,
   or several discontinuous sessions of work.  The agent can be an individual person,
-  a software agent, or a group or organization of individuals acting together. Contribution
-  instances are used to organize information about when, where, how (e.g. what roles
-  were played), and on whose behalf these actions were performed.
+  a software agent, or a group or organization of individuals acting together.'
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Activity
-slots:
-- contributor
-- activityType
-- contributionMadeTo
-slot_usage:
+attributes:
   contributor:
     name: contributor
     description: The Agent that made the contribution.
@@ -560,7 +557,11 @@ slot_usage:
     - Note that this must be a single agent (which can be a Person, or an Organization).  If
       multiple Agents contributed to an entity, a separate Contribution instances
       MUST be created for each.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Contribution
     range: Agent
     required: false
     multivalued: false
@@ -570,22 +571,30 @@ slot_usage:
       in making the contribution (e.g. for a publication, agents may contribute as
       a primary author, editor, figure designer, data generator, etc. . Values of
       this property may be framed as activities or as contribution roles (e.g. using
-      terms from the Contribution Role Ontology (CRO).)
+      terms from the Contribution Role Ontology (CRO)).
     comments:
-    - "- Each implementation can define terms for the specific types of activities\
-      \ relevant to their use case/application. \n- Note that if the same Agent performed\
-      \ multiple types of activities in contributing to some artifact, they may all\
-      \ be captured in a single Contribution object. However, if data creators want\
-      \ to provide metadata specific to each activity (e.g. when or how each was performed),\
-      \ then a separate Contribution object should be created for each activity."
+    - Each implementation can define terms for the specific types of activities relevant
+      to their use case/application. \n- Note that if the same Agent performed multiple
+      types of activities in contributing to some artifact, they may all be captured
+      in a single Contribution object. However, if data creators want to provide metadata
+      specific to each activity (e.g. when or how each was performed), then a separate
+      Contribution object should be created for each activity.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Contribution
     range: Coding
     required: false
     multivalued: true
   contributionMadeTo:
     name: contributionMadeTo
     description: The artifact toward which the contribution was made.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - Contribution
     range: InformationEntity
     required: false
     multivalued: false
@@ -597,55 +606,18 @@ slot_usage:
 <pre><code class="language-yaml">name: Contribution
 description: An action or actions taken by a particular agent in the creation, modification,
   assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet,
-  Publication, etc.)
+  Publication, etc.).
 title: Contribution
 comments:
+- Contributions are used to organize information about when, where, how (e.g. what
+  roles were played), and on whose behalf these actions were performed.
 - The scope of a Contribution instance includes only the actions of a single agent
   in contributing to a single artifact, which may be performed in one continuous effort,
   or several discontinuous sessions of work.  The agent can be an individual person,
-  a software agent, or a group or organization of individuals acting together. Contribution
-  instances are used to organize information about when, where, how (e.g. what roles
-  were played), and on whose behalf these actions were performed.
+  a software agent, or a group or organization of individuals acting together.'
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Activity
-slot_usage:
-  contributor:
-    name: contributor
-    description: The Agent that made the contribution.
-    comments:
-    - Note that this must be a single agent (which can be a Person, or an Organization).  If
-      multiple Agents contributed to an entity, a separate Contribution instances
-      MUST be created for each.
-    status: Draft
-    range: Agent
-    required: false
-    multivalued: false
-  activityType:
-    name: activityType
-    description: The specific type of activity performed or role played by an agent
-      in making the contribution (e.g. for a publication, agents may contribute as
-      a primary author, editor, figure designer, data generator, etc. . Values of
-      this property may be framed as activities or as contribution roles (e.g. using
-      terms from the Contribution Role Ontology (CRO).)
-    comments:
-    - "- Each implementation can define terms for the specific types of activities\
-      \ relevant to their use case/application. \n- Note that if the same Agent performed\
-      \ multiple types of activities in contributing to some artifact, they may all\
-      \ be captured in a single Contribution object. However, if data creators want\
-      \ to provide metadata specific to each activity (e.g. when or how each was performed),\
-      \ then a separate Contribution object should be created for each activity."
-    status: Draft
-    range: Coding
-    required: false
-    multivalued: true
-  contributionMadeTo:
-    name: contributionMadeTo
-    description: The artifact toward which the contribution was made.
-    status: Informative
-    range: InformationEntity
-    required: false
-    multivalued: false
 attributes:
   contributor:
     name: contributor
@@ -654,7 +626,7 @@ attributes:
     - Note that this must be a single agent (which can be a Person, or an Organization).  If
       multiple Agents contributed to an entity, a separate Contribution instances
       MUST be created for each.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: contributor
@@ -670,15 +642,15 @@ attributes:
       in making the contribution (e.g. for a publication, agents may contribute as
       a primary author, editor, figure designer, data generator, etc. . Values of
       this property may be framed as activities or as contribution roles (e.g. using
-      terms from the Contribution Role Ontology (CRO).)
+      terms from the Contribution Role Ontology (CRO)).
     comments:
-    - "- Each implementation can define terms for the specific types of activities\
-      \ relevant to their use case/application. \n- Note that if the same Agent performed\
-      \ multiple types of activities in contributing to some artifact, they may all\
-      \ be captured in a single Contribution object. However, if data creators want\
-      \ to provide metadata specific to each activity (e.g. when or how each was performed),\
-      \ then a separate Contribution object should be created for each activity."
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - Each implementation can define terms for the specific types of activities relevant
+      to their use case/application. \n- Note that if the same Agent performed multiple
+      types of activities in contributing to some artifact, they may all be captured
+      in a single Contribution object. However, if data creators want to provide metadata
+      specific to each activity (e.g. when or how each was performed), then a separate
+      Contribution object should be created for each activity.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: activityType
@@ -691,7 +663,7 @@ attributes:
   contributionMadeTo:
     name: contributionMadeTo
     description: The artifact toward which the contribution was made.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: contributionMadeTo
@@ -701,21 +673,26 @@ attributes:
     range: InformationEntity
     required: false
     multivalued: false
-  subtype_5:
-    name: subtype_5
+  subtype:
+    name: subtype
     description: A specific type of activity the Activity instance represents.
     comments:
     - This attribute can be used to report a specific type for the Activity, in cases
       where a model does not define Activity subclasses for this purpose.  Implementers
       can define their own set of data set type codes/terms, to match the needs of
       the domain or application.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: subtype_5
+    alias: subtype
     owner: Contribution
     domain_of:
+    - Method
+    - Document
+    - DataItem
+    - DataSet
     - Activity
+    - Agent
+    - EvidenceLine
     range: Coding
     required: false
     multivalued: false
@@ -739,7 +716,7 @@ attributes:
   performedBy:
     name: performedBy
     description: An Agent who participated in executing the Activity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: performedBy
@@ -749,16 +726,16 @@ attributes:
     range: Agent
     required: false
     multivalued: true
-  specifiedBy_2:
-    name: specifiedBy_2
+  specifiedBy:
+    name: specifiedBy
     description: A method that was followed in performing an Activity, that describes
       how it was executed.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: specifiedBy_2
+    alias: specifiedBy
     owner: Contribution
     domain_of:
+    - InformationEntity
     - Activity
     range: Method
     required: false
@@ -767,7 +744,7 @@ attributes:
     name: input
     description: An entity that was input into the Activity (could be material or
       information)
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: input
@@ -781,7 +758,7 @@ attributes:
     name: output
     description: An entity that was output from the Activity (could be material or
       information)
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: output
@@ -798,18 +775,14 @@ attributes:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: id
@@ -826,18 +799,12 @@ attributes:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: identifiers
@@ -853,7 +820,7 @@ attributes:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: type
@@ -866,20 +833,21 @@ attributes:
   label:
     name: label
     description: A primary name for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: label
     owner: Contribution
     domain_of:
     - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: alternativeLabels
@@ -892,7 +860,7 @@ attributes:
   description:
     name: description
     description: A free text description of the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: description
@@ -911,7 +879,7 @@ attributes:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: extensions

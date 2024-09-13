@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,16 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#aliases">
-    Aliases
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -216,6 +211,10 @@
 </a>
 <h1 id="class-entity-entity">Class: Entity (Entity)</h1>
 <p><em>Anything that exists, has existed, or will exist.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Entity is the root class of the 'gks-common' core information model. All common classes that have ids and other general metadata like label,  description, type, or extensions descend from this class and inherit its attributes.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/Entity">sepio_linkml:Entity</a></p>
 <div class="mermaid"> classDiagram
     class Entity
@@ -357,14 +356,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="aliases">Aliases</h2>
-<ul>
-<li>Thing</li>
-</ul>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>Entity is the root class of the 'gks-common' core information model. All common classes that have ids and other general metadata like label,  description, type, or extensions descend from this class and inherit its attributes.</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -401,18 +392,8 @@ comments:
   classes that have ids and other general metadata like label,  description, type,
   or extensions descend from this class and inherit its attributes.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
-aliases:
-- Thing
 status: Draft
-slots:
-- id
-- identifiers
-- type
-- label
-- alternativeLabels
-- description
-- extensions
-slot_usage:
+attributes:
   id:
     name: id
     description: The 'logical' identifier of the entity in the system of record, e.g.
@@ -420,18 +401,18 @@ slot_usage:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Entity
     range: string
     required: true
     multivalued: false
@@ -442,18 +423,16 @@ slot_usage:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - Entity
     range: string
     required: false
     multivalued: true
@@ -463,28 +442,45 @@ slot_usage:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Entity
     range: string
     required: true
     multivalued: false
   label:
     name: label
     description: A primary name for the Entity.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Entity
     range: string
     required: false
     multivalued: true
   description:
     name: description
     description: A free text description of the Entity.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Entity
     range: string
     required: false
     multivalued: false
@@ -497,7 +493,11 @@ slot_usage:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Entity
     range: Extension
     required: false
     multivalued: true
@@ -514,98 +514,7 @@ comments:
   classes that have ids and other general metadata like label,  description, type,
   or extensions descend from this class and inherit its attributes.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
-aliases:
-- Thing
 status: Draft
-slot_usage:
-  id:
-    name: id
-    description: The 'logical' identifier of the entity in the system of record, e.g.
-      a UUID.  This 'id' is unique within a given system, but may or may not be globally
-      unique outside the system. It is used within a system to reference one object
-      from another.
-    comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
-      ids - typically a serially or randomly generated value like a UUID that is assigned
-      to the data object as it is created in a system. But an implementer may choose
-      to reuse an existing, globally unique id from an external system or authority
-      for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
-      within the implementing system, and can be used to reference the identified
-      object in this context.'
-    status: Draft
-    range: string
-    required: true
-    multivalued: false
-  identifiers:
-    name: identifiers
-    description: A globally-unique 'business' identifier or accession number for the
-      real-world entity represented by a data object. These are typically assigned
-      by an external system or authority, and used to connect entities and share content
-      across different systems.
-    comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
-      property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    status: Informative
-    range: string
-    required: false
-    multivalued: true
-  type:
-    name: type
-    description: The name of the class that is instantiated by a data object representing
-      the Entity.
-    comments:
-    - MUST be the label of a concrete class from the data model.
-    status: Draft
-    range: string
-    required: true
-    multivalued: false
-  label:
-    name: label
-    description: A primary name for the Entity.
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  alternativeLabels:
-    name: alternativeLabels
-    description: Alternative name(s) for the Entity.
-    status: Draft
-    range: string
-    required: false
-    multivalued: true
-  description:
-    name: description
-    description: A free text description of the Entity.
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  extensions:
-    name: extensions
-    description: A list of extensions to the Entity, that allow for capture of information
-      not directly supported by elements defined in the model.
-    comments:
-    - Extension objects have a key-value data structure that allows definition of
-      custom fields in the data itself. Extensions are not expected to be natively
-      understood, but may be used for pre-negotiated exchange of message attributes
-      between systems.
-    status: Draft
-    range: Extension
-    required: false
-    multivalued: true
 attributes:
   id:
     name: id
@@ -614,18 +523,14 @@ attributes:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: id
@@ -642,18 +547,12 @@ attributes:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: identifiers
@@ -669,7 +568,7 @@ attributes:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: type
@@ -682,20 +581,21 @@ attributes:
   label:
     name: label
     description: A primary name for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: label
     owner: Entity
     domain_of:
     - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: alternativeLabels
@@ -708,7 +608,7 @@ attributes:
   description:
     name: description
     description: A free text description of the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: description
@@ -727,7 +627,7 @@ attributes:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: extensions

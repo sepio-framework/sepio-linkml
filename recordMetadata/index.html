@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-recordmetadata">Slot: recordMetadata</h1>
+<p><em>Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>This attribute holds a structured RecordMetadata objects, which can be used to capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/recordMetadata">sepio_linkml:recordMetadata</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -338,23 +350,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../DataSet/">DataSet</a></td>
-<td>A collection of related data items or records that are organized together in ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DataItem/">DataItem</a></td>
-<td>An Information Entity representing an individual piece of data, generated or ...</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Method/">Method</a></td>
 <td>A set of instructions that specify how to achieve some objective</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Document/">Document</a></td>
-<td>A collection of information, usually in a text-based or graphic human-readabl...</td>
+<td><a href="../EvidenceLine/">EvidenceLine</a></td>
+<td>An independent, evidence-based argument that may support or refute the validi...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -364,12 +366,12 @@
 </tr>
 <tr>
 <td><a href="../InformationEntity/">InformationEntity</a></td>
-<td>An abstract (non-physical) entity that is about something</td>
-<td>yes</td>
+<td>An abstract (non-physical) entity that is about something - representing the ...</td>
+<td>no</td>
 </tr>
 <tr>
-<td><a href="../EvidenceLine/">EvidenceLine</a></td>
-<td>An independent, evidence-based argument that may support or refute the validi...</td>
+<td><a href="../DataItem/">DataItem</a></td>
+<td>An Information Entity representing an individual piece of data, generated or ...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -377,11 +379,21 @@
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
 <td>no</td>
 </tr>
+<tr>
+<td><a href="../DataSet/">DataSet</a></td>
+<td>A collection of related data items or records that are organized together in ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Document/">Document</a></td>
+<td>A collection of information, usually in a text-based or graphic human-readabl...</td>
+<td>no</td>
+</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../RecordMetadata/">RecordMetadata</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -411,12 +423,24 @@
 <details>
 
 <pre><code class="language-yaml">name: recordMetadata
+description: Provenance metadata about a specific concrete record of information as
+  encoded/serialized in a particular data set or object (as opposed to provenance
+  about the abstract information content the encoding carries).
+comments:
+- This attribute holds a structured RecordMetadata objects, which can be used to capture
+  when, how, and by whom a record serialization was generated or modified; what upstream
+  resources it was derived or retrieved from; and record-level administrative information
+  such as versioning and lifecycle status.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: recordMetadata
+owner: InformationEntity
 domain_of:
 - InformationEntity
-range: string
+range: RecordMetadata
+required: false
+multivalued: false
 
 </code></pre>
 

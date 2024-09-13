@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-doi">Slot: doi</h1>
+<p><em>A <code>Digital Object Identifier &lt;https://www.doi.org/the-identifier/what-is-a-doi/&gt;_</code> for the document.</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/doi">sepio_linkml:doi</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +341,7 @@
 <tr>
 <td><a href="../Document/">Document</a></td>
 <td>A collection of information, usually in a text-based or graphic human-readabl...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +377,18 @@
 <details>
 
 <pre><code class="language-yaml">name: doi
+description: A `Digital Object Identifier &lt;https://www.doi.org/the-identifier/what-is-a-doi/&gt;_`
+  for the document.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: doi
+owner: Document
 domain_of:
 - Document
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

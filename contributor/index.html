@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-contributor">Slot: contributor</h1>
+<p><em>The Agent that made the contribution.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Note that this must be a single agent (which can be a Person, or an Organization).  If multiple Agents contributed to an entity, a separate Contribution instances MUST be created for each.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/contributor">sepio_linkml:contributor</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,13 @@
 <tr>
 <td><a href="../Contribution/">Contribution</a></td>
 <td>An action or actions taken by a particular agent in the creation, modificatio...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Agent/">Agent</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +388,21 @@
 <details>
 
 <pre><code class="language-yaml">name: contributor
+description: The Agent that made the contribution.
+comments:
+- Note that this must be a single agent (which can be a Person, or an Organization).  If
+  multiple Agents contributed to an entity, a separate Contribution instances MUST
+  be created for each.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: contributor
+owner: Contribution
 domain_of:
 - Contribution
-range: string
+range: Agent
+required: false
+multivalued: false
 
 </code></pre>
 

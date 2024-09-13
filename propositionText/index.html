@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-propositiontext">Slot: propositionText</h1>
+<p><em>A natural-language expression of the Proposition's meaning (i.e. the 'possible fact' it expresses).</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/propositionText">sepio_linkml:propositionText</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +341,7 @@
 <tr>
 <td><a href="../Proposition/">Proposition</a></td>
 <td>An abstract entity representing a possible fact that is either true or false</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +377,18 @@
 <details>
 
 <pre><code class="language-yaml">name: propositionText
+description: A natural-language expression of the Proposition's meaning (i.e. the
+  'possible fact' it expresses).
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: propositionText
+owner: Proposition
 domain_of:
 - Proposition
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

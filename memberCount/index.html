@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-membercount">Slot: memberCount</h1>
+<p><em>The total number of individual members in the StudyGroup.</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/memberCount">sepio_linkml:memberCount</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +341,13 @@
 <tr>
 <td><a href="../StudyGroup/">StudyGroup</a></td>
 <td>A collection of individuals or specimens from the same taxonomic class, selec...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Integer/">Integer</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +377,17 @@
 <details>
 
 <pre><code class="language-yaml">name: memberCount
+description: The total number of individual members in the StudyGroup.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: memberCount
+owner: StudyGroup
 domain_of:
 - StudyGroup
-range: string
+range: integer
+required: false
+multivalued: false
 
 </code></pre>
 

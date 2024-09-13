@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-componentdataitem">Slot: componentDataItem</h1>
+<p><em>A more foundational data item that is a logical component of a compound data item.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Examples of 'compound' data items with component parts include a confidence interval, which is comprised of data items representing its lower and upper bounds,  or a blood pressure reading, which is comprised of separate systolic and diastolic measurements.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/componentDataItem">sepio_linkml:componentDataItem</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,18 @@
 <tr>
 <td><a href="../DataItem/">DataItem</a></td>
 <td>An Information Entity representing an individual piece of data, generated or ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../DataItem/">DataItem</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +393,22 @@
 <details>
 
 <pre><code class="language-yaml">name: componentDataItem
+description: A more foundational data item that is a logical component of a compound
+  data item.
+comments:
+- Examples of 'compound' data items with component parts include a confidence interval,
+  which is comprised of data items representing its lower and upper bounds,  or a
+  blood pressure reading, which is comprised of separate systolic and diastolic measurements.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: componentDataItem
+owner: DataItem
 domain_of:
 - DataItem
-range: string
+range: DataItem
+required: false
+multivalued: true
 
 </code></pre>
 

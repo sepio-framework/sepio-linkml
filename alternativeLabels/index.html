@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-alternativelabels">Slot: alternativeLabels</h1>
+<p><em>Alternative name(s) for the Entity.</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/alternativeLabels">sepio_linkml:alternativeLabels</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -338,18 +339,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../DataSet/">DataSet</a></td>
-<td>A collection of related data items or records that are organized together in ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Contribution/">Contribution</a></td>
-<td>An action or actions taken by a particular agent in the creation, modificatio...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DataItem/">DataItem</a></td>
-<td>An Information Entity representing an individual piece of data, generated or ...</td>
+<td><a href="../Entity/">Entity</a></td>
+<td>Anything that exists, has existed, or will exist</td>
 <td>no</td>
 </tr>
 <tr>
@@ -358,13 +349,13 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Agent/">Agent</a></td>
-<td>An autonomous actor (person, organization, or software agent) that bears some...</td>
+<td><a href="../EvidenceLine/">EvidenceLine</a></td>
+<td>An independent, evidence-based argument that may support or refute the validi...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Document/">Document</a></td>
-<td>A collection of information, usually in a text-based or graphic human-readabl...</td>
+<td><a href="../Agent/">Agent</a></td>
+<td>An autonomous actor (person, organization, or software agent) that bears some...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -373,18 +364,18 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Entity/">Entity</a></td>
-<td>Anything that exists, has existed, or will exist</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-<td>An abstract (non-physical) entity that is about something</td>
+<td><a href="../Contribution/">Contribution</a></td>
+<td>An action or actions taken by a particular agent in the creation, modificatio...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Proposition/">Proposition</a></td>
-<td>An abstract entity representing a possible fact that is either true or false</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+<td>An abstract (non-physical) entity that is about something - representing the ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DataItem/">DataItem</a></td>
+<td>An Information Entity representing an individual piece of data, generated or ...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -393,13 +384,8 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EvidenceLine/">EvidenceLine</a></td>
-<td>An independent, evidence-based argument that may support or refute the validi...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Activity/">Activity</a></td>
-<td>An action or set of actions performed by an agent, that occurs over a period ...</td>
+<td><a href="../Proposition/">Proposition</a></td>
+<td>An abstract entity representing a possible fact that is either true or false</td>
 <td>no</td>
 </tr>
 <tr>
@@ -407,11 +393,31 @@
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
 <td>no</td>
 </tr>
+<tr>
+<td><a href="../DataSet/">DataSet</a></td>
+<td>A collection of related data items or records that are organized together in ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Document/">Document</a></td>
+<td>A collection of information, usually in a text-based or graphic human-readabl...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Activity/">Activity</a></td>
+<td>An action or set of actions performed by an agent, that occurs over a period ...</td>
+<td>no</td>
+</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -441,12 +447,17 @@
 <details>
 
 <pre><code class="language-yaml">name: alternativeLabels
+description: Alternative name(s) for the Entity.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: alternativeLabels
+owner: Entity
 domain_of:
 - Entity
 range: string
+required: false
+multivalued: true
 
 </code></pre>
 

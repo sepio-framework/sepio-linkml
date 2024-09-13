@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-strength">Slot: strength</h1>
+<p><em>A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how <em>confident</em> an agent is that the Proposition is true or false, or in terms of the <em>strength of all evidence</em> they believe supports or disputes it.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject,' 'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction',  'strength', and 'score' attributes. The 'strength' attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a <em>level of confidence</em> that the Proposition is true or false, or as a <em>level of evidence</em> that supports or disputes it. Data creators can define the permissible values for the 'strength' attribute to indicate which of these facets is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low').</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/strength">sepio_linkml:strength</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +352,7 @@
 <tr>
 <td><a href="../Statement/">Statement</a></td>
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +388,35 @@
 <details>
 
 <pre><code class="language-yaml">name: strength
+description: A term used to report the strength of a Proposition's assessment in the
+  direction indicated (i.e. how strongly supported or disputed the Proposition is
+  believed to be).  Implementers may choose to frame a strength assessment in terms
+  of how *confident* an agent is that the Proposition is true or false, or in terms
+  of the *strength of all evidence* they believe supports or disputes it.
+comments:
+- Statements put forth a Proposition that expresses some possible fact about the world,
+  and may provide an assessment of this proposition's validity (i.e. how likely it
+  is to be true or false based on evaluated evidence). The semantics of the Proposition
+  are captured in the 'subject,' 'predicate', 'object', and optional 'qualifier' attributes.
+  An assessment of the Proposition's validity can be captured using 'direction',  'strength',
+  and 'score' attributes. The 'strength' attribute is used to report the strength
+  of this assessment in the direction indicated. Strength can be framed as a *level
+  of confidence* that the Proposition is true or false, or as a *level of evidence*
+  that supports or disputes it. Data creators can define the permissible values for
+  the 'strength' attribute to indicate which of these facets is being assessed (e.g.
+  'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence')
+  - or they can choose values that don't commit to one or the other if they don't
+  want to make the distinction (e.g. 'high' vs 'medium' vs 'low').
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: strength
+owner: Statement
 domain_of:
 - Statement
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

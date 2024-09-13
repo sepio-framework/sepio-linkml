@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-interpretation">Slot: interpretation</h1>
+<p><em>The outcome of an interpretation of lower-level data item(s) in a StudyResult, that express some broader conclusion or insight that was made (e.g. that data indicates a result to be is high, normal, or low).</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>This attribute allows basic interpretations / classifications to be included in a Study Result, such as binning a data item or items as being in or out of some normal range.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/interpretation">sepio_linkml:interpretation</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,13 @@
 <tr>
 <td><a href="../StudyResult/">StudyResult</a></td>
 <td>A collection of data items from a single study that pertain to a particular s...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Coding/">Coding</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +388,23 @@
 <details>
 
 <pre><code class="language-yaml">name: interpretation
+description: The outcome of an interpretation of lower-level data item(s) in a StudyResult,
+  that express some broader conclusion or insight that was made (e.g. that data indicates
+  a result to be is high, normal, or low).
+comments:
+- This attribute allows basic interpretations / classifications to be included in
+  a Study Result, such as binning a data item or items as being in or out of some
+  normal range.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: interpretation
+owner: StudyResult
 domain_of:
 - StudyResult
-range: string
+range: Coding
+required: false
+multivalued: false
 
 </code></pre>
 

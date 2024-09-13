@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-version">Slot: version</h1>
+<p><em>The version of the DataSet, as assigned by its creator.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>This property can capture version information for resources such as data sets and documents that get published and released as a unit for community use. These may go through rounds of revisions that add or modify content, but don't change the identity of the resource. Use this attribute in cases where version is not reflected in an identifier associated with the data set</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/version">sepio_linkml:version</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +352,7 @@
 <tr>
 <td><a href="../DataSet/">DataSet</a></td>
 <td>A collection of related data items or records that are organized together in ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +388,23 @@
 <details>
 
 <pre><code class="language-yaml">name: version
+description: The version of the DataSet, as assigned by its creator.
+comments:
+- This property can capture version information for resources such as data sets and
+  documents that get published and released as a unit for community use. These may
+  go through rounds of revisions that add or modify content, but don't change the
+  identity of the resource. Use this attribute in cases where version is not reflected
+  in an identifier associated with the data set
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: version
+owner: DataSet
 domain_of:
 - DataSet
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

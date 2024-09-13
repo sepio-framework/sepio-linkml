@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-targetproposition">Slot: targetProposition</h1>
+<p><em>The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that some variant is pathogenic for a specific disease.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>An example based on the ACMG Guidelines for germline variant pathogenicity interpretation: Consider a curator assessing the evidence provided by population frequency data for a specific variant based on the ACMG criteria. In order to assign a strength (e.g. moderate vs strong) and direction (supports vs disputes) to this data as evidence, there must be some 'target proposition' toward which the evidence is assessed - which in this cases is the proposition that the variant is pathogenic for the disease of interest. If the PM2 criteria is deemed 'met', this indicates that the population frequency evidence provides 'moderate' (strength) 'support' (direction) for this target proposition.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/targetProposition">sepio_linkml:targetProposition</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,13 @@
 <tr>
 <td><a href="../EvidenceLine/">EvidenceLine</a></td>
 <td>An independent, evidence-based argument that may support or refute the validi...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Proposition/">Proposition</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +388,31 @@
 <details>
 
 <pre><code class="language-yaml">name: targetProposition
+description: The possible fact against which evidence items contained in an Evidence
+  Line were collectively evaluated, in determining the overall strength and direction
+  of support they provide. For example, in an ACMG Guideline-based assessment of variant
+  pathogenicity, the support provided by distinct lines of evidence are assessed against
+  a target proposition that some variant is pathogenic for a specific disease.
+comments:
+- 'An example based on the ACMG Guidelines for germline variant pathogenicity interpretation:
+  Consider a curator assessing the evidence provided by population frequency data
+  for a specific variant based on the ACMG criteria. In order to assign a strength
+  (e.g. moderate vs strong) and direction (supports vs disputes) to this data as evidence,
+  there must be some ''target proposition'' toward which the evidence is assessed
+  - which in this cases is the proposition that the variant is pathogenic for the
+  disease of interest. If the PM2 criteria is deemed ''met'', this indicates that
+  the population frequency evidence provides ''moderate'' (strength) ''support'' (direction)
+  for this target proposition.'
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: targetProposition
+owner: EvidenceLine
 domain_of:
 - EvidenceLine
-range: string
+range: Proposition
+required: false
+multivalued: false
 
 </code></pre>
 

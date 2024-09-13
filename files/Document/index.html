@@ -1,0 +1,1096 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://sepio-framework.github.io/sepio-linkml/files/Document/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
+<title>Class: Document (Document) - sepio-linkml</title>
+<link href="../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-document-document">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="sepio-linkml" class="md-header__button md-logo" data-md-component="logo" href="../.." title="sepio-linkml">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            sepio-linkml
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: Document (Document)
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/sepio-framework/sepio-linkml" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="sepio-linkml" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="sepio-linkml">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    sepio-linkml
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/sepio-framework/sepio-linkml" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/">
+        About
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+    Slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+    Identifier and Mapping Information
+  </a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+    Schema Source
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+    Mappings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+    LinkML Source
+  </a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+    Direct
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+    Induced
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/sepio-framework/sepio-linkml/edit/master/docs/files/Document.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="class-document-document">Class: Document (Document)</h1>
+<p><em>A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole.</em></p>
+<p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/Document">sepio_linkml:Document</a></p>
+<div class="mermaid"> classDiagram
+    class Document
+    click Document href "../Document"
+      InformationEntity &lt;|-- Document
+        click InformationEntity href "../InformationEntity"
+
+      Document : alternativeLabels
+
+      Document : contributions
+
+
+
+
+    Document --&gt; "*" Contribution : contributions
+    click Contribution href "../Contribution"
+
+
+      Document : dateAuthored
+
+      Document : derivedFrom
+
+
+
+
+    Document --&gt; "*" InformationEntity : derivedFrom
+    click InformationEntity href "../InformationEntity"
+
+
+      Document : description
+
+      Document : doi
+
+      Document : extensions
+
+
+
+
+    Document --&gt; "*" Extension : extensions
+    click Extension href "../Extension"
+
+
+      Document : id
+
+      Document : identifiers
+
+      Document : informationQuality
+
+
+
+
+    Document --&gt; "0..1" Coding : informationQuality
+    click Coding href "../Coding"
+
+
+      Document : isAbout
+
+      Document : label
+
+      Document : license
+
+      Document : methodTypes
+
+
+
+
+    Document --&gt; "*" Coding : methodTypes
+    click Coding href "../Coding"
+
+
+      Document : pmid
+
+      Document : recordMetadata
+
+
+
+
+    Document --&gt; "0..1" RecordMetadata : recordMetadata
+    click RecordMetadata href "../RecordMetadata"
+
+
+      Document : reportedIn
+
+      Document : specifiedBy
+
+      Document : subtype_2
+
+
+
+
+    Document --&gt; "0..1" Coding : subtype_2
+    click Coding href "../Coding"
+
+
+      Document : title
+
+      Document : type
+
+      Document : urls_2
+
+
+</div>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../Entity/">Entity</a><ul>
+<li><a href="../InformationEntity/">InformationEntity</a><ul>
+<li><strong>Document</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../subtype_2/">subtype_2</a></td>
+<td>0..1 <br/> <a href="../Coding/">Coding</a></td>
+<td>A specific type of document that a Document instance represents (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../title/">title</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The official title given to the document by its authors</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../urls_2/">urls_2</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The URL/web address from which the content of the Document can be retrieved</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../pmid/">pmid</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A `PubMed unique identifier &lt;https://en</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../doi/">doi</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A `Digital Object Identifier &lt;https://www</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../license/">license</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A specific license that dictates legal permissions for how a document can be ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../isAbout/">isAbout</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>An entity or concept in the world that the information entity describes/is ab...</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+</tr>
+<tr>
+<td><a href="../contributions/">contributions</a></td>
+<td>* <br/> <a href="../Contribution/">Contribution</a></td>
+<td>Specific actions taken by an Agent toward the creation, modification, validat...</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+</tr>
+<tr>
+<td><a href="../dateAuthored/">dateAuthored</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Indicates when the information content expressed in the Information Entity wa...</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+</tr>
+<tr>
+<td><a href="../specifiedBy/">specifiedBy</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A specification that describes all or part of the process that led to creatio...</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+</tr>
+<tr>
+<td><a href="../methodTypes/">methodTypes</a></td>
+<td>* <br/> <a href="../Coding/">Coding</a></td>
+<td>Types of methodological approaches used to collect, generate, or evaluate the...</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+</tr>
+<tr>
+<td><a href="../derivedFrom/">derivedFrom</a></td>
+<td>* <br/> <a href="../InformationEntity/">InformationEntity</a></td>
+<td>Another Information Entity from which this Information Entity is derived, in ...</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+</tr>
+<tr>
+<td><a href="../reportedIn/">reportedIn</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A document in which the Information Entity is reported</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+</tr>
+<tr>
+<td><a href="../informationQuality/">informationQuality</a></td>
+<td>0..1 <br/> <a href="../Coding/">Coding</a></td>
+<td>A qualitative term indicating the scientific rigor or reliability with which ...</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+</tr>
+<tr>
+<td><a href="../recordMetadata/">recordMetadata</a></td>
+<td>0..1 <br/> <a href="../RecordMetadata/">RecordMetadata</a></td>
+<td>Provenance metadata about a specific concrete encoding/serialization of infor...</td>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+</tr>
+<tr>
+<td><a href="../id/">id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The 'logical' identifier of the entity in the system of record, e</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../identifiers/">identifiers</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A globally-unique 'business' identifier or accession number for the real-worl...</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The name of the class that is instantiated by a data object representing the ...</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../label/">label</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A primary name for the Entity</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../alternativeLabels/">alternativeLabels</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Alternative name(s) for the Entity</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../description/">description</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A free text description of the Entity</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../extensions/">extensions</a></td>
+<td>* <br/> <a href="../Extension/">Extension</a></td>
+<td>A list of extensions to the Entity, that allow for capture of information not...</td>
+<td><a href="../Entity/">Entity</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>As an abstract InformationEntity, a Document instance is defined by the informational content it conveys, not a particular physical concretization of this information. A single Document instance can simultaneously be concretized in different languages, formats, and physical mediums.</li>
+</ul>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/sepio-framework/sepio-linkml</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>sepio_linkml:Document</td>
+</tr>
+<tr>
+<td>native</td>
+<td>sepio_linkml:Document</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: Document
+description: A collection of information, usually in a text-based or graphic human-readable
+  form, intended to be read and understood together as a whole.
+title: Document
+comments:
+- As an abstract InformationEntity, a Document instance is defined by the informational
+  content it conveys, not a particular physical concretization of this information.
+  A single Document instance can simultaneously be concretized in different languages,
+  formats, and physical mediums.
+from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
+is_a: InformationEntity
+slots:
+- subtype_2
+- title
+- urls_2
+- pmid
+- doi
+- license
+slot_usage:
+  subtype_2:
+    name: subtype_2
+    description: A specific type of document that a Document instance represents (e.g.  'publication',
+      'patent', 'pathology report')
+    comments:
+    - This attribute can be used to report a specific type for the Document, in cases
+      where a model does not define Document subclasses for this purpose.  Implementers
+      can define their own set of document type codes/terms, to match the needs of
+      the domain or application.
+    status: Draft
+    range: Coding
+    required: false
+    multivalued: false
+  title:
+    name: title
+    description: The official title given to the document by its authors.
+    range: string
+    required: false
+    multivalued: false
+  urls_2:
+    name: urls_2
+    description: The URL/web address from which the content of the Document can be
+      retrieved.
+    status: Draft
+    range: string
+    required: false
+    multivalued: true
+  pmid:
+    name: pmid
+    description: A `PubMed unique identifier &lt;https://en.wikipedia.org/wiki/PubMed#PubMed_identifier&gt;`_
+      for the document.
+    status: Draft
+    range: string
+    required: false
+    multivalued: false
+  doi:
+    name: doi
+    description: A `Digital Object Identifier &lt;https://www.doi.org/the-identifier/what-is-a-doi/&gt;_`
+      for the document.
+    status: Draft
+    range: string
+    required: false
+    multivalued: false
+  license:
+    name: license
+    description: A specific license that dictates legal permissions for how a document
+      can be used (by whom, where, for what purposes, with what additional requirements,
+      etc.)
+    comments:
+    - Where possible, provide a URL pointing to the license or a description of it
+      (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide a
+      free-text name or description of the license (e.g. "CC-BY").
+    status: Informative
+    range: string
+    required: false
+    multivalued: false
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: Document
+description: A collection of information, usually in a text-based or graphic human-readable
+  form, intended to be read and understood together as a whole.
+title: Document
+comments:
+- As an abstract InformationEntity, a Document instance is defined by the informational
+  content it conveys, not a particular physical concretization of this information.
+  A single Document instance can simultaneously be concretized in different languages,
+  formats, and physical mediums.
+from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
+is_a: InformationEntity
+slot_usage:
+  subtype_2:
+    name: subtype_2
+    description: A specific type of document that a Document instance represents (e.g.  'publication',
+      'patent', 'pathology report')
+    comments:
+    - This attribute can be used to report a specific type for the Document, in cases
+      where a model does not define Document subclasses for this purpose.  Implementers
+      can define their own set of document type codes/terms, to match the needs of
+      the domain or application.
+    status: Draft
+    range: Coding
+    required: false
+    multivalued: false
+  title:
+    name: title
+    description: The official title given to the document by its authors.
+    range: string
+    required: false
+    multivalued: false
+  urls_2:
+    name: urls_2
+    description: The URL/web address from which the content of the Document can be
+      retrieved.
+    status: Draft
+    range: string
+    required: false
+    multivalued: true
+  pmid:
+    name: pmid
+    description: A `PubMed unique identifier &lt;https://en.wikipedia.org/wiki/PubMed#PubMed_identifier&gt;`_
+      for the document.
+    status: Draft
+    range: string
+    required: false
+    multivalued: false
+  doi:
+    name: doi
+    description: A `Digital Object Identifier &lt;https://www.doi.org/the-identifier/what-is-a-doi/&gt;_`
+      for the document.
+    status: Draft
+    range: string
+    required: false
+    multivalued: false
+  license:
+    name: license
+    description: A specific license that dictates legal permissions for how a document
+      can be used (by whom, where, for what purposes, with what additional requirements,
+      etc.)
+    comments:
+    - Where possible, provide a URL pointing to the license or a description of it
+      (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide a
+      free-text name or description of the license (e.g. "CC-BY").
+    status: Informative
+    range: string
+    required: false
+    multivalued: false
+attributes:
+  subtype_2:
+    name: subtype_2
+    description: A specific type of document that a Document instance represents (e.g.  'publication',
+      'patent', 'pathology report')
+    comments:
+    - This attribute can be used to report a specific type for the Document, in cases
+      where a model does not define Document subclasses for this purpose.  Implementers
+      can define their own set of document type codes/terms, to match the needs of
+      the domain or application.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: subtype_2
+    owner: Document
+    domain_of:
+    - Document
+    range: Coding
+    required: false
+    multivalued: false
+  title:
+    name: title
+    description: The official title given to the document by its authors.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    rank: 1000
+    alias: title
+    owner: Document
+    domain_of:
+    - Document
+    range: string
+    required: false
+    multivalued: false
+  urls_2:
+    name: urls_2
+    description: The URL/web address from which the content of the Document can be
+      retrieved.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: urls_2
+    owner: Document
+    domain_of:
+    - Document
+    range: string
+    required: false
+    multivalued: true
+  pmid:
+    name: pmid
+    description: A `PubMed unique identifier &lt;https://en.wikipedia.org/wiki/PubMed#PubMed_identifier&gt;`_
+      for the document.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: pmid
+    owner: Document
+    domain_of:
+    - Document
+    range: string
+    required: false
+    multivalued: false
+  doi:
+    name: doi
+    description: A `Digital Object Identifier &lt;https://www.doi.org/the-identifier/what-is-a-doi/&gt;_`
+      for the document.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: doi
+    owner: Document
+    domain_of:
+    - Document
+    range: string
+    required: false
+    multivalued: false
+  license:
+    name: license
+    description: A specific license that dictates legal permissions for how a document
+      can be used (by whom, where, for what purposes, with what additional requirements,
+      etc.)
+    comments:
+    - Where possible, provide a URL pointing to the license or a description of it
+      (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide a
+      free-text name or description of the license (e.g. "CC-BY").
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Informative
+    rank: 1000
+    alias: license
+    owner: Document
+    domain_of:
+    - Document
+    range: string
+    required: false
+    multivalued: false
+  isAbout:
+    name: isAbout
+    description: An entity or concept in the world that the information entity describes/is
+      about.
+    comments:
+    - When used in the context of a Statement object, this field can be used to indicate
+      entities/concepts it is about, in lieu of providing a more precise description
+      of what the Statement asserts to be true using subject, predicate, object, and
+      qualifier properties. e.g. the Statement that "BRCA2 c.8023A&gt;G is pathogenic
+      for Breast Cancer" might be annotated to be about the variant 'BRCA2 c.8023A&gt;G',
+      and the disease 'Breast Cancer'.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Informative
+    rank: 1000
+    alias: isAbout
+    owner: Document
+    domain_of:
+    - InformationEntity
+    range: string
+    required: false
+    multivalued: true
+  contributions:
+    name: contributions
+    description: Specific actions taken by an Agent toward the creation, modification,
+      validation, or deprecation of an Information Entity.
+    comments:
+    - This attribute holds one or more Contribution objects, which provide structured
+      descriptions of a contribution made to the Information Entity by a particular
+      agent.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: contributions
+    owner: Document
+    domain_of:
+    - InformationEntity
+    range: Contribution
+    required: false
+    multivalued: true
+  dateAuthored:
+    name: dateAuthored
+    description: Indicates when the information content expressed in the Information
+      Entity was generated.
+    comments:
+    - The term 'authored' as used in the model refers to the generation of 'information
+      content' in the abstract  sense, as opposed to a concrete encoding of this information
+      in a specific language or format. e.g. for a Statement, this attribute captures
+      when the information content expressed in the Statement was first generated
+      by an agent.  Information about when a particular concrete encoding of this
+      information was created (e.g. as a written sentence, or a json object) would
+      live in a RecordMetadata object attached to the Information Entity).
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: dateAuthored
+    owner: Document
+    domain_of:
+    - InformationEntity
+    range: string
+    required: false
+    multivalued: false
+  specifiedBy:
+    name: specifiedBy
+    description: A specification that describes all or part of the process that led
+      to creation of the Information Entity (e.g. a specific experimental protocol
+      or data analysis specification that describe how data were generated, or an
+      evidence interpretation guideline that describes steps taken to interpret data
+      in making a variant pathogenicity classification).
+    comments:
+    - Note that this attribute captures specific *instances* of specifications/methods
+      (e.g. the specific electron microscopy method described in https://doi.org/10.1002/
+      cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission
+      Electron Microscopy').
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: specifiedBy
+    owner: Document
+    domain_of:
+    - InformationEntity
+    range: string
+    required: false
+    multivalued: true
+  methodTypes:
+    name: methodTypes
+    description: Types of methodological approaches used to collect, generate, or
+      evaluate the reported information.
+    comments:
+    - 'This field captures terms representing *types* of methods applied, vs the ''specifiedBy''
+      attribute which captures specific instances of methods used.
+
+
+      Implementers should define a relevant source or specific set of method type
+      codes/terms to use here based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Informative
+    rank: 1000
+    alias: methodTypes
+    owner: Document
+    domain_of:
+    - InformationEntity
+    range: Coding
+    required: false
+    multivalued: true
+  derivedFrom:
+    name: derivedFrom
+    description: Another Information Entity from which this Information Entity is
+      derived, in whole or in part
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: derivedFrom
+    owner: Document
+    domain_of:
+    - InformationEntity
+    range: InformationEntity
+    required: false
+    multivalued: true
+  reportedIn:
+    name: reportedIn
+    description: A document in which the Information Entity is reported
+    comments:
+    - The term 'authored' is used in the model to refer to the generation of abstract
+      'information content', as opposed to creation of a concrete encoding of this
+      information in a specific language, format, or physical artifact. e.g. for a
+      Statement, this attribute captures when the information content expressed in
+      the Statement was first  generated by an agent, and metadata about when a particular
+      concrete encoding of this information was created (e.g. a written sentence in
+      an article, or json object in a data stream) would live in a RecordMetadata
+      object attached to the Information Entity).
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: reportedIn
+    owner: Document
+    domain_of:
+    - InformationEntity
+    range: string
+    required: false
+    multivalued: true
+  informationQuality:
+    name: informationQuality
+    description: A qualitative term indicating the scientific rigor or reliability
+      with which the information was generated/collected.
+    comments:
+    - '- This is typically based on the quality of design and execution of the study
+      or curation activity that generated it (e.g. were relevant controls assessed
+      to show instruments were working, were all samples taken care of and handled
+      identically, are methods sound and well documented, etc.).
+
+      - The quality of information is intrinsic to the information itself, and not
+      to a particular application of the information (e.g. as evidence for making
+      an Assertion)
+
+      - The quality of information is one factor that goes into the confidence we
+      have in the information''s veracity (i.e. that it is an accurate reflection
+      of reality it intends to measure or describe). Other factors informing confidence
+      may include who did it (we may just not trust some Agents), when (if data created
+      500 years ago, we may have less confidence in it), and for Assertions, the relevance
+      and abundance of supporting evidence.
+
+      - Implementers should define a relevant source or specific set of terms to use
+      here based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Informative
+    rank: 1000
+    alias: informationQuality
+    owner: Document
+    domain_of:
+    - InformationEntity
+    range: Coding
+    required: false
+    multivalued: false
+  recordMetadata:
+    name: recordMetadata
+    description: Provenance metadata about a specific concrete encoding/serialization
+      of information (e.g. as a record in a specific data/knowledgebase, or an online
+      digital resource) - as opposed to provenance about the abstract information
+      content a record carries.
+    comments:
+    - This attribute holds a structured RecordMetadata objects, which can be used
+      to capture when, how, and by whom a record serialization was generated or modified;
+      what upstream resources it was derived or retrieved from; and record-level administrative
+      information such as versioning and lifecycle status.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: recordMetadata
+    owner: Document
+    domain_of:
+    - InformationEntity
+    range: RecordMetadata
+    required: false
+    multivalued: false
+  id:
+    name: id
+    description: The 'logical' identifier of the entity in the system of record, e.g.
+      a UUID.  This 'id' is unique within a given system, but may or may not be globally
+      unique outside the system. It is used within a system to reference one object
+      from another.
+    comments:
+    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
+      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
+
+
+      Note that it is common for implementers to create their own internal logical
+      ids - typically a serially or randomly generated value like a UUID that is assigned
+      to the data object as it is created in a system. But an implementer may choose
+      to reuse an existing, globally unique id from an external system or authority
+      for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
+      within the implementing system, and can be used to reference the identified
+      object in this context.'
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: id
+    owner: Document
+    domain_of:
+    - Entity
+    range: string
+    required: true
+    multivalued: false
+  identifiers:
+    name: identifiers
+    description: A globally-unique 'business' identifier or accession number for the
+      real-world entity represented by a data object. These are typically assigned
+      by an external system or authority, and used to connect entities and share content
+      across different systems.
+    comments:
+    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
+      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
+
+
+      A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the ''identifiers''
+      property to indicate that they represent the same thing.
+
+
+      Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.'
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Informative
+    rank: 1000
+    alias: identifiers
+    owner: Document
+    domain_of:
+    - Entity
+    range: string
+    required: false
+    multivalued: true
+  type:
+    name: type
+    description: The name of the class that is instantiated by a data object representing
+      the Entity.
+    comments:
+    - MUST be the label of a concrete class from the data model.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: type
+    owner: Document
+    domain_of:
+    - Entity
+    range: string
+    required: true
+    multivalued: false
+  label:
+    name: label
+    description: A primary name for the Entity.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: label
+    owner: Document
+    domain_of:
+    - Entity
+    range: string
+    required: false
+    multivalued: false
+  alternativeLabels:
+    name: alternativeLabels
+    description: Alternative name(s) for the Entity.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: alternativeLabels
+    owner: Document
+    domain_of:
+    - Entity
+    range: string
+    required: false
+    multivalued: true
+  description:
+    name: description
+    description: A free text description of the Entity.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: description
+    owner: Document
+    domain_of:
+    - Entity
+    range: string
+    required: false
+    multivalued: false
+  extensions:
+    name: extensions
+    description: A list of extensions to the Entity, that allow for capture of information
+      not directly supported by elements defined in the model.
+    comments:
+    - Extension objects have a key-value data structure that allows definition of
+      custom fields in the data itself. Extensions are not expected to be natively
+      understood, but may be used for pre-negotiated exchange of message attributes
+      between systems.
+    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    status: Draft
+    rank: 1000
+    alias: extensions
+    owner: Document
+    domain_of:
+    - Entity
+    range: Extension
+    required: false
+    multivalued: true
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

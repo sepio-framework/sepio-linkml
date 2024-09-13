@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,16 @@
 
 
 <h1 id="slot-hasevidence">Slot: hasEvidence</h1>
+<p><em>A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>
+<ul>
+<li>Evidence is any information that is interpreted in assessing the truth of  the proposition a Statement puts forth as true or false.  A piece of information only becomes evidence when it is interpreted in this way. Different types of information entities can be used and cited as evidence, including direct observation or measurement data, derived statistical calculations, data tables or figures in a publication, conclusions/findings from a particular study, or prior assertions of knowledge  that themselves are based on their own set of evidence.</li>
+</ul>
+</li>
+<li>This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class - to be used data creators cannot or do not wish to create an Evidence Line object.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/hasEvidence">sepio_linkml:hasEvidence</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +357,18 @@
 <tr>
 <td><a href="../Statement/">Statement</a></td>
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../InformationEntity/">InformationEntity</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +398,32 @@
 <details>
 
 <pre><code class="language-yaml">name: hasEvidence
+description: A piece of information that represents or contributes to an argument
+  for or against the validity of the Proposition put forth in a Statement. This is
+  a shortcut relation that links a Statement directly to a piece of evidence supporting
+  it, bypassing the Evidence Line class when used data creators do not utilize an
+  Evidence Line object.
+comments:
+- '- Evidence is any information that is interpreted in assessing the truth of  the
+  proposition a Statement puts forth as true or false.  A piece of information only
+  becomes evidence when it is interpreted in this way. Different types of information
+  entities can be used and cited as evidence, including direct observation or measurement
+  data, derived statistical calculations, data tables or figures in a publication,
+  conclusions/findings from a particular study, or prior assertions of knowledge  that
+  themselves are based on their own set of evidence.'
+- This is a shortcut relation that links a Statement directly to a piece of evidence
+  supporting it, bypassing the Evidence Line class - to be used data creators cannot
+  or do not wish to create an Evidence Line object.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
 rank: 1000
 alias: hasEvidence
+owner: Statement
 domain_of:
 - Statement
-range: string
+range: InformationEntity
+required: false
+multivalued: true
 
 </code></pre>
 

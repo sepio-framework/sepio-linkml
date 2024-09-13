@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-statementtext">Slot: statementText</h1>
+<p><em>A natural-language expression of what a Statement asserts to be true.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>This attribute captures what a Statement says as human readable free text. e.g. that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer", or that "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A&gt;G for Breast Cancer". This optional attribute can be used instead of, or as a complement to, a structured representation of Statement semantics that uses the subject-predicate-object-qualifier pattern.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/statementText">sepio_linkml:statementText</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +352,7 @@
 <tr>
 <td><a href="../Statement/">Statement</a></td>
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +388,23 @@
 <details>
 
 <pre><code class="language-yaml">name: statementText
+description: A natural-language expression of what a Statement asserts to be true.
+comments:
+- This attribute captures what a Statement says as human readable free text. e.g.
+  that &quot;BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer&quot;, or that &quot;there is moderate
+  evidence supporting the pathogenicity of BRCA2 c.8023A&gt;G for Breast Cancer&quot;. This
+  optional attribute can be used instead of, or as a complement to, a structured representation
+  of Statement semantics that uses the subject-predicate-object-qualifier pattern.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: statementText
+owner: Statement
 domain_of:
 - Statement
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,11 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -211,6 +211,10 @@
 </a>
 <h1 id="class-data-set-dataset">Class: Data Set (DataSet)</h1>
 <p><em>A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Instances of this class represent a <em>specific version</em> of a given dataset. Examples include the  gnomAD version 3.1.2 dataset carrying allele population frequencies, or a specific version of a VCF file that describes variations observed in a particular patient and various annotations made on them, or a SIFT dataset of computational predictions functional impact for a set of variants.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/DataSet">sepio_linkml:DataSet</a></p>
 <div class="mermaid"> classDiagram
     class DataSet
@@ -268,7 +272,7 @@
 
       DataSet : label
 
-      DataSet : license_2
+      DataSet : license
 
       DataSet : methodTypes
 
@@ -294,12 +298,12 @@
 
       DataSet : specifiedBy
 
-      DataSet : subtype_4
+      DataSet : subtype
 
 
 
 
-    DataSet --&gt; "0..1" Coding : subtype_4
+    DataSet --&gt; "0..1" Coding : subtype
     click Coding href "../Coding"
 
 
@@ -331,14 +335,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subtype_4/">subtype_4</a></td>
+<td><a href="../subtype/">subtype</a></td>
 <td>0..1 <br/> <a href="../Coding/">Coding</a></td>
 <td>A specific type of data set the DataSet instance represents (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../releaseDate/">releaseDate</a></td>
-<td>0..1 <br/> <a href="../date/">date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Indicates when a version of a DataSet was formally released</td>
 <td>direct</td>
 </tr>
@@ -349,7 +353,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../license_2/">license_2</a></td>
+<td><a href="../license/">license</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A specific license that dictates legal permissions for how a data set can be ...</td>
 <td>direct</td>
@@ -405,7 +409,7 @@
 <tr>
 <td><a href="../recordMetadata/">recordMetadata</a></td>
 <td>0..1 <br/> <a href="../RecordMetadata/">RecordMetadata</a></td>
-<td>Provenance metadata about a specific concrete encoding/serialization of infor...</td>
+<td>Provenance metadata about a specific concrete record of information as encode...</td>
 <td><a href="../InformationEntity/">InformationEntity</a></td>
 </tr>
 <tr>
@@ -471,10 +475,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>Instances of this class represent a specific version of a given dataset. Examples include the  gnomAD version 3.1.2 dataset carrying allele population frequencies, or a specific version of a VCF file that describes variations observed in a particular patient and various annotations made on them, or a SIFT dataset of computational predictions functional impact for a set of variants.</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -509,7 +509,7 @@ description: A collection of related data items or records that are organized to
   unit.
 title: Data Set
 comments:
-- Instances of this class represent a specific version of a given dataset. Examples
+- Instances of this class represent a *specific version* of a given dataset. Examples
   include the  gnomAD version 3.1.2 dataset carrying allele population frequencies,
   or a specific version of a VCF file that describes variations observed in a particular
   patient and various annotations made on them, or a SIFT dataset of computational
@@ -517,23 +517,27 @@ comments:
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
-slots:
-- subtype_4
-- releaseDate
-- version
-- license_2
-slot_usage:
-  subtype_4:
-    name: subtype_4
+attributes:
+  subtype:
+    name: subtype
     description: A specific type of data set the DataSet instance represents (e.g.
       a 'clinical data set', a 'sequencing data set', a 'gene expression data set',
-      a 'genome annotation data set')
+      a 'genome annotation data set').
     comments:
     - This attribute can be used to report a specific type for the DataSet, in cases
       where a model does not define DataSet subclasses for this purpose.  Implementers
       can define their own set of data set type codes/terms, to match the needs of
       the domain or application.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    domain_of:
+    - Method
+    - Document
+    - DataItem
+    - DataSet
+    - Activity
+    - Agent
+    - EvidenceLine
     range: Coding
     required: false
     multivalued: false
@@ -544,8 +548,12 @@ slot_usage:
     - This attribute may apply to version and distribution-level DataSet representations.
       It refers to when the data set was released, which may be different than the
       data set was generated.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    range: date
+    rank: 1000
+    domain_of:
+    - DataSet
+    range: string
     required: false
     multivalued: false
   version:
@@ -554,23 +562,31 @@ slot_usage:
     comments:
     - This property can capture version information for resources such as data sets
       and documents that get published and released as a unit for community use. These
-      may go through rounds of revisions that add or modify content, but don’t change
+      may go through rounds of revisions that add or modify content, but don't change
       the identity of the resource. Use this attribute in cases where version is not
       reflected in an identifier associated with the data set
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - DataSet
     range: string
     required: false
     multivalued: false
-  license_2:
-    name: license_2
+  license:
+    name: license
     description: A specific license that dictates legal permissions for how a data
       set can be used (by whom, where, for what purposes, with what additional requirements,
-      etc.)
+      etc.).
     comments:
     - Where possible, provide a URL pointing to the license or a description of it
       (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide a
       free-text name or description of the license (e.g. "CC-BY").
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    domain_of:
+    - Document
+    - DataSet
     range: string
     required: false
     multivalued: false
@@ -585,7 +601,7 @@ description: A collection of related data items or records that are organized to
   unit.
 title: Data Set
 comments:
-- Instances of this class represent a specific version of a given dataset. Examples
+- Instances of this class represent a *specific version* of a given dataset. Examples
   include the  gnomAD version 3.1.2 dataset carrying allele population frequencies,
   or a specific version of a VCF file that describes variations observed in a particular
   patient and various annotations made on them, or a SIFT dataset of computational
@@ -593,76 +609,29 @@ comments:
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
-slot_usage:
-  subtype_4:
-    name: subtype_4
-    description: A specific type of data set the DataSet instance represents (e.g.
-      a 'clinical data set', a 'sequencing data set', a 'gene expression data set',
-      a 'genome annotation data set')
-    comments:
-    - This attribute can be used to report a specific type for the DataSet, in cases
-      where a model does not define DataSet subclasses for this purpose.  Implementers
-      can define their own set of data set type codes/terms, to match the needs of
-      the domain or application.
-    status: Informative
-    range: Coding
-    required: false
-    multivalued: false
-  releaseDate:
-    name: releaseDate
-    description: Indicates when a version of a DataSet was formally released.
-    comments:
-    - This attribute may apply to version and distribution-level DataSet representations.
-      It refers to when the data set was released, which may be different than the
-      data set was generated.
-    status: Informative
-    range: date
-    required: false
-    multivalued: false
-  version:
-    name: version
-    description: The version of the DataSet, as assigned by its creator.
-    comments:
-    - This property can capture version information for resources such as data sets
-      and documents that get published and released as a unit for community use. These
-      may go through rounds of revisions that add or modify content, but don’t change
-      the identity of the resource. Use this attribute in cases where version is not
-      reflected in an identifier associated with the data set
-    status: Informative
-    range: string
-    required: false
-    multivalued: false
-  license_2:
-    name: license_2
-    description: A specific license that dictates legal permissions for how a data
-      set can be used (by whom, where, for what purposes, with what additional requirements,
-      etc.)
-    comments:
-    - Where possible, provide a URL pointing to the license or a description of it
-      (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide a
-      free-text name or description of the license (e.g. "CC-BY").
-    status: Informative
-    range: string
-    required: false
-    multivalued: false
 attributes:
-  subtype_4:
-    name: subtype_4
+  subtype:
+    name: subtype
     description: A specific type of data set the DataSet instance represents (e.g.
       a 'clinical data set', a 'sequencing data set', a 'gene expression data set',
-      a 'genome annotation data set')
+      a 'genome annotation data set').
     comments:
     - This attribute can be used to report a specific type for the DataSet, in cases
       where a model does not define DataSet subclasses for this purpose.  Implementers
       can define their own set of data set type codes/terms, to match the needs of
       the domain or application.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: subtype_4
+    alias: subtype
     owner: DataSet
     domain_of:
+    - Method
+    - Document
+    - DataItem
     - DataSet
+    - Activity
+    - Agent
+    - EvidenceLine
     range: Coding
     required: false
     multivalued: false
@@ -673,14 +642,14 @@ attributes:
     - This attribute may apply to version and distribution-level DataSet representations.
       It refers to when the data set was released, which may be different than the
       data set was generated.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: releaseDate
     owner: DataSet
     domain_of:
     - DataSet
-    range: date
+    range: string
     required: false
     multivalued: false
   version:
@@ -689,10 +658,10 @@ attributes:
     comments:
     - This property can capture version information for resources such as data sets
       and documents that get published and released as a unit for community use. These
-      may go through rounds of revisions that add or modify content, but don’t change
+      may go through rounds of revisions that add or modify content, but don't change
       the identity of the resource. Use this attribute in cases where version is not
       reflected in an identifier associated with the data set
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: version
@@ -702,21 +671,21 @@ attributes:
     range: string
     required: false
     multivalued: false
-  license_2:
-    name: license_2
+  license:
+    name: license
     description: A specific license that dictates legal permissions for how a data
       set can be used (by whom, where, for what purposes, with what additional requirements,
-      etc.)
+      etc.).
     comments:
     - Where possible, provide a URL pointing to the license or a description of it
       (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide a
       free-text name or description of the license (e.g. "CC-BY").
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
-    rank: 1000
-    alias: license_2
+    alias: license
     owner: DataSet
     domain_of:
+    - Document
     - DataSet
     range: string
     required: false
@@ -726,13 +695,13 @@ attributes:
     description: An entity or concept in the world that the information entity describes/is
       about.
     comments:
-    - When used in the context of a Statement object, this field can be used to indicate
+    - e.g. In the context of a Statement object, this attribute may be used to indicate
       entities/concepts it is about, in lieu of providing a more precise description
       of what the Statement asserts to be true using subject, predicate, object, and
       qualifier properties. e.g. the Statement that "BRCA2 c.8023A&gt;G is pathogenic
       for Breast Cancer" might be annotated to be about the variant 'BRCA2 c.8023A&gt;G',
       and the disease 'Breast Cancer'.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: isAbout
@@ -750,13 +719,14 @@ attributes:
     - This attribute holds one or more Contribution objects, which provide structured
       descriptions of a contribution made to the Information Entity by a particular
       agent.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: contributions
     owner: DataSet
     domain_of:
     - InformationEntity
+    - RecordMetadata
     range: Contribution
     required: false
     multivalued: true
@@ -770,9 +740,9 @@ attributes:
       in a specific language or format. e.g. for a Statement, this attribute captures
       when the information content expressed in the Statement was first generated
       by an agent.  Information about when a particular concrete encoding of this
-      information was created (e.g. as a written sentence, or a json object) would
-      live in a RecordMetadata object attached to the Information Entity).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      information was created (e.g. as row in a table, or object in a json document)
+      would live in a RecordMetadata object attached to the Information Entity).
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: dateAuthored
@@ -785,22 +755,23 @@ attributes:
   specifiedBy:
     name: specifiedBy
     description: A specification that describes all or part of the process that led
-      to creation of the Information Entity (e.g. a specific experimental protocol
-      or data analysis specification that describe how data were generated, or an
-      evidence interpretation guideline that describes steps taken to interpret data
-      in making a variant pathogenicity classification).
+      to creation of the Information Entity.
     comments:
+    - Examples - an experimental protocol or data analysis specification that describe
+      how data were generated, or an evidence interpretation guideline that describes
+      steps taken to interpret data in making a variant pathogenicity classification.
     - Note that this attribute captures specific *instances* of specifications/methods
       (e.g. the specific electron microscopy method described in https://doi.org/10.1002/
-      cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission
-      Electron Microscopy').
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission
+      Electron Microscopy").
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: specifiedBy
     owner: DataSet
     domain_of:
     - InformationEntity
+    - Activity
     range: string
     required: false
     multivalued: true
@@ -809,13 +780,11 @@ attributes:
     description: Types of methodological approaches used to collect, generate, or
       evaluate the reported information.
     comments:
-    - 'This field captures terms representing *types* of methods applied, vs the ''specifiedBy''
+    - This field captures terms representing *types* of methods applied, vs the "specifiedBy"
       attribute which captures specific instances of methods used.
-
-
-      Implementers should define a relevant source or specific set of method type
-      codes/terms to use here based on the needs of the domain or application.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - Implementers should define a relevant source of method type codes/terms to use
+      here based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: methodTypes
@@ -828,8 +797,8 @@ attributes:
   derivedFrom:
     name: derivedFrom
     description: Another Information Entity from which this Information Entity is
-      derived, in whole or in part
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      derived, in whole or in part.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: derivedFrom
@@ -841,17 +810,14 @@ attributes:
     multivalued: true
   reportedIn:
     name: reportedIn
-    description: A document in which the Information Entity is reported
+    description: A document in which the Information Entity is reported.
     comments:
-    - The term 'authored' is used in the model to refer to the generation of abstract
-      'information content', as opposed to creation of a concrete encoding of this
-      information in a specific language, format, or physical artifact. e.g. for a
-      Statement, this attribute captures when the information content expressed in
-      the Statement was first  generated by an agent, and metadata about when a particular
-      concrete encoding of this information was created (e.g. a written sentence in
-      an article, or json object in a data stream) would live in a RecordMetadata
-      object attached to the Information Entity).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - This attribute is used specifically to reference documents/publications where
+      the Information Entity is expressed or reported.  For a Statement, this might
+      be a publication where the authors express the statement in text.  For a Data
+      Item, this might be a publication with a table or figure that reports the value
+      of the  data.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: reportedIn
@@ -866,25 +832,22 @@ attributes:
     description: A qualitative term indicating the scientific rigor or reliability
       with which the information was generated/collected.
     comments:
-    - '- This is typically based on the quality of design and execution of the study
+    - This is typically based on the quality of design and execution of the study
       or curation activity that generated it (e.g. were relevant controls assessed
       to show instruments were working, were all samples taken care of and handled
       identically, are methods sound and well documented, etc.).
-
-      - The quality of information is intrinsic to the information itself, and not
-      to a particular application of the information (e.g. as evidence for making
-      an Assertion)
-
-      - The quality of information is one factor that goes into the confidence we
-      have in the information''s veracity (i.e. that it is an accurate reflection
-      of reality it intends to measure or describe). Other factors informing confidence
-      may include who did it (we may just not trust some Agents), when (if data created
-      500 years ago, we may have less confidence in it), and for Assertions, the relevance
-      and abundance of supporting evidence.
-
-      - Implementers should define a relevant source or specific set of terms to use
-      here based on the needs of the domain or application.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - The quality of information is intrinsic to the information itself, and not to
+      a particular application of the information (e.g. as evidence for making an
+      Assertion)
+    - The quality of information is one factor that goes into the confidence we have
+      in the information''s veracity (i.e. that it is an accurate reflection of reality
+      it intends to measure or describe). Other factors informing confidence may include
+      who did it (we may just not trust some Agents), when (if data created 500 years
+      ago, we may have less confidence in it), and for Assertions, the relevance and
+      abundance of supporting evidence.
+    - Implementers should define a relevant source of codes or terms to use here,
+      based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: informationQuality
@@ -896,16 +859,15 @@ attributes:
     multivalued: false
   recordMetadata:
     name: recordMetadata
-    description: Provenance metadata about a specific concrete encoding/serialization
-      of information (e.g. as a record in a specific data/knowledgebase, or an online
-      digital resource) - as opposed to provenance about the abstract information
-      content a record carries.
+    description: Provenance metadata about a specific concrete record of information
+      as encoded/serialized in a particular data set or object (as opposed to provenance
+      about the abstract information content the encoding carries).
     comments:
     - This attribute holds a structured RecordMetadata objects, which can be used
       to capture when, how, and by whom a record serialization was generated or modified;
       what upstream resources it was derived or retrieved from; and record-level administrative
       information such as versioning and lifecycle status.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: recordMetadata
@@ -922,18 +884,14 @@ attributes:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: id
@@ -950,18 +908,12 @@ attributes:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: identifiers
@@ -977,7 +929,7 @@ attributes:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: type
@@ -990,20 +942,21 @@ attributes:
   label:
     name: label
     description: A primary name for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: label
     owner: DataSet
     domain_of:
     - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: alternativeLabels
@@ -1016,7 +969,7 @@ attributes:
   description:
     name: description
     description: A free text description of the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: description
@@ -1035,7 +988,7 @@ attributes:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: extensions

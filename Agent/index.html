@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -154,11 +159,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
     Usages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -210,7 +210,12 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-agent-agent">Class: Agent (Agent)</h1>
-<p><em>An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent’s activity.</em></p>
+<p><em>An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent's activity.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Agents perform activities and make contributions to entities. An agent can be an individual person, an organization of multiple individuals acting together, or a computational agent such as a software program or automated pipeline.</li>
+<li>Agents can belong to organizations, and act on behalf or in the context of an organizational affiliation when contributing to an entity. For example, curators generating these variant pathogenicity interpretations may do so in the context of their work with the ClinGen organization, which provides administrative, technical, and funding support for their contributions.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/Agent">sepio_linkml:Agent</a></p>
 <div class="mermaid"> classDiagram
     class Agent
@@ -239,7 +244,7 @@
 
       Agent : name
 
-      Agent : subtype_6
+      Agent : subtype
 
       Agent : type
 
@@ -264,7 +269,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subtype_6/">subtype_6</a></td>
+<td><a href="../subtype/">subtype</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A specific type of agent the Agent object represents</td>
 <td>direct</td>
@@ -350,11 +355,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>Agents perform activities and make contributions to entities. An agent can be an individual person, an organization of multiple individuals acting together, or a computational agent such as a software program or automated pipeline. </li>
-</ul>
-<p>Agents can belong to organizations, and act on behalf or in the context of an organizational affiliation when contributing to an entity. For example, curators generating these variant pathogenicity interpretations may do so in the context of their work with the ClinGen organization, which provides administrative, technical, and funding support for their contributions.</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -386,26 +386,23 @@
 <pre><code class="language-yaml">name: Agent
 description: An autonomous actor (person, organization, or software agent) that bears
   some form of responsibility for an activity taking place,  for the existence of
-  an entity, or for another agent’s activity.
+  an entity, or for another agent's activity.
 title: Agent
 comments:
-- "Agents perform activities and make contributions to entities. An agent can be an\
-  \ individual person, an organization of multiple individuals acting together, or\
-  \ a computational agent such as a software program or automated pipeline. \n\nAgents\
-  \ can belong to organizations, and act on behalf or in the context of an organizational\
-  \ affiliation when contributing to an entity. For example, curators generating these\
-  \ variant pathogenicity interpretations may do so in the context of their work with\
-  \ the ClinGen organization, which provides administrative, technical, and funding\
-  \ support for their contributions."
+- Agents perform activities and make contributions to entities. An agent can be an
+  individual person, an organization of multiple individuals acting together, or a
+  computational agent such as a software program or automated pipeline.
+- Agents can belong to organizations, and act on behalf or in the context of an organizational
+  affiliation when contributing to an entity. For example, curators generating these
+  variant pathogenicity interpretations may do so in the context of their work with
+  the ClinGen organization, which provides administrative, technical, and funding
+  support for their contributions.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Entity
-slots:
-- subtype_6
-- name
-slot_usage:
-  subtype_6:
-    name: subtype_6
+attributes:
+  subtype:
+    name: subtype
     description: A specific type of agent the Agent object represents. Must be one
       of {person, organization, software}
     comments:
@@ -413,14 +410,30 @@ slot_usage:
       level types of Agent (person, organization, or software). If it is determined
       that there are enough unique properties that need to be defined for these subtypes,
       separate classes may be defined in a future release.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    domain_of:
+    - Method
+    - Document
+    - DataItem
+    - DataSet
+    - Activity
+    - Agent
+    - EvidenceLine
     range: string
     required: false
     multivalued: false
   name:
     name: name
     description: The given name of the Agent.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Agent
+    - Qualifier
+    - Extension
+    - Characteristic
     range: string
     required: false
     multivalued: false
@@ -432,44 +445,23 @@ slot_usage:
 <pre><code class="language-yaml">name: Agent
 description: An autonomous actor (person, organization, or software agent) that bears
   some form of responsibility for an activity taking place,  for the existence of
-  an entity, or for another agent’s activity.
+  an entity, or for another agent's activity.
 title: Agent
 comments:
-- "Agents perform activities and make contributions to entities. An agent can be an\
-  \ individual person, an organization of multiple individuals acting together, or\
-  \ a computational agent such as a software program or automated pipeline. \n\nAgents\
-  \ can belong to organizations, and act on behalf or in the context of an organizational\
-  \ affiliation when contributing to an entity. For example, curators generating these\
-  \ variant pathogenicity interpretations may do so in the context of their work with\
-  \ the ClinGen organization, which provides administrative, technical, and funding\
-  \ support for their contributions."
+- Agents perform activities and make contributions to entities. An agent can be an
+  individual person, an organization of multiple individuals acting together, or a
+  computational agent such as a software program or automated pipeline.
+- Agents can belong to organizations, and act on behalf or in the context of an organizational
+  affiliation when contributing to an entity. For example, curators generating these
+  variant pathogenicity interpretations may do so in the context of their work with
+  the ClinGen organization, which provides administrative, technical, and funding
+  support for their contributions.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Entity
-slot_usage:
-  subtype_6:
-    name: subtype_6
-    description: A specific type of agent the Agent object represents. Must be one
-      of {person, organization, software}
-    comments:
-    - At present, there are no subclasses in the model representing the three high
-      level types of Agent (person, organization, or software). If it is determined
-      that there are enough unique properties that need to be defined for these subtypes,
-      separate classes may be defined in a future release.
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  name:
-    name: name
-    description: The given name of the Agent.
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
 attributes:
-  subtype_6:
-    name: subtype_6
+  subtype:
+    name: subtype
     description: A specific type of agent the Agent object represents. Must be one
       of {person, organization, software}
     comments:
@@ -477,26 +469,34 @@ attributes:
       level types of Agent (person, organization, or software). If it is determined
       that there are enough unique properties that need to be defined for these subtypes,
       separate classes may be defined in a future release.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
-    rank: 1000
-    alias: subtype_6
+    alias: subtype
     owner: Agent
     domain_of:
+    - Method
+    - Document
+    - DataItem
+    - DataSet
+    - Activity
     - Agent
+    - EvidenceLine
     range: string
     required: false
     multivalued: false
   name:
     name: name
     description: The given name of the Agent.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: name
     owner: Agent
     domain_of:
     - Agent
+    - Qualifier
+    - Extension
+    - Characteristic
     range: string
     required: false
     multivalued: false
@@ -507,18 +507,14 @@ attributes:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: id
@@ -535,18 +531,12 @@ attributes:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: identifiers
@@ -562,7 +552,7 @@ attributes:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: type
@@ -575,20 +565,21 @@ attributes:
   label:
     name: label
     description: A primary name for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: label
     owner: Agent
     domain_of:
     - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: alternativeLabels
@@ -601,7 +592,7 @@ attributes:
   description:
     name: description
     description: A free text description of the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: description
@@ -620,7 +611,7 @@ attributes:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: extensions

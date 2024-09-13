@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -205,7 +210,11 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-method-method">Class: Method (Method)</h1>
-<p><em>A set of instructions that specify how to achieve some objective. These may vary in the level of detail they provide, and in scientific research, these include things like experimental protocols, study designs, data analysis parameters,  curation guidelines, cohort selection criteria, and rule sets.</em></p>
+<p><em>A set of instructions that specify how to achieve some objective.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>In scientific research, these include things like experimental protocols, study designs, data analysis parameters,  curation guidelines, cohort selection criteria, and rule sets.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/Method">sepio_linkml:Method</a></p>
 <div class="mermaid"> classDiagram
     class Method
@@ -384,7 +393,7 @@
 <tr>
 <td><a href="../recordMetadata/">recordMetadata</a></td>
 <td>0..1 <br/> <a href="../RecordMetadata/">RecordMetadata</a></td>
-<td>Provenance metadata about a specific concrete encoding/serialization of infor...</td>
+<td>Provenance metadata about a specific concrete record of information as encode...</td>
 <td><a href="../InformationEntity/">InformationEntity</a></td>
 </tr>
 <tr>
@@ -444,13 +453,13 @@
 <tbody>
 <tr>
 <td><a href="../Activity/">Activity</a></td>
-<td><a href="../specifiedBy_2/">specifiedBy_2</a></td>
+<td><a href="../specifiedBy/">specifiedBy</a></td>
 <td>range</td>
 <td><a href="./">Method</a></td>
 </tr>
 <tr>
 <td><a href="../Contribution/">Contribution</a></td>
-<td><a href="../specifiedBy_2/">specifiedBy_2</a></td>
+<td><a href="../specifiedBy/">specifiedBy</a></td>
 <td>range</td>
 <td><a href="./">Method</a></td>
 </tr>
@@ -485,34 +494,47 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Method
-description: A set of instructions that specify how to achieve some objective. These
-  may vary in the level of detail they provide, and in scientific research, these
-  include things like experimental protocols, study designs, data analysis parameters,  curation
-  guidelines, cohort selection criteria, and rule sets.
+description: A set of instructions that specify how to achieve some objective.
 title: Method
+comments:
+- In scientific research, these include things like experimental protocols, study
+  designs, data analysis parameters,  curation guidelines, cohort selection criteria,
+  and rule sets.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 is_a: InformationEntity
-slots:
-- subtype
-- urls
-slot_usage:
+attributes:
   subtype:
     name: subtype
     description: A specific type of method that a Method instance represents (e.g.
-      'Variant Interpretation Guideline', or 'Experimental Protocol')
+      'Variant Interpretation Guideline', or 'Experimental Protocol').
     comments:
     - This attribute can be used to report a specific type for the Method, in cases
       where a model does not define Method subclasses for this purpose.  Implementers
       can define their own set of method type codes/terms, to match the needs of the
       domain or application.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Method
+    - Document
+    - DataItem
+    - DataSet
+    - Activity
+    - Agent
+    - EvidenceLine
     range: Coding
     required: false
     multivalued: false
   urls:
     name: urls
     description: The URL/web address from which the Method can be retrieved.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - Method
+    - Document
     range: string
     required: false
     multivalued: true
@@ -522,64 +544,51 @@ slot_usage:
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Method
-description: A set of instructions that specify how to achieve some objective. These
-  may vary in the level of detail they provide, and in scientific research, these
-  include things like experimental protocols, study designs, data analysis parameters,  curation
-  guidelines, cohort selection criteria, and rule sets.
+description: A set of instructions that specify how to achieve some objective.
 title: Method
+comments:
+- In scientific research, these include things like experimental protocols, study
+  designs, data analysis parameters,  curation guidelines, cohort selection criteria,
+  and rule sets.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 is_a: InformationEntity
-slot_usage:
-  subtype:
-    name: subtype
-    description: A specific type of method that a Method instance represents (e.g.
-      'Variant Interpretation Guideline', or 'Experimental Protocol')
-    comments:
-    - This attribute can be used to report a specific type for the Method, in cases
-      where a model does not define Method subclasses for this purpose.  Implementers
-      can define their own set of method type codes/terms, to match the needs of the
-      domain or application.
-    status: Draft
-    range: Coding
-    required: false
-    multivalued: false
-  urls:
-    name: urls
-    description: The URL/web address from which the Method can be retrieved.
-    status: Informative
-    range: string
-    required: false
-    multivalued: true
 attributes:
   subtype:
     name: subtype
     description: A specific type of method that a Method instance represents (e.g.
-      'Variant Interpretation Guideline', or 'Experimental Protocol')
+      'Variant Interpretation Guideline', or 'Experimental Protocol').
     comments:
     - This attribute can be used to report a specific type for the Method, in cases
       where a model does not define Method subclasses for this purpose.  Implementers
       can define their own set of method type codes/terms, to match the needs of the
       domain or application.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: subtype
     owner: Method
     domain_of:
     - Method
+    - Document
+    - DataItem
+    - DataSet
+    - Activity
+    - Agent
+    - EvidenceLine
     range: Coding
     required: false
     multivalued: false
   urls:
     name: urls
     description: The URL/web address from which the Method can be retrieved.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: urls
     owner: Method
     domain_of:
     - Method
+    - Document
     range: string
     required: false
     multivalued: true
@@ -588,13 +597,13 @@ attributes:
     description: An entity or concept in the world that the information entity describes/is
       about.
     comments:
-    - When used in the context of a Statement object, this field can be used to indicate
+    - e.g. In the context of a Statement object, this attribute may be used to indicate
       entities/concepts it is about, in lieu of providing a more precise description
       of what the Statement asserts to be true using subject, predicate, object, and
       qualifier properties. e.g. the Statement that "BRCA2 c.8023A&gt;G is pathogenic
       for Breast Cancer" might be annotated to be about the variant 'BRCA2 c.8023A&gt;G',
       and the disease 'Breast Cancer'.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: isAbout
@@ -612,13 +621,14 @@ attributes:
     - This attribute holds one or more Contribution objects, which provide structured
       descriptions of a contribution made to the Information Entity by a particular
       agent.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: contributions
     owner: Method
     domain_of:
     - InformationEntity
+    - RecordMetadata
     range: Contribution
     required: false
     multivalued: true
@@ -632,9 +642,9 @@ attributes:
       in a specific language or format. e.g. for a Statement, this attribute captures
       when the information content expressed in the Statement was first generated
       by an agent.  Information about when a particular concrete encoding of this
-      information was created (e.g. as a written sentence, or a json object) would
-      live in a RecordMetadata object attached to the Information Entity).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      information was created (e.g. as row in a table, or object in a json document)
+      would live in a RecordMetadata object attached to the Information Entity).
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: dateAuthored
@@ -647,22 +657,23 @@ attributes:
   specifiedBy:
     name: specifiedBy
     description: A specification that describes all or part of the process that led
-      to creation of the Information Entity (e.g. a specific experimental protocol
-      or data analysis specification that describe how data were generated, or an
-      evidence interpretation guideline that describes steps taken to interpret data
-      in making a variant pathogenicity classification).
+      to creation of the Information Entity.
     comments:
+    - Examples - an experimental protocol or data analysis specification that describe
+      how data were generated, or an evidence interpretation guideline that describes
+      steps taken to interpret data in making a variant pathogenicity classification.
     - Note that this attribute captures specific *instances* of specifications/methods
       (e.g. the specific electron microscopy method described in https://doi.org/10.1002/
-      cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission
-      Electron Microscopy').
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission
+      Electron Microscopy").
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: specifiedBy
     owner: Method
     domain_of:
     - InformationEntity
+    - Activity
     range: string
     required: false
     multivalued: true
@@ -671,13 +682,11 @@ attributes:
     description: Types of methodological approaches used to collect, generate, or
       evaluate the reported information.
     comments:
-    - 'This field captures terms representing *types* of methods applied, vs the ''specifiedBy''
+    - This field captures terms representing *types* of methods applied, vs the "specifiedBy"
       attribute which captures specific instances of methods used.
-
-
-      Implementers should define a relevant source or specific set of method type
-      codes/terms to use here based on the needs of the domain or application.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - Implementers should define a relevant source of method type codes/terms to use
+      here based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: methodTypes
@@ -690,8 +699,8 @@ attributes:
   derivedFrom:
     name: derivedFrom
     description: Another Information Entity from which this Information Entity is
-      derived, in whole or in part
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      derived, in whole or in part.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: derivedFrom
@@ -703,17 +712,14 @@ attributes:
     multivalued: true
   reportedIn:
     name: reportedIn
-    description: A document in which the Information Entity is reported
+    description: A document in which the Information Entity is reported.
     comments:
-    - The term 'authored' is used in the model to refer to the generation of abstract
-      'information content', as opposed to creation of a concrete encoding of this
-      information in a specific language, format, or physical artifact. e.g. for a
-      Statement, this attribute captures when the information content expressed in
-      the Statement was first  generated by an agent, and metadata about when a particular
-      concrete encoding of this information was created (e.g. a written sentence in
-      an article, or json object in a data stream) would live in a RecordMetadata
-      object attached to the Information Entity).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - This attribute is used specifically to reference documents/publications where
+      the Information Entity is expressed or reported.  For a Statement, this might
+      be a publication where the authors express the statement in text.  For a Data
+      Item, this might be a publication with a table or figure that reports the value
+      of the  data.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: reportedIn
@@ -728,25 +734,22 @@ attributes:
     description: A qualitative term indicating the scientific rigor or reliability
       with which the information was generated/collected.
     comments:
-    - '- This is typically based on the quality of design and execution of the study
+    - This is typically based on the quality of design and execution of the study
       or curation activity that generated it (e.g. were relevant controls assessed
       to show instruments were working, were all samples taken care of and handled
       identically, are methods sound and well documented, etc.).
-
-      - The quality of information is intrinsic to the information itself, and not
-      to a particular application of the information (e.g. as evidence for making
-      an Assertion)
-
-      - The quality of information is one factor that goes into the confidence we
-      have in the information''s veracity (i.e. that it is an accurate reflection
-      of reality it intends to measure or describe). Other factors informing confidence
-      may include who did it (we may just not trust some Agents), when (if data created
-      500 years ago, we may have less confidence in it), and for Assertions, the relevance
-      and abundance of supporting evidence.
-
-      - Implementers should define a relevant source or specific set of terms to use
-      here based on the needs of the domain or application.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - The quality of information is intrinsic to the information itself, and not to
+      a particular application of the information (e.g. as evidence for making an
+      Assertion)
+    - The quality of information is one factor that goes into the confidence we have
+      in the information''s veracity (i.e. that it is an accurate reflection of reality
+      it intends to measure or describe). Other factors informing confidence may include
+      who did it (we may just not trust some Agents), when (if data created 500 years
+      ago, we may have less confidence in it), and for Assertions, the relevance and
+      abundance of supporting evidence.
+    - Implementers should define a relevant source of codes or terms to use here,
+      based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: informationQuality
@@ -758,16 +761,15 @@ attributes:
     multivalued: false
   recordMetadata:
     name: recordMetadata
-    description: Provenance metadata about a specific concrete encoding/serialization
-      of information (e.g. as a record in a specific data/knowledgebase, or an online
-      digital resource) - as opposed to provenance about the abstract information
-      content a record carries.
+    description: Provenance metadata about a specific concrete record of information
+      as encoded/serialized in a particular data set or object (as opposed to provenance
+      about the abstract information content the encoding carries).
     comments:
     - This attribute holds a structured RecordMetadata objects, which can be used
       to capture when, how, and by whom a record serialization was generated or modified;
       what upstream resources it was derived or retrieved from; and record-level administrative
       information such as versioning and lifecycle status.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: recordMetadata
@@ -784,18 +786,14 @@ attributes:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: id
@@ -812,18 +810,12 @@ attributes:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: identifiers
@@ -839,7 +831,7 @@ attributes:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: type
@@ -852,20 +844,21 @@ attributes:
   label:
     name: label
     description: A primary name for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: label
     owner: Method
     domain_of:
     - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: alternativeLabels
@@ -878,7 +871,7 @@ attributes:
   description:
     name: description
     description: A free text description of the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: description
@@ -897,7 +890,7 @@ attributes:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: extensions

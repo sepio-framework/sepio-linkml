@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#inheritance">
     Inheritance
   </a>
@@ -149,16 +154,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#aliases">
-    Aliases
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#comments">
-    Comments
   </a>
 </li>
 <li class="md-nav__item">
@@ -211,6 +206,13 @@
 </a>
 <h1 id="class-statement-statement">Class: Statement (Statement)</h1>
 <p><em>A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Every Statement puts forth a 'proposition' - a possible fact it assesses or reports to be true.  The semantics of this proposition are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slot(s).</li>
+<li>The model supports two " modes of use" for Statements, which differ in what they say about their proposition, and can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.</li>
+<li>In "Assertion Mode" a Statement simply reports an SPOQ proposition to be true (e.g. that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer"), and 'direction', 'strength', and 'score' attributes are not populated.  Thos mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.</li>
+<li>In "Proposition Assessment Mode" a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements to report that "there is very strong evidence supporting the proposition that 'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer'", or "we have high confidence that the proposition 'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer' is false").  This mode is used in curation projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/Statement">sepio_linkml:Statement</a></p>
 <div class="mermaid"> classDiagram
     class Statement
@@ -428,7 +430,7 @@
 <tr>
 <td><a href="../strength/">strength</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A term used to report the strength of a Proposition's validity assessment in ...</td>
+<td>A term used to report the strength of a Proposition's assessment in the direc...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -512,7 +514,7 @@
 <tr>
 <td><a href="../recordMetadata/">recordMetadata</a></td>
 <td>0..1 <br/> <a href="../RecordMetadata/">RecordMetadata</a></td>
-<td>Provenance metadata about a specific concrete encoding/serialization of infor...</td>
+<td>Provenance metadata about a specific concrete record of information as encode...</td>
 <td><a href="../InformationEntity/">InformationEntity</a></td>
 </tr>
 <tr>
@@ -559,17 +561,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="aliases">Aliases</h2>
-<ul>
-<li>Assertion; Claim</li>
-</ul>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>In the SEPIO model, primary assertions of knowledge about some subject entity is captured in self-contained Statement objects. Organization of assertions into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each. Statement semantics are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slot(s). This 'SPOQ' pattern is used to structure the meaning of the Statement's "proposition" - the 'possible fact' it assesses or reports to be true.</li>
-</ul>
-<p>SEPIO supports two "modes of use" for Statements, which differ in what they say about their SPOQ proposition, and can be distinguished by whether 'direction' and 'strength' attributes are populated:</p>
-<p>"Assertion Mode" - the Statement simply reports an SPOQ proposition to be true  (e.g. that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer").  The 'direction' and 'strength' attributes are not populated, in this mode, which is used by projects reporting conclusive assertions about a domain of discourse.</p>
-<p>"Proposition Assessment Mode" - Statements describe the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The 'direction' and 'strength' attributes are are populated to support this mode, which allows for Statements  like"there is very strong evidence supporting the proposition that 'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer'", or "we have high confidence that the proposition  'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer' is false").  This mode is used in curation projects tracking the evolving state of support for propositions of interest, as curators continue to collect and assess evidence and work toward a conclusive assertion.</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -605,55 +596,32 @@ description: A claim of purported truth as made by a particular agent, on a part
   supporting a particular proposition.
 title: Statement
 comments:
-- 'In the SEPIO model, primary assertions of knowledge about some subject entity is
-  captured in self-contained Statement objects. Organization of assertions into discrete
-  Statement objects allows clear and precise tracking of the evidence and provenance
-  that supports each. Statement semantics are explicitly captured using ''subject'',
-  ''predicate'', and ''object'' attributes, and optional ''qualifier'' slot(s). This
-  ''SPOQ'' pattern is used to structure the meaning of the Statement''s "proposition"
-  - the ''possible fact'' it assesses or reports to be true.
-
-
-  SEPIO supports two "modes of use" for Statements, which differ in what they say
-  about their SPOQ proposition, and can be distinguished by whether ''direction''
-  and ''strength'' attributes are populated:
-
-
-  "Assertion Mode" - the Statement simply reports an SPOQ proposition to be true  (e.g.
-  that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer").  The ''direction'' and
-  ''strength'' attributes are not populated, in this mode, which is used by projects
-  reporting conclusive assertions about a domain of discourse.
-
-
-  "Proposition Assessment Mode" - Statements describe the overall state of evidence
+- Primary assertions of knowledge about some subject entity are captured in self-contained
+  Statement objects. Every Statement puts forth a 'proposition' - a possible fact
+  it assesses or reports to be true.  The semantics of this proposition are explicitly
+  captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier'
+  slot(s).
+- The model supports two " modes of use" for Statements, which differ in what they
+  say about their proposition, and can be distinguished by whether 'direction' and
+  'strength' or 'score' attributes are populated.
+- In "Assertion Mode" a Statement simply reports an SPOQ proposition to be true (e.g.
+  that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer"), and 'direction', 'strength',
+  and 'score' attributes are not populated.  Thos mode is used by project reporting
+  conclusive assertions about a domain of discourse, but not providing confidence
+  or evidence level assessments.
+- In "Proposition Assessment Mode" a Statement describes the overall state of evidence
   and/or confidence surrounding the SPOQ proposition - which may or may not be true.
-  The ''direction'' and ''strength'' attributes are are populated to support this
-  mode, which allows for Statements  like"there is very strong evidence supporting
-  the proposition that ''BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer''", or "we
-  have high confidence that the proposition  ''BRCA2 c.8023A&gt;G is pathogenic for Breast
-  Cancer'' is false").  This mode is used in curation projects tracking the evolving
-  state of support for propositions of interest, as curators continue to collect and
-  assess evidence and work toward a conclusive assertion.'
+  The 'direction' and 'strength' or 'score' attributes are populated, which allows
+  for Statements to report that "there is very strong evidence supporting the proposition
+  that 'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer'", or "we have high confidence
+  that the proposition 'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer' is false").  This
+  mode is used in curation projects to track the evolving state of support for propositions
+  of interest, as curators continue to collect evidence and work toward a conclusive
+  assertion.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
-aliases:
-- Assertion; Claim
 status: Draft
 is_a: InformationEntity
-slots:
-- statementText
-- proposition
-- subject
-- predicate
-- object
-- qualifier
-- direction
-- strength
-- score
-- subjectClassification
-- hasEvidenceOfTypes
-- hasEvidenceLines
-- hasEvidence
-slot_usage:
+attributes:
   statementText:
     name: statementText
     description: A natural-language expression of what a Statement asserts to be true.
@@ -664,7 +632,11 @@ slot_usage:
       This optional attribute can be used instead of, or as a complement to, a structured
       representation of Statement semantics that uses the subject-predicate-object-qualifier
       pattern.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Statement
     range: string
     required: false
     multivalued: false
@@ -677,14 +649,23 @@ slot_usage:
       a separate 'Proposition' object. In such a case, the subject-predicate-object-qualifier
       properties on the Statement are not utilized. A given implementation should
       decide which pattern to follow and drop attributes not required for their approach.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - Statement
     range: Proposition
     required: false
     multivalued: false
   subject:
     name: subject
     description: The Entity or concept about which the Statement is made.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Statement
+    - Proposition
     range: string
     required: false
     multivalued: false
@@ -700,7 +681,12 @@ slot_usage:
       value set might include terms from the GENO ontology defining  'pathogenic for
       condition', 'benign for condition', and 'uncertain significance for condition'
       relationships (GENO:0000840, GENO:0000843, GENO:0000845).
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Statement
+    - Proposition
     range: Coding
     required: false
     multivalued: false
@@ -710,9 +696,14 @@ slot_usage:
       via its predicate.
     comments:
     - The object of a Statement can be any Entity or concept that is related to the
-      subject, e.g. for Genetic Variation subjects this is often a disease, drug,
-      gene, molecular consequence, functional impact on gene or protein.
+      subject, e.g. for Genetic Variation subjects the object is often a disease,
+      drug, gene, molecular consequence, functional impact on gene or protein.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Statement
+    - Proposition
     range: string
     required: false
     multivalued: false
@@ -722,29 +713,33 @@ slot_usage:
       of a Statement's core subject - predicate - object 'triple' - by providing additional
       detail, or constraining the statement to apply in a particular context.
     comments:
-    - "The qualifier attribute allows representation of more complex, n-ary statements\
-      \ that may not be accommodated by a simple subject-predicate-object (SPO) triple.\
-      \ For example, if a triple asserts that 'Variant X' - predicts sensitivity to\
-      \ - 'Treatment Y', a qualifier can be used to indicate that this applies in\
-      \ the context of a particular 'Disease Z'. Qualifiers can also add information\
-      \ that quantifies aspects of a Statement - e.g. for a Statement triple asserting\
-      \ that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add\
-      \ frequency/penetrance information that quantifies the percentage of carriers\
-      \ in which the phenotype is observed to manifest. Statement profiles may define\
-      \ more than one qualifier, as needed to capture different types of qualifying\
-      \ information. \n\nThe SEPIO core model specifies use of a key-value 'Qualifier'\
-      \ object to capture the meaning and value of each type of qualifying information\
-      \ relevant for a given type of Statement. But in practice, profiles for specific\
-      \ Statement types may choose to define one or more specializations of the generic\
-      \ 'qualifier' property as named attributes. This makes the data more succinct\
-      \ and parsable, and allows specific constraints to be applied and validated\
-      \ for different qualifiers. For example, a VariantPathogenicityStatement profile\
-      \ may define a named 'alleleOriginQualifier' attribute that is required, and\
-      \ a named 'geneContextQualifier' attribute that is optional - both of which\
-      \ conceptually specialize the core-im 'qualifier' property. Under this approach,\
-      \ the core 'qualifier' acts as a placeholder to seed such specializations, but\
-      \ is not used directly in Statement profiles."
+    - -The qualifier attribute allows representation of more complex, n-ary statements
+      that may not be accommodated by a simple subject-predicate-object (SPO) triple.
+      For example, if an SPO triple asserts that 'Variant X' - predicts sensitivity
+      to - 'Treatment Y', a qualifier can be used to indicate that this applies in
+      the context of a particular 'Disease Z'. Qualifiers can also add information
+      that quantifies aspects of a Statement - e.g. for a Statement triple asserting
+      that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance
+      information that quantifies the percentage of carriers in which the phenotype
+      is observed to manifest. Statement profiles may define more than one qualifier,
+      as needed to capture different types of qualifying information.
+    - The SEPIO core model specifies use of a key-value 'Qualifier' object to capture
+      the meaning and value of each type of qualifying information relevant for a
+      given type of Statement. But in practice, profiles for specific Statement types
+      may choose to define one or more specializations of the generic 'qualifier'
+      property as named attributes. This makes the data more succinct and parsable,
+      and allows specific constraints to be applied and validated for different qualifiers.
+      For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier'
+      attribute that is required, and a named 'geneContextQualifier' attribute that
+      is optional - both of which conceptually specialize the core-im 'qualifier'
+      property. Under this approach, the core 'qualifier' acts as a placeholder to
+      seed such specializations, but is not used directly in Statement profiles.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - Statement
+    - Proposition
     range: Qualifier
     required: false
     multivalued: true
@@ -756,42 +751,50 @@ slot_usage:
     - Statements put forth a Proposition that expresses some possible fact about the
       world, and may provide an assessment of this proposition's validity (i.e. how
       likely it is to be true or false based on evaluated evidence). The semantics
-      of the Proposition are captured in the 'subject,' 'predicate', 'object', and
-      optional 'qualifier' attributes. The assessment of the Proposition's validity
-      are captured in 'direction', 'strength', and 'score' attributes. The 'direction'
-      attribute is used to indicate whether the Statement's Proposition is supported
-      by the agent's assessment  (when evidence favors its validity), is refuted by
-      the agent's assessment (when evidence argues against its validity), or remains
-      neutral (when conflicting or insufficient evidence exists to assert one direction
-      or the other). (Enumerated values = 'supports', 'disputes', 'neutral').
+      of the Proposition are captured in the 'subject',  'predicate', 'object', and
+      optional 'qualifier' attributes. An assessment of the Proposition's validity
+      can be captured using 'direction', 'strength', and 'score' attributes. The 'direction'  attribute
+      is used to indicate whether the Statement's Proposition is *supported* by the
+      agent's assessment (when evidence favors its validity), is *disputed* by the
+      agent's assessment (when evidence argues against its validity), or remains *neutral*
+      (when conflicting or insufficient evidence exists to assert one direction or
+      the other).  (Enumerated values = 'supports', 'disputes', 'neutral').
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Statement
     range: string
     required: false
     multivalued: false
   strength:
     name: strength
-    description: A term used to report the strength of a Proposition's validity assessment
+    description: A term used to report the strength of a Proposition's assessment
       in the direction indicated (i.e. how strongly supported or disputed the Proposition
-      is believed to be).  Depending on its implementation, a strength assessment
-      may be framed in terms of how *confident* the agent is that the Proposition
-      is true or false, or in terms of the *strength of evidence* they believe supports
-      or disputes it.
+      is believed to be).  Implementers may choose to frame a strength assessment
+      in terms of how *confident* an agent is that the Proposition is true or false,
+      or in terms of the *strength of all evidence* they believe supports or disputes
+      it.
     comments:
     - Statements put forth a Proposition that expresses some possible fact about the
       world, and may provide an assessment of this proposition's validity (i.e. how
       likely it is to be true or false based on evaluated evidence). The semantics
       of the Proposition are captured in the 'subject,' 'predicate', 'object', and
-      optional 'qualifier' attributes. The assessment of the Proposition's validity
-      are captured in 'direction', 'strength', and 'score' attributes. The 'strength'
-      attribute is used to report the strength of this assessment in the direction
-      indicated. Tee assessment can frame strength as a level of confidence that the
-      Proposition is true or false, or as a  level of evidence that supports or disputes
-      it. Data creators can define the permissible values for the 'strength' attribute
-      to indicate which of these facets is being assessed (e.g. 'high confidence'
+      optional 'qualifier' attributes. An assessment of the Proposition's validity
+      can be captured using 'direction',  'strength', and 'score' attributes. The
+      'strength' attribute is used to report the strength of this assessment in the
+      direction indicated. Strength can be framed as a *level of confidence* that
+      the Proposition is true or false, or as a *level of evidence* that supports
+      or disputes it. Data creators can define the permissible values for the 'strength'
+      attribute to indicate which of these facets is being assessed (e.g. 'high confidence'
       vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can
-      chose values that don't commit to one or the other if they don't want to make
+      choose values that don't commit to one or the other if they don't want to make
       the distinction (e.g. 'high' vs 'medium' vs 'low').
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Statement
     range: string
     required: false
     multivalued: false
@@ -806,12 +809,16 @@ slot_usage:
     - Statements put forth a Proposition that expresses some possible fact about the
       world, and may provide an assessment of this proposition's validity (i.e. how
       likely it is to be true or false based on evaluated evidence). The semantics
-      of the Proposition are captured in the 'subject,' 'predicate', 'object', and
+      of the Proposition are captured in the 'subject', 'predicate', 'object', and
       optional 'qualifier' attributes. The assessment of the Proposition's validity
       are captured in 'direction', 'strength', and 'score' attributes.  The 'score'
       attribute serves the same purpose as 'strength', but allows for a quantitative
       assessment based on a numerical score.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Statement
     range: float
     required: false
     multivalued: false
@@ -828,7 +835,11 @@ slot_usage:
       and reporting a direction of 'supports' and strength of 'likely', the term  'likely
       pathogenic' from the ACMG Variant Interpretation Guidelines would be used as
       a subject classification.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Statement
     range: Coding
     required: false
     multivalued: false
@@ -844,7 +855,11 @@ slot_usage:
       use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO)
       to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity
       evidence').
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - Statement
     range: string
     required: false
     multivalued: true
@@ -856,21 +871,23 @@ slot_usage:
       and how strongly) is based on an interpretation of one or more pieces of information
       as evidence (i.e. 'Evidence Items).
     comments:
-    - 'Evidence Lines result from the interpretation of one or more pieces of information
+    - Evidence Lines result from the interpretation of one or more pieces of information
       to build an argument for or against a particular Proposition. These arguments
       have direction (supporting / disputing) and strength (e.g. strong, moderate,
       weak) relative to the Proposition they are evaluated against. For example, ExaC
       allele counts and frequency calculations for the BRCA2 c.8023A&gt;G variant in
       different populations may be collectively assessed to provide an argument of
-      ''moderate'' strength in ''support of '' a proposition that the variant is pathogenicity
+      'moderate' strength in 'support of ' a proposition that the variant is pathogenicity
       for breast cancer.
-
-
-      Evidence Lines are useful in cases where a data provider wants to describe in
+    - Evidence Lines are useful in cases where a data provider wants to describe in
       detail how information was  assessed as evidence to generate and score different
       arguments for or against a Statement''s proposition. Evidence Lines can be omitted
-      if such information is not available or needed.'
+      if such information is not available or needed.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
+    rank: 1000
+    domain_of:
+    - Statement
     range: EvidenceLine
     required: false
     multivalued: true
@@ -882,18 +899,21 @@ slot_usage:
       supporting it, bypassing the Evidence Line class when used data creators do
       not utilize an Evidence Line object.
     comments:
-    - "- Evidence is any information that is interpreted in assessing the truth of\
-      \  the proposition a Statement puts forth as true or false.  A piece of information\
-      \ only becomes evidence when it is interpreted in this way. Different types\
-      \ of information entities can be used and cited as evidence, including direct\
-      \ observation or measurement data, derived statistical calculations, data tables\
-      \ or figures in a publication, conclusions/findings from a particular study,\
-      \ or prior assertions of knowledge  that themselves are based on their own set\
-      \ of evidence.  \n- This is a shortcut relation that links a Statement directly\
-      \ to a piece of evidence supporting it, bypassing the Evidence Line class -\
-      \ to be used data creators cannot or do not wish to create an Evidence Line\
-      \ object."
+    - '- Evidence is any information that is interpreted in assessing the truth of  the
+      proposition a Statement puts forth as true or false.  A piece of information
+      only becomes evidence when it is interpreted in this way. Different types of
+      information entities can be used and cited as evidence, including direct observation
+      or measurement data, derived statistical calculations, data tables or figures
+      in a publication, conclusions/findings from a particular study, or prior assertions
+      of knowledge  that themselves are based on their own set of evidence.'
+    - This is a shortcut relation that links a Statement directly to a piece of evidence
+      supporting it, bypassing the Evidence Line class - to be used data creators
+      cannot or do not wish to create an Evidence Line object.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
+    rank: 1000
+    domain_of:
+    - Statement
     range: InformationEntity
     required: false
     multivalued: true
@@ -909,284 +929,31 @@ description: A claim of purported truth as made by a particular agent, on a part
   supporting a particular proposition.
 title: Statement
 comments:
-- 'In the SEPIO model, primary assertions of knowledge about some subject entity is
-  captured in self-contained Statement objects. Organization of assertions into discrete
-  Statement objects allows clear and precise tracking of the evidence and provenance
-  that supports each. Statement semantics are explicitly captured using ''subject'',
-  ''predicate'', and ''object'' attributes, and optional ''qualifier'' slot(s). This
-  ''SPOQ'' pattern is used to structure the meaning of the Statement''s "proposition"
-  - the ''possible fact'' it assesses or reports to be true.
-
-
-  SEPIO supports two "modes of use" for Statements, which differ in what they say
-  about their SPOQ proposition, and can be distinguished by whether ''direction''
-  and ''strength'' attributes are populated:
-
-
-  "Assertion Mode" - the Statement simply reports an SPOQ proposition to be true  (e.g.
-  that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer").  The ''direction'' and
-  ''strength'' attributes are not populated, in this mode, which is used by projects
-  reporting conclusive assertions about a domain of discourse.
-
-
-  "Proposition Assessment Mode" - Statements describe the overall state of evidence
+- Primary assertions of knowledge about some subject entity are captured in self-contained
+  Statement objects. Every Statement puts forth a 'proposition' - a possible fact
+  it assesses or reports to be true.  The semantics of this proposition are explicitly
+  captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier'
+  slot(s).
+- The model supports two " modes of use" for Statements, which differ in what they
+  say about their proposition, and can be distinguished by whether 'direction' and
+  'strength' or 'score' attributes are populated.
+- In "Assertion Mode" a Statement simply reports an SPOQ proposition to be true (e.g.
+  that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer"), and 'direction', 'strength',
+  and 'score' attributes are not populated.  Thos mode is used by project reporting
+  conclusive assertions about a domain of discourse, but not providing confidence
+  or evidence level assessments.
+- In "Proposition Assessment Mode" a Statement describes the overall state of evidence
   and/or confidence surrounding the SPOQ proposition - which may or may not be true.
-  The ''direction'' and ''strength'' attributes are are populated to support this
-  mode, which allows for Statements  like"there is very strong evidence supporting
-  the proposition that ''BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer''", or "we
-  have high confidence that the proposition  ''BRCA2 c.8023A&gt;G is pathogenic for Breast
-  Cancer'' is false").  This mode is used in curation projects tracking the evolving
-  state of support for propositions of interest, as curators continue to collect and
-  assess evidence and work toward a conclusive assertion.'
+  The 'direction' and 'strength' or 'score' attributes are populated, which allows
+  for Statements to report that "there is very strong evidence supporting the proposition
+  that 'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer'", or "we have high confidence
+  that the proposition 'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer' is false").  This
+  mode is used in curation projects to track the evolving state of support for propositions
+  of interest, as curators continue to collect evidence and work toward a conclusive
+  assertion.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
-aliases:
-- Assertion; Claim
 status: Draft
 is_a: InformationEntity
-slot_usage:
-  statementText:
-    name: statementText
-    description: A natural-language expression of what a Statement asserts to be true.
-    comments:
-    - This attribute captures what a Statement says as human readable free text. e.g.
-      that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer", or that "there is moderate
-      evidence supporting the pathogenicity of BRCA2 c.8023A&gt;G for Breast Cancer".
-      This optional attribute can be used instead of, or as a complement to, a structured
-      representation of Statement semantics that uses the subject-predicate-object-qualifier
-      pattern.
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  proposition:
-    name: proposition
-    description: A possible fact that the Statement assesses or puts forth as true.
-    comments:
-    - This attribute supports an alternate modeling pattern where the structured semantics
-      of the possible fact asserted or evaluated by a Statement is encapsulated in
-      a separate 'Proposition' object. In such a case, the subject-predicate-object-qualifier
-      properties on the Statement are not utilized. A given implementation should
-      decide which pattern to follow and drop attributes not required for their approach.
-    status: Informative
-    range: Proposition
-    required: false
-    multivalued: false
-  subject:
-    name: subject
-    description: The Entity or concept about which the Statement is made.
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  predicate:
-    name: predicate
-    description: The relationship declared to hold between the subject and the object
-      of the Statement.
-    comments:
-    - When applied to represent a particular type of Statement (via 'Profiling'),
-      implementers can define a value set of predicates for the relationships relevant
-      in the domain - ideally using terms from community ontologies or terminologies.
-      For example, in a  'Variant Pathogenicity Statement' Profile, the predicate
-      value set might include terms from the GENO ontology defining  'pathogenic for
-      condition', 'benign for condition', and 'uncertain significance for condition'
-      relationships (GENO:0000840, GENO:0000843, GENO:0000845).
-    status: Draft
-    range: Coding
-    required: false
-    multivalued: false
-  object:
-    name: object
-    description: An Entity or concept that is related to the subject of a Statement
-      via its predicate.
-    comments:
-    - The object of a Statement can be any Entity or concept that is related to the
-      subject, e.g. for Genetic Variation subjects this is often a disease, drug,
-      gene, molecular consequence, functional impact on gene or protein.
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  qualifier:
-    name: qualifier
-    description: An additional piece of information that extends or refines the meaning
-      of a Statement's core subject - predicate - object 'triple' - by providing additional
-      detail, or constraining the statement to apply in a particular context.
-    comments:
-    - "The qualifier attribute allows representation of more complex, n-ary statements\
-      \ that may not be accommodated by a simple subject-predicate-object (SPO) triple.\
-      \ For example, if a triple asserts that 'Variant X' - predicts sensitivity to\
-      \ - 'Treatment Y', a qualifier can be used to indicate that this applies in\
-      \ the context of a particular 'Disease Z'. Qualifiers can also add information\
-      \ that quantifies aspects of a Statement - e.g. for a Statement triple asserting\
-      \ that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add\
-      \ frequency/penetrance information that quantifies the percentage of carriers\
-      \ in which the phenotype is observed to manifest. Statement profiles may define\
-      \ more than one qualifier, as needed to capture different types of qualifying\
-      \ information. \n\nThe SEPIO core model specifies use of a key-value 'Qualifier'\
-      \ object to capture the meaning and value of each type of qualifying information\
-      \ relevant for a given type of Statement. But in practice, profiles for specific\
-      \ Statement types may choose to define one or more specializations of the generic\
-      \ 'qualifier' property as named attributes. This makes the data more succinct\
-      \ and parsable, and allows specific constraints to be applied and validated\
-      \ for different qualifiers. For example, a VariantPathogenicityStatement profile\
-      \ may define a named 'alleleOriginQualifier' attribute that is required, and\
-      \ a named 'geneContextQualifier' attribute that is optional - both of which\
-      \ conceptually specialize the core-im 'qualifier' property. Under this approach,\
-      \ the core 'qualifier' acts as a placeholder to seed such specializations, but\
-      \ is not used directly in Statement profiles."
-    status: Informative
-    range: Qualifier
-    required: false
-    multivalued: true
-  direction:
-    name: direction
-    description: A term indicating whether the Statement supports, disputes, or remains
-      neutral w.r.t. the validity of the Proposition it evaluates.
-    comments:
-    - Statements put forth a Proposition that expresses some possible fact about the
-      world, and may provide an assessment of this proposition's validity (i.e. how
-      likely it is to be true or false based on evaluated evidence). The semantics
-      of the Proposition are captured in the 'subject,' 'predicate', 'object', and
-      optional 'qualifier' attributes. The assessment of the Proposition's validity
-      are captured in 'direction', 'strength', and 'score' attributes. The 'direction'
-      attribute is used to indicate whether the Statement's Proposition is supported
-      by the agent's assessment  (when evidence favors its validity), is refuted by
-      the agent's assessment (when evidence argues against its validity), or remains
-      neutral (when conflicting or insufficient evidence exists to assert one direction
-      or the other). (Enumerated values = 'supports', 'disputes', 'neutral').
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  strength:
-    name: strength
-    description: A term used to report the strength of a Proposition's validity assessment
-      in the direction indicated (i.e. how strongly supported or disputed the Proposition
-      is believed to be).  Depending on its implementation, a strength assessment
-      may be framed in terms of how *confident* the agent is that the Proposition
-      is true or false, or in terms of the *strength of evidence* they believe supports
-      or disputes it.
-    comments:
-    - Statements put forth a Proposition that expresses some possible fact about the
-      world, and may provide an assessment of this proposition's validity (i.e. how
-      likely it is to be true or false based on evaluated evidence). The semantics
-      of the Proposition are captured in the 'subject,' 'predicate', 'object', and
-      optional 'qualifier' attributes. The assessment of the Proposition's validity
-      are captured in 'direction', 'strength', and 'score' attributes. The 'strength'
-      attribute is used to report the strength of this assessment in the direction
-      indicated. Tee assessment can frame strength as a level of confidence that the
-      Proposition is true or false, or as a  level of evidence that supports or disputes
-      it. Data creators can define the permissible values for the 'strength' attribute
-      to indicate which of these facets is being assessed (e.g. 'high confidence'
-      vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can
-      chose values that don't commit to one or the other if they don't want to make
-      the distinction (e.g. 'high' vs 'medium' vs 'low').
-    status: Draft
-    range: string
-    required: false
-    multivalued: false
-  score:
-    name: score
-    description: A quantitative score that indicates the strength of a Proposition's
-      validity assessment in the direction indicated (i.e. how strongly supported
-      or disputed the Proposition is believed to be).  Depending on its implementation,
-      a score may reflect how *confident* that agent is that the Proposition is true
-      or false, or the *strength of evidence* they believe supports or disputes it.
-    comments:
-    - Statements put forth a Proposition that expresses some possible fact about the
-      world, and may provide an assessment of this proposition's validity (i.e. how
-      likely it is to be true or false based on evaluated evidence). The semantics
-      of the Proposition are captured in the 'subject,' 'predicate', 'object', and
-      optional 'qualifier' attributes. The assessment of the Proposition's validity
-      are captured in 'direction', 'strength', and 'score' attributes.  The 'score'
-      attribute serves the same purpose as 'strength', but allows for a quantitative
-      assessment based on a numerical score.
-    status: Draft
-    range: float
-    required: false
-    multivalued: false
-  subjectClassification:
-    name: subjectClassification
-    description: A single term or phrase summarizing the outcome of direction and
-      strength assessments of a Statement's proposition, in terms of a classification
-      of its subject.
-    comments:
-    - Permissible values for this attribute are  typically selected to be succinct
-      and familiar in the target community of practice - and can be provided to report
-      of a statement's conclusion in user-friendly terms. For example, in a Statement
-      assessing the proposition that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer",
-      and reporting a direction of 'supports' and strength of 'likely', the term  'likely
-      pathogenic' from the ACMG Variant Interpretation Guidelines would be used as
-      a subject classification.
-    status: Draft
-    range: Coding
-    required: false
-    multivalued: false
-  hasEvidenceOfTypes:
-    name: hasEvidenceOfTypes
-    description: A term describing a type of evidence used to assess the validity
-      of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay
-      evidence').
-    comments:
-    - This contrasts with hasEvidence and hasEvidenceLine attributes that describe
-      specific instances of evidence information, such as a particular data item,
-      study result, or prior assertions, etc. Where possible, data cretors should
-      use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO)
-      to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity
-      evidence').
-    status: Informative
-    range: string
-    required: false
-    multivalued: true
-  hasEvidenceLines:
-    name: hasEvidenceLines
-    description: An evidence-based argument that supports or disputes the validity
-      of the proposition that a Statement assesses or puts forth as true. The strength
-      and direction of this argument (whether it supports or disputes  the proposition,
-      and how strongly) is based on an interpretation of one or more pieces of information
-      as evidence (i.e. 'Evidence Items).
-    comments:
-    - 'Evidence Lines result from the interpretation of one or more pieces of information
-      to build an argument for or against a particular Proposition. These arguments
-      have direction (supporting / disputing) and strength (e.g. strong, moderate,
-      weak) relative to the Proposition they are evaluated against. For example, ExaC
-      allele counts and frequency calculations for the BRCA2 c.8023A&gt;G variant in
-      different populations may be collectively assessed to provide an argument of
-      ''moderate'' strength in ''support of '' a proposition that the variant is pathogenicity
-      for breast cancer.
-
-
-      Evidence Lines are useful in cases where a data provider wants to describe in
-      detail how information was  assessed as evidence to generate and score different
-      arguments for or against a Statement''s proposition. Evidence Lines can be omitted
-      if such information is not available or needed.'
-    status: Draft
-    range: EvidenceLine
-    required: false
-    multivalued: true
-  hasEvidence:
-    name: hasEvidence
-    description: A piece of information that represents or contributes to an argument
-      for or against the validity of the Proposition put forth in a Statement. This
-      is a shortcut relation that links a Statement directly to a piece of evidence
-      supporting it, bypassing the Evidence Line class when used data creators do
-      not utilize an Evidence Line object.
-    comments:
-    - "- Evidence is any information that is interpreted in assessing the truth of\
-      \  the proposition a Statement puts forth as true or false.  A piece of information\
-      \ only becomes evidence when it is interpreted in this way. Different types\
-      \ of information entities can be used and cited as evidence, including direct\
-      \ observation or measurement data, derived statistical calculations, data tables\
-      \ or figures in a publication, conclusions/findings from a particular study,\
-      \ or prior assertions of knowledge  that themselves are based on their own set\
-      \ of evidence.  \n- This is a shortcut relation that links a Statement directly\
-      \ to a piece of evidence supporting it, bypassing the Evidence Line class -\
-      \ to be used data creators cannot or do not wish to create an Evidence Line\
-      \ object."
-    status: Informative
-    range: InformationEntity
-    required: false
-    multivalued: true
 attributes:
   statementText:
     name: statementText
@@ -1198,7 +965,7 @@ attributes:
       This optional attribute can be used instead of, or as a complement to, a structured
       representation of Statement semantics that uses the subject-predicate-object-qualifier
       pattern.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: statementText
@@ -1217,7 +984,7 @@ attributes:
       a separate 'Proposition' object. In such a case, the subject-predicate-object-qualifier
       properties on the Statement are not utilized. A given implementation should
       decide which pattern to follow and drop attributes not required for their approach.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: proposition
@@ -1230,13 +997,14 @@ attributes:
   subject:
     name: subject
     description: The Entity or concept about which the Statement is made.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: subject
     owner: Statement
     domain_of:
     - Statement
+    - Proposition
     range: string
     required: false
     multivalued: false
@@ -1252,13 +1020,14 @@ attributes:
       value set might include terms from the GENO ontology defining  'pathogenic for
       condition', 'benign for condition', and 'uncertain significance for condition'
       relationships (GENO:0000840, GENO:0000843, GENO:0000845).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: predicate
     owner: Statement
     domain_of:
     - Statement
+    - Proposition
     range: Coding
     required: false
     multivalued: false
@@ -1268,15 +1037,16 @@ attributes:
       via its predicate.
     comments:
     - The object of a Statement can be any Entity or concept that is related to the
-      subject, e.g. for Genetic Variation subjects this is often a disease, drug,
-      gene, molecular consequence, functional impact on gene or protein.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      subject, e.g. for Genetic Variation subjects the object is often a disease,
+      drug, gene, molecular consequence, functional impact on gene or protein.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: object
     owner: Statement
     domain_of:
     - Statement
+    - Proposition
     range: string
     required: false
     multivalued: false
@@ -1286,35 +1056,35 @@ attributes:
       of a Statement's core subject - predicate - object 'triple' - by providing additional
       detail, or constraining the statement to apply in a particular context.
     comments:
-    - "The qualifier attribute allows representation of more complex, n-ary statements\
-      \ that may not be accommodated by a simple subject-predicate-object (SPO) triple.\
-      \ For example, if a triple asserts that 'Variant X' - predicts sensitivity to\
-      \ - 'Treatment Y', a qualifier can be used to indicate that this applies in\
-      \ the context of a particular 'Disease Z'. Qualifiers can also add information\
-      \ that quantifies aspects of a Statement - e.g. for a Statement triple asserting\
-      \ that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add\
-      \ frequency/penetrance information that quantifies the percentage of carriers\
-      \ in which the phenotype is observed to manifest. Statement profiles may define\
-      \ more than one qualifier, as needed to capture different types of qualifying\
-      \ information. \n\nThe SEPIO core model specifies use of a key-value 'Qualifier'\
-      \ object to capture the meaning and value of each type of qualifying information\
-      \ relevant for a given type of Statement. But in practice, profiles for specific\
-      \ Statement types may choose to define one or more specializations of the generic\
-      \ 'qualifier' property as named attributes. This makes the data more succinct\
-      \ and parsable, and allows specific constraints to be applied and validated\
-      \ for different qualifiers. For example, a VariantPathogenicityStatement profile\
-      \ may define a named 'alleleOriginQualifier' attribute that is required, and\
-      \ a named 'geneContextQualifier' attribute that is optional - both of which\
-      \ conceptually specialize the core-im 'qualifier' property. Under this approach,\
-      \ the core 'qualifier' acts as a placeholder to seed such specializations, but\
-      \ is not used directly in Statement profiles."
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - -The qualifier attribute allows representation of more complex, n-ary statements
+      that may not be accommodated by a simple subject-predicate-object (SPO) triple.
+      For example, if an SPO triple asserts that 'Variant X' - predicts sensitivity
+      to - 'Treatment Y', a qualifier can be used to indicate that this applies in
+      the context of a particular 'Disease Z'. Qualifiers can also add information
+      that quantifies aspects of a Statement - e.g. for a Statement triple asserting
+      that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance
+      information that quantifies the percentage of carriers in which the phenotype
+      is observed to manifest. Statement profiles may define more than one qualifier,
+      as needed to capture different types of qualifying information.
+    - The SEPIO core model specifies use of a key-value 'Qualifier' object to capture
+      the meaning and value of each type of qualifying information relevant for a
+      given type of Statement. But in practice, profiles for specific Statement types
+      may choose to define one or more specializations of the generic 'qualifier'
+      property as named attributes. This makes the data more succinct and parsable,
+      and allows specific constraints to be applied and validated for different qualifiers.
+      For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier'
+      attribute that is required, and a named 'geneContextQualifier' attribute that
+      is optional - both of which conceptually specialize the core-im 'qualifier'
+      property. Under this approach, the core 'qualifier' acts as a placeholder to
+      seed such specializations, but is not used directly in Statement profiles.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: qualifier
     owner: Statement
     domain_of:
     - Statement
+    - Proposition
     range: Qualifier
     required: false
     multivalued: true
@@ -1326,15 +1096,15 @@ attributes:
     - Statements put forth a Proposition that expresses some possible fact about the
       world, and may provide an assessment of this proposition's validity (i.e. how
       likely it is to be true or false based on evaluated evidence). The semantics
-      of the Proposition are captured in the 'subject,' 'predicate', 'object', and
-      optional 'qualifier' attributes. The assessment of the Proposition's validity
-      are captured in 'direction', 'strength', and 'score' attributes. The 'direction'
-      attribute is used to indicate whether the Statement's Proposition is supported
-      by the agent's assessment  (when evidence favors its validity), is refuted by
-      the agent's assessment (when evidence argues against its validity), or remains
-      neutral (when conflicting or insufficient evidence exists to assert one direction
-      or the other). (Enumerated values = 'supports', 'disputes', 'neutral').
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      of the Proposition are captured in the 'subject',  'predicate', 'object', and
+      optional 'qualifier' attributes. An assessment of the Proposition's validity
+      can be captured using 'direction', 'strength', and 'score' attributes. The 'direction'  attribute
+      is used to indicate whether the Statement's Proposition is *supported* by the
+      agent's assessment (when evidence favors its validity), is *disputed* by the
+      agent's assessment (when evidence argues against its validity), or remains *neutral*
+      (when conflicting or insufficient evidence exists to assert one direction or
+      the other).  (Enumerated values = 'supports', 'disputes', 'neutral').
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: direction
@@ -1346,28 +1116,28 @@ attributes:
     multivalued: false
   strength:
     name: strength
-    description: A term used to report the strength of a Proposition's validity assessment
+    description: A term used to report the strength of a Proposition's assessment
       in the direction indicated (i.e. how strongly supported or disputed the Proposition
-      is believed to be).  Depending on its implementation, a strength assessment
-      may be framed in terms of how *confident* the agent is that the Proposition
-      is true or false, or in terms of the *strength of evidence* they believe supports
-      or disputes it.
+      is believed to be).  Implementers may choose to frame a strength assessment
+      in terms of how *confident* an agent is that the Proposition is true or false,
+      or in terms of the *strength of all evidence* they believe supports or disputes
+      it.
     comments:
     - Statements put forth a Proposition that expresses some possible fact about the
       world, and may provide an assessment of this proposition's validity (i.e. how
       likely it is to be true or false based on evaluated evidence). The semantics
       of the Proposition are captured in the 'subject,' 'predicate', 'object', and
-      optional 'qualifier' attributes. The assessment of the Proposition's validity
-      are captured in 'direction', 'strength', and 'score' attributes. The 'strength'
-      attribute is used to report the strength of this assessment in the direction
-      indicated. Tee assessment can frame strength as a level of confidence that the
-      Proposition is true or false, or as a  level of evidence that supports or disputes
-      it. Data creators can define the permissible values for the 'strength' attribute
-      to indicate which of these facets is being assessed (e.g. 'high confidence'
+      optional 'qualifier' attributes. An assessment of the Proposition's validity
+      can be captured using 'direction',  'strength', and 'score' attributes. The
+      'strength' attribute is used to report the strength of this assessment in the
+      direction indicated. Strength can be framed as a *level of confidence* that
+      the Proposition is true or false, or as a *level of evidence* that supports
+      or disputes it. Data creators can define the permissible values for the 'strength'
+      attribute to indicate which of these facets is being assessed (e.g. 'high confidence'
       vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can
-      chose values that don't commit to one or the other if they don't want to make
+      choose values that don't commit to one or the other if they don't want to make
       the distinction (e.g. 'high' vs 'medium' vs 'low').
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: strength
@@ -1388,12 +1158,12 @@ attributes:
     - Statements put forth a Proposition that expresses some possible fact about the
       world, and may provide an assessment of this proposition's validity (i.e. how
       likely it is to be true or false based on evaluated evidence). The semantics
-      of the Proposition are captured in the 'subject,' 'predicate', 'object', and
+      of the Proposition are captured in the 'subject', 'predicate', 'object', and
       optional 'qualifier' attributes. The assessment of the Proposition's validity
       are captured in 'direction', 'strength', and 'score' attributes.  The 'score'
       attribute serves the same purpose as 'strength', but allows for a quantitative
       assessment based on a numerical score.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: score
@@ -1416,7 +1186,7 @@ attributes:
       and reporting a direction of 'supports' and strength of 'likely', the term  'likely
       pathogenic' from the ACMG Variant Interpretation Guidelines would be used as
       a subject classification.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: subjectClassification
@@ -1438,7 +1208,7 @@ attributes:
       use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO)
       to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity
       evidence').
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: hasEvidenceOfTypes
@@ -1456,21 +1226,19 @@ attributes:
       and how strongly) is based on an interpretation of one or more pieces of information
       as evidence (i.e. 'Evidence Items).
     comments:
-    - 'Evidence Lines result from the interpretation of one or more pieces of information
+    - Evidence Lines result from the interpretation of one or more pieces of information
       to build an argument for or against a particular Proposition. These arguments
       have direction (supporting / disputing) and strength (e.g. strong, moderate,
       weak) relative to the Proposition they are evaluated against. For example, ExaC
       allele counts and frequency calculations for the BRCA2 c.8023A&gt;G variant in
       different populations may be collectively assessed to provide an argument of
-      ''moderate'' strength in ''support of '' a proposition that the variant is pathogenicity
+      'moderate' strength in 'support of ' a proposition that the variant is pathogenicity
       for breast cancer.
-
-
-      Evidence Lines are useful in cases where a data provider wants to describe in
+    - Evidence Lines are useful in cases where a data provider wants to describe in
       detail how information was  assessed as evidence to generate and score different
       arguments for or against a Statement''s proposition. Evidence Lines can be omitted
-      if such information is not available or needed.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      if such information is not available or needed.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: hasEvidenceLines
@@ -1488,18 +1256,17 @@ attributes:
       supporting it, bypassing the Evidence Line class when used data creators do
       not utilize an Evidence Line object.
     comments:
-    - "- Evidence is any information that is interpreted in assessing the truth of\
-      \  the proposition a Statement puts forth as true or false.  A piece of information\
-      \ only becomes evidence when it is interpreted in this way. Different types\
-      \ of information entities can be used and cited as evidence, including direct\
-      \ observation or measurement data, derived statistical calculations, data tables\
-      \ or figures in a publication, conclusions/findings from a particular study,\
-      \ or prior assertions of knowledge  that themselves are based on their own set\
-      \ of evidence.  \n- This is a shortcut relation that links a Statement directly\
-      \ to a piece of evidence supporting it, bypassing the Evidence Line class -\
-      \ to be used data creators cannot or do not wish to create an Evidence Line\
-      \ object."
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - '- Evidence is any information that is interpreted in assessing the truth of  the
+      proposition a Statement puts forth as true or false.  A piece of information
+      only becomes evidence when it is interpreted in this way. Different types of
+      information entities can be used and cited as evidence, including direct observation
+      or measurement data, derived statistical calculations, data tables or figures
+      in a publication, conclusions/findings from a particular study, or prior assertions
+      of knowledge  that themselves are based on their own set of evidence.'
+    - This is a shortcut relation that links a Statement directly to a piece of evidence
+      supporting it, bypassing the Evidence Line class - to be used data creators
+      cannot or do not wish to create an Evidence Line object.
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: hasEvidence
@@ -1514,13 +1281,13 @@ attributes:
     description: An entity or concept in the world that the information entity describes/is
       about.
     comments:
-    - When used in the context of a Statement object, this field can be used to indicate
+    - e.g. In the context of a Statement object, this attribute may be used to indicate
       entities/concepts it is about, in lieu of providing a more precise description
       of what the Statement asserts to be true using subject, predicate, object, and
       qualifier properties. e.g. the Statement that "BRCA2 c.8023A&gt;G is pathogenic
       for Breast Cancer" might be annotated to be about the variant 'BRCA2 c.8023A&gt;G',
       and the disease 'Breast Cancer'.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: isAbout
@@ -1538,13 +1305,14 @@ attributes:
     - This attribute holds one or more Contribution objects, which provide structured
       descriptions of a contribution made to the Information Entity by a particular
       agent.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: contributions
     owner: Statement
     domain_of:
     - InformationEntity
+    - RecordMetadata
     range: Contribution
     required: false
     multivalued: true
@@ -1558,9 +1326,9 @@ attributes:
       in a specific language or format. e.g. for a Statement, this attribute captures
       when the information content expressed in the Statement was first generated
       by an agent.  Information about when a particular concrete encoding of this
-      information was created (e.g. as a written sentence, or a json object) would
-      live in a RecordMetadata object attached to the Information Entity).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      information was created (e.g. as row in a table, or object in a json document)
+      would live in a RecordMetadata object attached to the Information Entity).
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: dateAuthored
@@ -1573,22 +1341,23 @@ attributes:
   specifiedBy:
     name: specifiedBy
     description: A specification that describes all or part of the process that led
-      to creation of the Information Entity (e.g. a specific experimental protocol
-      or data analysis specification that describe how data were generated, or an
-      evidence interpretation guideline that describes steps taken to interpret data
-      in making a variant pathogenicity classification).
+      to creation of the Information Entity.
     comments:
+    - Examples - an experimental protocol or data analysis specification that describe
+      how data were generated, or an evidence interpretation guideline that describes
+      steps taken to interpret data in making a variant pathogenicity classification.
     - Note that this attribute captures specific *instances* of specifications/methods
       (e.g. the specific electron microscopy method described in https://doi.org/10.1002/
-      cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission
-      Electron Microscopy').
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission
+      Electron Microscopy").
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: specifiedBy
     owner: Statement
     domain_of:
     - InformationEntity
+    - Activity
     range: string
     required: false
     multivalued: true
@@ -1597,13 +1366,11 @@ attributes:
     description: Types of methodological approaches used to collect, generate, or
       evaluate the reported information.
     comments:
-    - 'This field captures terms representing *types* of methods applied, vs the ''specifiedBy''
+    - This field captures terms representing *types* of methods applied, vs the "specifiedBy"
       attribute which captures specific instances of methods used.
-
-
-      Implementers should define a relevant source or specific set of method type
-      codes/terms to use here based on the needs of the domain or application.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - Implementers should define a relevant source of method type codes/terms to use
+      here based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: methodTypes
@@ -1616,8 +1383,8 @@ attributes:
   derivedFrom:
     name: derivedFrom
     description: Another Information Entity from which this Information Entity is
-      derived, in whole or in part
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      derived, in whole or in part.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: derivedFrom
@@ -1629,17 +1396,14 @@ attributes:
     multivalued: true
   reportedIn:
     name: reportedIn
-    description: A document in which the Information Entity is reported
+    description: A document in which the Information Entity is reported.
     comments:
-    - The term 'authored' is used in the model to refer to the generation of abstract
-      'information content', as opposed to creation of a concrete encoding of this
-      information in a specific language, format, or physical artifact. e.g. for a
-      Statement, this attribute captures when the information content expressed in
-      the Statement was first  generated by an agent, and metadata about when a particular
-      concrete encoding of this information was created (e.g. a written sentence in
-      an article, or json object in a data stream) would live in a RecordMetadata
-      object attached to the Information Entity).
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - This attribute is used specifically to reference documents/publications where
+      the Information Entity is expressed or reported.  For a Statement, this might
+      be a publication where the authors express the statement in text.  For a Data
+      Item, this might be a publication with a table or figure that reports the value
+      of the  data.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: reportedIn
@@ -1654,25 +1418,22 @@ attributes:
     description: A qualitative term indicating the scientific rigor or reliability
       with which the information was generated/collected.
     comments:
-    - '- This is typically based on the quality of design and execution of the study
+    - This is typically based on the quality of design and execution of the study
       or curation activity that generated it (e.g. were relevant controls assessed
       to show instruments were working, were all samples taken care of and handled
       identically, are methods sound and well documented, etc.).
-
-      - The quality of information is intrinsic to the information itself, and not
-      to a particular application of the information (e.g. as evidence for making
-      an Assertion)
-
-      - The quality of information is one factor that goes into the confidence we
-      have in the information''s veracity (i.e. that it is an accurate reflection
-      of reality it intends to measure or describe). Other factors informing confidence
-      may include who did it (we may just not trust some Agents), when (if data created
-      500 years ago, we may have less confidence in it), and for Assertions, the relevance
-      and abundance of supporting evidence.
-
-      - Implementers should define a relevant source or specific set of terms to use
-      here based on the needs of the domain or application.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    - The quality of information is intrinsic to the information itself, and not to
+      a particular application of the information (e.g. as evidence for making an
+      Assertion)
+    - The quality of information is one factor that goes into the confidence we have
+      in the information''s veracity (i.e. that it is an accurate reflection of reality
+      it intends to measure or describe). Other factors informing confidence may include
+      who did it (we may just not trust some Agents), when (if data created 500 years
+      ago, we may have less confidence in it), and for Assertions, the relevance and
+      abundance of supporting evidence.
+    - Implementers should define a relevant source of codes or terms to use here,
+      based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: informationQuality
@@ -1684,16 +1445,15 @@ attributes:
     multivalued: false
   recordMetadata:
     name: recordMetadata
-    description: Provenance metadata about a specific concrete encoding/serialization
-      of information (e.g. as a record in a specific data/knowledgebase, or an online
-      digital resource) - as opposed to provenance about the abstract information
-      content a record carries.
+    description: Provenance metadata about a specific concrete record of information
+      as encoded/serialized in a particular data set or object (as opposed to provenance
+      about the abstract information content the encoding carries).
     comments:
     - This attribute holds a structured RecordMetadata objects, which can be used
       to capture when, how, and by whom a record serialization was generated or modified;
       what upstream resources it was derived or retrieved from; and record-level administrative
       information such as versioning and lifecycle status.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: recordMetadata
@@ -1710,18 +1470,14 @@ attributes:
       unique outside the system. It is used within a system to reference one object
       from another.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      Note that it is common for implementers to create their own internal logical
+    - Note that it is common for implementers to create their own internal logical
       ids - typically a serially or randomly generated value like a UUID that is assigned
       to the data object as it is created in a system. But an implementer may choose
       to reuse an existing, globally unique id from an external system or authority
       for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique
       within the implementing system, and can be used to reference the identified
-      object in this context.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+      object in this context.
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: id
@@ -1738,18 +1494,12 @@ attributes:
       by an external system or authority, and used to connect entities and share content
       across different systems.
     comments:
-    - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-      are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-      A given real world entity - e.g. a genetic variant - may have many business
-      identifiers defined by different systems, which can be captured in the ''identifiers''
+    - Preferred values for this attribute are CURIEs or URIs - so the system that
+      provisioned the identifier is clear.
+    - A given real world entity - e.g. a genetic variant - may have many business
+      identifiers defined by different systems, which can be captured in the "identifiers"
       property to indicate that they represent the same thing.
-
-
-      Preferred values for this attribute are CURIEs or URIs - so the system that
-      provisioned the identifier is clear.'
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
     alias: identifiers
@@ -1765,7 +1515,7 @@ attributes:
       the Entity.
     comments:
     - MUST be the label of a concrete class from the data model.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: type
@@ -1778,20 +1528,21 @@ attributes:
   label:
     name: label
     description: A primary name for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: label
     owner: Statement
     domain_of:
     - Entity
+    - Coding
     range: string
     required: false
     multivalued: false
   alternativeLabels:
     name: alternativeLabels
     description: Alternative name(s) for the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: alternativeLabels
@@ -1804,7 +1555,7 @@ attributes:
   description:
     name: description
     description: A free text description of the Entity.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: description
@@ -1823,7 +1574,7 @@ attributes:
       custom fields in the data itself. Extensions are not expected to be natively
       understood, but may be used for pre-negotiated exchange of message attributes
       between systems.
-    from_schema: https://w3id.org/sepio-framework/sepio-linkml
+    from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: extensions

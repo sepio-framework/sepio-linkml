@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-issubsetof">Slot: isSubsetOf</h1>
+<p><em>A larger StudyGroup of which this StudyGroup represents a subset.</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/isSubsetOf">sepio_linkml:isSubsetOf</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +341,18 @@
 <tr>
 <td><a href="../StudyGroup/">StudyGroup</a></td>
 <td>A collection of individuals or specimens from the same taxonomic class, selec...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../StudyGroup/">StudyGroup</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +382,17 @@
 <details>
 
 <pre><code class="language-yaml">name: isSubsetOf
+description: A larger StudyGroup of which this StudyGroup represents a subset.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: isSubsetOf
+owner: StudyGroup
 domain_of:
 - StudyGroup
-range: string
+range: StudyGroup
+required: false
+multivalued: true
 
 </code></pre>
 

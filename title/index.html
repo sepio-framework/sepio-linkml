@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-title">Slot: title</h1>
+<p><em>The official title given to the document by its authors.</em></p>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/title">sepio_linkml:title</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,7 +341,7 @@
 <tr>
 <td><a href="../Document/">Document</a></td>
 <td>A collection of information, usually in a text-based or graphic human-readabl...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,12 +377,16 @@
 <details>
 
 <pre><code class="language-yaml">name: title
+description: The official title given to the document by its authors.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 rank: 1000
 alias: title
+owner: Document
 domain_of:
 - Document
 range: string
+required: false
+multivalued: false
 
 </code></pre>
 

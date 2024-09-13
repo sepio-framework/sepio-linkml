@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -324,6 +331,11 @@
 
 
 <h1 id="slot-subjectclassification">Slot: subjectClassification</h1>
+<p><em>A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Permissible values for this attribute are  typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification.</li>
+</ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/subjectClassification">sepio_linkml:subjectClassification</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,13 +352,13 @@
 <tr>
 <td><a href="../Statement/">Statement</a></td>
 <td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Coding/">Coding</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,12 +388,25 @@
 <details>
 
 <pre><code class="language-yaml">name: subjectClassification
+description: A single term or phrase summarizing the outcome of direction and strength
+  assessments of a Statement's proposition, in terms of a classification of its subject.
+comments:
+- Permissible values for this attribute are  typically selected to be succinct and
+  familiar in the target community of practice - and can be provided to report of
+  a statement's conclusion in user-friendly terms. For example, in a Statement assessing
+  the proposition that &quot;BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer&quot;, and reporting
+  a direction of 'supports' and strength of 'likely', the term  'likely pathogenic'
+  from the ACMG Variant Interpretation Guidelines would be used as a subject classification.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Draft
 rank: 1000
 alias: subjectClassification
+owner: Statement
 domain_of:
 - Statement
-range: string
+range: Coding
+required: false
+multivalued: false
 
 </code></pre>
 

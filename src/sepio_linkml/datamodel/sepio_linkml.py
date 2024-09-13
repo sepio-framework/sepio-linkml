@@ -1,5 +1,5 @@
 # Auto generated from sepio_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-09-13T16:54:36
+# Generation date: 2024-09-13T18:00:31
 # Schema: sepio-linkml
 #
 # id: https://w3id.org/sepio-framework/sepio-linkml
@@ -386,7 +386,7 @@ class Contribution(Activity):
 class Agent(Entity):
     """
     An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an
-    activity taking place, for the existence of an entity, or for another agent’s activity.
+    activity taking place, for the existence of an entity, or for another agent's activity.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -872,536 +872,302 @@ class Characteristic(Utility):
 class slots:
     pass
 
-slots.id = Slot(uri=SEPIO-MODEL.id, name="id", curie=SEPIO-MODEL.curie('id'),
-                   model_uri=SEPIO_LINKML.id, domain=None, range=Optional[str])
+slots.entity__id = Slot(uri=SEPIO-MODEL.id, name="entity__id", curie=SEPIO-MODEL.curie('id'),
+                   model_uri=SEPIO_LINKML.entity__id, domain=None, range=str)
 
-slots.identifiers = Slot(uri=SEPIO-MODEL.identifiers, name="identifiers", curie=SEPIO-MODEL.curie('identifiers'),
-                   model_uri=SEPIO_LINKML.identifiers, domain=None, range=Optional[str])
+slots.entity__identifiers = Slot(uri=SEPIO-MODEL.identifiers, name="entity__identifiers", curie=SEPIO-MODEL.curie('identifiers'),
+                   model_uri=SEPIO_LINKML.entity__identifiers, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.type = Slot(uri=SEPIO-MODEL.type, name="type", curie=SEPIO-MODEL.curie('type'),
-                   model_uri=SEPIO_LINKML.type, domain=None, range=Optional[str])
+slots.entity__type = Slot(uri=SEPIO-MODEL.type, name="entity__type", curie=SEPIO-MODEL.curie('type'),
+                   model_uri=SEPIO_LINKML.entity__type, domain=None, range=str)
 
-slots.label = Slot(uri=SEPIO-MODEL.label, name="label", curie=SEPIO-MODEL.curie('label'),
-                   model_uri=SEPIO_LINKML.label, domain=None, range=Optional[str])
+slots.entity__label = Slot(uri=SEPIO-MODEL.label, name="entity__label", curie=SEPIO-MODEL.curie('label'),
+                   model_uri=SEPIO_LINKML.entity__label, domain=None, range=Optional[str])
 
-slots.alternativeLabels = Slot(uri=SEPIO-MODEL.alternativeLabels, name="alternativeLabels", curie=SEPIO-MODEL.curie('alternativeLabels'),
-                   model_uri=SEPIO_LINKML.alternativeLabels, domain=None, range=Optional[str])
+slots.entity__alternativeLabels = Slot(uri=SEPIO-MODEL.alternativeLabels, name="entity__alternativeLabels", curie=SEPIO-MODEL.curie('alternativeLabels'),
+                   model_uri=SEPIO_LINKML.entity__alternativeLabels, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.description = Slot(uri=SEPIO-MODEL.description, name="description", curie=SEPIO-MODEL.curie('description'),
-                   model_uri=SEPIO_LINKML.description, domain=None, range=Optional[str])
+slots.entity__description = Slot(uri=SEPIO-MODEL.description, name="entity__description", curie=SEPIO-MODEL.curie('description'),
+                   model_uri=SEPIO_LINKML.entity__description, domain=None, range=Optional[str])
 
-slots.extensions = Slot(uri=SEPIO-MODEL.extensions, name="extensions", curie=SEPIO-MODEL.curie('extensions'),
-                   model_uri=SEPIO_LINKML.extensions, domain=None, range=Optional[str])
+slots.entity__extensions = Slot(uri=SEPIO-MODEL.extensions, name="entity__extensions", curie=SEPIO-MODEL.curie('extensions'),
+                   model_uri=SEPIO_LINKML.entity__extensions, domain=None, range=Optional[Union[Union[dict, Extension], List[Union[dict, Extension]]]])
 
-slots.isAbout = Slot(uri=SEPIO-MODEL.isAbout, name="isAbout", curie=SEPIO-MODEL.curie('isAbout'),
-                   model_uri=SEPIO_LINKML.isAbout, domain=None, range=Optional[str])
+slots.informationEntity__isAbout = Slot(uri=SEPIO-MODEL.isAbout, name="informationEntity__isAbout", curie=SEPIO-MODEL.curie('isAbout'),
+                   model_uri=SEPIO_LINKML.informationEntity__isAbout, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.contributions = Slot(uri=SEPIO-MODEL.contributions, name="contributions", curie=SEPIO-MODEL.curie('contributions'),
-                   model_uri=SEPIO_LINKML.contributions, domain=None, range=Optional[str])
+slots.informationEntity__contributions = Slot(uri=SEPIO-MODEL.contributions, name="informationEntity__contributions", curie=SEPIO-MODEL.curie('contributions'),
+                   model_uri=SEPIO_LINKML.informationEntity__contributions, domain=None, range=Optional[Union[Union[dict, Contribution], List[Union[dict, Contribution]]]])
 
-slots.dateAuthored = Slot(uri=SEPIO-MODEL.dateAuthored, name="dateAuthored", curie=SEPIO-MODEL.curie('dateAuthored'),
-                   model_uri=SEPIO_LINKML.dateAuthored, domain=None, range=Optional[str])
+slots.informationEntity__dateAuthored = Slot(uri=SEPIO-MODEL.dateAuthored, name="informationEntity__dateAuthored", curie=SEPIO-MODEL.curie('dateAuthored'),
+                   model_uri=SEPIO_LINKML.informationEntity__dateAuthored, domain=None, range=Optional[str])
 
-slots.specifiedBy = Slot(uri=SEPIO-MODEL.specifiedBy, name="specifiedBy", curie=SEPIO-MODEL.curie('specifiedBy'),
-                   model_uri=SEPIO_LINKML.specifiedBy, domain=None, range=Optional[str])
+slots.informationEntity__specifiedBy = Slot(uri=SEPIO-MODEL.specifiedBy, name="informationEntity__specifiedBy", curie=SEPIO-MODEL.curie('specifiedBy'),
+                   model_uri=SEPIO_LINKML.informationEntity__specifiedBy, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.methodTypes = Slot(uri=SEPIO-MODEL.methodTypes, name="methodTypes", curie=SEPIO-MODEL.curie('methodTypes'),
-                   model_uri=SEPIO_LINKML.methodTypes, domain=None, range=Optional[str])
+slots.informationEntity__methodTypes = Slot(uri=SEPIO-MODEL.methodTypes, name="informationEntity__methodTypes", curie=SEPIO-MODEL.curie('methodTypes'),
+                   model_uri=SEPIO_LINKML.informationEntity__methodTypes, domain=None, range=Optional[Union[Union[dict, Coding], List[Union[dict, Coding]]]])
 
-slots.derivedFrom = Slot(uri=SEPIO-MODEL.derivedFrom, name="derivedFrom", curie=SEPIO-MODEL.curie('derivedFrom'),
-                   model_uri=SEPIO_LINKML.derivedFrom, domain=None, range=Optional[str])
+slots.informationEntity__derivedFrom = Slot(uri=SEPIO-MODEL.derivedFrom, name="informationEntity__derivedFrom", curie=SEPIO-MODEL.curie('derivedFrom'),
+                   model_uri=SEPIO_LINKML.informationEntity__derivedFrom, domain=None, range=Optional[Union[Union[dict, InformationEntity], List[Union[dict, InformationEntity]]]])
 
-slots.reportedIn = Slot(uri=SEPIO-MODEL.reportedIn, name="reportedIn", curie=SEPIO-MODEL.curie('reportedIn'),
-                   model_uri=SEPIO_LINKML.reportedIn, domain=None, range=Optional[str])
+slots.informationEntity__reportedIn = Slot(uri=SEPIO-MODEL.reportedIn, name="informationEntity__reportedIn", curie=SEPIO-MODEL.curie('reportedIn'),
+                   model_uri=SEPIO_LINKML.informationEntity__reportedIn, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.informationQuality = Slot(uri=SEPIO-MODEL.informationQuality, name="informationQuality", curie=SEPIO-MODEL.curie('informationQuality'),
-                   model_uri=SEPIO_LINKML.informationQuality, domain=None, range=Optional[str])
+slots.informationEntity__informationQuality = Slot(uri=SEPIO-MODEL.informationQuality, name="informationEntity__informationQuality", curie=SEPIO-MODEL.curie('informationQuality'),
+                   model_uri=SEPIO_LINKML.informationEntity__informationQuality, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.recordMetadata = Slot(uri=SEPIO-MODEL.recordMetadata, name="recordMetadata", curie=SEPIO-MODEL.curie('recordMetadata'),
-                   model_uri=SEPIO_LINKML.recordMetadata, domain=None, range=Optional[str])
+slots.informationEntity__recordMetadata = Slot(uri=SEPIO-MODEL.recordMetadata, name="informationEntity__recordMetadata", curie=SEPIO-MODEL.curie('recordMetadata'),
+                   model_uri=SEPIO_LINKML.informationEntity__recordMetadata, domain=None, range=Optional[Union[dict, RecordMetadata]])
 
-slots.subtype = Slot(uri=SEPIO-MODEL.subtype, name="subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.subtype, domain=None, range=Optional[str])
+slots.method__subtype = Slot(uri=SEPIO-MODEL.subtype, name="method__subtype", curie=SEPIO-MODEL.curie('subtype'),
+                   model_uri=SEPIO_LINKML.method__subtype, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.urls = Slot(uri=SEPIO-MODEL.urls, name="urls", curie=SEPIO-MODEL.curie('urls'),
-                   model_uri=SEPIO_LINKML.urls, domain=None, range=Optional[str])
+slots.method__urls = Slot(uri=SEPIO-MODEL.urls, name="method__urls", curie=SEPIO-MODEL.curie('urls'),
+                   model_uri=SEPIO_LINKML.method__urls, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.title = Slot(uri=SEPIO-MODEL.title, name="title", curie=SEPIO-MODEL.curie('title'),
-                   model_uri=SEPIO_LINKML.title, domain=None, range=Optional[str])
+slots.document__subtype = Slot(uri=SEPIO-MODEL.subtype, name="document__subtype", curie=SEPIO-MODEL.curie('subtype'),
+                   model_uri=SEPIO_LINKML.document__subtype, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.pmid = Slot(uri=SEPIO-MODEL.pmid, name="pmid", curie=SEPIO-MODEL.curie('pmid'),
-                   model_uri=SEPIO_LINKML.pmid, domain=None, range=Optional[str])
+slots.document__title = Slot(uri=SEPIO-MODEL.title, name="document__title", curie=SEPIO-MODEL.curie('title'),
+                   model_uri=SEPIO_LINKML.document__title, domain=None, range=Optional[str])
 
-slots.doi = Slot(uri=SEPIO-MODEL.doi, name="doi", curie=SEPIO-MODEL.curie('doi'),
-                   model_uri=SEPIO_LINKML.doi, domain=None, range=Optional[str])
+slots.document__urls = Slot(uri=SEPIO-MODEL.urls, name="document__urls", curie=SEPIO-MODEL.curie('urls'),
+                   model_uri=SEPIO_LINKML.document__urls, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.license = Slot(uri=SEPIO-MODEL.license, name="license", curie=SEPIO-MODEL.curie('license'),
-                   model_uri=SEPIO_LINKML.license, domain=None, range=Optional[str])
+slots.document__pmid = Slot(uri=SEPIO-MODEL.pmid, name="document__pmid", curie=SEPIO-MODEL.curie('pmid'),
+                   model_uri=SEPIO_LINKML.document__pmid, domain=None, range=Optional[str])
 
-slots.value = Slot(uri=SEPIO-MODEL.value, name="value", curie=SEPIO-MODEL.curie('value'),
-                   model_uri=SEPIO_LINKML.value, domain=None, range=Optional[str])
+slots.document__doi = Slot(uri=SEPIO-MODEL.doi, name="document__doi", curie=SEPIO-MODEL.curie('doi'),
+                   model_uri=SEPIO_LINKML.document__doi, domain=None, range=Optional[str])
 
-slots.unit = Slot(uri=SEPIO-MODEL.unit, name="unit", curie=SEPIO-MODEL.curie('unit'),
-                   model_uri=SEPIO_LINKML.unit, domain=None, range=Optional[str])
+slots.document__license = Slot(uri=SEPIO-MODEL.license, name="document__license", curie=SEPIO-MODEL.curie('license'),
+                   model_uri=SEPIO_LINKML.document__license, domain=None, range=Optional[str])
 
-slots.variabilityMeasures = Slot(uri=SEPIO-MODEL.variabilityMeasures, name="variabilityMeasures", curie=SEPIO-MODEL.curie('variabilityMeasures'),
-                   model_uri=SEPIO_LINKML.variabilityMeasures, domain=None, range=Optional[str])
+slots.dataItem__subtype = Slot(uri=SEPIO-MODEL.subtype, name="dataItem__subtype", curie=SEPIO-MODEL.curie('subtype'),
+                   model_uri=SEPIO_LINKML.dataItem__subtype, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.confidenceInterval = Slot(uri=SEPIO-MODEL.confidenceInterval, name="confidenceInterval", curie=SEPIO-MODEL.curie('confidenceInterval'),
-                   model_uri=SEPIO_LINKML.confidenceInterval, domain=None, range=Optional[str])
+slots.dataItem__value = Slot(uri=SEPIO-MODEL.value, name="dataItem__value", curie=SEPIO-MODEL.curie('value'),
+                   model_uri=SEPIO_LINKML.dataItem__value, domain=None, range=str)
 
-slots.componentDataItem = Slot(uri=SEPIO-MODEL.componentDataItem, name="componentDataItem", curie=SEPIO-MODEL.curie('componentDataItem'),
-                   model_uri=SEPIO_LINKML.componentDataItem, domain=None, range=Optional[str])
+slots.dataItem__unit = Slot(uri=SEPIO-MODEL.unit, name="dataItem__unit", curie=SEPIO-MODEL.curie('unit'),
+                   model_uri=SEPIO_LINKML.dataItem__unit, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.releaseDate = Slot(uri=SEPIO-MODEL.releaseDate, name="releaseDate", curie=SEPIO-MODEL.curie('releaseDate'),
-                   model_uri=SEPIO_LINKML.releaseDate, domain=None, range=Optional[str])
+slots.dataItem__variabilityMeasures = Slot(uri=SEPIO-MODEL.variabilityMeasures, name="dataItem__variabilityMeasures", curie=SEPIO-MODEL.curie('variabilityMeasures'),
+                   model_uri=SEPIO_LINKML.dataItem__variabilityMeasures, domain=None, range=Optional[Union[Union[dict, DataItem], List[Union[dict, DataItem]]]])
 
-slots.version = Slot(uri=SEPIO-MODEL.version, name="version", curie=SEPIO-MODEL.curie('version'),
-                   model_uri=SEPIO_LINKML.version, domain=None, range=Optional[str])
+slots.dataItem__confidenceInterval = Slot(uri=SEPIO-MODEL.confidenceInterval, name="dataItem__confidenceInterval", curie=SEPIO-MODEL.curie('confidenceInterval'),
+                   model_uri=SEPIO_LINKML.dataItem__confidenceInterval, domain=None, range=Optional[Union[dict, DataItem]])
 
-slots.date = Slot(uri=SEPIO-MODEL.date, name="date", curie=SEPIO-MODEL.curie('date'),
-                   model_uri=SEPIO_LINKML.date, domain=None, range=Optional[str])
+slots.dataItem__componentDataItem = Slot(uri=SEPIO-MODEL.componentDataItem, name="dataItem__componentDataItem", curie=SEPIO-MODEL.curie('componentDataItem'),
+                   model_uri=SEPIO_LINKML.dataItem__componentDataItem, domain=None, range=Optional[Union[Union[dict, DataItem], List[Union[dict, DataItem]]]])
 
-slots.performedBy = Slot(uri=SEPIO-MODEL.performedBy, name="performedBy", curie=SEPIO-MODEL.curie('performedBy'),
-                   model_uri=SEPIO_LINKML.performedBy, domain=None, range=Optional[str])
+slots.dataSet__subtype = Slot(uri=SEPIO-MODEL.subtype, name="dataSet__subtype", curie=SEPIO-MODEL.curie('subtype'),
+                   model_uri=SEPIO_LINKML.dataSet__subtype, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.input = Slot(uri=SEPIO-MODEL.input, name="input", curie=SEPIO-MODEL.curie('input'),
-                   model_uri=SEPIO_LINKML.input, domain=None, range=Optional[str])
+slots.dataSet__releaseDate = Slot(uri=SEPIO-MODEL.releaseDate, name="dataSet__releaseDate", curie=SEPIO-MODEL.curie('releaseDate'),
+                   model_uri=SEPIO_LINKML.dataSet__releaseDate, domain=None, range=Optional[str])
 
-slots.output = Slot(uri=SEPIO-MODEL.output, name="output", curie=SEPIO-MODEL.curie('output'),
-                   model_uri=SEPIO_LINKML.output, domain=None, range=Optional[str])
+slots.dataSet__version = Slot(uri=SEPIO-MODEL.version, name="dataSet__version", curie=SEPIO-MODEL.curie('version'),
+                   model_uri=SEPIO_LINKML.dataSet__version, domain=None, range=Optional[str])
 
-slots.contributor = Slot(uri=SEPIO-MODEL.contributor, name="contributor", curie=SEPIO-MODEL.curie('contributor'),
-                   model_uri=SEPIO_LINKML.contributor, domain=None, range=Optional[str])
+slots.dataSet__license = Slot(uri=SEPIO-MODEL.license, name="dataSet__license", curie=SEPIO-MODEL.curie('license'),
+                   model_uri=SEPIO_LINKML.dataSet__license, domain=None, range=Optional[str])
 
-slots.activityType = Slot(uri=SEPIO-MODEL.activityType, name="activityType", curie=SEPIO-MODEL.curie('activityType'),
-                   model_uri=SEPIO_LINKML.activityType, domain=None, range=Optional[str])
+slots.activity__subtype = Slot(uri=SEPIO-MODEL.subtype, name="activity__subtype", curie=SEPIO-MODEL.curie('subtype'),
+                   model_uri=SEPIO_LINKML.activity__subtype, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.contributionMadeTo = Slot(uri=SEPIO-MODEL.contributionMadeTo, name="contributionMadeTo", curie=SEPIO-MODEL.curie('contributionMadeTo'),
-                   model_uri=SEPIO_LINKML.contributionMadeTo, domain=None, range=Optional[str])
+slots.activity__date = Slot(uri=SEPIO-MODEL.date, name="activity__date", curie=SEPIO-MODEL.curie('date'),
+                   model_uri=SEPIO_LINKML.activity__date, domain=None, range=Optional[Union[str, XSDDate]])
 
-slots.name = Slot(uri=SEPIO-MODEL.name, name="name", curie=SEPIO-MODEL.curie('name'),
-                   model_uri=SEPIO_LINKML.name, domain=None, range=Optional[str])
+slots.activity__performedBy = Slot(uri=SEPIO-MODEL.performedBy, name="activity__performedBy", curie=SEPIO-MODEL.curie('performedBy'),
+                   model_uri=SEPIO_LINKML.activity__performedBy, domain=None, range=Optional[Union[Union[dict, Agent], List[Union[dict, Agent]]]])
 
-slots.statementText = Slot(uri=SEPIO-MODEL.statementText, name="statementText", curie=SEPIO-MODEL.curie('statementText'),
-                   model_uri=SEPIO_LINKML.statementText, domain=None, range=Optional[str])
+slots.activity__specifiedBy = Slot(uri=SEPIO-MODEL.specifiedBy, name="activity__specifiedBy", curie=SEPIO-MODEL.curie('specifiedBy'),
+                   model_uri=SEPIO_LINKML.activity__specifiedBy, domain=None, range=Optional[Union[Union[dict, Method], List[Union[dict, Method]]]])
 
-slots.proposition = Slot(uri=SEPIO-MODEL.proposition, name="proposition", curie=SEPIO-MODEL.curie('proposition'),
-                   model_uri=SEPIO_LINKML.proposition, domain=None, range=Optional[str])
+slots.activity__input = Slot(uri=SEPIO-MODEL.input, name="activity__input", curie=SEPIO-MODEL.curie('input'),
+                   model_uri=SEPIO_LINKML.activity__input, domain=None, range=Optional[Union[Union[dict, Entity], List[Union[dict, Entity]]]])
 
-slots.subject = Slot(uri=SEPIO-MODEL.subject, name="subject", curie=SEPIO-MODEL.curie('subject'),
-                   model_uri=SEPIO_LINKML.subject, domain=None, range=Optional[str])
+slots.activity__output = Slot(uri=SEPIO-MODEL.output, name="activity__output", curie=SEPIO-MODEL.curie('output'),
+                   model_uri=SEPIO_LINKML.activity__output, domain=None, range=Optional[Union[Union[dict, Entity], List[Union[dict, Entity]]]])
 
-slots.predicate = Slot(uri=SEPIO-MODEL.predicate, name="predicate", curie=SEPIO-MODEL.curie('predicate'),
-                   model_uri=SEPIO_LINKML.predicate, domain=None, range=Optional[str])
+slots.contribution__contributor = Slot(uri=SEPIO-MODEL.contributor, name="contribution__contributor", curie=SEPIO-MODEL.curie('contributor'),
+                   model_uri=SEPIO_LINKML.contribution__contributor, domain=None, range=Optional[Union[dict, Agent]])
 
-slots.object = Slot(uri=SEPIO-MODEL.object, name="object", curie=SEPIO-MODEL.curie('object'),
-                   model_uri=SEPIO_LINKML.object, domain=None, range=Optional[str])
+slots.contribution__activityType = Slot(uri=SEPIO-MODEL.activityType, name="contribution__activityType", curie=SEPIO-MODEL.curie('activityType'),
+                   model_uri=SEPIO_LINKML.contribution__activityType, domain=None, range=Optional[Union[Union[dict, Coding], List[Union[dict, Coding]]]])
 
-slots.qualifier = Slot(uri=SEPIO-MODEL.qualifier, name="qualifier", curie=SEPIO-MODEL.curie('qualifier'),
-                   model_uri=SEPIO_LINKML.qualifier, domain=None, range=Optional[str])
+slots.contribution__contributionMadeTo = Slot(uri=SEPIO-MODEL.contributionMadeTo, name="contribution__contributionMadeTo", curie=SEPIO-MODEL.curie('contributionMadeTo'),
+                   model_uri=SEPIO_LINKML.contribution__contributionMadeTo, domain=None, range=Optional[Union[dict, InformationEntity]])
 
-slots.direction = Slot(uri=SEPIO-MODEL.direction, name="direction", curie=SEPIO-MODEL.curie('direction'),
-                   model_uri=SEPIO_LINKML.direction, domain=None, range=Optional[str])
+slots.agent__subtype = Slot(uri=SEPIO-MODEL.subtype, name="agent__subtype", curie=SEPIO-MODEL.curie('subtype'),
+                   model_uri=SEPIO_LINKML.agent__subtype, domain=None, range=Optional[str])
 
-slots.strength = Slot(uri=SEPIO-MODEL.strength, name="strength", curie=SEPIO-MODEL.curie('strength'),
-                   model_uri=SEPIO_LINKML.strength, domain=None, range=Optional[str])
+slots.agent__name = Slot(uri=SEPIO-MODEL.name, name="agent__name", curie=SEPIO-MODEL.curie('name'),
+                   model_uri=SEPIO_LINKML.agent__name, domain=None, range=Optional[str])
 
-slots.score = Slot(uri=SEPIO-MODEL.score, name="score", curie=SEPIO-MODEL.curie('score'),
-                   model_uri=SEPIO_LINKML.score, domain=None, range=Optional[str])
+slots.statement__statementText = Slot(uri=SEPIO-MODEL.statementText, name="statement__statementText", curie=SEPIO-MODEL.curie('statementText'),
+                   model_uri=SEPIO_LINKML.statement__statementText, domain=None, range=Optional[str])
 
-slots.subjectClassification = Slot(uri=SEPIO-MODEL.subjectClassification, name="subjectClassification", curie=SEPIO-MODEL.curie('subjectClassification'),
-                   model_uri=SEPIO_LINKML.subjectClassification, domain=None, range=Optional[str])
+slots.statement__proposition = Slot(uri=SEPIO-MODEL.proposition, name="statement__proposition", curie=SEPIO-MODEL.curie('proposition'),
+                   model_uri=SEPIO_LINKML.statement__proposition, domain=None, range=Optional[Union[dict, Proposition]])
 
-slots.hasEvidenceOfTypes = Slot(uri=SEPIO-MODEL.hasEvidenceOfTypes, name="hasEvidenceOfTypes", curie=SEPIO-MODEL.curie('hasEvidenceOfTypes'),
-                   model_uri=SEPIO_LINKML.hasEvidenceOfTypes, domain=None, range=Optional[str])
+slots.statement__subject = Slot(uri=SEPIO-MODEL.subject, name="statement__subject", curie=SEPIO-MODEL.curie('subject'),
+                   model_uri=SEPIO_LINKML.statement__subject, domain=None, range=Optional[str])
 
-slots.hasEvidenceLines = Slot(uri=SEPIO-MODEL.hasEvidenceLines, name="hasEvidenceLines", curie=SEPIO-MODEL.curie('hasEvidenceLines'),
-                   model_uri=SEPIO_LINKML.hasEvidenceLines, domain=None, range=Optional[str])
+slots.statement__predicate = Slot(uri=SEPIO-MODEL.predicate, name="statement__predicate", curie=SEPIO-MODEL.curie('predicate'),
+                   model_uri=SEPIO_LINKML.statement__predicate, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.hasEvidence = Slot(uri=SEPIO-MODEL.hasEvidence, name="hasEvidence", curie=SEPIO-MODEL.curie('hasEvidence'),
-                   model_uri=SEPIO_LINKML.hasEvidence, domain=None, range=Optional[str])
+slots.statement__object = Slot(uri=SEPIO-MODEL.object, name="statement__object", curie=SEPIO-MODEL.curie('object'),
+                   model_uri=SEPIO_LINKML.statement__object, domain=None, range=Optional[str])
 
-slots.focus = Slot(uri=SEPIO-MODEL.focus, name="focus", curie=SEPIO-MODEL.curie('focus'),
-                   model_uri=SEPIO_LINKML.focus, domain=None, range=Optional[str])
+slots.statement__qualifier = Slot(uri=SEPIO-MODEL.qualifier, name="statement__qualifier", curie=SEPIO-MODEL.curie('qualifier'),
+                   model_uri=SEPIO_LINKML.statement__qualifier, domain=None, range=Optional[Union[Union[dict, Qualifier], List[Union[dict, Qualifier]]]])
 
-slots.dataItems = Slot(uri=SEPIO-MODEL.dataItems, name="dataItems", curie=SEPIO-MODEL.curie('dataItems'),
-                   model_uri=SEPIO_LINKML.dataItems, domain=None, range=Optional[str])
+slots.statement__direction = Slot(uri=SEPIO-MODEL.direction, name="statement__direction", curie=SEPIO-MODEL.curie('direction'),
+                   model_uri=SEPIO_LINKML.statement__direction, domain=None, range=Optional[str])
 
-slots.interpretation = Slot(uri=SEPIO-MODEL.interpretation, name="interpretation", curie=SEPIO-MODEL.curie('interpretation'),
-                   model_uri=SEPIO_LINKML.interpretation, domain=None, range=Optional[str])
+slots.statement__strength = Slot(uri=SEPIO-MODEL.strength, name="statement__strength", curie=SEPIO-MODEL.curie('strength'),
+                   model_uri=SEPIO_LINKML.statement__strength, domain=None, range=Optional[str])
 
-slots.sourceDataSet = Slot(uri=SEPIO-MODEL.sourceDataSet, name="sourceDataSet", curie=SEPIO-MODEL.curie('sourceDataSet'),
-                   model_uri=SEPIO_LINKML.sourceDataSet, domain=None, range=Optional[str])
+slots.statement__score = Slot(uri=SEPIO-MODEL.score, name="statement__score", curie=SEPIO-MODEL.curie('score'),
+                   model_uri=SEPIO_LINKML.statement__score, domain=None, range=Optional[float])
 
-slots.componentResult = Slot(uri=SEPIO-MODEL.componentResult, name="componentResult", curie=SEPIO-MODEL.curie('componentResult'),
-                   model_uri=SEPIO_LINKML.componentResult, domain=None, range=Optional[str])
+slots.statement__subjectClassification = Slot(uri=SEPIO-MODEL.subjectClassification, name="statement__subjectClassification", curie=SEPIO-MODEL.curie('subjectClassification'),
+                   model_uri=SEPIO_LINKML.statement__subjectClassification, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.studyGroup = Slot(uri=SEPIO-MODEL.studyGroup, name="studyGroup", curie=SEPIO-MODEL.curie('studyGroup'),
-                   model_uri=SEPIO_LINKML.studyGroup, domain=None, range=Optional[str])
+slots.statement__hasEvidenceOfTypes = Slot(uri=SEPIO-MODEL.hasEvidenceOfTypes, name="statement__hasEvidenceOfTypes", curie=SEPIO-MODEL.curie('hasEvidenceOfTypes'),
+                   model_uri=SEPIO_LINKML.statement__hasEvidenceOfTypes, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.targetProposition = Slot(uri=SEPIO-MODEL.targetProposition, name="targetProposition", curie=SEPIO-MODEL.curie('targetProposition'),
-                   model_uri=SEPIO_LINKML.targetProposition, domain=None, range=Optional[str])
+slots.statement__hasEvidenceLines = Slot(uri=SEPIO-MODEL.hasEvidenceLines, name="statement__hasEvidenceLines", curie=SEPIO-MODEL.curie('hasEvidenceLines'),
+                   model_uri=SEPIO_LINKML.statement__hasEvidenceLines, domain=None, range=Optional[Union[Union[dict, EvidenceLine], List[Union[dict, EvidenceLine]]]])
 
-slots.hasEvidenceItems = Slot(uri=SEPIO-MODEL.hasEvidenceItems, name="hasEvidenceItems", curie=SEPIO-MODEL.curie('hasEvidenceItems'),
-                   model_uri=SEPIO_LINKML.hasEvidenceItems, domain=None, range=Optional[str])
+slots.statement__hasEvidence = Slot(uri=SEPIO-MODEL.hasEvidence, name="statement__hasEvidence", curie=SEPIO-MODEL.curie('hasEvidence'),
+                   model_uri=SEPIO_LINKML.statement__hasEvidence, domain=None, range=Optional[Union[Union[dict, InformationEntity], List[Union[dict, InformationEntity]]]])
 
-slots.directionOfEvidenceProvided = Slot(uri=SEPIO-MODEL.directionOfEvidenceProvided, name="directionOfEvidenceProvided", curie=SEPIO-MODEL.curie('directionOfEvidenceProvided'),
-                   model_uri=SEPIO_LINKML.directionOfEvidenceProvided, domain=None, range=Optional[str])
+slots.studyResult__focus = Slot(uri=SEPIO-MODEL.focus, name="studyResult__focus", curie=SEPIO-MODEL.curie('focus'),
+                   model_uri=SEPIO_LINKML.studyResult__focus, domain=None, range=Optional[str])
 
-slots.strengthOfEvidenceProvided = Slot(uri=SEPIO-MODEL.strengthOfEvidenceProvided, name="strengthOfEvidenceProvided", curie=SEPIO-MODEL.curie('strengthOfEvidenceProvided'),
-                   model_uri=SEPIO_LINKML.strengthOfEvidenceProvided, domain=None, range=Optional[str])
+slots.studyResult__dataItems = Slot(uri=SEPIO-MODEL.dataItems, name="studyResult__dataItems", curie=SEPIO-MODEL.curie('dataItems'),
+                   model_uri=SEPIO_LINKML.studyResult__dataItems, domain=None, range=Optional[Union[Union[dict, DataItem], List[Union[dict, DataItem]]]])
 
-slots.scoreOfEvidenceProvided = Slot(uri=SEPIO-MODEL.scoreOfEvidenceProvided, name="scoreOfEvidenceProvided", curie=SEPIO-MODEL.curie('scoreOfEvidenceProvided'),
-                   model_uri=SEPIO_LINKML.scoreOfEvidenceProvided, domain=None, range=Optional[str])
+slots.studyResult__interpretation = Slot(uri=SEPIO-MODEL.interpretation, name="studyResult__interpretation", curie=SEPIO-MODEL.curie('interpretation'),
+                   model_uri=SEPIO_LINKML.studyResult__interpretation, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.evidenceItemSources = Slot(uri=SEPIO-MODEL.evidenceItemSources, name="evidenceItemSources", curie=SEPIO-MODEL.curie('evidenceItemSources'),
-                   model_uri=SEPIO_LINKML.evidenceItemSources, domain=None, range=Optional[str])
+slots.studyResult__sourceDataSet = Slot(uri=SEPIO-MODEL.sourceDataSet, name="studyResult__sourceDataSet", curie=SEPIO-MODEL.curie('sourceDataSet'),
+                   model_uri=SEPIO_LINKML.studyResult__sourceDataSet, domain=None, range=Optional[Union[Union[dict, DataSet], List[Union[dict, DataSet]]]])
 
-slots.propositionText = Slot(uri=SEPIO-MODEL.propositionText, name="propositionText", curie=SEPIO-MODEL.curie('propositionText'),
-                   model_uri=SEPIO_LINKML.propositionText, domain=None, range=Optional[str])
+slots.studyResult__componentResult = Slot(uri=SEPIO-MODEL.componentResult, name="studyResult__componentResult", curie=SEPIO-MODEL.curie('componentResult'),
+                   model_uri=SEPIO_LINKML.studyResult__componentResult, domain=None, range=Optional[Union[Union[dict, StudyResult], List[Union[dict, StudyResult]]]])
 
-slots.negated = Slot(uri=SEPIO-MODEL.negated, name="negated", curie=SEPIO-MODEL.curie('negated'),
-                   model_uri=SEPIO_LINKML.negated, domain=None, range=Optional[str])
+slots.studyResult__studyGroup = Slot(uri=SEPIO-MODEL.studyGroup, name="studyResult__studyGroup", curie=SEPIO-MODEL.curie('studyGroup'),
+                   model_uri=SEPIO_LINKML.studyResult__studyGroup, domain=None, range=Optional[Union[dict, StudyGroup]])
 
-slots.memberCount = Slot(uri=SEPIO-MODEL.memberCount, name="memberCount", curie=SEPIO-MODEL.curie('memberCount'),
-                   model_uri=SEPIO_LINKML.memberCount, domain=None, range=Optional[str])
+slots.evidenceLine__subtype = Slot(uri=SEPIO-MODEL.subtype, name="evidenceLine__subtype", curie=SEPIO-MODEL.curie('subtype'),
+                   model_uri=SEPIO_LINKML.evidenceLine__subtype, domain=None, range=Optional[Union[dict, Coding]])
 
-slots.isSubsetOf = Slot(uri=SEPIO-MODEL.isSubsetOf, name="isSubsetOf", curie=SEPIO-MODEL.curie('isSubsetOf'),
-                   model_uri=SEPIO_LINKML.isSubsetOf, domain=None, range=Optional[str])
+slots.evidenceLine__targetProposition = Slot(uri=SEPIO-MODEL.targetProposition, name="evidenceLine__targetProposition", curie=SEPIO-MODEL.curie('targetProposition'),
+                   model_uri=SEPIO_LINKML.evidenceLine__targetProposition, domain=None, range=Optional[Union[dict, Proposition]])
 
-slots.characteristics = Slot(uri=SEPIO-MODEL.characteristics, name="characteristics", curie=SEPIO-MODEL.curie('characteristics'),
-                   model_uri=SEPIO_LINKML.characteristics, domain=None, range=Optional[str])
+slots.evidenceLine__hasEvidenceItems = Slot(uri=SEPIO-MODEL.hasEvidenceItems, name="evidenceLine__hasEvidenceItems", curie=SEPIO-MODEL.curie('hasEvidenceItems'),
+                   model_uri=SEPIO_LINKML.evidenceLine__hasEvidenceItems, domain=None, range=Optional[Union[Union[dict, InformationEntity], List[Union[dict, InformationEntity]]]])
 
-slots.code = Slot(uri=SEPIO-MODEL.code, name="code", curie=SEPIO-MODEL.curie('code'),
-                   model_uri=SEPIO_LINKML.code, domain=None, range=Optional[str])
+slots.evidenceLine__directionOfEvidenceProvided = Slot(uri=SEPIO-MODEL.directionOfEvidenceProvided, name="evidenceLine__directionOfEvidenceProvided", curie=SEPIO-MODEL.curie('directionOfEvidenceProvided'),
+                   model_uri=SEPIO_LINKML.evidenceLine__directionOfEvidenceProvided, domain=None, range=Optional[str])
 
-slots.system = Slot(uri=SEPIO-MODEL.system, name="system", curie=SEPIO-MODEL.curie('system'),
-                   model_uri=SEPIO_LINKML.system, domain=None, range=Optional[str])
+slots.evidenceLine__strengthOfEvidenceProvided = Slot(uri=SEPIO-MODEL.strengthOfEvidenceProvided, name="evidenceLine__strengthOfEvidenceProvided", curie=SEPIO-MODEL.curie('strengthOfEvidenceProvided'),
+                   model_uri=SEPIO_LINKML.evidenceLine__strengthOfEvidenceProvided, domain=None, range=Optional[str])
 
-slots.systemVersion = Slot(uri=SEPIO-MODEL.systemVersion, name="systemVersion", curie=SEPIO-MODEL.curie('systemVersion'),
-                   model_uri=SEPIO_LINKML.systemVersion, domain=None, range=Optional[str])
+slots.evidenceLine__scoreOfEvidenceProvided = Slot(uri=SEPIO-MODEL.scoreOfEvidenceProvided, name="evidenceLine__scoreOfEvidenceProvided", curie=SEPIO-MODEL.curie('scoreOfEvidenceProvided'),
+                   model_uri=SEPIO_LINKML.evidenceLine__scoreOfEvidenceProvided, domain=None, range=Optional[float])
 
-slots.systemURL = Slot(uri=SEPIO-MODEL.systemURL, name="systemURL", curie=SEPIO-MODEL.curie('systemURL'),
-                   model_uri=SEPIO_LINKML.systemURL, domain=None, range=Optional[str])
+slots.evidenceLine__evidenceItemSources = Slot(uri=SEPIO-MODEL.evidenceItemSources, name="evidenceLine__evidenceItemSources", curie=SEPIO-MODEL.curie('evidenceItemSources'),
+                   model_uri=SEPIO_LINKML.evidenceLine__evidenceItemSources, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.extensionDescription = Slot(uri=SEPIO-MODEL.extensionDescription, name="extensionDescription", curie=SEPIO-MODEL.curie('extensionDescription'),
-                   model_uri=SEPIO_LINKML.extensionDescription, domain=None, range=Optional[str])
+slots.proposition__propositionText = Slot(uri=SEPIO-MODEL.propositionText, name="proposition__propositionText", curie=SEPIO-MODEL.curie('propositionText'),
+                   model_uri=SEPIO_LINKML.proposition__propositionText, domain=None, range=Optional[str])
 
-slots.recordIdentifier = Slot(uri=SEPIO-MODEL.recordIdentifier, name="recordIdentifier", curie=SEPIO-MODEL.curie('recordIdentifier'),
-                   model_uri=SEPIO_LINKML.recordIdentifier, domain=None, range=Optional[str])
+slots.proposition__subject = Slot(uri=SEPIO-MODEL.subject, name="proposition__subject", curie=SEPIO-MODEL.curie('subject'),
+                   model_uri=SEPIO_LINKML.proposition__subject, domain=None, range=str)
 
-slots.recordVersion = Slot(uri=SEPIO-MODEL.recordVersion, name="recordVersion", curie=SEPIO-MODEL.curie('recordVersion'),
-                   model_uri=SEPIO_LINKML.recordVersion, domain=None, range=Optional[str])
+slots.proposition__predicate = Slot(uri=SEPIO-MODEL.predicate, name="proposition__predicate", curie=SEPIO-MODEL.curie('predicate'),
+                   model_uri=SEPIO_LINKML.proposition__predicate, domain=None, range=Union[dict, Coding])
 
-slots.derivedFromRecord = Slot(uri=SEPIO-MODEL.derivedFromRecord, name="derivedFromRecord", curie=SEPIO-MODEL.curie('derivedFromRecord'),
-                   model_uri=SEPIO_LINKML.derivedFromRecord, domain=None, range=Optional[str])
+slots.proposition__object = Slot(uri=SEPIO-MODEL.object, name="proposition__object", curie=SEPIO-MODEL.curie('object'),
+                   model_uri=SEPIO_LINKML.proposition__object, domain=None, range=str)
 
-slots.dateRecordCreated = Slot(uri=SEPIO-MODEL.dateRecordCreated, name="dateRecordCreated", curie=SEPIO-MODEL.curie('dateRecordCreated'),
-                   model_uri=SEPIO_LINKML.dateRecordCreated, domain=None, range=Optional[str])
+slots.proposition__qualifier = Slot(uri=SEPIO-MODEL.qualifier, name="proposition__qualifier", curie=SEPIO-MODEL.curie('qualifier'),
+                   model_uri=SEPIO_LINKML.proposition__qualifier, domain=None, range=Optional[Union[Union[dict, Qualifier], List[Union[dict, Qualifier]]]])
 
-slots.values = Slot(uri=SEPIO-MODEL.values, name="values", curie=SEPIO-MODEL.curie('values'),
-                   model_uri=SEPIO_LINKML.values, domain=None, range=Optional[str])
+slots.proposition__negated = Slot(uri=SEPIO-MODEL.negated, name="proposition__negated", curie=SEPIO-MODEL.curie('negated'),
+                   model_uri=SEPIO_LINKML.proposition__negated, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.valueOperator = Slot(uri=SEPIO-MODEL.valueOperator, name="valueOperator", curie=SEPIO-MODEL.curie('valueOperator'),
-                   model_uri=SEPIO_LINKML.valueOperator, domain=None, range=Optional[str])
+slots.studyGroup__memberCount = Slot(uri=SEPIO-MODEL.memberCount, name="studyGroup__memberCount", curie=SEPIO-MODEL.curie('memberCount'),
+                   model_uri=SEPIO_LINKML.studyGroup__memberCount, domain=None, range=Optional[int])
 
-slots.Entity_id = Slot(uri=SEPIO-MODEL.id, name="Entity_id", curie=SEPIO-MODEL.curie('id'),
-                   model_uri=SEPIO_LINKML.Entity_id, domain=Entity, range=str)
+slots.studyGroup__isSubsetOf = Slot(uri=SEPIO-MODEL.isSubsetOf, name="studyGroup__isSubsetOf", curie=SEPIO-MODEL.curie('isSubsetOf'),
+                   model_uri=SEPIO_LINKML.studyGroup__isSubsetOf, domain=None, range=Optional[Union[Union[dict, StudyGroup], List[Union[dict, StudyGroup]]]])
 
-slots.Entity_identifiers = Slot(uri=SEPIO-MODEL.identifiers, name="Entity_identifiers", curie=SEPIO-MODEL.curie('identifiers'),
-                   model_uri=SEPIO_LINKML.Entity_identifiers, domain=Entity, range=Optional[Union[str, List[str]]])
+slots.studyGroup__characteristics = Slot(uri=SEPIO-MODEL.characteristics, name="studyGroup__characteristics", curie=SEPIO-MODEL.curie('characteristics'),
+                   model_uri=SEPIO_LINKML.studyGroup__characteristics, domain=None, range=Optional[Union[Union[dict, Characteristic], List[Union[dict, Characteristic]]]])
 
-slots.Entity_type = Slot(uri=SEPIO-MODEL.type, name="Entity_type", curie=SEPIO-MODEL.curie('type'),
-                   model_uri=SEPIO_LINKML.Entity_type, domain=Entity, range=str)
+slots.coding__code = Slot(uri=SEPIO-MODEL.code, name="coding__code", curie=SEPIO-MODEL.curie('code'),
+                   model_uri=SEPIO_LINKML.coding__code, domain=None, range=Optional[str])
 
-slots.Entity_label = Slot(uri=SEPIO-MODEL.label, name="Entity_label", curie=SEPIO-MODEL.curie('label'),
-                   model_uri=SEPIO_LINKML.Entity_label, domain=Entity, range=Optional[str])
+slots.coding__label = Slot(uri=SEPIO-MODEL.label, name="coding__label", curie=SEPIO-MODEL.curie('label'),
+                   model_uri=SEPIO_LINKML.coding__label, domain=None, range=Optional[str])
 
-slots.Entity_alternativeLabels = Slot(uri=SEPIO-MODEL.alternativeLabels, name="Entity_alternativeLabels", curie=SEPIO-MODEL.curie('alternativeLabels'),
-                   model_uri=SEPIO_LINKML.Entity_alternativeLabels, domain=Entity, range=Optional[Union[str, List[str]]])
+slots.coding__system = Slot(uri=SEPIO-MODEL.system, name="coding__system", curie=SEPIO-MODEL.curie('system'),
+                   model_uri=SEPIO_LINKML.coding__system, domain=None, range=Optional[str])
 
-slots.Entity_description = Slot(uri=SEPIO-MODEL.description, name="Entity_description", curie=SEPIO-MODEL.curie('description'),
-                   model_uri=SEPIO_LINKML.Entity_description, domain=Entity, range=Optional[str])
+slots.coding__systemVersion = Slot(uri=SEPIO-MODEL.systemVersion, name="coding__systemVersion", curie=SEPIO-MODEL.curie('systemVersion'),
+                   model_uri=SEPIO_LINKML.coding__systemVersion, domain=None, range=Optional[str])
 
-slots.Entity_extensions = Slot(uri=SEPIO-MODEL.extensions, name="Entity_extensions", curie=SEPIO-MODEL.curie('extensions'),
-                   model_uri=SEPIO_LINKML.Entity_extensions, domain=Entity, range=Optional[Union[Union[dict, "Extension"], List[Union[dict, "Extension"]]]])
+slots.qualifier__name = Slot(uri=SEPIO-MODEL.name, name="qualifier__name", curie=SEPIO-MODEL.curie('name'),
+                   model_uri=SEPIO_LINKML.qualifier__name, domain=None, range=str)
 
-slots.InformationEntity_isAbout = Slot(uri=SEPIO-MODEL.isAbout, name="InformationEntity_isAbout", curie=SEPIO-MODEL.curie('isAbout'),
-                   model_uri=SEPIO_LINKML.InformationEntity_isAbout, domain=InformationEntity, range=Optional[Union[str, List[str]]])
+slots.qualifier__value = Slot(uri=SEPIO-MODEL.value, name="qualifier__value", curie=SEPIO-MODEL.curie('value'),
+                   model_uri=SEPIO_LINKML.qualifier__value, domain=None, range=str)
 
-slots.InformationEntity_contributions = Slot(uri=SEPIO-MODEL.contributions, name="InformationEntity_contributions", curie=SEPIO-MODEL.curie('contributions'),
-                   model_uri=SEPIO_LINKML.InformationEntity_contributions, domain=InformationEntity, range=Optional[Union[Union[dict, "Contribution"], List[Union[dict, "Contribution"]]]])
+slots.expression__value = Slot(uri=SEPIO-MODEL.value, name="expression__value", curie=SEPIO-MODEL.curie('value'),
+                   model_uri=SEPIO_LINKML.expression__value, domain=None, range=str)
 
-slots.InformationEntity_dateAuthored = Slot(uri=SEPIO-MODEL.dateAuthored, name="InformationEntity_dateAuthored", curie=SEPIO-MODEL.curie('dateAuthored'),
-                   model_uri=SEPIO_LINKML.InformationEntity_dateAuthored, domain=InformationEntity, range=Optional[str])
+slots.expression__systemURL = Slot(uri=SEPIO-MODEL.systemURL, name="expression__systemURL", curie=SEPIO-MODEL.curie('systemURL'),
+                   model_uri=SEPIO_LINKML.expression__systemURL, domain=None, range=Optional[Union[str, URIorCURIE]])
 
-slots.InformationEntity_specifiedBy = Slot(uri=SEPIO-MODEL.specifiedBy, name="InformationEntity_specifiedBy", curie=SEPIO-MODEL.curie('specifiedBy'),
-                   model_uri=SEPIO_LINKML.InformationEntity_specifiedBy, domain=InformationEntity, range=Optional[Union[str, List[str]]])
+slots.expression__systemVersion = Slot(uri=SEPIO-MODEL.systemVersion, name="expression__systemVersion", curie=SEPIO-MODEL.curie('systemVersion'),
+                   model_uri=SEPIO_LINKML.expression__systemVersion, domain=None, range=Optional[str])
 
-slots.InformationEntity_methodTypes = Slot(uri=SEPIO-MODEL.methodTypes, name="InformationEntity_methodTypes", curie=SEPIO-MODEL.curie('methodTypes'),
-                   model_uri=SEPIO_LINKML.InformationEntity_methodTypes, domain=InformationEntity, range=Optional[Union[Union[dict, "Coding"], List[Union[dict, "Coding"]]]])
+slots.extension__extensionDescription = Slot(uri=SEPIO-MODEL.extensionDescription, name="extension__extensionDescription", curie=SEPIO-MODEL.curie('extensionDescription'),
+                   model_uri=SEPIO_LINKML.extension__extensionDescription, domain=None, range=Optional[str])
 
-slots.InformationEntity_derivedFrom = Slot(uri=SEPIO-MODEL.derivedFrom, name="InformationEntity_derivedFrom", curie=SEPIO-MODEL.curie('derivedFrom'),
-                   model_uri=SEPIO_LINKML.InformationEntity_derivedFrom, domain=InformationEntity, range=Optional[Union[Union[dict, "InformationEntity"], List[Union[dict, "InformationEntity"]]]])
+slots.extension__name = Slot(uri=SEPIO-MODEL.name, name="extension__name", curie=SEPIO-MODEL.curie('name'),
+                   model_uri=SEPIO_LINKML.extension__name, domain=None, range=str)
 
-slots.InformationEntity_reportedIn = Slot(uri=SEPIO-MODEL.reportedIn, name="InformationEntity_reportedIn", curie=SEPIO-MODEL.curie('reportedIn'),
-                   model_uri=SEPIO_LINKML.InformationEntity_reportedIn, domain=InformationEntity, range=Optional[Union[str, List[str]]])
+slots.extension__value = Slot(uri=SEPIO-MODEL.value, name="extension__value", curie=SEPIO-MODEL.curie('value'),
+                   model_uri=SEPIO_LINKML.extension__value, domain=None, range=str)
 
-slots.InformationEntity_informationQuality = Slot(uri=SEPIO-MODEL.informationQuality, name="InformationEntity_informationQuality", curie=SEPIO-MODEL.curie('informationQuality'),
-                   model_uri=SEPIO_LINKML.InformationEntity_informationQuality, domain=InformationEntity, range=Optional[Union[dict, "Coding"]])
+slots.recordMetadata__recordIdentifier = Slot(uri=SEPIO-MODEL.recordIdentifier, name="recordMetadata__recordIdentifier", curie=SEPIO-MODEL.curie('recordIdentifier'),
+                   model_uri=SEPIO_LINKML.recordMetadata__recordIdentifier, domain=None, range=Optional[str])
 
-slots.InformationEntity_recordMetadata = Slot(uri=SEPIO-MODEL.recordMetadata, name="InformationEntity_recordMetadata", curie=SEPIO-MODEL.curie('recordMetadata'),
-                   model_uri=SEPIO_LINKML.InformationEntity_recordMetadata, domain=InformationEntity, range=Optional[Union[dict, "RecordMetadata"]])
+slots.recordMetadata__recordVersion = Slot(uri=SEPIO-MODEL.recordVersion, name="recordMetadata__recordVersion", curie=SEPIO-MODEL.curie('recordVersion'),
+                   model_uri=SEPIO_LINKML.recordMetadata__recordVersion, domain=None, range=Optional[str])
 
-slots.Method_subtype = Slot(uri=SEPIO-MODEL.subtype, name="Method_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.Method_subtype, domain=Method, range=Optional[Union[dict, "Coding"]])
+slots.recordMetadata__derivedFromRecord = Slot(uri=SEPIO-MODEL.derivedFromRecord, name="recordMetadata__derivedFromRecord", curie=SEPIO-MODEL.curie('derivedFromRecord'),
+                   model_uri=SEPIO_LINKML.recordMetadata__derivedFromRecord, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.Method_urls = Slot(uri=SEPIO-MODEL.urls, name="Method_urls", curie=SEPIO-MODEL.curie('urls'),
-                   model_uri=SEPIO_LINKML.Method_urls, domain=Method, range=Optional[Union[str, List[str]]])
+slots.recordMetadata__dateRecordCreated = Slot(uri=SEPIO-MODEL.dateRecordCreated, name="recordMetadata__dateRecordCreated", curie=SEPIO-MODEL.curie('dateRecordCreated'),
+                   model_uri=SEPIO_LINKML.recordMetadata__dateRecordCreated, domain=None, range=Optional[str])
 
-slots.Document_subtype = Slot(uri=SEPIO-MODEL.subtype, name="Document_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.Document_subtype, domain=Document, range=Optional[Union[dict, "Coding"]])
+slots.recordMetadata__contributions = Slot(uri=SEPIO-MODEL.contributions, name="recordMetadata__contributions", curie=SEPIO-MODEL.curie('contributions'),
+                   model_uri=SEPIO_LINKML.recordMetadata__contributions, domain=None, range=Optional[Union[Union[dict, Contribution], List[Union[dict, Contribution]]]])
 
-slots.Document_title = Slot(uri=SEPIO-MODEL.title, name="Document_title", curie=SEPIO-MODEL.curie('title'),
-                   model_uri=SEPIO_LINKML.Document_title, domain=Document, range=Optional[str])
+slots.characteristic__name = Slot(uri=SEPIO-MODEL.name, name="characteristic__name", curie=SEPIO-MODEL.curie('name'),
+                   model_uri=SEPIO_LINKML.characteristic__name, domain=None, range=str)
 
-slots.Document_urls = Slot(uri=SEPIO-MODEL.urls, name="Document_urls", curie=SEPIO-MODEL.curie('urls'),
-                   model_uri=SEPIO_LINKML.Document_urls, domain=Document, range=Optional[Union[str, List[str]]])
+slots.characteristic__values = Slot(uri=SEPIO-MODEL.values, name="characteristic__values", curie=SEPIO-MODEL.curie('values'),
+                   model_uri=SEPIO_LINKML.characteristic__values, domain=None, range=Union[str, List[str]])
 
-slots.Document_pmid = Slot(uri=SEPIO-MODEL.pmid, name="Document_pmid", curie=SEPIO-MODEL.curie('pmid'),
-                   model_uri=SEPIO_LINKML.Document_pmid, domain=Document, range=Optional[str])
-
-slots.Document_doi = Slot(uri=SEPIO-MODEL.doi, name="Document_doi", curie=SEPIO-MODEL.curie('doi'),
-                   model_uri=SEPIO_LINKML.Document_doi, domain=Document, range=Optional[str])
-
-slots.Document_license = Slot(uri=SEPIO-MODEL.license, name="Document_license", curie=SEPIO-MODEL.curie('license'),
-                   model_uri=SEPIO_LINKML.Document_license, domain=Document, range=Optional[str])
-
-slots.DataItem_subtype = Slot(uri=SEPIO-MODEL.subtype, name="DataItem_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.DataItem_subtype, domain=DataItem, range=Optional[Union[dict, "Coding"]])
-
-slots.DataItem_value = Slot(uri=SEPIO-MODEL.value, name="DataItem_value", curie=SEPIO-MODEL.curie('value'),
-                   model_uri=SEPIO_LINKML.DataItem_value, domain=DataItem, range=str)
-
-slots.DataItem_unit = Slot(uri=SEPIO-MODEL.unit, name="DataItem_unit", curie=SEPIO-MODEL.curie('unit'),
-                   model_uri=SEPIO_LINKML.DataItem_unit, domain=DataItem, range=Optional[Union[dict, "Coding"]])
-
-slots.DataItem_variabilityMeasures = Slot(uri=SEPIO-MODEL.variabilityMeasures, name="DataItem_variabilityMeasures", curie=SEPIO-MODEL.curie('variabilityMeasures'),
-                   model_uri=SEPIO_LINKML.DataItem_variabilityMeasures, domain=DataItem, range=Optional[Union[Union[dict, "DataItem"], List[Union[dict, "DataItem"]]]])
-
-slots.DataItem_confidenceInterval = Slot(uri=SEPIO-MODEL.confidenceInterval, name="DataItem_confidenceInterval", curie=SEPIO-MODEL.curie('confidenceInterval'),
-                   model_uri=SEPIO_LINKML.DataItem_confidenceInterval, domain=DataItem, range=Optional[Union[dict, "DataItem"]])
-
-slots.DataItem_componentDataItem = Slot(uri=SEPIO-MODEL.componentDataItem, name="DataItem_componentDataItem", curie=SEPIO-MODEL.curie('componentDataItem'),
-                   model_uri=SEPIO_LINKML.DataItem_componentDataItem, domain=DataItem, range=Optional[Union[Union[dict, "DataItem"], List[Union[dict, "DataItem"]]]])
-
-slots.DataSet_subtype = Slot(uri=SEPIO-MODEL.subtype, name="DataSet_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.DataSet_subtype, domain=DataSet, range=Optional[Union[dict, "Coding"]])
-
-slots.DataSet_releaseDate = Slot(uri=SEPIO-MODEL.releaseDate, name="DataSet_releaseDate", curie=SEPIO-MODEL.curie('releaseDate'),
-                   model_uri=SEPIO_LINKML.DataSet_releaseDate, domain=DataSet, range=Optional[str])
-
-slots.DataSet_version = Slot(uri=SEPIO-MODEL.version, name="DataSet_version", curie=SEPIO-MODEL.curie('version'),
-                   model_uri=SEPIO_LINKML.DataSet_version, domain=DataSet, range=Optional[str])
-
-slots.DataSet_license = Slot(uri=SEPIO-MODEL.license, name="DataSet_license", curie=SEPIO-MODEL.curie('license'),
-                   model_uri=SEPIO_LINKML.DataSet_license, domain=DataSet, range=Optional[str])
-
-slots.Activity_subtype = Slot(uri=SEPIO-MODEL.subtype, name="Activity_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.Activity_subtype, domain=Activity, range=Optional[Union[dict, "Coding"]])
-
-slots.Activity_date = Slot(uri=SEPIO-MODEL.date, name="Activity_date", curie=SEPIO-MODEL.curie('date'),
-                   model_uri=SEPIO_LINKML.Activity_date, domain=Activity, range=Optional[Union[str, XSDDate]])
-
-slots.Activity_performedBy = Slot(uri=SEPIO-MODEL.performedBy, name="Activity_performedBy", curie=SEPIO-MODEL.curie('performedBy'),
-                   model_uri=SEPIO_LINKML.Activity_performedBy, domain=Activity, range=Optional[Union[Union[dict, "Agent"], List[Union[dict, "Agent"]]]])
-
-slots.Activity_specifiedBy = Slot(uri=SEPIO-MODEL.specifiedBy, name="Activity_specifiedBy", curie=SEPIO-MODEL.curie('specifiedBy'),
-                   model_uri=SEPIO_LINKML.Activity_specifiedBy, domain=Activity, range=Optional[Union[Union[dict, Method], List[Union[dict, Method]]]])
-
-slots.Activity_input = Slot(uri=SEPIO-MODEL.input, name="Activity_input", curie=SEPIO-MODEL.curie('input'),
-                   model_uri=SEPIO_LINKML.Activity_input, domain=Activity, range=Optional[Union[Union[dict, Entity], List[Union[dict, Entity]]]])
-
-slots.Activity_output = Slot(uri=SEPIO-MODEL.output, name="Activity_output", curie=SEPIO-MODEL.curie('output'),
-                   model_uri=SEPIO_LINKML.Activity_output, domain=Activity, range=Optional[Union[Union[dict, Entity], List[Union[dict, Entity]]]])
-
-slots.Contribution_contributor = Slot(uri=SEPIO-MODEL.contributor, name="Contribution_contributor", curie=SEPIO-MODEL.curie('contributor'),
-                   model_uri=SEPIO_LINKML.Contribution_contributor, domain=Contribution, range=Optional[Union[dict, "Agent"]])
-
-slots.Contribution_activityType = Slot(uri=SEPIO-MODEL.activityType, name="Contribution_activityType", curie=SEPIO-MODEL.curie('activityType'),
-                   model_uri=SEPIO_LINKML.Contribution_activityType, domain=Contribution, range=Optional[Union[Union[dict, "Coding"], List[Union[dict, "Coding"]]]])
-
-slots.Contribution_contributionMadeTo = Slot(uri=SEPIO-MODEL.contributionMadeTo, name="Contribution_contributionMadeTo", curie=SEPIO-MODEL.curie('contributionMadeTo'),
-                   model_uri=SEPIO_LINKML.Contribution_contributionMadeTo, domain=Contribution, range=Optional[Union[dict, InformationEntity]])
-
-slots.Agent_subtype = Slot(uri=SEPIO-MODEL.subtype, name="Agent_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.Agent_subtype, domain=Agent, range=Optional[str])
-
-slots.Agent_name = Slot(uri=SEPIO-MODEL.name, name="Agent_name", curie=SEPIO-MODEL.curie('name'),
-                   model_uri=SEPIO_LINKML.Agent_name, domain=Agent, range=Optional[str])
-
-slots.Statement_statementText = Slot(uri=SEPIO-MODEL.statementText, name="Statement_statementText", curie=SEPIO-MODEL.curie('statementText'),
-                   model_uri=SEPIO_LINKML.Statement_statementText, domain=Statement, range=Optional[str])
-
-slots.Statement_proposition = Slot(uri=SEPIO-MODEL.proposition, name="Statement_proposition", curie=SEPIO-MODEL.curie('proposition'),
-                   model_uri=SEPIO_LINKML.Statement_proposition, domain=Statement, range=Optional[Union[dict, "Proposition"]])
-
-slots.Statement_subject = Slot(uri=SEPIO-MODEL.subject, name="Statement_subject", curie=SEPIO-MODEL.curie('subject'),
-                   model_uri=SEPIO_LINKML.Statement_subject, domain=Statement, range=Optional[str])
-
-slots.Statement_predicate = Slot(uri=SEPIO-MODEL.predicate, name="Statement_predicate", curie=SEPIO-MODEL.curie('predicate'),
-                   model_uri=SEPIO_LINKML.Statement_predicate, domain=Statement, range=Optional[Union[dict, "Coding"]])
-
-slots.Statement_object = Slot(uri=SEPIO-MODEL.object, name="Statement_object", curie=SEPIO-MODEL.curie('object'),
-                   model_uri=SEPIO_LINKML.Statement_object, domain=Statement, range=Optional[str])
-
-slots.Statement_qualifier = Slot(uri=SEPIO-MODEL.qualifier, name="Statement_qualifier", curie=SEPIO-MODEL.curie('qualifier'),
-                   model_uri=SEPIO_LINKML.Statement_qualifier, domain=Statement, range=Optional[Union[Union[dict, "Qualifier"], List[Union[dict, "Qualifier"]]]])
-
-slots.Statement_direction = Slot(uri=SEPIO-MODEL.direction, name="Statement_direction", curie=SEPIO-MODEL.curie('direction'),
-                   model_uri=SEPIO_LINKML.Statement_direction, domain=Statement, range=Optional[str])
-
-slots.Statement_strength = Slot(uri=SEPIO-MODEL.strength, name="Statement_strength", curie=SEPIO-MODEL.curie('strength'),
-                   model_uri=SEPIO_LINKML.Statement_strength, domain=Statement, range=Optional[str])
-
-slots.Statement_score = Slot(uri=SEPIO-MODEL.score, name="Statement_score", curie=SEPIO-MODEL.curie('score'),
-                   model_uri=SEPIO_LINKML.Statement_score, domain=Statement, range=Optional[float])
-
-slots.Statement_subjectClassification = Slot(uri=SEPIO-MODEL.subjectClassification, name="Statement_subjectClassification", curie=SEPIO-MODEL.curie('subjectClassification'),
-                   model_uri=SEPIO_LINKML.Statement_subjectClassification, domain=Statement, range=Optional[Union[dict, "Coding"]])
-
-slots.Statement_hasEvidenceOfTypes = Slot(uri=SEPIO-MODEL.hasEvidenceOfTypes, name="Statement_hasEvidenceOfTypes", curie=SEPIO-MODEL.curie('hasEvidenceOfTypes'),
-                   model_uri=SEPIO_LINKML.Statement_hasEvidenceOfTypes, domain=Statement, range=Optional[Union[str, List[str]]])
-
-slots.Statement_hasEvidenceLines = Slot(uri=SEPIO-MODEL.hasEvidenceLines, name="Statement_hasEvidenceLines", curie=SEPIO-MODEL.curie('hasEvidenceLines'),
-                   model_uri=SEPIO_LINKML.Statement_hasEvidenceLines, domain=Statement, range=Optional[Union[Union[dict, "EvidenceLine"], List[Union[dict, "EvidenceLine"]]]])
-
-slots.Statement_hasEvidence = Slot(uri=SEPIO-MODEL.hasEvidence, name="Statement_hasEvidence", curie=SEPIO-MODEL.curie('hasEvidence'),
-                   model_uri=SEPIO_LINKML.Statement_hasEvidence, domain=Statement, range=Optional[Union[Union[dict, InformationEntity], List[Union[dict, InformationEntity]]]])
-
-slots.StudyResult_focus = Slot(uri=SEPIO-MODEL.focus, name="StudyResult_focus", curie=SEPIO-MODEL.curie('focus'),
-                   model_uri=SEPIO_LINKML.StudyResult_focus, domain=StudyResult, range=Optional[str])
-
-slots.StudyResult_dataItems = Slot(uri=SEPIO-MODEL.dataItems, name="StudyResult_dataItems", curie=SEPIO-MODEL.curie('dataItems'),
-                   model_uri=SEPIO_LINKML.StudyResult_dataItems, domain=StudyResult, range=Optional[Union[Union[dict, DataItem], List[Union[dict, DataItem]]]])
-
-slots.StudyResult_interpretation = Slot(uri=SEPIO-MODEL.interpretation, name="StudyResult_interpretation", curie=SEPIO-MODEL.curie('interpretation'),
-                   model_uri=SEPIO_LINKML.StudyResult_interpretation, domain=StudyResult, range=Optional[Union[dict, "Coding"]])
-
-slots.StudyResult_sourceDataSet = Slot(uri=SEPIO-MODEL.sourceDataSet, name="StudyResult_sourceDataSet", curie=SEPIO-MODEL.curie('sourceDataSet'),
-                   model_uri=SEPIO_LINKML.StudyResult_sourceDataSet, domain=StudyResult, range=Optional[Union[Union[dict, DataSet], List[Union[dict, DataSet]]]])
-
-slots.StudyResult_componentResult = Slot(uri=SEPIO-MODEL.componentResult, name="StudyResult_componentResult", curie=SEPIO-MODEL.curie('componentResult'),
-                   model_uri=SEPIO_LINKML.StudyResult_componentResult, domain=StudyResult, range=Optional[Union[Union[dict, "StudyResult"], List[Union[dict, "StudyResult"]]]])
-
-slots.StudyResult_studyGroup = Slot(uri=SEPIO-MODEL.studyGroup, name="StudyResult_studyGroup", curie=SEPIO-MODEL.curie('studyGroup'),
-                   model_uri=SEPIO_LINKML.StudyResult_studyGroup, domain=StudyResult, range=Optional[Union[dict, "StudyGroup"]])
-
-slots.EvidenceLine_subtype = Slot(uri=SEPIO-MODEL.subtype, name="EvidenceLine_subtype", curie=SEPIO-MODEL.curie('subtype'),
-                   model_uri=SEPIO_LINKML.EvidenceLine_subtype, domain=EvidenceLine, range=Optional[Union[dict, "Coding"]])
-
-slots.EvidenceLine_targetProposition = Slot(uri=SEPIO-MODEL.targetProposition, name="EvidenceLine_targetProposition", curie=SEPIO-MODEL.curie('targetProposition'),
-                   model_uri=SEPIO_LINKML.EvidenceLine_targetProposition, domain=EvidenceLine, range=Optional[Union[dict, "Proposition"]])
-
-slots.EvidenceLine_hasEvidenceItems = Slot(uri=SEPIO-MODEL.hasEvidenceItems, name="EvidenceLine_hasEvidenceItems", curie=SEPIO-MODEL.curie('hasEvidenceItems'),
-                   model_uri=SEPIO_LINKML.EvidenceLine_hasEvidenceItems, domain=EvidenceLine, range=Optional[Union[Union[dict, InformationEntity], List[Union[dict, InformationEntity]]]])
-
-slots.EvidenceLine_directionOfEvidenceProvided = Slot(uri=SEPIO-MODEL.directionOfEvidenceProvided, name="EvidenceLine_directionOfEvidenceProvided", curie=SEPIO-MODEL.curie('directionOfEvidenceProvided'),
-                   model_uri=SEPIO_LINKML.EvidenceLine_directionOfEvidenceProvided, domain=EvidenceLine, range=Optional[str])
-
-slots.EvidenceLine_strengthOfEvidenceProvided = Slot(uri=SEPIO-MODEL.strengthOfEvidenceProvided, name="EvidenceLine_strengthOfEvidenceProvided", curie=SEPIO-MODEL.curie('strengthOfEvidenceProvided'),
-                   model_uri=SEPIO_LINKML.EvidenceLine_strengthOfEvidenceProvided, domain=EvidenceLine, range=Optional[str])
-
-slots.EvidenceLine_scoreOfEvidenceProvided = Slot(uri=SEPIO-MODEL.scoreOfEvidenceProvided, name="EvidenceLine_scoreOfEvidenceProvided", curie=SEPIO-MODEL.curie('scoreOfEvidenceProvided'),
-                   model_uri=SEPIO_LINKML.EvidenceLine_scoreOfEvidenceProvided, domain=EvidenceLine, range=Optional[float])
-
-slots.EvidenceLine_evidenceItemSources = Slot(uri=SEPIO-MODEL.evidenceItemSources, name="EvidenceLine_evidenceItemSources", curie=SEPIO-MODEL.curie('evidenceItemSources'),
-                   model_uri=SEPIO_LINKML.EvidenceLine_evidenceItemSources, domain=EvidenceLine, range=Optional[Union[str, List[str]]])
-
-slots.Proposition_propositionText = Slot(uri=SEPIO-MODEL.propositionText, name="Proposition_propositionText", curie=SEPIO-MODEL.curie('propositionText'),
-                   model_uri=SEPIO_LINKML.Proposition_propositionText, domain=Proposition, range=Optional[str])
-
-slots.Proposition_subject = Slot(uri=SEPIO-MODEL.subject, name="Proposition_subject", curie=SEPIO-MODEL.curie('subject'),
-                   model_uri=SEPIO_LINKML.Proposition_subject, domain=Proposition, range=str)
-
-slots.Proposition_predicate = Slot(uri=SEPIO-MODEL.predicate, name="Proposition_predicate", curie=SEPIO-MODEL.curie('predicate'),
-                   model_uri=SEPIO_LINKML.Proposition_predicate, domain=Proposition, range=Union[dict, "Coding"])
-
-slots.Proposition_object = Slot(uri=SEPIO-MODEL.object, name="Proposition_object", curie=SEPIO-MODEL.curie('object'),
-                   model_uri=SEPIO_LINKML.Proposition_object, domain=Proposition, range=str)
-
-slots.Proposition_qualifier = Slot(uri=SEPIO-MODEL.qualifier, name="Proposition_qualifier", curie=SEPIO-MODEL.curie('qualifier'),
-                   model_uri=SEPIO_LINKML.Proposition_qualifier, domain=Proposition, range=Optional[Union[Union[dict, "Qualifier"], List[Union[dict, "Qualifier"]]]])
-
-slots.Proposition_negated = Slot(uri=SEPIO-MODEL.negated, name="Proposition_negated", curie=SEPIO-MODEL.curie('negated'),
-                   model_uri=SEPIO_LINKML.Proposition_negated, domain=Proposition, range=Optional[Union[bool, Bool]])
-
-slots.StudyGroup_memberCount = Slot(uri=SEPIO-MODEL.memberCount, name="StudyGroup_memberCount", curie=SEPIO-MODEL.curie('memberCount'),
-                   model_uri=SEPIO_LINKML.StudyGroup_memberCount, domain=StudyGroup, range=Optional[int])
-
-slots.StudyGroup_isSubsetOf = Slot(uri=SEPIO-MODEL.isSubsetOf, name="StudyGroup_isSubsetOf", curie=SEPIO-MODEL.curie('isSubsetOf'),
-                   model_uri=SEPIO_LINKML.StudyGroup_isSubsetOf, domain=StudyGroup, range=Optional[Union[Union[dict, "StudyGroup"], List[Union[dict, "StudyGroup"]]]])
-
-slots.StudyGroup_characteristics = Slot(uri=SEPIO-MODEL.characteristics, name="StudyGroup_characteristics", curie=SEPIO-MODEL.curie('characteristics'),
-                   model_uri=SEPIO_LINKML.StudyGroup_characteristics, domain=StudyGroup, range=Optional[Union[Union[dict, "Characteristic"], List[Union[dict, "Characteristic"]]]])
-
-slots.Coding_code = Slot(uri=SEPIO-MODEL.code, name="Coding_code", curie=SEPIO-MODEL.curie('code'),
-                   model_uri=SEPIO_LINKML.Coding_code, domain=Coding, range=Optional[str])
-
-slots.Coding_label = Slot(uri=SEPIO-MODEL.label, name="Coding_label", curie=SEPIO-MODEL.curie('label'),
-                   model_uri=SEPIO_LINKML.Coding_label, domain=Coding, range=Optional[str])
-
-slots.Coding_system = Slot(uri=SEPIO-MODEL.system, name="Coding_system", curie=SEPIO-MODEL.curie('system'),
-                   model_uri=SEPIO_LINKML.Coding_system, domain=Coding, range=Optional[str])
-
-slots.Coding_systemVersion = Slot(uri=SEPIO-MODEL.systemVersion, name="Coding_systemVersion", curie=SEPIO-MODEL.curie('systemVersion'),
-                   model_uri=SEPIO_LINKML.Coding_systemVersion, domain=Coding, range=Optional[str])
-
-slots.Qualifier_name = Slot(uri=SEPIO-MODEL.name, name="Qualifier_name", curie=SEPIO-MODEL.curie('name'),
-                   model_uri=SEPIO_LINKML.Qualifier_name, domain=Qualifier, range=str)
-
-slots.Qualifier_value = Slot(uri=SEPIO-MODEL.value, name="Qualifier_value", curie=SEPIO-MODEL.curie('value'),
-                   model_uri=SEPIO_LINKML.Qualifier_value, domain=Qualifier, range=str)
-
-slots.Expression_value = Slot(uri=SEPIO-MODEL.value, name="Expression_value", curie=SEPIO-MODEL.curie('value'),
-                   model_uri=SEPIO_LINKML.Expression_value, domain=Expression, range=str)
-
-slots.Expression_systemURL = Slot(uri=SEPIO-MODEL.systemURL, name="Expression_systemURL", curie=SEPIO-MODEL.curie('systemURL'),
-                   model_uri=SEPIO_LINKML.Expression_systemURL, domain=Expression, range=Optional[Union[str, URIorCURIE]])
-
-slots.Expression_systemVersion = Slot(uri=SEPIO-MODEL.systemVersion, name="Expression_systemVersion", curie=SEPIO-MODEL.curie('systemVersion'),
-                   model_uri=SEPIO_LINKML.Expression_systemVersion, domain=Expression, range=Optional[str])
-
-slots.Extension_extensionDescription = Slot(uri=SEPIO-MODEL.extensionDescription, name="Extension_extensionDescription", curie=SEPIO-MODEL.curie('extensionDescription'),
-                   model_uri=SEPIO_LINKML.Extension_extensionDescription, domain=Extension, range=Optional[str])
-
-slots.Extension_name = Slot(uri=SEPIO-MODEL.name, name="Extension_name", curie=SEPIO-MODEL.curie('name'),
-                   model_uri=SEPIO_LINKML.Extension_name, domain=Extension, range=str)
-
-slots.Extension_value = Slot(uri=SEPIO-MODEL.value, name="Extension_value", curie=SEPIO-MODEL.curie('value'),
-                   model_uri=SEPIO_LINKML.Extension_value, domain=Extension, range=str)
-
-slots.RecordMetadata_recordIdentifier = Slot(uri=SEPIO-MODEL.recordIdentifier, name="RecordMetadata_recordIdentifier", curie=SEPIO-MODEL.curie('recordIdentifier'),
-                   model_uri=SEPIO_LINKML.RecordMetadata_recordIdentifier, domain=RecordMetadata, range=Optional[str])
-
-slots.RecordMetadata_recordVersion = Slot(uri=SEPIO-MODEL.recordVersion, name="RecordMetadata_recordVersion", curie=SEPIO-MODEL.curie('recordVersion'),
-                   model_uri=SEPIO_LINKML.RecordMetadata_recordVersion, domain=RecordMetadata, range=Optional[str])
-
-slots.RecordMetadata_derivedFromRecord = Slot(uri=SEPIO-MODEL.derivedFromRecord, name="RecordMetadata_derivedFromRecord", curie=SEPIO-MODEL.curie('derivedFromRecord'),
-                   model_uri=SEPIO_LINKML.RecordMetadata_derivedFromRecord, domain=RecordMetadata, range=Optional[Union[str, List[str]]])
-
-slots.RecordMetadata_dateRecordCreated = Slot(uri=SEPIO-MODEL.dateRecordCreated, name="RecordMetadata_dateRecordCreated", curie=SEPIO-MODEL.curie('dateRecordCreated'),
-                   model_uri=SEPIO_LINKML.RecordMetadata_dateRecordCreated, domain=RecordMetadata, range=Optional[str])
-
-slots.RecordMetadata_contributions = Slot(uri=SEPIO-MODEL.contributions, name="RecordMetadata_contributions", curie=SEPIO-MODEL.curie('contributions'),
-                   model_uri=SEPIO_LINKML.RecordMetadata_contributions, domain=RecordMetadata, range=Optional[Union[Union[dict, Contribution], List[Union[dict, Contribution]]]])
-
-slots.Characteristic_name = Slot(uri=SEPIO-MODEL.name, name="Characteristic_name", curie=SEPIO-MODEL.curie('name'),
-                   model_uri=SEPIO_LINKML.Characteristic_name, domain=Characteristic, range=str)
-
-slots.Characteristic_values = Slot(uri=SEPIO-MODEL.values, name="Characteristic_values", curie=SEPIO-MODEL.curie('values'),
-                   model_uri=SEPIO_LINKML.Characteristic_values, domain=Characteristic, range=Union[str, List[str]])
-
-slots.Characteristic_valueOperator = Slot(uri=SEPIO-MODEL.valueOperator, name="Characteristic_valueOperator", curie=SEPIO-MODEL.curie('valueOperator'),
-                   model_uri=SEPIO_LINKML.Characteristic_valueOperator, domain=Characteristic, range=Optional[str])
+slots.characteristic__valueOperator = Slot(uri=SEPIO-MODEL.valueOperator, name="characteristic__valueOperator", curie=SEPIO-MODEL.curie('valueOperator'),
+                   model_uri=SEPIO_LINKML.characteristic__valueOperator, domain=None, range=Optional[str])

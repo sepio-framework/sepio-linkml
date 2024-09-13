@@ -29,6 +29,31 @@ Name: {{ schema.name }}
 {% endif %}
 {% endfor %}
 
+
+{% for u, v in gen.class_hierarchy_as_tuples() %}
+{{ gen.link(schemaview.get_class(v)) }}<br />
+{{ schemaview.get_class(v).description }}
+{% if schemaview.get_class(v).comments %}
+{% for x in schemaview.get_class(v).comments -%}
+* {{x}}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+
+{% for u, v in gen.class_hierarchy_as_tuples() %}
+{{ gen.link(schemaview.get_class(v)) }}<br />
+{{ schemaview.get_class(v).description }}
+{% if schemaview.get_class(v).comments %}
+<details>
+<summary>Implementation Details</summary>
+{% for x in schemaview.get_class(v).comments -%}
+* {{x}}<br />
+{% endfor %}
+</details>
+{% endif %}
+{% endfor %}
+
 | Class | Description | Comments |
 | --- | --- | --- |
 {% if gen.hierarchical_class_view -%}
@@ -37,11 +62,33 @@ Name: {{ schema.name }}
 {% endfor %}
 {% else -%}
 {% for c in gen.all_class_objects()|sort(attribute=sort_by) -%}
-| {{gen.link(c)}} | {{c.description|enshorten}} |
+| {{gen.link(c)}} | {{c.description}} |
 {% endfor %}
 {% endif %}
 
 ## Slots
+
+{% for s in gen.all_slot_objects()|sort(attribute=sort_by) -%}
+{{gen.link(s)}}<br />
+{{s.description|enshorten}}
+{% if s.comments %}
+| Implementation Details |
+| --- |
+{% for x in s.comments -%}
+| {{x}} |
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+{% for s in gen.all_slot_objects()|sort(attribute=sort_by) -%}
+{{gen.link(s)}}<br />
+{{s.description}}
+{% if s.comments %}
+{% for x in s.comments -%}
+* {{x}}
+{% endfor %}
+{% endif %}
+{% endfor %}
 
 | Slot | Description |
 | --- | --- |

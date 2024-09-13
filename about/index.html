@@ -278,7 +278,14 @@
 
 
 <h1 id="sepio-linkml">sepio-linkml</h1>
-<p>LinkML-based specification of the SEPIO information model.</p>
+<p>SEPIO was first developed as an ontology by the <a href="https://monarchinitiative.org/about">Monarch Initiative</a> to support standardized RDF representations of evidence and provenance across integrated genotype-phenotype datasets (the Scientific Evidence and Provenance Information Ontology). The ontological model has since been abstracted into a generic <strong>Core Information Model (IM)</strong> that can be implemented in any language or format. The Core IM is domain-agnostic, and able to represent assertions and their evidence and provenance of any kind. Application of SEPIO to a specific data set or use case requires defining a <strong>‘Profile’</strong> that extends/customizes the generic core model for a particular domain or application.</p>
+<p>The components of the SEPIO Framework include: 
+1. <strong>A Domain Analysis Model (DAM)</strong>: an informal description of the domain we are modeling (scientific assertions and their evidence/provenance)
+2. <strong>A Core Information Model (IM)</strong>:  defines data structures that can represent information about this domain (for any type of assertion and evidence).
+3. <strong>A 'Profiling' Methodology</strong>:  Implementations extend the core model with domain-specific content to define a “SEPIO Profile” - a custom schema for a particular application or use case.
+4. <strong>Ontology Support</strong>: An ontological representation of the core model that can be used if desired to produce linked data with ontology-based semantics.</p>
+<p>The modeling framework-based approach addresses challenges posed by the diversity of types, levels of complexity, and use cases for evidence and provenance across knowledge domains and application - which means there is no ‘one-size-fits-all’ solution. A framework allows custom models built on a common semantic foundation can provide a base level of understanding and interoperability, without restricting expressivity. While this approach may not always support out-of-the-box interoperability across all communities of use, it can significantly lower barriers to aggregating, harmonizing, and operating across disparate data.</p>
+<p>The SEPIO Core-IM specified in this repository was written in a yaml format using the <a href="https://linkml.io/linkml/">LinkML modeling language</a>, and uses LinkML tooling to automatically generate formal json schema specification and Github pages web documentation found here. </p>
 
 
 

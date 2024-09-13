@@ -17,83 +17,24 @@ Name: {{ schema.name }}
 
 ## Classes
 
-{% for u, v in gen.class_hierarchy_as_tuples() %}
-{{ gen.link(schemaview.get_class(v)) }}<br />
-{{ schemaview.get_class(v).description }}
-{% if schemaview.get_class(v).comments %}
-| Implementation Details |
-| --- |
-{% for x in schemaview.get_class(v).comments -%}
-| {{x}} |
-{% endfor %}
-{% endif %}
-{% endfor %}
-
-
-{% for u, v in gen.class_hierarchy_as_tuples() %}
-{{ gen.link(schemaview.get_class(v)) }}<br />
-{{ schemaview.get_class(v).description }}
-{% if schemaview.get_class(v).comments %}
-{% for x in schemaview.get_class(v).comments -%}
-* {{x}}
-{% endfor %}
-{% endif %}
-{% endfor %}
-
-
-{% for u, v in gen.class_hierarchy_as_tuples() %}
-{{ gen.link(schemaview.get_class(v)) }}<br />
-{{ schemaview.get_class(v).description }}
-{% if schemaview.get_class(v).comments %}
-<details>
-<summary>Implementation Details</summary>
-{% for x in schemaview.get_class(v).comments -%}
-* {{x}}<br />
-{% endfor %}
-</details>
-{% endif %}
-{% endfor %}
-
-| Class | Description | Comments |
-| --- | --- | --- |
+| Class | Description |
+| --- | --- |
 {% if gen.hierarchical_class_view -%}
 {% for u, v in gen.class_hierarchy_as_tuples() -%}
-| {{ "&nbsp;"|safe*u*8 }}{{ gen.link(schemaview.get_class(v)) }} | {{ schemaview.get_class(v).description }} | {{ schemaview.get_class(v).comments }} |
+| {{ "&nbsp;"|safe*u*8 }}{{ gen.link(schemaview.get_class(v)) }} | {{ schemaview.get_class(v).description }} |
 {% endfor %}
 {% else -%}
 {% for c in gen.all_class_objects()|sort(attribute=sort_by) -%}
-| {{gen.link(c)}} | {{c.description}} |
+| {{gen.link(c)}} | {{c.description|enshorten}} |
 {% endfor %}
 {% endif %}
 
 ## Slots
 
-{% for s in gen.all_slot_objects()|sort(attribute=sort_by) -%}
-{{gen.link(s)}}<br />
-{{s.description|enshorten}}
-{% if s.comments %}
-| Implementation Details |
-| --- |
-{% for x in s.comments -%}
-| {{x}} |
-{% endfor %}
-{% endif %}
-{% endfor %}
-
-{% for s in gen.all_slot_objects()|sort(attribute=sort_by) -%}
-{{gen.link(s)}}<br />
-{{s.description}}
-{% if s.comments %}
-{% for x in s.comments -%}
-* {{x}}
-{% endfor %}
-{% endif %}
-{% endfor %}
-
 | Slot | Description |
 | --- | --- |
 {% for s in gen.all_slot_objects()|sort(attribute=sort_by) -%}
-| {{gen.link(s)}} | {{s.description|enshorten}} |
+| {{gen.link(s)}} | {{s.description}} |
 {% endfor %}
 
 ## Enumerations
@@ -101,7 +42,7 @@ Name: {{ schema.name }}
 | Enumeration | Description |
 | --- | --- |
 {% for e in gen.all_enum_objects()|sort(attribute=sort_by) -%}
-| {{gen.link(e)}} | {{e.description|enshorten}} |
+| {{gen.link(e)}} | {{e.description}} |
 {% endfor %}
 
 ## Types
@@ -109,7 +50,7 @@ Name: {{ schema.name }}
 | Type | Description |
 | --- | --- |
 {% for t in gen.all_type_objects()|sort(attribute=sort_by) -%}
-| {{gen.link(t)}} | {{t.description|enshorten}} |
+| {{gen.link(t)}} | {{t.description}} |
 {% endfor %}
 
 ## Subsets
@@ -117,5 +58,5 @@ Name: {{ schema.name }}
 | Subset | Description |
 | --- | --- |
 {% for ss in schemaview.all_subsets().values()|sort(attribute='name') -%}
-| {{gen.link(ss)}} | {{ss.description|enshorten}} |
+| {{gen.link(ss)}} | {{ss.description}} |
 {% endfor %}

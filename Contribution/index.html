@@ -155,6 +155,20 @@
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
+<nav aria-label="Slots" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-slots">
+    Direct slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inherited-slots">
+    Inherited slots
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
@@ -331,114 +345,121 @@
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../contributor/">contributor</a></td>
-<td>0..1 <br/> <a href="../Agent/">Agent</a></td>
-<td>The Agent that made the contribution</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../activityType/">activityType</a></td>
-<td>* <br/> <a href="../Coding/">Coding</a></td>
-<td>The specific type of activity performed or role played by an agent in making ...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../contributionMadeTo/">contributionMadeTo</a></td>
-<td>0..1 <br/> <a href="../InformationEntity/">InformationEntity</a></td>
-<td>The artifact toward which the contribution was made</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../subtype/">subtype</a></td>
-<td>0..1 <br/> <a href="../Coding/">Coding</a></td>
-<td>A specific type of activity the Activity instance represents</td>
-<td><a href="../Activity/">Activity</a></td>
-</tr>
-<tr>
-<td><a href="../date/">date</a></td>
-<td>0..1 <br/> <a href="../date/">date</a></td>
-<td>The date that the Activity was completed</td>
-<td><a href="../Activity/">Activity</a></td>
-</tr>
-<tr>
-<td><a href="../performedBy/">performedBy</a></td>
-<td>* <br/> <a href="../Agent/">Agent</a></td>
-<td>An Agent who participated in executing the Activity</td>
-<td><a href="../Activity/">Activity</a></td>
-</tr>
-<tr>
-<td><a href="../specifiedBy/">specifiedBy</a></td>
-<td>* <br/> <a href="../Method/">Method</a></td>
-<td>A method that was followed in performing an Activity, that describes how it w...</td>
-<td><a href="../Activity/">Activity</a></td>
-</tr>
-<tr>
-<td><a href="../input/">input</a></td>
-<td>* <br/> <a href="../Entity/">Entity</a></td>
-<td>An entity that was input into the Activity (could be material or information)</td>
-<td><a href="../Activity/">Activity</a></td>
-</tr>
-<tr>
-<td><a href="../output/">output</a></td>
-<td>* <br/> <a href="../Entity/">Entity</a></td>
-<td>An entity that was output from the Activity (could be material or information...</td>
-<td><a href="../Activity/">Activity</a></td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The 'logical' identifier of the entity in the system of record, e</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../identifiers/">identifiers</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>A globally-unique 'business' identifier or accession number for the real-worl...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The name of the class that is instantiated by a data object representing the ...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../label/">label</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A primary name for the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../alternativeLabels/">alternativeLabels</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Alternative name(s) for the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A free text description of the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../extensions/">extensions</a></td>
-<td>* <br/> <a href="../Extension/">Extension</a></td>
-<td>A list of extensions to the Entity, that allow for capture of information not...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-</tbody>
-</table>
+<h3 id="direct-slots">Direct slots</h3>
+<p><a href="../contributor/">contributor</a> --&gt; <a href="../Agent/">Agent</a> [0..1] <br/></p>
+<blockquote>
+<p>The Agent that made the contribution.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* Note that this must be a single agent (which can be a Person, or an Organization).  If multiple Agents contributed to an entity, a separate Contribution instances MUST be created for each.<br/>
+</details>
+<hr/>
+<p><a href="../activityType/">activityType</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
+<blockquote>
+<p>The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc. . Values of this property may be framed as activities or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* Each implementation can define terms for the specific types of activities relevant to their use case/application. \n- Note that if the same Agent performed multiple types of activities in contributing to some artifact, they may all be captured in a single Contribution object. However, if data creators want to provide metadata specific to each activity (e.g. when or how each was performed), then a separate Contribution object should be created for each activity.<br/>
+</details>
+<hr/>
+<p><a href="../contributionMadeTo/">contributionMadeTo</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [0..1] <br/></p>
+<blockquote>
+<p>The artifact toward which the contribution was made.</p>
+</blockquote>
+<hr/>
+<h3 id="inherited-slots">Inherited slots</h3>
+<p><a href="../subtype/">subtype</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
+<blockquote>
+<p>A specific type of activity the Activity instance represents. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Activity/">Activity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute can be used to report a specific type for the Activity, in cases where a model does not define Activity subclasses for this purpose.  Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application.<br/>
+</details>
+<p><a href="../date/">date</a> --&gt; <a href="../date/">date</a> [0..1] <br/></p>
+<blockquote>
+<p>The date that the Activity was completed. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Activity/">Activity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* By convention, populate this attribute with the date the activity was completed (e.g.  in cases where the activity spans multiple days). The date SHOULD be formatted as a date string in ISO format "YYYY-MM-DD".<br/>
+</details>
+<p><a href="../performedBy/">performedBy</a> --&gt; <a href="../Agent/">Agent</a> [*] <br/></p>
+<blockquote>
+<p>An Agent who participated in executing the Activity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Activity/">Activity</a></p>
+<p><a href="../specifiedBy/">specifiedBy</a> --&gt; <a href="../Method/">Method</a> [*] <br/></p>
+<blockquote>
+<p>A method that was followed in performing an Activity, that describes how it was executed. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Activity/">Activity</a></p>
+<p><a href="../input/">input</a> --&gt; <a href="../Entity/">Entity</a> [*] <br/></p>
+<blockquote>
+<p>An entity that was input into the Activity (could be material or information) <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Activity/">Activity</a></p>
+<p><a href="../output/">output</a> --&gt; <a href="../Entity/">Entity</a> [*] <br/></p>
+<blockquote>
+<p>An entity that was output from the Activity (could be material or information) <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Activity/">Activity</a></p>
+<p><a href="../id/">id</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to reuse an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context.<br/>
+</details>
+<p><a href="../identifiers/">identifiers</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Preferred values for this attribute are CURIEs or URIs - so the system that provisioned the identifier is clear.<br/>
+* A given real world entity - e.g. a genetic variant - may have many business identifiers defined by different systems, which can be captured in the "identifiers" property to indicate that they represent the same thing.<br/>
+</details>
+<p><a href="../type/">type</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The name of the class that is instantiated by a data object representing the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* MUST be the label of a concrete class from the data model.<br/>
+</details>
+<p><a href="../label/">label</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A primary name for the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>Alternative name(s) for the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../description/">description</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A free text description of the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../extensions/">extensions</a> --&gt; <a href="../Extension/">Extension</a> [*] <br/></p>
+<blockquote>
+<p>A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.<br/>
+</details>
 <h2 id="usages">Usages</h2>
 <table>
 <thead>

@@ -155,6 +155,15 @@
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
+<nav aria-label="Slots" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-slots">
+    Direct slots
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
@@ -238,36 +247,26 @@
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../name/">name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The type of the trait or role described by the trait (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../values/">values</a></td>
-<td>1..* <br/> <a href="../String/">String</a></td>
-<td>The specific value(s) that the indicated traitor role  holds in all populatio...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../valueOperator/">valueOperator</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>An operation that defines how to logically interpret a set of more than one C...</td>
-<td>direct</td>
-</tr>
-</tbody>
-</table>
+<h3 id="direct-slots">Direct slots</h3>
+<p><a href="../name/">name</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status').</p>
+</blockquote>
+<hr/>
+<p><a href="../values/">values</a> --&gt; <a href="../String/">String</a> [1..*] <br/></p>
+<blockquote>
+<p>The specific value(s) that the indicated traitor role  holds in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer').</p>
+</blockquote>
+<hr/>
+<p><a href="../valueOperator/">valueOperator</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>An operation that defines how to logically interpret a set of more than one Characteristic values ('AND', 'OR', 'NOT').</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* An 'AND' operator indicates that an individual exhibits all of the characteristic values listed.  An 'OR' operator indicates the individual exhibits one or more of the characteristic values listed. A 'NOT' indicates that the individual does not exhibit the characteristic value or values listed.<br/>
+</details>
+<hr/>
 <h2 id="usages">Usages</h2>
 <table>
 <thead>

@@ -155,6 +155,20 @@
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
+<nav aria-label="Slots" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-slots">
+    Direct slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inherited-slots">
+    Inherited slots
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
@@ -280,96 +294,111 @@
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../propositionText/">propositionText</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A natural-language expression of the Proposition's meaning (i</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../subject/">subject</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The Entity or concept about which the Proposition is made</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../predicate/">predicate</a></td>
-<td>1 <br/> <a href="../Coding/">Coding</a></td>
-<td>The relationship declared to hold between the subject and the object of the P...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../object/">object</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>An Entity or concept that is related to the subject of a Proposition via its ...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../qualifier/">qualifier</a></td>
-<td>* <br/> <a href="../Qualifier/">Qualifier</a></td>
-<td>An additional piece of information that extends or refines the meaning of a P...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../negated/">negated</a></td>
-<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
-<td>A boolean flag set to 'true' to represent a negation of the proposition expre...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The 'logical' identifier of the entity in the system of record, e</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../identifiers/">identifiers</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>A globally-unique 'business' identifier or accession number for the real-worl...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The name of the class that is instantiated by a data object representing the ...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../label/">label</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A primary name for the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../alternativeLabels/">alternativeLabels</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Alternative name(s) for the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A free text description of the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../extensions/">extensions</a></td>
-<td>* <br/> <a href="../Extension/">Extension</a></td>
-<td>A list of extensions to the Entity, that allow for capture of information not...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-</tbody>
-</table>
+<h3 id="direct-slots">Direct slots</h3>
+<p><a href="../propositionText/">propositionText</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A natural-language expression of the Proposition's meaning (i.e. the 'possible fact' it expresses).</p>
+</blockquote>
+<hr/>
+<p><a href="../subject/">subject</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The Entity or concept about which the Proposition is made.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* While the Core Information Model is domain-agnostic, and supports Propositions about any type of Entity, for most VA use cases, the subject will be  some type of genetic variation. But data creators may want to make statements about other entities or concepts that represent evidence for a statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene).<br/>
+</details>
+<hr/>
+<p><a href="../predicate/">predicate</a> --&gt; <a href="../Coding/">Coding</a> [1] <br/></p>
+<blockquote>
+<p>The relationship declared to hold between the subject and the object of the Proposition.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845).<br/>
+</details>
+<hr/>
+<p><a href="../object/">object</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>An Entity or concept that is related to the subject of a Proposition via its predicate.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects this is often a disease, drug, gene, molecular consequence, functional impact on gene or protein.<br/>
+</details>
+<hr/>
+<p><a href="../qualifier/">qualifier</a> --&gt; <a href="../Qualifier/">Qualifier</a> [*] <br/></p>
+<blockquote>
+<p>An additional piece of information that extends or refines the meaning of a Propositions's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* The qualifier attribute allows representation of more complex, n-ary propositions that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if a triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. Qualifiers can also add information that quantifies aspects of a Statement - e.g. for an SPO triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest. Profiles of specific proposition types may define more than one qualifier, as needed to capture different types of qualifying information.<br/>
+* The SEPIO core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Statement. But in practice, profiles for specific Proposition types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers. For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier' attribute that is required, and a named 'geneContextQualifier' attribute that is optional - both of which conceptually specialize the core-im 'qualifier' property. Under this approach, the core 'qualifier' acts as a placeholder to seed such specializations, but is not used directly in profiles.<br/>
+</details>
+<hr/>
+<p><a href="../negated/">negated</a> --&gt; <a href="../Boolean/">Boolean</a> [0..1] <br/></p>
+<blockquote>
+<p>A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate, object, and qualifier(s) (e.g. that "Variant X is NOT pathogenic for Disease Y")</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* Along with the 'subject', predicate', 'object', and 'qualifier' attributes, the 'negated' element contributes to the semantics of the 'possible fact' that a Proposition expresses.<br/>
+</details>
+<hr/>
+<h3 id="inherited-slots">Inherited slots</h3>
+<p><a href="../id/">id</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to reuse an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context.<br/>
+</details>
+<p><a href="../identifiers/">identifiers</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Preferred values for this attribute are CURIEs or URIs - so the system that provisioned the identifier is clear.<br/>
+* A given real world entity - e.g. a genetic variant - may have many business identifiers defined by different systems, which can be captured in the "identifiers" property to indicate that they represent the same thing.<br/>
+</details>
+<p><a href="../type/">type</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The name of the class that is instantiated by a data object representing the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* MUST be the label of a concrete class from the data model.<br/>
+</details>
+<p><a href="../label/">label</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A primary name for the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>Alternative name(s) for the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../description/">description</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A free text description of the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../extensions/">extensions</a> --&gt; <a href="../Extension/">Extension</a> [*] <br/></p>
+<blockquote>
+<p>A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.<br/>
+</details>
 <h2 id="usages">Usages</h2>
 <table>
 <thead>

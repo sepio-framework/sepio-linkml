@@ -155,6 +155,20 @@
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
+<nav aria-label="Slots" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-slots">
+    Direct slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inherited-slots">
+    Inherited slots
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
@@ -375,192 +389,258 @@
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../statementText/">statementText</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A natural-language expression of what a Statement asserts to be true</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../proposition/">proposition</a></td>
-<td>0..1 <br/> <a href="../Proposition/">Proposition</a></td>
-<td>A possible fact that the Statement assesses or puts forth as true</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../subject/">subject</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The Entity or concept about which the Statement is made</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../predicate/">predicate</a></td>
-<td>0..1 <br/> <a href="../Coding/">Coding</a></td>
-<td>The relationship declared to hold between the subject and the object of the S...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../object/">object</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>An Entity or concept that is related to the subject of a Statement via its pr...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../qualifier/">qualifier</a></td>
-<td>* <br/> <a href="../Qualifier/">Qualifier</a></td>
-<td>An additional piece of information that extends or refines the meaning of a S...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../direction/">direction</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A term indicating whether the Statement supports, disputes, or remains neutra...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../strength/">strength</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A term used to report the strength of a Proposition's assessment in the direc...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../score/">score</a></td>
-<td>0..1 <br/> <a href="../Float/">Float</a></td>
-<td>A quantitative score that indicates the strength of a Proposition's validity ...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../subjectClassification/">subjectClassification</a></td>
-<td>0..1 <br/> <a href="../Coding/">Coding</a></td>
-<td>A single term or phrase summarizing the outcome of direction and strength ass...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hasEvidenceOfTypes/">hasEvidenceOfTypes</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>A term describing a type of evidence used to assess the validity of Statement...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hasEvidenceLines/">hasEvidenceLines</a></td>
-<td>* <br/> <a href="../EvidenceLine/">EvidenceLine</a></td>
-<td>An evidence-based argument that supports or disputes the validity of the prop...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hasEvidence/">hasEvidence</a></td>
-<td>* <br/> <a href="../InformationEntity/">InformationEntity</a></td>
-<td>A piece of information that represents or contributes to an argument for or a...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isAbout/">isAbout</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>An entity or concept in the world that the information entity describes/is ab...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../contributions/">contributions</a></td>
-<td>* <br/> <a href="../Contribution/">Contribution</a></td>
-<td>Specific actions taken by an Agent toward the creation, modification, validat...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../dateAuthored/">dateAuthored</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Indicates when the information content expressed in the Information Entity wa...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../specifiedBy/">specifiedBy</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>A specification that describes all or part of the process that led to creatio...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../methodTypes/">methodTypes</a></td>
-<td>* <br/> <a href="../Coding/">Coding</a></td>
-<td>Types of methodological approaches used to collect, generate, or evaluate the...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../derivedFrom/">derivedFrom</a></td>
-<td>* <br/> <a href="../InformationEntity/">InformationEntity</a></td>
-<td>Another Information Entity from which this Information Entity is derived, in ...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../reportedIn/">reportedIn</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>A document in which the Information Entity is reported</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../informationQuality/">informationQuality</a></td>
-<td>0..1 <br/> <a href="../Coding/">Coding</a></td>
-<td>A qualitative term indicating the scientific rigor or reliability with which ...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
-<td>0..1 <br/> <a href="../RecordMetadata/">RecordMetadata</a></td>
-<td>Provenance metadata about a specific concrete record of information as encode...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The 'logical' identifier of the entity in the system of record, e</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../identifiers/">identifiers</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>A globally-unique 'business' identifier or accession number for the real-worl...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The name of the class that is instantiated by a data object representing the ...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../label/">label</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A primary name for the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../alternativeLabels/">alternativeLabels</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Alternative name(s) for the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A free text description of the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../extensions/">extensions</a></td>
-<td>* <br/> <a href="../Extension/">Extension</a></td>
-<td>A list of extensions to the Entity, that allow for capture of information not...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-</tbody>
-</table>
+<h3 id="direct-slots">Direct slots</h3>
+<p><a href="../statementText/">statementText</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A natural-language expression of what a Statement asserts to be true.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute captures what a Statement says as human readable free text. e.g. that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer", or that "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A&gt;G for Breast Cancer". This optional attribute can be used instead of, or as a complement to, a structured representation of Statement semantics that uses the subject-predicate-object-qualifier pattern.<br/>
+</details>
+<hr/>
+<p><a href="../proposition/">proposition</a> --&gt; <a href="../Proposition/">Proposition</a> [0..1] <br/></p>
+<blockquote>
+<p>A possible fact that the Statement assesses or puts forth as true.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute supports an alternate modeling pattern where the structured semantics of the possible fact asserted or evaluated by a Statement is encapsulated in a separate 'Proposition' object. In such a case, the subject-predicate-object-qualifier properties on the Statement are not utilized. A given implementation should decide which pattern to follow and drop attributes not required for their approach.<br/>
+</details>
+<hr/>
+<p><a href="../subject/">subject</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>The Entity or concept about which the Statement is made.</p>
+</blockquote>
+<hr/>
+<p><a href="../predicate/">predicate</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
+<blockquote>
+<p>The relationship declared to hold between the subject and the object of the Statement.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* When applied to represent a particular type of Statement (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845).<br/>
+</details>
+<hr/>
+<p><a href="../object/">object</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>An Entity or concept that is related to the subject of a Statement via its predicate.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein.<br/>
+</details>
+<hr/>
+<p><a href="../qualifier/">qualifier</a> --&gt; <a href="../Qualifier/">Qualifier</a> [*] <br/></p>
+<blockquote>
+<p>An additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* -The qualifier attribute allows representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if an SPO triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. Qualifiers can also add information that quantifies aspects of a Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest. Statement profiles may define more than one qualifier, as needed to capture different types of qualifying information.<br/>
+* The SEPIO core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Statement. But in practice, profiles for specific Statement types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers. For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier' attribute that is required, and a named 'geneContextQualifier' attribute that is optional - both of which conceptually specialize the core-im 'qualifier' property. Under this approach, the core 'qualifier' acts as a placeholder to seed such specializations, but is not used directly in Statement profiles.<br/>
+</details>
+<hr/>
+<p><a href="../direction/">direction</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject',  'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction', 'strength', and 'score' attributes. The 'direction'  attribute is used to indicate whether the Statement's Proposition is *supported* by the agent's assessment (when evidence favors its validity), is *disputed* by the agent's assessment (when evidence argues against its validity), or remains *neutral* (when conflicting or insufficient evidence exists to assert one direction or the other).  (Enumerated values = 'supports', 'disputes', 'neutral').<br/>
+</details>
+<hr/>
+<p><a href="../strength/">strength</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how <em>confident</em> an agent is that the Proposition is true or false, or in terms of the <em>strength of all evidence</em> they believe supports or disputes it.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject,' 'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction',  'strength', and 'score' attributes. The 'strength' attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a *level of confidence* that the Proposition is true or false, or as a *level of evidence* that supports or disputes it. Data creators can define the permissible values for the 'strength' attribute to indicate which of these facets is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low').<br/>
+</details>
+<hr/>
+<p><a href="../score/">score</a> --&gt; <a href="../Float/">Float</a> [0..1] <br/></p>
+<blockquote>
+<p>A quantitative score that indicates the strength of a Proposition's validity assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how <em>confident</em> that agent is that the Proposition is true or false, or the <em>strength of evidence</em> they believe supports or disputes it.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength', and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score.<br/>
+</details>
+<hr/>
+<p><a href="../subjectClassification/">subjectClassification</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
+<blockquote>
+<p>A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* Permissible values for this attribute are  typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification.<br/>
+</details>
+<hr/>
+<p><a href="../hasEvidenceOfTypes/">hasEvidenceOfTypes</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* This contrasts with hasEvidence and hasEvidenceLine attributes that describe specific instances of evidence information, such as a particular data item, study result, or prior assertions, etc. Where possible, data cretors should use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO) to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity evidence').<br/>
+</details>
+<hr/>
+<p><a href="../hasEvidenceLines/">hasEvidenceLines</a> --&gt; <a href="../EvidenceLine/">EvidenceLine</a> [*] <br/></p>
+<blockquote>
+<p>An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes  the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* Evidence Lines result from the interpretation of one or more pieces of information to build an argument for or against a particular Proposition. These arguments have direction (supporting / disputing) and strength (e.g. strong, moderate, weak) relative to the Proposition they are evaluated against. For example, ExaC allele counts and frequency calculations for the BRCA2 c.8023A&gt;G variant in different populations may be collectively assessed to provide an argument of 'moderate' strength in 'support of ' a proposition that the variant is pathogenicity for breast cancer.<br/>
+* Evidence Lines are useful in cases where a data provider wants to describe in detail how information was  assessed as evidence to generate and score different arguments for or against a Statement''s proposition. Evidence Lines can be omitted if such information is not available or needed.<br>
+</br></details>
+<hr/>
+<p><a href="../hasEvidence/">hasEvidence</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
+<blockquote>
+<p>A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* - Evidence is any information that is interpreted in assessing the truth of  the proposition a Statement puts forth as true or false.  A piece of information only becomes evidence when it is interpreted in this way. Different types of information entities can be used and cited as evidence, including direct observation or measurement data, derived statistical calculations, data tables or figures in a publication, conclusions/findings from a particular study, or prior assertions of knowledge  that themselves are based on their own set of evidence.<br/>
+* This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class - to be used data creators cannot or do not wish to create an Evidence Line object.<br>
+</br></details>
+<hr/>
+<h3 id="inherited-slots">Inherited slots</h3>
+<p><a href="../isAbout/">isAbout</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>An entity or concept in the world that the information entity describes/is about. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer" might be annotated to be about the variant 'BRCA2 c.8023A&gt;G', and the disease 'Breast Cancer'.<br/>
+</details>
+<p><a href="../contributions/">contributions</a> --&gt; <a href="../Contribution/">Contribution</a> [*] <br/></p>
+<blockquote>
+<p>Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent.<br/>
+</details>
+<p><a href="../dateAuthored/">dateAuthored</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>Indicates when the information content expressed in the Information Entity was generated. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* The term 'authored' as used in the model refers to the generation of 'information content' in the abstract  sense, as opposed to a concrete encoding of this information in a specific language or format. e.g. for a Statement, this attribute captures when the information content expressed in the Statement was first generated by an agent.  Information about when a particular concrete encoding of this information was created (e.g. as row in a table, or object in a json document) would live in a RecordMetadata object attached to the Information Entity).<br/>
+</details>
+<p><a href="../specifiedBy/">specifiedBy</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A specification that describes all or part of the process that led to creation of the Information Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Examples - an experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification.<br/>
+* Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/ cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission Electron Microscopy").<br/>
+</details>
+<p><a href="../methodTypes/">methodTypes</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
+<blockquote>
+<p>Types of methodological approaches used to collect, generate, or evaluate the reported information. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This field captures terms representing *types* of methods applied, vs the "specifiedBy" attribute which captures specific instances of methods used.<br/>
+* Implementers should define a relevant source of method type codes/terms to use here based on the needs of the domain or application.'<br/>
+</details>
+<p><a href="../derivedFrom/">derivedFrom</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
+<blockquote>
+<p>Another Information Entity from which this Information Entity is derived, in whole or in part. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<p><a href="../reportedIn/">reportedIn</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A document in which the Information Entity is reported. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute is used specifically to reference documents/publications where the Information Entity is expressed or reported.  For a Statement, this might be a publication where the authors express the statement in text.  For a Data Item, this might be a publication with a table or figure that reports the value of the  data.<br/>
+</details>
+<p><a href="../informationQuality/">informationQuality</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
+<blockquote>
+<p>A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This is typically based on the quality of design and execution of the study or curation activity that generated it (e.g. were relevant controls assessed to show instruments were working, were all samples taken care of and handled identically, are methods sound and well documented, etc.).<br/>
+* The quality of information is intrinsic to the information itself, and not to a particular application of the information (e.g. as evidence for making an Assertion)<br/>
+* The quality of information is one factor that goes into the confidence we have in the information''s veracity (i.e. that it is an accurate reflection of reality it intends to measure or describe). Other factors informing confidence may include who did it (we may just not trust some Agents), when (if data created 500 years ago, we may have less confidence in it), and for Assertions, the relevance and abundance of supporting evidence.<br/>
+* Implementers should define a relevant source of codes or terms to use here, based on the needs of the domain or application.'<br/>
+</details>
+<p><a href="../recordMetadata/">recordMetadata</a> --&gt; <a href="../RecordMetadata/">RecordMetadata</a> [0..1] <br/></p>
+<blockquote>
+<p>Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries). <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute holds a structured RecordMetadata objects, which can be used to capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status.<br/>
+</details>
+<p><a href="../id/">id</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to reuse an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context.<br/>
+</details>
+<p><a href="../identifiers/">identifiers</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Preferred values for this attribute are CURIEs or URIs - so the system that provisioned the identifier is clear.<br/>
+* A given real world entity - e.g. a genetic variant - may have many business identifiers defined by different systems, which can be captured in the "identifiers" property to indicate that they represent the same thing.<br/>
+</details>
+<p><a href="../type/">type</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The name of the class that is instantiated by a data object representing the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* MUST be the label of a concrete class from the data model.<br/>
+</details>
+<p><a href="../label/">label</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A primary name for the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>Alternative name(s) for the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../description/">description</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A free text description of the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../extensions/">extensions</a> --&gt; <a href="../Extension/">Extension</a> [*] <br/></p>
+<blockquote>
+<p>A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.<br/>
+</details>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>

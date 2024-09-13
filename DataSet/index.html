@@ -155,6 +155,20 @@
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
+<nav aria-label="Slots" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-slots">
+    Direct slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inherited-slots">
+    Inherited slots
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#usages">
@@ -324,138 +338,178 @@
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../subtype/">subtype</a></td>
-<td>0..1 <br/> <a href="../Coding/">Coding</a></td>
-<td>A specific type of data set the DataSet instance represents (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../releaseDate/">releaseDate</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Indicates when a version of a DataSet was formally released</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../version/">version</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The version of the DataSet, as assigned by its creator</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../license/">license</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A specific license that dictates legal permissions for how a data set can be ...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isAbout/">isAbout</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>An entity or concept in the world that the information entity describes/is ab...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../contributions/">contributions</a></td>
-<td>* <br/> <a href="../Contribution/">Contribution</a></td>
-<td>Specific actions taken by an Agent toward the creation, modification, validat...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../dateAuthored/">dateAuthored</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Indicates when the information content expressed in the Information Entity wa...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../specifiedBy/">specifiedBy</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>A specification that describes all or part of the process that led to creatio...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../methodTypes/">methodTypes</a></td>
-<td>* <br/> <a href="../Coding/">Coding</a></td>
-<td>Types of methodological approaches used to collect, generate, or evaluate the...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../derivedFrom/">derivedFrom</a></td>
-<td>* <br/> <a href="../InformationEntity/">InformationEntity</a></td>
-<td>Another Information Entity from which this Information Entity is derived, in ...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../reportedIn/">reportedIn</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>A document in which the Information Entity is reported</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../informationQuality/">informationQuality</a></td>
-<td>0..1 <br/> <a href="../Coding/">Coding</a></td>
-<td>A qualitative term indicating the scientific rigor or reliability with which ...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
-<td>0..1 <br/> <a href="../RecordMetadata/">RecordMetadata</a></td>
-<td>Provenance metadata about a specific concrete record of information as encode...</td>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The 'logical' identifier of the entity in the system of record, e</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../identifiers/">identifiers</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>A globally-unique 'business' identifier or accession number for the real-worl...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The name of the class that is instantiated by a data object representing the ...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../label/">label</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A primary name for the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../alternativeLabels/">alternativeLabels</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Alternative name(s) for the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A free text description of the Entity</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-<tr>
-<td><a href="../extensions/">extensions</a></td>
-<td>* <br/> <a href="../Extension/">Extension</a></td>
-<td>A list of extensions to the Entity, that allow for capture of information not...</td>
-<td><a href="../Entity/">Entity</a></td>
-</tr>
-</tbody>
-</table>
+<h3 id="direct-slots">Direct slots</h3>
+<p><a href="../subtype/">subtype</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
+<blockquote>
+<p>A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set').</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute can be used to report a specific type for the DataSet, in cases where a model does not define DataSet subclasses for this purpose.  Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application.<br/>
+</details>
+<hr/>
+<p><a href="../releaseDate/">releaseDate</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>Indicates when a version of a DataSet was formally released.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute may apply to version and distribution-level DataSet representations. It refers to when the data set was released, which may be different than the data set was generated.<br/>
+</details>
+<hr/>
+<p><a href="../version/">version</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>The version of the DataSet, as assigned by its creator.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* This property can capture version information for resources such as data sets and documents that get published and released as a unit for community use. These may go through rounds of revisions that add or modify content, but don't change the identity of the resource. Use this attribute in cases where version is not reflected in an identifier associated with the data set<br/>
+</details>
+<hr/>
+<p><a href="../license/">license</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.).</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* Where possible, provide a URL pointing to the license or a description of it (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide a free-text name or description of the license (e.g. "CC-BY").<br/>
+</details>
+<hr/>
+<h3 id="inherited-slots">Inherited slots</h3>
+<p><a href="../isAbout/">isAbout</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>An entity or concept in the world that the information entity describes/is about. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer" might be annotated to be about the variant 'BRCA2 c.8023A&gt;G', and the disease 'Breast Cancer'.<br/>
+</details>
+<p><a href="../contributions/">contributions</a> --&gt; <a href="../Contribution/">Contribution</a> [*] <br/></p>
+<blockquote>
+<p>Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent.<br/>
+</details>
+<p><a href="../dateAuthored/">dateAuthored</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>Indicates when the information content expressed in the Information Entity was generated. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* The term 'authored' as used in the model refers to the generation of 'information content' in the abstract  sense, as opposed to a concrete encoding of this information in a specific language or format. e.g. for a Statement, this attribute captures when the information content expressed in the Statement was first generated by an agent.  Information about when a particular concrete encoding of this information was created (e.g. as row in a table, or object in a json document) would live in a RecordMetadata object attached to the Information Entity).<br/>
+</details>
+<p><a href="../specifiedBy/">specifiedBy</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A specification that describes all or part of the process that led to creation of the Information Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Examples - an experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification.<br/>
+* Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/ cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission Electron Microscopy").<br/>
+</details>
+<p><a href="../methodTypes/">methodTypes</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
+<blockquote>
+<p>Types of methodological approaches used to collect, generate, or evaluate the reported information. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This field captures terms representing *types* of methods applied, vs the "specifiedBy" attribute which captures specific instances of methods used.<br/>
+* Implementers should define a relevant source of method type codes/terms to use here based on the needs of the domain or application.'<br/>
+</details>
+<p><a href="../derivedFrom/">derivedFrom</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
+<blockquote>
+<p>Another Information Entity from which this Information Entity is derived, in whole or in part. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<p><a href="../reportedIn/">reportedIn</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A document in which the Information Entity is reported. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute is used specifically to reference documents/publications where the Information Entity is expressed or reported.  For a Statement, this might be a publication where the authors express the statement in text.  For a Data Item, this might be a publication with a table or figure that reports the value of the  data.<br/>
+</details>
+<p><a href="../informationQuality/">informationQuality</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
+<blockquote>
+<p>A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This is typically based on the quality of design and execution of the study or curation activity that generated it (e.g. were relevant controls assessed to show instruments were working, were all samples taken care of and handled identically, are methods sound and well documented, etc.).<br/>
+* The quality of information is intrinsic to the information itself, and not to a particular application of the information (e.g. as evidence for making an Assertion)<br/>
+* The quality of information is one factor that goes into the confidence we have in the information''s veracity (i.e. that it is an accurate reflection of reality it intends to measure or describe). Other factors informing confidence may include who did it (we may just not trust some Agents), when (if data created 500 years ago, we may have less confidence in it), and for Assertions, the relevance and abundance of supporting evidence.<br/>
+* Implementers should define a relevant source of codes or terms to use here, based on the needs of the domain or application.'<br/>
+</details>
+<p><a href="../recordMetadata/">recordMetadata</a> --&gt; <a href="../RecordMetadata/">RecordMetadata</a> [0..1] <br/></p>
+<blockquote>
+<p>Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries). <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute holds a structured RecordMetadata objects, which can be used to capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status.<br/>
+</details>
+<p><a href="../id/">id</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to reuse an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context.<br/>
+</details>
+<p><a href="../identifiers/">identifiers</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Preferred values for this attribute are CURIEs or URIs - so the system that provisioned the identifier is clear.<br/>
+* A given real world entity - e.g. a genetic variant - may have many business identifiers defined by different systems, which can be captured in the "identifiers" property to indicate that they represent the same thing.<br/>
+</details>
+<p><a href="../type/">type</a> --&gt; <a href="../String/">String</a> [1] <br/></p>
+<blockquote>
+<p>The name of the class that is instantiated by a data object representing the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* MUST be the label of a concrete class from the data model.<br/>
+</details>
+<p><a href="../label/">label</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A primary name for the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>Alternative name(s) for the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../description/">description</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<blockquote>
+<p>A free text description of the Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<p><a href="../extensions/">extensions</a> --&gt; <a href="../Extension/">Extension</a> [*] <br/></p>
+<blockquote>
+<p>A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../Entity/">Entity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.<br/>
+</details>
 <h2 id="usages">Usages</h2>
 <table>
 <thead>

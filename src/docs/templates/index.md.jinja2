@@ -17,11 +17,23 @@ Name: {{ schema.name }}
 
 ## Classes
 
-| Class | Description |
-| --- | --- |
+{% for u, v in gen.class_hierarchy_as_tuples() %}
+{{ gen.link(schemaview.get_class(v)) }}<br />
+{{ schemaview.get_class(v).description }}
+{% if schemaview.get_class(v).comments %}
+| Implementation Details |
+| --- |
+{% for x in schemaview.get_class(v).comments -%}
+| {{x}} |
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+| Class | Description | Comments |
+| --- | --- | --- |
 {% if gen.hierarchical_class_view -%}
 {% for u, v in gen.class_hierarchy_as_tuples() -%}
-| {{ "&nbsp;"|safe*u*8 }}{{ gen.link(schemaview.get_class(v)) }} | {{ schemaview.get_class(v).description }} |
+| {{ "&nbsp;"|safe*u*8 }}{{ gen.link(schemaview.get_class(v)) }} | {{ schemaview.get_class(v).description }} | {{ schemaview.get_class(v).comments }} |
 {% endfor %}
 {% else -%}
 {% for c in gen.all_class_objects()|sort(attribute=sort_by) -%}

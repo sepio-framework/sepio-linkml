@@ -35,6 +35,14 @@ _{{ element_description_line }}_
 {% endfor %}
 {% endif %}
 
+{% if element.comments -%}
+## Comments
+
+{% for x in element.comments -%}
+* {{x}}
+{% endfor %}
+{% endif -%}
+
 {% if element.abstract %}
 * __NOTE__: this is an abstract class and should not be instantiated directly
 {% endif %}

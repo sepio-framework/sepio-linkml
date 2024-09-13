@@ -38,6 +38,14 @@ _{{ element_description_line }}_
 * __NOTE__: this is an abstract slot and should not be populated directly
 {% endif %}
 
+{% if element.comments -%}
+## Comments
+
+{% for x in element.comments -%}
+* {{x}}
+{% endfor %}
+{% endif -%}
+
 URI: {{ gen.uri_link(element) }}
 
 

@@ -7,7 +7,7 @@ LINKML_SCHEMA_AUTHOR=Corey Cox <corey@tislab.org>
 LINKML_SCHEMA_DESCRIPTION=LinkML-based specification of the SEPIO information model.
 LINKML_SCHEMA_SOURCE_PATH=src/sepio_linkml/schema/sepio_linkml.yaml
 LINKML_SCHEMA_GOOGLE_SHEET_ID=1vCNqmiY7czaqt8zvDCILp5lL_Wwq6LL3ouvQJ2_eAxo
-LINKML_SCHEMA_GOOGLE_SHEET_TABS=sepio_linkml
+LINKML_SCHEMA_GOOGLE_SHEET_TABS=sepio_classes
 
 ###### linkml generator variables, used by makefile
 

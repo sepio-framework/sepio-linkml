@@ -20,4 +20,4 @@ default_range: string
 
 imports:
   - linkml:types
-  - release_subset_v1
+  - sepio_classes

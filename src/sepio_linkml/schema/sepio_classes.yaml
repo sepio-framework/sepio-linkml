@@ -7,203 +7,6 @@ prefixes:
   sepio-model: https://example.org/sepio-model/
 default_prefix: sepio-model
 default_range: string
-slots:
-  id:
-    from_schema: https://w3id.org/sepio-model
-  identifiers:
-    from_schema: https://w3id.org/sepio-model
-  type:
-    from_schema: https://w3id.org/sepio-model
-  label:
-    from_schema: https://w3id.org/sepio-model
-  alternativeLabels:
-    from_schema: https://w3id.org/sepio-model
-  description:
-    from_schema: https://w3id.org/sepio-model
-  extensions:
-    from_schema: https://w3id.org/sepio-model
-  isAbout:
-    from_schema: https://w3id.org/sepio-model
-  contributions:
-    from_schema: https://w3id.org/sepio-model
-  dateAuthored:
-    from_schema: https://w3id.org/sepio-model
-  specifiedBy:
-    from_schema: https://w3id.org/sepio-model
-  methodTypes:
-    from_schema: https://w3id.org/sepio-model
-  derivedFrom:
-    from_schema: https://w3id.org/sepio-model
-  reportedIn:
-    from_schema: https://w3id.org/sepio-model
-  informationQuality:
-    from_schema: https://w3id.org/sepio-model
-  recordMetadata:
-    from_schema: https://w3id.org/sepio-model
-  subtype:
-    from_schema: https://w3id.org/sepio-model
-  urls:
-    from_schema: https://w3id.org/sepio-model
-  subtype_2:
-    from_schema: https://w3id.org/sepio-model
-  title:
-    from_schema: https://w3id.org/sepio-model
-  urls_2:
-    from_schema: https://w3id.org/sepio-model
-  pmid:
-    from_schema: https://w3id.org/sepio-model
-  doi:
-    from_schema: https://w3id.org/sepio-model
-  license:
-    from_schema: https://w3id.org/sepio-model
-  subtype_3:
-    from_schema: https://w3id.org/sepio-model
-  value:
-    from_schema: https://w3id.org/sepio-model
-  unit:
-    from_schema: https://w3id.org/sepio-model
-  variabilityMeasures:
-    from_schema: https://w3id.org/sepio-model
-  confidenceInterval:
-    from_schema: https://w3id.org/sepio-model
-  componentDataItem:
-    from_schema: https://w3id.org/sepio-model
-  subtype_4:
-    from_schema: https://w3id.org/sepio-model
-  releaseDate:
-    from_schema: https://w3id.org/sepio-model
-  version:
-    from_schema: https://w3id.org/sepio-model
-  license_2:
-    from_schema: https://w3id.org/sepio-model
-  subtype_5:
-    from_schema: https://w3id.org/sepio-model
-  date:
-    from_schema: https://w3id.org/sepio-model
-  performedBy:
-    from_schema: https://w3id.org/sepio-model
-  specifiedBy_2:
-    from_schema: https://w3id.org/sepio-model
-  input:
-    from_schema: https://w3id.org/sepio-model
-  output:
-    from_schema: https://w3id.org/sepio-model
-  contributor:
-    from_schema: https://w3id.org/sepio-model
-  activityType:
-    from_schema: https://w3id.org/sepio-model
-  contributionMadeTo:
-    from_schema: https://w3id.org/sepio-model
-  subtype_6:
-    from_schema: https://w3id.org/sepio-model
-  name:
-    from_schema: https://w3id.org/sepio-model
-  statementText:
-    from_schema: https://w3id.org/sepio-model
-  proposition:
-    from_schema: https://w3id.org/sepio-model
-  subject:
-    from_schema: https://w3id.org/sepio-model
-  predicate:
-    from_schema: https://w3id.org/sepio-model
-  object:
-    from_schema: https://w3id.org/sepio-model
-  qualifier:
-    from_schema: https://w3id.org/sepio-model
-  direction:
-    from_schema: https://w3id.org/sepio-model
-  strength:
-    from_schema: https://w3id.org/sepio-model
-  score:
-    from_schema: https://w3id.org/sepio-model
-  subjectClassification:
-    from_schema: https://w3id.org/sepio-model
-  hasEvidenceOfTypes:
-    from_schema: https://w3id.org/sepio-model
-  hasEvidenceLines:
-    from_schema: https://w3id.org/sepio-model
-  hasEvidence:
-    from_schema: https://w3id.org/sepio-model
-  focus:
-    from_schema: https://w3id.org/sepio-model
-  dataItems:
-    from_schema: https://w3id.org/sepio-model
-  interpretation:
-    from_schema: https://w3id.org/sepio-model
-  sourceDataSet:
-    from_schema: https://w3id.org/sepio-model
-  componentResult:
-    from_schema: https://w3id.org/sepio-model
-  studyGroup:
-    from_schema: https://w3id.org/sepio-model
-  targetProposition:
-    from_schema: https://w3id.org/sepio-model
-  evidenceItems:
-    from_schema: https://w3id.org/sepio-model
-  directionOfEvidenceProvided:
-    from_schema: https://w3id.org/sepio-model
-  strengthOfEvidenceProvided:
-    from_schema: https://w3id.org/sepio-model
-  scoreOfEvidenceProvided:
-    from_schema: https://w3id.org/sepio-model
-  propositionText:
-    from_schema: https://w3id.org/sepio-model
-  subject_2:
-    from_schema: https://w3id.org/sepio-model
-  predicate_2:
-    from_schema: https://w3id.org/sepio-model
-  object_2:
-    from_schema: https://w3id.org/sepio-model
-  qualifier_2:
-    from_schema: https://w3id.org/sepio-model
-  negated:
-    from_schema: https://w3id.org/sepio-model
-  memberCount:
-    from_schema: https://w3id.org/sepio-model
-  isSubsetOf:
-    from_schema: https://w3id.org/sepio-model
-  characteristics:
-    from_schema: https://w3id.org/sepio-model
-  code:
-    from_schema: https://w3id.org/sepio-model
-  label_2:
-    from_schema: https://w3id.org/sepio-model
-  system:
-    from_schema: https://w3id.org/sepio-model
-  systemVersion:
-    from_schema: https://w3id.org/sepio-model
-  name_2:
-    from_schema: https://w3id.org/sepio-model
-  value_2:
-    from_schema: https://w3id.org/sepio-model
-  value_3:
-    from_schema: https://w3id.org/sepio-model
-  systemURL:
-    from_schema: https://w3id.org/sepio-model
-  systemVersion_2:
-    from_schema: https://w3id.org/sepio-model
-  extensionDescription:
-    from_schema: https://w3id.org/sepio-model
-  name_3:
-    from_schema: https://w3id.org/sepio-model
-  value_4:
-    from_schema: https://w3id.org/sepio-model
-  recordIdentifier:
-    from_schema: https://w3id.org/sepio-model
-  recordVersion:
-    from_schema: https://w3id.org/sepio-model
-  derivedFromRecord:
-    from_schema: https://w3id.org/sepio-model
-  dateRecordCreated:
-    from_schema: https://w3id.org/sepio-model
-  contributions_2:
-    from_schema: https://w3id.org/sepio-model
-  name_4:
-    from_schema: https://w3id.org/sepio-model
-  values:
-    from_schema: https://w3id.org/sepio-model
-  valueOperator:
-    from_schema: https://w3id.org/sepio-model
 classes:
   Entity:
     description: Anything that exists, has existed, or will exist.
@@ -213,35 +16,21 @@ classes:
       classes that have ids and other general metadata like label,  description, type,
       or extensions descend from this class and inherit its attributes.
     from_schema: https://w3id.org/sepio-model
-    aliases:
-    - Thing
     status: Draft
-    slots:
-    - id
-    - identifiers
-    - type
-    - label
-    - alternativeLabels
-    - description
-    - extensions
-    slot_usage:
+    attributes:
       id:
         description: The 'logical' identifier of the entity in the system of record,
           e.g. a UUID.  This 'id' is unique within a given system, but may or may
           not be globally unique outside the system. It is used within a system to
           reference one object from another.
         comments:
-        - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-          are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-          Note that it is common for implementers to create their own internal logical
+        - Note that it is common for implementers to create their own internal logical
           ids - typically a serially or randomly generated value like a UUID that
           is assigned to the data object as it is created in a system. But an implementer
           may choose to reuse an existing, globally unique id from an external system
           or authority for this purpose (e.g. an HGNC id for a Gene object) - as long
           as it is unique within the implementing system, and can be used to reference
-          the identified object in this context.'
+          the identified object in this context.
         status: Draft
         range: string
         required: true
@@ -252,17 +41,11 @@ classes:
           assigned by an external system or authority, and used to connect entities
           and share content across different systems.
         comments:
-        - 'FHIR naming conventions concerning ''logical'' vs ''business'' identifiers
-          are adopted here. See https://confluence.hl7.org/display/SOA/FHIR+identifiers+and+FAIR+principles+on+IDs.
-
-
-          A given real world entity - e.g. a genetic variant - may have many business
-          identifiers defined by different systems, which can be captured in the ''identifiers''
+        - Preferred values for this attribute are CURIEs or URIs - so the system
+          that provisioned the identifier is clear.
+        - A given real world entity - e.g. a genetic variant - may have many business
+          identifiers defined by different systems, which can be captured in the "identifiers"
           property to indicate that they represent the same thing.
-
-
-          Preferred values for this attribute are CURIEs or URIs - so the system that
-          provisioned the identifier is clear.'
         status: Informative
         range: string
         required: false
@@ -307,39 +90,25 @@ classes:
         required: false
         multivalued: true
   InformationEntity:
-    description: An abstract (non-physical) entity that is about something. It represents
-      the abstract 'information content' conveyed by physical or digital information
+    description: An abstract (non-physical) entity that is about something - representing
+      the underlying 'information content' conveyed by physical or digital information
       artifacts like books, web pages, data tables, or photographs.
     title: Information Entity
     comments:
-    - Information Entities represent the abstract 'information content' that can be
-      concretized in physical or digital artifacts such as books, photographs, files,
-      web pages, the neural connections of a human brain, etc. They are independent
-      of any specific language, representational format, or physical/digital medium,
-      and can be simultaneously concretized in many distinct physical artifacts (e.g.
+    - As abstract, non-physical entities, Information Entities represent information
+      independent of any specific language, format, or physical/digital medium. They
+      can be simultaneously concretized in many distinct physical artifacts (e.g.
       all physical copies of the first edition of "War and Peace" carry the same information
       content, and thus concretize the same Information Entity).
     from_schema: https://w3id.org/sepio-model
-    aliases:
-    - Information Content Entity, ICE
     status: Draft
     is_a: Entity
-    slots:
-    - isAbout
-    - contributions
-    - dateAuthored
-    - specifiedBy
-    - methodTypes
-    - derivedFrom
-    - reportedIn
-    - informationQuality
-    - recordMetadata
-    slot_usage:
+    attributes:
       isAbout:
         description: An entity or concept in the world that the information entity
           describes/is about.
         comments:
-        - When used in the context of a Statement object, this field can be used to
+        - e.g. In the context of a Statement object, this attribute may be used to
           indicate entities/concepts it is about, in lieu of providing a more precise
           description of what the Statement asserts to be true using subject, predicate,
           object, and qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G
@@ -369,24 +138,25 @@ classes:
           information in a specific language or format. e.g. for a Statement, this
           attribute captures when the information content expressed in the Statement
           was first generated by an agent.  Information about when a particular concrete
-          encoding of this information was created (e.g. as a written sentence, or
-          a json object) would live in a RecordMetadata object attached to the Information
-          Entity).
+          encoding of this information was created (e.g. as row in a table, or object
+          in a json document) would live in a RecordMetadata object attached to the
+          Information Entity).
         status: Draft
         range: string
         required: false
         multivalued: false
       specifiedBy:
         description: A specification that describes all or part of the process that
-          led to creation of the Information Entity (e.g. a specific experimental
-          protocol or data analysis specification that describe how data were generated,
-          or an evidence interpretation guideline that describes steps taken to interpret
-          data in making a variant pathogenicity classification).
+          led to creation of the Information Entity.
         comments:
+        - Examples - an experimental protocol or data analysis specification that
+          describe how data were generated, or an evidence interpretation guideline
+          that describes steps taken to interpret data in making a variant pathogenicity
+          classification.
         - Note that this attribute captures specific *instances* of specifications/methods
           (e.g. the specific electron microscopy method described in https://doi.org/10.1002/
-          cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission
-          Electron Microscopy').
+          cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission
+          Electron Microscopy").
         status: Draft
         range: string
         required: false
@@ -395,34 +165,30 @@ classes:
         description: Types of methodological approaches used to collect, generate,
           or evaluate the reported information.
         comments:
-        - 'This field captures terms representing *types* of methods applied, vs the
-          ''specifiedBy'' attribute which captures specific instances of methods used.
-
-
-          Implementers should define a relevant source or specific set of method type
-          codes/terms to use here based on the needs of the domain or application.'
+        - This field captures terms representing *types* of methods applied, vs
+          the "specifiedBy" attribute which captures specific instances of methods
+          used.
+        - Implementers should define a relevant source of method type codes/terms
+          to use here based on the needs of the domain or application.'
         status: Informative
         range: Coding
         required: false
         multivalued: true
       derivedFrom:
         description: Another Information Entity from which this Information Entity
-          is derived, in whole or in part
+          is derived, in whole or in part.
         status: Draft
         range: InformationEntity
         required: false
         multivalued: true
       reportedIn:
-        description: A document in which the Information Entity is reported
+        description: A document in which the Information Entity is reported.
         comments:
-        - The term 'authored' is used in the model to refer to the generation of abstract
-          'information content', as opposed to creation of a concrete encoding of
-          this information in a specific language, format, or physical artifact. e.g.
-          for a Statement, this attribute captures when the information content expressed
-          in the Statement was first  generated by an agent, and metadata about when
-          a particular concrete encoding of this information was created (e.g. a written
-          sentence in an article, or json object in a data stream) would live in a
-          RecordMetadata object attached to the Information Entity).
+        - This attribute is used specifically to reference documents/publications
+          where the Information Entity is expressed or reported.  For a Statement,
+          this might be a publication where the authors express the statement in text.  For
+          a Data Item, this might be a publication with a table or figure that reports
+          the value of the  data.
         status: Draft
         range: string
         required: false
@@ -431,33 +197,29 @@ classes:
         description: A qualitative term indicating the scientific rigor or reliability
           with which the information was generated/collected.
         comments:
-        - '- This is typically based on the quality of design and execution of the
+        - This is typically based on the quality of design and execution of the
           study or curation activity that generated it (e.g. were relevant controls
           assessed to show instruments were working, were all samples taken care of
           and handled identically, are methods sound and well documented, etc.).
-
-          - The quality of information is intrinsic to the information itself, and
+        - The quality of information is intrinsic to the information itself, and
           not to a particular application of the information (e.g. as evidence for
           making an Assertion)
-
-          - The quality of information is one factor that goes into the confidence
+        - The quality of information is one factor that goes into the confidence
           we have in the information''s veracity (i.e. that it is an accurate reflection
           of reality it intends to measure or describe). Other factors informing confidence
           may include who did it (we may just not trust some Agents), when (if data
           created 500 years ago, we may have less confidence in it), and for Assertions,
           the relevance and abundance of supporting evidence.
-
-          - Implementers should define a relevant source or specific set of terms
-          to use here based on the needs of the domain or application.'
+        - Implementers should define a relevant source of codes or terms to use
+          here, based on the needs of the domain or application.'
         status: Informative
         range: Coding
         required: false
         multivalued: false
       recordMetadata:
-        description: Provenance metadata about a specific concrete encoding/serialization
-          of information (e.g. as a record in a specific data/knowledgebase, or an
-          online digital resource) - as opposed to provenance about the abstract information
-          content a record carries.
+        description: Provenance metadata about a specific concrete record of information
+          as encoded/serialized in a particular data set or object (as opposed to
+          provenance about the abstract information content the encoding carries).
         comments:
         - This attribute holds a structured RecordMetadata objects, which can be used
           to capture when, how, and by whom a record serialization was generated or
@@ -470,19 +232,17 @@ classes:
         multivalued: false
   Method:
     description: A set of instructions that specify how to achieve some objective.
-      These may vary in the level of detail they provide, and in scientific research,
-      these include things like experimental protocols, study designs, data analysis
-      parameters,  curation guidelines, cohort selection criteria, and rule sets.
     title: Method
+    comments:
+    - In scientific research, these include things like experimental protocols, study
+      designs, data analysis parameters,  curation guidelines, cohort selection criteria,
+      and rule sets.
     from_schema: https://w3id.org/sepio-model
     is_a: InformationEntity
-    slots:
-    - subtype
-    - urls
-    slot_usage:
+    attributes:
       subtype:
         description: A specific type of method that a Method instance represents (e.g.
-          'Variant Interpretation Guideline', or 'Experimental Protocol')
+          'Variant Interpretation Guideline', or 'Experimental Protocol').
         comments:
         - This attribute can be used to report a specific type for the Method, in
           cases where a model does not define Method subclasses for this purpose.  Implementers
@@ -510,15 +270,8 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: InformationEntity
-    slots:
-    - subtype_2
-    - title
-    - urls_2
-    - pmid
-    - doi
-    - license
-    slot_usage:
-      subtype_2:
+    attributes:
+      subtype:
         description: A specific type of document that a Document instance represents
           (e.g.  'publication', 'patent', 'pathology report')
         comments:
@@ -535,9 +288,9 @@ classes:
         range: string
         required: false
         multivalued: false
-      urls_2:
-        description: The URL/web address from which the content of the Document can
-          be retrieved.
+      urls:
+        description: One or more URLs from which the content of the Document can be
+          retrieved.
         status: Draft
         range: string
         required: false
@@ -580,15 +333,8 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     is_a: InformationEntity
-    slots:
-    - subtype_3
-    - value
-    - unit
-    - variabilityMeasures
-    - confidenceInterval
-    - componentDataItem
-    slot_usage:
-      subtype_3:
+    attributes:
+      subtype:
         description: A specific type of data the DataItem instance represents (e.g.
           a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')
         comments:
@@ -636,13 +382,12 @@ classes:
           fall within a defined range of values around a mean or other statistical
           calculation.
         comments:
-        - 'Confidence intervals reflect the degree of uncertainty in a sampling method.
-          They may be bounded on one or both sides, and are  computed for a designated
-          confidence level (most often 95% or 99%.. For example, a Hazard Ratio of
-          0.47 might have a 95% confidence interval between 0.42 and 0.55, with a
-          p-value of = 0.001.
-
-          The DataItem used to represent a confidence interval will indicate what
+        - Confidence intervals reflect the degree of uncertainty in a sampling
+          method. They may be bounded on one or both sides, and are  computed for
+          a designated confidence level (most often 95% or 99%.. For example, a Hazard
+          Ratio of 0.47 might have a 95% confidence interval between 0.42 and 0.55,
+          with a p-value of = 0.001.
+        - The DataItem used to represent a confidence interval will indicate what
           type of interval is reported (e.g. ''95% CI''), and will contain separate
           componentDataItems representing the upper and lower bounds of the interval
           (e.g. ''0.42'' and ''0.55'').'
@@ -668,7 +413,7 @@ classes:
       as a unit.
     title: Data Set
     comments:
-    - Instances of this class represent a specific version of a given dataset. Examples
+    - Instances of this class represent a *specific version* of a given dataset. Examples
       include the  gnomAD version 3.1.2 dataset carrying allele population frequencies,
       or a specific version of a VCF file that describes variations observed in a
       particular patient and various annotations made on them, or a SIFT dataset of
@@ -676,16 +421,11 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: InformationEntity
-    slots:
-    - subtype_4
-    - releaseDate
-    - version
-    - license_2
-    slot_usage:
-      subtype_4:
+    attributes:
+      subtype:
         description: A specific type of data set the DataSet instance represents (e.g.
           a 'clinical data set', a 'sequencing data set', a 'gene expression data
-          set', a 'genome annotation data set')
+          set', a 'genome annotation data set').
         comments:
         - This attribute can be used to report a specific type for the DataSet, in
           cases where a model does not define DataSet subclasses for this purpose.  Implementers
@@ -702,26 +442,26 @@ classes:
           It refers to when the data set was released, which may be different than
           the data set was generated.
         status: Informative
-        range: date
+        range: string
         required: false
         multivalued: false
       version:
         description: The version of the DataSet, as assigned by its creator.
         comments:
-        - "This property can capture version information for resources such as data\
-          \ sets and documents that get published and released as a unit for community\
-          \ use. These may go through rounds of revisions that add or modify content,\
-          \ but don\u2019t change the identity of the resource. Use this attribute\
-          \ in cases where version is not reflected in an identifier associated with\
-          \ the data set"
+        - This property can capture version information for resources such as data
+          sets and documents that get published and released as a unit for community
+          use. These may go through rounds of revisions that add or modify content,
+          but don't change the identity of the resource. Use this attribute in cases
+          where version is not reflected in an identifier associated with the data
+          set
         status: Informative
         range: string
         required: false
         multivalued: false
-      license_2:
+      license:
         description: A specific license that dictates legal permissions for how a
           data set can be used (by whom, where, for what purposes, with what additional
-          requirements, etc.)
+          requirements, etc.).
         comments:
         - Where possible, provide a URL pointing to the license or a description of
           it (e.g. "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide
@@ -746,15 +486,8 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     is_a: Entity
-    slots:
-    - subtype_5
-    - date
-    - performedBy
-    - specifiedBy_2
-    - input
-    - output
-    slot_usage:
-      subtype_5:
+    attributes:
+      subtype:
         description: A specific type of activity the Activity instance represents.
         comments:
         - This attribute can be used to report a specific type for the Activity, in
@@ -781,7 +514,7 @@ classes:
         range: Agent
         required: false
         multivalued: true
-      specifiedBy_2:
+      specifiedBy:
         description: A method that was followed in performing an Activity, that describes
           how it was executed.
         status: Informative
@@ -805,23 +538,19 @@ classes:
   Contribution:
     description: An action or actions taken by a particular agent in the creation,
       modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence
-      Line, DataSet, Publication, etc.)
+      Line, DataSet, Publication, etc.).
     title: Contribution
     comments:
-    - The scope of a Contribution instance includes only the actions of a single agent
-      in contributing to a single artifact, which may be performed in one continuous
+    - Contributions are used to organize information about when, where, how (e.g.
+      what roles were played), and on whose behalf these actions were performed.
+    - The scope of a Contribution instance includes only the actions of a single
+      agent in contributing to a single artifact, which may be performed in one continuous
       effort, or several discontinuous sessions of work.  The agent can be an individual
-      person, a software agent, or a group or organization of individuals acting together.
-      Contribution instances are used to organize information about when, where, how
-      (e.g. what roles were played), and on whose behalf these actions were performed.
+      person, a software agent, or a group or organization of individuals acting together.'
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: Activity
-    slots:
-    - contributor
-    - activityType
-    - contributionMadeTo
-    slot_usage:
+    attributes:
       contributor:
         description: The Agent that made the contribution.
         comments:
@@ -837,15 +566,15 @@ classes:
           agent in making the contribution (e.g. for a publication, agents may contribute
           as a primary author, editor, figure designer, data generator, etc. . Values
           of this property may be framed as activities or as contribution roles (e.g.
-          using terms from the Contribution Role Ontology (CRO).)
+          using terms from the Contribution Role Ontology (CRO)).
         comments:
-        - "- Each implementation can define terms for the specific types of activities\
-          \ relevant to their use case/application. \n- Note that if the same Agent\
-          \ performed multiple types of activities in contributing to some artifact,\
-          \ they may all be captured in a single Contribution object. However, if\
-          \ data creators want to provide metadata specific to each activity (e.g.\
-          \ when or how each was performed), then a separate Contribution object should\
-          \ be created for each activity."
+        - Each implementation can define terms for the specific types of activities
+          relevant to their use case/application. \n- Note that if the same Agent
+          performed multiple types of activities in contributing to some artifact,
+          they may all be captured in a single Contribution object. However, if
+          data creators want to provide metadata specific to each activity (e.g.
+          when or how each was performed), then a separate Contribution object should
+          be created for each activity.
         status: Draft
         range: Coding
         required: false
@@ -857,15 +586,15 @@ classes:
         required: false
         multivalued: false
   Agent:
-    description: "An autonomous actor (person, organization, or software agent) that\
-      \ bears some form of responsibility for an activity taking place,  for the existence\
-      \ of an entity, or for another agent\u2019s activity."
+    description: An autonomous actor (person, organization, or software agent) that
+      bears some form of responsibility for an activity taking place,  for the existence
+      of an entity, or for another agent's activity.
     title: Agent
     comments:
     - "Agents perform activities and make contributions to entities. An agent can\
       \ be an individual person, an organization of multiple individuals acting together,\
-      \ or a computational agent such as a software program or automated pipeline.\
-      \ \n\nAgents can belong to organizations, and act on behalf or in the context\
+      \ or a computational agent such as a software program or automated pipeline."
+    - "Agents can belong to organizations, and act on behalf or in the context\
       \ of an organizational affiliation when contributing to an entity. For example,\
       \ curators generating these variant pathogenicity interpretations may do so\
       \ in the context of their work with the ClinGen organization, which provides\
@@ -873,11 +602,8 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: Entity
-    slots:
-    - subtype_6
-    - name
-    slot_usage:
-      subtype_6:
+    attributes:
+      subtype:
         description: A specific type of agent the Agent object represents. Must be
           one of {person, organization, software}
         comments:
@@ -902,55 +628,35 @@ classes:
       of confidence or evidence supporting a particular proposition.
     title: Statement
     comments:
-    - 'In the SEPIO model, primary assertions of knowledge about some subject entity
-      is captured in self-contained Statement objects. Organization of assertions
-      into discrete Statement objects allows clear and precise tracking of the evidence
-      and provenance that supports each. Statement semantics are explicitly captured
-      using ''subject'', ''predicate'', and ''object'' attributes, and optional ''qualifier''
-      slot(s). This ''SPOQ'' pattern is used to structure the meaning of the Statement''s
-      "proposition" - the ''possible fact'' it assesses or reports to be true.
-
-
-      SEPIO supports two "modes of use" for Statements, which differ in what they
-      say about their SPOQ proposition, and can be distinguished by whether ''direction''
-      and ''strength'' attributes are populated:
-
-
-      "Assertion Mode" - the Statement simply reports an SPOQ proposition to be true  (e.g.
-      that "BRCA2 c.8023A>G is pathogenic for Breast Cancer").  The ''direction''
-      and ''strength'' attributes are not populated, in this mode, which is used by
-      projects reporting conclusive assertions about a domain of discourse.
-
-
-      "Proposition Assessment Mode" - Statements describe the overall state of evidence
-      and/or confidence surrounding the SPOQ proposition - which may or may not be
-      true. The ''direction'' and ''strength'' attributes are are populated to support
-      this mode, which allows for Statements  like"there is very strong evidence supporting
-      the proposition that ''BRCA2 c.8023A>G is pathogenic for Breast Cancer''", or
-      "we have high confidence that the proposition  ''BRCA2 c.8023A>G is pathogenic
-      for Breast Cancer'' is false").  This mode is used in curation projects tracking
-      the evolving state of support for propositions of interest, as curators continue
-      to collect and assess evidence and work toward a conclusive assertion.'
+    - "Primary assertions of knowledge about some subject entity are captured in\
+      \ self-contained Statement objects. Every Statement puts forth a 'proposition'\
+      \ - a possible fact it assesses or reports to be true.  The semantics of this\
+      \ proposition are explicitly captured using 'subject', 'predicate', and 'object'\
+      \ attributes, and optional 'qualifier' slot(s)."
+    - "The model supports two \"\
+      \ modes of use\" for Statements, which differ in what they say about their proposition,\
+      \ and can be distinguished by whether 'direction' and 'strength' or 'score'\
+      \ attributes are populated."
+    - "In \"Assertion Mode\" a Statement simply reports\
+      \ an SPOQ proposition to be true (e.g. that \"BRCA2 c.8023A>G is pathogenic\
+      \ for Breast Cancer\"), and 'direction', 'strength', and 'score' attributes\
+      \ are not populated.  Thos mode is used by project reporting conclusive assertions\
+      \ about a domain of discourse, but not providing confidence or evidence level\
+      \ assessments."
+    - "In \"Proposition Assessment Mode\" a Statement describes\
+      \ the overall state of evidence and/or confidence surrounding the SPOQ proposition\
+      \ - which may or may not be true. The 'direction' and 'strength' or 'score'\
+      \ attributes are populated, which allows for Statements to report that \"there\
+      \ is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is\
+      \ pathogenic for Breast Cancer'\", or \"we have high confidence that the proposition\
+      \ 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is false\").  This mode\
+      \ is used in curation projects to track the evolving state of support for propositions\
+      \ of interest, as curators continue to collect evidence and work toward a conclusive\
+      \ assertion."
     from_schema: https://w3id.org/sepio-model
-    aliases:
-    - Assertion; Claim
     status: Draft
     is_a: InformationEntity
-    slots:
-    - statementText
-    - proposition
-    - subject
-    - predicate
-    - object
-    - qualifier
-    - direction
-    - strength
-    - score
-    - subjectClassification
-    - hasEvidenceOfTypes
-    - hasEvidenceLines
-    - hasEvidence
-    slot_usage:
+    attributes:
       statementText:
         description: A natural-language expression of what a Statement asserts to
           be true.
@@ -1005,7 +711,7 @@ classes:
           via its predicate.
         comments:
         - The object of a Statement can be any Entity or concept that is related to
-          the subject, e.g. for Genetic Variation subjects this is often a disease,
+          the subject, e.g. for Genetic Variation subjects the object is often a disease,
           drug, gene, molecular consequence, functional impact on gene or protein.
         status: Draft
         range: string
@@ -1017,19 +723,20 @@ classes:
           providing additional detail, or constraining the statement to apply in a
           particular context.
         comments:
-        - "The qualifier attribute allows representation of more complex, n-ary statements\
+        - "-The qualifier attribute allows representation of more complex, n-ary statements\
           \ that may not be accommodated by a simple subject-predicate-object (SPO)\
-          \ triple. For example, if a triple asserts that 'Variant X' - predicts sensitivity\
-          \ to - 'Treatment Y', a qualifier can be used to indicate that this applies\
-          \ in the context of a particular 'Disease Z'. Qualifiers can also add information\
-          \ that quantifies aspects of a Statement - e.g. for a Statement triple asserting\
-          \ that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to\
-          \ add frequency/penetrance information that quantifies the percentage of\
-          \ carriers in which the phenotype is observed to manifest. Statement profiles\
-          \ may define more than one qualifier, as needed to capture different types\
-          \ of qualifying information. \n\nThe SEPIO core model specifies use of a\
-          \ key-value 'Qualifier' object to capture the meaning and value of each\
-          \ type of qualifying information relevant for a given type of Statement.\
+          \ triple. For example, if an SPO triple asserts that 'Variant X' - predicts\
+          \ sensitivity to - 'Treatment Y', a qualifier can be used to indicate that\
+          \ this applies in the context of a particular 'Disease Z'. Qualifiers can\
+          \ also add information that quantifies aspects of a Statement - e.g. for\
+          \ a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y',\
+          \ a qualifier can be used to add frequency/penetrance information that quantifies\
+          \ the percentage of carriers in which the phenotype is observed to manifest.\
+          \ Statement profiles may define more than one qualifier, as needed to capture\
+          \ different types of qualifying information."
+        - "The SEPIO core model specifies\
+          \ use of a key-value 'Qualifier' object to capture the meaning and value\
+          \ of each type of qualifying information relevant for a given type of Statement.\
           \ But in practice, profiles for specific Statement types may choose to define\
           \ one or more specializations of the generic 'qualifier' property as named\
           \ attributes. This makes the data more succinct and parsable, and allows\
@@ -1051,40 +758,40 @@ classes:
         - Statements put forth a Proposition that expresses some possible fact about
           the world, and may provide an assessment of this proposition's validity
           (i.e. how likely it is to be true or false based on evaluated evidence).
-          The semantics of the Proposition are captured in the 'subject,' 'predicate',
-          'object', and optional 'qualifier' attributes. The assessment of the Proposition's
-          validity are captured in 'direction', 'strength', and 'score' attributes.
-          The 'direction' attribute is used to indicate whether the Statement's Proposition
-          is supported by the agent's assessment  (when evidence favors its validity),
-          is refuted by the agent's assessment (when evidence argues against its validity),
-          or remains neutral (when conflicting or insufficient evidence exists to
-          assert one direction or the other). (Enumerated values = 'supports', 'disputes',
-          'neutral').
+          The semantics of the Proposition are captured in the 'subject',  'predicate',
+          'object', and optional 'qualifier' attributes. An assessment of the Proposition's
+          validity can be captured using 'direction', 'strength', and 'score' attributes.
+          The 'direction'  attribute is used to indicate whether the Statement's Proposition
+          is *supported* by the agent's assessment (when evidence favors its validity),
+          is *disputed* by the agent's assessment (when evidence argues against its
+          validity), or remains *neutral* (when conflicting or insufficient evidence
+          exists to assert one direction or the other).  (Enumerated values = 'supports',
+          'disputes', 'neutral').
         status: Draft
         range: string
         required: false
         multivalued: false
       strength:
-        description: A term used to report the strength of a Proposition's validity
-          assessment in the direction indicated (i.e. how strongly supported or disputed
-          the Proposition is believed to be).  Depending on its implementation, a
-          strength assessment may be framed in terms of how *confident* the agent
-          is that the Proposition is true or false, or in terms of the *strength of
-          evidence* they believe supports or disputes it.
+        description: A term used to report the strength of a Proposition's assessment
+          in the direction indicated (i.e. how strongly supported or disputed the
+          Proposition is believed to be).  Implementers may choose to frame a strength
+          assessment in terms of how *confident* an agent is that the Proposition
+          is true or false, or in terms of the *strength of all evidence* they believe
+          supports or disputes it.
         comments:
         - Statements put forth a Proposition that expresses some possible fact about
           the world, and may provide an assessment of this proposition's validity
           (i.e. how likely it is to be true or false based on evaluated evidence).
           The semantics of the Proposition are captured in the 'subject,' 'predicate',
-          'object', and optional 'qualifier' attributes. The assessment of the Proposition's
-          validity are captured in 'direction', 'strength', and 'score' attributes.
+          'object', and optional 'qualifier' attributes. An assessment of the Proposition's
+          validity can be captured using 'direction',  'strength', and 'score' attributes.
           The 'strength' attribute is used to report the strength of this assessment
-          in the direction indicated. Tee assessment can frame strength as a level
-          of confidence that the Proposition is true or false, or as a  level of evidence
-          that supports or disputes it. Data creators can define the permissible values
+          in the direction indicated. Strength can be framed as a *level of confidence*
+          that the Proposition is true or false, or as a *level of evidence* that
+          supports or disputes it. Data creators can define the permissible values
           for the 'strength' attribute to indicate which of these facets is being
           assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence'
-          vs 'weak evidence') - or they can chose values that don't commit to one
+          vs 'weak evidence') - or they can choose values that don't commit to one
           or the other if they don't want to make the distinction (e.g. 'high' vs
           'medium' vs 'low').
         status: Draft
@@ -1102,7 +809,7 @@ classes:
         - Statements put forth a Proposition that expresses some possible fact about
           the world, and may provide an assessment of this proposition's validity
           (i.e. how likely it is to be true or false based on evaluated evidence).
-          The semantics of the Proposition are captured in the 'subject,' 'predicate',
+          The semantics of the Proposition are captured in the 'subject', 'predicate',
           'object', and optional 'qualifier' attributes. The assessment of the Proposition's
           validity are captured in 'direction', 'strength', and 'score' attributes.  The
           'score' attribute serves the same purpose as 'strength', but allows for
@@ -1156,13 +863,11 @@ classes:
           For example, ExaC allele counts and frequency calculations for the BRCA2
           c.8023A>G variant in different populations may be collectively assessed
           to provide an argument of ''moderate'' strength in ''support of '' a proposition
-          that the variant is pathogenicity for breast cancer.
-
-
-          Evidence Lines are useful in cases where a data provider wants to describe
+          that the variant is pathogenicity for breast cancer.'
+        - Evidence Lines are useful in cases where a data provider wants to describe
           in detail how information was  assessed as evidence to generate and score
           different arguments for or against a Statement''s proposition. Evidence
-          Lines can be omitted if such information is not available or needed.'
+          Lines can be omitted if such information is not available or needed.
         status: Draft
         range: EvidenceLine
         required: false
@@ -1181,7 +886,8 @@ classes:
           \ including direct observation or measurement data, derived statistical\
           \ calculations, data tables or figures in a publication, conclusions/findings\
           \ from a particular study, or prior assertions of knowledge  that themselves\
-          \ are based on their own set of evidence.  \n- This is a shortcut relation\
+          \ are based on their own set of evidence."
+        - "This is a shortcut relation\
           \ that links a Statement directly to a piece of evidence supporting it,\
           \ bypassing the Evidence Line class - to be used data creators cannot or\
           \ do not wish to create an Evidence Line object."
@@ -1195,21 +901,23 @@ classes:
       information describing how these data items were generated.
     title: Study Result
     comments:
-    - "StudyResults provide a useful way to capture a subset of items from a study\
+    - "- StudyResults provide a useful way to capture a subset of items from a study\
       \ dataset that are used as evidence in generating higher order knowledge assertions\
       \ about the entity that is the focus of the study result. For example, a subset\
       \ of allele frequency data items about a particular variant of interest in the\
       \ complete gnomAD dataset can be reported in a StudyResult object, along with\
       \ relevant provenance information, so they can be referenced as evidence for\
-      \ a higher-order assertion about the variant's pathogenicity.\n\nAs an example,\
+      \ a higher-order assertion about the variant's pathogenicity."
+    - "As an example,\
       \ consider the comprehensive allele frequency dataset provided by gnomAD, which\
       \ covers millions of variants. A curator looking to assess the pathogenicity\
       \ of a particular variant might create a StudyResult object to capture a subset\
       \ of data related to this focus allele, including  its count, frequency, homozygous\
       \ frequency, along with metadata concerning the shared provenance or quality\
       \ of this data. The StudyResult could then be references as a piece of evidence\
-      \ used to inform the focus alleles final pathogenicity classification. \n\n\
-      Note that the use of a Study Results is not reserved only for defining subsets\
+      \ used to inform the focus alleles final pathogenicity classification."
+    - "Note\
+      \ that the use of a Study Results is not reserved only for defining subsets\
       \ of data from a larger HTP/clinical study data sets.  A StudyResult might be\
       \ used to organize the data from a simple, small scale bench experiment - e.g.\
       \ a western blot analysis of protein expression, or an in vitro binding assay\
@@ -1220,14 +928,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: InformationEntity
-    slots:
-    - focus
-    - dataItems
-    - interpretation
-    - sourceDataSet
-    - componentResult
-    - studyGroup
-    slot_usage:
+    attributes:
       focus:
         description: A specific subject or experimental unit in a Study, that data
           in the StudyResult object is about - e.g. a particular variant in a population
@@ -1245,30 +946,29 @@ classes:
         required: false
         multivalued: false
       dataItems:
-        description: A DataItem that is included in the StudyResult because it pertains
-          to the entity that is the 'focus'. This data can directly describe this
-          focus, or represent metadata about how data in the Result was generated.
+        description: One or more data items that are included in the StudyResult because
+          it pertains to the 'focus' of the result. This can be data that directly
+          describes this 'focus' (e.g. the population frequency of an allele focus),
+          or be metadata about how data about the 'focus' were generated (e.g the
+          quality measures for the sequencing run used to determine this allele frequency).
         comments:
-        - 'Any type of data item from a Study may be captured in a StudyResult - including
-          raw experimental/observational data, derived calculations or quality measures,
-          provenance information about how the data were generated in the study, or
-          qualitative expert interpretations of the primary study data (e.g. the interpretation
-          of a blood cholesterol value of 250 mg/dL as being ''high'', or a Polyphen
-          functional impact score of 0.115 as being ''deleterious'').
-
-
-          The SEPIO core model specifies use of a key-value based ''DataItem'' object
-          to capture the meaning and value of each type of data item captured in a
-          given StudyResult. But in practice, profiles for specific StudyResult types
-          may choose to define one or more specializations of the generic ''dataItems''
-          property as named attributes. This makes the data more succinct and parsable,
-          and allows specific constraints to be applied and validated for different
-          data items. For example, a PopulaitonAlleleFrequencyStudyResult profile
-          may define a named ''focusAlleleFrequency ''attribute that is required,
-          and a named ''focusAlleleCount'' attribute that is optional - both of which
-          conceptually specialize the core-im ''dataItems'' property. Under this approach,
-          the core ''dataITems'' acts as a placeholder to seed such specializations,
-          but is not used directly in StudyResult profiles.'
+        - 'Any type of data item from a Study may be captured in a StudyResult -
+          including raw experimental/observational data, derived calculations or quality
+          measures, provenance information about how the data were generated in the
+          study, or qualitative expert interpretations of the primary study data (e.g.
+          the interpretation of a blood cholesterol value of 250 mg/dL as being ''high'',
+          or a Polyphen functional impact score of 0.115 as being ''deleterious'').'
+        - 'The model specifies use of a key-value based ''DataItem'' object to capture
+          the meaning and value of each type of data item captured in a given StudyResult.
+          But in practice, profiles for specific StudyResult types may choose to define
+          one or more specializations of the generic ''dataItems'' property as named
+          attributes. This makes the data more succinct and parsable, and allows specific
+          constraints to be applied and validated for different data items. For example,
+          a PopulaitonAlleleFrequencyStudyResult profile may define a named ''focusAlleleFrequency''
+          attribute that is required, and a named ''focusAlleleCount'' attribute that
+          is optional - both of which conceptually specialize the core-im ''dataItems''
+          property. Under this approach, the core ''dataItems'' acts as a placeholder
+          to seed such specializations, but is not used directly in StudyResult profiles.'
         status: Informative
         range: DataItem
         required: false
@@ -1301,7 +1001,7 @@ classes:
         description: Another StudyResult comprised of data items about the same focus
           as its parent Result, but based on a more narrowly scoped analysis of the
           foundational data (e.g. an analysis based on data about a subset of the
-          parent Results full study population) .
+          parent Results full study population).
         comments:
         - This attribute allows data creators to break down a StudyResult into finer-grained
           StudyResult instances with a narrower scope. For example, a StudyResult
@@ -1338,23 +1038,25 @@ classes:
       \ the BRCA2 c.8023A>G variant in the ExAC database are evidence items that may\
       \ be collectively assessed to build an EvidenceLine making argument of 'moderate'\
       \ strength that 'supports' a target proposition that the variant is pathogenic\
-      \ for Breast Cancer. \n\nEvidence Lines are flexible with respect to the granularity\
+      \ for Breast Cancer."
+    - "Evidence Lines are flexible with respect to the granularity\
       \ of arguments they support, and the scope of evidence items they can collectively\
       \ assess. Narrow scoping will bucket available evidence into many, fine-grained\
       \ Evidence Lines that make the most atomic independently meaningful arguments\
       \ possible. The ACMG Variant Pathogenicity Interpretation Guidelines are an\
       \ example of a fairly fine-grained evidence interpretation framework. Broader\
-      \ scoping approaches may organize the same evidence into fewer Evidence Lines\
-      \ that build and assess less atomic arguments based on a wider and more diverse\
-      \ set of evidence items.  For example, CIViC curators assess the strength and\
-      \ direction of evidence items at the level of *all information reported in a\
-      \ publication for a specific study* - which can encompass many different results\
-      \ and evidence types that under more fine-grained interpretation approaches\
-      \ might be split apart and assessed as separate arguments. \n\nThis CIViC EID5682\
-      \ record (https://civicdb.org/evidence/5682/summary) is a clear example of this\
-      \  as it illustrates how ACMG-curated evidence assessed at a finer-grained level\
-      \ would lend itself to SEPIO representations that creates a larger number of\
-      \ more atomic Evidence Lines, as compared to how CIViC-curated evidence from\
+      \ scoping approaches may organize the same available evidence into fewer Evidence\
+      \ Lines that build and assess less atomic arguments based on a wider and more\
+      \ diverse set of evidence items.  For example, CIViC curators assess the strength\
+      \ and direction of evidence items at the level of *all information reported\
+      \ in a publication for a specific study* - which can encompass many different\
+      \ results and evidence types that under more fine-grained interpretation approaches\
+      \ might be split apart and assessed as separate lines of evidence."
+    - "This\
+      \ CIViC EID5682 record (https://civicdb.org/evidence/5682/summary) is a clear\
+      \ example of this - illustrating how ACMG-curated evidence assessed at a finer-grained\
+      \ level would lend itself to SEPIO representations that creates a larger number\
+      \ of more atomic Evidence Lines, as compared to how CIViC-curated evidence from\
       \ the same source or publication would be represented. We see here that CIViC\
       \ evidence assessments are performed at the level of all results reported in\
       \ PMID:23143947 - which SEPIO would capture as a single Evidence Line that assigns\
@@ -1367,13 +1069,23 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: InformationEntity
-    slots:
-    - targetProposition
-    - evidenceItems
-    - directionOfEvidenceProvided
-    - strengthOfEvidenceProvided
-    - scoreOfEvidenceProvided
-    slot_usage:
+    attributes:
+      subtype:
+        description: A specific type of evidence the EvidenceLine instance represents
+          (e.g. 'mutant phenotype evidence', 'evidence from manual interpretation',
+          'ACMG PM2 evidence')
+        comments:
+        - Data creators may choose to define specific types of evidence lines relevant
+          for their domain/use case, based on the type of evidence items that comprise
+          it, the methodology that guided evidence interpretation, or the type of
+          statement the evidence line supports.  Terms from ontologies like the Evidence
+          and Conclusion Ontology (ECO), or categories from evidence interpretation
+          frameworks like the ACMG Variant Interpretation Guidelines, can be used
+          as values here.
+        status: Informative
+        range: Coding
+        required: false
+        multivalued: false
       targetProposition:
         description: The possible fact against which evidence items contained in an
           Evidence Line were collectively evaluated, in determining the overall strength
@@ -1396,14 +1108,15 @@ classes:
         range: Proposition
         required: false
         multivalued: false
-      evidenceItems:
+      hasEvidenceItems:
         description: An individual piece of information that was evaluated as evidence
           in building the argument represented by an Evidence Line.
         comments:
         - "A given Evidence Line may be supported by one or many individual evidence\
           \ items. What matters is that all evidence items in a given Evidence Line\
           \ get collectively assessed and assigned direction and strength  as a single\
-          \ argument for or against a target proposition. \n\nDifferent types and\
+          \ argument for or against a target proposition."
+        - "Different types and\
           \ scales of information entity can serve as evidence (experimental measurements\
           \ or observations, data tables or figures, images, prior assertions, etc.)\
           \ Only when assessed as evidence do we consider the information to be an\
@@ -1417,7 +1130,7 @@ classes:
         multivalued: true
       directionOfEvidenceProvided:
         description: The direction of support that the Evidence Line is determined
-          to provide toward its target Proposition (supports, disputes, neutral)
+          to provide toward its target Proposition (supports, disputes, neutral).
         status: Draft
         range: string
         required: false
@@ -1425,7 +1138,7 @@ classes:
       strengthOfEvidenceProvided:
         description: The strength of support that an Evidence Line is determined to
           provide for or against its target Proposition, evaluated relative to the
-          direction indicated by the directionOfEvidenceProvided
+          direction indicated by the directionOfEvidenceProvided.
         comments:
         - Values of this attribute can be defined by for a given profile based on
           domain/application needs, but should be framed in qualitative terms (e.g.
@@ -1447,33 +1160,41 @@ classes:
         range: float
         required: false
         multivalued: false
+      evidenceItemSources:
+        description: An information resource (e.g. document, dataset, digital resource
+          such as a database or  knowledgebase) that provides information interpreted
+          as evidence in building an Evidence Line.
+        comments:
+        - This is a 'shortcut relation' that can be used to directly link an Evidence
+          Line to sources of its supporting Evidence Items, without having to represent
+          those Evidence Items directly. Populate with the name or uri or curie of
+          a source of information. Future work will define a more formal framework
+          for referencing information sources.
+        status: Informative
+        range: string
+        required: false
+        multivalued: true
   Proposition:
     description: An abstract entity representing a possible fact that is either true
       or false.
     title: Proposition
     comments:
-    - "Propositions are taken to represent the semantic content of sentences or larger\
-      \ lexical entities formulated in some natural or artificial language.  As abstract\
-      \ entities, Propositions capture a 'sharable' piece of meaning that can be put\
-      \ forth as true or false in many different Statement instances made by different\
-      \ Agents on different occasions.  Their identity and existence are independent\
-      \ of space and time, and of whether they are ever asserted to be true by some\
-      \ agent. \n\nPropositions may be used in two contexts in this model: (1) in\
-      \ Statements to represent the possible fact that is put forth as true, or  that\
-      \ is subjected to an assessment of the level of evidence supporting it; (2)\
-      \ in Evidence Lines to represent the possible fact that an argument built from\
-      \ evidence items is evaluated against."
+    - "Propositions are taken to represent the semantic content of sentences or\
+      \ larger lexical entities formulated in some natural or artificial language.\
+      \  As abstract entities, Propositions capture a 'sharable' piece of meaning\
+      \ that can be put forth as true or false in many different Statement instances\
+      \ made by different Agents on different occasions.  Their identity and existence\
+      \ are independent of space and time, and of whether they are ever asserted to\
+      \ be true by some agent."
+    - "Propositions may be used in two contexts in this\
+      \ model: (1) in Statements to represent the possible fact that is put forth\
+      \ as true, or  that is subjected to an assessment of the level of evidence supporting\
+      \ it; (2) in Evidence Lines to represent the possible fact that an argument\
+      \ built from evidence items is evaluated against."
     from_schema: https://w3id.org/sepio-model
     status: Informative
     is_a: Entity
-    slots:
-    - propositionText
-    - subject_2
-    - predicate_2
-    - object_2
-    - qualifier_2
-    - negated
-    slot_usage:
+    attributes:
       propositionText:
         description: A natural-language expression of the Proposition's meaning (i.e.
           the 'possible fact' it expresses).
@@ -1481,7 +1202,7 @@ classes:
         range: string
         required: false
         multivalued: false
-      subject_2:
+      subject:
         description: The Entity or concept about which the Proposition is made.
         comments:
         - While the Core Information Model is domain-agnostic, and supports Propositions
@@ -1495,7 +1216,7 @@ classes:
         range: string
         required: true
         multivalued: false
-      predicate_2:
+      predicate:
         description: The relationship declared to hold between the subject and the
           object of the Proposition.
         comments:
@@ -1510,7 +1231,7 @@ classes:
         range: Coding
         required: true
         multivalued: false
-      object_2:
+      object:
         description: An Entity or concept that is related to the subject of a Proposition
           via its predicate.
         comments:
@@ -1521,35 +1242,36 @@ classes:
         range: string
         required: true
         multivalued: false
-      qualifier_2:
+      qualifier:
         description: An additional piece of information that extends or refines the
           meaning of a Propositions's core subject - predicate - object 'triple' -
           by providing additional detail, or constraining the statement to apply in
           a particular context.
         comments:
-        - "The qualifier attribute allows representation of more complex, n-ary propositions\
-          \ that may not be accommodated by a simple subject-predicate-object (SPO)\
-          \ triple. For example, if a triple asserts that 'Variant X' - predicts sensitivity\
-          \ to - 'Treatment Y', a qualifier can be used to indicate that this applies\
-          \ in the context of a particular 'Disease Z'. Qualifiers can also add information\
-          \ that quantifies aspects of a Statement - e.g. for an SPO triple asserting\
-          \ that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to\
-          \ add frequency/penetrance information that quantifies the percentage of\
-          \ carriers in which the phenotype is observed to manifest. Profiles of specific\
-          \ proposition types may define more than one qualifier, as needed to capture\
-          \ different types of qualifying information. \n\nThe SEPIO core model specifies\
-          \ use of a key-value 'Qualifier' object to capture the meaning and value\
-          \ of each type of qualifying information relevant for a given type of Statement.\
-          \ But in practice, profiles for specific Proposition types may choose to\
-          \ define one or more specializations of the generic 'qualifier' property\
-          \ as named attributes. This makes the data more succinct and parsable, and\
-          \ allows specific constraints to be applied and validated for different\
-          \ qualifiers. For example, a VariantPathogenicityStatement profile may define\
-          \ a named 'alleleOriginQualifier' attribute that is required, and a named\
-          \ 'geneContextQualifier' attribute that is optional - both of which conceptually\
-          \ specialize the core-im 'qualifier' property. Under this approach, the\
-          \ core 'qualifier' acts as a placeholder to seed such specializations, but\
-          \ is not used directly in profiles."
+        - "The qualifier attribute allows representation of more complex, n-ary\
+          \ propositions that may not be accommodated by a simple subject-predicate-object\
+          \ (SPO) triple. For example, if a triple asserts that 'Variant X' - predicts\
+          \ sensitivity to - 'Treatment Y', a qualifier can be used to indicate that\
+          \ this applies in the context of a particular 'Disease Z'. Qualifiers can\
+          \ also add information that quantifies aspects of a Statement - e.g. for\
+          \ an SPO triple asserting that a 'Variant X'- causes - 'Phenotype Y', a\
+          \ qualifier can be used to add frequency/penetrance information that quantifies\
+          \ the percentage of carriers in which the phenotype is observed to manifest.\
+          \ Profiles of specific proposition types may define more than one qualifier,\
+          \ as needed to capture different types of qualifying information."
+        - "The\
+          \ SEPIO core model specifies use of a key-value 'Qualifier' object to capture\
+          \ the meaning and value of each type of qualifying information relevant\
+          \ for a given type of Statement. But in practice, profiles for specific\
+          \ Proposition types may choose to define one or more specializations of\
+          \ the generic 'qualifier' property as named attributes. This makes the data\
+          \ more succinct and parsable, and allows specific constraints to be applied\
+          \ and validated for different qualifiers. For example, a VariantPathogenicityStatement\
+          \ profile may define a named 'alleleOriginQualifier' attribute that is required,\
+          \ and a named 'geneContextQualifier' attribute that is optional - both of\
+          \ which conceptually specialize the core-im 'qualifier' property. Under\
+          \ this approach, the core 'qualifier' acts as a placeholder to seed such\
+          \ specializations, but is not used directly in profiles."
         status: Informative
         range: Qualifier
         required: false
@@ -1570,22 +1292,16 @@ classes:
     description: A collection of individuals or specimens from the same taxonomic
       class, selected for analysis in a scientific study based on their exhibiting
       one or more common characteristics  (e.g. species, race, age, gender, disease
-      state, income) May be referred to as a 'cohort' or 'population' in specific
+      state, income). May be referred to as a 'cohort' or 'population' in specific
       research settings.
     title: Study Group
     comments:
     - A Study Group may include all participants in a given study, or specific subsets
       that are designated based on shared roles or characteristics.
     from_schema: https://w3id.org/sepio-model
-    aliases:
-    - Population; Cohort
     status: Draft
     is_a: Entity
-    slots:
-    - memberCount
-    - isSubsetOf
-    - characteristics
-    slot_usage:
+    attributes:
       memberCount:
         description: The total number of individual members in the StudyGroup.
         status: Informative
@@ -1619,22 +1335,15 @@ classes:
       terminology or code system.
     title: Coding
     comments:
-    - 'Either a code, label, or both must be provided.
-
-
-      Coding supports use of terms form ontologies/terminologies in structured object
+    - 'Either a code, label, or both must be provided.'
+    - 'Coding supports use of terms form ontologies/terminologies in structured object
       that reports id, label, and metadata about system it came from.  follows FHIR
       approach.  Used in model when implementers are free to create own value sets
       of terms which get reported within coding objects in SEPIO data. Validation
       requires additional tooling - as constraints are not defined in schema itself.'
     from_schema: https://w3id.org/sepio-model
     is_a: Utility
-    slots:
-    - code
-    - label_2
-    - system
-    - systemVersion
-    slot_usage:
+    attributes:
       code:
         description: "A symbol uniquely identifying the concept, as in a syntax defined\
           \ by the code system.  CURIE format is preferred where possible (e.g. \u2018\
@@ -1642,7 +1351,7 @@ classes:
         range: string
         required: false
         multivalued: false
-      label_2:
+      label:
         description: The human-readable name for the coded concept, as defined by
           the code system.
         range: string
@@ -1682,11 +1391,8 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     is_a: Utility
-    slots:
-    - name_2
-    - value_2
-    slot_usage:
-      name_2:
+    attributes:
+      name:
         description: A descriptive name that describes the type of information captured
           in the Qualifier value.
         comments:
@@ -1697,13 +1403,14 @@ classes:
         range: string
         required: true
         multivalued: false
-      value_2:
+      value:
         description: The value of the qualifier - holding information that refines/extends
           the meaning of the Statement.
         comments:
         - Value can be of any data type - a string, an integer or float, a uriorcurie,
           a Coding, etc.
         status: Informative
+        range: string
         required: true
         multivalued: false
   Expression:
@@ -1716,12 +1423,8 @@ classes:
       values, as opposed to human-readable names.
     from_schema: https://w3id.org/sepio-model
     is_a: Utility
-    slots:
-    - value_3
-    - systemURL
-    - systemVersion_2
-    slot_usage:
-      value_3:
+    attributes:
+      value:
         description: A free-text rendering of the expression used as a label for the
           entity
         range: string
@@ -1732,7 +1435,7 @@ classes:
         range: uriorcurie
         required: false
         multivalued: false
-      systemVersion_2:
+      systemVersion:
         description: The version of the nomenclature system.
         range: string
         required: false
@@ -1744,17 +1447,13 @@ classes:
     title: Extension
     comments:
     - 'Extension objects allow for  descriptions of an class with additional attributes
-      unique to a content provider
+      unique to a content provider'
 
-      The modeling pattern and use of Extensions is based on that defined by the FHIR
+    - 'The modeling pattern and use of Extensions is based on that defined by the FHIR
       Speciufication - see https://build.fhir.org/extensibility.html'
     from_schema: https://w3id.org/sepio-model
     is_a: Utility
-    slots:
-    - extensionDescription
-    - name_3
-    - value_4
-    slot_usage:
+    attributes:
       extensionDescription:
         description: A free text description of the intended meaning and use of the
           extension element, which may include the types of values it takes, and how
@@ -1762,13 +1461,13 @@ classes:
         range: string
         required: false
         multivalued: false
-      name_3:
+      name:
         description: A name for the Extension. Should be indicative of its meaning
           and/or the type of information it value represents.
         range: string
         required: true
         multivalued: false
-      value_4:
+      value:
         description: The value of the Extension - can be any primitive or structured
           object
         required: true
@@ -1788,17 +1487,11 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: Utility
-    slots:
-    - recordIdentifier
-    - recordVersion
-    - derivedFromRecord
-    - dateRecordCreated
-    - contributions_2
-    slot_usage:
+    attributes:
       recordIdentifier:
         description: The identifier of the record described in the RecordMetadata
           object (required when the record described is not the one in the present
-          system)
+          system).
         comments:
         - This is needed only when the RecordMetadata object describes an upstream
           source record, as opposed to the record in the present system, so it is
@@ -1812,7 +1505,7 @@ classes:
         required: false
         multivalued: false
       recordVersion:
-        description: The version number of the record-level artifact the object describes
+        description: The version number of the record-level artifact the object describes.
         status: Draft
         range: string
         required: false
@@ -1829,13 +1522,13 @@ classes:
       dateRecordCreated:
         description: The date the record was initially created.
         status: Draft
-        range: date
+        range: string
         required: false
         multivalued: false
-      contributions_2:
+      contributions:
         description: describes specific contributions made by an human or software
           agent to the creation, modification, or administrative management of a data
-          record or object
+          record or object.
         status: Draft
         range: Contribution
         required: false
@@ -1853,12 +1546,8 @@ classes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     is_a: Utility
-    slots:
-    - name_4
-    - values
-    - valueOperator
-    slot_usage:
-      name_4:
+    attributes:
+      name:
         description: The type of the trait or role described by the trait (e.g. 'ethnicity',
           'sex', 'age', 'disease status').
         status: Draft
@@ -1874,7 +1563,7 @@ classes:
         multivalued: true
       valueOperator:
         description: An operation that defines how to logically interpret a set of
-          more than one Characteristic values ('AND', 'OR', 'NOT')
+          more than one Characteristic values ('AND', 'OR', 'NOT').
         comments:
         - An 'AND' operator indicates that an individual exhibits all of the characteristic
           values listed.  An 'OR' operator indicates the individual exhibits one or

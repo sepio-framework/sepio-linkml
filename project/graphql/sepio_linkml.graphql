@@ -8,10 +8,10 @@ type Activity
     alternativeLabels: [String]
     description: String
     extensions: [Extension]
-    subtype5: Coding
+    subtype: Coding
     date: Date
     performedBy: [Agent]
-    specifiedBy2: [Method]
+    specifiedBy: [Method]
     input: [Entity]
     output: [Entity]
   }
@@ -25,13 +25,13 @@ type Agent
     alternativeLabels: [String]
     description: String
     extensions: [Extension]
-    subtype6: String
+    subtype: String
     name: String
   }
 
 type Characteristic
   {
-    name4: String!
+    name: String!
     values: [String]!
     valueOperator: String
   }
@@ -39,7 +39,7 @@ type Characteristic
 type Coding
   {
     code: String
-    label2: String
+    label: String
     system: String
     systemVersion: String
   }
@@ -53,10 +53,10 @@ type Contribution
     alternativeLabels: [String]
     description: String
     extensions: [Extension]
-    subtype5: Coding
+    subtype: Coding
     date: Date
     performedBy: [Agent]
-    specifiedBy2: [Method]
+    specifiedBy: [Method]
     input: [Entity]
     output: [Entity]
     contributor: Agent
@@ -82,7 +82,7 @@ type DataItem
     reportedIn: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
-    subtype3: Coding
+    subtype: Coding
     value: String!
     unit: Coding
     variabilityMeasures: [DataItem]
@@ -108,10 +108,10 @@ type DataSet
     reportedIn: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
-    subtype4: Coding
-    releaseDate: Date
+    subtype: Coding
+    releaseDate: String
     version: String
-    license2: String
+    license: String
   }
 
 type Document
@@ -132,9 +132,9 @@ type Document
     reportedIn: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
-    subtype2: Coding
+    subtype: Coding
     title: String
-    urls2: [String]
+    urls: [String]
     pmid: String
     doi: String
     license: String
@@ -169,25 +169,27 @@ type EvidenceLine
     reportedIn: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
+    subtype: Coding
     targetProposition: Proposition
-    evidenceItems: [InformationEntity]
+    hasEvidenceItems: [InformationEntity]
     directionOfEvidenceProvided: String
     strengthOfEvidenceProvided: String
     scoreOfEvidenceProvided: Float
+    evidenceItemSources: [String]
   }
 
 type Expression
   {
-    value3: String!
+    value: String!
     systemURL: Uriorcurie
-    systemVersion2: String
+    systemVersion: String
   }
 
 type Extension
   {
     extensionDescription: String
-    name3: String!
-    value4: String!
+    name: String!
+    value: String!
   }
 
 type InformationEntity
@@ -242,17 +244,17 @@ type Proposition
     description: String
     extensions: [Extension]
     propositionText: String
-    subject2: String!
-    predicate2: Coding!
-    object2: String!
-    qualifier2: [Qualifier]
+    subject: String!
+    predicate: Coding!
+    object: String!
+    qualifier: [Qualifier]
     negated: Boolean
   }
 
 type Qualifier
   {
-    name2: String!
-    value2: String!
+    name: String!
+    value: String!
   }
 
 type RecordMetadata
@@ -260,8 +262,8 @@ type RecordMetadata
     recordIdentifier: String
     recordVersion: String
     derivedFromRecord: [String]
-    dateRecordCreated: Date
-    contributions2: [Contribution]
+    dateRecordCreated: String
+    contributions: [Contribution]
   }
 
 type Statement

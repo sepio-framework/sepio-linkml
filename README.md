@@ -2,7 +2,8 @@
 
 SEPIO was first developed as an ontology by the [Monarch Initiative](https://monarchinitiative.org/about) to support standardized RDF representations of evidence and provenance across integrated genotype-phenotype datasets (the Scientific Evidence and Provenance Information Ontology). The ontological model has since been abstracted into a generic **Core Information Model (IM)** that can be implemented in any language or format. The Core IM is domain-agnostic, and able to represent assertions and their evidence and provenance of any kind. Application of SEPIO to a specific data set or use case requires defining a **‘Profile’** that extends/customizes the generic core model for a particular domain or application.
 
-The components of the SEPIO Framework include: 
+The components of the SEPIO Framework include:
+
 1. **A Domain Analysis Model (DAM)**: an informal description of the domain we are modeling (scientific assertions and their evidence/provenance)
 2. **A Core Information Model (IM)**:  defines data structures that can represent information about this domain (for any type of assertion and evidence).
 3. **A 'Profiling' Methodology**:  Implementations extend the core model with domain-specific content to define a “SEPIO Profile” - a custom schema for a particular application or use case.

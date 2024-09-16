@@ -16,6 +16,7 @@ nav:
   # - Home: home.md
   - Index: index.md
   - About: about.md
+  - Core IM Diagram: core-im-diagram.md
 site_url: https://sepio-framework.github.io/sepio-linkml
 repo_url: https://github.com/sepio-framework/sepio-linkml
 

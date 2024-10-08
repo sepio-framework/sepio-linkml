@@ -293,15 +293,6 @@
 
       DataSet : license
 
-      DataSet : methodTypes
-
-
-
-
-    DataSet --&gt; "*" Coding : methodTypes
-    click Coding href "../Coding"
-
-
       DataSet : recordMetadata
 
 
@@ -323,6 +314,17 @@
 
 
     DataSet --&gt; "0..1" Coding : subtype
+    click Coding href "../Coding"
+
+
+      DataSet : supportingMethods
+
+      DataSet : supportingMethodTypes
+
+
+
+
+    DataSet --&gt; "*" Coding : supportingMethodTypes
     click Coding href "../Coding"
 
 
@@ -418,15 +420,25 @@
 * Examples - an experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification.<br/>
 * Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/ cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission Electron Microscopy").<br/>
 </details>
-<p><a href="../methodTypes/">methodTypes</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
+<p><a href="../supportingMethods/">supportingMethods</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
-<p>Types of methodological approaches used to collect, generate, or evaluate the reported information. <br/></p>
+<p>Specific methods that were executed to directly or indirectly support creation of the Information Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
 <details>
 <summary>Implementation Guidance</summary>
-* This field captures terms representing *types* of methods applied, vs the "specifiedBy" attribute which captures specific instances of methods used.<br/>
-* Implementers should define a relevant source of method type codes/terms to use here based on the needs of the domain or application.'<br/>
+* These may include methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity - e.g. methods used to produce data that was interpreted as evidence to generate a Statement of knowledge.<br/>
+* This field captures terms representing specific INSTANCES of methods applied, vs the 'supportingMethodTypes' attribute which captures TYPES of methods used.<br/>
+</details>
+<p><a href="../supportingMethodTypes/">supportingMethodTypes</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
+<blockquote>
+<p>Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This field captures terms representing TYPES of methods applied, vs the 'specifiedBy' or'supportingMethods' attributes which capture specific INSTANCES of methods used. These may include types of methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity<br/>
+* Implementers should define a relevant source or set of method type codes/terms to use here, based on the needs of the domain or application.'<br/>
 </details>
 <p><a href="../derivedFrom/">derivedFrom</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
 <blockquote>
@@ -834,19 +846,43 @@ attributes:
     range: string
     required: false
     multivalued: true
-  methodTypes:
-    name: methodTypes
-    description: Types of methodological approaches used to collect, generate, or
-      evaluate the reported information.
+  supportingMethods:
+    name: supportingMethods
+    description: Specific methods that were executed to directly or indirectly support
+      creation of the Information Entity.
     comments:
-    - This field captures terms representing *types* of methods applied, vs the "specifiedBy"
-      attribute which captures specific instances of methods used.
-    - Implementers should define a relevant source of method type codes/terms to use
-      here based on the needs of the domain or application.'
+    - These may include methods that directly produced the Information Entity, or
+      upstream/accessory methods that indirectly support creation of the Information
+      Entity - e.g. methods used to produce data that was interpreted as evidence
+      to generate a Statement of knowledge.
+    - This field captures terms representing specific INSTANCES of methods applied,
+      vs the 'supportingMethodTypes' attribute which captures TYPES of methods used.
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: methodTypes
+    alias: supportingMethods
+    owner: DataSet
+    domain_of:
+    - InformationEntity
+    range: string
+    required: false
+    multivalued: true
+  supportingMethodTypes:
+    name: supportingMethodTypes
+    description: Types of methodological approaches that were executed to directly
+      or indirectly support creation of the Information Entity.
+    comments:
+    - This field captures terms representing TYPES of methods applied, vs the 'specifiedBy'
+      or'supportingMethods' attributes which capture specific INSTANCES of methods
+      used. These may include types of methods that directly produced the Information
+      Entity, or upstream/accessory methods that indirectly support creation of the
+      Information Entity
+    - Implementers should define a relevant source or set of method type codes/terms
+      to use here, based on the needs of the domain or application.'
+    from_schema: https://w3id.org/sepio-model
+    status: Informative
+    rank: 1000
+    alias: supportingMethodTypes
     owner: DataSet
     domain_of:
     - InformationEntity

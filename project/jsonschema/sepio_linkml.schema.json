@@ -543,16 +543,6 @@
                         "null"
                     ]
                 },
-                "methodTypes": {
-                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
-                    "items": {
-                        "$ref": "#/$defs/Coding"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "recordMetadata": {
                     "anyOf": [
                         {
@@ -594,6 +584,26 @@
                         }
                     ],
                     "description": "A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')"
+                },
+                "supportingMethodTypes": {
+                    "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "supportingMethods": {
+                    "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
@@ -740,16 +750,6 @@
                         "null"
                     ]
                 },
-                "methodTypes": {
-                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
-                    "items": {
-                        "$ref": "#/$defs/Coding"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "recordMetadata": {
                     "anyOf": [
                         {
@@ -798,6 +798,26 @@
                         }
                     ],
                     "description": "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')."
+                },
+                "supportingMethodTypes": {
+                    "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "supportingMethods": {
+                    "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
@@ -932,16 +952,6 @@
                         "null"
                     ]
                 },
-                "methodTypes": {
-                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
-                    "items": {
-                        "$ref": "#/$defs/Coding"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "pmid": {
                     "description": "A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_ for the document.",
                     "type": [
@@ -990,6 +1000,26 @@
                         }
                     ],
                     "description": "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')"
+                },
+                "supportingMethodTypes": {
+                    "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "supportingMethods": {
+                    "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "title": {
                     "description": "The official title given to the document by its authors.",
@@ -1211,16 +1241,6 @@
                         "null"
                     ]
                 },
-                "methodTypes": {
-                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
-                    "items": {
-                        "$ref": "#/$defs/Coding"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "recordMetadata": {
                     "anyOf": [
                         {
@@ -1276,6 +1296,26 @@
                         }
                     ],
                     "description": "A specific type of evidence the EvidenceLine instance represents (e.g. 'mutant phenotype evidence', 'evidence from manual interpretation', 'ACMG PM2 evidence')"
+                },
+                "supportingMethodTypes": {
+                    "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "supportingMethods": {
+                    "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "targetProposition": {
                     "anyOf": [
@@ -1456,16 +1496,6 @@
                         "null"
                     ]
                 },
-                "methodTypes": {
-                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
-                    "items": {
-                        "$ref": "#/$defs/Coding"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "recordMetadata": {
                     "anyOf": [
                         {
@@ -1489,6 +1519,26 @@
                 },
                 "specifiedBy": {
                     "description": "A specification that describes all or part of the process that led to creation of the Information Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "supportingMethodTypes": {
+                    "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "supportingMethods": {
+                    "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "type": "string"
                     },
@@ -1609,16 +1659,6 @@
                         "null"
                     ]
                 },
-                "methodTypes": {
-                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
-                    "items": {
-                        "$ref": "#/$defs/Coding"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "recordMetadata": {
                     "anyOf": [
                         {
@@ -1660,6 +1700,26 @@
                         }
                     ],
                     "description": "A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol')."
+                },
+                "supportingMethodTypes": {
+                    "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "supportingMethods": {
+                    "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
@@ -1992,16 +2052,6 @@
                         "null"
                     ]
                 },
-                "methodTypes": {
-                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
-                    "items": {
-                        "$ref": "#/$defs/Coding"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "object": {
                     "description": "An Entity or concept that is related to the subject of a Statement via its predicate.",
                     "type": [
@@ -2110,6 +2160,26 @@
                         }
                     ],
                     "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject."
+                },
+                "supportingMethodTypes": {
+                    "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "supportingMethods": {
+                    "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
@@ -2352,16 +2422,6 @@
                         "null"
                     ]
                 },
-                "methodTypes": {
-                    "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
-                    "items": {
-                        "$ref": "#/$defs/Coding"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "recordMetadata": {
                     "anyOf": [
                         {
@@ -2413,6 +2473,26 @@
                         }
                     ],
                     "description": "A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult."
+                },
+                "supportingMethodTypes": {
+                    "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "supportingMethods": {
+                    "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",

@@ -80,7 +80,8 @@ message DataItem
  repeated  contribution contributions = 0
   string dateAuthored = 0
  repeated  string specifiedBy = 0
- repeated  coding methodTypes = 0
+ repeated  string supportingMethods = 0
+ repeated  coding supportingMethodTypes = 0
  repeated  informationEntity derivedFrom = 0
  repeated  string reportedIn = 0
   coding informationQuality = 0
@@ -106,7 +107,8 @@ message DataSet
  repeated  contribution contributions = 0
   string dateAuthored = 0
  repeated  string specifiedBy = 0
- repeated  coding methodTypes = 0
+ repeated  string supportingMethods = 0
+ repeated  coding supportingMethodTypes = 0
  repeated  informationEntity derivedFrom = 0
  repeated  string reportedIn = 0
   coding informationQuality = 0
@@ -130,7 +132,8 @@ message Document
  repeated  contribution contributions = 0
   string dateAuthored = 0
  repeated  string specifiedBy = 0
- repeated  coding methodTypes = 0
+ repeated  string supportingMethods = 0
+ repeated  coding supportingMethodTypes = 0
  repeated  informationEntity derivedFrom = 0
  repeated  string reportedIn = 0
   coding informationQuality = 0
@@ -167,7 +170,8 @@ message EvidenceLine
  repeated  contribution contributions = 0
   string dateAuthored = 0
  repeated  string specifiedBy = 0
- repeated  coding methodTypes = 0
+ repeated  string supportingMethods = 0
+ repeated  coding supportingMethodTypes = 0
  repeated  informationEntity derivedFrom = 0
  repeated  string reportedIn = 0
   coding informationQuality = 0
@@ -208,7 +212,8 @@ message InformationEntity
  repeated  contribution contributions = 0
   string dateAuthored = 0
  repeated  string specifiedBy = 0
- repeated  coding methodTypes = 0
+ repeated  string supportingMethods = 0
+ repeated  coding supportingMethodTypes = 0
  repeated  informationEntity derivedFrom = 0
  repeated  string reportedIn = 0
   coding informationQuality = 0
@@ -228,7 +233,8 @@ message Method
  repeated  contribution contributions = 0
   string dateAuthored = 0
  repeated  string specifiedBy = 0
- repeated  coding methodTypes = 0
+ repeated  string supportingMethods = 0
+ repeated  coding supportingMethodTypes = 0
  repeated  informationEntity derivedFrom = 0
  repeated  string reportedIn = 0
   coding informationQuality = 0
@@ -282,7 +288,8 @@ message Statement
  repeated  contribution contributions = 0
   string dateAuthored = 0
  repeated  string specifiedBy = 0
- repeated  coding methodTypes = 0
+ repeated  string supportingMethods = 0
+ repeated  coding supportingMethodTypes = 0
  repeated  informationEntity derivedFrom = 0
  repeated  string reportedIn = 0
   coding informationQuality = 0
@@ -329,7 +336,8 @@ message StudyResult
  repeated  contribution contributions = 0
   string dateAuthored = 0
  repeated  string specifiedBy = 0
- repeated  coding methodTypes = 0
+ repeated  string supportingMethods = 0
+ repeated  coding supportingMethodTypes = 0
  repeated  informationEntity derivedFrom = 0
  repeated  string reportedIn = 0
   coding informationQuality = 0

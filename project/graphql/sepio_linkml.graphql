@@ -77,7 +77,8 @@ type DataItem
     contributions: [Contribution]
     dateAuthored: String
     specifiedBy: [String]
-    methodTypes: [Coding]
+    supportingMethods: [String]
+    supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
     informationQuality: Coding
@@ -103,7 +104,8 @@ type DataSet
     contributions: [Contribution]
     dateAuthored: String
     specifiedBy: [String]
-    methodTypes: [Coding]
+    supportingMethods: [String]
+    supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
     informationQuality: Coding
@@ -127,7 +129,8 @@ type Document
     contributions: [Contribution]
     dateAuthored: String
     specifiedBy: [String]
-    methodTypes: [Coding]
+    supportingMethods: [String]
+    supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
     informationQuality: Coding
@@ -164,7 +167,8 @@ type EvidenceLine
     contributions: [Contribution]
     dateAuthored: String
     specifiedBy: [String]
-    methodTypes: [Coding]
+    supportingMethods: [String]
+    supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
     informationQuality: Coding
@@ -205,7 +209,8 @@ type InformationEntity
     contributions: [Contribution]
     dateAuthored: String
     specifiedBy: [String]
-    methodTypes: [Coding]
+    supportingMethods: [String]
+    supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
     informationQuality: Coding
@@ -225,7 +230,8 @@ type Method
     contributions: [Contribution]
     dateAuthored: String
     specifiedBy: [String]
-    methodTypes: [Coding]
+    supportingMethods: [String]
+    supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
     informationQuality: Coding
@@ -279,7 +285,8 @@ type Statement
     contributions: [Contribution]
     dateAuthored: String
     specifiedBy: [String]
-    methodTypes: [Coding]
+    supportingMethods: [String]
+    supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
     informationQuality: Coding
@@ -326,7 +333,8 @@ type StudyResult
     contributions: [Contribution]
     dateAuthored: String
     specifiedBy: [String]
-    methodTypes: [Coding]
+    supportingMethods: [String]
+    supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
     informationQuality: Coding

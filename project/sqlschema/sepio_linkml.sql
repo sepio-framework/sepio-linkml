@@ -200,9 +200,12 @@
 -- # Class: "InformationEntity_specifiedBy" Description: ""
 --     * Slot: InformationEntity_uid Description: Autocreated FK slot
 --     * Slot: specifiedBy Description: A specification that describes all or part of the process that led to creation of the Information Entity.
--- # Class: "InformationEntity_methodTypes" Description: ""
+-- # Class: "InformationEntity_supportingMethods" Description: ""
 --     * Slot: InformationEntity_uid Description: Autocreated FK slot
---     * Slot: methodTypes_id Description: Types of methodological approaches used to collect, generate, or evaluate the reported information.
+--     * Slot: supportingMethods Description: Specific methods that were executed to directly or indirectly support creation of the Information Entity.
+-- # Class: "InformationEntity_supportingMethodTypes" Description: ""
+--     * Slot: InformationEntity_uid Description: Autocreated FK slot
+--     * Slot: supportingMethodTypes_id Description: Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.
 -- # Class: "InformationEntity_derivedFrom" Description: ""
 --     * Slot: InformationEntity_uid Description: Autocreated FK slot
 --     * Slot: derivedFrom_uid Description: Another Information Entity from which this Information Entity is derived, in whole or in part.
@@ -230,9 +233,12 @@
 -- # Class: "Method_specifiedBy" Description: ""
 --     * Slot: Method_uid Description: Autocreated FK slot
 --     * Slot: specifiedBy Description: A specification that describes all or part of the process that led to creation of the Information Entity.
--- # Class: "Method_methodTypes" Description: ""
+-- # Class: "Method_supportingMethods" Description: ""
 --     * Slot: Method_uid Description: Autocreated FK slot
---     * Slot: methodTypes_id Description: Types of methodological approaches used to collect, generate, or evaluate the reported information.
+--     * Slot: supportingMethods Description: Specific methods that were executed to directly or indirectly support creation of the Information Entity.
+-- # Class: "Method_supportingMethodTypes" Description: ""
+--     * Slot: Method_uid Description: Autocreated FK slot
+--     * Slot: supportingMethodTypes_id Description: Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.
 -- # Class: "Method_derivedFrom" Description: ""
 --     * Slot: Method_uid Description: Autocreated FK slot
 --     * Slot: derivedFrom_uid Description: Another Information Entity from which this Information Entity is derived, in whole or in part.
@@ -260,9 +266,12 @@
 -- # Class: "Document_specifiedBy" Description: ""
 --     * Slot: Document_uid Description: Autocreated FK slot
 --     * Slot: specifiedBy Description: A specification that describes all or part of the process that led to creation of the Information Entity.
--- # Class: "Document_methodTypes" Description: ""
+-- # Class: "Document_supportingMethods" Description: ""
 --     * Slot: Document_uid Description: Autocreated FK slot
---     * Slot: methodTypes_id Description: Types of methodological approaches used to collect, generate, or evaluate the reported information.
+--     * Slot: supportingMethods Description: Specific methods that were executed to directly or indirectly support creation of the Information Entity.
+-- # Class: "Document_supportingMethodTypes" Description: ""
+--     * Slot: Document_uid Description: Autocreated FK slot
+--     * Slot: supportingMethodTypes_id Description: Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.
 -- # Class: "Document_derivedFrom" Description: ""
 --     * Slot: Document_uid Description: Autocreated FK slot
 --     * Slot: derivedFrom_uid Description: Another Information Entity from which this Information Entity is derived, in whole or in part.
@@ -293,9 +302,12 @@
 -- # Class: "DataItem_specifiedBy" Description: ""
 --     * Slot: DataItem_uid Description: Autocreated FK slot
 --     * Slot: specifiedBy Description: A specification that describes all or part of the process that led to creation of the Information Entity.
--- # Class: "DataItem_methodTypes" Description: ""
+-- # Class: "DataItem_supportingMethods" Description: ""
 --     * Slot: DataItem_uid Description: Autocreated FK slot
---     * Slot: methodTypes_id Description: Types of methodological approaches used to collect, generate, or evaluate the reported information.
+--     * Slot: supportingMethods Description: Specific methods that were executed to directly or indirectly support creation of the Information Entity.
+-- # Class: "DataItem_supportingMethodTypes" Description: ""
+--     * Slot: DataItem_uid Description: Autocreated FK slot
+--     * Slot: supportingMethodTypes_id Description: Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.
 -- # Class: "DataItem_derivedFrom" Description: ""
 --     * Slot: DataItem_uid Description: Autocreated FK slot
 --     * Slot: derivedFrom_uid Description: Another Information Entity from which this Information Entity is derived, in whole or in part.
@@ -320,9 +332,12 @@
 -- # Class: "DataSet_specifiedBy" Description: ""
 --     * Slot: DataSet_uid Description: Autocreated FK slot
 --     * Slot: specifiedBy Description: A specification that describes all or part of the process that led to creation of the Information Entity.
--- # Class: "DataSet_methodTypes" Description: ""
+-- # Class: "DataSet_supportingMethods" Description: ""
 --     * Slot: DataSet_uid Description: Autocreated FK slot
---     * Slot: methodTypes_id Description: Types of methodological approaches used to collect, generate, or evaluate the reported information.
+--     * Slot: supportingMethods Description: Specific methods that were executed to directly or indirectly support creation of the Information Entity.
+-- # Class: "DataSet_supportingMethodTypes" Description: ""
+--     * Slot: DataSet_uid Description: Autocreated FK slot
+--     * Slot: supportingMethodTypes_id Description: Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.
 -- # Class: "DataSet_derivedFrom" Description: ""
 --     * Slot: DataSet_uid Description: Autocreated FK slot
 --     * Slot: derivedFrom_uid Description: Another Information Entity from which this Information Entity is derived, in whole or in part.
@@ -413,9 +428,12 @@
 -- # Class: "Statement_specifiedBy" Description: ""
 --     * Slot: Statement_uid Description: Autocreated FK slot
 --     * Slot: specifiedBy Description: A specification that describes all or part of the process that led to creation of the Information Entity.
--- # Class: "Statement_methodTypes" Description: ""
+-- # Class: "Statement_supportingMethods" Description: ""
 --     * Slot: Statement_uid Description: Autocreated FK slot
---     * Slot: methodTypes_id Description: Types of methodological approaches used to collect, generate, or evaluate the reported information.
+--     * Slot: supportingMethods Description: Specific methods that were executed to directly or indirectly support creation of the Information Entity.
+-- # Class: "Statement_supportingMethodTypes" Description: ""
+--     * Slot: Statement_uid Description: Autocreated FK slot
+--     * Slot: supportingMethodTypes_id Description: Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.
 -- # Class: "Statement_derivedFrom" Description: ""
 --     * Slot: Statement_uid Description: Autocreated FK slot
 --     * Slot: derivedFrom_uid Description: Another Information Entity from which this Information Entity is derived, in whole or in part.
@@ -449,9 +467,12 @@
 -- # Class: "StudyResult_specifiedBy" Description: ""
 --     * Slot: StudyResult_uid Description: Autocreated FK slot
 --     * Slot: specifiedBy Description: A specification that describes all or part of the process that led to creation of the Information Entity.
--- # Class: "StudyResult_methodTypes" Description: ""
+-- # Class: "StudyResult_supportingMethods" Description: ""
 --     * Slot: StudyResult_uid Description: Autocreated FK slot
---     * Slot: methodTypes_id Description: Types of methodological approaches used to collect, generate, or evaluate the reported information.
+--     * Slot: supportingMethods Description: Specific methods that were executed to directly or indirectly support creation of the Information Entity.
+-- # Class: "StudyResult_supportingMethodTypes" Description: ""
+--     * Slot: StudyResult_uid Description: Autocreated FK slot
+--     * Slot: supportingMethodTypes_id Description: Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.
 -- # Class: "StudyResult_derivedFrom" Description: ""
 --     * Slot: StudyResult_uid Description: Autocreated FK slot
 --     * Slot: derivedFrom_uid Description: Another Information Entity from which this Information Entity is derived, in whole or in part.
@@ -482,9 +503,12 @@
 -- # Class: "EvidenceLine_specifiedBy" Description: ""
 --     * Slot: EvidenceLine_uid Description: Autocreated FK slot
 --     * Slot: specifiedBy Description: A specification that describes all or part of the process that led to creation of the Information Entity.
--- # Class: "EvidenceLine_methodTypes" Description: ""
+-- # Class: "EvidenceLine_supportingMethods" Description: ""
 --     * Slot: EvidenceLine_uid Description: Autocreated FK slot
---     * Slot: methodTypes_id Description: Types of methodological approaches used to collect, generate, or evaluate the reported information.
+--     * Slot: supportingMethods Description: Specific methods that were executed to directly or indirectly support creation of the Information Entity.
+-- # Class: "EvidenceLine_supportingMethodTypes" Description: ""
+--     * Slot: EvidenceLine_uid Description: Autocreated FK slot
+--     * Slot: supportingMethodTypes_id Description: Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.
 -- # Class: "EvidenceLine_derivedFrom" Description: ""
 --     * Slot: EvidenceLine_uid Description: Autocreated FK slot
 --     * Slot: derivedFrom_uid Description: Another Information Entity from which this Information Entity is derived, in whole or in part.
@@ -892,12 +916,18 @@ CREATE TABLE "InformationEntity_specifiedBy" (
 	PRIMARY KEY ("InformationEntity_uid", "specifiedBy"), 
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid)
 );
-CREATE TABLE "InformationEntity_methodTypes" (
+CREATE TABLE "InformationEntity_supportingMethods" (
 	"InformationEntity_uid" INTEGER, 
-	"methodTypes_id" INTEGER, 
-	PRIMARY KEY ("InformationEntity_uid", "methodTypes_id"), 
+	"supportingMethods" TEXT, 
+	PRIMARY KEY ("InformationEntity_uid", "supportingMethods"), 
+	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid)
+);
+CREATE TABLE "InformationEntity_supportingMethodTypes" (
+	"InformationEntity_uid" INTEGER, 
+	"supportingMethodTypes_id" INTEGER, 
+	PRIMARY KEY ("InformationEntity_uid", "supportingMethodTypes_id"), 
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid), 
-	FOREIGN KEY("methodTypes_id") REFERENCES "Coding" (id)
+	FOREIGN KEY("supportingMethodTypes_id") REFERENCES "Coding" (id)
 );
 CREATE TABLE "InformationEntity_derivedFrom" (
 	"InformationEntity_uid" INTEGER, 
@@ -949,12 +979,18 @@ CREATE TABLE "Method_specifiedBy" (
 	PRIMARY KEY ("Method_uid", "specifiedBy"), 
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE TABLE "Method_methodTypes" (
+CREATE TABLE "Method_supportingMethods" (
 	"Method_uid" INTEGER, 
-	"methodTypes_id" INTEGER, 
-	PRIMARY KEY ("Method_uid", "methodTypes_id"), 
+	"supportingMethods" TEXT, 
+	PRIMARY KEY ("Method_uid", "supportingMethods"), 
+	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
+);
+CREATE TABLE "Method_supportingMethodTypes" (
+	"Method_uid" INTEGER, 
+	"supportingMethodTypes_id" INTEGER, 
+	PRIMARY KEY ("Method_uid", "supportingMethodTypes_id"), 
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid), 
-	FOREIGN KEY("methodTypes_id") REFERENCES "Coding" (id)
+	FOREIGN KEY("supportingMethodTypes_id") REFERENCES "Coding" (id)
 );
 CREATE TABLE "Method_derivedFrom" (
 	"Method_uid" INTEGER, 
@@ -1006,12 +1042,18 @@ CREATE TABLE "Document_specifiedBy" (
 	PRIMARY KEY ("Document_uid", "specifiedBy"), 
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid)
 );
-CREATE TABLE "Document_methodTypes" (
+CREATE TABLE "Document_supportingMethods" (
 	"Document_uid" INTEGER, 
-	"methodTypes_id" INTEGER, 
-	PRIMARY KEY ("Document_uid", "methodTypes_id"), 
+	"supportingMethods" TEXT, 
+	PRIMARY KEY ("Document_uid", "supportingMethods"), 
+	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid)
+);
+CREATE TABLE "Document_supportingMethodTypes" (
+	"Document_uid" INTEGER, 
+	"supportingMethodTypes_id" INTEGER, 
+	PRIMARY KEY ("Document_uid", "supportingMethodTypes_id"), 
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid), 
-	FOREIGN KEY("methodTypes_id") REFERENCES "Coding" (id)
+	FOREIGN KEY("supportingMethodTypes_id") REFERENCES "Coding" (id)
 );
 CREATE TABLE "Document_derivedFrom" (
 	"Document_uid" INTEGER, 
@@ -1071,12 +1113,18 @@ CREATE TABLE "DataItem_specifiedBy" (
 	PRIMARY KEY ("DataItem_uid", "specifiedBy"), 
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid)
 );
-CREATE TABLE "DataItem_methodTypes" (
+CREATE TABLE "DataItem_supportingMethods" (
 	"DataItem_uid" INTEGER, 
-	"methodTypes_id" INTEGER, 
-	PRIMARY KEY ("DataItem_uid", "methodTypes_id"), 
+	"supportingMethods" TEXT, 
+	PRIMARY KEY ("DataItem_uid", "supportingMethods"), 
+	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid)
+);
+CREATE TABLE "DataItem_supportingMethodTypes" (
+	"DataItem_uid" INTEGER, 
+	"supportingMethodTypes_id" INTEGER, 
+	PRIMARY KEY ("DataItem_uid", "supportingMethodTypes_id"), 
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid), 
-	FOREIGN KEY("methodTypes_id") REFERENCES "Coding" (id)
+	FOREIGN KEY("supportingMethodTypes_id") REFERENCES "Coding" (id)
 );
 CREATE TABLE "DataItem_derivedFrom" (
 	"DataItem_uid" INTEGER, 
@@ -1122,12 +1170,18 @@ CREATE TABLE "DataSet_specifiedBy" (
 	PRIMARY KEY ("DataSet_uid", "specifiedBy"), 
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid)
 );
-CREATE TABLE "DataSet_methodTypes" (
+CREATE TABLE "DataSet_supportingMethods" (
 	"DataSet_uid" INTEGER, 
-	"methodTypes_id" INTEGER, 
-	PRIMARY KEY ("DataSet_uid", "methodTypes_id"), 
+	"supportingMethods" TEXT, 
+	PRIMARY KEY ("DataSet_uid", "supportingMethods"), 
+	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid)
+);
+CREATE TABLE "DataSet_supportingMethodTypes" (
+	"DataSet_uid" INTEGER, 
+	"supportingMethodTypes_id" INTEGER, 
+	PRIMARY KEY ("DataSet_uid", "supportingMethodTypes_id"), 
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid), 
-	FOREIGN KEY("methodTypes_id") REFERENCES "Coding" (id)
+	FOREIGN KEY("supportingMethodTypes_id") REFERENCES "Coding" (id)
 );
 CREATE TABLE "DataSet_derivedFrom" (
 	"DataSet_uid" INTEGER, 
@@ -1241,12 +1295,18 @@ CREATE TABLE "StudyResult_specifiedBy" (
 	PRIMARY KEY ("StudyResult_uid", "specifiedBy"), 
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE TABLE "StudyResult_methodTypes" (
+CREATE TABLE "StudyResult_supportingMethods" (
 	"StudyResult_uid" INTEGER, 
-	"methodTypes_id" INTEGER, 
-	PRIMARY KEY ("StudyResult_uid", "methodTypes_id"), 
+	"supportingMethods" TEXT, 
+	PRIMARY KEY ("StudyResult_uid", "supportingMethods"), 
+	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
+);
+CREATE TABLE "StudyResult_supportingMethodTypes" (
+	"StudyResult_uid" INTEGER, 
+	"supportingMethodTypes_id" INTEGER, 
+	PRIMARY KEY ("StudyResult_uid", "supportingMethodTypes_id"), 
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid), 
-	FOREIGN KEY("methodTypes_id") REFERENCES "Coding" (id)
+	FOREIGN KEY("supportingMethodTypes_id") REFERENCES "Coding" (id)
 );
 CREATE TABLE "StudyResult_derivedFrom" (
 	"StudyResult_uid" INTEGER, 
@@ -1441,12 +1501,18 @@ CREATE TABLE "Statement_specifiedBy" (
 	PRIMARY KEY ("Statement_uid", "specifiedBy"), 
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
 );
-CREATE TABLE "Statement_methodTypes" (
+CREATE TABLE "Statement_supportingMethods" (
 	"Statement_uid" INTEGER, 
-	"methodTypes_id" INTEGER, 
-	PRIMARY KEY ("Statement_uid", "methodTypes_id"), 
+	"supportingMethods" TEXT, 
+	PRIMARY KEY ("Statement_uid", "supportingMethods"), 
+	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
+);
+CREATE TABLE "Statement_supportingMethodTypes" (
+	"Statement_uid" INTEGER, 
+	"supportingMethodTypes_id" INTEGER, 
+	PRIMARY KEY ("Statement_uid", "supportingMethodTypes_id"), 
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid), 
-	FOREIGN KEY("methodTypes_id") REFERENCES "Coding" (id)
+	FOREIGN KEY("supportingMethodTypes_id") REFERENCES "Coding" (id)
 );
 CREATE TABLE "Statement_derivedFrom" (
 	"Statement_uid" INTEGER, 
@@ -1519,12 +1585,18 @@ CREATE TABLE "EvidenceLine_specifiedBy" (
 	PRIMARY KEY ("EvidenceLine_uid", "specifiedBy"), 
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid)
 );
-CREATE TABLE "EvidenceLine_methodTypes" (
+CREATE TABLE "EvidenceLine_supportingMethods" (
 	"EvidenceLine_uid" INTEGER, 
-	"methodTypes_id" INTEGER, 
-	PRIMARY KEY ("EvidenceLine_uid", "methodTypes_id"), 
+	"supportingMethods" TEXT, 
+	PRIMARY KEY ("EvidenceLine_uid", "supportingMethods"), 
+	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid)
+);
+CREATE TABLE "EvidenceLine_supportingMethodTypes" (
+	"EvidenceLine_uid" INTEGER, 
+	"supportingMethodTypes_id" INTEGER, 
+	PRIMARY KEY ("EvidenceLine_uid", "supportingMethodTypes_id"), 
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid), 
-	FOREIGN KEY("methodTypes_id") REFERENCES "Coding" (id)
+	FOREIGN KEY("supportingMethodTypes_id") REFERENCES "Coding" (id)
 );
 CREATE TABLE "EvidenceLine_derivedFrom" (
 	"EvidenceLine_uid" INTEGER, 

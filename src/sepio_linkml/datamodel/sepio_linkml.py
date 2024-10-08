@@ -1,5 +1,5 @@
 # Auto generated from sepio_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-09-13T18:00:31
+# Generation date: 2024-10-08T16:29:14
 # Schema: sepio-linkml
 #
 # id: https://w3id.org/sepio-framework/sepio-linkml
@@ -117,7 +117,8 @@ class InformationEntity(Entity):
     contributions: Optional[Union[Union[dict, "Contribution"], List[Union[dict, "Contribution"]]]] = empty_list()
     dateAuthored: Optional[str] = None
     specifiedBy: Optional[Union[str, List[str]]] = empty_list()
-    methodTypes: Optional[Union[Union[dict, "Coding"], List[Union[dict, "Coding"]]]] = empty_list()
+    supportingMethods: Optional[Union[str, List[str]]] = empty_list()
+    supportingMethodTypes: Optional[Union[Union[dict, "Coding"], List[Union[dict, "Coding"]]]] = empty_list()
     derivedFrom: Optional[Union[Union[dict, "InformationEntity"], List[Union[dict, "InformationEntity"]]]] = empty_list()
     reportedIn: Optional[Union[str, List[str]]] = empty_list()
     informationQuality: Optional[Union[dict, "Coding"]] = None
@@ -137,9 +138,13 @@ class InformationEntity(Entity):
             self.specifiedBy = [self.specifiedBy] if self.specifiedBy is not None else []
         self.specifiedBy = [v if isinstance(v, str) else str(v) for v in self.specifiedBy]
 
-        if not isinstance(self.methodTypes, list):
-            self.methodTypes = [self.methodTypes] if self.methodTypes is not None else []
-        self.methodTypes = [v if isinstance(v, Coding) else Coding(**as_dict(v)) for v in self.methodTypes]
+        if not isinstance(self.supportingMethods, list):
+            self.supportingMethods = [self.supportingMethods] if self.supportingMethods is not None else []
+        self.supportingMethods = [v if isinstance(v, str) else str(v) for v in self.supportingMethods]
+
+        if not isinstance(self.supportingMethodTypes, list):
+            self.supportingMethodTypes = [self.supportingMethodTypes] if self.supportingMethodTypes is not None else []
+        self.supportingMethodTypes = [v if isinstance(v, Coding) else Coding(**as_dict(v)) for v in self.supportingMethodTypes]
 
         self._normalize_inlined_as_dict(slot_name="derivedFrom", slot_type=InformationEntity, key_name="id", keyed=False)
 
@@ -905,8 +910,11 @@ slots.informationEntity__dateAuthored = Slot(uri=SEPIO-MODEL.dateAuthored, name=
 slots.informationEntity__specifiedBy = Slot(uri=SEPIO-MODEL.specifiedBy, name="informationEntity__specifiedBy", curie=SEPIO-MODEL.curie('specifiedBy'),
                    model_uri=SEPIO_LINKML.informationEntity__specifiedBy, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.informationEntity__methodTypes = Slot(uri=SEPIO-MODEL.methodTypes, name="informationEntity__methodTypes", curie=SEPIO-MODEL.curie('methodTypes'),
-                   model_uri=SEPIO_LINKML.informationEntity__methodTypes, domain=None, range=Optional[Union[Union[dict, Coding], List[Union[dict, Coding]]]])
+slots.informationEntity__supportingMethods = Slot(uri=SEPIO-MODEL.supportingMethods, name="informationEntity__supportingMethods", curie=SEPIO-MODEL.curie('supportingMethods'),
+                   model_uri=SEPIO_LINKML.informationEntity__supportingMethods, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.informationEntity__supportingMethodTypes = Slot(uri=SEPIO-MODEL.supportingMethodTypes, name="informationEntity__supportingMethodTypes", curie=SEPIO-MODEL.curie('supportingMethodTypes'),
+                   model_uri=SEPIO_LINKML.informationEntity__supportingMethodTypes, domain=None, range=Optional[Union[Union[dict, Coding], List[Union[dict, Coding]]]])
 
 slots.informationEntity__derivedFrom = Slot(uri=SEPIO-MODEL.derivedFrom, name="informationEntity__derivedFrom", curie=SEPIO-MODEL.curie('derivedFrom'),
                    model_uri=SEPIO_LINKML.informationEntity__derivedFrom, domain=None, range=Optional[Union[Union[dict, InformationEntity], List[Union[dict, InformationEntity]]]])

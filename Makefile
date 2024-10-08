@@ -122,7 +122,7 @@ gen-examples:
 
 # generates all project files
 
-gen-project: $(PYMODEL) compile-sheets
+gen-project: # $(PYMODEL) compile-sheets
 	$(RUN) gen-project ${CONFIG_YAML} -d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 

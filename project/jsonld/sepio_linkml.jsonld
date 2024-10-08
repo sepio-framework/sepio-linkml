@@ -541,16 +541,35 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "informationEntity__methodTypes",
-      "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+      "name": "informationEntity__supportingMethods",
+      "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
       "comments": [
-        "This field captures terms representing *types* of methods applied, vs the \"specifiedBy\" attribute which captures specific instances of methods used.",
-        "Implementers should define a relevant source of method type codes/terms to use here based on the needs of the domain or application.'"
+        "These may include methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity - e.g. methods used to produce data that was interpreted as evidence to generate a Statement of knowledge.",
+        "This field captures terms representing specific INSTANCES of methods applied, vs the 'supportingMethodTypes' attribute which captures TYPES of methods used."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/methodTypes",
-      "alias": "methodTypes",
+      "slot_uri": "https://example.org/sepio-model/supportingMethods",
+      "alias": "supportingMethods",
+      "owner": "InformationEntity",
+      "domain_of": [
+        "InformationEntity"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "informationEntity__supportingMethodTypes",
+      "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+      "comments": [
+        "This field captures terms representing TYPES of methods applied, vs the 'specifiedBy' or'supportingMethods' attributes which capture specific INSTANCES of methods used. These may include types of methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity",
+        "Implementers should define a relevant source or set of method type codes/terms to use here, based on the needs of the domain or application.'"
+      ],
+      "from_schema": "https://w3id.org/sepio-model",
+      "status": "Informative",
+      "slot_uri": "https://example.org/sepio-model/supportingMethodTypes",
+      "alias": "supportingMethodTypes",
       "owner": "InformationEntity",
       "domain_of": [
         "InformationEntity"
@@ -2143,7 +2162,8 @@
         "informationEntity__contributions",
         "informationEntity__dateAuthored",
         "informationEntity__specifiedBy",
-        "informationEntity__methodTypes",
+        "informationEntity__supportingMethods",
+        "informationEntity__supportingMethodTypes",
         "informationEntity__derivedFrom",
         "informationEntity__reportedIn",
         "informationEntity__informationQuality",
@@ -2196,11 +2216,23 @@
           "@type": "SlotDefinition"
         },
         {
-          "name": "methodTypes",
-          "description": "Types of methodological approaches used to collect, generate, or evaluate the reported information.",
+          "name": "supportingMethods",
+          "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
           "comments": [
-            "This field captures terms representing *types* of methods applied, vs the \"specifiedBy\" attribute which captures specific instances of methods used.",
-            "Implementers should define a relevant source of method type codes/terms to use here based on the needs of the domain or application.'"
+            "These may include methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity - e.g. methods used to produce data that was interpreted as evidence to generate a Statement of knowledge.",
+            "This field captures terms representing specific INSTANCES of methods applied, vs the 'supportingMethodTypes' attribute which captures TYPES of methods used."
+          ],
+          "status": "Informative",
+          "range": "string",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "supportingMethodTypes",
+          "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
+          "comments": [
+            "This field captures terms representing TYPES of methods applied, vs the 'specifiedBy' or'supportingMethods' attributes which capture specific INSTANCES of methods used. These may include types of methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity",
+            "Implementers should define a relevant source or set of method type codes/terms to use here, based on the needs of the domain or application.'"
           ],
           "status": "Informative",
           "range": "Coding",
@@ -2275,7 +2307,8 @@
         "informationEntity__contributions",
         "informationEntity__dateAuthored",
         "informationEntity__specifiedBy",
-        "informationEntity__methodTypes",
+        "informationEntity__supportingMethods",
+        "informationEntity__supportingMethodTypes",
         "informationEntity__derivedFrom",
         "informationEntity__reportedIn",
         "informationEntity__informationQuality",
@@ -2330,7 +2363,8 @@
         "informationEntity__contributions",
         "informationEntity__dateAuthored",
         "informationEntity__specifiedBy",
-        "informationEntity__methodTypes",
+        "informationEntity__supportingMethods",
+        "informationEntity__supportingMethodTypes",
         "informationEntity__derivedFrom",
         "informationEntity__reportedIn",
         "informationEntity__informationQuality",
@@ -2419,7 +2453,8 @@
         "informationEntity__contributions",
         "informationEntity__dateAuthored",
         "informationEntity__specifiedBy",
-        "informationEntity__methodTypes",
+        "informationEntity__supportingMethods",
+        "informationEntity__supportingMethodTypes",
         "informationEntity__derivedFrom",
         "informationEntity__reportedIn",
         "informationEntity__informationQuality",
@@ -2521,7 +2556,8 @@
         "informationEntity__contributions",
         "informationEntity__dateAuthored",
         "informationEntity__specifiedBy",
-        "informationEntity__methodTypes",
+        "informationEntity__supportingMethods",
+        "informationEntity__supportingMethodTypes",
         "informationEntity__derivedFrom",
         "informationEntity__reportedIn",
         "informationEntity__informationQuality",
@@ -2777,7 +2813,7 @@
       "description": "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.",
       "title": "Statement",
       "comments": [
-        "Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Every Statement puts forth a 'proposition' - a possible fact it assesses or reports to be true.  The semantics of this proposition are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slot(s).",
+        "Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Every Statement puts forth a 'proposition' - a possible fact it assesses or reports to be true.  The semantics of this proposition are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slots (SPOQ).",
         "The model supports two \" modes of use\" for Statements, which differ in what they say about their proposition, and can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.",
         "In \"Assertion Mode\" a Statement simply reports an SPOQ proposition to be true (e.g. that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\"), and 'direction', 'strength', and 'score' attributes are not populated.  Thos mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.",
         "In \"Proposition Assessment Mode\" a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements to report that \"there is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'\", or \"we have high confidence that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is false\").  This mode is used in curation projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion."
@@ -2797,7 +2833,8 @@
         "informationEntity__contributions",
         "informationEntity__dateAuthored",
         "informationEntity__specifiedBy",
-        "informationEntity__methodTypes",
+        "informationEntity__supportingMethods",
+        "informationEntity__supportingMethodTypes",
         "informationEntity__derivedFrom",
         "informationEntity__reportedIn",
         "informationEntity__informationQuality",
@@ -2981,7 +3018,8 @@
         "informationEntity__contributions",
         "informationEntity__dateAuthored",
         "informationEntity__specifiedBy",
-        "informationEntity__methodTypes",
+        "informationEntity__supportingMethods",
+        "informationEntity__supportingMethodTypes",
         "informationEntity__derivedFrom",
         "informationEntity__reportedIn",
         "informationEntity__informationQuality",
@@ -3067,7 +3105,7 @@
       "description": "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition.",
       "title": "Evidence Line",
       "comments": [
-        "Evidence Lines are used to capture various pieces of information (i.e. 'evidence items') that are assessed together as an argument for or against some 'target proposition' - to report the direction (supports or disputes) and strength (e.g. strong, moderate, weak) that the argument is determined to make. For example, the various allele counts and population frequency calculations for the BRCA2 c.8023A>G variant in the ExAC database are evidence items that may be collectively assessed to build an EvidenceLine making argument of 'moderate' strength that 'supports' a target proposition that the variant is pathogenic for Breast Cancer.",
+        "Evidence Lines are used to capture various pieces of information (i.e. 'evidence items') that are assessed together as an argument for or against some 'target proposition' - and to report the direction (supports or disputes) and strength (e.g. strong, moderate, weak) that the argument is determined to make. For example, the various allele counts and population frequency calculations for the BRCA2 c.8023A>G variant in the ExAC database are evidence items that may be collectively assessed to build an EvidenceLine making argument of 'moderate' strength that 'supports' a target proposition that the variant is pathogenic for Breast Cancer.",
         "Evidence Lines are flexible with respect to the granularity of arguments they support, and the scope of evidence items they can collectively assess. Narrow scoping will bucket available evidence into many, fine-grained Evidence Lines that make the most atomic independently meaningful arguments possible. The ACMG Variant Pathogenicity Interpretation Guidelines are an example of a fairly fine-grained evidence interpretation framework. Broader scoping approaches may organize the same available evidence into fewer Evidence Lines that build and assess less atomic arguments based on a wider and more diverse set of evidence items.  For example, CIViC curators assess the strength and direction of evidence items at the level of *all information reported in a publication for a specific study* - which can encompass many different results and evidence types that under more fine-grained interpretation approaches might be split apart and assessed as separate lines of evidence.",
         "This CIViC EID5682 record (https://civicdb.org/evidence/5682/summary) is a clear example of this - illustrating how ACMG-curated evidence assessed at a finer-grained level would lend itself to SEPIO representations that creates a larger number of more atomic Evidence Lines, as compared to how CIViC-curated evidence from the same source or publication would be represented. We see here that CIViC evidence assessments are performed at the level of all results reported in PMID:23143947 - which SEPIO would capture as a single Evidence Line that assigns a strength (level C) and direction (supports) to the collective argument made by this evidence. However, as detailed in the free-text summary of this EID, the more fine-grained ACMG framework breaks out and separately assess two arguments here - one based on criterion PP1 (disease co-segregation evidence), and one based on criterion PP4 (highly specific gene-phenotype information) - which SEPIO woudl capture as two distinct Evidence Lines."
       ],
@@ -3086,7 +3124,8 @@
         "informationEntity__contributions",
         "informationEntity__dateAuthored",
         "informationEntity__specifiedBy",
-        "informationEntity__methodTypes",
+        "informationEntity__supportingMethods",
+        "informationEntity__supportingMethodTypes",
         "informationEntity__derivedFrom",
         "informationEntity__reportedIn",
         "informationEntity__informationQuality",
@@ -3624,9 +3663,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "sepio_linkml.yaml",
-  "source_file_date": "2024-09-13T15:54:57",
+  "source_file_date": "2024-09-16T09:41:06",
   "source_file_size": 616,
-  "generation_date": "2024-09-13T18:00:30",
+  "generation_date": "2024-10-08T16:29:13",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/sepio_linkml.context.jsonld",

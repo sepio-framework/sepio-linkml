@@ -205,7 +205,8 @@ sepio-model:InformationEntity  (
              sepio-model:contributions @sepio-model:Contribution * ;
              sepio-model:dateAuthored @linkml:String ? ;
              sepio-model:specifiedBy @linkml:String * ;
-             sepio-model:methodTypes @sepio-model:Coding * ;
+             sepio-model:supportingMethods @linkml:String * ;
+             sepio-model:supportingMethodTypes @sepio-model:Coding * ;
              sepio-model:derivedFrom @sepio-model:InformationEntity * ;
              sepio-model:reportedIn @linkml:String * ;
              sepio-model:informationQuality @sepio-model:Coding ? ;

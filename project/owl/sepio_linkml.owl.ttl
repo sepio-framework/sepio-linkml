@@ -12,7 +12,10 @@
     dcterms:title "Document" ;
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/license> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/doi> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -21,47 +24,44 @@
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/license> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/subtype> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/urls> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/doi> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/title> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/pmid> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/urls> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/license> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/pmid> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/title> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/license> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/urls> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/pmid> ],
+            owl:onProperty <https://example.org/sepio-model/doi> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/doi> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/doi> ],
+            owl:onProperty <https://example.org/sepio-model/title> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/pmid> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/title> ],
         <https://example.org/sepio-model/InformationEntity> ;
     skos:definition "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -73,28 +73,28 @@
     dcterms:title "Expression" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/value> ],
+            owl:onProperty <https://example.org/sepio-model/systemVersion> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/systemURL> ],
+            owl:onProperty <https://example.org/sepio-model/value> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/value> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/systemURL> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/systemVersion> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/systemVersion> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/value> ],
+            owl:onProperty <https://example.org/sepio-model/systemURL> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty <https://example.org/sepio-model/systemURL> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/systemVersion> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/systemURL> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/value> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/systemVersion> ],
@@ -109,116 +109,116 @@
     dcterms:title "Statement" ;
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/direction> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Proposition> ;
-            owl:onProperty <https://example.org/sepio-model/proposition> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/object> ],
+            owl:onProperty <https://example.org/sepio-model/score> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Qualifier> ;
             owl:onProperty <https://example.org/sepio-model/qualifier> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/predicate> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
-            owl:onProperty <https://example.org/sepio-model/subjectClassification> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/subjectClassification> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/object> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/strength> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/subject> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/predicate> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/statementText> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/proposition> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
-            owl:onProperty <https://example.org/sepio-model/predicate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/qualifier> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/direction> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/InformationEntity> ;
-            owl:onProperty <https://example.org/sepio-model/hasEvidence> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/object> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/hasEvidenceLines> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Float ;
-            owl:onProperty <https://example.org/sepio-model/score> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/object> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/hasEvidence> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/hasEvidenceOfTypes> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/direction> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/statementText> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/qualifier> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
+            owl:onProperty <https://example.org/sepio-model/subjectClassification> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/strength> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/subject> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/proposition> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty <https://example.org/sepio-model/score> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/EvidenceLine> ;
             owl:onProperty <https://example.org/sepio-model/hasEvidenceLines> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/subjectClassification> ],
+            owl:onProperty <https://example.org/sepio-model/predicate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/predicate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/hasEvidence> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/hasEvidenceOfTypes> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/InformationEntity> ;
+            owl:onProperty <https://example.org/sepio-model/hasEvidence> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/strength> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/score> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/hasEvidenceOfTypes> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/score> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/statementText> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/statementText> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/subject> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/score> ],
+            owl:onProperty <https://example.org/sepio-model/subjectClassification> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <https://example.org/sepio-model/Proposition> ;
             owl:onProperty <https://example.org/sepio-model/proposition> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/statementText> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/proposition> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
+            owl:onProperty <https://example.org/sepio-model/predicate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/strength> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/direction> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/subjectClassification> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/subject> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/object> ],
         <https://example.org/sepio-model/InformationEntity> ;
     skos:definition "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
     skos:note "In \"Assertion Mode\" a Statement simply reports an SPOQ proposition to be true (e.g. that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\"), and 'direction', 'strength', and 'score' attributes are not populated.  Thos mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.",
         "In \"Proposition Assessment Mode\" a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements to report that \"there is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'\", or \"we have high confidence that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is false\").  This mode is used in curation projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion.",
-        "Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Every Statement puts forth a 'proposition' - a possible fact it assesses or reports to be true.  The semantics of this proposition are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slot(s).",
+        "Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Every Statement puts forth a 'proposition' - a possible fact it assesses or reports to be true.  The semantics of this proposition are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slots (SPOQ).",
         "The model supports two \" modes of use\" for Statements, which differ in what they say about their proposition, and can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated." .
 
 <https://w3id.org/sepio-framework/sepio-linkml> a owl:Ontology ;
@@ -234,23 +234,35 @@
     dcterms:title "Activity" ;
     ns1:status <Informative> ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/performedBy> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/input> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
+            owl:onProperty <https://example.org/sepio-model/subtype> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/specifiedBy> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:date ;
+            owl:onProperty <https://example.org/sepio-model/date> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/date> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Entity> ;
             owl:onProperty <https://example.org/sepio-model/output> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/output> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
-            owl:onProperty <https://example.org/sepio-model/subtype> ],
+            owl:onProperty <https://example.org/sepio-model/date> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/input> ],
+            owl:allValuesFrom <https://example.org/sepio-model/Agent> ;
+            owl:onProperty <https://example.org/sepio-model/performedBy> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Entity> ;
             owl:onProperty <https://example.org/sepio-model/input> ],
@@ -259,22 +271,10 @@
             owl:onProperty <https://example.org/sepio-model/specifiedBy> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/specifiedBy> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/date> ],
+            owl:onProperty <https://example.org/sepio-model/output> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/date> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/performedBy> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Agent> ;
-            owl:onProperty <https://example.org/sepio-model/performedBy> ],
         <https://example.org/sepio-model/Entity> ;
     skos:definition "An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -286,29 +286,29 @@
     dcterms:title "Characteristic" ;
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/valueOperator> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/valueOperator> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/name> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/name> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/values> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/name> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/values> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/valueOperator> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/values> ],
+            owl:onProperty <https://example.org/sepio-model/valueOperator> ],
         <https://example.org/sepio-model/Utility> ;
     skos:definition "An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -320,9 +320,6 @@
     dcterms:title "Data Set" ;
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/license> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/version> ],
         [ a owl:Restriction ;
@@ -330,31 +327,34 @@
             owl:onProperty <https://example.org/sepio-model/releaseDate> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/subtype> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/version> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/releaseDate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/releaseDate> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/license> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/license> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/license> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/releaseDate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/subtype> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/version> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/subtype> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/version> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/releaseDate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/license> ],
         <https://example.org/sepio-model/InformationEntity> ;
     skos:definition "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -366,67 +366,67 @@
     dcterms:title "Evidence Line" ;
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Proposition> ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/strengthOfEvidenceProvided> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/hasEvidenceItems> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/evidenceItemSources> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/directionOfEvidenceProvided> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/targetProposition> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/directionOfEvidenceProvided> ],
+            owl:onProperty <https://example.org/sepio-model/strengthOfEvidenceProvided> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/strengthOfEvidenceProvided> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/targetProposition> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/InformationEntity> ;
-            owl:onProperty <https://example.org/sepio-model/hasEvidenceItems> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/hasEvidenceItems> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/targetProposition> ],
+            owl:onProperty <https://example.org/sepio-model/directionOfEvidenceProvided> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/evidenceItemSources> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/subtype> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/directionOfEvidenceProvided> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/scoreOfEvidenceProvided> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/targetProposition> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/scoreOfEvidenceProvided> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Float ;
             owl:onProperty <https://example.org/sepio-model/scoreOfEvidenceProvided> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/scoreOfEvidenceProvided> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/evidenceItemSources> ],
+            owl:allValuesFrom <https://example.org/sepio-model/Proposition> ;
+            owl:onProperty <https://example.org/sepio-model/targetProposition> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/strengthOfEvidenceProvided> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/scoreOfEvidenceProvided> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/strengthOfEvidenceProvided> ],
+            owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/directionOfEvidenceProvided> ],
+            owl:onProperty <https://example.org/sepio-model/evidenceItemSources> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/InformationEntity> ;
+            owl:onProperty <https://example.org/sepio-model/hasEvidenceItems> ],
         <https://example.org/sepio-model/InformationEntity> ;
     skos:definition "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
     skos:note "Evidence Lines are flexible with respect to the granularity of arguments they support, and the scope of evidence items they can collectively assess. Narrow scoping will bucket available evidence into many, fine-grained Evidence Lines that make the most atomic independently meaningful arguments possible. The ACMG Variant Pathogenicity Interpretation Guidelines are an example of a fairly fine-grained evidence interpretation framework. Broader scoping approaches may organize the same available evidence into fewer Evidence Lines that build and assess less atomic arguments based on a wider and more diverse set of evidence items.  For example, CIViC curators assess the strength and direction of evidence items at the level of *all information reported in a publication for a specific study* - which can encompass many different results and evidence types that under more fine-grained interpretation approaches might be split apart and assessed as separate lines of evidence.",
-        "Evidence Lines are used to capture various pieces of information (i.e. 'evidence items') that are assessed together as an argument for or against some 'target proposition' - to report the direction (supports or disputes) and strength (e.g. strong, moderate, weak) that the argument is determined to make. For example, the various allele counts and population frequency calculations for the BRCA2 c.8023A>G variant in the ExAC database are evidence items that may be collectively assessed to build an EvidenceLine making argument of 'moderate' strength that 'supports' a target proposition that the variant is pathogenic for Breast Cancer.",
+        "Evidence Lines are used to capture various pieces of information (i.e. 'evidence items') that are assessed together as an argument for or against some 'target proposition' - and to report the direction (supports or disputes) and strength (e.g. strong, moderate, weak) that the argument is determined to make. For example, the various allele counts and population frequency calculations for the BRCA2 c.8023A>G variant in the ExAC database are evidence items that may be collectively assessed to build an EvidenceLine making argument of 'moderate' strength that 'supports' a target proposition that the variant is pathogenic for Breast Cancer.",
         "This CIViC EID5682 record (https://civicdb.org/evidence/5682/summary) is a clear example of this - illustrating how ACMG-curated evidence assessed at a finer-grained level would lend itself to SEPIO representations that creates a larger number of more atomic Evidence Lines, as compared to how CIViC-curated evidence from the same source or publication would be represented. We see here that CIViC evidence assessments are performed at the level of all results reported in PMID:23143947 - which SEPIO would capture as a single Evidence Line that assigns a strength (level C) and direction (supports) to the collective argument made by this evidence. However, as detailed in the free-text summary of this EID, the more fine-grained ACMG framework breaks out and separately assess two arguments here - one based on criterion PP1 (disease co-segregation evidence), and one based on criterion PP4 (highly specific gene-phenotype information) - which SEPIO woudl capture as two distinct Evidence Lines." .
 
 <https://example.org/sepio-model/Extension> a owl:Class,
@@ -434,21 +434,6 @@
     rdfs:label "Extension" ;
     dcterms:title "Extension" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/value> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/value> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/extensionDescription> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/extensionDescription> ],
         [ a owl:Restriction ;
@@ -456,10 +441,25 @@
             owl:onProperty <https://example.org/sepio-model/extensionDescription> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/value> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/value> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/extensionDescription> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/value> ],
         <https://example.org/sepio-model/Utility> ;
     skos:definition "A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -471,17 +471,17 @@
     rdfs:label "Method" ;
     dcterms:title "Method" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/subtype> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/urls> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/subtype> ],
+            owl:onProperty <https://example.org/sepio-model/urls> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/urls> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
@@ -497,13 +497,22 @@
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/recordIdentifier> ],
+            owl:onProperty <https://example.org/sepio-model/dateRecordCreated> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/recordIdentifier> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/dateRecordCreated> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/contributions> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/recordIdentifier> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/recordVersion> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Contribution> ;
             owl:onProperty <https://example.org/sepio-model/contributions> ],
@@ -512,10 +521,10 @@
             owl:onProperty <https://example.org/sepio-model/derivedFromRecord> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/dateRecordCreated> ],
+            owl:onProperty <https://example.org/sepio-model/recordIdentifier> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/recordIdentifier> ],
+            owl:onProperty <https://example.org/sepio-model/dateRecordCreated> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/recordVersion> ],
@@ -525,15 +534,6 @@
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/derivedFromRecord> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/recordVersion> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/contributions> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/dateRecordCreated> ],
         <https://example.org/sepio-model/Utility> ;
     skos:definition "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents)." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -545,38 +545,41 @@
     dcterms:title "Study Result" ;
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/StudyGroup> ;
-            owl:onProperty <https://example.org/sepio-model/studyGroup> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/DataSet> ;
-            owl:onProperty <https://example.org/sepio-model/sourceDataSet> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/focus> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/interpretation> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/DataItem> ;
-            owl:onProperty <https://example.org/sepio-model/dataItems> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/focus> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/sourceDataSet> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/StudyResult> ;
             owl:onProperty <https://example.org/sepio-model/componentResult> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/dataItems> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <https://example.org/sepio-model/DataItem> ;
+            owl:onProperty <https://example.org/sepio-model/dataItems> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/StudyResult> ;
+            owl:onProperty <https://example.org/sepio-model/componentResult> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/StudyGroup> ;
             owl:onProperty <https://example.org/sepio-model/studyGroup> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/focus> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/interpretation> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/studyGroup> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/DataSet> ;
+            owl:onProperty <https://example.org/sepio-model/sourceDataSet> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/sourceDataSet> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/focus> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/interpretation> ],
@@ -585,10 +588,7 @@
             owl:onProperty <https://example.org/sepio-model/interpretation> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/focus> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/componentResult> ],
+            owl:onProperty <https://example.org/sepio-model/studyGroup> ],
         <https://example.org/sepio-model/InformationEntity> ;
     skos:definition "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -602,19 +602,19 @@
     dcterms:title "Agent" ;
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/subtype> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/name> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/subtype> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/name> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
@@ -631,29 +631,29 @@
     dcterms:title "Contribution" ;
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
+            owl:onProperty <https://example.org/sepio-model/activityType> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/contributionMadeTo> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/contributor> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/contributionMadeTo> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/InformationEntity> ;
             owl:onProperty <https://example.org/sepio-model/contributionMadeTo> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/contributor> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Agent> ;
             owl:onProperty <https://example.org/sepio-model/contributor> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
-            owl:onProperty <https://example.org/sepio-model/activityType> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/contributor> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/activityType> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/contributionMadeTo> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/contributor> ],
         <https://example.org/sepio-model/Activity> ;
     skos:definition "An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.)." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -666,56 +666,56 @@
     dcterms:title "Proposition" ;
     ns1:status <Informative> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/propositionText> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/object> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/object> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/negated> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/negated> ],
+            owl:onProperty <https://example.org/sepio-model/propositionText> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/object> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/qualifier> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/predicate> ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/subject> ],
+            owl:onProperty <https://example.org/sepio-model/predicate> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/propositionText> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/predicate> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/subject> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/propositionText> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/predicate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/object> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Boolean ;
             owl:onProperty <https://example.org/sepio-model/negated> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/subject> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
             owl:onProperty <https://example.org/sepio-model/predicate> ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/subject> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/object> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/subject> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Qualifier> ;
             owl:onProperty <https://example.org/sepio-model/qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/subject> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/negated> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty <https://example.org/sepio-model/negated> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/propositionText> ],
         <https://example.org/sepio-model/Entity> ;
     skos:definition "An abstract entity representing a possible fact that is either true or false." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -728,22 +728,22 @@
     dcterms:title "Qualifier" ;
     ns1:status <Informative> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/value> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/name> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/value> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/value> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/name> ],
         <https://example.org/sepio-model/Utility> ;
     skos:definition "A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context." ;
@@ -759,8 +759,8 @@
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/characteristics> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/isSubsetOf> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/memberCount> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/StudyGroup> ;
             owl:onProperty <https://example.org/sepio-model/isSubsetOf> ],
@@ -768,14 +768,14 @@
             owl:allValuesFrom linkml:Integer ;
             owl:onProperty <https://example.org/sepio-model/memberCount> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/memberCount> ],
+            owl:allValuesFrom <https://example.org/sepio-model/Characteristic> ;
+            owl:onProperty <https://example.org/sepio-model/characteristics> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/isSubsetOf> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/memberCount> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Characteristic> ;
-            owl:onProperty <https://example.org/sepio-model/characteristics> ],
         <https://example.org/sepio-model/Entity> ;
     skos:definition "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -925,15 +925,6 @@
     skos:definition "A larger StudyGroup of which this StudyGroup represents a subset." ;
     skos:inScheme <https://w3id.org/sepio-model> .
 
-<https://example.org/sepio-model/methodTypes> a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "methodTypes" ;
-    ns1:status <Informative> ;
-    skos:definition "Types of methodological approaches used to collect, generate, or evaluate the reported information." ;
-    skos:inScheme <https://w3id.org/sepio-model> ;
-    skos:note "Implementers should define a relevant source of method type codes/terms to use here based on the needs of the domain or application.'",
-        "This field captures terms representing *types* of methods applied, vs the \"specifiedBy\" attribute which captures specific instances of methods used." .
-
 <https://example.org/sepio-model/output> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "output" ;
@@ -963,6 +954,24 @@
     skos:definition "A larger DataSet from which the content of the StudyResult was derived." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
     skos:note "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance." .
+
+<https://example.org/sepio-model/supportingMethodTypes> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "supportingMethodTypes" ;
+    ns1:status <Informative> ;
+    skos:definition "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity." ;
+    skos:inScheme <https://w3id.org/sepio-model> ;
+    skos:note "Implementers should define a relevant source or set of method type codes/terms to use here, based on the needs of the domain or application.'",
+        "This field captures terms representing TYPES of methods applied, vs the 'specifiedBy' or'supportingMethods' attributes which capture specific INSTANCES of methods used. These may include types of methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity" .
+
+<https://example.org/sepio-model/supportingMethods> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "supportingMethods" ;
+    ns1:status <Informative> ;
+    skos:definition "Specific methods that were executed to directly or indirectly support creation of the Information Entity." ;
+    skos:inScheme <https://w3id.org/sepio-model> ;
+    skos:note "These may include methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity - e.g. methods used to produce data that was interpreted as evidence to generate a Statement of knowledge.",
+        "This field captures terms representing specific INSTANCES of methods applied, vs the 'supportingMethodTypes' attribute which captures TYPES of methods used." .
 
 <https://example.org/sepio-model/values> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -1288,53 +1297,53 @@
     dcterms:title "Data Item" ;
     ns1:status <Informative> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/subtype> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/variabilityMeasures> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/DataItem> ;
-            owl:onProperty <https://example.org/sepio-model/variabilityMeasures> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/componentDataItem> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
+            owl:onProperty <https://example.org/sepio-model/unit> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/unit> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/value> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/subtype> ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/value> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/variabilityMeasures> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/subtype> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/DataItem> ;
+            owl:onProperty <https://example.org/sepio-model/componentDataItem> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/unit> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/confidenceInterval> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/componentDataItem> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/value> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/unit> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
             owl:onProperty <https://example.org/sepio-model/subtype> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/DataItem> ;
+            owl:onProperty <https://example.org/sepio-model/confidenceInterval> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/confidenceInterval> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/DataItem> ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/subtype> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/confidenceInterval> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/DataItem> ;
-            owl:onProperty <https://example.org/sepio-model/componentDataItem> ],
+            owl:onProperty <https://example.org/sepio-model/variabilityMeasures> ],
         <https://example.org/sepio-model/InformationEntity> ;
     skos:definition "An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -1384,58 +1393,58 @@
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/type> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/id> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/description> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/description> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/label> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/description> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/type> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/label> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/alternativeLabels> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/id> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/label> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/type> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/id> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/extensions> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/alternativeLabels> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/identifiers> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Extension> ;
             owl:onProperty <https://example.org/sepio-model/extensions> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/id> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/identifiers> ] ;
+            owl:onProperty <https://example.org/sepio-model/extensions> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/description> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/type> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/identifiers> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/identifiers> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/alternativeLabels> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/description> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/alternativeLabels> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/description> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/type> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/type> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/label> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/id> ] ;
     skos:definition "Anything that exists, has existed, or will exist." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
     skos:note "Entity is the root class of the 'gks-common' core information model. All common classes that have ids and other general metadata like label,  description, type, or extensions descend from this class and inherit its attributes." .
@@ -1446,68 +1455,74 @@
     dcterms:title "Information Entity" ;
     ns1:status <Draft> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/reportedIn> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/specifiedBy> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/specifiedBy> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/isAbout> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
             owl:onProperty <https://example.org/sepio-model/informationQuality> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Contribution> ;
             owl:onProperty <https://example.org/sepio-model/contributions> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/recordMetadata> ],
+            owl:onProperty <https://example.org/sepio-model/derivedFrom> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/dateAuthored> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/dateAuthored> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/recordMetadata> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://example.org/sepio-model/reportedIn> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/contributions> ],
+            owl:onProperty <https://example.org/sepio-model/supportingMethods> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/RecordMetadata> ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/dateAuthored> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/supportingMethods> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/recordMetadata> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/informationQuality> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/isAbout> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/isAbout> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/InformationEntity> ;
             owl:onProperty <https://example.org/sepio-model/derivedFrom> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/recordMetadata> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
-            owl:onProperty <https://example.org/sepio-model/informationQuality> ],
+            owl:onProperty <https://example.org/sepio-model/supportingMethodTypes> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://example.org/sepio-model/RecordMetadata> ;
+            owl:onProperty <https://example.org/sepio-model/recordMetadata> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/informationQuality> ],
+            owl:onProperty <https://example.org/sepio-model/supportingMethodTypes> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/specifiedBy> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/reportedIn> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/dateAuthored> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://example.org/sepio-model/Coding> ;
-            owl:onProperty <https://example.org/sepio-model/methodTypes> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/informationQuality> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/methodTypes> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/derivedFrom> ],
+            owl:onProperty <https://example.org/sepio-model/contributions> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/isAbout> ],
+            owl:onProperty <https://example.org/sepio-model/specifiedBy> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/dateAuthored> ],
         <https://example.org/sepio-model/Entity> ;
     skos:definition "An abstract (non-physical) entity that is about something - representing the underlying 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs." ;
     skos:inScheme <https://w3id.org/sepio-model> ;
@@ -1525,40 +1540,40 @@
     dcterms:title "Coding" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/label> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/systemVersion> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/system> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/system> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/systemVersion> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://example.org/sepio-model/code> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/label> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://example.org/sepio-model/code> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://example.org/sepio-model/systemVersion> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/code> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://example.org/sepio-model/label> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://example.org/sepio-model/system> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/systemVersion> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/system> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/systemVersion> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://example.org/sepio-model/code> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://example.org/sepio-model/code> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://example.org/sepio-model/label> ],
         <https://example.org/sepio-model/Utility> ;
     skos:definition "A structured representation of a code for a defined concept in a terminology or code system." ;
     skos:inScheme <https://w3id.org/sepio-model> ;

@@ -227,7 +227,7 @@
 <p><em>A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.</em></p>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Every Statement puts forth a 'proposition' - a possible fact it assesses or reports to be true.  The semantics of this proposition are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slot(s).</li>
+<li>Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Every Statement puts forth a 'proposition' - a possible fact it assesses or reports to be true.  The semantics of this proposition are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slots (SPOQ).</li>
 <li>The model supports two " modes of use" for Statements, which differ in what they say about their proposition, and can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.</li>
 <li>In "Assertion Mode" a Statement simply reports an SPOQ proposition to be true (e.g. that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer"), and 'direction', 'strength', and 'score' attributes are not populated.  Thos mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.</li>
 <li>In "Proposition Assessment Mode" a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements to report that "there is very strong evidence supporting the proposition that 'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer'", or "we have high confidence that the proposition 'BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer' is false").  This mode is used in curation projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion.</li>
@@ -697,7 +697,7 @@ comments:
   Statement objects. Every Statement puts forth a 'proposition' - a possible fact
   it assesses or reports to be true.  The semantics of this proposition are explicitly
   captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier'
-  slot(s).
+  slots (SPOQ).
 - The model supports two " modes of use" for Statements, which differ in what they
   say about their proposition, and can be distinguished by whether 'direction' and
   'strength' or 'score' attributes are populated.
@@ -1030,7 +1030,7 @@ comments:
   Statement objects. Every Statement puts forth a 'proposition' - a possible fact
   it assesses or reports to be true.  The semantics of this proposition are explicitly
   captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier'
-  slot(s).
+  slots (SPOQ).
 - The model supports two " modes of use" for Statements, which differ in what they
   say about their proposition, and can be distinguished by whether 'direction' and
   'strength' or 'score' attributes are populated.

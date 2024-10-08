@@ -161,15 +161,30 @@ classes:
         range: string
         required: false
         multivalued: true
-      methodTypes:
-        description: Types of methodological approaches used to collect, generate,
-          or evaluate the reported information.
+      supportingMethods:
+        description: Specific methods that were executed to directly or indirectly support
+          creation of the Information Entity.  
         comments:
-        - This field captures terms representing *types* of methods applied, vs
-          the "specifiedBy" attribute which captures specific instances of methods
-          used.
-        - Implementers should define a relevant source of method type codes/terms
-          to use here based on the needs of the domain or application.'
+        - These may include methods that directly produced the Information Entity, or
+          upstream/accessory methods that indirectly support creation of the Information Entity - 
+          e.g. methods used to produce data that was interpreted as evidence to generate a 
+          Statement of knowledge.
+        - This field captures terms representing specific INSTANCES of methods applied, vs the
+          'supportingMethodTypes' attribute which captures TYPES of methods used. 
+        status: Informative
+        range: string
+        required: false
+        multivalued: true
+      supportingMethodTypes:
+        description: Types of methodological approaches that were executed to directly or 
+          indirectly support creation of the Information Entity. 
+        comments:
+        - This field captures terms representing TYPES of methods applied, vs the 'specifiedBy'
+          or'supportingMethods' attributes which capture specific INSTANCES of methods used.
+          These may include types of methods that directly produced the Information Entity, 
+          or upstream/accessory methods that indirectly support creation of the Information Entity 
+        - Implementers should define a relevant source or set of method type codes/terms
+          to use here, based on the needs of the domain or application.'
         status: Informative
         range: Coding
         required: false

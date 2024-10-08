@@ -129,14 +129,6 @@
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/SEPIO-Model/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/SEPIO_Model/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/Sparqlpath/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
@@ -213,10 +205,6 @@
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/contributions_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/contributor/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
@@ -266,10 +254,6 @@
     </url>
     <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/evidenceItemSources/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/evidenceItems/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
@@ -333,15 +317,7 @@
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/label_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/license/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/license_2/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
@@ -349,23 +325,7 @@
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/methodTypes/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/name/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/name_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/name_3/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/name_4/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
@@ -374,10 +334,6 @@
     </url>
     <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/object/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/object_2/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
@@ -397,10 +353,6 @@
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/predicate_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/proposition/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
@@ -410,10 +362,6 @@
     </url>
     <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/qualifier/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/qualifier_2/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
@@ -457,10 +405,6 @@
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/specifiedBy_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/statementText/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
@@ -485,31 +429,7 @@
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/subject_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/subtype/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_3/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_4/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_5/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/subtype_6/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
@@ -533,10 +453,6 @@
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/systemVersion_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/targetProposition/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
@@ -557,27 +473,11 @@
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/urls_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/value/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/valueOperator/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/value_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/value_3/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/value_4/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
     <url>
@@ -590,574 +490,6 @@
     </url>
     <url>
          <loc>https://sepio-framework.github.io/sepio-linkml/version/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Activity/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Agent/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Boolean/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Characteristic/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Coding/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Contribution/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Curie/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/DataItem/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/DataSet/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Date/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/DateOrDatetime/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Datetime/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Decimal/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Document/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Double/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Entity/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/EvidenceLine/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Expression/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Extension/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Float/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/InformationEntity/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Integer/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Jsonpath/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Jsonpointer/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Method/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Ncname/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Nodeidentifier/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Objectidentifier/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Proposition/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Qualifier/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/RecordMetadata/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Sparqlpath/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Statement/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/String/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/StudyGroup/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/StudyResult/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Time/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Uri/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Uriorcurie/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/Utility/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/about/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/activityType/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/alternativeLabels/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/characteristics/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/code/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/componentDataItem/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/componentResult/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/confidenceInterval/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/contributionMadeTo/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/contributions/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/contributions_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/contributor/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/dataItems/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/date/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/dateAuthored/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/dateRecordCreated/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/derivedFrom/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/derivedFromRecord/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/description/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/direction/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/directionOfEvidenceProvided/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/doi/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/evidenceItems/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/extensionDescription/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/extensions/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/focus/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/hasEvidence/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/hasEvidenceLines/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/hasEvidenceOfTypes/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/id/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/identifiers/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/informationQuality/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/input/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/interpretation/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/isAbout/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/isSubsetOf/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/label/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/label_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/license/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/license_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/memberCount/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/methodTypes/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/name/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/name_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/name_3/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/name_4/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/negated/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/object/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/object_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/output/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/performedBy/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/pmid/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/predicate/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/predicate_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/proposition/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/propositionText/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/qualifier/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/qualifier_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/recordIdentifier/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/recordMetadata/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/recordVersion/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/releaseDate/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/reportedIn/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/score/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/scoreOfEvidenceProvided/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/sepio-linkml/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/sourceDataSet/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/specifiedBy/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/specifiedBy_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/statementText/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/strength/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/strengthOfEvidenceProvided/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/studyGroup/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/subject/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/subjectClassification/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/subject_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/subtype/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/subtype_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/subtype_3/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/subtype_4/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/subtype_5/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/subtype_6/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/system/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/systemURL/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/systemVersion/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/systemVersion_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/targetProposition/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/title/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/type/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/unit/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/urls/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/urls_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/value/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/valueOperator/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/value_2/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/value_3/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/value_4/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/values/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/variabilityMeasures/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/version/</loc>
-         <lastmod>2024-10-08</lastmod>
-    </url>
-    <url>
-         <loc>https://sepio-framework.github.io/sepio-linkml/files/files/about/</loc>
          <lastmod>2024-10-08</lastmod>
     </url>
 </urlset>

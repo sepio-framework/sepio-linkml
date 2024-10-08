@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://sepio-framework.github.io/sepio-linkml/contributions/">
+        <link rel="canonical" href="https://sepio-framework.github.io/sepio-linkml/supportingMethods/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: contributions - sepio-linkml</title>
+        <title>Slot: supportingMethods - sepio-linkml</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-contributions" class="md-skip">
+        <a href="#slot-supportingmethods" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: contributions
+              Slot: supportingMethods
             
           </span>
         </div>
@@ -271,6 +271,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -288,6 +295,19 @@
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    Schema Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -319,14 +339,20 @@
                 
                   
 
-  <a href="https://github.com/sepio-framework/sepio-linkml/edit/master/docs/contributions.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sepio-framework/sepio-linkml/edit/master/docs/supportingMethods.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-contributions">Slot: contributions</h1>
-<p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/contributions">sepio_linkml:contributions</a></p>
+<h1 id="slot-supportingmethods">Slot: supportingMethods</h1>
+<p><em>Specific methods that were executed to directly or indirectly support creation of the Information Entity.</em></p>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>These may include methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity - e.g. methods used to produce data that was interpreted as evidence to generate a Statement of knowledge.</li>
+<li>This field captures terms representing specific INSTANCES of methods applied, vs the 'supportingMethodTypes' attribute which captures TYPES of methods used.</li>
+</ul>
+<p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/supportingMethods">sepio_linkml:supportingMethods</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -339,11 +365,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../RecordMetadata/">RecordMetadata</a></td>
-<td>A reusable structure that encapsulates provenance metadata about a serialized...</td>
-<td>no</td>
-</tr>
 <tr>
 <td><a href="../EvidenceLine/">EvidenceLine</a></td>
 <td>An independent, evidence-based argument that may support or refute the validi...</td>
@@ -388,9 +409,18 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/sepio-framework/sepio-linkml</li>
+</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -402,23 +432,37 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>sepio_linkml:contributions</td>
+<td>sepio_linkml:supportingMethods</td>
 </tr>
 <tr>
 <td>native</td>
-<td>sepio_linkml:contributions</td>
+<td>sepio_linkml:supportingMethods</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: contributions
-alias: contributions
+<pre><code class="language-yaml">name: supportingMethods
+description: Specific methods that were executed to directly or indirectly support
+  creation of the Information Entity.
+comments:
+- These may include methods that directly produced the Information Entity, or upstream/accessory
+  methods that indirectly support creation of the Information Entity - e.g. methods
+  used to produce data that was interpreted as evidence to generate a Statement of
+  knowledge.
+- This field captures terms representing specific INSTANCES of methods applied, vs
+  the 'supportingMethodTypes' attribute which captures TYPES of methods used.
+from_schema: https://w3id.org/sepio-framework/sepio-linkml
+status: Informative
+rank: 1000
+alias: supportingMethods
+owner: InformationEntity
 domain_of:
 - InformationEntity
-- RecordMetadata
 range: string
+required: false
+multivalued: true
 
 </code></pre>
 

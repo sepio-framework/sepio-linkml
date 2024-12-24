@@ -283,6 +283,15 @@
     click InformationEntity href "../InformationEntity"
 
 
+      Statement : hasEvidenceFromSources
+
+
+
+
+    Statement --&gt; "*" InformationEntity : hasEvidenceFromSources
+    click InformationEntity href "../InformationEntity"
+
+
       Statement : hasEvidenceLines
 
 
@@ -512,6 +521,15 @@
 * - Evidence is any information that is interpreted in assessing the truth of  the proposition a Statement puts forth as true or false.  A piece of information only becomes evidence when it is interpreted in this way. Different types of information entities can be used and cited as evidence, including direct observation or measurement data, derived statistical calculations, data tables or figures in a publication, conclusions/findings from a particular study, or prior assertions of knowledge  that themselves are based on their own set of evidence.<br/>
 * This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class - to be used data creators cannot or do not wish to create an Evidence Line object.<br>
 </br></details>
+<hr/>
+<p><a href="../hasEvidenceFromSources/">hasEvidenceFromSources</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
+<blockquote>
+<p>An Information Entity (typically a publication, dataset, or database) that provided information used as evidence to generate the knowledge expressed in a Statement.</p>
+</blockquote>
+<details>
+<summary>Implementation Guidance</summary>
+* This is a 'shortcut property' that can be used to directly link a Statement to sources that provided evidence supporting/disputing it, without having to represent the Evidence Lines or Items directly.<br/>
+</details>
 <hr/>
 <h3 id="inherited-slots">Inherited slots</h3>
 <p><a href="../isAbout/">isAbout</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
@@ -1014,6 +1032,21 @@ attributes:
     range: InformationEntity
     required: false
     multivalued: true
+  hasEvidenceFromSources:
+    name: hasEvidenceFromSources
+    description: An Information Entity (typically a publication, dataset, or database)
+      that provided information used as evidence to generate the knowledge expressed
+      in a Statement.
+    comments:
+    - This is a 'shortcut property' that can be used to directly link a Statement
+      to sources that provided evidence supporting/disputing it, without having to
+      represent the Evidence Lines or Items directly.
+    from_schema: https://w3id.org/sepio-model
+    rank: 1000
+    domain_of:
+    - Statement
+    range: InformationEntity
+    multivalued: true
 
 </code></pre>
 </details>
@@ -1372,6 +1405,23 @@ attributes:
     - Statement
     range: InformationEntity
     required: false
+    multivalued: true
+  hasEvidenceFromSources:
+    name: hasEvidenceFromSources
+    description: An Information Entity (typically a publication, dataset, or database)
+      that provided information used as evidence to generate the knowledge expressed
+      in a Statement.
+    comments:
+    - This is a 'shortcut property' that can be used to directly link a Statement
+      to sources that provided evidence supporting/disputing it, without having to
+      represent the Evidence Lines or Items directly.
+    from_schema: https://w3id.org/sepio-model
+    rank: 1000
+    alias: hasEvidenceFromSources
+    owner: Statement
+    domain_of:
+    - Statement
+    range: InformationEntity
     multivalued: true
   isAbout:
     name: isAbout

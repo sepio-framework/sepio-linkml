@@ -910,6 +910,17 @@ classes:
         range: InformationEntity
         required: false
         multivalued: true
+      hasEvidenceFromSources:
+        description: An Information Entity (typically a publication, dataset, or database) that
+          provided information used as evidence to generate the knowledge expressed in a Statement.
+        comments:
+        - This is a 'shortcut property' that can be used to directly link a Statement to
+          sources that provided evidence supporting/disputing it, without having to represent
+          the Evidence Lines or Items directly. 
+        range: InformationEntity
+        multivalued: true
+      
+  
   StudyResult:
     description: A collection of data items from a single study that pertain to a
       particular subject or experimental unit in the study, along with optional provenance

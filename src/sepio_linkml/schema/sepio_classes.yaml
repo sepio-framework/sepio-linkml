@@ -915,8 +915,8 @@ classes:
           provided information used as evidence to generate the knowledge expressed in a Statement.
         comments:
         - This is a 'shortcut property' that can be used to directly link a Statement to
-          sources that provided evidence supporting/disputing it, without having to represent
-          the Evidence Lines or Items directly. 
+          sources that provided evidence supporting/disputing it, without having to create 
+          Evidence Lines or Evidence Items in the data. 
         range: InformationEntity
         multivalued: true
       

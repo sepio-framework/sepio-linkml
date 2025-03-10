@@ -201,9 +201,24 @@ classes:
         comments:
         - This attribute is used specifically to reference documents/publications
           where the Information Entity is expressed or reported.  For a Statement,
-          this might be a publication where the authors express the statement in text.  For
+          this might be a publication where the authors express the statement in text. For
           a Data Item, this might be a publication with a table or figure that reports
           the value of the  data.
+        status: Draft
+        range: string
+        required: false
+        multivalued: true
+      sources:
+        description: >-
+          A document or other informtion resource in which the information entity,
+          or evidence supporting it, is reported.
+        comments:
+        - This attribute is more general than InformationEntity.reportedIn (which is 
+          used to references a Docuement that directly reports the infrormation), and
+          Statement.hasEvidenceFromSources (which is used to reference resources that
+          provided evidence used to generate the knowledge expressed in a Statement). 
+          It can be used to cover both cases, in situations where a data provider does
+          not know which is the case, or does not wish to make the distinction. 
         status: Draft
         range: string
         required: false

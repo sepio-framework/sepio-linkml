@@ -362,6 +362,8 @@
 
       Statement : score
 
+      Statement : sources
+
       Statement : specifiedBy
 
       Statement : statementText
@@ -601,7 +603,16 @@
 <p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
 <details>
 <summary>Implementation Guidance</summary>
-* This attribute is used specifically to reference documents/publications where the Information Entity is expressed or reported.  For a Statement, this might be a publication where the authors express the statement in text.  For a Data Item, this might be a publication with a table or figure that reports the value of the  data.<br/>
+* This attribute is used specifically to reference documents/publications where the Information Entity is expressed or reported.  For a Statement, this might be a publication where the authors express the statement in text. For a Data Item, this might be a publication with a table or figure that reports the value of the  data.<br/>
+</details>
+<p><a href="../sources/">sources</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<blockquote>
+<p>A document or other informtion resource in which the information entity, or evidence supporting it, is reported. <br/></p>
+</blockquote>
+<p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
+<details>
+<summary>Implementation Guidance</summary>
+* This attribute is more general than InformationEntity.reportedIn (which is used to references a Docuement that directly reports the infrormation), and Statement.hasEvidenceFromSources (which is used to reference resources that provided evidence used to generate the knowledge expressed in a Statement). It can be used to cover both cases, in situations where a data provider does not know which is the case, or does not wish to make the distinction.<br/>
 </details>
 <p><a href="../informationQuality/">informationQuality</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
 <blockquote>
@@ -1571,13 +1582,34 @@ attributes:
     comments:
     - This attribute is used specifically to reference documents/publications where
       the Information Entity is expressed or reported.  For a Statement, this might
-      be a publication where the authors express the statement in text.  For a Data
+      be a publication where the authors express the statement in text. For a Data
       Item, this might be a publication with a table or figure that reports the value
       of the  data.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
     alias: reportedIn
+    owner: Statement
+    domain_of:
+    - InformationEntity
+    range: string
+    required: false
+    multivalued: true
+  sources:
+    name: sources
+    description: A document or other informtion resource in which the information
+      entity, or evidence supporting it, is reported.
+    comments:
+    - This attribute is more general than InformationEntity.reportedIn (which is used
+      to references a Docuement that directly reports the infrormation), and Statement.hasEvidenceFromSources
+      (which is used to reference resources that provided evidence used to generate
+      the knowledge expressed in a Statement). It can be used to cover both cases,
+      in situations where a data provider does not know which is the case, or does
+      not wish to make the distinction.
+    from_schema: https://w3id.org/sepio-model
+    status: Draft
+    rank: 1000
+    alias: sources
     owner: Statement
     domain_of:
     - InformationEntity

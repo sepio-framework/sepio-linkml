@@ -349,7 +349,7 @@
 <p><em>A document in which the Information Entity is reported.</em></p>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>This attribute is used specifically to reference documents/publications where the Information Entity is expressed or reported.  For a Statement, this might be a publication where the authors express the statement in text.  For a Data Item, this might be a publication with a table or figure that reports the value of the  data.</li>
+<li>This attribute is used specifically to reference documents/publications where the Information Entity is expressed or reported.  For a Statement, this might be a publication where the authors express the statement in text. For a Data Item, this might be a publication with a table or figure that reports the value of the  data.</li>
 </ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/reportedIn">sepio_linkml:reportedIn</a></p>
 <!-- no inheritance hierarchy -->
@@ -365,8 +365,28 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../EvidenceLine/">EvidenceLine</a></td>
+<td>An independent, evidence-based argument that may support or refute the validi...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DataSet/">DataSet</a></td>
+<td>A collection of related data items or records that are organized together in ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+<td>An abstract (non-physical) entity that is about something - representing the ...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../StudyResult/">StudyResult</a></td>
 <td>A collection of data items from a single study that pertain to a particular s...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Method/">Method</a></td>
+<td>A set of instructions that specify how to achieve some objective</td>
 <td>no</td>
 </tr>
 <tr>
@@ -377,26 +397,6 @@
 <tr>
 <td><a href="../DataItem/">DataItem</a></td>
 <td>An Information Entity representing an individual piece of data, generated or ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DataSet/">DataSet</a></td>
-<td>A collection of related data items or records that are organized together in ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Method/">Method</a></td>
-<td>A set of instructions that specify how to achieve some objective</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EvidenceLine/">EvidenceLine</a></td>
-<td>An independent, evidence-based argument that may support or refute the validi...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-<td>An abstract (non-physical) entity that is about something - representing the ...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -447,7 +447,7 @@ description: A document in which the Information Entity is reported.
 comments:
 - This attribute is used specifically to reference documents/publications where the
   Information Entity is expressed or reported.  For a Statement, this might be a publication
-  where the authors express the statement in text.  For a Data Item, this might be
+  where the authors express the statement in text. For a Data Item, this might be
   a publication with a table or figure that reports the value of the  data.
 from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft

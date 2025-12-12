@@ -10,7 +10,7 @@
     "type": "GeneValidityProposition",
     "subjectGene": "hgnc:4226",    
     "objectDisease": "obo:MONDO_0019181",
-    "predicate": "mutations_may_be_causal_for",         # Predicate requried in SEPIO/VA - to be explicit about the relationship b/t subject and object
+    "predicate": "mutations_can cause",         # Predicate requried in SEPIO/VA - to be explicit about the relationship b/t subject and object
     "modeOfInheritanceQualifier": "obo:HP_0001417"
   },
   "direction": "supports",                              # Should always be provided for a SEPIO Statement
@@ -18,7 +18,7 @@
   "strength": "Moderate",
   "curationReasonDescription": "Downgraded for ...",    # non-SEPIO property - would need to use an extension
   "score": 11.3,
-  "specifiedBy": "GeneValidityCriteria10",
+  "specifiedBy": "GeneValidityCriteria10",              # needs to be a Method object or a reference to one . . . is this the id for one?
   "contributions": [
     {
       "id": "https://genegraph.clinicalgenome.org/r/8afc42b0-6c5e-460b-87d1-035c051fe7ca_contrib",
@@ -60,9 +60,9 @@
           "hasEvidenceItems": [
             {
               "id": "https://genegraph.clinicalgenome.org/r/f13b920a-fcce-4133-a04b-24d8ffafcaae_variant_evidence_item",
-              "type": "VariantObservation",              # Currently no model of "Observations" in SEPIO/VA, but this has been explored and can be added
+              "type": "VariantObservation",              # Currently no model of "Observations" in SEPIO/VA, but this has been explored and can be added. Alt, use the existing StudyResult object to capture observation data?
               "dc:source": "https://pubmed.ncbi.nlm.nih.gov/22002931",
-              "allele": {
+              "allele": {                                # Is this intended to be a GA4GH VRS allele object? Seems to use outdate 'Descriptor' modeling.
                 "id": "https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769",
                 "type": "https://terms.ga4gh.org/VariationDescriptor",
                 "http://www.w3.org/2004/02/skos/core#prefLabel": "NM_001493.3(GDI1):c.1186_1187del (p.Ser396ProfsTer15)",
@@ -95,7 +95,7 @@
               "functionalDataSupport": "Yes"              # Not supported by SEPIO/VA -  but if this is really needed, it seems like it might fit better on the EvidenceLine above?
             },
             {
-              "id": "https://genegraph.clinicalgenome.org/r/23ee3af1-ac4e-42fd-b756-79ec36dee819_variant_evidence_item"   # A reference to the supporting VariantObservation, fully specified elsewhere in the doc. 
+              "id": "https://genegraph.clinicalgenome.org/r/23ee3af1-ac4e-42fd-b756-79ec36dee819_variant_evidence_item"   # A reference to the supporting VariantObservation, fully specified elsewhere in the doc (in a Family Co-Seg object, reporting observation of this variant there)
             }
           ]
         },

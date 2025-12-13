@@ -1,0 +1,357 @@
+# All examples below come from the ClinGen GDI1 Gene Validity Statement
+   # Web record: https://search.clinicalgenome.org/kb/gene-validity/CGGV:assertion_8afc42b0-6c5e-460b-87d1-035c051fe7ca-2023-04-27T060000.000Z?
+   # Matt's initial data transform to SEPIO:  https://github.com/sepio-framework/sepio-linkml/pull/11/files
+# This file explores how we might represent different types of Evidence Items in the data using SEPIO Study Results or Statements
+
+# -------------------------------------
+
+# 1.  Variant Observation Evidence
+
+# Original ClinGen Data
+{
+  "id": "https://genegraph.clinicalgenome.org/r/f13b920a-fcce-4133-a04b-24d8ffafcaae_variant_evidence_item",
+  "type": "VariantObservation",              # Currently no model of "Observations" in SEPIO/VA, but this has been explored and can be added. Or use a Study Result. 
+  "dc:source": "https://pubmed.ncbi.nlm.nih.gov/22002931",
+  "allele": {                                # Is this intended to be a GA4GH VRS allele object? Seems to use outdated 'Descriptor' modeling.
+    "id": "https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769",
+    "type": "https://terms.ga4gh.org/VariationDescriptor",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": "NM_001493.3(GDI1):c.1186_1187del (p.Ser396ProfsTer15)",
+    "https://terms.ga4gh.org/CanonicalReference": {
+      "id": "https://www.ncbi.nlm.nih.gov/clinvar/variation/29933"
+    }
+  },
+  "alleleOrigin": {
+    "id": "cg:GermlineAlleleOrigin"
+  },
+  "zygosity": {
+    "id": "cg:Hemizygous"
+  }
+}
+            
+# Matt's SEPIO Proposal 1: Representation as a Study Result with the allele as the "focus" (considers individual variant observations to be "micro studies" on a study group with 1 member - mainly becuase the StudyResult structure and profiling rules align with this use case)
+  "id": "https://genegraph.clinicalgenome.org/r/f13b920a-fcce-4133-a04b-24d8ffafcaae_variant_evidence_item",
+  "type": "SingleVariantObservationStudyResult",                 # Create a subtype/profile for a specific type of observation as a Study Result
+  "reportedIn": "https://pubmed.ncbi.nlm.nih.gov/22002931",
+  "focus": {                                         # Should use current VRS Allele model                             
+    "id": "https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769",
+    "type": "https://terms.ga4gh.org/VariationDescriptor",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": "NM_001493.3(GDI1):c.1186_1187del (p.Ser396ProfsTer15)",
+    "https://terms.ga4gh.org/CanonicalReference": {
+      "id": "https://www.ncbi.nlm.nih.gov/clinvar/variation/29933"
+    }
+  },
+  "alleleObserved": TRUE                           # Could use a boolean property to report the variant was observed or not . . . or a enumerated property if want to say yes, no, not determined, etc. 
+  "alleleOrigin": {
+    "id": "cg:GermlineAlleleOrigin"
+  },
+  "alleleZygosity": {
+    "id": "cg:Hemizygous"
+  },
+  "studyGroup": {a participant/person id could go here? if we wanted to capture this)
+}
+
+# Matt's SEPIO Prposal 2: Representation as a Study Result with the study participant as the "focus"
+# This could allow for multiple observed variants to be reported in one Result. This structure could be applied to phenotype observations as well.
+# But Tristan says he would ahve to capture one variant per study Result anyway, as they are scored independently. 
+  "id": "https://genegraph.clinicalgenome.org/r/f13b920a-fcce-4133-a04b-24d8ffafcaae_variant_evidence_item",
+  "type": "ObservationVariantStudyResult",                 # Create a subtype/profile for a specific type of observation as a Study Result
+  "reportedIn": "https://pubmed.ncbi.nlm.nih.gov/22002931",
+  "focus": https://genegraph.clinicalgenome.org/r/24b132c6-bcfd-4b3d-b24e-44591b9e8755",    # a participant
+  "observedAlleles":  [                            # Takes one or more "ObservedVariant" objects - a domain entity class we would need to define to represent variants as observed in a particular patient. 
+     {
+     "id": "https://genegraph.clinicalgenome.org/r/b24gra-eab3425-a045-24baae84afcaaee_variant"
+     "type": "ObservedVariant"
+     "variant": "https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769",
+     "variantOrigin": "cg:GermlineAlleleOrigin",
+     "variantZygosity": "cg:Hemizygous"
+     }
+   ]
+  "studyGroup": {a participant/person id could go here? if we wanted to capture this)
+}
+
+
+# ------------------------------------------------------------- #
+
+# 2. Variant Functional Impact Evidence
+
+# Original ClinGen Data
+{
+  "id": "https://genegraph.clinicalgenome.org/r/23ee3af1-ac4e-42fd-b756-79ec36dee819_function_evidence_item",
+  "type": "VariantFunctionalImpactEvidence",  # This would likely be represented as an ExperimentalFunctionalImpactStudyResult in SEPIO/VA.  MAVE defined a model of this for their use case, which may need to be expanded to support yours.  
+  "dc:description": "Western blot shows no GDI1 protein expression in affected patient.",
+  "functionalDataSupport": "Yes"              # Not supported by SEPIO/VA -  but if this is really needed? it seems to just indicate 'yes' if there is functional impact data bout the observed variant - but it lives in the FunctionalImpactEvidence object, which wouldn;t be created if there was not functional evidence.
+},
+
+# Matt's SEPIO proposals - representation as a SEPIO Study Result vs a Statement
+
+# Proposal 1: Use the existing EVFI Study Result or Statement (as defined in VA-Spec) to make a simple Result object. Simplest, minimal new data required.  
+# But I think what is being reported here is the conclusion of the experiment (not the data from it) - which is more of a Statement. 
+# For this reason I think we favor Proposal 2 below.
+ {
+    "id": "https://genegraph.clinicalgenome.org/r/23ee3af1-ac4e-42fd-b756-79ec36dee819_function_evidence_item",
+    "type": "ExperimentalVariantFunctionalImpactStudyResult",                                            # Already defined in VA-Spec for the MAVE use case - so we will want to re-use / be consistent with this
+    "description": "Western blot shows no GDI1 protein expression in affected patient.",  
+    "focus": https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769",    # this is required in a SEPIO/VA study result
+#  ... could add more fields to structure additional data as desired, e.g. "supportingMethodType": "Western Blot". But as noted - there doesnt seem to be any actual data items from the experiment reported, so this doesn't feel like a Study Result. 
+  },
+
+
+# Proposal 2 (preferred): We make this an EVFI Statement - using existing VA-Spec model/profile. 
+# Fits well with the use case, and aligns with what VA-Spec/MAVE have done here. But requires ClinGen to create some additional structured data.  
+   {
+    "id": "https://genegraph.clinicalgenome.org/r/23ee3af1-ac4e-42fd-b756-79ec36dee819_function_evidence_item",
+    "type": "ExperimentalVariantFunctionalImpactStatement",
+    "description": "Western blot shows no GDI1 protein expression in affected patient.",
+    "proposition": {
+      "subjectVariant": https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769",
+      "predicate": "impactsFunctionOf",
+      "objectSequenceFeature": "hgnc:4226",
+      "experimentalContextQualifier": "https://pubmed.ncbi.nlm.nih.gov/22002931"   # optional - a way to narrow the scope/remit of this statement (i.e. that that it holds in a specific experimental context, as described in the referenced pub)
+      "impactTypeQualifier": "reduced expression",    # optional - a way that the reported impact might be captured in a structured way, but not necessary.
+    },
+    "direction": supports                  
+    "classification": "abnormal function"  # optional  - value here can be whatever the ClinGen community wants this to be
+  },
+  
+  
+  # TO DO: Look at other examples of VariantFunctionalImpactEvidence objects in the ClinGen data, and assess how each proposal handles them
+  
+  
+  # ------------------------------------------------------------- #
+
+# 3. FamilyCosegregation Evidence
+
+# Original ClinGen Data:
+# Question: is there a need to capture the variant/allele that is being tracked as well?
+
+{
+  "id": "https://genegraph.clinicalgenome.org/r/0087c979-8cb6-4959-bc64-07a48a61983b_family_segregation",
+  "type": "FamilyCosegregation",              # This (and all similar objects below) would likely be representable by a new SEPIO/VA StudyResult subtype, which we could define to capture the info below
+  "dc:description": "Sequenced more than 1 gene on the X, higher than just candidate gene sequencing",
+  "dc:source": "https://pubmed.ncbi.nlm.nih.gov/22002931",
+  "rdfs:label": "Strobl-Wildemann - Segregation Scoring",
+  "family": {
+    "id": "https://genegraph.clinicalgenome.org/r/0087c979-8cb6-4959-bc64-07a48a61983b",
+    "type": "Family",
+    "rdfs:label": "Strobl-Wildemann - Segregation Scoring"
+  },
+  "meetsInclusionCriteria": true,         # Tristan clarified that this indicates whether the co-segregation is significant/useful to use as evidence or not. If not, they want to report it was looked at but not used as evidence. 
+  "phenotype": {
+    "id": "obo:HP_0001249"
+  },
+  "phenotypePositiveAllelePositive": 8,
+  "publishedLodScore": 2.41,
+  "sequencingMethod": {
+    "id": "cg:CandidateGeneSequencing"
+  }
+},
+
+
+# Matt's SEPIO proposal - representation as a Study Result
+{
+  "id": "https://genegraph.clinicalgenome.org/r/0087c979-8cb6-4959-bc64-07a48a61983b_family_segregation",
+  "type": "FamilyCosegregationStudyResult",              # This (and all similar objects below) would likely be representable by a new SEPIO/VA StudyResult subtype, which we could define to capture the info below
+  "rdfs:label": "Strobl-Wildemann - Segregation Scoring",
+  "description": "Sequenced more than 1 gene on the X, higher than just candidate gene sequencing",
+  "reportedIn": "https://pubmed.ncbi.nlm.nih.gov/22002931",
+  "focus": {                                              # Note that we might consider allowing for more than one focus of a Study Result (to capture the focus variant here as well)
+    "primaryCoding": "obo:HP_0001249"
+    "description": "..."                                   # would capture content of "CG:phenotypeFreeText"
+  },
+  "studyGroup": {
+    "id": "https://genegraph.clinicalgenome.org/r/0087c979-8cb6-4959-bc64-07a48a61983b",
+    "type": "Family",
+    "label": "Strobl-Wildemann - Segregation Scoring"
+    "probands": "..."       # no data provided in this example, but including to show that this is where we would report this - in the Family, not the StudyResult 
+  },
+  "lodScore": 2.41,                                       # new property created for a data item specific to this type of Study Result
+  "phenotypePositiveAllelePositive": 8,                   # new property created for  data item specific to this type of Study Result. Schema says this is boolean . . . why is value here "8"?
+  "supportingMethodType": "cg:CandidateGeneSequencing"    # alt, capture as a quality measure?
+  }
+}
+
+# I think the "meetsInclusionCriteria" data is handled by the "directionOfEvidenceProvided" attribute in the parent EvidenceLine. - which would be "supports" if true, and "neutral" if false (because in this case the cosegregation data does not provide evidence in either direction)
+
+
+# ------------------------------------------------------------------------------ #
+
+
+# FunctionalAlteration Evidence
+
+# Original ClinGen Data:
+                {
+                  "id": "https://genegraph.clinicalgenome.org/r/835c8dec-2d5b-4fd2-a96e-7911b8f5d2a0",
+                  "type": "FunctionalAlteration",                 # This would likely be a new subtype of StudyResult for this kind of Study/Finding
+                  "dc:description": "Using electron microscopy and electrophysiology, we now report that ...",
+                  "dc:source": "https://pubmed.ncbi.nlm.nih.gov/22291894",
+                  "rdfs:label": "Bianchi - Functional Alteration Non-Patient Cells"
+                }
+
+# Matt's proposed SEPIO representation as a Statement
+# I do think the variant/allele being interrogated should be captured in these objects.  Would the subject of a Statement, or the 'focus' of a StudyResult
+
+# Proposed Statement Structure 1 (parallels MAVE Functional Impact Statement SPOQ for describing variant impact on protein function)
+   {
+    "id": "https://genegraph.clinicalgenome.org/r/23ee3af1-ac4e-42fd-b756-79ec36dee819_CellularImpact_evidence_item",
+    "type": "CellularImpactStatement",
+    "description": "Using electron microscopy and electrophysiology, we now report that ..."
+    "proposition": {
+      "subject": https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769",
+      "predicate": "impactsFunctionOf",
+      "object": "CL:0002604",                   # Hippocampal Astrocyte
+      "impactTypeQualifier": "GO:0048400",      # synaptic vesicle membrane organization
+      "experimentalContextQualifier": "https://pubmed.ncbi.nlm.nih.gov/22291864"   # optional - a way to narrow the scope/remit of this statement (i.e. that that it holds in a specific experimental context, as described in the referenced pub)
+    },
+    "direction": supports                  
+    "classification": "abnormal function"  # optional - value here can be whatever the ClinGen community wants this to be
+  },
+
+# Proposed Statement Structure 2 (A more natural way to structure this IMO, with the affected GO term as the object, and cell context as a qualifier
+
+   {
+    "id": "https://genegraph.clinicalgenome.org/r/23ee3af1-ac4e-42fd-b756-79ec36dee819_CellularImpact_evidence_item",
+    "type": "CellularImpactStatement",
+    "description": "Using electron microscopy and electrophysiology, we now report that ...",
+    "proposition": {
+      "subject": https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769",
+      "predicate": "disrupts",
+      "object": "GO:0048400",                           # synaptic vesicle membrane organization
+      "cellularContextQualifier": "CL:0002604",         # Hippocampal Astrocyte
+      "experimentalContextQualifier": "https://pubmed.ncbi.nlm.nih.gov/22291864"   # optional - a way to narrow the scope/remit of this statement (i.e. that that it holds in a specific experimental context, as described in the referenced pub)
+    },
+    "direction": supports                  
+    "classification": "abnormal synaptic vesicle membrane organization"  # optional - value here can be whatever the ClinGen community wants this to be
+  },
+
+# Proposed Statement Structure 3 - these are really just ways to say that the variant causes a specific cellular phenotype. There has been work to "phenotypify" all go terms automatically by combining their CURIES with the PATO curie for abnormal (PATO:0000460) - e.g. "PATO:0000460GO:0048400" 
+
+
+   {
+    "id": "https://genegraph.clinicalgenome.org/r/23ee3af1-ac4e-42fd-b756-79ec36dee819_CellularImpact_evidence_item",
+    "type": "CellularImpactStatement",
+    "description": "Using electron microscopy and electrophysiology, we now report that ...",
+    "proposition": {
+      "subject": https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769",
+      "predicate": "has_phenotype",
+      "object": "PATO:0000460GO:0048400" ,              # abnormal (PATO:0000460) synaptic vesicle membrane organization (GO:0048400)
+      "cellularContextQualifier": "CL:0002604",         # Hippocampal Astrocyte (note that ClinGen may also want to report that this is a cell line, and whether it is patient derived or not, so may need some more modeling here, or capture this as provenance metadata)
+      "experimentalContextQualifier": "https://pubmed.ncbi.nlm.nih.gov/22291864"   # optional - a way to narrow the scope/remit of this statement (i.e. that that it holds in a specific experimental context, as described in the referenced pub)
+    },
+    "direction": supports                  
+    "classification": "abnormal synaptic vesicle membrane organization"  # optional - value here can be whatever the ClinGen community wants this to be
+  },
+
+
+
+# --------------------------------------------------------------------- #
+
+
+
+
+# Extra data exampels of families, probands, as used in cosegregation evidence
+
+# Family and Proband example from ClinGen GDI1 Gene Validity Statement
+# No SEPIO / VA-Spec support for these right now, but could be added (Family could follow the "CMDR:Family" model)
+# I need to understand modeling of and use case for "Proband" better however (I think this is a "CMDR:StudyParticipant")
+
+
+# Example 1:
+"family": {
+  "id": "https://genegraph.clinicalgenome.org/r/c9848e0e-5a86-4bb5-bf1a-f2e1e0b4de10",
+  "type": "Family",
+  "rdfs:label": "Strobl-Wildemann Family 1",
+  "member": {
+    "id": "https://genegraph.clinicalgenome.org/r/0cb3b7f4-8704-47d6-a687-29bb2bbd5e2f",
+    "type": "Proband",
+    "dc:source": "https://pubmed.ncbi.nlm.nih.gov/22002931",
+    "rdfs:label": "Strobl-Wilemann Proband 1",
+    "ageType": "AgeAtReport",
+    "ageUnit": "Years",
+    "ageValue": 12,
+    "allele": {
+      "id": "https://genegraph.clinicalgenome.org/r/b152381d-b705-4ef5-93ba-bfd27d966769"
+    },
+    "detectionMethod": "Per the authors: \"During a study to elucidate the genetic defects in families with ...",
+    "phenotypeFreeText": "The proband is individual V5; his IQ was 55 at 12 years of age ...",
+    "phenotypes": [
+      "obo:HP_0002121",
+      "obo:HP_0000486",
+      "obo:HP_0001763",
+      "obo:HP_0000750",
+      "obo:HP_0001263"
+    ],
+    "previousTesting": true,
+    "previousTestingDescription": "Conventional cytogenetic analysis, fragile-X testing and arrayCGH (Agilent 244K array) analysis had normal results.",
+    "sex": "Male",
+    "variant": {
+      "id": "https://genegraph.clinicalgenome.org/r/f13b920a-fcce-4133-a04b-24d8ffafcaae_variant_evidence_item"
+    }
+  }
+}
+
+# Example 2:
+
+              "family": {
+                "id": "https://genegraph.clinicalgenome.org/r/52a06c8e-3f1c-4fd2-9d3e-ba33c1c6f578",
+                "type": "Family",
+                "rdfs:label": "D'Adamo 1998 Family MRX48",
+                "member": {
+                  "id": "https://genegraph.clinicalgenome.org/r/24b132c6-bcfd-4b3d-b24e-44591b9e8755",
+                  "type": "Proband",
+                  "dc:source": "https://pubmed.ncbi.nlm.nih.gov/9620768",
+                  "rdfs:label": "D'Adamo MRX48 Proband (IV-8)",
+                  "allele": {
+                    "id": "https://genegraph.clinicalgenome.org/r/44ff3d70-66a7-471e-8390-eea2ad4fca6a",
+                    "type": "https://terms.ga4gh.org/VariationDescriptor",
+                    "http://www.w3.org/2004/02/skos/core#prefLabel": "NM_001493.3(GDI1):c.208C>T (p.Arg70Ter)",
+                    "https://terms.ga4gh.org/CanonicalReference": {
+                      "id": "https://www.ncbi.nlm.nih.gov/clinvar/variation/11627"
+                    }
+                  },
+                  "firstTestingMethod": "Sanger sequencing",
+                  "phenotypeFreeText": "This family is described in DesPortes et al. (1997) (PMID: 9106537) ...",
+                  "phenotypes": "obo:HP_0001249",
+                  "previousTesting": true,
+                  "previousTestingDescription": "Per DesPortes: \"In individual IV-8, several investigations were ...",
+                  "sex": "Male",
+                  "variant": {                                        # Why does this proband have an "allele" and a "variant" reported, which look to be the same  - what is difference b/t these fields?
+                    "id": "https://genegraph.clinicalgenome.org/r/23ee3af1-ac4e-42fd-b756-79ec36dee819_variant_evidence_item",
+                    "type": "VariantObservation",
+                    "dc:source": "https://pubmed.ncbi.nlm.nih.gov/9620768",
+                    "allele": {
+                      "id": "https://genegraph.clinicalgenome.org/r/44ff3d70-66a7-471e-8390-eea2ad4fca6a"
+                    },
+                    "alleleOrigin": {
+                      "id": "cg:GermlineAlleleOrigin"
+                    },
+                    "zygosity": {
+                      "id": "cg:Hemizygous"
+                    }
+                  }
+                }
+              },
+              
+              
+# --------------------------------------------------------------------- #
+
+
+}
+# Findings examples from Tristan's GDI1 Gene Validity Statement
+
+
+# Finding : Non Human Model Organism Finding
+                {
+                  "id": "https://genegraph.clinicalgenome.org/r/5eba6a8b-c25d-45af-98c8-da8c414c4e97",
+                  "type": "Finding",        # This would likely be a new subtype of StudyResult we define for this particular type of study/finding
+                  "dc:description": "In mice, as in humans, lack of Gdi1 spares most central nervous system ...",
+                  "dc:source": "https://pubmed.ncbi.nlm.nih.gov/9620768",
+                  "rdfs:label": "D'Adamo Models and Rescue - Animal Model",
+                  "demonstrates": {
+                    "id": "cg:ProteinAlterationDisruptsOrganismFunction"
+                  }
+
+
+
+
+
+

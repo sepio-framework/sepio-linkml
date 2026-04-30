@@ -48,7 +48,7 @@
       "directionOfEvidenceProvided": "supports",              # Added this in - direction of support should always be explicitly declared for SEPIO/VA evidence lines
       "scoreOfEvidenceProvided": 5.8,
       "specifiedBy": "GeneValidityOverallGeneticEvidenceCriteria",
-      "hasEvidenceLines": [
+      "hasEvidenceItems": [
         {
           "id": "https://genegraph.clinicalgenome.org/r/f13b920a-fcce-4133-a04b-24d8ffafcaae",
           "type": "EvidenceLine",

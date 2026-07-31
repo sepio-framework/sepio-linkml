@@ -1,9 +1,12 @@
-# A couple example assertions from the DisMech Cysstic Fibrosis record here: https://github.com/monarch-initiative/dismech/blob/main/kb/disorders/Cystic_Fibrosis.yaml (copied 7-29-26)
+# A couple example assertions from the DisMech Cystic Fibrosis record here: https://github.com/monarch-initiative/dismech/blob/main/kb/disorders/Cystic_Fibrosis.yaml (copied 7-29-26)
 # Below I show how SEPIO might represent the evidence for these assertions that DisMech captures in its Evidence Item objects.
+
+
+## The DisMech source representation of a couple Pathophysiology Assertions for Cystic Fibrosis
 
 name: Cystic Fibrosis
 
-## Pathophysiology Assertion 1: "Cysteic Fibrosis has_pathophysiology CFTR Dysfunction"
+## Pathophysiology Assertion 1: "Cystic Fibrosis has_pathophysiology CFTR Dysfunction"
 pathophysiology:             # each object here represents a discrete assertion that a particular pathophysiological feature is associated with CF
 - name: CFTR Dysfunction
   description: >-
@@ -41,7 +44,8 @@ pathophysiology:             # each object here represents a discrete assertion 
     snippet: "The CFTR is composed of five domains: two membrane-spanning domains (MSDs), two nucleotide-binding domains (NBDs), and a regulatory (R) domain."
     explanation: Describes the five-domain architecture of CFTR critical to understanding mutation effects.
 
-## SEPIO Representation of the evidence for the Pathophysiology Assertion 1
+
+## A SEPIO Representation of the evidence for Pathophysiology Assertion 1
 
  has_evidence_lines:                             # instead of dismech:evidence, use this sepio:has_evidence_lines property
   - type: EvidenceLine
@@ -50,14 +54,14 @@ pathophysiology:             # each object here represents a discrete assertion 
     has_evidence_items:                          # captures the discrete informationentities that are interpreted as evidence for the assertion (here, a single span of text) 
       - id: ex:EvidenceItem001
         type: DataItem                
-        data_type: TextSpan                      # Alt, we could make TextSpan as a proper class in SEPIO it there are unique attributes we want to represent for these tyeps of data items
+        data_type: TextSpan                      # Alt, we could make TextSpan as a proper class in SEPIO it there are unique attributes we want to represent for these types of data items
         value: "The cystic fibrosis transmembrane conductance regulator (CFTR) is a unique member of the ABC transporter family that forms a novel Cl- channel. It is located predominantly in the apical membrane of epithelia where it mediates transepithelial salt and liquid movement. Dysfunction of CFTR causes the genetic disease cystic fibrosis."        reportedIn:
         reported_in:                             # captures the document/publication the text span came from
           id: PMID:9922375
           type: Document
           document_type: PRIMARY_LITERATURE      # this is not in the dismech data, but is supported by SEPIO and may be a valuable addition to dismech
           title: "Structure and function of the CFTR chloride channel."
-    description: Comprehensive review establishes CFTR as chloride channel whose dysfunction causes cystic fibrosis.    # the dismech:explanation is cast into the sepio:EvidenceLine.description field. But a dedicated 'ratioanle/explanation' field could be added to sepio.
+    description: Comprehensive review establishes CFTR as chloride channel whose dysfunction causes cystic fibrosis.    # the dismech:explanation is cast into the sepio:EvidenceLine.description field. But a dedicated 'rationale/explanation' field could be added to sepio.
   - type: EvidenceLine                           # a separate evidence line to describe interpretation of a different snippet as evidence for/against the assertion.
     evidence_type: HUMAN_CLINICAL
     direction_of_evidence_provided: SUPPORT
@@ -77,7 +81,7 @@ pathophysiology:             # each object here represents a discrete assertion 
 # ------------------------------------------------------ #
 
 
-## Pathophysiology Assertion 2: Cysteic Fibrosis has_pathophysiology Airway Surface Liquid Depletion
+## Dismech representation of Pathophysiology Assertion 2: Cystic Fibrosis has_pathophysiology Airway Surface Liquid Depletion
 - name: Airway Surface Liquid Depletion
   description: >-
     Reduced epithelial anion secretion together with increased sodium absorption
@@ -106,7 +110,7 @@ pathophysiology:             # each object here represents a discrete assertion 
     snippet: "CF lungs are characterized by viscous, dehydrated mucus, persistent neutrophilia and chronic infections. ENaC is negatively regulated by CFTR and, in patients with CF, the absence of CFTR results in a double hit of reduced Cl-/HCO3- and H2O secretion as well as ENaC hyperactivity and increased Na+ and H2O absorption."
     explanation: Review describes ENaC hyperactivity and dehydration mechanism in CF airways.
  
-## SEPIO Representation of the evidence for Pathophysiology Assertion 2
+## A SEPIO Representation of the evidence for Pathophysiology Assertion 2
  has_evidence_lines:
   - type: EvidenceLine
     evidence_type: HUMAN_CLINICAL
@@ -127,7 +131,11 @@ pathophysiology:             # each object here represents a discrete assertion 
 # ------------------------------------------------------ #
 
 
-## Alt, SEPIO Representation of the evidence using a TextMiningStudyResult as the evidence item instead of a DataItem - this would allow you to attach additional metadata about the text-mining/llm extraction analysis (e.g. scores, S/O location in text, docuiment section, etc)
+
+
+
+
+## Alt, SEPIO Representation of the evidence using a TextMiningStudyResult as the evidence item instead of a DataItem - this would allow you to attach additional metadata about the text-mining/llm extraction analysis (e.g. scores, S/O location in text, document section, etc)
  has_evidence_lines:
   - type: EvidenceLine
     evidence_type: HUMAN_CLINICAL

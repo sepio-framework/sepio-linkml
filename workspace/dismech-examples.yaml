@@ -3,8 +3,8 @@
 
 name: Cystic Fibrosis
 
-# Assertion 1: "Cysteic Fibrosis has_pathophysiology CFTR Dysfunction"
-pathophysiology:   # each object here represents a discrete assertion that a particular pathophysiological feature is associated with CF
+## Pathophysiology Assertion 1: "Cysteic Fibrosis has_pathophysiology CFTR Dysfunction"
+pathophysiology:             # each object here represents a discrete assertion that a particular pathophysiological feature is associated with CF
 - name: CFTR Dysfunction
   description: >-
     Mutations in the CFTR gene reduce or eliminate CFTR channel function at
@@ -41,7 +41,7 @@ pathophysiology:   # each object here represents a discrete assertion that a par
     snippet: "The CFTR is composed of five domains: two membrane-spanning domains (MSDs), two nucleotide-binding domains (NBDs), and a regulatory (R) domain."
     explanation: Describes the five-domain architecture of CFTR critical to understanding mutation effects.
 
-# SEPIO Representation of the evidence for the pathophysiology assertion (using a TextSpan as the evidence item)
+## SEPIO Representation of the evidence for the Pathophysiology Assertion 1
 
  has_evidence_lines:     # instead of dismech:evidence, use this sepio:has_evidence_lines property
   - type: EvidenceLine
@@ -49,8 +49,9 @@ pathophysiology:   # each object here represents a discrete assertion that a par
     direction_of_evidence_provided: SUPPORT      # casts dismech:supports as sepio:direction_of_evidence_provided - as most terms in the dismech:EvidenceItemSupportEnum represent the direction the evidence as supporting or disputing the assertion
     has_evidence_items:               # captures the discrete informationentities that are interpreted as evidence for the assertion (here, a single span of text) 
       - id: ex:EvidenceItem001
-        type: TextSpan                # TextSpan would be a class in the SEPIO model - as spans of text are commonly referenced evidence items in biocuration.
-        text: "The cystic fibrosis transmembrane conductance regulator (CFTR) is a unique member of the ABC transporter family that forms a novel Cl- channel. It is located predominantly in the apical membrane of epithelia where it mediates transepithelial salt and liquid movement. Dysfunction of CFTR causes the genetic disease cystic fibrosis."        reportedIn:
+        type: DataItem                
+        data_type: TextSpan     # Alt, we could make TextSpan as a proper class in SEPIO it there are unique attributes we want to represent for these tyeps of data items
+        value: "The cystic fibrosis transmembrane conductance regulator (CFTR) is a unique member of the ABC transporter family that forms a novel Cl- channel. It is located predominantly in the apical membrane of epithelia where it mediates transepithelial salt and liquid movement. Dysfunction of CFTR causes the genetic disease cystic fibrosis."        reportedIn:
         reported_in:                  # captures the document/publication the text span came from
           id: PMID:9922375
           type: Document
@@ -62,8 +63,9 @@ pathophysiology:   # each object here represents a discrete assertion that a par
     direction_of_evidence_provided: SUPPORT
     has_evidence_items:
       - id: ex:EvidenceItem002
-        type: TextSpan
-        text: "The CFTR is composed of five domains: two membrane-spanning domains (MSDs), two nucleotide-binding domains (NBDs), and a regulatory (R) domain."
+        type: DataItem                
+        data_type: TextSpan
+        value: "The CFTR is composed of five domains: two membrane-spanning domains (MSDs), two nucleotide-binding domains (NBDs), and a regulatory (R) domain."
         reported_in:
           id: PMID:9922375
           type: Document
@@ -75,7 +77,7 @@ pathophysiology:   # each object here represents a discrete assertion that a par
 # ------------------------------------------------------ #
 
 
-# Assertion 2: Cysteic Fibrosis has_pathophysiology Airway Surface Liquid Depletion
+## Pathophysiology Assertion 2: Cysteic Fibrosis has_pathophysiology Airway Surface Liquid Depletion
 - name: Airway Surface Liquid Depletion
   description: >-
     Reduced epithelial anion secretion together with increased sodium absorption
@@ -104,15 +106,16 @@ pathophysiology:   # each object here represents a discrete assertion that a par
     snippet: "CF lungs are characterized by viscous, dehydrated mucus, persistent neutrophilia and chronic infections. ENaC is negatively regulated by CFTR and, in patients with CF, the absence of CFTR results in a double hit of reduced Cl-/HCO3- and H2O secretion as well as ENaC hyperactivity and increased Na+ and H2O absorption."
     explanation: Review describes ENaC hyperactivity and dehydration mechanism in CF airways.
  
-# SEPIO Representation of the evidence (ssing a TextSpan as the evidence item)
+## SEPIO Representation of the evidence for Pathophysiology Assertion 2
  has_evidence_lines:
   - type: EvidenceLine
     evidence_type: HUMAN_CLINICAL
     direction_of_evidence_provided: SUPPORT
     has_evidence_items:
       - id: ex:EvidenceItem001
-        type: TextSpan
-        text: "CF lungs are characterized by viscous, dehydrated mucus, persistent neutrophilia and chronic infections. ENaC is negatively regulated by CFTR and, in patients with CF, the absence of CFTR results in a double hit of reduced Cl-/HCO3- and H2O secretion as well as ENaC hyperactivity and increased Na+ and H2O absorption."
+        type: DataItem                
+        data_type: TextSpan
+        value: "CF lungs are characterized by viscous, dehydrated mucus, persistent neutrophilia and chronic infections. ENaC is negatively regulated by CFTR and, in patients with CF, the absence of CFTR results in a double hit of reduced Cl-/HCO3- and H2O secretion as well as ENaC hyperactivity and increased Na+ and H2O absorption."
         reportedIn:
           id: PMID:23878362
           type: Document
@@ -121,7 +124,10 @@ pathophysiology:   # each object here represents a discrete assertion that a par
     description: Review describes ENaC hyperactivity and dehydration mechanism in CF airways.
 
 
-# SEPIO Representation of the evidence (using a TextMiningStudyResult as the evidence item - would allow you to attach additional metadata about the text-mining/llm extraction analysis (e.g. scores, S/O location in text, docuiment section, etc)
+# ------------------------------------------------------ #
+
+
+## Alt, SEPIO Representation of the evidence using a TextMiningStudyResult as the evidence item instead of a DataItem - this would allow you to attach additional metadata about the text-mining/llm extraction analysis (e.g. scores, S/O location in text, docuiment section, etc)
  has_evidence_lines:
   - type: EvidenceLine
     evidence_type: HUMAN_CLINICAL
@@ -137,8 +143,6 @@ pathophysiology:   # each object here represents a discrete assertion that a par
         supporting_text:: "CF lungs are characterized by viscous, dehydrated mucus, persistent neutrophilia and chronic infections. ENaC is negatively regulated by CFTR and, in patients with CF, the absence of CFTR results in a double hit of reduced Cl-/HCO3- and H2O secretion as well as ENaC hyperactivity and increased Na+ and H2O absorption."
     description: Review describes ENaC hyperactivity and dehydration mechanism in CF airways.
 
-
-# ------------------------------------------------------ #
 
 
 # Additional EPC that SEPIO could support that might be of use

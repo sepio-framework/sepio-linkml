@@ -128,35 +128,5 @@ pathophysiology:             # each object here represents a discrete assertion 
     description: Review describes ENaC hyperactivity and dehydration mechanism in CF airways.
 
 
-# ------------------------------------------------------ #
 
-
-
-
-
-
-## Alt, SEPIO Representation of the evidence using a TextMiningStudyResult as the evidence item instead of a DataItem - this would allow you to attach additional metadata about the text-mining/llm extraction analysis (e.g. scores, S/O location in text, document section, etc)
- has_evidence_lines:
-  - type: EvidenceLine
-    evidence_type: HUMAN_CLINICAL
-    direction_of_evidence_provided: SUPPORT
-    has_evidence_items:
-      - id: ex:EvidenceItem001
-        type: TextMiningStudyResult
-        supporting_document:
-          id: PMID:23878362
-          type: Document
-          document_type: PRIMARY_LITERATURE
-          title: "Does epithelial sodium channel hyperactivity contribute to cystic fibrosis lung disease?"
-        supporting_text:: "CF lungs are characterized by viscous, dehydrated mucus, persistent neutrophilia and chronic infections. ENaC is negatively regulated by CFTR and, in patients with CF, the absence of CFTR results in a double hit of reduced Cl-/HCO3- and H2O secretion as well as ENaC hyperactivity and increased Na+ and H2O absorption."
-    description: Review describes ENaC hyperactivity and dehydration mechanism in CF airways.
-
-
-
-# Additional EPC that SEPIO could support that might be of use
-# - when, by whom, using what methods each claim was geenrated/curated/reviewed (perhaps common to all assertions in a document, and can be pulled out and represented once)
-# - a confidence score/metric for the assertion as a whole, and support offered by each evidence item?
-# - ... 
-# -
-# - 
 

@@ -43,22 +43,22 @@ pathophysiology:             # each object here represents a discrete assertion 
 
 ## SEPIO Representation of the evidence for the Pathophysiology Assertion 1
 
- has_evidence_lines:     # instead of dismech:evidence, use this sepio:has_evidence_lines property
+ has_evidence_lines:                             # instead of dismech:evidence, use this sepio:has_evidence_lines property
   - type: EvidenceLine
-    evidence_type: HUMAN_CLINICAL     # casts dismech:evidence_source as describing a type of evidence being applied here
+    evidence_type: HUMAN_CLINICAL                # casts dismech:evidence_source as describing a type of evidence being applied here
     direction_of_evidence_provided: SUPPORT      # casts dismech:supports as sepio:direction_of_evidence_provided - as most terms in the dismech:EvidenceItemSupportEnum represent the direction the evidence as supporting or disputing the assertion
-    has_evidence_items:               # captures the discrete informationentities that are interpreted as evidence for the assertion (here, a single span of text) 
+    has_evidence_items:                          # captures the discrete informationentities that are interpreted as evidence for the assertion (here, a single span of text) 
       - id: ex:EvidenceItem001
         type: DataItem                
-        data_type: TextSpan     # Alt, we could make TextSpan as a proper class in SEPIO it there are unique attributes we want to represent for these tyeps of data items
+        data_type: TextSpan                      # Alt, we could make TextSpan as a proper class in SEPIO it there are unique attributes we want to represent for these tyeps of data items
         value: "The cystic fibrosis transmembrane conductance regulator (CFTR) is a unique member of the ABC transporter family that forms a novel Cl- channel. It is located predominantly in the apical membrane of epithelia where it mediates transepithelial salt and liquid movement. Dysfunction of CFTR causes the genetic disease cystic fibrosis."        reportedIn:
-        reported_in:                  # captures the document/publication the text span came from
+        reported_in:                             # captures the document/publication the text span came from
           id: PMID:9922375
           type: Document
-          document_type: PRIMARY_LITERATURE   # this is not in the dismech data, but is supported by SEPIO and may be a valuable addition to dismech
+          document_type: PRIMARY_LITERATURE      # this is not in the dismech data, but is supported by SEPIO and may be a valuable addition to dismech
           title: "Structure and function of the CFTR chloride channel."
     description: Comprehensive review establishes CFTR as chloride channel whose dysfunction causes cystic fibrosis.    # the dismech:explanation is cast into the sepio:EvidenceLine.description field. But a dedicated 'ratioanle/explanation' field could be added to sepio.
-  - type: EvidenceLine           # a separate evidence line to describe interpretation of a different snippet as evidence for/against the assertion.
+  - type: EvidenceLine                           # a separate evidence line to describe interpretation of a different snippet as evidence for/against the assertion.
     evidence_type: HUMAN_CLINICAL
     direction_of_evidence_provided: SUPPORT
     has_evidence_items:

@@ -304,14 +304,15 @@
 <hr />
 <h2 id="what-is-in-this-folder">What is in this folder</h2>
 <ul>
-<li><code>SEPIO_Requirements_Forms.xlsx</code> — the empty workbook your agent should complete.</li>
-<li><code>SEPIO_Requirements_Instructions_and_Guidance.md</code> — detailed semantic and field-by-field instructions intended primarily for the AI agent.</li>
+<li><code>Requirements_Collection_Forms.xlsx</code> — the empty workbook your agent should complete.</li>
+<li><code>Requirements_Instructions_and_Guidance_for_AI.md</code> — detailed semantic and field-by-field instructions intended primarily for the AI agent.</li>
 <li><code>AGENT_PROMPT.md</code> — a ready-to-copy prompt for tasking the agent.</li>
 <li><code>PROJECT_SOURCE_CHECKLIST.md</code> — a checklist for gathering useful project schemas, documentation, examples, and other evidence.</li>
-<li><code>SEPIO_Requirements_Collection_Quick_Start.md</code> — the full human-facing guide to the requirements-collection workflow.</li>
+<li><code>SOURCE_DISCOVERY_PROMPT.md</code> — an optional prompt that asks an AI agent to identify and organize the best available project sources before requirements elicitation begins.</li>
+<li><code>Requirements_Collection_Overview.md</code> — the comprehensive human-facing overview of the requirements-collection workflow.</li>
 <li><code>examples/example_scope_statement.md</code> — examples of how to define exactly what project, model, or data product is being assessed.</li>
 <li><code>examples/example_completed_requirements_review.md</code> — an example of the short review memo the agent should return with the completed forms.</li>
-<li><code>BUNDLE_CONTENTS.md</code> — a list of the files included in this package.</li>
+<li><code>CONTENTS.md</code> — a list of the files included in this package.</li>
 </ul>
 <hr />
 <h1 id="step-1-define-exactly-what-the-project-means">Step 1 — Define exactly what “the project” means</h1>
@@ -426,14 +427,21 @@
 </ul>
 <p>These can justify marking something as <strong>Desired in SEPIO-based Data = Y</strong> even when it is not yet present in current data.</p>
 <p>Use <code>PROJECT_SOURCE_CHECKLIST.md</code> for a fuller checklist.</p>
+<h3 id="two-ways-to-assemble-the-source-set">Two ways to assemble the source set</h3>
+<p>You can prepare the source package in either of two ways:</p>
+<p><strong>Option A — Project representative assembles the sources.</strong><br />
+If you already know the key schema, model documentation, representative records, curation guidance, and ingest/provenance documentation, simply provide those materials to the agent.</p>
+<p><strong>Option B — Ask an AI agent to help discover the sources.</strong><br />
+If the relevant project materials are spread across repositories, documentation sites, papers, APIs, or generated artifacts, use <code>SOURCE_DISCOVERY_PROMPT.md</code> first. The agent will assemble a proposed Source Inventory / Evidence Package, identify the most authoritative/current sources, flag conflicts or missing resources, and recommend a source set for requirements elicitation.</p>
+<p>If you use Option B, review the proposed inventory before the agent begins completing the requirements forms. This helps prevent the requirements analysis from being anchored on an incomplete, stale, or out-of-scope source.</p>
 <hr />
 <h1 id="step-3-give-those-materials-to-your-ai-agent">Step 3 — Give those materials to your AI agent</h1>
 <p>Give the agent, at minimum:</p>
 <ol>
-<li><code>SEPIO_Requirements_Forms.xlsx</code></li>
-<li><code>SEPIO_Requirements_Instructions_and_Guidance.md</code></li>
+<li><code>Requirements_Collection_Forms.xlsx</code></li>
+<li><code>Requirements_Instructions_and_Guidance_for_AI.md</code></li>
 <li>your project scope statement</li>
-<li>the project materials you gathered in Step 2</li>
+<li>the project materials you gathered in Step 2, or the reviewed source set identified using <code>SOURCE_DISCOVERY_PROMPT.md</code></li>
 </ol>
 <p>Then copy the prompt from <code>AGENT_PROMPT.md</code>, replace the bracketed project name/scope text, and send it to the agent.</p>
 <h3 id="how-to-provide-project-materials">How to provide project materials</h3>
@@ -470,7 +478,7 @@
 <h1 id="step-5-ask-for-the-two-deliverables">Step 5 — Ask for the two deliverables</h1>
 <p>The agent should return:</p>
 <h3 id="1-a-completed-requirements-workbook">1. A completed requirements workbook</h3>
-<p>A completed copy of <code>SEPIO_Requirements_Forms.xlsx</code>.</p>
+<p>A completed copy of <code>Requirements_Collection_Forms.xlsx</code>.</p>
 <h3 id="2-a-short-requirements-review-memo">2. A short Requirements Review Memo</h3>
 <p>The memo should summarize:</p>
 <ul>
@@ -541,7 +549,7 @@ Requirements-to-Model Output Package
 </blockquote>
 <hr />
 <h2 id="more-detailed-guidance">More detailed guidance</h2>
-<p>A more comprehensive overview of the workflow and tasks can be found in <code>SEPIO_Requirements_Collection_Quick_Start.md</code> in this folder.</p>
+<p>A more comprehensive overview of the workflow and tasks can be found in <code>Requirements_Collection_Overview.md</code> in this folder.</p>
 
 
 

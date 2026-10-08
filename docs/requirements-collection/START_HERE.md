@@ -10,14 +10,15 @@ After you review and confirm the completed forms, a separate SEPIO requirements-
 
 ## What is in this folder
 
-- `SEPIO_Requirements_Forms.xlsx` — the empty workbook your agent should complete.
-- `SEPIO_Requirements_Instructions_and_Guidance.md` — detailed semantic and field-by-field instructions intended primarily for the AI agent.
+- `Requirements_Collection_Forms.xlsx` — the empty workbook your agent should complete.
+- `Requirements_Instructions_and_Guidance_for_AI.md` — detailed semantic and field-by-field instructions intended primarily for the AI agent.
 - `AGENT_PROMPT.md` — a ready-to-copy prompt for tasking the agent.
 - `PROJECT_SOURCE_CHECKLIST.md` — a checklist for gathering useful project schemas, documentation, examples, and other evidence.
-- `SEPIO_Requirements_Collection_Quick_Start.md` — the full human-facing guide to the requirements-collection workflow.
+- `SOURCE_DISCOVERY_PROMPT.md` — an optional prompt that asks an AI agent to identify and organize the best available project sources before requirements elicitation begins.
+- `Requirements_Collection_Overview.md` — the comprehensive human-facing overview of the requirements-collection workflow.
 - `examples/example_scope_statement.md` — examples of how to define exactly what project, model, or data product is being assessed.
 - `examples/example_completed_requirements_review.md` — an example of the short review memo the agent should return with the completed forms.
-- `BUNDLE_CONTENTS.md` — a list of the files included in this package.
+- `CONTENTS.md` — a list of the files included in this package.
 
 ---
 
@@ -161,16 +162,28 @@ These can justify marking something as **Desired in SEPIO-based Data = Y** even 
 
 Use `PROJECT_SOURCE_CHECKLIST.md` for a fuller checklist.
 
+### Two ways to assemble the source set
+
+You can prepare the source package in either of two ways:
+
+**Option A — Project representative assembles the sources.**  
+If you already know the key schema, model documentation, representative records, curation guidance, and ingest/provenance documentation, simply provide those materials to the agent.
+
+**Option B — Ask an AI agent to help discover the sources.**  
+If the relevant project materials are spread across repositories, documentation sites, papers, APIs, or generated artifacts, use `SOURCE_DISCOVERY_PROMPT.md` first. The agent will assemble a proposed Source Inventory / Evidence Package, identify the most authoritative/current sources, flag conflicts or missing resources, and recommend a source set for requirements elicitation.
+
+If you use Option B, review the proposed inventory before the agent begins completing the requirements forms. This helps prevent the requirements analysis from being anchored on an incomplete, stale, or out-of-scope source.
+
 ---
 
 # Step 3 — Give those materials to your AI agent
 
 Give the agent, at minimum:
 
-1. `SEPIO_Requirements_Forms.xlsx`
-2. `SEPIO_Requirements_Instructions_and_Guidance.md`
+1. `Requirements_Collection_Forms.xlsx`
+2. `Requirements_Instructions_and_Guidance_for_AI.md`
 3. your project scope statement
-4. the project materials you gathered in Step 2
+4. the project materials you gathered in Step 2, or the reviewed source set identified using `SOURCE_DISCOVERY_PROMPT.md`
 
 Then copy the prompt from `AGENT_PROMPT.md`, replace the bracketed project name/scope text, and send it to the agent.
 
@@ -220,7 +233,7 @@ The agent should return:
 
 ### 1. A completed requirements workbook
 
-A completed copy of `SEPIO_Requirements_Forms.xlsx`.
+A completed copy of `Requirements_Collection_Forms.xlsx`.
 
 ### 2. A short Requirements Review Memo
 
@@ -310,4 +323,4 @@ Only after those requirements are reviewed should the mapping workflow ask:
 
 ## More detailed guidance
 
-A more comprehensive overview of the workflow and tasks can be found in `SEPIO_Requirements_Collection_Quick_Start.md` in this folder.
+A more comprehensive overview of the workflow and tasks can be found in `Requirements_Collection_Overview.md` in this folder.

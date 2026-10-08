@@ -1,0 +1,592 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sepio-framework.github.io/sepio-linkml/requirements-collection/START_HERE/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>START HERE — SEPIO Requirements Collection - sepio-linkml</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#start-here-sepio-requirements-collection" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="sepio-linkml" class="md-header__button md-logo" aria-label="sepio-linkml" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sepio-linkml
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              START HERE — SEPIO Requirements Collection
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sepio-framework/sepio-linkml" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="sepio-linkml" class="md-nav__button md-logo" aria-label="sepio-linkml" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    sepio-linkml
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sepio-framework/sepio-linkml" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-im-diagram/" class="md-nav__link">
+        Core IM Diagram
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-in-this-folder" class="md-nav__link">
+    What is in this folder
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/sepio-framework/sepio-linkml/edit/master/docs/requirements-collection/START_HERE.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="start-here-sepio-requirements-collection">START HERE — SEPIO Requirements Collection</h1>
+<p>This folder contains the resources you need to ask an AI agent to complete the SEPIO Requirements Forms for your biomedical knowledge project.</p>
+<p>The goal is to capture <strong>what your project actually represents and requires</strong> about claims, evidence, interpretation, and provenance. At this stage, the agent should describe the project in its own terms rather than trying to choose SEPIO classes or properties.</p>
+<p>After you review and confirm the completed forms, a separate SEPIO requirements-to-model step can determine which SEPIO model elements are relevant, where current SEPIO provides only partial coverage, and where follow-up or model extensions may be needed.</p>
+<hr />
+<h2 id="what-is-in-this-folder">What is in this folder</h2>
+<ul>
+<li><code>SEPIO_Requirements_Forms.xlsx</code> — the empty workbook your agent should complete.</li>
+<li><code>SEPIO_Requirements_Instructions_and_Guidance.md</code> — detailed semantic and field-by-field instructions intended primarily for the AI agent.</li>
+<li><code>AGENT_PROMPT.md</code> — a ready-to-copy prompt for tasking the agent.</li>
+<li><code>PROJECT_SOURCE_CHECKLIST.md</code> — a checklist for gathering useful project schemas, documentation, examples, and other evidence.</li>
+<li><code>SEPIO_Requirements_Collection_Quick_Start.md</code> — the full human-facing guide to the requirements-collection workflow.</li>
+<li><code>examples/example_scope_statement.md</code> — examples of how to define exactly what project, model, or data product is being assessed.</li>
+<li><code>examples/example_completed_requirements_review.md</code> — an example of the short review memo the agent should return with the completed forms.</li>
+<li><code>BUNDLE_CONTENTS.md</code> — a list of the files included in this package.</li>
+</ul>
+<hr />
+<h1 id="step-1-define-exactly-what-the-project-means">Step 1 — Define exactly what “the project” means</h1>
+<p>Before the agent starts, write a short <strong>project scope statement</strong>—usually one or two sentences.</p>
+<p>This matters because a biomedical resource may have several different representations around it:</p>
+<ul>
+<li>an internal curation model;</li>
+<li>a canonical public data model;</li>
+<li>one or more source databases that feed it;</li>
+<li>an ingest/transformation pipeline;</li>
+<li>an API representation;</li>
+<li>a user-interface representation;</li>
+<li>exports in different formats.</li>
+</ul>
+<p>The requirements forms should describe <strong>one clearly defined target</strong>.</p>
+<p>A good scope statement says what is in scope and, where useful, what is out of scope.</p>
+<h3 id="example-canonical-knowledge-graph">Example — canonical knowledge graph</h3>
+<blockquote>
+<p>The project is the canonical MonarchKG data model and KG build output. Requirements should reflect what MonarchKG itself stores and represents, not richer evidence/provenance/confidence information available only in upstream source databases and not downstream API or display enrichments unless they are part of the canonical KG output.</p>
+</blockquote>
+<h3 id="example-native-project-model">Example — native project model</h3>
+<blockquote>
+<p>The project is the native DisMech knowledge model and disorder YAML dataset. Requirements should reflect information represented in the native schema and canonical disorder records, including the project's evidence-bearing mechanistic statements and provenance.</p>
+</blockquote>
+<h3 id="example-one-ingest-into-a-larger-kg">Example — one ingest into a larger KG</h3>
+<blockquote>
+<p>The project is the CTD chemical–disease ingest into Translator. Requirements should describe the normalized associations emitted by that ingest and the evidence/provenance retained in the ingest output, rather than the full CTD source model or Translator as a whole.</p>
+</blockquote>
+<p>More examples are available in <code>examples/example_scope_statement.md</code>.</p>
+<p>If your project has two substantially different data products with different evidence/provenance behavior, consider completing separate requirements forms for each.</p>
+<hr />
+<h1 id="step-2-gather-the-best-project-materials-you-can">Step 2 — Gather the best project materials you can</h1>
+<p>Your agent should not guess what the project does based on its name or on what similar resources usually do. Give it the strongest available evidence.</p>
+<p>You do <strong>not</strong> need every type of source below, but try to provide enough material for the agent to understand both the structure of the data and the intended meaning of that structure.</p>
+<p>Useful materials include:</p>
+<h3 id="authoritative-schemas-and-data-models">Authoritative schemas and data models</h3>
+<p>These are often the most important sources.</p>
+<p>Examples:</p>
+<ul>
+<li>LinkML schema</li>
+<li>JSON Schema</li>
+<li>SHACL shapes</li>
+<li>SQL/database schema</li>
+<li>UML/class diagrams</li>
+<li>data dictionaries</li>
+<li>canonical API object models</li>
+<li>formal export specifications</li>
+</ul>
+<p>These help the agent answer questions such as:</p>
+<blockquote>
+<p>Is a claim a direct graph edge, a reified object, or a field on another record?</p>
+<p>Are supporting publications represented explicitly?</p>
+<p>Is evidence represented as its own object?</p>
+</blockquote>
+<h3 id="model-and-design-documentation">Model and design documentation</h3>
+<p>Provide documents that explain <strong>why</strong> the model is structured as it is.</p>
+<p>Examples:</p>
+<ul>
+<li>model overview</li>
+<li>architecture documentation</li>
+<li>modeling/design decisions</li>
+<li>semantic conventions</li>
+<li>project README files</li>
+<li>data-model documentation</li>
+<li>project papers describing the resource</li>
+</ul>
+<p>These are especially important when the schema alone does not explain intended semantics.</p>
+<h3 id="representative-records-or-datasets">Representative records or datasets</h3>
+<p>Give the agent real examples of how the model is used.</p>
+<p>Examples:</p>
+<ul>
+<li>several representative YAML/JSON records</li>
+<li>example KG edges</li>
+<li>example curated assertions</li>
+<li>example evidence records</li>
+<li>example exports</li>
+<li>a small representative subset of a dataset</li>
+</ul>
+<p>Try to provide examples covering the major kinds of claims/evidence in the project rather than hundreds of nearly identical records.</p>
+<h3 id="evidence-and-curation-guidance">Evidence and curation guidance</h3>
+<p>If the project evaluates or curates evidence, include materials such as:</p>
+<ul>
+<li>curation SOPs</li>
+<li>evidence classification rules</li>
+<li>evidence type definitions</li>
+<li>confidence/scoring guidance</li>
+<li>interpretation guidelines</li>
+<li>review/approval workflows</li>
+<li>documentation of evidence strength or direction</li>
+</ul>
+<h3 id="provenance-and-ingest-documentation">Provenance and ingest documentation</h3>
+<p>This is particularly important for knowledge graphs and aggregators.</p>
+<p>Examples:</p>
+<ul>
+<li>ingest documentation</li>
+<li>source-attribution rules</li>
+<li>primary vs aggregator source conventions</li>
+<li>ETL/transformation documentation</li>
+<li>normalization/grounding procedures</li>
+<li>documentation describing which source fields are retained or discarded</li>
+<li>retrieval or processing pipeline descriptions</li>
+</ul>
+<p>This helps the agent distinguish what an upstream source knows from what <strong>your project actually preserves</strong>.</p>
+<h3 id="requirements-and-use-cases">Requirements and use cases</h3>
+<p>If the desired future model is richer than today's implementation, also provide:</p>
+<ul>
+<li>formal requirements</li>
+<li>competency questions</li>
+<li>user stories</li>
+<li>roadmap/design documents</li>
+<li>documented planned capabilities</li>
+</ul>
+<p>These can justify marking something as <strong>Desired in SEPIO-based Data = Y</strong> even when it is not yet present in current data.</p>
+<p>Use <code>PROJECT_SOURCE_CHECKLIST.md</code> for a fuller checklist.</p>
+<hr />
+<h1 id="step-3-give-those-materials-to-your-ai-agent">Step 3 — Give those materials to your AI agent</h1>
+<p>Give the agent, at minimum:</p>
+<ol>
+<li><code>SEPIO_Requirements_Forms.xlsx</code></li>
+<li><code>SEPIO_Requirements_Instructions_and_Guidance.md</code></li>
+<li>your project scope statement</li>
+<li>the project materials you gathered in Step 2</li>
+</ol>
+<p>Then copy the prompt from <code>AGENT_PROMPT.md</code>, replace the bracketed project name/scope text, and send it to the agent.</p>
+<h3 id="how-to-provide-project-materials">How to provide project materials</h3>
+<p>Use whatever mechanism your agent supports best:</p>
+<ul>
+<li><strong>Upload files directly</strong> when you have local schemas, documentation, spreadsheets, PDFs, YAML/JSON examples, or small datasets.</li>
+<li><strong>Provide repository or documentation links</strong> when the authoritative materials are publicly available online.</li>
+<li><strong>Point to specific files/directories in a repository</strong> when only part of a repo is relevant.</li>
+<li><strong>Provide several representative records rather than an entire large dataset</strong> when the full dataset is unnecessary for understanding the model.</li>
+<li><strong>Tell the agent which sources are authoritative/current</strong> if multiple versions exist.</li>
+<li><strong>Call out known conflicts</strong> between old papers, current schemas, documentation, or implementation behavior.</li>
+</ul>
+<p>A useful message might look like:</p>
+<blockquote>
+<p>The current LinkML schema and model documentation are authoritative. The 2023 paper is useful for background but is older than the current implementation. I have also attached five representative records. Please use the schema/docs to establish requirements and use the records to verify how the fields are actually populated.</p>
+</blockquote>
+<p>If the project is spread across many web pages or repository files, ask the agent to first make a short inventory of the sources it plans to use so you can confirm it is looking at the right materials.</p>
+<hr />
+<h1 id="step-4-have-the-agent-populate-the-forms">Step 4 — Have the agent populate the forms</h1>
+<p>The prompt in <code>AGENT_PROMPT.md</code> tells the agent to complete the workbook using the detailed guidance.</p>
+<p>The agent should work from project evidence, not plausibility.</p>
+<p>In particular, it should distinguish:</p>
+<ul>
+<li><strong>currently represented</strong> vs <strong>desired in future SEPIO-based data</strong>;</li>
+<li><strong>upstream source capability</strong> vs <strong>what the project actually retains</strong>;</li>
+<li><strong>canonical project data</strong> vs <strong>downstream API/UI enrichment</strong>;</li>
+<li><strong>evidence information</strong> vs <strong>evidence interpretation</strong>;</li>
+<li><strong>scientific evidence strength</strong> vs <strong>confidence in a claim or extraction/alignment</strong>;</li>
+<li><strong>knowledge-generation provenance</strong> vs <strong>encoding/retrieval provenance</strong>.</li>
+</ul>
+<p>If the available information does not support a confident answer, the agent should use <strong>M / Maybe / Needs discussion</strong> or otherwise flag the uncertainty rather than guessing.</p>
+<p>The agent should also <strong>not edit or use the SEPIO Mapping Summary columns to decide what the project's requirements should be</strong>. Those mappings are downstream modeling information, not inputs to requirements elicitation.</p>
+<hr />
+<h1 id="step-5-ask-for-the-two-deliverables">Step 5 — Ask for the two deliverables</h1>
+<p>The agent should return:</p>
+<h3 id="1-a-completed-requirements-workbook">1. A completed requirements workbook</h3>
+<p>A completed copy of <code>SEPIO_Requirements_Forms.xlsx</code>.</p>
+<h3 id="2-a-short-requirements-review-memo">2. A short Requirements Review Memo</h3>
+<p>The memo should summarize:</p>
+<ul>
+<li>the project scope used;</li>
+<li>the main project materials consulted;</li>
+<li>high-confidence conclusions;</li>
+<li>answers that need human review;</li>
+<li>apparent conflicts or missing information;</li>
+<li>difficult form/guidance questions;</li>
+<li>important assumptions.</li>
+</ul>
+<p>See <code>examples/example_completed_requirements_review.md</code> for the expected style.</p>
+<p>This memo is useful because you should not have to inspect every workbook cell equally closely. It tells you where your attention is most needed.</p>
+<hr />
+<h1 id="step-6-review-the-agents-work">Step 6 — Review the agent's work</h1>
+<p>Focus especially on places where the agent had to interpret ambiguous documentation or infer future intent.</p>
+<p>Ask:</p>
+<ul>
+<li>Did it assess the <strong>right project/data product</strong>?</li>
+<li>Did it capture the major <strong>claim types</strong>?</li>
+<li>Did it correctly identify what the project treats as <strong>evidence</strong>?</li>
+<li>Did it distinguish flat publication/evidence-code metadata from richer evidence-item or EvidenceLine-style models?</li>
+<li>Did it capture provenance at the right level?</li>
+<li>Did it avoid importing rich EPC information that exists only in upstream sources?</li>
+<li>Did it avoid treating downstream API/display enrichments as canonical project requirements?</li>
+<li>Did it correctly distinguish <strong>current</strong> from <strong>desired</strong> capabilities?</li>
+<li>Did it flag unsupported answers instead of guessing?</li>
+<li>Do answers across the different worksheets tell a coherent story?</li>
+</ul>
+<p>Correct anything that does not accurately reflect the project.</p>
+<p>Once you are comfortable with the workbook, treat it as the <strong>confirmed project requirements input</strong>.</p>
+<hr />
+<h1 id="step-7-what-happens-after-the-requirements-are-confirmed">Step 7 — What happens after the requirements are confirmed</h1>
+<p>The confirmed forms can then be passed into the separate SEPIO requirements-to-model workflow:</p>
+<pre><code class="language-text">Confirmed Requirements Forms
+        +
+Requirement→SEPIO Mapping Registry
+        +
+SEPIO source schema
+        ↓
+Requirements-to-Model Output Package
+</code></pre>
+<p>That downstream package can include:</p>
+<ol>
+<li>Candidate SEPIO Covering Model</li>
+<li>Requirements Summary</li>
+<li>Requirements-to-Model Traceability</li>
+<li>Requirements Follow-Up &amp; Modeling Decisions</li>
+<li>Gap &amp; Extension Analysis</li>
+<li>Implementation Guidance</li>
+<li>Requirements Collection &amp; Form Feedback</li>
+<li>Generation Manifest</li>
+</ol>
+<p>During the current pilot phase, an AI agent can generate these outputs with transparent provenance. Later, deterministic code can take over schema extraction, dependency closure, validation, traceability, and manifest generation.</p>
+<p>The project representative does <strong>not</strong> need to perform these mappings manually.</p>
+<hr />
+<h1 id="key-principle">Key principle</h1>
+<blockquote>
+<p><strong>Requirements first, SEPIO mapping second.</strong></p>
+</blockquote>
+<p>The requirements-collection agent should first answer:</p>
+<blockquote>
+<p>What does this project currently represent, and what does it actually need to represent?</p>
+</blockquote>
+<p>Only after those requirements are reviewed should the mapping workflow ask:</p>
+<blockquote>
+<p>How well does SEPIO represent those needs?</p>
+</blockquote>
+<hr />
+<h2 id="more-detailed-guidance">More detailed guidance</h2>
+<p>A more comprehensive overview of the workflow and tasks can be found in <code>SEPIO_Requirements_Collection_Quick_Start.md</code> in this folder.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

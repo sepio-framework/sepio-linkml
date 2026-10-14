@@ -32,10 +32,9 @@ After you review and confirm the completed forms, a separate SEPIO requirements-
 
 1. **Define the scope.** Decide exactly which canonical source(s) control current-state answers and which broader sources may inform desired-state requirements.
 2. **Create a Resource Inventory.** Identify the best evidence, examples, versions, conflicts, and candidate scope statements.
-3. **Give the inventory and materials to the agent.**
-4. **Have the agent populate the Requirements Forms.**
-5. **Inspect the workbook and review memo.** Resolve uncertainties and correct anything that does not reflect the project.
-6. **Move to SEPIO mapping.** Once confirmed, use the requirements record as input to the separate requirements-to-model workflow.
+3. **Give the agent everything it needs and have it populate the Requirements Forms.**
+4. **Inspect the workbook and review memo.** Resolve uncertainties and correct anything that does not reflect the project.
+5. **Move to SEPIO mapping.** Once confirmed, use the requirements record as input to the separate requirements-to-model workflow.
 
 ---
 
@@ -108,13 +107,20 @@ For detailed instructions, source categories, examples, and inventory structure,
 
 ---
 
-# Step 3 — Give the Resource Inventory and Project Materials to the Agent
+# Step 3 — Give the Agent Everything It Needs and Have It Populate the Requirements Forms
 
-How you provide the evidence depends on how you created the inventory.
+Give the requirements agent:
 
-## If you assembled the inventory yourself
+1. `REQUIREMENTS_FORM_PROMPT.md`
+2. the selected project scope statement
+3. `Requirements_Collection_Forms.xlsx`
+4. `Requirements_Instructions_and_Guidance_for_AI.md`
+5. the reviewed Resource Inventory
+6. any private/local project files that the inventory identified as necessary
 
-You can:
+## How to provide the Resource Inventory and project materials
+
+If you assembled the Resource Inventory yourself, you can:
 
 - upload the relevant files directly;
 - provide public repository, DOI, or documentation links;
@@ -123,29 +129,16 @@ You can:
 
 For large datasets, representative records plus the schema/data dictionary may be enough unless the agent needs the full data to answer a specific question.
 
-## If you are using an AI-generated Resource Inventory
-
-Upload or link the reviewed `[PROJECT]_Resource_Inventory.md` along with the requirements prompt.
+If you are using an AI-generated Resource Inventory, upload or link the reviewed `[PROJECT]_Resource_Inventory.md` along with the requirements prompt.
 
 The inventory should tell the requirements agent which public resources it should retrieve itself. Do not manually upload every public file unless direct retrieval fails or human access/clarification is genuinely required.
 
----
+For the requirements workbook and AI guidance, you can either:
 
-# Step 4 — Have the Agent Populate the Requirements Forms
-
-Give the agent:
-
-1. `REQUIREMENTS_FORM_PROMPT.md`
-2. the selected project scope statement
-3. `Requirements_Collection_Forms.xlsx`
-4. `Requirements_Instructions_and_Guidance_for_AI.md`
-5. the reviewed Resource Inventory
-6. any private/local files that the inventory identified as necessary
-
-You can either:
-
-- upload the form and guidance files directly; or
+- upload the files directly; or
 - put links/pointers to the exact versions you want the agent to use into `REQUIREMENTS_FORM_PROMPT.md`.
+
+Once the scope, inventory, workbook, guidance, and necessary project resources are available, ask the agent to complete the forms using `REQUIREMENTS_FORM_PROMPT.md`.
 
 The agent should follow these principles:
 
@@ -164,7 +157,7 @@ The agent should follow these principles:
 
 ---
 
-# Step 5 — Inspect the Deliverables
+# Step 4 — Inspect the Deliverables
 
 The requirements agent should return two main deliverables.
 
@@ -223,7 +216,7 @@ Once you are comfortable with the workbook, treat it as the **confirmed project 
 
 ---
 
-# Step 6 — What Can Happen Next
+# Step 5 — What Can Happen Next
 
 The confirmed forms can then be passed into the separate SEPIO requirements-to-model workflow:
 

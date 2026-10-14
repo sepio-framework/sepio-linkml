@@ -277,6 +277,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#process-at-a-glance" class="md-nav__link">
+    Process at a glance
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -299,219 +306,175 @@
 
 <h1 id="start-here-sepio-requirements-collection">START HERE — SEPIO Requirements Collection</h1>
 <p>This folder contains the resources you need to ask an AI agent to complete the SEPIO Requirements Forms for your biomedical knowledge project.</p>
-<p>The goal is to capture <strong>what your project actually represents and requires</strong> about claims, evidence, interpretation, and provenance. At this stage, the agent should describe the project in its own terms rather than trying to choose SEPIO classes or properties.</p>
+<p>The goal is to capture <strong>what your project currently represents and what it should support</strong>, with a clean separation between:</p>
+<ul>
+<li><strong>current-state requirements</strong>, grounded strictly in a defined canonical source/dataset/distribution; and</li>
+<li><strong>desired-state requirements</strong>, which may draw on a broader evidence base to capture a maximal, evidence-supported requirements set for later human review.</li>
+</ul>
+<p>At this stage, the agent should describe the project in its own terms rather than trying to choose SEPIO classes or properties.</p>
 <p>After you review and confirm the completed forms, a separate SEPIO requirements-to-model step can determine which SEPIO model elements are relevant, where current SEPIO provides only partial coverage, and where follow-up or model extensions may be needed.</p>
 <hr />
 <h2 id="what-is-in-this-folder">What is in this folder</h2>
 <ul>
 <li><code>Requirements_Collection_Forms.xlsx</code> — the empty workbook your agent should complete.</li>
 <li><code>Requirements_Instructions_and_Guidance_for_AI.md</code> — detailed semantic and field-by-field instructions intended primarily for the AI agent.</li>
-<li><code>AGENT_PROMPT.md</code> — a ready-to-copy prompt for tasking the agent.</li>
+<li><code>REQUIREMENTS_FORM_PROMPT.md</code> — the ready-to-copy prompt for asking an AI agent to complete the forms.</li>
+<li><code>RESOURCE_INVENTORY_PROMPT.md</code> — an optional prompt that asks an AI agent to discover, classify, and organize project resources and propose candidate scope statements.</li>
+<li><code>RESOURCE_INVENTORY_GUIDANCE.md</code> — practical guidance for assembling and reviewing a Resource Inventory.</li>
 <li><code>PROJECT_SOURCE_CHECKLIST.md</code> — a checklist for gathering useful project schemas, documentation, examples, and other evidence.</li>
-<li><code>SOURCE_DISCOVERY_PROMPT.md</code> — an optional prompt that asks an AI agent to identify and organize the best available project sources before requirements elicitation begins.</li>
 <li><code>Requirements_Collection_Overview.md</code> — the comprehensive human-facing overview of the requirements-collection workflow.</li>
-<li><code>examples/example_scope_statement.md</code> — examples of how to define exactly what project, model, or data product is being assessed.</li>
-<li><code>examples/example_completed_requirements_review.md</code> — an example of the short review memo the agent should return with the completed forms.</li>
-<li><code>CONTENTS.md</code> — a list of the files included in this package.</li>
+<li><code>examples/example_scope_statement.md</code> — examples of project scope statements.</li>
+<li><code>examples/example_completed_requirements_review.md</code> — an example Requirements Review Memo.</li>
+<li><code>CONTENTS.md</code> — a list of files included in this package.</li>
 </ul>
 <hr />
-<h1 id="step-1-define-exactly-what-the-project-means">Step 1 — Define exactly what “the project” means</h1>
-<p>Before the agent starts, write a short <strong>project scope statement</strong>—usually one or two sentences.</p>
-<p>This matters because a biomedical resource may have several different representations around it:</p>
-<ul>
-<li>an internal curation model;</li>
-<li>a canonical public data model;</li>
-<li>one or more source databases that feed it;</li>
-<li>an ingest/transformation pipeline;</li>
-<li>an API representation;</li>
-<li>a user-interface representation;</li>
-<li>exports in different formats.</li>
-</ul>
-<p>The requirements forms should describe <strong>one clearly defined target</strong>.</p>
-<p>A good scope statement says what is in scope and, where useful, what is out of scope.</p>
-<h3 id="example-canonical-knowledge-graph">Example — canonical knowledge graph</h3>
-<blockquote>
-<p>The project is the canonical MonarchKG data model and KG build output. Requirements should reflect what MonarchKG itself stores and represents, not richer evidence/provenance/confidence information available only in upstream source databases and not downstream API or display enrichments unless they are part of the canonical KG output.</p>
-</blockquote>
-<h3 id="example-native-project-model">Example — native project model</h3>
-<blockquote>
-<p>The project is the native DisMech knowledge model and disorder YAML dataset. Requirements should reflect information represented in the native schema and canonical disorder records, including the project's evidence-bearing mechanistic statements and provenance.</p>
-</blockquote>
-<h3 id="example-one-ingest-into-a-larger-kg">Example — one ingest into a larger KG</h3>
-<blockquote>
-<p>The project is the CTD chemical–disease ingest into Translator. Requirements should describe the normalized associations emitted by that ingest and the evidence/provenance retained in the ingest output, rather than the full CTD source model or Translator as a whole.</p>
-</blockquote>
-<p>More examples are available in <code>examples/example_scope_statement.md</code>.</p>
-<p>If your project has two substantially different data products with different evidence/provenance behavior, consider completing separate requirements forms for each.</p>
-<hr />
-<h1 id="step-2-gather-the-best-project-materials-you-can">Step 2 — Gather the best project materials you can</h1>
-<p>Your agent should not guess what the project does based on its name or on what similar resources usually do. Give it the strongest available evidence.</p>
-<p>You do <strong>not</strong> need every type of source below, but try to provide enough material for the agent to understand both the structure of the data and the intended meaning of that structure.</p>
-<p>Useful materials include:</p>
-<h3 id="authoritative-schemas-and-data-models">Authoritative schemas and data models</h3>
-<p>These are often the most important sources.</p>
-<p>Examples:</p>
-<ul>
-<li>LinkML schema</li>
-<li>JSON Schema</li>
-<li>SHACL shapes</li>
-<li>SQL/database schema</li>
-<li>UML/class diagrams</li>
-<li>data dictionaries</li>
-<li>canonical API object models</li>
-<li>formal export specifications</li>
-</ul>
-<p>These help the agent answer questions such as:</p>
-<blockquote>
-<p>Is a claim a direct graph edge, a reified object, or a field on another record?</p>
-<p>Are supporting publications represented explicitly?</p>
-<p>Is evidence represented as its own object?</p>
-</blockquote>
-<h3 id="model-and-design-documentation">Model and design documentation</h3>
-<p>Provide documents that explain <strong>why</strong> the model is structured as it is.</p>
-<p>Examples:</p>
-<ul>
-<li>model overview</li>
-<li>architecture documentation</li>
-<li>modeling/design decisions</li>
-<li>semantic conventions</li>
-<li>project README files</li>
-<li>data-model documentation</li>
-<li>project papers describing the resource</li>
-</ul>
-<p>These are especially important when the schema alone does not explain intended semantics.</p>
-<h3 id="representative-records-or-datasets">Representative records or datasets</h3>
-<p>Give the agent real examples of how the model is used.</p>
-<p>Examples:</p>
-<ul>
-<li>several representative YAML/JSON records</li>
-<li>example KG edges</li>
-<li>example curated assertions</li>
-<li>example evidence records</li>
-<li>example exports</li>
-<li>a small representative subset of a dataset</li>
-</ul>
-<p>Try to provide examples covering the major kinds of claims/evidence in the project rather than hundreds of nearly identical records.</p>
-<h3 id="evidence-and-curation-guidance">Evidence and curation guidance</h3>
-<p>If the project evaluates or curates evidence, include materials such as:</p>
-<ul>
-<li>curation SOPs</li>
-<li>evidence classification rules</li>
-<li>evidence type definitions</li>
-<li>confidence/scoring guidance</li>
-<li>interpretation guidelines</li>
-<li>review/approval workflows</li>
-<li>documentation of evidence strength or direction</li>
-</ul>
-<h3 id="provenance-and-ingest-documentation">Provenance and ingest documentation</h3>
-<p>This is particularly important for knowledge graphs and aggregators.</p>
-<p>Examples:</p>
-<ul>
-<li>ingest documentation</li>
-<li>source-attribution rules</li>
-<li>primary vs aggregator source conventions</li>
-<li>ETL/transformation documentation</li>
-<li>normalization/grounding procedures</li>
-<li>documentation describing which source fields are retained or discarded</li>
-<li>retrieval or processing pipeline descriptions</li>
-</ul>
-<p>This helps the agent distinguish what an upstream source knows from what <strong>your project actually preserves</strong>.</p>
-<h3 id="requirements-and-use-cases">Requirements and use cases</h3>
-<p>If the desired future model is richer than today's implementation, also provide:</p>
-<ul>
-<li>formal requirements</li>
-<li>competency questions</li>
-<li>user stories</li>
-<li>roadmap/design documents</li>
-<li>documented planned capabilities</li>
-</ul>
-<p>These can justify marking something as <strong>Desired in SEPIO-based Data = Y</strong> even when it is not yet present in current data.</p>
-<p>Use <code>PROJECT_SOURCE_CHECKLIST.md</code> for a fuller checklist.</p>
-<h3 id="two-ways-to-assemble-the-source-set">Two ways to assemble the source set</h3>
-<p>You can prepare the source package in either of two ways:</p>
-<p><strong>Option A — Project representative assembles the sources.</strong><br />
-If you already know the key schema, model documentation, representative records, curation guidance, and ingest/provenance documentation, simply provide those materials to the agent.</p>
-<p><strong>Option B — Ask an AI agent to help discover the sources.</strong><br />
-If the relevant project materials are spread across repositories, documentation sites, papers, APIs, or generated artifacts, use <code>SOURCE_DISCOVERY_PROMPT.md</code> first. The agent will assemble a proposed Source Inventory / Evidence Package, identify the most authoritative/current sources, flag conflicts or missing resources, and recommend a source set for requirements elicitation.</p>
-<p>If you use Option B, review the proposed inventory before the agent begins completing the requirements forms. This helps prevent the requirements analysis from being anchored on an incomplete, stale, or out-of-scope source.</p>
-<hr />
-<h1 id="step-3-give-those-materials-to-your-ai-agent">Step 3 — Give those materials to your AI agent</h1>
-<p>Give the agent, at minimum:</p>
+<h2 id="process-at-a-glance">Process at a glance</h2>
 <ol>
+<li><strong>Define the scope.</strong> Decide exactly which canonical source(s) control current-state answers and which broader sources may inform desired-state requirements.</li>
+<li><strong>Create a Resource Inventory.</strong> Identify the best evidence, examples, versions, conflicts, and candidate scope statements.</li>
+<li><strong>Give the agent everything it needs and have it populate the Requirements Forms.</strong></li>
+<li><strong>Inspect the workbook and review memo.</strong> Resolve uncertainties and correct anything that does not reflect the project.</li>
+<li><strong>Move to SEPIO mapping.</strong> Once confirmed, use the requirements record as input to the separate requirements-to-model workflow.</li>
+</ol>
+<hr />
+<h1 id="step-1-define-the-scope-statement">Step 1 — Define the Scope Statement</h1>
+<p>Before the requirements agent starts, define a <strong>project scope statement</strong>.</p>
+<p>The scope statement is important because biomedical projects often have several different representations around them: internal curation data, canonical public distributions, intermediate pipeline artifacts, alternate releases, APIs, downstream knowledge graphs, and user-interface representations.</p>
+<p>The scope statement tells the agent <strong>which of these resources control current-state answers</strong> and <strong>which additional resources may inform desired-state answers</strong>.</p>
+<h2 id="minimal-vs-maximal-scope">Minimal vs maximal scope</h2>
+<p>A <strong>minimal scope</strong> describes only the canonical source/dataset/distribution selected for the review.</p>
+<p>Example:</p>
+<blockquote>
+<p><strong>Current-state canonical source:</strong> MeDIC <code>matrix_indication_list.xlsx</code>, version 1.3.0.<br />
+Current-state and desired-state requirements should both be limited to information represented in this canonical distribution.</p>
+</blockquote>
+<p>This produces a conservative requirements record describing that specific distribution.</p>
+<p>A <strong>maximal scope</strong> still defines a strict canonical source set for current state, but allows a broader evidence base for desired-state requirements.</p>
+<p>Example:</p>
+<blockquote>
+<p><strong>Current-state canonical source:</strong> MeDIC <code>matrix_indication_list.xlsx</code>, version 1.3.0. Current-state answers must be based only on this distribution.<br />
+<strong>Desired-state evidence:</strong> additional MeDIC-maintained intermediate curation artifacts, alternate distributions, the MeDIC paper and project documentation, and explicit project requirements may be used to identify a broader, evidence-supported desired-state requirements set. Where desired state differs from current state, the supporting source must be named in <code>Explanation / Considerations</code>.</p>
+</blockquote>
+<p>This keeps the current-state answers reproducible while allowing the first-pass desired-state requirements to be intentionally broad. A human reviewer can later narrow that maximal set.</p>
+<h2 id="how-to-create-the-scope-statement">How to create the scope statement</h2>
+<p>If the appropriate scope is already obvious, write it yourself.</p>
+<p>If not, use <code>RESOURCE_INVENTORY_PROMPT.md</code>. The resource-discovery agent will propose:</p>
+<ul>
+<li>a <strong>minimal / canonical-distribution-only</strong> scope;</li>
+<li>a <strong>maximal / canonical current state + broad desired state</strong> scope;</li>
+<li>additional alternatives when justified;</li>
+<li>a recommended scope.</li>
+</ul>
+<p>Review or refine one of those candidate statements, then paste the finished scope statement into the <code>SELECTED PROJECT SCOPE</code> section of <code>REQUIREMENTS_FORM_PROMPT.md</code>.</p>
+<p>If the project has genuinely different canonical products with different evidence/provenance behavior, consider completing separate requirements reviews.</p>
+<hr />
+<h1 id="step-2-create-a-resource-inventory">Step 2 — Create a Resource Inventory</h1>
+<p>A <strong>Resource Inventory</strong> is a structured list of the project materials that can support the requirements review.</p>
+<p>It is useful because it tells the requirements agent:</p>
+<ul>
+<li>which resources are canonical for current state;</li>
+<li>which additional resources may inform desired state;</li>
+<li>which examples to inspect;</li>
+<li>which sources are historical, upstream, downstream, or context only;</li>
+<li>which versions should be used;</li>
+<li>what conflicts or uncertainties exist;</li>
+<li>what the agent should retrieve itself versus what a human may need to provide.</li>
+</ul>
+<p>You can assemble the inventory yourself, or use <code>RESOURCE_INVENTORY_PROMPT.md</code> to have an AI agent take a first pass.</p>
+<p>If you use the agent-generated inventory, review its source roles, versions, proposed scopes, and exclusions before proceeding.</p>
+<p>For detailed instructions, source categories, examples, and inventory structure, see:</p>
+<p><strong><code>RESOURCE_INVENTORY_GUIDANCE.md</code></strong></p>
+<hr />
+<h1 id="step-3-give-the-agent-everything-it-needs-and-have-it-populate-the-requirements-forms">Step 3 — Give the Agent Everything It Needs and Have It Populate the Requirements Forms</h1>
+<p>Give the requirements agent:</p>
+<ol>
+<li><code>REQUIREMENTS_FORM_PROMPT.md</code></li>
+<li>the selected project scope statement</li>
 <li><code>Requirements_Collection_Forms.xlsx</code></li>
 <li><code>Requirements_Instructions_and_Guidance_for_AI.md</code></li>
-<li>your project scope statement</li>
-<li>the project materials you gathered in Step 2, or the reviewed source set identified using <code>SOURCE_DISCOVERY_PROMPT.md</code></li>
+<li>the reviewed Resource Inventory</li>
+<li>any private/local project files that the inventory identified as necessary</li>
 </ol>
-<p>Then copy the prompt from <code>AGENT_PROMPT.md</code>, replace the bracketed project name/scope text, and send it to the agent.</p>
-<h3 id="how-to-provide-project-materials">How to provide project materials</h3>
-<p>Use whatever mechanism your agent supports best:</p>
+<h2 id="how-to-provide-the-resource-inventory-and-project-materials">How to provide the Resource Inventory and project materials</h2>
+<p>If you assembled the Resource Inventory yourself, you can:</p>
 <ul>
-<li><strong>Upload files directly</strong> when you have local schemas, documentation, spreadsheets, PDFs, YAML/JSON examples, or small datasets.</li>
-<li><strong>Provide repository or documentation links</strong> when the authoritative materials are publicly available online.</li>
-<li><strong>Point to specific files/directories in a repository</strong> when only part of a repo is relevant.</li>
-<li><strong>Provide several representative records rather than an entire large dataset</strong> when the full dataset is unnecessary for understanding the model.</li>
-<li><strong>Tell the agent which sources are authoritative/current</strong> if multiple versions exist.</li>
-<li><strong>Call out known conflicts</strong> between old papers, current schemas, documentation, or implementation behavior.</li>
+<li>upload the relevant files directly;</li>
+<li>provide public repository, DOI, or documentation links;</li>
+<li>provide a manifest/inventory containing precise pointers to the relevant resources;</li>
+<li>point to specific files or directories rather than an entire repository when appropriate.</li>
 </ul>
-<p>A useful message might look like:</p>
-<blockquote>
-<p>The current LinkML schema and model documentation are authoritative. The 2023 paper is useful for background but is older than the current implementation. I have also attached five representative records. Please use the schema/docs to establish requirements and use the records to verify how the fields are actually populated.</p>
-</blockquote>
-<p>If the project is spread across many web pages or repository files, ask the agent to first make a short inventory of the sources it plans to use so you can confirm it is looking at the right materials.</p>
-<hr />
-<h1 id="step-4-have-the-agent-populate-the-forms">Step 4 — Have the agent populate the forms</h1>
-<p>The prompt in <code>AGENT_PROMPT.md</code> tells the agent to complete the workbook using the detailed guidance.</p>
-<p>The agent should work from project evidence, not plausibility.</p>
-<p>In particular, it should distinguish:</p>
+<p>For large datasets, representative records plus the schema/data dictionary may be enough unless the agent needs the full data to answer a specific question.</p>
+<p>If you are using an AI-generated Resource Inventory, upload or link the reviewed <code>[PROJECT]_Resource_Inventory.md</code> along with the requirements prompt.</p>
+<p>The inventory should tell the requirements agent which public resources it should retrieve itself. Do not manually upload every public file unless direct retrieval fails or human access/clarification is genuinely required.</p>
+<p>For the requirements workbook and AI guidance, you can either:</p>
 <ul>
-<li><strong>currently represented</strong> vs <strong>desired in future SEPIO-based data</strong>;</li>
-<li><strong>upstream source capability</strong> vs <strong>what the project actually retains</strong>;</li>
-<li><strong>canonical project data</strong> vs <strong>downstream API/UI enrichment</strong>;</li>
-<li><strong>evidence information</strong> vs <strong>evidence interpretation</strong>;</li>
-<li><strong>scientific evidence strength</strong> vs <strong>confidence in a claim or extraction/alignment</strong>;</li>
-<li><strong>knowledge-generation provenance</strong> vs <strong>encoding/retrieval provenance</strong>.</li>
+<li>upload the files directly; or</li>
+<li>put links/pointers to the exact versions you want the agent to use into <code>REQUIREMENTS_FORM_PROMPT.md</code>.</li>
 </ul>
-<p>If the available information does not support a confident answer, the agent should use <strong>M / Maybe / Needs discussion</strong> or otherwise flag the uncertainty rather than guessing.</p>
-<p>The agent should also <strong>not edit or use the SEPIO Mapping Summary columns to decide what the project's requirements should be</strong>. Those mappings are downstream modeling information, not inputs to requirements elicitation.</p>
+<p>Once the scope, inventory, workbook, guidance, and necessary project resources are available, ask the agent to complete the forms using <code>REQUIREMENTS_FORM_PROMPT.md</code>.</p>
+<p>The agent should follow these principles:</p>
+<ul>
+<li><strong>Current-state answers must come only from the canonical source set named in the selected scope.</strong></li>
+<li><strong>Desired-state answers may use the broader evidence set allowed by the selected scope.</strong></li>
+<li>Desired state should be <strong>maximal but evidence-supported</strong>, not speculative.</li>
+<li>When desired state differs from current state, the agent should say what source supports the broader requirement in <code>Explanation / Considerations</code>.</li>
+<li>The agent should distinguish:</li>
+<li>canonical project data from upstream or downstream representations;</li>
+<li>current representation from desired capability;</li>
+<li>evidence items from evidence interpretation;</li>
+<li>evidence strength from confidence in extraction/alignment;</li>
+<li>stored provenance from process documentation.</li>
+<li>If the available information does not support a confident answer, the agent should use <strong>M / Maybe / Needs discussion</strong> or otherwise flag uncertainty rather than guessing.</li>
+<li>The agent should not use SEPIO mappings to decide what the project requirements are. Requirements come first; mapping comes later.</li>
+</ul>
 <hr />
-<h1 id="step-5-ask-for-the-two-deliverables">Step 5 — Ask for the two deliverables</h1>
-<p>The agent should return:</p>
-<h3 id="1-a-completed-requirements-workbook">1. A completed requirements workbook</h3>
-<p>A completed copy of <code>Requirements_Collection_Forms.xlsx</code>.</p>
-<h3 id="2-a-short-requirements-review-memo">2. A short Requirements Review Memo</h3>
+<h1 id="step-4-inspect-the-deliverables">Step 4 — Inspect the Deliverables</h1>
+<p>The requirements agent should return two main deliverables.</p>
+<h2 id="1-completed-requirements-workbook">1. Completed Requirements Workbook</h2>
+<p>The completed workbook should preserve the original template formatting and contain the project's current-state and desired-state responses.</p>
+<p>The filename should include project name, version, date, and time, for example:</p>
+<p><code>MeDIC_Requirements_v0.2_20261013_1643.xlsx</code></p>
+<h2 id="2-requirements-review-memo">2. Requirements Review Memo</h2>
 <p>The memo should summarize:</p>
 <ul>
-<li>the project scope used;</li>
-<li>the main project materials consulted;</li>
+<li>the selected project scope;</li>
+<li>the exact sources used for <strong>current-state</strong> answers;</li>
+<li>the broader sources used for <strong>desired-state</strong> answers;</li>
+<li>source versions/releases/commits where relevant;</li>
 <li>high-confidence conclusions;</li>
 <li>answers that need human review;</li>
-<li>apparent conflicts or missing information;</li>
-<li>difficult form/guidance questions;</li>
-<li>important assumptions.</li>
+<li>conflicts, assumptions, and missing information;</li>
+<li>inaccessible resources, if any;</li>
+<li>observations about the forms/guidance;</li>
+<li>a small set of representative data examples.</li>
 </ul>
-<p>See <code>examples/example_completed_requirements_review.md</code> for the expected style.</p>
-<p>This memo is useful because you should not have to inspect every workbook cell equally closely. It tells you where your attention is most needed.</p>
-<hr />
-<h1 id="step-6-review-the-agents-work">Step 6 — Review the agent's work</h1>
-<p>Focus especially on places where the agent had to interpret ambiguous documentation or infer future intent.</p>
+<p>The memo should include:</p>
+<ul>
+<li>a few examples directly from the canonical current-state source; and</li>
+<li>a few broader/maximal examples from desired-state sources when they reveal additional requirements.</li>
+</ul>
+<p>Examples should be represented as close to the source structure as practical—for example, table rows for tabular data, JSON/YAML for structured documents, or triples/edges for graph data.</p>
+<h2 id="what-to-review">What to review</h2>
+<p>Focus especially on places where the agent had to interpret ambiguous evidence or infer desired-state intent.</p>
 <p>Ask:</p>
 <ul>
-<li>Did it assess the <strong>right project/data product</strong>?</li>
+<li>Did it assess the <strong>right canonical current-state source</strong>?</li>
+<li>Did it use only that source set for current-state answers?</li>
+<li>Did it use the broader desired-state sources only where the selected scope allowed them?</li>
+<li>When current and desired state differ, did it identify the supporting desired-state source?</li>
 <li>Did it capture the major <strong>claim types</strong>?</li>
 <li>Did it correctly identify what the project treats as <strong>evidence</strong>?</li>
-<li>Did it distinguish flat publication/evidence-code metadata from richer evidence-item or EvidenceLine-style models?</li>
-<li>Did it capture provenance at the right level?</li>
-<li>Did it avoid importing rich EPC information that exists only in upstream sources?</li>
-<li>Did it avoid treating downstream API/display enrichments as canonical project requirements?</li>
-<li>Did it correctly distinguish <strong>current</strong> from <strong>desired</strong> capabilities?</li>
+<li>Did it distinguish evidence items from evidence interpretation?</li>
+<li>Did it capture provenance at the correct level?</li>
+<li>Did it avoid importing rich information that exists only in upstream sources unless the selected scope explicitly allows it as desired-state evidence?</li>
+<li>Did it avoid treating downstream API/display enrichments as canonical current-state requirements?</li>
 <li>Did it flag unsupported answers instead of guessing?</li>
-<li>Do answers across the different worksheets tell a coherent story?</li>
+<li>Do the worksheets and memo tell a coherent story?</li>
 </ul>
 <p>Correct anything that does not accurately reflect the project.</p>
 <p>Once you are comfortable with the workbook, treat it as the <strong>confirmed project requirements input</strong>.</p>
 <hr />
-<h1 id="step-7-what-happens-after-the-requirements-are-confirmed">Step 7 — What happens after the requirements are confirmed</h1>
+<h1 id="step-5-what-can-happen-next">Step 5 — What Can Happen Next</h1>
 <p>The confirmed forms can then be passed into the separate SEPIO requirements-to-model workflow:</p>
 <pre><code class="language-text">Confirmed Requirements Forms
         +
@@ -539,9 +502,9 @@ Requirements-to-Model Output Package
 <blockquote>
 <p><strong>Requirements first, SEPIO mapping second.</strong></p>
 </blockquote>
-<p>The requirements-collection agent should first answer:</p>
+<p>The requirements-collection workflow should first answer:</p>
 <blockquote>
-<p>What does this project currently represent, and what does it actually need to represent?</p>
+<p>What does the selected canonical source currently represent, and what broader capabilities does the project evidence support as desired requirements?</p>
 </blockquote>
 <p>Only after those requirements are reviewed should the mapping workflow ask:</p>
 <blockquote>
@@ -549,7 +512,8 @@ Requirements-to-Model Output Package
 </blockquote>
 <hr />
 <h2 id="more-detailed-guidance">More detailed guidance</h2>
-<p>A more comprehensive overview of the workflow and tasks can be found in <code>Requirements_Collection_Overview.md</code> in this folder.</p>
+<p>A more comprehensive overview of the workflow and tasks can be found in <code>Requirements_Collection_Overview.md</code>.</p>
+<p>Detailed guidance for building and reviewing the project evidence set can be found in <code>RESOURCE_INVENTORY.md</code>.</p>
 
 
 

@@ -26,7 +26,7 @@ PROJECT
 
 SELECTED PROJECT SCOPE
 
-[Paste the selected scope statement here. Prefer a scope statement produced by RESOURCE_INVENTORY_PROMPT.md and reviewed/selected by the project representative.]
+[Paste the selected scope statement here. Prefer a scope statement produced by RESOURCE_INVENTORY_PROMPT.md and reviewed/selected/refined by the project representative.]
 
 The selected scope statement must identify, explicitly or by reference to the Resource Inventory:
 
@@ -48,7 +48,7 @@ You will be provided access to the materials needed for this task. They may be s
 - version-pinned GitHub URLs identifying a specific commit, tag, or release;
 - DOI/archive links;
 - other public project URLs or repository paths;
-- a reviewed Resource Inventory / Evidence Package produced using `RESOURCE_INVENTORY_PROMPT.md`.
+- a reviewed Resource Inventory / Evidence Package produced using `RESOURCE_INVENTORY_PROMPT.md`-  which may contain pointers/links to the types of resources above.
 
 The core requirements-collection materials are:
 

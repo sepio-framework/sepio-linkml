@@ -9,7 +9,7 @@ The goal is to capture **what your project currently represents and what it shou
 
 At this stage, the agent should describe the project in its own terms rather than trying to choose SEPIO classes or properties.
 
-After you review and confirm the completed forms, a separate SEPIO requirements-to-model step can determine which SEPIO model elements are relevant, where current SEPIO provides only partial coverage, and where follow-up or model extensions may be needed.
+After you review and confirm the completed forms, a separate **SEPIO requirements-to-model step** can determine which SEPIO model elements are relevant, where current SEPIO provides only partial coverage, and where follow-up or model extensions may be needed.
 
 ---
 

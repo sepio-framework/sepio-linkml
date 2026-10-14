@@ -111,34 +111,13 @@ For detailed instructions, source categories, examples, and inventory structure,
 
 Give the requirements agent:
 
-1. `REQUIREMENTS_FORM_PROMPT.md`
-2. the selected project scope statement
-3. `Requirements_Collection_Forms.xlsx`
-4. `Requirements_Instructions_and_Guidance_for_AI.md`
-5. the reviewed Resource Inventory
-6. any private/local project files that the inventory identified as necessary
+1. `REQUIREMENTS_FORM_PROMPT.md` (edited to include a PROJECT NAME and SCOPE STATEMENT)
+3. `Requirements_Collection_Forms.xlsx` (may be referenced in PROMPT or uploaded with PROMPT)
+4. `Requirements_Instructions_and_Guidance_for_AI.md`  (may be referenced in PROMPT or uploaded with PROMPT)
+5. A `[PROJECT]_Resource_Inventory.md`file (upload with prompt)
+6. (optional) any additional private/local project files or datasets that the inventory identified as necessary (upload with PROMPT)
 
-## How to provide the Resource Inventory and project materials
-
-If you assembled the Resource Inventory yourself, you can:
-
-- upload the relevant files directly;
-- provide public repository, DOI, or documentation links;
-- provide a manifest/inventory containing precise pointers to the relevant resources;
-- point to specific files or directories rather than an entire repository when appropriate.
-
-For large datasets, representative records plus the schema/data dictionary may be enough unless the agent needs the full data to answer a specific question.
-
-If you are using an AI-generated Resource Inventory, upload or link the reviewed `[PROJECT]_Resource_Inventory.md` along with the requirements prompt.
-
-The inventory should tell the requirements agent which public resources it should retrieve itself. Do not manually upload every public file unless direct retrieval fails or human access/clarification is genuinely required.
-
-For the requirements workbook and AI guidance, you can either:
-
-- upload the files directly; or
-- put links/pointers to the exact versions you want the agent to use into `REQUIREMENTS_FORM_PROMPT.md`.
-
-Once the scope, inventory, workbook, guidance, and necessary project resources are available, ask the agent to complete the forms using `REQUIREMENTS_FORM_PROMPT.md`.
+Once these materials are provided, ask the agent to complete the forms using `REQUIREMENTS_FORM_PROMPT.md`.
 
 The agent should follow these principles:
 

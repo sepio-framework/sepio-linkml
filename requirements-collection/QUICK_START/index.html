@@ -388,30 +388,13 @@ Current-state and desired-state requirements should both be limited to informati
 <h1 id="step-3-give-the-agent-everything-it-needs-and-have-it-populate-the-requirements-forms">Step 3 — Give the Agent Everything It Needs and Have It Populate the Requirements Forms</h1>
 <p>Give the requirements agent:</p>
 <ol>
-<li><code>REQUIREMENTS_FORM_PROMPT.md</code></li>
-<li>the selected project scope statement</li>
-<li><code>Requirements_Collection_Forms.xlsx</code></li>
-<li><code>Requirements_Instructions_and_Guidance_for_AI.md</code></li>
-<li>the reviewed Resource Inventory</li>
-<li>any private/local project files that the inventory identified as necessary</li>
+<li><code>REQUIREMENTS_FORM_PROMPT.md</code> (edited to include a PROJECT NAME and SCOPE STATEMENT)</li>
+<li><code>Requirements_Collection_Forms.xlsx</code> (may be referenced in PROMPT or uploaded with PROMPT)</li>
+<li><code>Requirements_Instructions_and_Guidance_for_AI.md</code>  (may be referenced in PROMPT or uploaded with PROMPT)</li>
+<li>A <code>[PROJECT]_Resource_Inventory.md</code>file (upload with prompt)</li>
+<li>(optional) any additional private/local project files or datasets that the inventory identified as necessary (upload with PROMPT)</li>
 </ol>
-<h2 id="how-to-provide-the-resource-inventory-and-project-materials">How to provide the Resource Inventory and project materials</h2>
-<p>If you assembled the Resource Inventory yourself, you can:</p>
-<ul>
-<li>upload the relevant files directly;</li>
-<li>provide public repository, DOI, or documentation links;</li>
-<li>provide a manifest/inventory containing precise pointers to the relevant resources;</li>
-<li>point to specific files or directories rather than an entire repository when appropriate.</li>
-</ul>
-<p>For large datasets, representative records plus the schema/data dictionary may be enough unless the agent needs the full data to answer a specific question.</p>
-<p>If you are using an AI-generated Resource Inventory, upload or link the reviewed <code>[PROJECT]_Resource_Inventory.md</code> along with the requirements prompt.</p>
-<p>The inventory should tell the requirements agent which public resources it should retrieve itself. Do not manually upload every public file unless direct retrieval fails or human access/clarification is genuinely required.</p>
-<p>For the requirements workbook and AI guidance, you can either:</p>
-<ul>
-<li>upload the files directly; or</li>
-<li>put links/pointers to the exact versions you want the agent to use into <code>REQUIREMENTS_FORM_PROMPT.md</code>.</li>
-</ul>
-<p>Once the scope, inventory, workbook, guidance, and necessary project resources are available, ask the agent to complete the forms using <code>REQUIREMENTS_FORM_PROMPT.md</code>.</p>
+<p>Once these materials are provided, ask the agent to complete the forms using <code>REQUIREMENTS_FORM_PROMPT.md</code>.</p>
 <p>The agent should follow these principles:</p>
 <ul>
 <li><strong>Current-state answers must come only from the canonical source set named in the selected scope.</strong></li>

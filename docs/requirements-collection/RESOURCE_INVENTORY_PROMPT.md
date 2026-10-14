@@ -6,7 +6,7 @@ The purpose of this task is to:
 
 1. identify, evaluate, and organize the project resources that can inform requirements elicitation;
 2. distinguish resources that should control **current-state** requirements from broader resources that may inform **desired-state** requirements; and
-3. propose multiple provisional project scope statements for human selection before the requirements forms are completed.
+3. only **after the resource inventory has been assembled and source IDs assigned**, propose one or more provisional project scope statements for human selection before the requirements forms are completed.
 
 The discovery agent should not complete the requirements forms and should not map requirements to SEPIO.
 
@@ -15,13 +15,13 @@ The discovery agent should not complete the requirements forms and should not ma
 ```text
 You are acting as a resource-discovery, scope-definition, and evidence-preparation agent for the SEPIO requirements-collection workflow.
 
-Your task is to identify, evaluate, and organize the best available resources for understanding the following project/data/model and to recommend one or more reasonable scopes for a subsequent requirements review.
+Your task is to identify, evaluate, and organize the best available resources for understanding the following project/data/model and then recommend one or more reasonable scopes for a subsequent requirements review.
 
 PROJECT
 [PROJECT NAME]
 
 INITIAL PROJECT CONTEXT / SCOPE NOTES
-[Optional. Insert any initial scope statement, project description, known canonical distribution, exclusions, or questions from the project representative. If nothing is supplied, discover and propose the scope from the available project resources.]
+[Optional. Insert any initial project description, known canonical distribution, exclusions, questions, or tentative scope notes from the project representative. If nothing is supplied, discover and propose the scope from the available project resources.]
 
 GOAL
 
@@ -33,6 +33,35 @@ Do not infer project requirements from what SEPIO supports.
 
 A central output of this task is one or more PROVISIONAL SCOPE STATEMENTS that the project representative can review and select before requirements elicitation.
 
+IMPORTANT ORDER-OF-OPERATIONS RULE
+
+Do NOT author the final provisional scope statements before you have:
+
+1. discovered the relevant project resources;
+2. assigned each source a stable Source ID such as S01, S02, S03;
+3. classified each source's authority and requirements role;
+4. identified representative examples;
+5. documented important source conflicts, ambiguities, version issues, and scope exclusions; and
+6. identified the recommended current-state canonical source set and broader desired-state evidence set.
+
+The scope statements should be written AFTER the Resource Inventory and source classification are established so that they can refer to concrete resources by **Source ID + name/version**.
+
+Think of the workflow this way:
+
+RESOURCE DISCOVERY
+    ↓
+RESOURCE INVENTORY WITH SOURCE IDs
+    ↓
+SOURCE ROLE / AUTHORITY CLASSIFICATION
+    ↓
+RECOMMENDED CURRENT-STATE AND DESIRED-STATE SOURCE SETS
+    ↓
+PROVISIONAL SCOPE STATEMENTS
+    ↓
+HUMAN SCOPE SELECTION
+    ↓
+REQUIREMENTS FORM COMPLETION
+
 The Resource Inventory should make explicit:
 
 - which exact source(s), dataset(s), distribution(s), release(s), or companion artifacts should control CURRENT-STATE requirements answers;
@@ -43,7 +72,7 @@ The Resource Inventory should make explicit:
 
 SCOPE-DESIGN PRINCIPLES
 
-1. Separate current-state scope from desired-state evidence.
+1. Separate current-state scope from desired-state scope.
 
 The subsequent requirements forms contain two distinct concepts:
 
@@ -55,11 +84,47 @@ What should the SEPIO-based representation support, based on the broader, eviden
 
 Do not assume the same source set must control both.
 
-2. The scope statement must identify the CURRENT-STATE CANONICAL SOURCE SET.
+2. Every provisional scope statement must contain TWO EXPLICIT SUBSECTIONS.
+
+Each proposed scope must be structured with at least:
+
+### Current-state canonical scope
+
+This subsection must state:
+
+- what project/data product is being assessed for current state;
+- the exact Source IDs + source names/versions that control current-state / F1 / "Used in Current Data?" answers;
+- any explicitly designated canonical companion artifacts;
+- what kinds of related resources are excluded from current-state reasoning.
+
+Use language such as:
+
+"Current-state/F1 answers must be based only on S05 — [source name/version] and S06 — [source name/version]. No other resource may change an F1 answer unless the scope is revised."
+
+The later requirements agent must strictly stick to this set for current-state answers.
+
+3. Every provisional scope statement must also contain:
+
+### Desired-state scope
+
+This subsection must state:
+
+- what broader project capabilities are in scope for desired-state/F2 requirements;
+- the exact Source IDs + source names/versions that may inform desired state;
+- whether each broader source is being used as:
+  - EXPLICIT_FUTURE_REQUIREMENT
+  - EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT
+  - DOCUMENTED_MODEL_INTENT
+- important exclusions from desired-state reasoning;
+- the rule that any F2 answer that differs from F1 must identify its supporting source in `Explanation / Considerations`.
+
+Use language such as:
+
+"Desired-state/F2 answers may additionally draw on S01 — [paper], S08 — [intermediate artifact], and S09 — [alignment/QC artifact] to identify a maximal, evidence-supported requirements set. When F2 differs from F1, the requirements agent must identify the supporting source and support type in `Explanation / Considerations`."
+
+4. The CURRENT-STATE CANONICAL SOURCE SET must be precise and reproducible.
 
 This is the exact set of source(s), dataset(s), distribution(s), release(s), or explicitly designated companion artifacts that the later requirements agent must use to populate current-state / "Used in Current Data?" columns.
-
-The later agent should strictly stick to this set for current-state answers.
 
 Examples:
 - one versioned `indications.xlsx` distribution;
@@ -69,11 +134,9 @@ Examples:
 
 Do not broaden current state simply because richer information exists elsewhere in the project.
 
-3. The scope statement should separately identify the DESIRED-STATE EVIDENCE SET.
+5. The DESIRED-STATE EVIDENCE SET may be broader.
 
-Desired-state evidence may be broader than the canonical current-state distribution.
-
-When relevant and not explicitly out of scope, it may include:
+When relevant and not explicitly out of scope, desired-state evidence may include:
 - explicit future requirements or roadmaps;
 - current project/model documentation and papers;
 - intermediate curation/analysis artifacts;
@@ -88,7 +151,7 @@ The purpose is to support an initial MAXIMAL EVIDENCE-SUPPORTED requirements set
 
 "Maximal" does not mean speculative. Every desired-state capability must be supported by project-specific evidence.
 
-4. Classify desired-state support where useful.
+6. Classify desired-state support where useful.
 
 Use these labels when characterizing why a noncanonical resource is informative for desired state:
 
@@ -101,11 +164,11 @@ Use these labels when characterizing why a noncanonical resource is informative 
 - DOCUMENTED_MODEL_INTENT
   A paper, model/design document, curation guide, or other authoritative project document describes the capability as part of the intended project model/data product, even if absent from the proposed canonical current-state source.
 
-5. Do not use a source as desired-state evidence when it explicitly says the capability is out of scope, rejected, deprecated, or intentionally excluded, unless another authoritative project source explicitly reverses that decision.
+7. Do not use a source as desired-state evidence when it explicitly says the capability is out of scope, rejected, deprecated, or intentionally excluded, unless another authoritative project source explicitly reverses that decision.
 
 SOURCE-DISCOVERY RULES
 
-6. Respect supplied project context and discover scope boundaries.
+8. Respect supplied project context and discover scope boundaries.
 
 Distinguish the scoped project/data product from:
 - upstream source databases;
@@ -125,7 +188,7 @@ For every source, consider whether it describes:
 - an implementation detail;
 - future/project intent.
 
-7. Prefer current, authoritative sources, but do not discard older/alternate/intermediate project artifacts that may legitimately inform desired state.
+9. Prefer current, authoritative sources, but do not discard older/alternate/intermediate project artifacts that may legitimately inform desired state.
 
 For CURRENT-STATE canonical-source recommendations, prioritize:
 a. current authoritative schema/data model;
@@ -148,7 +211,7 @@ When sources conflict:
 - explain whether the conflicting resource remains useful for desired-state evidence;
 - do not silently reconcile the difference.
 
-8. Look for sources that can answer questions about:
+10. Look for sources that can answer questions about:
 
 - the kinds of claims/associations/statements represented;
 - how claims are structurally packaged;
@@ -163,7 +226,7 @@ When sources conflict:
 - what richer information is captured in intermediate project artifacts but lost in the canonical distribution;
 - current capabilities versus documented future/intended requirements.
 
-9. Include representative data/examples.
+11. Include representative data/examples.
 
 When possible, identify a small but diverse set of examples that covers the major claim and EPC patterns.
 
@@ -183,9 +246,9 @@ Prefer examples that collectively test different situations, such as:
 
 Do not collect large datasets when a small representative sample will establish the relevant structure and semantics.
 
-Assign stable IDs such as E01, E02, E03.
+Assign each representative example a stable ID such as E01, E02, E03.
 
-10. Record precise source locations and source roles.
+12. Record precise source locations and source roles BEFORE writing the scope statements.
 
 Assign each source a stable ID such as S01, S02, S03.
 
@@ -221,7 +284,7 @@ Use these REQUIREMENTS ROLE labels:
 
 A source should receive CURRENT_STATE_CANONICAL or CURRENT_STATE_CANONICAL_COMPANION only if you recommend that the later requirements agent be allowed to use it for current-state answers under at least one proposed scope.
 
-11. Capture directly observed facts from key sources.
+13. Capture directly observed facts from key sources.
 
 For each major authoritative source, record concise facts explicitly supported by the source.
 
@@ -231,14 +294,14 @@ Examples:
 - "Intermediate curation records retain Name Resolver candidates and LLM QC outcomes, but the final export drops them."
 - "The project paper describes hyperrelations absent from the selected release."
 
-Distinguish direct observation from interpretation.
+Distinguish these directly observed facts from interpretation.
 
 Use labels where helpful:
 - DIRECT
 - INFERRED
 - UNRESOLVED
 
-12. Retrieve publicly accessible materials before asking the human to provide them.
+14. Retrieve publicly accessible materials before asking the human to provide them.
 
 When a potentially important source is publicly accessible:
 - first attempt to access/download it yourself;
@@ -247,7 +310,7 @@ When a potentially important source is publicly accessible:
 
 Human assistance is a fallback, not the default.
 
-13. Identify inaccessible, ambiguous, or human-supplied materials precisely.
+15. Identify inaccessible, ambiguous, or human-supplied materials precisely.
 
 Human intervention may be needed when:
 - the agent cannot access/download the resource;
@@ -265,7 +328,7 @@ If human assistance is needed:
 - state whether discovery/requirements elicitation can proceed provisionally without it;
 - tell the project representative exactly what to download, upload, or clarify.
 
-14. Distinguish process documentation from stored project content.
+16. Distinguish process documentation from stored project content.
 
 A project may document curation, extraction, review, normalization, mapping, evidence assessment, encoding, or transformation.
 
@@ -276,13 +339,23 @@ For each such source, determine whether it shows:
 
 This distinction is especially important for desired-state scope design.
 
-15. Do not begin filling the SEPIO Requirements Forms until the Resource Inventory and one project scope statement have been reviewed/selected or the project representative explicitly authorizes the agent to use the recommended scope.
+17. Do not begin filling the SEPIO Requirements Forms until the Resource Inventory has been reviewed and one project scope statement has been selected, or the project representative explicitly authorizes the requirements agent to use the recommended scope.
 
 PROVISIONAL SCOPE STATEMENTS
 
-16. Author multiple reasonable provisional scope statements for human selection.
+18. Author provisional scope statements ONLY AFTER the Resource Inventory and recommended source sets have been completed.
 
-At minimum, provide:
+The scope statements should function as selections over the Resource Inventory.
+
+Do not write vague statements such as:
+"Use the current dataset and relevant documentation."
+
+Instead write:
+"Use S05 — `matrix_indication_list.xlsx`, v1.3.0 and S06 — `matrix_contraindication_list.xlsx`, v1.3.0 for current state. Desired state may additionally use S01 — MeDIC primary publication and S09 — FDA semantic-alignment/QC intermediates..."
+
+Every named resource should be identifiable from the Resource Inventory by Source ID and name/version.
+
+19. At minimum, provide:
 
 SCOPE A — MINIMAL / CANONICAL-DISTRIBUTION-ONLY
 
@@ -291,6 +364,22 @@ This scope should:
 - restrict current-state answers to those canonical source(s);
 - normally restrict desired-state answers to the same canonical source(s), unless a small number of explicitly inseparable canonical companion artifacts are required;
 - produce a conservative requirements record describing the canonical distribution itself.
+
+Structure it as:
+
+### Current-state canonical scope
+- Scope statement
+- Sources: Sxx — [name/version], Syy — [name/version]
+- Explicit exclusions
+
+### Desired-state scope
+- Scope statement
+- Sources: usually the same source set for the minimal option
+- Explicit exclusions
+
+### Strengths / tradeoffs
+
+20. Also provide:
 
 SCOPE B — MAXIMAL / CANONICAL CURRENT STATE + BROAD DESIRED STATE
 
@@ -308,14 +397,37 @@ This scope should:
 - aim for a maximal evidence-supported desired-state requirements set that the human reviewer can later whittle down;
 - require the requirements agent to name the desired-state supporting source in `Explanation / Considerations` whenever F2 differs from F1.
 
-If other reasonable project scopes emerge, provide additional alternatives such as:
+Structure it as:
+
+### Current-state canonical scope
+- Scope statement
+- Exact Source IDs + names/versions
+- Canonical companions, if any
+- Explicit exclusions
+- Rule that no noncanonical source may change F1 unless the scope is revised
+
+### Desired-state scope
+- Scope statement
+- Exact Source IDs + names/versions
+- Desired-state support type for each broader source
+- Explicit exclusions
+- Rule that F2 differences must cite supporting source + support type in `Explanation / Considerations`
+
+### Strengths / tradeoffs
+
+21. If other reasonable project scopes emerge, provide additional alternatives such as:
 - CURRENT RELEASE + CURRENT PIPELINE ARTIFACTS;
 - CORE PRODUCT + DESIGNATED COMPANION DATASETS;
 - DOMAIN-SPECIFIC SUBSET;
 - STRICT HISTORICAL RELEASE;
 - CURRENT PRODUCT FAMILY / MULTI-DISTRIBUTION SCOPE.
 
-17. Recommend one scope.
+Every additional scope must use the same explicit two-part structure:
+
+### Current-state canonical scope
+### Desired-state scope
+
+22. Recommend one scope.
 
 After presenting alternatives:
 - identify the scope you recommend for the initial requirements exercise;
@@ -330,44 +442,13 @@ Return a Markdown document named:
 
 [PROJECT_NAME]_Resource_Inventory.md
 
-Use the following sections.
+IMPORTANT: Use the following section order. The Resource Inventory and source classification must appear BEFORE the provisional scope statements so that the scope can reference established Source IDs.
 
 A. Project context used
 
 Restate the supplied project context/scope notes and any important assumptions used during discovery.
 
-B. Provisional scope statements
-
-Provide:
-
-### Scope A — Minimal / canonical-distribution-only
-
-Include:
-- Scope statement text ready to paste into `REQUIREMENTS_FORM_PROMPT.md`
-- CURRENT-STATE CANONICAL SOURCE SET
-- DESIRED-STATE EVIDENCE SET
-- Key exclusions
-- Strengths / tradeoffs
-
-### Scope B — Maximal / canonical current state + broad desired state
-
-Include:
-- Scope statement text ready to paste into `REQUIREMENTS_FORM_PROMPT.md`
-- CURRENT-STATE CANONICAL SOURCE SET
-- DESIRED-STATE EVIDENCE SET
-- Desired-state support categories represented
-- Key exclusions
-- Strengths / tradeoffs
-
-### Additional reasonable scope alternatives
-
-Include only when justified.
-
-### Recommended scope
-
-State which scope you recommend and why.
-
-C. Resource inventory
+B. Resource inventory
 
 Provide a table with these columns:
 
@@ -408,36 +489,14 @@ For Retrieval / human-assistance guidance, use:
 - HUMAN_CONFIRM_SCOPE
 - CONTEXT_ONLY_NO_DOWNLOAD_NEEDED
 
-D. Recommended authoritative source set
-
-Separate this into:
-
-### D1. Recommended current-state canonical source set
-
-Identify the exact sources that should control F1/current-state answers under the recommended scope.
-
-For each source:
-- explain why it is canonical;
-- specify version/release;
-- identify any canonical companion artifact that must be interpreted together with it.
-
-### D2. Recommended desired-state evidence set
-
-Identify broader sources allowed to inform F2/desired-state requirements under the recommended maximal scope.
-
-For each:
-- state why it is relevant;
-- assign a desired-state support type;
-- note any limitations.
-
-E. Representative data/examples
+C. Representative data/examples
 
 List selected examples using stable IDs.
 
 For each:
 - Example ID
 - Current-state or desired-state example
-- Source
+- Source ID + source name
 - Claim/record type
 - EPC/model pattern demonstrated
 - Why selected
@@ -447,7 +506,7 @@ Prefer examples from both:
 - canonical current-state sources;
 - broader desired-state sources that reveal additional requirements.
 
-F. Upstream/downstream/context resources that should NOT be treated as canonical requirements evidence
+D. Upstream/downstream/context resources that should NOT be treated as canonical requirements evidence
 
 List neighboring systems/resources that could cause scope confusion.
 
@@ -456,7 +515,7 @@ Explain whether each is:
 - allowed only as desired-state evidence under a specific scope;
 - fully out of scope.
 
-G. Known source conflicts, ambiguities, or version concerns
+E. Known source conflicts, ambiguities, or version concerns
 
 Document:
 - conflicting sources;
@@ -469,6 +528,92 @@ Document:
 For each conflict:
 - state what controls current state;
 - state whether another source may still inform desired state.
+
+F. Recommended source sets
+
+Complete this section BEFORE authoring provisional scope statements.
+
+### F1. Recommended current-state canonical source set
+
+Identify the exact sources that should control F1/current-state answers under the scope you expect to recommend.
+
+For each source:
+- provide Source ID + source name/version;
+- explain why it is canonical;
+- identify any canonical companion artifact that must be interpreted together with it;
+- state what it is allowed to establish for current state.
+
+### F2. Recommended desired-state evidence set
+
+Identify broader sources that may inform F2/desired-state requirements under a maximal scope.
+
+For each:
+- provide Source ID + source name/version;
+- state why it is relevant;
+- assign one of:
+  - EXPLICIT_FUTURE_REQUIREMENT
+  - EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT
+  - DOCUMENTED_MODEL_INTENT
+- note limitations or caveats.
+
+### F3. Sources excluded from requirements evidence
+
+List Source IDs that should remain context only or fully out of scope, with a brief reason.
+
+G. Provisional scope statements
+
+Now author the provisional scopes using the Resource Inventory IDs established above.
+
+### Scope A — Minimal / canonical-distribution-only
+
+#### Current-state canonical scope
+
+Provide:
+- paste-ready scope text;
+- exact Source IDs + names/versions controlling F1;
+- canonical companions, if any;
+- explicit exclusions.
+
+#### Desired-state scope
+
+Provide:
+- paste-ready scope text;
+- exact Source IDs + names/versions controlling F2;
+- explicit exclusions.
+
+#### Strengths / tradeoffs
+
+### Scope B — Maximal / canonical current state + broad desired state
+
+#### Current-state canonical scope
+
+Provide:
+- paste-ready scope text;
+- exact Source IDs + names/versions controlling F1;
+- canonical companions, if any;
+- explicit exclusions;
+- explicit statement that noncanonical resources may not change F1 answers.
+
+#### Desired-state scope
+
+Provide:
+- paste-ready scope text;
+- exact Source IDs + names/versions allowed for F2;
+- desired-state support type for each broader source;
+- explicit exclusions;
+- explicit statement that whenever F2 differs from F1, the requirements agent must identify the supporting source + support type in `Explanation / Considerations`.
+
+#### Strengths / tradeoffs
+
+### Additional reasonable scope alternatives
+
+Include only when justified. Use the same explicit two-part structure:
+- Current-state canonical scope
+- Desired-state scope
+
+### Recommended scope
+
+State which scope you recommend and why.
 
 H. Materials the requirements agent should retrieve vs. materials a human may need to provide
 
@@ -490,6 +635,7 @@ For each:
 ### H2. Materials a human may need to provide only if agent retrieval fails
 
 For each:
+- Source ID
 - exact resource
 - why it matters
 - what the human should upload if requested
@@ -527,16 +673,16 @@ RECOMMENDED SCOPE:
 - Scope B — Maximal / canonical current state + broad desired state
 
 CURRENT-STATE CANONICAL SOURCES:
-- S01
-- S02
+- S01: [name/version]
+- S02: [name/version]
 
 CURRENT-STATE CANONICAL COMPANIONS:
-- S03
+- S03: [name/version]
 
 DESIRED-STATE SUPPORT SOURCES:
-- S04: EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT
-- S05: DOCUMENTED_MODEL_INTENT
-- S06: EXPLICIT_FUTURE_REQUIREMENT
+- S04: EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT — [name/version]
+- S05: DOCUMENTED_MODEL_INTENT — [name/version]
+- S06: EXPLICIT_FUTURE_REQUIREMENT — [name/version]
 
 REPRESENTATIVE EXAMPLES:
 - E01
@@ -548,11 +694,11 @@ CONTEXT ONLY / DO NOT USE AS REQUIREMENTS EVIDENCE:
 - S09
 
 AGENT SHOULD RETRIEVE DURING REQUIREMENTS REVIEW:
-- S02: [specific file]
-- S04: [specific file]
+- S02: [specific file/artifact]
+- S04: [specific file/artifact]
 
 HUMAN PROVIDE ONLY IF AGENT RETRIEVAL FAILS:
-- S07: [specific file]
+- S07: [specific file/artifact]
 
 HUMAN-PROVIDED MATERIAL REQUIRED:
 - NONE
@@ -568,10 +714,15 @@ UNRESOLVED:
 
 HANDOFF INSTRUCTION:
 Use only CURRENT-STATE CANONICAL SOURCES and explicitly designated CURRENT-STATE CANONICAL COMPANIONS to populate F1/current-state requirements.
+
 Use the DESIRED-STATE SUPPORT SOURCES allowed by the selected scope to populate an evidence-supported maximal F2/desired-state requirements set.
-When F2 differs from F1, identify the supporting source and desired-state support type in the form's Explanation / Considerations field.
+
+When F2 differs from F1, identify the supporting Source ID + source name and desired-state support type in the form's `Explanation / Considerations` field.
+
 Do not use CONTEXT ONLY sources as requirements evidence.
+
 Attempt to retrieve public resources before asking the project representative to upload them.
+
 Flag unresolved issues for human review rather than guessing.
 
 K. Short resource-discovery summary
@@ -603,6 +754,10 @@ The Resource Inventory should make the division of responsibility explicit:
 
 The discovery agent proposes the scope; the project representative owns the scope decision.
 
+The important architectural rule is:
+
+> **The Resource Inventory defines the evidence catalog; the scope statement selects which catalog entries control current state and which may inform desired state.**
+
 For most initial requirements exercises, the recommended default is:
 
 **strict canonical current state + maximal evidence-supported desired state**
@@ -617,6 +772,8 @@ The completed `[PROJECT_NAME]_Resource_Inventory.md` is intended to be provided 
 - `Requirements_Instructions_and_Guidance_for_AI.md`
 - the selected project scope statement
 - any materials explicitly identified as genuinely requiring human provision
+
+The selected scope statement should be copied from or derived directly from the Resource Inventory and should preserve its Source IDs.
 
 The later requirements agent should attempt to retrieve all other publicly accessible resources itself.
 

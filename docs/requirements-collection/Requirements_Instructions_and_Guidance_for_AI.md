@@ -2,9 +2,9 @@
 
 **Detailed Instructions & Guidance for AI Agents Completing the SEPIO Requirements Forms**
 
-This document provides the detailed semantic and field-level guidance an AI agent should use when completing `Requirements_Collection_Forms.xlsx` on behalf of a project. It is intended to be used together with the project-specific source materials and the project scope statement supplied by the project representative.
+This document provides the detailed semantic and field-level guidance an AI agent should use when completing `Requirements_Collection_Forms.xlsx` on behalf of a project. It is intended to be used together with `REQUIREMENTS_FORM_PROMPT.md`, the selected project scope statement, the reviewed project Resource Inventory, and the project-specific source materials identified there.
 
-For human-facing orientation to the overall process, see `START_HERE.md` and `Requirements_Collection_Overview.md`.
+For human-facing orientation to the overall process, see `START_HERE.md` and `Requirements_Collection_Overview.md`. For guidance on assembling and classifying the evidence base before requirements completion, see `RESOURCE_INVENTORY_GUIDANCE.md` and `RESOURCE_INVENTORY_PROMPT.md`.
 
 # I. Why Start with Requirements Collection
 
@@ -18,8 +18,8 @@ This separation also supports later implementation with LinkML and LinkML-Map. I
 
 A practical path is to organize the consolidation effort into four phases:
 
-- **Phase 1 — Project requirements collection.** Each project supplies representative evidence-bearing use cases and describes the claim, evidence, and provenance that must be retained.  
-  **Agent-assisted execution:** A project representative defines the project scope and supplies schemas, documentation, representative data/examples, and other relevant materials. An AI agent uses these materials and this guidance to prepare a first-pass population of the forms. A project representative then reviews, corrects, and confirms the requirements.
+- **Phase 1 — Project requirements collection.** Each project establishes a reviewed Resource Inventory, selects a project scope, and describes the claim, evidence, provenance, and confidence information that is currently represented or desired.  
+  **Agent-assisted execution:** The Resource Inventory first identifies and classifies relevant project sources, including the exact source set that controls **current-state/F1** answers and the broader evidence set allowed to inform **desired-state/F2** answers. The project representative selects or refines one proposed scope. A requirements agent then uses `REQUIREMENTS_FORM_PROMPT.md`, the selected scope, the reviewed Resource Inventory, this guidance, and the required project materials to prepare a first-pass population of the forms. A project representative reviews, corrects, and confirms the requirements.
 
 - **Phase 2 — Cross-project semantic analysis.** The modeling group compares requirements across projects and asks which SEPIO concepts are involved, which needs recur, and which differences are semantic rather than merely structural.  
   **Agent-assisted execution:** After project requirements are confirmed, an agent can apply the Requirement → SEPIO Mapping Registry to identify direct mappings, partial coverage, implementation guidance, open questions, and recurrent requirements across projects.
@@ -36,9 +36,9 @@ Real example records should be required throughout this process. Abstract descri
 
 The detailed guidance, documentation, and forms described below are designed with the expectation that AI agents will assist in preparing a first-pass set of project requirements. A project representative may task an AI agent with reviewing the project's available materials and preparing an initial population of the forms.
 
-To do this effectively, the agent needs sufficiently detailed information about the project and its data. Relevant sources may include data-model and schema documentation, project documentation, representative datasets or records, example claims and evidence, provenance conventions, curation guidelines, software or pipeline documentation, meeting notes, and other materials that describe current practice or desired future capabilities.
+To do this effectively, the agent needs a reviewed **Resource Inventory** and a selected **project scope statement**. The Resource Inventory is the evidence catalog: it assigns stable Source IDs, records versions and roles, identifies representative examples, and distinguishes canonical current-state sources from broader desired-state support. Relevant resources may include data-model and schema documentation, canonical datasets or distributions, representative records, project documentation, provenance conventions, curation guidelines, software or pipeline artifacts, papers, requirements, issues, competency questions, and other project-specific materials.
 
-The agent should use these sources to populate the forms only as far as the available evidence supports, clearly identify uncertainties or gaps, and leave final validation and refinement to project representatives. The goal is **not** for the agent to infer what the project *should* represent, but to document what the project currently represents and what its representatives want a future SEPIO-based model to support. In particular, the agent should distinguish information that may have been used during claim generation, curation, or validation from information that the project actually wants captured, exchanged, or exposed in its data.
+The selected scope determines how those resources may be used. **F1/current-state answers must be based only on the sources explicitly designated as CURRENT_STATE_CANONICAL or CURRENT_STATE_CANONICAL_COMPANION in the selected scope.** Richer information found elsewhere in the project must not be used to broaden F1. **F2/desired-state answers may draw on the broader DESIRED_STATE_SUPPORT sources allowed by the selected scope**, but only where those sources provide affirmative project-specific evidence. The agent should clearly identify uncertainties or gaps and leave final validation and refinement to project representatives.
 
 AI agents completing the requirements forms should not attempt to assign SEPIO classes or slots on the project's behalf unless explicitly asked to perform the later mapping step. Respondent-facing answers should remain grounded in the project's own concepts, data structures, and requirements. Stable Requirement IDs provide the later machine-facing bridge from these project-centered descriptions to the Requirement → SEPIO Mapping Registry.
 
@@ -48,17 +48,23 @@ The following behavioral instructions apply when an AI agent prepares a first-pa
 
 - **Ground responses in project evidence, not plausibility.** Populate fields from project schemas, documentation, example records, publications, repositories, curation guides, meeting notes, or other supplied materials. Do not infer that a project has a requirement simply because that requirement would be sensible for a project of that type.
 
-- **Distinguish current practice, process history, and desired/future representation requirements.** A source may describe what the project stores today, information that was used during curation but is not stored, something proposed in a design discussion, or what the project wants to support in the future. Do not collapse these into one answer. In particular, do not infer that information used to generate or validate a claim must therefore be represented in the project’s data. Where relevant, use language such as currently captured, used in workflow but not represented, desired capability, proposed, or future requirement.
+- **Treat the Resource Inventory as the evidence catalog and the selected scope as the authority for source use.** Refer to sources by their Resource Inventory Source IDs where useful. Do not silently expand the allowed source set during form completion. If a source appears important but is not permitted by the selected scope, flag it for human review rather than using it.
+
+- **Classify broader desired-state support when F2 goes beyond F1.** Where useful, use the Resource Inventory support labels: `EXPLICIT_FUTURE_REQUIREMENT`, `EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT`, or `DOCUMENTED_MODEL_INTENT`. If no project-specific evidence supports a broader desired-state capability, do not mark it Y simply because it seems useful.
+
+- **When F2 differs from F1, make the evidence for that difference explicit.** In the form's `Explanation / Considerations` field, identify the supporting Source ID + source name/version and, when applicable, the desired-state support type. A useful pattern is: `Current state: [canonical observation]. Desired-state support: [SUPPORT TYPE] — [Source ID — source name/version]: [brief rationale].`
+
+- **Apply the selected scope literally when distinguishing current and desired state.** For F1/current-state questions, use only the exact canonical source set named in the selected scope. A capability found only in an intermediate artifact, alternate release, paper, roadmap, upstream source, downstream representation, or process description must not be marked current unless that resource is explicitly included in the current-state canonical source set. For F2/desired-state questions, use the broader source set allowed by the selected scope and capture a **maximal but evidence-supported** requirement set rather than a speculative one.
 
 - **Do not convert project terminology into SEPIO classes prematurely.** Describe the project's native information and requirements first. For example, report that a project stores publication excerpts and assesses whether they support a mechanism; do not decide on the project's behalf that these “must be DataItem and EvidenceLine objects.” Mapping to SEPIO is a later modeling task. Unless explicitly asked to perform the later modeling step, do not edit content in the **SEPIO Mapping Summary** columns or use those summaries to decide what the project's requirements should be. Do not edit predefined Requirement IDs. For any new project-specific row added under an “Other” option, assign a stable custom ID using the form-specific prefix shown in the guidance (for example EI.CUSTOM.001) so that the new requirement can later be added to the mapping registry.
 
 - **Preserve semantic distinctions even when the source data do not.** In particular, keep separate: the information used as evidence; how that information was semantically aligned or grounded; how it was interpreted as evidence; confidence in extraction/alignment; scientific evidence strength; overall confidence in a claim; and downstream retrieval/encoding provenance. If a source field conflates several of these, say so rather than silently assigning it to one category.
 
-- **Use real examples whenever available.** Prefer an actual claim, evidence record, publication excerpt, schema object, or provenance record from the project over a fabricated illustration. If no real example can be found, explicitly mark an example as *illustrative/hypothetical*.
+- **Use real examples whenever available.** For current-state examples, prefer actual records from the selected canonical source set. For desired-state capabilities that are absent from current canonical data, prefer real examples from allowed desired-state support sources. Preserve the source's native representation as closely as practical (for example, a table row, JSON/YAML object, or RDF triple). If an example is assembled across records/tables, label it **DENORMALIZED**; if it combines information from multiple sources, label it **COMPOSITE/ILLUSTRATIVE**. Do not fabricate values to make an example look complete.
 
 - **Do not manufacture specificity.** Never invent identifiers, evidence types, workflows, agent names, confidence scales, interpretation rules, or provenance requirements to make a form look complete. Enter **Unknown**, **Not documented**, **Needs discussion**, or **Not applicable** where appropriate.
 
-- **Treat absence of documentation as uncertainty, not as a negative requirement.** “I did not find evidence that the project records evidence strength” is different from “The project does not need evidence strength.” The latter requires explicit support or human confirmation.
+- **Treat lack of evidence carefully.** For F1, if the relevant canonical artifact has been directly inspected and a capability is demonstrably absent, `N` may be appropriate. If the canonical source was not fully inspected or the documentation is incomplete, use `M` / Needs discussion rather than assuming `N`. For F2, absence from current data does not imply the capability is undesired; use the allowed desired-state evidence set to determine whether there is affirmative support.
 
 - **Identify meaningful variation within the project.** Do not assume that one workflow applies everywhere. Look for differences among claim types, data sources, human versus automated curation, or production versus experimental pipelines. Conversely, do not create separate claim types merely because their predicates differ if their evidence/provenance requirements are essentially identical.
 
@@ -78,7 +84,7 @@ The following behavioral instructions apply when an AI agent prepares a first-pa
 
 - **Make proposed additions obvious.** If the agent thinks a requirement may be useful but cannot find evidence that the project actually needs it, put it in a clearly labeled *Suggested follow-up / Possible requirement* note rather than filling it in as a project requirement.
 
-- **Preserve traceability to source material.** For every substantive requirement in the first-pass draft, the agent should ideally be able to point back to the source that motivated it—a schema field, example record, documentation passage, issue, meeting note, or representative statement. This traceability does not necessarily have to appear in the final form, but should be retained during drafting so a human reviewer can verify the result.
+- **Preserve traceability to source material.** For every substantive requirement, retain the relevant Resource Inventory Source ID(s) and, where useful, representative Example ID(s). F1 conclusions should trace to the selected current-state canonical source set. Broader F2 conclusions should trace to allowed desired-state support sources. When F2 differs from F1, this traceability **should appear in the form's `Explanation / Considerations` field**, not merely in private drafting notes.
 
 - **End with unresolved questions for the project representative.** After populating the forms, generate a short list of the highest-value uncertainties that need human confirmation—for example, “Is evidence strength actually authored or intended to be derived?” or “Are multiple publication excerpts normally treated as independent arguments or grouped by study?”
 
@@ -86,19 +92,24 @@ The following behavioral instructions apply when an AI agent prepares a first-pa
 
 **As a general rule, a partially completed form with clearly marked unknowns is preferable to a fully populated form containing inferred or invented project requirements.**
 
-Finally, agentic respondents should produce **two outputs**:
+Finally, requirements-completion agents should produce **two outputs**:
 
-1.  the populated forms
+1. **The populated requirements workbook**, preserving the supplied workbook structure and formatting. Use a filename of the form `[PROJECT]_Requirements_v[VERSION]_[YYYYMMDD]_[HHMM].xlsx` (24-hour `HHMM`, with no colon).
 
-2.  a short **“Review Notes for Project Representative”** containing:
+2. **A Requirements Review Memo**, named `[PROJECT]_Requirements_Review_Memo_v[VERSION]_[YYYYMMDD]_[HHMM].md`, containing:
+   - the selected project scope;
+   - the exact current-state canonical source set used for F1;
+   - the broader desired-state evidence set used for F2;
+   - relevant source versions/releases/commits;
+   - high-confidence conclusions;
+   - fields or answers requiring human review;
+   - conflicting or missing information;
+   - inaccessible resources, if any;
+   - important assumptions;
+   - the highest-value unresolved questions; and
+   - a small set of representative examples from both canonical current-state sources and, where they reveal additional requirements, broader desired-state sources.
 
-    1.  assumptions it made
-
-    2.  fields it could not substantiate
-
-    3.  conflicting information it encountered, and
-
-    4.  the 5–10 questions whose answers would most improve the requirements record.
+The memo should make it possible for the project representative to see **why** current-state and desired-state answers differ without auditing every workbook cell.
 
 ---
 
@@ -265,20 +276,21 @@ Guidance and instructions for populating each form are provided below; complete 
 
 - **Response conventions used across the forms:**
   - Y = Yes, N = No, and M = Maybe / Needs discussion.
-  - For “current-state of your data” questions, do not treat absence of documentation as No; use M or explain that the answer is not documented when appropriate.
-  - For “desired-state of your data” questions, answer Yes only when the project wants that information or structure represented in its data—not merely because it may have been used in generating, curating, or validating a claim.
+  - For **F1/current-state** questions, use only the current-state canonical sources and explicitly designated canonical companions named in the selected scope. If an allowed canonical artifact was directly inspected and the feature is demonstrably absent, `N` may be appropriate. If the evidence is incomplete or ambiguous, use `M` and explain why.
+  - For **F2/desired-state** questions, use only sources included in the selected desired-state evidence set. Answer `Y` when there is affirmative project-specific support for the capability, including support documented as `EXPLICIT_FUTURE_REQUIREMENT`, `EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT`, or `DOCUMENTED_MODEL_INTENT`. Do not mark a feature desired merely because it seems useful.
   - “Desired in SEPIO-based Data” means desired support in the project’s future SEPIO-based representation; in this phase, these answers are used to determine what must be available in a project-level SEPIO Covering Model, not to define profile-level cardinality or requiredness constraints.
+  - When **F2 differs from F1**, identify the supporting desired-state Source ID + source name/version and support type in `Explanation / Considerations`.
   - Agents should complete only respondent-facing fields. **Do not edit content in the SEPIO Mapping Summary columns, and do not use those summaries to decide what the project's requirements should be.**
   - Where a field provides a predefined set of permissible values, use the labels exactly as written rather than paraphrasing them. Multiple permitted values should be separated with semicolons. Free-text explanation and example fields provide context for mapping and validation, but should not by themselves be treated as deterministic mapping triggers unless a mapping rule explicitly says so.
   - **Required vs. optional fields:** Each respondent-facing question/field is marked as required (`r`) or optional (`o`). A few fields are marked (`r*`) - which indicates a conditional requirement that is described in the Dictionary for that form. Please complete optional fields whenever you reasonably can, as these details often provide important context for modeling and implementation. If an optional field cannot be completed or is not relevant, it is still helpful to say so briefly (for example, “n/a” “not available,” “not applicable,” or “not currently known”) and explain why when useful.
-  - **“Used in Current Data?” vs. “Desired in SEPIO-based Data?”:** Most initial requirements will be derived from an AI agent’s review of current project schemas, documentation, datasets, and example records. These sources provide the primary basis for determining whether a feature is **Used in Current Data**. As a default for first-pass automated population, if a feature is clearly represented and meaningfully used in the project’s current data, the agent should normally also mark it as **Desired in SEPIO-based Data**, unless available project information indicates that the feature is legacy, incidental, being deprecated, intentionally excluded from the future representation, or otherwise not desired going forward. Conversely, the agent should not mark a feature as desired solely because it would be useful or seems appropriate for the project. Features not present in current data should be marked as desired only when there is affirmative evidence of a future requirement. Where the agent cannot determine the intended future state with reasonable confidence, use **M (Maybe / Needs discussion)** and explain the uncertainty. “Desired in SEPIO-based Data” responses produced by an AI agent should therefore be treated as provisional requirements that a project representative may confirm or revise during human review.
+  - **“Used in Current Data?” vs. “Desired in SEPIO-based Data?”:** These columns intentionally use different evidence rules. F1 is a conservative description of the selected canonical source set. F2 is a maximal but evidence-supported statement of what the project should support under the selected desired-state scope. A current capability will often also be desired, unless evidence indicates that it is legacy, incidental, deprecated, or intentionally excluded. A capability absent from F1 may still be `Y` in F2 when allowed project evidence supports it. If desired-state intent remains uncertain, use **M (Maybe / Needs discussion)** and explain the uncertainty. All AI-generated F2 responses remain provisional until human review.
 
 
 ## 1. Project Overview Form (PO) 
 
 **Purpose:** Use this form to provide enough high-level context for the modeling group to understand your project, the kinds of knowledge it manages, and why evidence/provenance representation matters for your use cases. Keep responses concise; detailed requirements are collected in the later forms.
 
-**How to complete it:** Describe the project as it actually exists today, while noting important planned or desired capabilities where relevant. AI agents should rely on project documentation or other supplied sources rather than inferring requirements from what similar projects do. If something is uncertain, use “Unknown” or “Needs discussion.”
+**How to complete it:** Describe the project according to the **selected scope**. Current-state descriptions should be grounded in the designated canonical source set; planned or desired capabilities should be drawn only from the allowed desired-state evidence set. AI agents should not infer requirements from what similar projects do. If something is uncertain, use “Unknown” or “Needs discussion.”
 ### **Dictionary**
 - **Project Name (`r`)** is the name of the project or resource.
 
@@ -414,9 +426,9 @@ A project may use or require more than one representation structure. For example
 
 **To be completed by respondent:**
 
-- **\[F1\] Used in Current Data? (Y / N / M):** Enter Y if the project currently uses this representation structure for any relevant claims; N if it does not; or M if the answer is uncertain / needs discussion.
+- **\[F1\] Used in Current Data? (Y / N / M):** Using only the current-state canonical sources allowed by the selected scope, enter Y if the project currently uses this representation structure for any relevant claims; N if direct inspection of those sources establishes that it does not; or M if the answer is uncertain / needs discussion.
 
-- **\[F2\] Desired in SEPIO-based Data? (Y / N / M):** Enter Y if the project wants a future SEPIO-based representation to support this structural pattern; N if the pattern does not need to be supported; or M if the requirement is unresolved. This is a structural or implementation preference and does not by itself determine which SEPIO classes or slots belong in the Covering Model.
+- **\[F2\] Desired in SEPIO-based Data? (Y / N / M):** Using the desired-state evidence sources allowed by the selected scope, enter Y if the project wants a future SEPIO-based representation to support this structural pattern; N if the pattern does not need to be supported; or M if the requirement is unresolved. This is a structural or implementation preference and does not by itself determine which SEPIO classes or slots belong in the Covering Model.
 
 - **\[F3\] Explanation / Considerations (`o`):** provide important additional details, especially whether the structure must be preserved in a SEPIO-based implementation, may be transformed into another structure as long as its semantics are retained, applies only to particular workflows or data sources, or raises unresolved transformation questions. Provide project examples where useful.
 
@@ -489,9 +501,9 @@ The **Reified Claim Semantics Form** should be interpreted together with, but ke
 
 **To be completed by respondent:**
 
-- **\[F1\] Represented in Current Data? (Y / N / M):** enter Y if the project currently represents this semantic capability explicitly in any relevant reified claim objects; N if it does not; or M if the answer is uncertain / needs discussion. If the project does not currently use reified claim objects, N may be appropriate even when the capability is desired in the future.
+- **\[F1\] Represented in Current Data? (Y / N / M):** using only the current-state canonical sources allowed by the selected scope, enter Y if the project currently represents this semantic capability explicitly in any relevant reified claim objects; N if direct inspection establishes that it does not; or M if the answer is uncertain / needs discussion. If the project does not currently use reified claim objects, N may be appropriate even when the capability is desired in the future.
 
-- **\[F2\] Desired in SEPIO-based Data? (Y / N / M):** enter Y if the future SEPIO-based reified claim representation must support this semantic capability; N if it is not required; or M if the requirement is unresolved. A Y in this field can act as a trigger for inclusion of mapped SEPIO elements in the generated Covering Model.
+- **\[F2\] Desired in SEPIO-based Data? (Y / N / M):** using the desired-state evidence sources allowed by the selected scope, enter Y if the future SEPIO-based reified claim representation must support this semantic capability; N if it is not required; or M if the requirement is unresolved. A Y in this field can act as a trigger for inclusion of mapped SEPIO elements in the generated Covering Model.
 
 - **\[F3\] Explanation / Considerations (`o`):** provide additional project-specific details, examples, exceptions, unresolved questions, or distinctions among workflows. Use this field especially when different Claim Types require different semantic patterns or when both structured representation patterns are needed for different reasons.
 
@@ -527,9 +539,9 @@ Note that the listed categories are intended as a **practical, respondent-facing
 
 **To be completed by respondent:**
 
-- **\[F1\] Represented in Current Data? (`r`):** whether this type of evidence information is currently represented explicitly in your project’s data for at least one Claim Type. Answer **Yes** only if the evidence item itself is captured or referenced in the project data—not merely because it was used informally or externally when generating the claim.
+- **\[F1\] Represented in Current Data? (`r`):** using only the current-state canonical sources allowed by the selected scope, indicate whether this type of evidence information is currently represented explicitly for at least one Claim Type. Answer **Yes** only if the evidence item itself is captured or referenced in those canonical data—not merely because it appears in an intermediate workflow, paper, upstream source, or other noncanonical resource.
 
-- **\[F2\] Desired in SEPIO-based Data? (`r`):** whether your project wants the future SEPIO-based model to support explicit representation of this type of evidence information for at least one Claim Type. This should reflect what the project wants to be able to store, exchange, or expose in its data, regardless of whether that evidence type was involved in generating the claim.
+- **\[F2\] Desired in SEPIO-based Data? (`r`):** using the desired-state evidence sources allowed by the selected scope, indicate whether the future SEPIO-based model should support explicit representation of this type of evidence information for at least one Claim Type. This should reflect an evidence-supported project requirement, not merely the fact that the evidence type was involved in generating the claim.
 
 > **Conditional completion:** If Desired in SEPIO-based Data = No, the desired-location, local-representation, addressability, and attribute columns can usually be left blank. If Desired = Yes or Maybe, complete those columns as far as the available project requirements support.
 
@@ -645,9 +657,9 @@ Note that for projects with simpler needs around representation of evidence inte
 
 **To be completed by respondent:**
 
-- **\[F1\] Represented in Current Data? (`r`):** whether this type of information is currently represented explicitly in your project’s data for at least one Claim Type. Answer **Yes** only if the information is captured or referenced in the project data—not merely because it was performed informally or externally when generating a claim.
+- **\[F1\] Represented in Current Data? (`r`):** using only the current-state canonical sources allowed by the selected scope, indicate whether this type of information is currently represented explicitly for at least one Claim Type. Answer **Yes** only if it is captured or referenced in those canonical data—not merely because the activity was performed elsewhere in the project workflow.
 
-- **\[F2\] Desired in SEPIO-based Data? (`r`):** whether your project wants the future SEPIO-based model to support explicit representation of this type of information for at least one Claim Type. This should reflect what the project wants to be able to store, exchange, or expose in its data, regardless of whether that evidence interpretation process was involved in generating the claim.
+- **\[F2\] Desired in SEPIO-based Data? (`r`):** using the desired-state evidence sources allowed by the selected scope, indicate whether the future SEPIO-based model should support explicit representation of this type of information for at least one Claim Type. This should be supported as a project requirement even when the capability is absent from canonical current data.
 
 - **\[F3\] Explanation / Considerations (`o`):** describe how the requirement works in your project, including relevant scales, grouping rules, examples, exceptions, or unresolved questions.
 
@@ -675,7 +687,7 @@ The questions in the **Evidence Interpretation Form** collect requirements relat
 
 Not every project needs every provenance level. A lightweight knowledge resource may need only source and assertion level provenance. Projects following detailed evidence interpretation frameworks may require more granular provenance at the level of evidence organization and interpretation. And projects that utilize AI-assisted curation may require detailed provenance at the level of semantic-alignment and interpretation.
 
-**How to complete it:** Review each provenance type independently. Indicate whether it is represented in current project data and whether the project wants it represented in future SEPIO-based data. Provide concrete project examples where possible, and use the Explanation / Considerations column to record required granularity, value distinctions, exceptions, or other project-specific requirements. Do not mark a provenance type as desired merely because it may have been involved in generating a claim; mark it as desired only when the project wants that provenance information represented in its data.
+**How to complete it:** Review each provenance type independently. For current state, use only the canonical sources allowed by the selected scope. For desired state, use the broader evidence set allowed by the selected scope. Provide concrete project examples where possible, and use the Explanation / Considerations column to record required granularity, value distinctions, exceptions, supporting Source IDs, or other project-specific requirements. Do not mark a provenance type as desired merely because it was involved in generating a claim; mark it desired only when the allowed project evidence supports representing that provenance in future data.
 ### **Dictionary**
 **Pre-populated:**
 
@@ -691,9 +703,9 @@ Not every project needs every provenance level. A lightweight knowledge resource
 
 **To be completed by respondent:**
 
-- **\[F1\] Represented in Current Data? (`r`):** whether this type of information is currently represented explicitly in your project’s data for at least one type of Claim or other artifact. Answer **Yes** only if the information is captured or referenced in the project data—not merely because it was relevant to generating the claim.
+- **\[F1\] Represented in Current Data? (`r`):** using only the current-state canonical sources allowed by the selected scope, indicate whether this provenance information is explicitly captured or referenced for at least one type of Claim or other artifact. Do not mark it current merely because a paper, pipeline, intermediate artifact, or external service shows that the activity occurred.
 
-- **\[F2\] Desired in SEPIO-based Data? (`r`):** whether your project wants the future SEPIO-based model to support explicit representation of this type of information for at least one type of Claim or other artifact. This should reflect what the project wants to be able to store, exchange, or expose in its data.
+- **\[F2\] Desired in SEPIO-based Data? (`r`):** using the desired-state evidence sources allowed by the selected scope, indicate whether the future SEPIO-based model should support explicit representation of this provenance information for at least one type of Claim or other artifact. A documented process may support F2 only when the allowed source provides evidence that the capability is an existing project capability or intended requirement, not merely an incidental implementation detail.
 
 - **\[F3\] Example(s) from Your Data (`o`):** where possible, provide one or two concrete examples of this type of information from the project’s current data. If the feature is desired but not currently represented, an illustrative future example may be provided and clearly labeled as such.
 
@@ -728,14 +740,18 @@ Before returning the completed workbook to the project representative, the agent
 
 - check every required respondent-facing field;
 - verify that controlled values use the labels defined in the workbook/guidance;
+- verify that every F1/current-state conclusion is supported only by the current-state canonical sources/companions allowed by the selected scope;
+- verify that every broader F2/desired-state conclusion is supported by an allowed desired-state source;
+- when F2 differs from F1, verify that `Explanation / Considerations` names the supporting Source ID + source name/version and desired-state support type;
 - compare answers across forms for internal consistency;
 - identify contradictions between project sources or between current-state and desired-state answers;
 - identify required questions that remain unsupported or unresolved;
 - make sure free-text explanations do not imply uncaptured requirements;
 - verify that richer upstream-source information has not been incorrectly attributed to the project itself;
-- verify that downstream/API/UI enrichments have not been treated as canonical project requirements unless the project scope says otherwise;
-- retain traceability to the project sources supporting non-obvious conclusions; and
-- prepare the short Review Notes for the Project Representative described in the Core Behavioral Rules above.
+- verify that intermediate project artifacts have not been treated as current canonical data unless the selected scope explicitly includes them;
+- verify that downstream/API/UI enrichments have not been treated as canonical project requirements unless the selected scope says otherwise;
+- retain traceability to the Resource Inventory sources supporting non-obvious conclusions; and
+- prepare the Requirements Review Memo described in the Core Behavioral Rules above.
 
 A partially completed workbook with clearly marked unknowns is preferable to a fully populated workbook containing inferred or invented requirements.
 
@@ -743,6 +759,6 @@ A partially completed workbook with clearly marked unknowns is preferable to a f
 
 After a project representative reviews and confirms the completed requirements workbook, the requirements-to-model workflow applies the maintained Requirement → SEPIO Mapping Registry against the controlled responses and stable Requirement IDs. That later stage can generate a candidate SEPIO covering model and associated summary, traceability, follow-up, gap/extension, implementation-guidance, form-feedback, and generation-manifest artifacts.
 
-During the current pilot phase, an AI agent may perform this later analysis and generation step. The completed requirements forms should nevertheless remain requirements-first: **do not use the SEPIO Mapping Summary columns to decide what the project needs.**
+During the current pilot phase, an AI agent may perform this later analysis and generation step. The confirmed workbook remains the formal project-requirements input; the selected scope and Resource Inventory provide supporting provenance for how those requirements were derived. The completed requirements forms should nevertheless remain requirements-first: **do not use the SEPIO Mapping Summary columns to decide what the project needs.**
 
 Detailed downstream mapping, routing, and output-generation behavior is documented separately in the Requirement → SEPIO Mapping Registry/README and the Requirements-to-Model Report Specification.

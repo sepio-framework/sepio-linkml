@@ -673,17 +673,17 @@ The questions in the **Evidence Interpretation Form** collect requirements relat
 
 **Purpose:** Use this form to identify what provenance information your project currently represents, and what provenance information it wants a future SEPIO-based model to support for evidence items, semantic alignment, evidence interpretation, assertions, encoding, and retrieval. It is organized according to the provenance levels described above:
 
-- **Evidence Item Provenance**: relevant only for projects that want to describe how info used as evidence was generated
+- **Evidence Item Provenance**: Describes how information used as evidence originally came to exist and get into the system of record (independent of and prior to their future use as evidence). Relevant only for projects that want to describe this type of provenance.
 
-- **Semantic Alignment Provenance:** relevant when a project wants to represent how source semantics were interpreted, extracted, grounded, normalized, or mapped into a structured target representation. In principle, this can apply to human curation or mappings from structured source records; however, in practice this level of detailed provenance is expected to be needed primarily for automated or AI-assisted extraction and semantic alignment from text, where the intermediate extraction, grounding, and normalization steps may need to be recorded and audited.
+- **Semantic Alignment Provenance:** Describes how a source representation was understood and mapped into the concepts/relationships used by the target curator or system, and relevant only for projects that want to describe this type of provenance. In principle, this can apply to human curation or mappings from structured source records; however, in practice this level of detailed provenance is expected to be needed primarily for automated or AI-assisted extraction and semantic alignment from text, where the intermediate extraction, grounding, and normalization steps that produce a structured target representation may need to be recorded and audited.
 
-- **Evidence Interpretation Provenance:** relevant only for projects that want to capture details of how specific kinds/pieces of evidence are interpreted in support of claims
+- **Evidence Interpretation Provenance:** Describes how specific pieces of evidence were interpreted/weighed as arguments for or against a claim. Relevant only for projects that want to describe this type of provenance.
 
-- **Assertion Provenance**: relevant for all projects to some degree - as this is the provenance of how claims are made. But some may want to track provenance here in more detail than others.
+- **Assertion Provenance**: Describes how evidence was ultimately reasoned over to make a claim. Relevant for all projects to some degree - as this is the provenance of how claims are made - but some may want to track provenance here in more detail than others.
 
-- **Encoding Provenance** : relevant only if your project is concerned with how a claim was concretely serialized in a particular format or language
+- **Encoding Provenance** : Describes how a claim or other information artifact was concretely serialized in a particular format or language (e.g. in a rdf triplestore, or a json document). Relevant only for projects that want to describe this type of provenance.
 
-- **Retrieval Provenance**: relevant only if your project is concerned with how data representing claims is moved/transformed between data systems
+- **Retrieval Provenance**: Describes a retrieval event in which an encoded representation of a claim or evidence item was moved or transformed between data systems on its way to its present location in the system of record. Examples: TTD → DGIdb → Monarch ingest; DrugCentral → Translator ingest → ARAX; Mondo → Monarch KG → Monarch UI. Relevant only for projects that want to describe this type of provenance.
 
 Not every project needs every provenance level. A lightweight knowledge resource may need only source and assertion level provenance. Projects following detailed evidence interpretation frameworks may require more granular provenance at the level of evidence organization and interpretation. And projects that utilize AI-assisted curation may require detailed provenance at the level of semantic-alignment and interpretation.
 

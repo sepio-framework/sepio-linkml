@@ -1092,11 +1092,12 @@
 </li>
 </ul>
 <p><strong>Guidance for AI agents:</strong> Describe what evidence information the project explicitly represents or wants to represent in its data. Do not infer a requirement simply because a type of evidence was used by a curator, algorithm, or external workflow to generate a claim. Evidence may influence claim generation without being part of the project’s desired data representation. Base selections on project data, documentation, examples, or explicit requirements, and flag uncertainty rather than assuming support is needed.</p>
-<p><strong>Complete respondent fields for each specific evidence-item-type row.</strong> The Evidence Item Group is an organizing column, not an additional row to answer. F7 is optional: list meaningful subtypes where supported, but do not invent subtype distinctions. Do not edit the <strong>SEPIO Mapping Summary</strong> column, and do not use its content when describing the project's requirements.</p>
+<p><strong>Complete respondent fields for each specific evidence-item-type row.</strong>  F7 is optional: list meaningful subtypes where supported, but do not invent subtype distinctions. Do not edit the <strong>SEPIO Mapping Summary</strong> column, and do not use its content when describing the project's requirements.</p>
 <p>These questions intentionally separate several downstream modeling concerns: where an evidence item is maintained; how it is represented locally; whether individual instances must be separately addressable; and what intrinsic attributes the representation must carry.</p>
 <blockquote>
 <p>where does it live? → what representation is needed? → must it be first-class/addressable? → what properties must it carry?</p>
 </blockquote>
+<p>Finally, note that while Documents are included as evidence item type rows in the EIT form, SEPIO does not represent Documents as evidence items. Rather they are represented as sources of evidence that contain / describe evidence items (text passages, data or results, figures or images).</p>
 <h2 id="6-evidence-interpretation-form-eint">6. Evidence Interpretation Form (EINT)</h2>
 <p>This form is concerned with how evidence is attached to and interpreted as bearing on a target claim. It includes both lightweight evidence-linking requirements and richer Evidence Line requirements so that downstream mapping can determine whether the Covering Model needs direct Statement-to-evidence shortcuts, EvidenceLine structures, or both.</p>
 <p><strong>Purpose:</strong> Use this form to describe whether and how your project evaluates information as evidence for or against claims, including evidence direction, strength, grouping, contradictory evidence, and aggregation.</p>

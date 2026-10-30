@@ -617,11 +617,13 @@ Note that the listed categories are intended as a **practical, respondent-facing
 
 **Guidance for AI agents:** Describe what evidence information the project explicitly represents or wants to represent in its data. Do not infer a requirement simply because a type of evidence was used by a curator, algorithm, or external workflow to generate a claim. Evidence may influence claim generation without being part of the project’s desired data representation. Base selections on project data, documentation, examples, or explicit requirements, and flag uncertainty rather than assuming support is needed.
 
-**Complete respondent fields for each specific evidence-item-type row.** The Evidence Item Group is an organizing column, not an additional row to answer. F7 is optional: list meaningful subtypes where supported, but do not invent subtype distinctions. Do not edit the **SEPIO Mapping Summary** column, and do not use its content when describing the project's requirements.
+**Complete respondent fields for each specific evidence-item-type row.**  F7 is optional: list meaningful subtypes where supported, but do not invent subtype distinctions. Do not edit the **SEPIO Mapping Summary** column, and do not use its content when describing the project's requirements.
 
 These questions intentionally separate several downstream modeling concerns: where an evidence item is maintained; how it is represented locally; whether individual instances must be separately addressable; and what intrinsic attributes the representation must carry.
 
 > where does it live? → what representation is needed? → must it be first-class/addressable? → what properties must it carry?
+
+Finally, note that while Documents are included as evidence item type rows in the EIT form, SEPIO does not represent Documents as evidence items. Rather they are represented as sources of evidence that contain / describe evidence items (text passages, data or results, figures or images).
 
 ## 6. Evidence Interpretation Form (EINT) 
 

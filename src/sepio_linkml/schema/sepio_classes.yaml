@@ -65,7 +65,7 @@ classes:
         range: string
         required: false
         multivalued: false
-      alternativeLabels:
+      alternative_labels:
         description: Alternative name(s) for the Entity.
         status: Draft
         range: string
@@ -104,7 +104,7 @@ classes:
     status: Draft
     is_a: Entity
     attributes:
-      isAbout:
+      is_about:
         description: An entity or concept in the world that the information entity
           describes/is about.
         comments:
@@ -129,7 +129,7 @@ classes:
         range: Contribution
         required: false
         multivalued: true
-      dateAuthored:
+      date_authored:
         description: Indicates when the information content expressed in the Information
           Entity was generated.
         comments:
@@ -145,7 +145,7 @@ classes:
         range: string
         required: false
         multivalued: false
-      specifiedBy:
+      specified_by:
         description: A specification that describes all or part of the process that
           led to creation of the Information Entity.
         comments:
@@ -161,7 +161,7 @@ classes:
         range: string
         required: false
         multivalued: true
-      supportingMethods:
+      supporting_methods:
         description: Specific methods that were executed to directly or indirectly support
           creation of the Information Entity.  
         comments:
@@ -170,17 +170,17 @@ classes:
           e.g. methods used to produce data that was interpreted as evidence to generate a 
           Statement of knowledge.
         - This field captures terms representing specific INSTANCES of methods applied, vs the
-          'supportingMethodTypes' attribute which captures TYPES of methods used. 
+          'supporting_method_types' attribute which captures TYPES of methods used. 
         status: Informative
         range: string
         required: false
         multivalued: true
-      supportingMethodTypes:
+      supporting_method_types:
         description: Types of methodological approaches that were executed to directly or 
           indirectly support creation of the Information Entity. 
         comments:
-        - This field captures terms representing TYPES of methods applied, vs the 'specifiedBy'
-          or'supportingMethods' attributes which capture specific INSTANCES of methods used.
+        - This field captures terms representing TYPES of methods applied, vs the 'specified_by'
+          or'supporting_methods' attributes which capture specific INSTANCES of methods used.
           These may include types of methods that directly produced the Information Entity, 
           or upstream/accessory methods that indirectly support creation of the Information Entity 
         - Implementers should define a relevant source or set of method type codes/terms
@@ -189,14 +189,14 @@ classes:
         range: Coding
         required: false
         multivalued: true
-      derivedFrom:
+      derived_from:
         description: Another Information Entity from which this Information Entity
           is derived, in whole or in part.
         status: Draft
         range: InformationEntity
         required: false
         multivalued: true
-      reportedIn:
+      reported_in:
         description: A document in which the Information Entity is reported.
         comments:
         - This attribute is used specifically to reference documents/publications
@@ -213,9 +213,9 @@ classes:
           A document or other informtion resource in which the information entity,
           or evidence supporting it, is reported.
         comments:
-        - This attribute is more general than InformationEntity.reportedIn (which is 
+        - This attribute is more general than InformationEntity.reported_in (which is 
           used to references a Docuement that directly reports the infrormation), and
-          Statement.hasEvidenceFromSources (which is used to reference resources that
+          Statement.has_evidence_from_sources (which is used to reference resources that
           provided evidence used to generate the knowledge expressed in a Statement). 
           It can be used to cover both cases, in situations where a data provider does
           not know which is the case, or does not wish to make the distinction. 
@@ -223,7 +223,7 @@ classes:
         range: string
         required: false
         multivalued: true
-      informationQuality:
+      information_quality:
         description: A qualitative term indicating the scientific rigor or reliability
           with which the information was generated/collected.
         comments:
@@ -246,7 +246,7 @@ classes:
         range: Coding
         required: false
         multivalued: false
-      recordMetadata:
+      record_metadata:
         description: Provenance metadata about a specific concrete record of information
           as encoded/serialized in a particular data set or object (as opposed to
           provenance about the abstract information content the encoding carries).
@@ -393,7 +393,7 @@ classes:
         range: Coding
         required: false
         multivalued: false
-      variabilityMeasures:
+      variability_measures:
         description: A statistical score describing the variability inherent in a
           data item representing a statistical summary of a set of observations/measurements
           (e.g. the standard deviation associated with a statistical mean calculated
@@ -407,7 +407,7 @@ classes:
         range: DataItem
         required: false
         multivalued: true
-      confidenceInterval:
+      confidence_interval:
         description: A measure of the probability that a parameter of interest will
           fall within a defined range of values around a mean or other statistical
           calculation.
@@ -425,7 +425,7 @@ classes:
         range: DataItem
         required: false
         multivalued: false
-      componentDataItem:
+      component_data_item:
         description: A more foundational data item that is a logical component of
           a compound data item.
         comments:
@@ -465,7 +465,7 @@ classes:
         range: Coding
         required: false
         multivalued: false
-      releaseDate:
+      release_date:
         description: Indicates when a version of a DataSet was formally released.
         comments:
         - This attribute may apply to version and distribution-level DataSet representations.
@@ -538,13 +538,13 @@ classes:
         range: date
         required: false
         multivalued: false
-      performedBy:
+      performed_by:
         description: An Agent who participated in executing the Activity.
         status: Draft
         range: Agent
         required: false
         multivalued: true
-      specifiedBy:
+      specified_by:
         description: A method that was followed in performing an Activity, that describes
           how it was executed.
         status: Informative
@@ -591,7 +591,7 @@ classes:
         range: Agent
         required: false
         multivalued: false
-      activityType:
+      activity_type:
         description: The specific type of activity performed or role played by an
           agent in making the contribution (e.g. for a publication, agents may contribute
           as a primary author, editor, figure designer, data generator, etc. . Values
@@ -609,7 +609,7 @@ classes:
         range: Coding
         required: false
         multivalued: true
-      contributionMadeTo:
+      contribution_made_to:
         description: The artifact toward which the contribution was made.
         status: Informative
         range: InformationEntity
@@ -687,7 +687,7 @@ classes:
     status: Draft
     is_a: InformationEntity
     attributes:
-      statementText:
+      statement_text:
         description: A natural-language expression of what a Statement asserts to
           be true.
         comments:
@@ -848,7 +848,7 @@ classes:
         range: float
         required: false
         multivalued: false
-      subjectClassification:
+      subject_classification:
         description: A single term or phrase summarizing the outcome of direction
           and strength assessments of a Statement's proposition, in terms of a classification
           of its subject.
@@ -864,12 +864,12 @@ classes:
         range: Coding
         required: false
         multivalued: false
-      hasEvidenceOfTypes:
+      has_evidence_of_types:
         description: A term describing a type of evidence used to assess the validity
           of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro
           assay evidence').
         comments:
-        - This contrasts with hasEvidence and hasEvidenceLine attributes that describe
+        - This contrasts with has_evidence and hasEvidenceLine attributes that describe
           specific instances of evidence information, such as a particular data item,
           study result, or prior assertions, etc. Where possible, data cretors should
           use of terms from ontologies such as the Evidence and Conclusion Ontology
@@ -879,7 +879,7 @@ classes:
         range: string
         required: false
         multivalued: true
-      hasEvidenceLines:
+      has_evidence_lines:
         description: An evidence-based argument that supports or disputes the validity
           of the proposition that a Statement assesses or puts forth as true. The
           strength and direction of this argument (whether it supports or disputes  the
@@ -902,7 +902,7 @@ classes:
         range: EvidenceLine
         required: false
         multivalued: true
-      hasEvidence:
+      has_evidence:
         description: A piece of information that represents or contributes to an argument
           for or against the validity of the Proposition put forth in a Statement.
           This is a shortcut relation that links a Statement directly to a piece of
@@ -925,7 +925,7 @@ classes:
         range: InformationEntity
         required: false
         multivalued: true
-      hasEvidenceFromSources:
+      has_evidence_from_sources:
         description: An Information Entity (typically a publication, dataset, or database) that
           provided information used as evidence to generate the knowledge expressed in a Statement.
         comments:
@@ -986,7 +986,7 @@ classes:
         range: string
         required: false
         multivalued: false
-      dataItems:
+      data_items:
         description: One or more data items that are included in the StudyResult because
           it pertains to the 'focus' of the result. This can be data that directly
           describes this 'focus' (e.g. the population frequency of an allele focus),
@@ -1002,13 +1002,13 @@ classes:
         - 'The model specifies use of a key-value based ''DataItem'' object to capture
           the meaning and value of each type of data item captured in a given StudyResult.
           But in practice, profiles for specific StudyResult types may choose to define
-          one or more specializations of the generic ''dataItems'' property as named
+          one or more specializations of the generic ''data_items'' property as named
           attributes. This makes the data more succinct and parsable, and allows specific
           constraints to be applied and validated for different data items. For example,
           a PopulaitonAlleleFrequencyStudyResult profile may define a named ''focusAlleleFrequency''
           attribute that is required, and a named ''focusAlleleCount'' attribute that
-          is optional - both of which conceptually specialize the core-im ''dataItems''
-          property. Under this approach, the core ''dataItems'' acts as a placeholder
+          is optional - both of which conceptually specialize the core-im ''data_items''
+          property. Under this approach, the core ''data_items'' acts as a placeholder
           to seed such specializations, but is not used directly in StudyResult profiles.'
         status: Informative
         range: DataItem
@@ -1026,7 +1026,7 @@ classes:
         range: Coding
         required: false
         multivalued: false
-      sourceDataSet:
+      source_data_set:
         description: A larger DataSet from which the content of the StudyResult was
           derived.
         comments:
@@ -1038,7 +1038,7 @@ classes:
         range: DataSet
         required: false
         multivalued: true
-      componentResult:
+      component_result:
         description: Another StudyResult comprised of data items about the same focus
           as its parent Result, but based on a more narrowly scoped analysis of the
           foundational data (e.g. an analysis based on data about a subset of the
@@ -1054,7 +1054,7 @@ classes:
         range: StudyResult
         required: false
         multivalued: true
-      studyGroup:
+      study_group:
         description: A description of a specific group or population of subjects interrogated
           in the ResearchStudy that produced the data captured in the StudyResult.
         comments:
@@ -1127,7 +1127,7 @@ classes:
         range: Coding
         required: false
         multivalued: false
-      targetProposition:
+      target_proposition:
         description: The possible fact against which evidence items contained in an
           Evidence Line were collectively evaluated, in determining the overall strength
           and direction of support they provide. For example, in an ACMG Guideline-based
@@ -1149,7 +1149,7 @@ classes:
         range: Proposition
         required: false
         multivalued: false
-      hasEvidenceItems:
+      has_evidence_items:
         description: An individual piece of information that was evaluated as evidence
           in building the argument represented by an Evidence Line.
         comments:
@@ -1169,30 +1169,30 @@ classes:
         range: InformationEntity
         required: false
         multivalued: true
-      directionOfEvidenceProvided:
+      direction_of_evidence_provided:
         description: The direction of support that the Evidence Line is determined
           to provide toward its target Proposition (supports, disputes, neutral).
         status: Draft
         range: string
         required: false
         multivalued: false
-      strengthOfEvidenceProvided:
+      strength_of_evidence_provided:
         description: The strength of support that an Evidence Line is determined to
           provide for or against its target Proposition, evaluated relative to the
-          direction indicated by the directionOfEvidenceProvided.
+          direction indicated by the direction_of_evidence_provided.
         comments:
         - Values of this attribute can be defined by for a given profile based on
           domain/application needs, but should be framed in qualitative terms (e.g.
-          'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute can
+          'strong', 'moderate', 'weak'). The 'score_of_evidence_provided' attribute can
           be used to report quantitative assessments of evidence provided.
         status: Draft
         range: string
         required: false
         multivalued: false
-      scoreOfEvidenceProvided:
+      score_of_evidence_provided:
         description: A quantitative score indicating the strength of support that
           an Evidence Line is determined to provide for or against its target Proposition,
-          evaluated relative to the direction indicated by the directionOfEvidenceProvided
+          evaluated relative to the direction indicated by the direction_of_evidence_provided
           value.
         comments:
         - A given profile or implementation can define a scoring scale and rules that
@@ -1201,7 +1201,7 @@ classes:
         range: float
         required: false
         multivalued: false
-      evidenceItemSources:
+      evidence_item_sources:
         description: An information resource (e.g. document, dataset, digital resource
           such as a database or  knowledgebase) that provides information interpreted
           as evidence in building an Evidence Line.
@@ -1236,7 +1236,7 @@ classes:
     status: Informative
     is_a: Entity
     attributes:
-      propositionText:
+      proposition_text:
         description: A natural-language expression of the Proposition's meaning (i.e.
           the 'possible fact' it expresses).
         status: Informative
@@ -1343,13 +1343,13 @@ classes:
     status: Draft
     is_a: Entity
     attributes:
-      memberCount:
+      member_count:
         description: The total number of individual members in the StudyGroup.
         status: Informative
         range: integer
         required: false
         multivalued: false
-      isSubsetOf:
+      is_subset_of:
         description: A larger StudyGroup of which this StudyGroup represents a subset.
         status: Draft
         range: StudyGroup
@@ -1408,7 +1408,7 @@ classes:
         range: string
         required: false
         multivalued: false
-      systemVersion:
+      system_version:
         description: Version of the terminology or code system that provided the code.
         range: string
         required: false
@@ -1471,12 +1471,12 @@ classes:
         range: string
         required: true
         multivalued: false
-      systemURL:
+      system_url:
         description: A URL for the nomenclature system
         range: uriorcurie
         required: false
         multivalued: false
-      systemVersion:
+      system_version:
         description: The version of the nomenclature system.
         range: string
         required: false
@@ -1495,7 +1495,7 @@ classes:
     from_schema: https://w3id.org/sepio-model
     is_a: Utility
     attributes:
-      extensionDescription:
+      extension_description:
         description: A free text description of the intended meaning and use of the
           extension element, which may include the types of values it takes, and how
           to interpret these values in the context of the parent Class.
@@ -1529,7 +1529,7 @@ classes:
     status: Draft
     is_a: Utility
     attributes:
-      recordIdentifier:
+      record_identifier:
         description: The identifier of the record described in the RecordMetadata
           object (required when the record described is not the one in the present
           system).
@@ -1545,13 +1545,13 @@ classes:
         range: string
         required: false
         multivalued: false
-      recordVersion:
+      record_version:
         description: The version number of the record-level artifact the object describes.
         status: Draft
         range: string
         required: false
         multivalued: false
-      derivedFromRecord:
+      derived_from_record:
         description: Another data record from which the record described here was
           derived, through a data ingest and/or transformation process.
         comments:
@@ -1560,7 +1560,7 @@ classes:
         range: string
         required: false
         multivalued: true
-      dateRecordCreated:
+      date_record_created:
         description: The date the record was initially created.
         status: Draft
         range: string
@@ -1602,7 +1602,7 @@ classes:
         range: string
         required: true
         multivalued: true
-      valueOperator:
+      value_operator:
         description: An operation that defines how to logically interpret a set of
           more than one Characteristic values ('AND', 'OR', 'NOT').
         comments:

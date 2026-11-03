@@ -231,9 +231,9 @@
       Utility &lt;|-- Expression
         click Utility href "../Utility"
 
-      Expression : systemURL
+      Expression : system_url
 
-      Expression : systemVersion
+      Expression : system_version
 
       Expression : value
 
@@ -253,12 +253,12 @@
 <p>A free-text rendering of the expression used as a label for the entity</p>
 </blockquote>
 <hr/>
-<p><a href="../systemURL/">systemURL</a> --&gt; <a href="../Uriorcurie/">Uriorcurie</a> [0..1] <br/></p>
+<p><a href="../system_url/">system_url</a> --&gt; <a href="../Uriorcurie/">Uriorcurie</a> [0..1] <br/></p>
 <blockquote>
 <p>A URL for the nomenclature system</p>
 </blockquote>
 <hr/>
-<p><a href="../systemVersion/">systemVersion</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../system_version/">system_version</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>The version of the nomenclature system.</p>
 </blockquote>
@@ -314,8 +314,8 @@ attributes:
     range: string
     required: true
     multivalued: false
-  systemURL:
-    name: systemURL
+  system_url:
+    name: system_url
     description: A URL for the nomenclature system
     from_schema: https://w3id.org/sepio-model
     rank: 1000
@@ -324,8 +324,8 @@ attributes:
     range: uriorcurie
     required: false
     multivalued: false
-  systemVersion:
-    name: systemVersion
+  system_version:
+    name: system_version
     description: The version of the nomenclature system.
     from_schema: https://w3id.org/sepio-model
     domain_of:
@@ -364,23 +364,23 @@ attributes:
     range: string
     required: true
     multivalued: false
-  systemURL:
-    name: systemURL
+  system_url:
+    name: system_url
     description: A URL for the nomenclature system
     from_schema: https://w3id.org/sepio-model
     rank: 1000
-    alias: systemURL
+    alias: system_url
     owner: Expression
     domain_of:
     - Expression
     range: uriorcurie
     required: false
     multivalued: false
-  systemVersion:
-    name: systemVersion
+  system_version:
+    name: system_version
     description: The version of the nomenclature system.
     from_schema: https://w3id.org/sepio-model
-    alias: systemVersion
+    alias: system_version
     owner: Expression
     domain_of:
     - Coding

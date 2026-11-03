@@ -349,7 +349,7 @@
 <p><em>A document or other informtion resource in which the information entity, or evidence supporting it, is reported.</em></p>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>This attribute is more general than InformationEntity.reportedIn (which is used to references a Docuement that directly reports the infrormation), and Statement.hasEvidenceFromSources (which is used to reference resources that provided evidence used to generate the knowledge expressed in a Statement). It can be used to cover both cases, in situations where a data provider does not know which is the case, or does not wish to make the distinction.</li>
+<li>This attribute is more general than InformationEntity.reported_in (which is used to references a Docuement that directly reports the infrormation), and Statement.has_evidence_from_sources (which is used to reference resources that provided evidence used to generate the knowledge expressed in a Statement). It can be used to cover both cases, in situations where a data provider does not know which is the case, or does not wish to make the distinction.</li>
 </ul>
 <p>URI: <a href="https://w3id.org/sepio-framework/sepio-linkml/sources">sepio_linkml:sources</a></p>
 <!-- no inheritance hierarchy -->
@@ -365,13 +365,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Statement/">Statement</a></td>
-<td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
+<td><a href="../EvidenceLine/">EvidenceLine</a></td>
+<td>An independent, evidence-based argument that may support or refute the validi...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EvidenceLine/">EvidenceLine</a></td>
-<td>An independent, evidence-based argument that may support or refute the validi...</td>
+<td><a href="../Document/">Document</a></td>
+<td>A collection of information, usually in a text-based or graphic human-readabl...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -380,18 +380,18 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../InformationEntity/">InformationEntity</a></td>
-<td>An abstract (non-physical) entity that is about something - representing the ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../StudyResult/">StudyResult</a></td>
-<td>A collection of data items from a single study that pertain to a particular s...</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Method/">Method</a></td>
 <td>A set of instructions that specify how to achieve some objective</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Statement/">Statement</a></td>
+<td>A claim of purported truth as made by a particular agent, on a particular occ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../InformationEntity/">InformationEntity</a></td>
+<td>An abstract (non-physical) entity that is about something - representing the ...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -400,8 +400,8 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Document/">Document</a></td>
-<td>A collection of information, usually in a text-based or graphic human-readabl...</td>
+<td><a href="../StudyResult/">StudyResult</a></td>
+<td>A collection of data items from a single study that pertain to a particular s...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -446,8 +446,8 @@
 description: A document or other informtion resource in which the information entity,
   or evidence supporting it, is reported.
 comments:
-- This attribute is more general than InformationEntity.reportedIn (which is used
-  to references a Docuement that directly reports the infrormation), and Statement.hasEvidenceFromSources
+- This attribute is more general than InformationEntity.reported_in (which is used
+  to references a Docuement that directly reports the infrormation), and Statement.has_evidence_from_sources
   (which is used to reference resources that provided evidence used to generate the
   knowledge expressed in a Statement). It can be used to cover both cases, in situations
   where a data provider does not know which is the case, or does not wish to make

@@ -241,7 +241,7 @@
       Entity &lt;|-- StudyGroup
         click Entity href "../Entity"
 
-      StudyGroup : alternativeLabels
+      StudyGroup : alternative_labels
 
       StudyGroup : characteristics
 
@@ -267,18 +267,18 @@
 
       StudyGroup : identifiers
 
-      StudyGroup : isSubsetOf
+      StudyGroup : is_subset_of
 
 
 
 
-    StudyGroup --&gt; "*" StudyGroup : isSubsetOf
+    StudyGroup --&gt; "*" StudyGroup : is_subset_of
     click StudyGroup href "../StudyGroup"
 
 
       StudyGroup : label
 
-      StudyGroup : memberCount
+      StudyGroup : member_count
 
       StudyGroup : type
 
@@ -293,12 +293,12 @@
 </ul>
 <h2 id="slots">Slots</h2>
 <h3 id="direct-slots">Direct slots</h3>
-<p><a href="../memberCount/">memberCount</a> --&gt; <a href="../Integer/">Integer</a> [0..1] <br/></p>
+<p><a href="../member_count/">member_count</a> --&gt; <a href="../Integer/">Integer</a> [0..1] <br/></p>
 <blockquote>
 <p>The total number of individual members in the StudyGroup.</p>
 </blockquote>
 <hr/>
-<p><a href="../isSubsetOf/">isSubsetOf</a> --&gt; <a href="./">StudyGroup</a> [*] <br/></p>
+<p><a href="../is_subset_of/">is_subset_of</a> --&gt; <a href="./">StudyGroup</a> [*] <br/></p>
 <blockquote>
 <p>A larger StudyGroup of which this StudyGroup represents a subset.</p>
 </blockquote>
@@ -342,7 +342,7 @@
 <p>A primary name for the Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../Entity/">Entity</a></p>
-<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../alternative_labels/">alternative_labels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Alternative name(s) for the Entity. <br/></p>
 </blockquote>
@@ -374,13 +374,13 @@
 <tbody>
 <tr>
 <td><a href="../StudyResult/">StudyResult</a></td>
-<td><a href="../studyGroup/">studyGroup</a></td>
+<td><a href="../study_group/">study_group</a></td>
 <td>range</td>
 <td><a href="./">StudyGroup</a></td>
 </tr>
 <tr>
 <td><a href="./">StudyGroup</a></td>
-<td><a href="../isSubsetOf/">isSubsetOf</a></td>
+<td><a href="../is_subset_of/">is_subset_of</a></td>
 <td>range</td>
 <td><a href="./">StudyGroup</a></td>
 </tr>
@@ -427,8 +427,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Entity
 attributes:
-  memberCount:
-    name: memberCount
+  member_count:
+    name: member_count
     description: The total number of individual members in the StudyGroup.
     from_schema: https://w3id.org/sepio-model
     status: Informative
@@ -438,8 +438,8 @@ attributes:
     range: integer
     required: false
     multivalued: false
-  isSubsetOf:
-    name: isSubsetOf
+  is_subset_of:
+    name: is_subset_of
     description: A larger StudyGroup of which this StudyGroup represents a subset.
     from_schema: https://w3id.org/sepio-model
     status: Draft
@@ -479,26 +479,26 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Entity
 attributes:
-  memberCount:
-    name: memberCount
+  member_count:
+    name: member_count
     description: The total number of individual members in the StudyGroup.
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: memberCount
+    alias: member_count
     owner: StudyGroup
     domain_of:
     - StudyGroup
     range: integer
     required: false
     multivalued: false
-  isSubsetOf:
-    name: isSubsetOf
+  is_subset_of:
+    name: is_subset_of
     description: A larger StudyGroup of which this StudyGroup represents a subset.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: isSubsetOf
+    alias: is_subset_of
     owner: StudyGroup
     domain_of:
     - StudyGroup
@@ -595,13 +595,13 @@ attributes:
     range: string
     required: false
     multivalued: false
-  alternativeLabels:
-    name: alternativeLabels
+  alternative_labels:
+    name: alternative_labels
     description: Alternative name(s) for the Entity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: alternativeLabels
+    alias: alternative_labels
     owner: StudyGroup
     domain_of:
     - Entity

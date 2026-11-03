@@ -238,7 +238,7 @@
 
       Characteristic : name
 
-      Characteristic : valueOperator
+      Characteristic : value_operator
 
       Characteristic : values
 
@@ -263,7 +263,7 @@
 <p>The specific value(s) that the indicated traitor role  holds in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer').</p>
 </blockquote>
 <hr/>
-<p><a href="../valueOperator/">valueOperator</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../value_operator/">value_operator</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>An operation that defines how to logically interpret a set of more than one Characteristic values ('AND', 'OR', 'NOT').</p>
 </blockquote>
@@ -359,8 +359,8 @@ attributes:
     range: string
     required: true
     multivalued: true
-  valueOperator:
-    name: valueOperator
+  value_operator:
+    name: value_operator
     description: An operation that defines how to logically interpret a set of more
       than one Characteristic values ('AND', 'OR', 'NOT').
     comments:
@@ -425,8 +425,8 @@ attributes:
     range: string
     required: true
     multivalued: true
-  valueOperator:
-    name: valueOperator
+  value_operator:
+    name: value_operator
     description: An operation that defines how to logically interpret a set of more
       than one Characteristic values ('AND', 'OR', 'NOT').
     comments:
@@ -437,7 +437,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: valueOperator
+    alias: value_operator
     owner: Characteristic
     domain_of:
     - Characteristic

@@ -245,13 +245,13 @@
     click Contribution href "../Contribution"
 
 
-      RecordMetadata : dateRecordCreated
+      RecordMetadata : date_record_created
 
-      RecordMetadata : derivedFromRecord
+      RecordMetadata : derived_from_record
 
-      RecordMetadata : recordIdentifier
+      RecordMetadata : record_identifier
 
-      RecordMetadata : recordVersion
+      RecordMetadata : record_version
 
 
 </div>
@@ -264,7 +264,7 @@
 </ul>
 <h2 id="slots">Slots</h2>
 <h3 id="direct-slots">Direct slots</h3>
-<p><a href="../recordIdentifier/">recordIdentifier</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../record_identifier/">record_identifier</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>The identifier of the record described in the RecordMetadata object (required when the record described is not the one in the present system).</p>
 </blockquote>
@@ -273,12 +273,12 @@
 * This is needed only when the RecordMetadata object describes an upstream source record, as opposed to the record in the present system, so it is clear what the metadata it contains is about.  e.g. when ClinGen ingests and transforms ClinVar data, it wants to maintain a record of when the source ClinVar record was submitted and by whom.  A RecordMetadata object could be created that describes this upstream source record, including information about its submission to ClinVar.<br/>
 </details>
 <hr/>
-<p><a href="../recordVersion/">recordVersion</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../record_version/">record_version</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>The version number of the record-level artifact the object describes.</p>
 </blockquote>
 <hr/>
-<p><a href="../derivedFromRecord/">derivedFromRecord</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../derived_from_record/">derived_from_record</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Another data record from which the record described here was derived, through a data ingest and/or transformation process.</p>
 </blockquote>
@@ -287,7 +287,7 @@
 * Value should be a string representing the identifier of the source record.<br/>
 </details>
 <hr/>
-<p><a href="../dateRecordCreated/">dateRecordCreated</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../date_record_created/">date_record_created</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>The date the record was initially created.</p>
 </blockquote>
@@ -310,49 +310,49 @@
 <tbody>
 <tr>
 <td><a href="../InformationEntity/">InformationEntity</a></td>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
+<td><a href="../record_metadata/">record_metadata</a></td>
 <td>range</td>
 <td><a href="./">RecordMetadata</a></td>
 </tr>
 <tr>
 <td><a href="../Method/">Method</a></td>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
+<td><a href="../record_metadata/">record_metadata</a></td>
 <td>range</td>
 <td><a href="./">RecordMetadata</a></td>
 </tr>
 <tr>
 <td><a href="../Document/">Document</a></td>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
+<td><a href="../record_metadata/">record_metadata</a></td>
 <td>range</td>
 <td><a href="./">RecordMetadata</a></td>
 </tr>
 <tr>
 <td><a href="../DataItem/">DataItem</a></td>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
+<td><a href="../record_metadata/">record_metadata</a></td>
 <td>range</td>
 <td><a href="./">RecordMetadata</a></td>
 </tr>
 <tr>
 <td><a href="../DataSet/">DataSet</a></td>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
+<td><a href="../record_metadata/">record_metadata</a></td>
 <td>range</td>
 <td><a href="./">RecordMetadata</a></td>
 </tr>
 <tr>
 <td><a href="../Statement/">Statement</a></td>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
+<td><a href="../record_metadata/">record_metadata</a></td>
 <td>range</td>
 <td><a href="./">RecordMetadata</a></td>
 </tr>
 <tr>
 <td><a href="../StudyResult/">StudyResult</a></td>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
+<td><a href="../record_metadata/">record_metadata</a></td>
 <td>range</td>
 <td><a href="./">RecordMetadata</a></td>
 </tr>
 <tr>
 <td><a href="../EvidenceLine/">EvidenceLine</a></td>
-<td><a href="../recordMetadata/">recordMetadata</a></td>
+<td><a href="../record_metadata/">record_metadata</a></td>
 <td>range</td>
 <td><a href="./">RecordMetadata</a></td>
 </tr>
@@ -401,8 +401,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Utility
 attributes:
-  recordIdentifier:
-    name: recordIdentifier
+  record_identifier:
+    name: record_identifier
     description: The identifier of the record described in the RecordMetadata object
       (required when the record described is not the one in the present system).
     comments:
@@ -420,8 +420,8 @@ attributes:
     range: string
     required: false
     multivalued: false
-  recordVersion:
-    name: recordVersion
+  record_version:
+    name: record_version
     description: The version number of the record-level artifact the object describes.
     from_schema: https://w3id.org/sepio-model
     status: Draft
@@ -431,8 +431,8 @@ attributes:
     range: string
     required: false
     multivalued: false
-  derivedFromRecord:
-    name: derivedFromRecord
+  derived_from_record:
+    name: derived_from_record
     description: Another data record from which the record described here was derived,
       through a data ingest and/or transformation process.
     comments:
@@ -445,8 +445,8 @@ attributes:
     range: string
     required: false
     multivalued: true
-  dateRecordCreated:
-    name: dateRecordCreated
+  date_record_created:
+    name: date_record_created
     description: The date the record was initially created.
     from_schema: https://w3id.org/sepio-model
     status: Draft
@@ -489,8 +489,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: Utility
 attributes:
-  recordIdentifier:
-    name: recordIdentifier
+  record_identifier:
+    name: record_identifier
     description: The identifier of the record described in the RecordMetadata object
       (required when the record described is not the one in the present system).
     comments:
@@ -503,28 +503,28 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: recordIdentifier
+    alias: record_identifier
     owner: RecordMetadata
     domain_of:
     - RecordMetadata
     range: string
     required: false
     multivalued: false
-  recordVersion:
-    name: recordVersion
+  record_version:
+    name: record_version
     description: The version number of the record-level artifact the object describes.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: recordVersion
+    alias: record_version
     owner: RecordMetadata
     domain_of:
     - RecordMetadata
     range: string
     required: false
     multivalued: false
-  derivedFromRecord:
-    name: derivedFromRecord
+  derived_from_record:
+    name: derived_from_record
     description: Another data record from which the record described here was derived,
       through a data ingest and/or transformation process.
     comments:
@@ -532,20 +532,20 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: derivedFromRecord
+    alias: derived_from_record
     owner: RecordMetadata
     domain_of:
     - RecordMetadata
     range: string
     required: false
     multivalued: true
-  dateRecordCreated:
-    name: dateRecordCreated
+  date_record_created:
+    name: date_record_created
     description: The date the record was initially created.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: dateRecordCreated
+    alias: date_record_created
     owner: RecordMetadata
     domain_of:
     - RecordMetadata

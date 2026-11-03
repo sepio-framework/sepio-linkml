@@ -239,7 +239,7 @@
       InformationEntity &lt;|-- Statement
         click InformationEntity href "../InformationEntity"
 
-      Statement : alternativeLabels
+      Statement : alternative_labels
 
       Statement : contributions
 
@@ -250,14 +250,14 @@
     click Contribution href "../Contribution"
 
 
-      Statement : dateAuthored
+      Statement : date_authored
 
-      Statement : derivedFrom
-
-
+      Statement : derived_from
 
 
-    Statement --&gt; "*" InformationEntity : derivedFrom
+
+
+    Statement --&gt; "*" InformationEntity : derived_from
     click InformationEntity href "../InformationEntity"
 
 
@@ -274,49 +274,49 @@
     click Extension href "../Extension"
 
 
-      Statement : hasEvidence
+      Statement : has_evidence
 
 
 
 
-    Statement --&gt; "*" InformationEntity : hasEvidence
+    Statement --&gt; "*" InformationEntity : has_evidence
     click InformationEntity href "../InformationEntity"
 
 
-      Statement : hasEvidenceFromSources
+      Statement : has_evidence_from_sources
 
 
 
 
-    Statement --&gt; "*" InformationEntity : hasEvidenceFromSources
+    Statement --&gt; "*" InformationEntity : has_evidence_from_sources
     click InformationEntity href "../InformationEntity"
 
 
-      Statement : hasEvidenceLines
+      Statement : has_evidence_lines
 
 
 
 
-    Statement --&gt; "*" EvidenceLine : hasEvidenceLines
+    Statement --&gt; "*" EvidenceLine : has_evidence_lines
     click EvidenceLine href "../EvidenceLine"
 
 
-      Statement : hasEvidenceOfTypes
+      Statement : has_evidence_of_types
 
       Statement : id
 
       Statement : identifiers
 
-      Statement : informationQuality
+      Statement : information_quality
 
 
 
 
-    Statement --&gt; "0..1" Coding : informationQuality
+    Statement --&gt; "0..1" Coding : information_quality
     click Coding href "../Coding"
 
 
-      Statement : isAbout
+      Statement : is_about
 
       Statement : label
 
@@ -349,48 +349,48 @@
     click Qualifier href "../Qualifier"
 
 
-      Statement : recordMetadata
+      Statement : record_metadata
 
 
 
 
-    Statement --&gt; "0..1" RecordMetadata : recordMetadata
+    Statement --&gt; "0..1" RecordMetadata : record_metadata
     click RecordMetadata href "../RecordMetadata"
 
 
-      Statement : reportedIn
+      Statement : reported_in
 
       Statement : score
 
       Statement : sources
 
-      Statement : specifiedBy
+      Statement : specified_by
 
-      Statement : statementText
+      Statement : statement_text
 
       Statement : strength
 
       Statement : subject
 
-      Statement : subjectClassification
+      Statement : subject_classification
 
 
 
 
-    Statement --&gt; "0..1" Coding : subjectClassification
+    Statement --&gt; "0..1" Coding : subject_classification
     click Coding href "../Coding"
 
 
-      Statement : supportingMethods
-
-      Statement : supportingMethodTypes
+      Statement : supporting_method_types
 
 
 
 
-    Statement --&gt; "*" Coding : supportingMethodTypes
+    Statement --&gt; "*" Coding : supporting_method_types
     click Coding href "../Coding"
 
+
+      Statement : supporting_methods
 
       Statement : type
 
@@ -408,7 +408,7 @@
 </ul>
 <h2 id="slots">Slots</h2>
 <h3 id="direct-slots">Direct slots</h3>
-<p><a href="../statementText/">statementText</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../statement_text/">statement_text</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>A natural-language expression of what a Statement asserts to be true.</p>
 </blockquote>
@@ -486,7 +486,7 @@
 * Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength', and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score.<br/>
 </details>
 <hr/>
-<p><a href="../subjectClassification/">subjectClassification</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
+<p><a href="../subject_classification/">subject_classification</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
 <blockquote>
 <p>A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.</p>
 </blockquote>
@@ -495,16 +495,16 @@
 * Permissible values for this attribute are  typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that "BRCA2 c.8023A&gt;G is pathogenic for Breast Cancer", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification.<br/>
 </details>
 <hr/>
-<p><a href="../hasEvidenceOfTypes/">hasEvidenceOfTypes</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../has_evidence_of_types/">has_evidence_of_types</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').</p>
 </blockquote>
 <details>
 <summary>Implementation Guidance</summary>
-* This contrasts with hasEvidence and hasEvidenceLine attributes that describe specific instances of evidence information, such as a particular data item, study result, or prior assertions, etc. Where possible, data cretors should use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO) to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity evidence').<br/>
+* This contrasts with has_evidence and hasEvidenceLine attributes that describe specific instances of evidence information, such as a particular data item, study result, or prior assertions, etc. Where possible, data cretors should use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO) to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity evidence').<br/>
 </details>
 <hr/>
-<p><a href="../hasEvidenceLines/">hasEvidenceLines</a> --&gt; <a href="../EvidenceLine/">EvidenceLine</a> [*] <br/></p>
+<p><a href="../has_evidence_lines/">has_evidence_lines</a> --&gt; <a href="../EvidenceLine/">EvidenceLine</a> [*] <br/></p>
 <blockquote>
 <p>An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes  the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).</p>
 </blockquote>
@@ -514,7 +514,7 @@
 * Evidence Lines are useful in cases where a data provider wants to describe in detail how information was  assessed as evidence to generate and score different arguments for or against a Statement''s proposition. Evidence Lines can be omitted if such information is not available or needed.<br>
 </br></details>
 <hr/>
-<p><a href="../hasEvidence/">hasEvidence</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
+<p><a href="../has_evidence/">has_evidence</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
 <blockquote>
 <p>A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.</p>
 </blockquote>
@@ -524,7 +524,7 @@
 * This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class - to be used data creators cannot or do not wish to create an Evidence Line object.<br>
 </br></details>
 <hr/>
-<p><a href="../hasEvidenceFromSources/">hasEvidenceFromSources</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
+<p><a href="../has_evidence_from_sources/">has_evidence_from_sources</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
 <blockquote>
 <p>An Information Entity (typically a publication, dataset, or database) that provided information used as evidence to generate the knowledge expressed in a Statement.</p>
 </blockquote>
@@ -534,7 +534,7 @@
 </details>
 <hr/>
 <h3 id="inherited-slots">Inherited slots</h3>
-<p><a href="../isAbout/">isAbout</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../is_about/">is_about</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>An entity or concept in the world that the information entity describes/is about. <br/></p>
 </blockquote>
@@ -552,7 +552,7 @@
 <summary>Implementation Guidance</summary>
 * This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent.<br/>
 </details>
-<p><a href="../dateAuthored/">dateAuthored</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../date_authored/">date_authored</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>Indicates when the information content expressed in the Information Entity was generated. <br/></p>
 </blockquote>
@@ -561,7 +561,7 @@
 <summary>Implementation Guidance</summary>
 * The term 'authored' as used in the model refers to the generation of 'information content' in the abstract  sense, as opposed to a concrete encoding of this information in a specific language or format. e.g. for a Statement, this attribute captures when the information content expressed in the Statement was first generated by an agent.  Information about when a particular concrete encoding of this information was created (e.g. as row in a table, or object in a json document) would live in a RecordMetadata object attached to the Information Entity).<br/>
 </details>
-<p><a href="../specifiedBy/">specifiedBy</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../specified_by/">specified_by</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>A specification that describes all or part of the process that led to creation of the Information Entity. <br/></p>
 </blockquote>
@@ -571,7 +571,7 @@
 * Examples - an experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification.<br/>
 * Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/ cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission Electron Microscopy").<br/>
 </details>
-<p><a href="../supportingMethods/">supportingMethods</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../supporting_methods/">supporting_methods</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Specific methods that were executed to directly or indirectly support creation of the Information Entity. <br/></p>
 </blockquote>
@@ -579,24 +579,24 @@
 <details>
 <summary>Implementation Guidance</summary>
 * These may include methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity - e.g. methods used to produce data that was interpreted as evidence to generate a Statement of knowledge.<br/>
-* This field captures terms representing specific INSTANCES of methods applied, vs the 'supportingMethodTypes' attribute which captures TYPES of methods used.<br/>
+* This field captures terms representing specific INSTANCES of methods applied, vs the 'supporting_method_types' attribute which captures TYPES of methods used.<br/>
 </details>
-<p><a href="../supportingMethodTypes/">supportingMethodTypes</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
+<p><a href="../supporting_method_types/">supporting_method_types</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
 <blockquote>
 <p>Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
 <details>
 <summary>Implementation Guidance</summary>
-* This field captures terms representing TYPES of methods applied, vs the 'specifiedBy' or'supportingMethods' attributes which capture specific INSTANCES of methods used. These may include types of methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity<br/>
+* This field captures terms representing TYPES of methods applied, vs the 'specified_by' or'supporting_methods' attributes which capture specific INSTANCES of methods used. These may include types of methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity<br/>
 * Implementers should define a relevant source or set of method type codes/terms to use here, based on the needs of the domain or application.'<br/>
 </details>
-<p><a href="../derivedFrom/">derivedFrom</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
+<p><a href="../derived_from/">derived_from</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
 <blockquote>
 <p>Another Information Entity from which this Information Entity is derived, in whole or in part. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
-<p><a href="../reportedIn/">reportedIn</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../reported_in/">reported_in</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>A document in which the Information Entity is reported. <br/></p>
 </blockquote>
@@ -612,9 +612,9 @@
 <p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
 <details>
 <summary>Implementation Guidance</summary>
-* This attribute is more general than InformationEntity.reportedIn (which is used to references a Docuement that directly reports the infrormation), and Statement.hasEvidenceFromSources (which is used to reference resources that provided evidence used to generate the knowledge expressed in a Statement). It can be used to cover both cases, in situations where a data provider does not know which is the case, or does not wish to make the distinction.<br/>
+* This attribute is more general than InformationEntity.reported_in (which is used to references a Docuement that directly reports the infrormation), and Statement.has_evidence_from_sources (which is used to reference resources that provided evidence used to generate the knowledge expressed in a Statement). It can be used to cover both cases, in situations where a data provider does not know which is the case, or does not wish to make the distinction.<br/>
 </details>
-<p><a href="../informationQuality/">informationQuality</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
+<p><a href="../information_quality/">information_quality</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
 <blockquote>
 <p>A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected. <br/></p>
 </blockquote>
@@ -626,7 +626,7 @@
 * The quality of information is one factor that goes into the confidence we have in the information''s veracity (i.e. that it is an accurate reflection of reality it intends to measure or describe). Other factors informing confidence may include who did it (we may just not trust some Agents), when (if data created 500 years ago, we may have less confidence in it), and for Assertions, the relevance and abundance of supporting evidence.<br/>
 * Implementers should define a relevant source of codes or terms to use here, based on the needs of the domain or application.'<br/>
 </details>
-<p><a href="../recordMetadata/">recordMetadata</a> --&gt; <a href="../RecordMetadata/">RecordMetadata</a> [0..1] <br/></p>
+<p><a href="../record_metadata/">record_metadata</a> --&gt; <a href="../RecordMetadata/">RecordMetadata</a> [0..1] <br/></p>
 <blockquote>
 <p>Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries). <br/></p>
 </blockquote>
@@ -668,7 +668,7 @@
 <p>A primary name for the Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../Entity/">Entity</a></p>
-<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../alternative_labels/">alternative_labels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Alternative name(s) for the Entity. <br/></p>
 </blockquote>
@@ -748,8 +748,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
 attributes:
-  statementText:
-    name: statementText
+  statement_text:
+    name: statement_text
     description: A natural-language expression of what a Statement asserts to be true.
     comments:
     - This attribute captures what a Statement says as human readable free text. e.g.
@@ -948,8 +948,8 @@ attributes:
     range: float
     required: false
     multivalued: false
-  subjectClassification:
-    name: subjectClassification
+  subject_classification:
+    name: subject_classification
     description: A single term or phrase summarizing the outcome of direction and
       strength assessments of a Statement's proposition, in terms of a classification
       of its subject.
@@ -969,13 +969,13 @@ attributes:
     range: Coding
     required: false
     multivalued: false
-  hasEvidenceOfTypes:
-    name: hasEvidenceOfTypes
+  has_evidence_of_types:
+    name: has_evidence_of_types
     description: A term describing a type of evidence used to assess the validity
       of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay
       evidence').
     comments:
-    - This contrasts with hasEvidence and hasEvidenceLine attributes that describe
+    - This contrasts with has_evidence and hasEvidenceLine attributes that describe
       specific instances of evidence information, such as a particular data item,
       study result, or prior assertions, etc. Where possible, data cretors should
       use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO)
@@ -989,8 +989,8 @@ attributes:
     range: string
     required: false
     multivalued: true
-  hasEvidenceLines:
-    name: hasEvidenceLines
+  has_evidence_lines:
+    name: has_evidence_lines
     description: An evidence-based argument that supports or disputes the validity
       of the proposition that a Statement assesses or puts forth as true. The strength
       and direction of this argument (whether it supports or disputes  the proposition,
@@ -1017,8 +1017,8 @@ attributes:
     range: EvidenceLine
     required: false
     multivalued: true
-  hasEvidence:
-    name: hasEvidence
+  has_evidence:
+    name: has_evidence
     description: A piece of information that represents or contributes to an argument
       for or against the validity of the Proposition put forth in a Statement. This
       is a shortcut relation that links a Statement directly to a piece of evidence
@@ -1043,8 +1043,8 @@ attributes:
     range: InformationEntity
     required: false
     multivalued: true
-  hasEvidenceFromSources:
-    name: hasEvidenceFromSources
+  has_evidence_from_sources:
+    name: has_evidence_from_sources
     description: An Information Entity (typically a publication, dataset, or database)
       that provided information used as evidence to generate the knowledge expressed
       in a Statement.
@@ -1096,8 +1096,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Draft
 is_a: InformationEntity
 attributes:
-  statementText:
-    name: statementText
+  statement_text:
+    name: statement_text
     description: A natural-language expression of what a Statement asserts to be true.
     comments:
     - This attribute captures what a Statement says as human readable free text. e.g.
@@ -1109,7 +1109,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: statementText
+    alias: statement_text
     owner: Statement
     domain_of:
     - Statement
@@ -1314,8 +1314,8 @@ attributes:
     range: float
     required: false
     multivalued: false
-  subjectClassification:
-    name: subjectClassification
+  subject_classification:
+    name: subject_classification
     description: A single term or phrase summarizing the outcome of direction and
       strength assessments of a Statement's proposition, in terms of a classification
       of its subject.
@@ -1330,20 +1330,20 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: subjectClassification
+    alias: subject_classification
     owner: Statement
     domain_of:
     - Statement
     range: Coding
     required: false
     multivalued: false
-  hasEvidenceOfTypes:
-    name: hasEvidenceOfTypes
+  has_evidence_of_types:
+    name: has_evidence_of_types
     description: A term describing a type of evidence used to assess the validity
       of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay
       evidence').
     comments:
-    - This contrasts with hasEvidence and hasEvidenceLine attributes that describe
+    - This contrasts with has_evidence and hasEvidenceLine attributes that describe
       specific instances of evidence information, such as a particular data item,
       study result, or prior assertions, etc. Where possible, data cretors should
       use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO)
@@ -1352,15 +1352,15 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: hasEvidenceOfTypes
+    alias: has_evidence_of_types
     owner: Statement
     domain_of:
     - Statement
     range: string
     required: false
     multivalued: true
-  hasEvidenceLines:
-    name: hasEvidenceLines
+  has_evidence_lines:
+    name: has_evidence_lines
     description: An evidence-based argument that supports or disputes the validity
       of the proposition that a Statement assesses or puts forth as true. The strength
       and direction of this argument (whether it supports or disputes  the proposition,
@@ -1382,15 +1382,15 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: hasEvidenceLines
+    alias: has_evidence_lines
     owner: Statement
     domain_of:
     - Statement
     range: EvidenceLine
     required: false
     multivalued: true
-  hasEvidence:
-    name: hasEvidence
+  has_evidence:
+    name: has_evidence
     description: A piece of information that represents or contributes to an argument
       for or against the validity of the Proposition put forth in a Statement. This
       is a shortcut relation that links a Statement directly to a piece of evidence
@@ -1410,15 +1410,15 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: hasEvidence
+    alias: has_evidence
     owner: Statement
     domain_of:
     - Statement
     range: InformationEntity
     required: false
     multivalued: true
-  hasEvidenceFromSources:
-    name: hasEvidenceFromSources
+  has_evidence_from_sources:
+    name: has_evidence_from_sources
     description: An Information Entity (typically a publication, dataset, or database)
       that provided information used as evidence to generate the knowledge expressed
       in a Statement.
@@ -1428,14 +1428,14 @@ attributes:
       create Evidence Lines or Evidence Items in the data.
     from_schema: https://w3id.org/sepio-model
     rank: 1000
-    alias: hasEvidenceFromSources
+    alias: has_evidence_from_sources
     owner: Statement
     domain_of:
     - Statement
     range: InformationEntity
     multivalued: true
-  isAbout:
-    name: isAbout
+  is_about:
+    name: is_about
     description: An entity or concept in the world that the information entity describes/is
       about.
     comments:
@@ -1448,7 +1448,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: isAbout
+    alias: is_about
     owner: Statement
     domain_of:
     - InformationEntity
@@ -1474,8 +1474,8 @@ attributes:
     range: Contribution
     required: false
     multivalued: true
-  dateAuthored:
-    name: dateAuthored
+  date_authored:
+    name: date_authored
     description: Indicates when the information content expressed in the Information
       Entity was generated.
     comments:
@@ -1489,15 +1489,15 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: dateAuthored
+    alias: date_authored
     owner: Statement
     domain_of:
     - InformationEntity
     range: string
     required: false
     multivalued: false
-  specifiedBy:
-    name: specifiedBy
+  specified_by:
+    name: specified_by
     description: A specification that describes all or part of the process that led
       to creation of the Information Entity.
     comments:
@@ -1511,7 +1511,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: specifiedBy
+    alias: specified_by
     owner: Statement
     domain_of:
     - InformationEntity
@@ -1519,8 +1519,8 @@ attributes:
     range: string
     required: false
     multivalued: true
-  supportingMethods:
-    name: supportingMethods
+  supporting_methods:
+    name: supporting_methods
     description: Specific methods that were executed to directly or indirectly support
       creation of the Information Entity.
     comments:
@@ -1529,24 +1529,24 @@ attributes:
       Entity - e.g. methods used to produce data that was interpreted as evidence
       to generate a Statement of knowledge.
     - This field captures terms representing specific INSTANCES of methods applied,
-      vs the 'supportingMethodTypes' attribute which captures TYPES of methods used.
+      vs the 'supporting_method_types' attribute which captures TYPES of methods used.
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: supportingMethods
+    alias: supporting_methods
     owner: Statement
     domain_of:
     - InformationEntity
     range: string
     required: false
     multivalued: true
-  supportingMethodTypes:
-    name: supportingMethodTypes
+  supporting_method_types:
+    name: supporting_method_types
     description: Types of methodological approaches that were executed to directly
       or indirectly support creation of the Information Entity.
     comments:
-    - This field captures terms representing TYPES of methods applied, vs the 'specifiedBy'
-      or'supportingMethods' attributes which capture specific INSTANCES of methods
+    - This field captures terms representing TYPES of methods applied, vs the 'specified_by'
+      or'supporting_methods' attributes which capture specific INSTANCES of methods
       used. These may include types of methods that directly produced the Information
       Entity, or upstream/accessory methods that indirectly support creation of the
       Information Entity
@@ -1555,29 +1555,29 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: supportingMethodTypes
+    alias: supporting_method_types
     owner: Statement
     domain_of:
     - InformationEntity
     range: Coding
     required: false
     multivalued: true
-  derivedFrom:
-    name: derivedFrom
+  derived_from:
+    name: derived_from
     description: Another Information Entity from which this Information Entity is
       derived, in whole or in part.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: derivedFrom
+    alias: derived_from
     owner: Statement
     domain_of:
     - InformationEntity
     range: InformationEntity
     required: false
     multivalued: true
-  reportedIn:
-    name: reportedIn
+  reported_in:
+    name: reported_in
     description: A document in which the Information Entity is reported.
     comments:
     - This attribute is used specifically to reference documents/publications where
@@ -1588,7 +1588,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: reportedIn
+    alias: reported_in
     owner: Statement
     domain_of:
     - InformationEntity
@@ -1600,12 +1600,12 @@ attributes:
     description: A document or other informtion resource in which the information
       entity, or evidence supporting it, is reported.
     comments:
-    - This attribute is more general than InformationEntity.reportedIn (which is used
-      to references a Docuement that directly reports the infrormation), and Statement.hasEvidenceFromSources
-      (which is used to reference resources that provided evidence used to generate
-      the knowledge expressed in a Statement). It can be used to cover both cases,
-      in situations where a data provider does not know which is the case, or does
-      not wish to make the distinction.
+    - This attribute is more general than InformationEntity.reported_in (which is
+      used to references a Docuement that directly reports the infrormation), and
+      Statement.has_evidence_from_sources (which is used to reference resources that
+      provided evidence used to generate the knowledge expressed in a Statement).
+      It can be used to cover both cases, in situations where a data provider does
+      not know which is the case, or does not wish to make the distinction.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
@@ -1616,8 +1616,8 @@ attributes:
     range: string
     required: false
     multivalued: true
-  informationQuality:
-    name: informationQuality
+  information_quality:
+    name: information_quality
     description: A qualitative term indicating the scientific rigor or reliability
       with which the information was generated/collected.
     comments:
@@ -1639,15 +1639,15 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: informationQuality
+    alias: information_quality
     owner: Statement
     domain_of:
     - InformationEntity
     range: Coding
     required: false
     multivalued: false
-  recordMetadata:
-    name: recordMetadata
+  record_metadata:
+    name: record_metadata
     description: Provenance metadata about a specific concrete record of information
       as encoded/serialized in a particular data set or object (as opposed to provenance
       about the abstract information content the encoding carries).
@@ -1659,7 +1659,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: recordMetadata
+    alias: record_metadata
     owner: Statement
     domain_of:
     - InformationEntity
@@ -1742,13 +1742,13 @@ attributes:
     range: string
     required: false
     multivalued: false
-  alternativeLabels:
-    name: alternativeLabels
+  alternative_labels:
+    name: alternative_labels
     description: Alternative name(s) for the Entity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: alternativeLabels
+    alias: alternative_labels
     owner: Statement
     domain_of:
     - Entity

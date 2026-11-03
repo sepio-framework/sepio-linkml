@@ -242,7 +242,7 @@
       Entity &lt;|-- Agent
         click Entity href "../Entity"
 
-      Agent : alternativeLabels
+      Agent : alternative_labels
 
       Agent : description
 
@@ -326,7 +326,7 @@
 <p>A primary name for the Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../Entity/">Entity</a></p>
-<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../alternative_labels/">alternative_labels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Alternative name(s) for the Entity. <br/></p>
 </blockquote>
@@ -358,7 +358,7 @@
 <tbody>
 <tr>
 <td><a href="../Activity/">Activity</a></td>
-<td><a href="../performedBy/">performedBy</a></td>
+<td><a href="../performed_by/">performed_by</a></td>
 <td>range</td>
 <td><a href="./">Agent</a></td>
 </tr>
@@ -370,7 +370,7 @@
 </tr>
 <tr>
 <td><a href="../Contribution/">Contribution</a></td>
-<td><a href="../performedBy/">performedBy</a></td>
+<td><a href="../performed_by/">performed_by</a></td>
 <td>range</td>
 <td><a href="./">Agent</a></td>
 </tr>
@@ -597,13 +597,13 @@ attributes:
     range: string
     required: false
     multivalued: false
-  alternativeLabels:
-    name: alternativeLabels
+  alternative_labels:
+    name: alternative_labels
     description: Alternative name(s) for the Entity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: alternativeLabels
+    alias: alternative_labels
     owner: Agent
     domain_of:
     - Entity

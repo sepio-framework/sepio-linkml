@@ -242,7 +242,7 @@
       Entity &lt;|-- Proposition
         click Entity href "../Entity"
 
-      Proposition : alternativeLabels
+      Proposition : alternative_labels
 
       Proposition : description
 
@@ -274,7 +274,7 @@
     click Coding href "../Coding"
 
 
-      Proposition : propositionText
+      Proposition : proposition_text
 
       Proposition : qualifier
 
@@ -300,7 +300,7 @@
 </ul>
 <h2 id="slots">Slots</h2>
 <h3 id="direct-slots">Direct slots</h3>
-<p><a href="../propositionText/">propositionText</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../proposition_text/">proposition_text</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>A natural-language expression of the Proposition's meaning (i.e. the 'possible fact' it expresses).</p>
 </blockquote>
@@ -385,7 +385,7 @@
 <p>A primary name for the Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../Entity/">Entity</a></p>
-<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../alternative_labels/">alternative_labels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Alternative name(s) for the Entity. <br/></p>
 </blockquote>
@@ -423,7 +423,7 @@
 </tr>
 <tr>
 <td><a href="../EvidenceLine/">EvidenceLine</a></td>
-<td><a href="../targetProposition/">targetProposition</a></td>
+<td><a href="../target_proposition/">target_proposition</a></td>
 <td>range</td>
 <td><a href="./">Proposition</a></td>
 </tr>
@@ -476,8 +476,8 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Entity
 attributes:
-  propositionText:
-    name: propositionText
+  proposition_text:
+    name: proposition_text
     description: A natural-language expression of the Proposition's meaning (i.e.
       the 'possible fact' it expresses).
     from_schema: https://w3id.org/sepio-model
@@ -618,14 +618,14 @@ from_schema: https://w3id.org/sepio-framework/sepio-linkml
 status: Informative
 is_a: Entity
 attributes:
-  propositionText:
-    name: propositionText
+  proposition_text:
+    name: proposition_text
     description: A natural-language expression of the Proposition's meaning (i.e.
       the 'possible fact' it expresses).
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: propositionText
+    alias: proposition_text
     owner: Proposition
     domain_of:
     - Proposition
@@ -824,13 +824,13 @@ attributes:
     range: string
     required: false
     multivalued: false
-  alternativeLabels:
-    name: alternativeLabels
+  alternative_labels:
+    name: alternative_labels
     description: Alternative name(s) for the Entity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: alternativeLabels
+    alias: alternative_labels
     owner: Proposition
     domain_of:
     - Entity

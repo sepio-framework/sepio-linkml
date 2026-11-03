@@ -242,23 +242,23 @@
       Activity &lt;|-- Contribution
         click Activity href "../Activity"
 
-      Contribution : activityType
+      Contribution : activity_type
 
 
 
 
-    Contribution --&gt; "*" Coding : activityType
+    Contribution --&gt; "*" Coding : activity_type
     click Coding href "../Coding"
 
 
-      Contribution : alternativeLabels
+      Contribution : alternative_labels
 
-      Contribution : contributionMadeTo
-
-
+      Contribution : contribution_made_to
 
 
-    Contribution --&gt; "0..1" InformationEntity : contributionMadeTo
+
+
+    Contribution --&gt; "0..1" InformationEntity : contribution_made_to
     click InformationEntity href "../InformationEntity"
 
 
@@ -308,21 +308,21 @@
     click Entity href "../Entity"
 
 
-      Contribution : performedBy
+      Contribution : performed_by
 
 
 
 
-    Contribution --&gt; "*" Agent : performedBy
+    Contribution --&gt; "*" Agent : performed_by
     click Agent href "../Agent"
 
 
-      Contribution : specifiedBy
+      Contribution : specified_by
 
 
 
 
-    Contribution --&gt; "*" Method : specifiedBy
+    Contribution --&gt; "*" Method : specified_by
     click Method href "../Method"
 
 
@@ -360,7 +360,7 @@
 * Note that this must be a single agent (which can be a Person, or an Organization).  If multiple Agents contributed to an entity, a separate Contribution instances MUST be created for each.<br/>
 </details>
 <hr/>
-<p><a href="../activityType/">activityType</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
+<p><a href="../activity_type/">activity_type</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
 <blockquote>
 <p>The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc. . Values of this property may be framed as activities or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).</p>
 </blockquote>
@@ -369,7 +369,7 @@
 * Each implementation can define terms for the specific types of activities relevant to their use case/application. \n- Note that if the same Agent performed multiple types of activities in contributing to some artifact, they may all be captured in a single Contribution object. However, if data creators want to provide metadata specific to each activity (e.g. when or how each was performed), then a separate Contribution object should be created for each activity.<br/>
 </details>
 <hr/>
-<p><a href="../contributionMadeTo/">contributionMadeTo</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [0..1] <br/></p>
+<p><a href="../contribution_made_to/">contribution_made_to</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [0..1] <br/></p>
 <blockquote>
 <p>The artifact toward which the contribution was made.</p>
 </blockquote>
@@ -393,12 +393,12 @@
 <summary>Implementation Guidance</summary>
 * By convention, populate this attribute with the date the activity was completed (e.g.  in cases where the activity spans multiple days). The date SHOULD be formatted as a date string in ISO format "YYYY-MM-DD".<br/>
 </details>
-<p><a href="../performedBy/">performedBy</a> --&gt; <a href="../Agent/">Agent</a> [*] <br/></p>
+<p><a href="../performed_by/">performed_by</a> --&gt; <a href="../Agent/">Agent</a> [*] <br/></p>
 <blockquote>
 <p>An Agent who participated in executing the Activity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../Activity/">Activity</a></p>
-<p><a href="../specifiedBy/">specifiedBy</a> --&gt; <a href="../Method/">Method</a> [*] <br/></p>
+<p><a href="../specified_by/">specified_by</a> --&gt; <a href="../Method/">Method</a> [*] <br/></p>
 <blockquote>
 <p>A method that was followed in performing an Activity, that describes how it was executed. <br/></p>
 </blockquote>
@@ -446,7 +446,7 @@
 <p>A primary name for the Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../Entity/">Entity</a></p>
-<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../alternative_labels/">alternative_labels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Alternative name(s) for the Entity. <br/></p>
 </blockquote>
@@ -591,8 +591,8 @@ attributes:
     range: Agent
     required: false
     multivalued: false
-  activityType:
-    name: activityType
+  activity_type:
+    name: activity_type
     description: The specific type of activity performed or role played by an agent
       in making the contribution (e.g. for a publication, agents may contribute as
       a primary author, editor, figure designer, data generator, etc. . Values of
@@ -613,8 +613,8 @@ attributes:
     range: Coding
     required: false
     multivalued: true
-  contributionMadeTo:
-    name: contributionMadeTo
+  contribution_made_to:
+    name: contribution_made_to
     description: The artifact toward which the contribution was made.
     from_schema: https://w3id.org/sepio-model
     status: Informative
@@ -662,8 +662,8 @@ attributes:
     range: Agent
     required: false
     multivalued: false
-  activityType:
-    name: activityType
+  activity_type:
+    name: activity_type
     description: The specific type of activity performed or role played by an agent
       in making the contribution (e.g. for a publication, agents may contribute as
       a primary author, editor, figure designer, data generator, etc. . Values of
@@ -679,20 +679,20 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: activityType
+    alias: activity_type
     owner: Contribution
     domain_of:
     - Contribution
     range: Coding
     required: false
     multivalued: true
-  contributionMadeTo:
-    name: contributionMadeTo
+  contribution_made_to:
+    name: contribution_made_to
     description: The artifact toward which the contribution was made.
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: contributionMadeTo
+    alias: contribution_made_to
     owner: Contribution
     domain_of:
     - Contribution
@@ -739,26 +739,26 @@ attributes:
     range: date
     required: false
     multivalued: false
-  performedBy:
-    name: performedBy
+  performed_by:
+    name: performed_by
     description: An Agent who participated in executing the Activity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: performedBy
+    alias: performed_by
     owner: Contribution
     domain_of:
     - Activity
     range: Agent
     required: false
     multivalued: true
-  specifiedBy:
-    name: specifiedBy
+  specified_by:
+    name: specified_by
     description: A method that was followed in performing an Activity, that describes
       how it was executed.
     from_schema: https://w3id.org/sepio-model
     status: Informative
-    alias: specifiedBy
+    alias: specified_by
     owner: Contribution
     domain_of:
     - InformationEntity
@@ -870,13 +870,13 @@ attributes:
     range: string
     required: false
     multivalued: false
-  alternativeLabels:
-    name: alternativeLabels
+  alternative_labels:
+    name: alternative_labels
     description: Alternative name(s) for the Entity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: alternativeLabels
+    alias: alternative_labels
     owner: Contribution
     domain_of:
     - Entity

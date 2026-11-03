@@ -241,7 +241,7 @@
         click Contribution href "../Contribution"
 
 
-      Activity : alternativeLabels
+      Activity : alternative_labels
 
       Activity : date
 
@@ -280,21 +280,21 @@
     click Entity href "../Entity"
 
 
-      Activity : performedBy
+      Activity : performed_by
 
 
 
 
-    Activity --&gt; "*" Agent : performedBy
+    Activity --&gt; "*" Agent : performed_by
     click Agent href "../Agent"
 
 
-      Activity : specifiedBy
+      Activity : specified_by
 
 
 
 
-    Activity --&gt; "*" Method : specifiedBy
+    Activity --&gt; "*" Method : specified_by
     click Method href "../Method"
 
 
@@ -341,12 +341,12 @@
 * By convention, populate this attribute with the date the activity was completed (e.g.  in cases where the activity spans multiple days). The date SHOULD be formatted as a date string in ISO format "YYYY-MM-DD".<br/>
 </details>
 <hr/>
-<p><a href="../performedBy/">performedBy</a> --&gt; <a href="../Agent/">Agent</a> [*] <br/></p>
+<p><a href="../performed_by/">performed_by</a> --&gt; <a href="../Agent/">Agent</a> [*] <br/></p>
 <blockquote>
 <p>An Agent who participated in executing the Activity.</p>
 </blockquote>
 <hr/>
-<p><a href="../specifiedBy/">specifiedBy</a> --&gt; <a href="../Method/">Method</a> [*] <br/></p>
+<p><a href="../specified_by/">specified_by</a> --&gt; <a href="../Method/">Method</a> [*] <br/></p>
 <blockquote>
 <p>A method that was followed in performing an Activity, that describes how it was executed.</p>
 </blockquote>
@@ -395,7 +395,7 @@
 <p>A primary name for the Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../Entity/">Entity</a></p>
-<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../alternative_labels/">alternative_labels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Alternative name(s) for the Entity. <br/></p>
 </blockquote>
@@ -495,8 +495,8 @@ attributes:
     range: date
     required: false
     multivalued: false
-  performedBy:
-    name: performedBy
+  performed_by:
+    name: performed_by
     description: An Agent who participated in executing the Activity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
@@ -506,8 +506,8 @@ attributes:
     range: Agent
     required: false
     multivalued: true
-  specifiedBy:
-    name: specifiedBy
+  specified_by:
+    name: specified_by
     description: A method that was followed in performing an Activity, that describes
       how it was executed.
     from_schema: https://w3id.org/sepio-model
@@ -604,26 +604,26 @@ attributes:
     range: date
     required: false
     multivalued: false
-  performedBy:
-    name: performedBy
+  performed_by:
+    name: performed_by
     description: An Agent who participated in executing the Activity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: performedBy
+    alias: performed_by
     owner: Activity
     domain_of:
     - Activity
     range: Agent
     required: false
     multivalued: true
-  specifiedBy:
-    name: specifiedBy
+  specified_by:
+    name: specified_by
     description: A method that was followed in performing an Activity, that describes
       how it was executed.
     from_schema: https://w3id.org/sepio-model
     status: Informative
-    alias: specifiedBy
+    alias: specified_by
     owner: Activity
     domain_of:
     - InformationEntity
@@ -735,13 +735,13 @@ attributes:
     range: string
     required: false
     multivalued: false
-  alternativeLabels:
-    name: alternativeLabels
+  alternative_labels:
+    name: alternative_labels
     description: Alternative name(s) for the Entity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: alternativeLabels
+    alias: alternative_labels
     owner: Activity
     domain_of:
     - Entity

@@ -243,7 +243,7 @@
       InformationEntity &lt;|-- EvidenceLine
         click InformationEntity href "../InformationEntity"
 
-      EvidenceLine : alternativeLabels
+      EvidenceLine : alternative_labels
 
       EvidenceLine : contributions
 
@@ -254,22 +254,22 @@
     click Contribution href "../Contribution"
 
 
-      EvidenceLine : dateAuthored
+      EvidenceLine : date_authored
 
-      EvidenceLine : derivedFrom
-
-
+      EvidenceLine : derived_from
 
 
-    EvidenceLine --&gt; "*" InformationEntity : derivedFrom
+
+
+    EvidenceLine --&gt; "*" InformationEntity : derived_from
     click InformationEntity href "../InformationEntity"
 
 
       EvidenceLine : description
 
-      EvidenceLine : directionOfEvidenceProvided
+      EvidenceLine : direction_of_evidence_provided
 
-      EvidenceLine : evidenceItemSources
+      EvidenceLine : evidence_item_sources
 
       EvidenceLine : extensions
 
@@ -280,12 +280,12 @@
     click Extension href "../Extension"
 
 
-      EvidenceLine : hasEvidenceItems
+      EvidenceLine : has_evidence_items
 
 
 
 
-    EvidenceLine --&gt; "*" InformationEntity : hasEvidenceItems
+    EvidenceLine --&gt; "*" InformationEntity : has_evidence_items
     click InformationEntity href "../InformationEntity"
 
 
@@ -293,37 +293,37 @@
 
       EvidenceLine : identifiers
 
-      EvidenceLine : informationQuality
+      EvidenceLine : information_quality
 
 
 
 
-    EvidenceLine --&gt; "0..1" Coding : informationQuality
+    EvidenceLine --&gt; "0..1" Coding : information_quality
     click Coding href "../Coding"
 
 
-      EvidenceLine : isAbout
+      EvidenceLine : is_about
 
       EvidenceLine : label
 
-      EvidenceLine : recordMetadata
+      EvidenceLine : record_metadata
 
 
 
 
-    EvidenceLine --&gt; "0..1" RecordMetadata : recordMetadata
+    EvidenceLine --&gt; "0..1" RecordMetadata : record_metadata
     click RecordMetadata href "../RecordMetadata"
 
 
-      EvidenceLine : reportedIn
+      EvidenceLine : reported_in
 
-      EvidenceLine : scoreOfEvidenceProvided
+      EvidenceLine : score_of_evidence_provided
 
       EvidenceLine : sources
 
-      EvidenceLine : specifiedBy
+      EvidenceLine : specified_by
 
-      EvidenceLine : strengthOfEvidenceProvided
+      EvidenceLine : strength_of_evidence_provided
 
       EvidenceLine : subtype
 
@@ -334,23 +334,23 @@
     click Coding href "../Coding"
 
 
-      EvidenceLine : supportingMethods
-
-      EvidenceLine : supportingMethodTypes
+      EvidenceLine : supporting_method_types
 
 
 
 
-    EvidenceLine --&gt; "*" Coding : supportingMethodTypes
+    EvidenceLine --&gt; "*" Coding : supporting_method_types
     click Coding href "../Coding"
 
 
-      EvidenceLine : targetProposition
+      EvidenceLine : supporting_methods
+
+      EvidenceLine : target_proposition
 
 
 
 
-    EvidenceLine --&gt; "0..1" Proposition : targetProposition
+    EvidenceLine --&gt; "0..1" Proposition : target_proposition
     click Proposition href "../Proposition"
 
 
@@ -379,7 +379,7 @@
 * Data creators may choose to define specific types of evidence lines relevant for their domain/use case, based on the type of evidence items that comprise it, the methodology that guided evidence interpretation, or the type of statement the evidence line supports.  Terms from ontologies like the Evidence and Conclusion Ontology (ECO), or categories from evidence interpretation frameworks like the ACMG Variant Interpretation Guidelines, can be used as values here.<br/>
 </details>
 <hr/>
-<p><a href="../targetProposition/">targetProposition</a> --&gt; <a href="../Proposition/">Proposition</a> [0..1] <br/></p>
+<p><a href="../target_proposition/">target_proposition</a> --&gt; <a href="../Proposition/">Proposition</a> [0..1] <br/></p>
 <blockquote>
 <p>The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that some variant is pathogenic for a specific disease.</p>
 </blockquote>
@@ -388,7 +388,7 @@
 * An example based on the ACMG Guidelines for germline variant pathogenicity interpretation: Consider a curator assessing the evidence provided by population frequency data for a specific variant based on the ACMG criteria. In order to assign a strength (e.g. moderate vs strong) and direction (supports vs disputes) to this data as evidence, there must be some 'target proposition' toward which the evidence is assessed - which in this cases is the proposition that the variant is pathogenic for the disease of interest. If the PM2 criteria is deemed 'met', this indicates that the population frequency evidence provides 'moderate' (strength) 'support' (direction) for this target proposition.<br/>
 </details>
 <hr/>
-<p><a href="../hasEvidenceItems/">hasEvidenceItems</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
+<p><a href="../has_evidence_items/">has_evidence_items</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
 <blockquote>
 <p>An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.</p>
 </blockquote>
@@ -398,30 +398,30 @@
 * Different types and scales of information entity can serve as evidence (experimental measurements or observations, data tables or figures, images, prior assertions, etc.) Only when assessed as evidence do we consider the information to be an 'Evidence Item'.  For example, a piece of population frequency data about BRCA2 c.8023A&gt;G  becomes an Evidence Item when it is assessed for the support it may offer for a target proposition (e.g. the prospect of the variant’s pathogenicity).<br>
 </br></details>
 <hr/>
-<p><a href="../directionOfEvidenceProvided/">directionOfEvidenceProvided</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../direction_of_evidence_provided/">direction_of_evidence_provided</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral).</p>
 </blockquote>
 <hr/>
-<p><a href="../strengthOfEvidenceProvided/">strengthOfEvidenceProvided</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../strength_of_evidence_provided/">strength_of_evidence_provided</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
-<p>The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided.</p>
+<p>The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided.</p>
 </blockquote>
 <details>
 <summary>Implementation Guidance</summary>
-* Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative assessments of evidence provided.<br/>
+* Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'score_of_evidence_provided' attribute can be used to report quantitative assessments of evidence provided.<br/>
 </details>
 <hr/>
-<p><a href="../scoreOfEvidenceProvided/">scoreOfEvidenceProvided</a> --&gt; <a href="../Float/">Float</a> [0..1] <br/></p>
+<p><a href="../score_of_evidence_provided/">score_of_evidence_provided</a> --&gt; <a href="../Float/">Float</a> [0..1] <br/></p>
 <blockquote>
-<p>A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.</p>
+<p>A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided value.</p>
 </blockquote>
 <details>
 <summary>Implementation Guidance</summary>
 * A given profile or implementation can define a scoring scale and rules that meet the needs of their domain or application.<br/>
 </details>
 <hr/>
-<p><a href="../evidenceItemSources/">evidenceItemSources</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../evidence_item_sources/">evidence_item_sources</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>An information resource (e.g. document, dataset, digital resource such as a database or  knowledgebase) that provides information interpreted as evidence in building an Evidence Line.</p>
 </blockquote>
@@ -431,7 +431,7 @@
 </details>
 <hr/>
 <h3 id="inherited-slots">Inherited slots</h3>
-<p><a href="../isAbout/">isAbout</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../is_about/">is_about</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>An entity or concept in the world that the information entity describes/is about. <br/></p>
 </blockquote>
@@ -449,7 +449,7 @@
 <summary>Implementation Guidance</summary>
 * This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent.<br/>
 </details>
-<p><a href="../dateAuthored/">dateAuthored</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
+<p><a href="../date_authored/">date_authored</a> --&gt; <a href="../String/">String</a> [0..1] <br/></p>
 <blockquote>
 <p>Indicates when the information content expressed in the Information Entity was generated. <br/></p>
 </blockquote>
@@ -458,7 +458,7 @@
 <summary>Implementation Guidance</summary>
 * The term 'authored' as used in the model refers to the generation of 'information content' in the abstract  sense, as opposed to a concrete encoding of this information in a specific language or format. e.g. for a Statement, this attribute captures when the information content expressed in the Statement was first generated by an agent.  Information about when a particular concrete encoding of this information was created (e.g. as row in a table, or object in a json document) would live in a RecordMetadata object attached to the Information Entity).<br/>
 </details>
-<p><a href="../specifiedBy/">specifiedBy</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../specified_by/">specified_by</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>A specification that describes all or part of the process that led to creation of the Information Entity. <br/></p>
 </blockquote>
@@ -468,7 +468,7 @@
 * Examples - an experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification.<br/>
 * Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/ cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. "Transmission Electron Microscopy").<br/>
 </details>
-<p><a href="../supportingMethods/">supportingMethods</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../supporting_methods/">supporting_methods</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Specific methods that were executed to directly or indirectly support creation of the Information Entity. <br/></p>
 </blockquote>
@@ -476,24 +476,24 @@
 <details>
 <summary>Implementation Guidance</summary>
 * These may include methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity - e.g. methods used to produce data that was interpreted as evidence to generate a Statement of knowledge.<br/>
-* This field captures terms representing specific INSTANCES of methods applied, vs the 'supportingMethodTypes' attribute which captures TYPES of methods used.<br/>
+* This field captures terms representing specific INSTANCES of methods applied, vs the 'supporting_method_types' attribute which captures TYPES of methods used.<br/>
 </details>
-<p><a href="../supportingMethodTypes/">supportingMethodTypes</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
+<p><a href="../supporting_method_types/">supporting_method_types</a> --&gt; <a href="../Coding/">Coding</a> [*] <br/></p>
 <blockquote>
 <p>Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
 <details>
 <summary>Implementation Guidance</summary>
-* This field captures terms representing TYPES of methods applied, vs the 'specifiedBy' or'supportingMethods' attributes which capture specific INSTANCES of methods used. These may include types of methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity<br/>
+* This field captures terms representing TYPES of methods applied, vs the 'specified_by' or'supporting_methods' attributes which capture specific INSTANCES of methods used. These may include types of methods that directly produced the Information Entity, or upstream/accessory methods that indirectly support creation of the Information Entity<br/>
 * Implementers should define a relevant source or set of method type codes/terms to use here, based on the needs of the domain or application.'<br/>
 </details>
-<p><a href="../derivedFrom/">derivedFrom</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
+<p><a href="../derived_from/">derived_from</a> --&gt; <a href="../InformationEntity/">InformationEntity</a> [*] <br/></p>
 <blockquote>
 <p>Another Information Entity from which this Information Entity is derived, in whole or in part. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
-<p><a href="../reportedIn/">reportedIn</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../reported_in/">reported_in</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>A document in which the Information Entity is reported. <br/></p>
 </blockquote>
@@ -509,9 +509,9 @@
 <p>Inherited from: <a href="../InformationEntity/">InformationEntity</a></p>
 <details>
 <summary>Implementation Guidance</summary>
-* This attribute is more general than InformationEntity.reportedIn (which is used to references a Docuement that directly reports the infrormation), and Statement.hasEvidenceFromSources (which is used to reference resources that provided evidence used to generate the knowledge expressed in a Statement). It can be used to cover both cases, in situations where a data provider does not know which is the case, or does not wish to make the distinction.<br/>
+* This attribute is more general than InformationEntity.reported_in (which is used to references a Docuement that directly reports the infrormation), and Statement.has_evidence_from_sources (which is used to reference resources that provided evidence used to generate the knowledge expressed in a Statement). It can be used to cover both cases, in situations where a data provider does not know which is the case, or does not wish to make the distinction.<br/>
 </details>
-<p><a href="../informationQuality/">informationQuality</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
+<p><a href="../information_quality/">information_quality</a> --&gt; <a href="../Coding/">Coding</a> [0..1] <br/></p>
 <blockquote>
 <p>A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected. <br/></p>
 </blockquote>
@@ -523,7 +523,7 @@
 * The quality of information is one factor that goes into the confidence we have in the information''s veracity (i.e. that it is an accurate reflection of reality it intends to measure or describe). Other factors informing confidence may include who did it (we may just not trust some Agents), when (if data created 500 years ago, we may have less confidence in it), and for Assertions, the relevance and abundance of supporting evidence.<br/>
 * Implementers should define a relevant source of codes or terms to use here, based on the needs of the domain or application.'<br/>
 </details>
-<p><a href="../recordMetadata/">recordMetadata</a> --&gt; <a href="../RecordMetadata/">RecordMetadata</a> [0..1] <br/></p>
+<p><a href="../record_metadata/">record_metadata</a> --&gt; <a href="../RecordMetadata/">RecordMetadata</a> [0..1] <br/></p>
 <blockquote>
 <p>Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries). <br/></p>
 </blockquote>
@@ -565,7 +565,7 @@
 <p>A primary name for the Entity. <br/></p>
 </blockquote>
 <p>Inherited from: <a href="../Entity/">Entity</a></p>
-<p><a href="../alternativeLabels/">alternativeLabels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
+<p><a href="../alternative_labels/">alternative_labels</a> --&gt; <a href="../String/">String</a> [*] <br/></p>
 <blockquote>
 <p>Alternative name(s) for the Entity. <br/></p>
 </blockquote>
@@ -597,7 +597,7 @@
 <tbody>
 <tr>
 <td><a href="../Statement/">Statement</a></td>
-<td><a href="../hasEvidenceLines/">hasEvidenceLines</a></td>
+<td><a href="../has_evidence_lines/">has_evidence_lines</a></td>
 <td>range</td>
 <td><a href="./">EvidenceLine</a></td>
 </tr>
@@ -699,8 +699,8 @@ attributes:
     range: Coding
     required: false
     multivalued: false
-  targetProposition:
-    name: targetProposition
+  target_proposition:
+    name: target_proposition
     description: The possible fact against which evidence items contained in an Evidence
       Line were collectively evaluated, in determining the overall strength and direction
       of support they provide. For example, in an ACMG Guideline-based assessment
@@ -725,8 +725,8 @@ attributes:
     range: Proposition
     required: false
     multivalued: false
-  hasEvidenceItems:
-    name: hasEvidenceItems
+  has_evidence_items:
+    name: has_evidence_items
     description: An individual piece of information that was evaluated as evidence
       in building the argument represented by an Evidence Line.
     comments:
@@ -748,8 +748,8 @@ attributes:
     range: InformationEntity
     required: false
     multivalued: true
-  directionOfEvidenceProvided:
-    name: directionOfEvidenceProvided
+  direction_of_evidence_provided:
+    name: direction_of_evidence_provided
     description: The direction of support that the Evidence Line is determined to
       provide toward its target Proposition (supports, disputes, neutral).
     from_schema: https://w3id.org/sepio-model
@@ -760,15 +760,15 @@ attributes:
     range: string
     required: false
     multivalued: false
-  strengthOfEvidenceProvided:
-    name: strengthOfEvidenceProvided
+  strength_of_evidence_provided:
+    name: strength_of_evidence_provided
     description: The strength of support that an Evidence Line is determined to provide
       for or against its target Proposition, evaluated relative to the direction indicated
-      by the directionOfEvidenceProvided.
+      by the direction_of_evidence_provided.
     comments:
     - Values of this attribute can be defined by for a given profile based on domain/application
       needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate',
-      'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative
+      'weak'). The 'score_of_evidence_provided' attribute can be used to report quantitative
       assessments of evidence provided.
     from_schema: https://w3id.org/sepio-model
     status: Draft
@@ -778,11 +778,11 @@ attributes:
     range: string
     required: false
     multivalued: false
-  scoreOfEvidenceProvided:
-    name: scoreOfEvidenceProvided
+  score_of_evidence_provided:
+    name: score_of_evidence_provided
     description: A quantitative score indicating the strength of support that an Evidence
       Line is determined to provide for or against its target Proposition, evaluated
-      relative to the direction indicated by the directionOfEvidenceProvided value.
+      relative to the direction indicated by the direction_of_evidence_provided value.
     comments:
     - A given profile or implementation can define a scoring scale and rules that
       meet the needs of their domain or application.
@@ -794,8 +794,8 @@ attributes:
     range: float
     required: false
     multivalued: false
-  evidenceItemSources:
-    name: evidenceItemSources
+  evidence_item_sources:
+    name: evidence_item_sources
     description: An information resource (e.g. document, dataset, digital resource
       such as a database or  knowledgebase) that provides information interpreted
       as evidence in building an Evidence Line.
@@ -888,8 +888,8 @@ attributes:
     range: Coding
     required: false
     multivalued: false
-  targetProposition:
-    name: targetProposition
+  target_proposition:
+    name: target_proposition
     description: The possible fact against which evidence items contained in an Evidence
       Line were collectively evaluated, in determining the overall strength and direction
       of support they provide. For example, in an ACMG Guideline-based assessment
@@ -909,15 +909,15 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: targetProposition
+    alias: target_proposition
     owner: EvidenceLine
     domain_of:
     - EvidenceLine
     range: Proposition
     required: false
     multivalued: false
-  hasEvidenceItems:
-    name: hasEvidenceItems
+  has_evidence_items:
+    name: has_evidence_items
     description: An individual piece of information that was evaluated as evidence
       in building the argument represented by an Evidence Line.
     comments:
@@ -934,67 +934,67 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: hasEvidenceItems
+    alias: has_evidence_items
     owner: EvidenceLine
     domain_of:
     - EvidenceLine
     range: InformationEntity
     required: false
     multivalued: true
-  directionOfEvidenceProvided:
-    name: directionOfEvidenceProvided
+  direction_of_evidence_provided:
+    name: direction_of_evidence_provided
     description: The direction of support that the Evidence Line is determined to
       provide toward its target Proposition (supports, disputes, neutral).
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: directionOfEvidenceProvided
+    alias: direction_of_evidence_provided
     owner: EvidenceLine
     domain_of:
     - EvidenceLine
     range: string
     required: false
     multivalued: false
-  strengthOfEvidenceProvided:
-    name: strengthOfEvidenceProvided
+  strength_of_evidence_provided:
+    name: strength_of_evidence_provided
     description: The strength of support that an Evidence Line is determined to provide
       for or against its target Proposition, evaluated relative to the direction indicated
-      by the directionOfEvidenceProvided.
+      by the direction_of_evidence_provided.
     comments:
     - Values of this attribute can be defined by for a given profile based on domain/application
       needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate',
-      'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative
+      'weak'). The 'score_of_evidence_provided' attribute can be used to report quantitative
       assessments of evidence provided.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: strengthOfEvidenceProvided
+    alias: strength_of_evidence_provided
     owner: EvidenceLine
     domain_of:
     - EvidenceLine
     range: string
     required: false
     multivalued: false
-  scoreOfEvidenceProvided:
-    name: scoreOfEvidenceProvided
+  score_of_evidence_provided:
+    name: score_of_evidence_provided
     description: A quantitative score indicating the strength of support that an Evidence
       Line is determined to provide for or against its target Proposition, evaluated
-      relative to the direction indicated by the directionOfEvidenceProvided value.
+      relative to the direction indicated by the direction_of_evidence_provided value.
     comments:
     - A given profile or implementation can define a scoring scale and rules that
       meet the needs of their domain or application.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: scoreOfEvidenceProvided
+    alias: score_of_evidence_provided
     owner: EvidenceLine
     domain_of:
     - EvidenceLine
     range: float
     required: false
     multivalued: false
-  evidenceItemSources:
-    name: evidenceItemSources
+  evidence_item_sources:
+    name: evidence_item_sources
     description: An information resource (e.g. document, dataset, digital resource
       such as a database or  knowledgebase) that provides information interpreted
       as evidence in building an Evidence Line.
@@ -1007,15 +1007,15 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: evidenceItemSources
+    alias: evidence_item_sources
     owner: EvidenceLine
     domain_of:
     - EvidenceLine
     range: string
     required: false
     multivalued: true
-  isAbout:
-    name: isAbout
+  is_about:
+    name: is_about
     description: An entity or concept in the world that the information entity describes/is
       about.
     comments:
@@ -1028,7 +1028,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: isAbout
+    alias: is_about
     owner: EvidenceLine
     domain_of:
     - InformationEntity
@@ -1054,8 +1054,8 @@ attributes:
     range: Contribution
     required: false
     multivalued: true
-  dateAuthored:
-    name: dateAuthored
+  date_authored:
+    name: date_authored
     description: Indicates when the information content expressed in the Information
       Entity was generated.
     comments:
@@ -1069,15 +1069,15 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: dateAuthored
+    alias: date_authored
     owner: EvidenceLine
     domain_of:
     - InformationEntity
     range: string
     required: false
     multivalued: false
-  specifiedBy:
-    name: specifiedBy
+  specified_by:
+    name: specified_by
     description: A specification that describes all or part of the process that led
       to creation of the Information Entity.
     comments:
@@ -1091,7 +1091,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: specifiedBy
+    alias: specified_by
     owner: EvidenceLine
     domain_of:
     - InformationEntity
@@ -1099,8 +1099,8 @@ attributes:
     range: string
     required: false
     multivalued: true
-  supportingMethods:
-    name: supportingMethods
+  supporting_methods:
+    name: supporting_methods
     description: Specific methods that were executed to directly or indirectly support
       creation of the Information Entity.
     comments:
@@ -1109,24 +1109,24 @@ attributes:
       Entity - e.g. methods used to produce data that was interpreted as evidence
       to generate a Statement of knowledge.
     - This field captures terms representing specific INSTANCES of methods applied,
-      vs the 'supportingMethodTypes' attribute which captures TYPES of methods used.
+      vs the 'supporting_method_types' attribute which captures TYPES of methods used.
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: supportingMethods
+    alias: supporting_methods
     owner: EvidenceLine
     domain_of:
     - InformationEntity
     range: string
     required: false
     multivalued: true
-  supportingMethodTypes:
-    name: supportingMethodTypes
+  supporting_method_types:
+    name: supporting_method_types
     description: Types of methodological approaches that were executed to directly
       or indirectly support creation of the Information Entity.
     comments:
-    - This field captures terms representing TYPES of methods applied, vs the 'specifiedBy'
-      or'supportingMethods' attributes which capture specific INSTANCES of methods
+    - This field captures terms representing TYPES of methods applied, vs the 'specified_by'
+      or'supporting_methods' attributes which capture specific INSTANCES of methods
       used. These may include types of methods that directly produced the Information
       Entity, or upstream/accessory methods that indirectly support creation of the
       Information Entity
@@ -1135,29 +1135,29 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: supportingMethodTypes
+    alias: supporting_method_types
     owner: EvidenceLine
     domain_of:
     - InformationEntity
     range: Coding
     required: false
     multivalued: true
-  derivedFrom:
-    name: derivedFrom
+  derived_from:
+    name: derived_from
     description: Another Information Entity from which this Information Entity is
       derived, in whole or in part.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: derivedFrom
+    alias: derived_from
     owner: EvidenceLine
     domain_of:
     - InformationEntity
     range: InformationEntity
     required: false
     multivalued: true
-  reportedIn:
-    name: reportedIn
+  reported_in:
+    name: reported_in
     description: A document in which the Information Entity is reported.
     comments:
     - This attribute is used specifically to reference documents/publications where
@@ -1168,7 +1168,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: reportedIn
+    alias: reported_in
     owner: EvidenceLine
     domain_of:
     - InformationEntity
@@ -1180,12 +1180,12 @@ attributes:
     description: A document or other informtion resource in which the information
       entity, or evidence supporting it, is reported.
     comments:
-    - This attribute is more general than InformationEntity.reportedIn (which is used
-      to references a Docuement that directly reports the infrormation), and Statement.hasEvidenceFromSources
-      (which is used to reference resources that provided evidence used to generate
-      the knowledge expressed in a Statement). It can be used to cover both cases,
-      in situations where a data provider does not know which is the case, or does
-      not wish to make the distinction.
+    - This attribute is more general than InformationEntity.reported_in (which is
+      used to references a Docuement that directly reports the infrormation), and
+      Statement.has_evidence_from_sources (which is used to reference resources that
+      provided evidence used to generate the knowledge expressed in a Statement).
+      It can be used to cover both cases, in situations where a data provider does
+      not know which is the case, or does not wish to make the distinction.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
@@ -1196,8 +1196,8 @@ attributes:
     range: string
     required: false
     multivalued: true
-  informationQuality:
-    name: informationQuality
+  information_quality:
+    name: information_quality
     description: A qualitative term indicating the scientific rigor or reliability
       with which the information was generated/collected.
     comments:
@@ -1219,15 +1219,15 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Informative
     rank: 1000
-    alias: informationQuality
+    alias: information_quality
     owner: EvidenceLine
     domain_of:
     - InformationEntity
     range: Coding
     required: false
     multivalued: false
-  recordMetadata:
-    name: recordMetadata
+  record_metadata:
+    name: record_metadata
     description: Provenance metadata about a specific concrete record of information
       as encoded/serialized in a particular data set or object (as opposed to provenance
       about the abstract information content the encoding carries).
@@ -1239,7 +1239,7 @@ attributes:
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: recordMetadata
+    alias: record_metadata
     owner: EvidenceLine
     domain_of:
     - InformationEntity
@@ -1322,13 +1322,13 @@ attributes:
     range: string
     required: false
     multivalued: false
-  alternativeLabels:
-    name: alternativeLabels
+  alternative_labels:
+    name: alternative_labels
     description: Alternative name(s) for the Entity.
     from_schema: https://w3id.org/sepio-model
     status: Draft
     rank: 1000
-    alias: alternativeLabels
+    alias: alternative_labels
     owner: EvidenceLine
     domain_of:
     - Entity

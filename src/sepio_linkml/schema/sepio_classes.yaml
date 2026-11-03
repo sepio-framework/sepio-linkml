@@ -5,6 +5,11 @@ imports:
 prefixes:
   linkml: https://w3id.org/linkml/
   sepio-model: https://example.org/sepio-model/
+  SEPIO: http://purl.obolibrary.org/obo/SEPIO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  RO: http://purl.obolibrary.org/obo/RO_
+  prov: http://www.w3.org/ns/prov#
+  pav: http://purl.org/pav/
 default_prefix: sepio-model
 default_range: string
 classes:
@@ -107,6 +112,8 @@ classes:
       isAbout:
         description: An entity or concept in the world that the information entity
           describes/is about.
+        exact_mappings: 
+        - IAO:0000136 #is about
         comments:
         - e.g. In the context of a Statement object, this attribute may be used to
           indicate entities/concepts it is about, in lieu of providing a more precise
@@ -121,6 +128,7 @@ classes:
       contributions:
         description: Specific actions taken by an Agent toward the creation, modification,
           validation, or deprecation of an Information Entity.
+        slot_uri: SEPIO:0000159 #qualified_contribution
         comments:
         - This attribute holds one or more Contribution objects, which provide structured
           descriptions of a contribution made to the Information Entity by a particular
@@ -132,6 +140,7 @@ classes:
       dateAuthored:
         description: Indicates when the information content expressed in the Information
           Entity was generated.
+        slot_uri: SEPIO:0000135 #date_authored
         comments:
         - The term 'authored' as used in the model refers to the generation of 'information
           content' in the abstract  sense, as opposed to a concrete encoding of this
@@ -148,6 +157,7 @@ classes:
       specifiedBy:
         description: A specification that describes all or part of the process that
           led to creation of the Information Entity.
+        slot_uri: SEPIO:0000041 #was_specified_by
         comments:
         - Examples - an experimental protocol or data analysis specification that
           describe how data were generated, or an evidence interpretation guideline
@@ -192,12 +202,16 @@ classes:
       derivedFrom:
         description: Another Information Entity from which this Information Entity
           is derived, in whole or in part.
+        exact_mappings: 
+        - pav:derivedFrom #derived from
         status: Draft
         range: InformationEntity
         required: false
         multivalued: true
       reportedIn:
         description: A document in which the Information Entity is reported.
+        close_mappings: 
+        - SEPIO:0000108 #is_expressed_in
         comments:
         - This attribute is used specifically to reference documents/publications
           where the Information Entity is expressed or reported.  For a Statement,
@@ -207,7 +221,7 @@ classes:
         status: Draft
         range: string
         required: false
-        multivalued: true
+        multivalued: true        
       sources:
         description: >-
           A document or other informtion resource in which the information entity,
@@ -226,6 +240,8 @@ classes:
       informationQuality:
         description: A qualitative term indicating the scientific rigor or reliability
           with which the information was generated/collected.
+        exact_mappings: 
+        - SEPIO:0000415 #information_quality
         comments:
         - This is typically based on the quality of design and execution of the
           study or curation activity that generated it (e.g. were relevant controls
@@ -263,6 +279,10 @@ classes:
   Method:
     description: A set of instructions that specify how to achieve some objective.
     title: Method
+    narrow_mappings: 
+    - SEPIO:0000037 #assertion method
+    close_mappings: 
+    - IAO:0000104 #plan specification
     comments:
     - In scientific research, these include things like experimental protocols, study
       designs, data analysis parameters,  curation guidelines, cohort selection criteria,
@@ -442,6 +462,10 @@ classes:
       together in a common format or structure, to enable their computational manipulation
       as a unit.
     title: Data Set
+    narrow_mappings: 
+    - SEPIO:0000400 #study data set
+    exact_mappings: 
+    - IAO:0000100 #data set
     comments:
     - Instances of this class represent a *specific version* of a given dataset. Examples
       include the  gnomAD version 3.1.2 dataset carrying allele population frequencies,
@@ -505,6 +529,10 @@ classes:
       a period of time. Activities may use, generate, modify, move, or destroy one
       or more entities.
     title: Activity
+    narrow_mappings: 
+      - SEPIO:0000003 #assertion process
+      - SEPIO:0000004 #research activity
+      - SEPIO:0000131 #curation	
     comments:
     - Activities relevant to scientific knowledge generation, and include things like
       observations of the natural world, designing and performing experiments, data
@@ -530,6 +558,7 @@ classes:
         multivalued: false
       date:
         description: The date that the Activity was completed.
+        slot_uri: SEPIO:0000160 #activity_date
         comments:
         - By convention, populate this attribute with the date the activity was completed
           (e.g.  in cases where the activity spans multiple days). The date SHOULD
@@ -540,6 +569,8 @@ classes:
         multivalued: false
       performedBy:
         description: An Agent who participated in executing the Activity.
+        close_mappings: 
+        - SEPIO:0000017 #has_agent (no definition)
         status: Draft
         range: Agent
         required: false
@@ -547,6 +578,7 @@ classes:
       specifiedBy:
         description: A method that was followed in performing an Activity, that describes
           how it was executed.
+        slot_uri: SEPIO:0000041 #was_specified_by
         status: Informative
         range: Method
         required: false
@@ -554,6 +586,8 @@ classes:
       input:
         description: An entity that was input into the Activity (could be material
           or information)
+        exact_mappings: 
+        - RO:0002233 #has input
         status: Informative
         range: Entity
         required: false
@@ -561,6 +595,8 @@ classes:
       output:
         description: An entity that was output from the Activity (could be material
           or information)
+        exact_mappings: 
+        - RO:0002234 #has output
         status: Informative
         range: Entity
         required: false
@@ -570,6 +606,7 @@ classes:
       modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence
       Line, DataSet, Publication, etc.).
     title: Contribution
+    class_uri: SEPIO:0000158
     comments:
     - Contributions are used to organize information about when, where, how (e.g.
       what roles were played), and on whose behalf these actions were performed.
@@ -583,6 +620,8 @@ classes:
     attributes:
       contributor:
         description: The Agent that made the contribution.
+        close_mappings: 
+        - SEPIO:0000017 #has_agent (no definition)
         comments:
         - Note that this must be a single agent (which can be a Person, or an Organization).  If
           multiple Agents contributed to an entity, a separate Contribution instances
@@ -611,6 +650,8 @@ classes:
         multivalued: true
       contributionMadeTo:
         description: The artifact toward which the contribution was made.
+        close_mappings: 
+        - SEPIO:0000188 #contributes_to (no definition)
         status: Informative
         range: InformationEntity
         required: false
@@ -657,6 +698,16 @@ classes:
       'proposition') as true, or to provide a more nuanced assessment of the level
       of confidence or evidence supporting a particular proposition.
     title: Statement
+    close_mappings: 
+    - SEPIO:0000001 #assertion
+    related_mappings: 
+    - SEPIO:0000174 #statement
+    narrow_mappings: 
+    - SEPIO:0000173 #study finding 
+    - SEPIO:0000258 #provider interpretation
+    - SEPIO:0000431 #recommendation
+    - SEPIO:0000432 #hypothesis
+
     comments:
     - "Primary assertions of knowledge about some subject entity are captured in\
       \ self-contained Statement objects. Every Statement puts forth a 'proposition'\
@@ -704,6 +755,8 @@ classes:
       proposition:
         description: A possible fact that the Statement assesses or puts forth as
           true.
+        close_mappings: 
+        - SEPIO:0000030 #asserts_proposition
         comments:
         - This attribute supports an alternate modeling pattern where the structured
           semantics of the possible fact asserted or evaluated by a Statement is encapsulated
@@ -721,6 +774,7 @@ classes:
         range: string
         required: false
         multivalued: false
+        slot_uri: SEPIO:0000388 #has_subject
       predicate:
         description: The relationship declared to hold between the subject and the
           object of the Statement.
@@ -732,6 +786,8 @@ classes:
           the predicate value set might include terms from the GENO ontology defining  'pathogenic
           for condition', 'benign for condition', and 'uncertain significance for
           condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845).
+        exact_mappings: 
+        - SEPIO:0000389 #has_predicate
         status: Draft
         range: Coding
         required: false
@@ -739,6 +795,7 @@ classes:
       object:
         description: An Entity or concept that is related to the subject of a Statement
           via its predicate.
+        slot_uri: SEPIO:0000390 #has_object
         comments:
         - The object of a Statement can be any Entity or concept that is related to
           the subject, e.g. for Genetic Variation subjects the object is often a disease,
@@ -752,6 +809,8 @@ classes:
           meaning of a Statement's core subject - predicate - object 'triple' - by
           providing additional detail, or constraining the statement to apply in a
           particular context.
+        close_mappings: 
+        - SEPIO:0000144 #has_qualifier
         comments:
         - "-The qualifier attribute allows representation of more complex, n-ary statements\
           \ that may not be accommodated by a simple subject-predicate-object (SPO)\
@@ -797,6 +856,8 @@ classes:
           validity), or remains *neutral* (when conflicting or insufficient evidence
           exists to assert one direction or the other).  (Enumerated values = 'supports',
           'disputes', 'neutral').
+        related_mappings: 
+        - SEPIO:0000183 #evidence_direction
         status: Draft
         range: string
         required: false
@@ -808,6 +869,8 @@ classes:
           assessment in terms of how *confident* an agent is that the Proposition
           is true or false, or in terms of the *strength of all evidence* they believe
           supports or disputes it.
+        close_mappings: 
+        - SEPIO:0000146 #has_evidence_level
         comments:
         - Statements put forth a Proposition that expresses some possible fact about
           the world, and may provide an assessment of this proposition's validity
@@ -835,6 +898,8 @@ classes:
           a score may reflect how *confident* that agent is that the Proposition is
           true or false, or the *strength of evidence* they believe supports or disputes
           it.
+        close_mappings: 
+        - SEPIO:0000168 #has_confidence_score
         comments:
         - Statements put forth a Proposition that expresses some possible fact about
           the world, and may provide an assessment of this proposition's validity
@@ -852,6 +917,8 @@ classes:
         description: A single term or phrase summarizing the outcome of direction
           and strength assessments of a Statement's proposition, in terms of a classification
           of its subject.
+        exact_mappings: 
+        - SEPIO:0000197 #asserted_conclusion
         comments:
         - Permissible values for this attribute are  typically selected to be succinct
           and familiar in the target community of practice - and can be provided to
@@ -868,6 +935,8 @@ classes:
         description: A term describing a type of evidence used to assess the validity
           of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro
           assay evidence').
+        exact_mappings: 
+        - SEPIO:0000398 #has_evidence_of_type
         comments:
         - This contrasts with hasEvidence and hasEvidenceLine attributes that describe
           specific instances of evidence information, such as a particular data item,
@@ -885,6 +954,7 @@ classes:
           strength and direction of this argument (whether it supports or disputes  the
           proposition, and how strongly) is based on an interpretation of one or more
           pieces of information as evidence (i.e. 'Evidence Items).
+        slot_uri: SEPIO:0000006 #has_evidence_line
         comments:
         - 'Evidence Lines result from the interpretation of one or more pieces of
           information to build an argument for or against a particular Proposition.
@@ -928,6 +998,7 @@ classes:
       hasEvidenceFromSources:
         description: An Information Entity (typically a publication, dataset, or database) that
           provided information used as evidence to generate the knowledge expressed in a Statement.
+        slot_uri: SEPIO:0000145 #has_evidence_from_source
         comments:
         - This is a 'shortcut property' that can be used to directly link a Statement to
           sources that provided evidence supporting/disputing it, without having to create 
@@ -941,6 +1012,11 @@ classes:
       particular subject or experimental unit in the study, along with optional provenance
       information describing how these data items were generated.
     title: Study Result
+    broad_mappings: 
+    - SEPIO:0000400 #study data set
+    related_mappings: 
+    - SEPIO:0000173 #study finding
+
     comments:
     - "- StudyResults provide a useful way to capture a subset of items from a study\
       \ dataset that are used as evidence in generating higher order knowledge assertions\
@@ -1070,6 +1146,7 @@ classes:
       is based on an interpretation of one or more pieces of information as evidence
       for or against the target proposition.
     title: Evidence Line
+    class_uri: SEPIO:0000002
     comments:
     - "Evidence Lines are used to capture various pieces of information (i.e. 'evidence\
       \ items') that are assessed together as an argument for or against some 'target\
@@ -1134,6 +1211,8 @@ classes:
           assessment of variant pathogenicity, the support provided by distinct lines
           of evidence are assessed against a target proposition that some variant
           is pathogenic for a specific disease.
+        close_mappings: 
+        - SEPIO:0000427 #is_evidence_line_for
         comments:
         - 'An example based on the ACMG Guidelines for germline variant pathogenicity
           interpretation: Consider a curator assessing the evidence provided by population
@@ -1152,6 +1231,7 @@ classes:
       hasEvidenceItems:
         description: An individual piece of information that was evaluated as evidence
           in building the argument represented by an Evidence Line.
+        slot_uri: SEPIO:0000084 #has_evidence_item
         comments:
         - "A given Evidence Line may be supported by one or many individual evidence\
           \ items. What matters is that all evidence items in a given Evidence Line\
@@ -1172,6 +1252,8 @@ classes:
       directionOfEvidenceProvided:
         description: The direction of support that the Evidence Line is determined
           to provide toward its target Proposition (supports, disputes, neutral).
+        exact_mappings: 
+        - SEPIO:0000183 #evidence_direction
         status: Draft
         range: string
         required: false
@@ -1180,6 +1262,7 @@ classes:
         description: The strength of support that an Evidence Line is determined to
           provide for or against its target Proposition, evaluated relative to the
           direction indicated by the directionOfEvidenceProvided.
+        slot_uri: SEPIO:0000429 #evidence_line_strength_score
         comments:
         - Values of this attribute can be defined by for a given profile based on
           domain/application needs, but should be framed in qualitative terms (e.g.
@@ -1205,6 +1288,8 @@ classes:
         description: An information resource (e.g. document, dataset, digital resource
           such as a database or  knowledgebase) that provides information interpreted
           as evidence in building an Evidence Line.
+        close_mappings: 
+        - SEPIO:0000124 #evidence_has_supporting_reference
         comments:
         - This is a 'shortcut relation' that can be used to directly link an Evidence
           Line to sources of its supporting Evidence Items, without having to represent
@@ -1219,6 +1304,7 @@ classes:
     description: An abstract entity representing a possible fact that is either true
       or false.
     title: Proposition
+    class_uri: SEPIO:0000000
     comments:
     - "Propositions are taken to represent the semantic content of sentences or\
       \ larger lexical entities formulated in some natural or artificial language.\
@@ -1245,6 +1331,7 @@ classes:
         multivalued: false
       subject:
         description: The Entity or concept about which the Proposition is made.
+        slot_uri: SEPIO:0000388 #has_subject
         comments:
         - While the Core Information Model is domain-agnostic, and supports Propositions
           about any type of Entity, for most VA use cases, the subject will be  some
@@ -1269,12 +1356,15 @@ classes:
           for condition', 'benign for condition', and 'uncertain significance for
           condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845).
         status: Informative
+        exact_mappings: 
+        - SEPIO:0000389 #has_predicate
         range: Coding
         required: true
         multivalued: false
       object:
         description: An Entity or concept that is related to the subject of a Proposition
           via its predicate.
+        slot_uri: SEPIO:0000390 #has_object
         comments:
         - The object of a Proposition can be any Entity or concept that is related
           to the subject, e.g. for Genetic Variation subjects this is often a disease,
@@ -1518,6 +1608,8 @@ classes:
       a serialized data record or object in a particular dataset (as opposed to provenance
       of the real world entity this record or object represents).
     title: Record Metadata
+    related_mappings: 
+    - SEPIO:0000058 #provenance
     comments:
     - Record-level metadata applies to a specific concrete encoding/serialization
       of information (e.g as a record in a specific data/knowlegebase, or an online
@@ -1554,6 +1646,8 @@ classes:
       derivedFromRecord:
         description: Another data record from which the record described here was
           derived, through a data ingest and/or transformation process.
+        close_mappings: 
+        - pav:derivedFrom
         comments:
         - Value should be a string representing the identifier of the source record.
         status: Draft
@@ -1562,6 +1656,7 @@ classes:
         multivalued: true
       dateRecordCreated:
         description: The date the record was initially created.
+        slot_uri: SEPIO:0000436 #date_created
         status: Draft
         range: string
         required: false
@@ -1570,6 +1665,7 @@ classes:
         description: describes specific contributions made by an human or software
           agent to the creation, modification, or administrative management of a data
           record or object.
+        slot_uri: SEPIO:0000159 #qualified_contribution
         status: Draft
         range: Contribution
         required: false

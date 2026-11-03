@@ -11,10 +11,15 @@ see_also:
 prefixes:
   sepio_linkml: https://w3id.org/sepio-framework/sepio-linkml/
   linkml: https://w3id.org/linkml/
-  biolink: https://w3id.org/biolink/
+  biolink: https://w3id.org/biolink/vocab/
   schema: http://schema.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
-  example: https://example.org/
+  example: http://www.example.org/rdf#
+  SEPIO: http://purl.obolibrary.org/obo/SEPIO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  RO: http://purl.obolibrary.org/obo/RO_
+  prov: http://www.w3.org/ns/prov#
+  pav: http://purl.org/pav/
 default_prefix: sepio_linkml
 default_range: string
 

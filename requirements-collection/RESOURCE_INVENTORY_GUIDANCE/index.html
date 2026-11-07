@@ -348,22 +348,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#curationevidence-materials" class="md-nav__link">
-    Curation/evidence materials
+  <a href="#curation-and-evidence-materials" class="md-nav__link">
+    Curation and evidence materials
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#pipelineprovenance-materials" class="md-nav__link">
-    Pipeline/provenance materials
+  <a href="#pipeline-and-provenance-materials" class="md-nav__link">
+    Pipeline and provenance materials
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#requirementsfuture-intent" class="md-nav__link">
-    Requirements/future intent
+  <a href="#requirements-and-future-intent" class="md-nav__link">
+    Requirements and future intent
   </a>
   
 </li>
@@ -456,196 +456,240 @@
 
 
 <h1 id="resource-inventory-guidance-for-sepio-requirements-collection">Resource Inventory — Guidance for SEPIO Requirements Collection</h1>
-<p>A Resource Inventory is the evidence package used to support a SEPIO requirements review.</p>
-<p>Its purpose is not merely to list project files. It should make clear:</p>
+<p>A <strong>Resource Inventory</strong> is a structured catalog of project materials used to establish the scope and supporting basis for a SEPIO requirements review. It is more than a list of files: it records which resources are authoritative, how they may be used, which versions and examples should be inspected, and what uncertainty remains.</p>
+<p>The inventory may be assembled by a project representative, another human facilitator, an AI agent, or a human–AI team. The guidance applies to all these approaches. <strong>AI assistance is recommended but optional</strong>; <code>RESOURCE_INVENTORY_PROMPT.md</code> can help generate a first draft for human review.</p>
+<p>A useful inventory makes clear:</p>
 <ul>
-<li>which exact source(s) control <strong>current-state</strong> requirements;</li>
-<li>which additional sources may inform <strong>desired-state</strong> requirements;</li>
-<li>which sources are context only;</li>
-<li>which versions/releases should be used;</li>
-<li>what examples best demonstrate the project semantics;</li>
-<li>what conflicts, missing information, or access issues remain.</li>
+<li>which exact source(s) control <strong>current-state</strong> responses ([F1]);</li>
+<li>which additional sources may support <strong>desired-state</strong> responses ([F2]);</li>
+<li>which sources are context only and must not determine requirement responses;</li>
+<li>which versions, releases, and commits are in scope;</li>
+<li>which real example records best demonstrate the project's claim, evidence, provenance, and confidence semantics;</li>
+<li>what conflicts, missing information, or access limitations remain.</li>
 </ul>
-<p>For many projects, the easiest way to create a first draft is to use <code>RESOURCE_INVENTORY_PROMPT.md</code>.</p>
+<p><strong>The selected project scope statement governs source use.</strong> The Resource Inventory documents and supports that choice, but an inventory entry does not by itself authorize use of a resource for [F1] or [F2]. An authorized project representative should review and confirm the selected scope before the requirements are treated as authoritative.</p>
 <hr />
 <h2 id="1-start-with-the-canonical-current-state-source">1. Start with the canonical current-state source</h2>
-<p>Identify the exact source, dataset, distribution, schema, or release that should control answers to:</p>
-<blockquote>
-<p><strong>Used in Current Data?</strong></p>
-</blockquote>
+<p>Identify the exact source, dataset, distribution, schema, or release that should control answers to the forms' <strong>[F1] current-state</strong> questions (such as <em>Used in Current Data?</em> or <em>Represented in Current Data?</em>).</p>
 <p>Examples:</p>
 <ul>
 <li>a specific version of <code>indications.xlsx</code>;</li>
 <li>a current LinkML schema release plus designated canonical records;</li>
-<li>a particular KG build/export;</li>
+<li>a particular knowledge-graph build/export;</li>
 <li>a database schema plus one named production distribution.</li>
 </ul>
-<p>Prefer a version-pinned source when possible.</p>
-<p>If several artifacts must be interpreted together—for example a data table plus its canonical data dictionary—identify them as <strong>canonical companion artifacts</strong>.</p>
-<p>Do not automatically include intermediate files, alternate releases, upstream sources, downstream APIs, or papers in the current-state source set.</p>
+<p>Prefer version-pinned resources where possible. If several artifacts must be interpreted together—for example, a data table and its authoritative data dictionary—identify the additional resources explicitly as <strong>canonical companion artifacts</strong>.</p>
+<p>Do not automatically include intermediate files, alternate releases, upstream databases, downstream APIs or user interfaces, or papers in the current-state source set. These may supply context or desired-state support, but they control [F1] only if the selected scope explicitly includes them as canonical sources or canonical companions.</p>
+<p>Be precise about what the designated artifact actually represents. Documentation that a process exists does not establish that provenance about that process is stored in canonical data; information available in an upstream system does not establish that the scoped project retains it.</p>
 <hr />
 <h2 id="2-identify-sources-that-may-inform-desired-state">2. Identify sources that may inform desired state</h2>
-<p>Desired-state requirements can use a broader project evidence base when the selected scope permits it.</p>
+<p><strong>[F2] desired-state</strong> requirements may draw on a broader set of project-specific materials when the selected scope allows it. The goal is to capture a <em>maximal but source-supported</em> account of the capabilities the project wants in a future SEPIO-based representation—not an inventory of potentially useful features proposed by the facilitator or agent.</p>
 <p>Useful sources may include:</p>
 <ul>
-<li>explicit requirements or roadmaps;</li>
-<li>current papers or model documentation;</li>
-<li>curation/evidence guidance;</li>
+<li>explicit future requirements, approved roadmaps, or decisions;</li>
+<li>current project papers, model descriptions, and documentation;</li>
+<li>curation, evidence interpretation, review, or scoring guidance;</li>
 <li>intermediate curation or analysis artifacts;</li>
-<li>fields captured in the pipeline but dropped from the canonical export;</li>
+<li>fields captured by a project pipeline but omitted from the canonical export;</li>
 <li>alternate or earlier project distributions;</li>
 <li>competency questions;</li>
-<li>implementation/design documents.</li>
+<li>implementation and design documents;</li>
+<li>project-representative statements obtained during collaborative elicitation, with their status and rationale recorded.</li>
 </ul>
-<p>When useful, classify these sources as:</p>
-<h3 id="explicit_future_requirement">EXPLICIT_FUTURE_REQUIREMENT</h3>
-<p>The project explicitly says it wants or needs the capability.</p>
-<p>Examples:
-- roadmap item;
-- GitHub issue;
-- requirements document;
-- approved competency question.</p>
-<h3 id="existing_project_capability_not_in_canonical_export">EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT</h3>
-<p>The project already captures or uses the information somewhere, but it is absent from the chosen canonical current-state distribution.</p>
-<p>Examples:
-- semantic-alignment intermediates retained in curation files but dropped from a final compact export;
-- provenance stored in an internal curation record but not emitted publicly.</p>
-<h3 id="documented_model_intent">DOCUMENTED_MODEL_INTENT</h3>
-<p>Authoritative project documentation describes the capability as part of the intended model/product even though it is absent from the selected canonical distribution.</p>
-<p>Examples:
-- a current project paper describing qualifiers not present in the selected release;
-- a modeling guide describing intended evidence structures.</p>
-<p>Do not use a source to justify desired state if it explicitly says the feature is out of scope, rejected, or deprecated unless another authoritative source reverses that decision.</p>
+<p>Where useful, classify desired-state support by the following types:</p>
+<h3 id="explicit_future_requirement"><code>EXPLICIT_FUTURE_REQUIREMENT</code></h3>
+<p>An authoritative project source expressly says that a capability is wanted or needed.</p>
+<p>Examples: an approved roadmap item, a GitHub issue expressing an accepted requirement, a requirements document, or an approved competency question.</p>
+<h3 id="existing_project_capability_not_in_canonical_export"><code>EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT</code></h3>
+<p>The project already captures or uses information somewhere in its own ecosystem, but that information is absent from the selected canonical current-state distribution.</p>
+<p>Examples: semantic-alignment intermediates retained in curation files but dropped from a compact export; provenance in an internal curation record that is not emitted publicly.</p>
+<h3 id="documented_model_intent"><code>DOCUMENTED_MODEL_INTENT</code></h3>
+<p>Authoritative project materials describe a capability as part of the intended model or product even though the selected canonical distribution does not yet represent it.</p>
+<p>Examples: a current project paper describing intended qualifiers not present in the selected release; a modeling guide describing proposed evidence structures.</p>
+<p>Do not treat every proposed idea, undocumented possibility, or feature available in SEPIO as a project requirement. A resource explicitly describing a capability as out of scope, rejected, intentionally excluded, or deprecated does not support a positive desired-state requirement unless a later authoritative decision reverses that position.</p>
+<p><strong>For every [F2] <code>Y</code> or <code>M</code>, there must be identifiable project-specific support.</strong> A response of <code>M</code> must indicate both an affirmative basis for considering the capability and what remains unresolved; it should not merely mean “this might be useful.” Record source IDs and relevant decisions so that the basis can later be summarized in <strong>[F4] Basis for F2 Response</strong> and <strong>[F5] Explanation / Considerations</strong>.</p>
 <hr />
 <h2 id="3-gather-representative-examples">3. Gather representative examples</h2>
-<p>Real examples are essential because schemas and documentation may not show how fields are actually used.</p>
-<p>Try to select a small but diverse set that covers important patterns, for example:</p>
+<p>Real examples are essential because schemas and prose documentation may not reveal how fields are actually populated or what implicit conventions mean. Select a <strong>small but diverse</strong> set of concrete records that illustrates important semantic and workflow patterns, for example:</p>
 <ul>
-<li>a typical claim;</li>
-<li>a claim with qualifiers/context;</li>
-<li>a claim with a source/evidence reference;</li>
-<li>a claim with richer provenance;</li>
-<li>a record showing normalization or transformation;</li>
-<li>a case where information exists in an intermediate artifact but is dropped from the canonical export;</li>
+<li>a typical empirical claim or concept-definition statement;</li>
+<li>a statement with qualifiers or contextual information;</li>
+<li>a statement linked to a source or Evidence Item;</li>
+<li>a record with richer provenance, review, or confidence information;</li>
+<li>a record illustrating interpretation of evidence relative to a target statement;</li>
+<li>a record showing normalization, semantic alignment, encoding, or retrieval;</li>
+<li>a case where an intermediate artifact contains information omitted from the canonical export;</li>
 <li>an alternate distribution exposing a capability absent from the canonical one;</li>
 <li>an unusual but important edge case.</li>
 </ul>
-<p>Assign stable IDs such as E01, E02, E03.</p>
-<p>For each example, record:</p>
+<p>Concept-definition statements—including synonyms, classifications, mappings, and naming or definition assertions—are <strong>within scope when the project has relevant evidence, provenance, interpretation, or confidence requirements</strong>. Do not exclude them categorically.</p>
+<p>Assign stable example IDs such as <code>E01</code>, <code>E02</code>, and <code>E03</code>. For each example, record:</p>
 <ul>
-<li>source;</li>
-<li>claim/record type;</li>
-<li>what requirement pattern it demonstrates;</li>
-<li>why it was selected.</li>
+<li>source ID, release/version, and exact record locator or link;</li>
+<li>claim/record type and relevant original field names;</li>
+<li>what requirement pattern or semantic distinction it demonstrates;</li>
+<li>why it was selected;</li>
+<li>whether it comes from the canonical current-state set or a broader desired-state source.</li>
 </ul>
+<p>Prefer accessible record-specific URLs, dataset-and-record identifiers, API queries, or stable file/line pointers. A project homepage is not a substitute for a record locator. Identify whether a link resolves to an actual record, documentation, or a general resource page.</p>
+<p>If examples combine data from multiple tables, label them <strong>DENORMALIZED</strong> and identify the contributing records. If examples combine different sources or illustrate a proposed future shape, label them <strong>COMPOSITE/ILLUSTRATIVE</strong> or <strong>SCHEMATIC</strong>, respectively. Such examples are useful for discussion but do <strong>not</strong> establish what is represented in the canonical [F1] source set.</p>
+<p>Where source semantics are implicit—for instance, several distinct meanings encoded in one free-text or provenance slot—it may be necessary to inspect actual values, develop a codebook, and discuss their meanings with a project representative <strong>before</strong> completing the forms. Document those decisions or uncertainties alongside the inventory.</p>
 <hr />
 <h2 id="4-useful-source-categories">4. Useful source categories</h2>
 <p>Depending on the project, useful resources may include:</p>
 <h3 id="schemas-and-formal-models">Schemas and formal models</h3>
 <ul>
-<li>LinkML</li>
-<li>JSON Schema</li>
-<li>SQL schemas</li>
-<li>SHACL</li>
-<li>UML/class models</li>
-<li>data dictionaries</li>
-<li>export specifications</li>
+<li>LinkML, JSON Schema, SQL schemas, SHACL, or UML/class models;</li>
+<li>data dictionaries, field descriptions, controlled vocabularies;</li>
+<li>export or serialization specifications.</li>
 </ul>
 <h3 id="canonical-distributions">Canonical distributions</h3>
 <ul>
-<li>release spreadsheets</li>
-<li>JSON/YAML datasets</li>
-<li>KGX/RDF exports</li>
-<li>database dumps</li>
-<li>versioned API payload specifications</li>
+<li>release spreadsheets;</li>
+<li>JSON/YAML datasets;</li>
+<li>KGX/RDF exports;</li>
+<li>database dumps;</li>
+<li>versioned API payload specifications <strong>when explicitly designated as canonical</strong>.</li>
 </ul>
 <h3 id="documentation">Documentation</h3>
 <ul>
-<li>model overview</li>
-<li>README files</li>
-<li>architecture/design documents</li>
-<li>semantic conventions</li>
-<li>project papers</li>
+<li>model overviews and README files;</li>
+<li>architecture/design documents;</li>
+<li>semantic conventions or source field codebooks;</li>
+<li>project papers.</li>
 </ul>
-<h3 id="curationevidence-materials">Curation/evidence materials</h3>
+<h3 id="curation-and-evidence-materials">Curation and evidence materials</h3>
 <ul>
-<li>curation SOPs</li>
-<li>evidence classification rules</li>
-<li>scoring/confidence guidance</li>
-<li>interpretation guidelines</li>
-<li>review/approval workflows</li>
+<li>curation SOPs;</li>
+<li>evidence classification or interpretation rules;</li>
+<li>scoring, confidence, and quality guidance;</li>
+<li>review, approval, or decision workflows.</li>
 </ul>
-<h3 id="pipelineprovenance-materials">Pipeline/provenance materials</h3>
+<h3 id="pipeline-and-provenance-materials">Pipeline and provenance materials</h3>
 <ul>
-<li>ingest/transformation documentation</li>
-<li>normalization/grounding procedures</li>
-<li>intermediate curation artifacts</li>
-<li>source-attribution rules</li>
-<li>logs or intermediate outputs when they reveal intentionally retained project information</li>
+<li>ingestion/transformation documentation;</li>
+<li>normalization and grounding procedures;</li>
+<li>intermediate curation artifacts;</li>
+<li>source-attribution and encoding rules;</li>
+<li>logs or outputs showing relevant information generated or intentionally retained by the project.</li>
 </ul>
-<h3 id="requirementsfuture-intent">Requirements/future intent</h3>
+<h3 id="requirements-and-future-intent">Requirements and future intent</h3>
 <ul>
-<li>roadmaps</li>
-<li>GitHub issues</li>
-<li>requirements documents</li>
-<li>user stories</li>
-<li>competency questions</li>
-<li>approved design proposals</li>
+<li>roadmaps and issue trackers;</li>
+<li>requirements documents and user stories;</li>
+<li>competency questions;</li>
+<li>approved design proposals;</li>
+<li>documented decisions from project-representative interviews.</li>
 </ul>
+<p>A project does not need every source category. The goal is sufficient <strong>relevant, traceable support</strong> for accurate requirements assessment, not a comprehensive archive of everything related to the project.</p>
 <hr />
 <h2 id="5-distinguish-neighboring-resources-from-project-requirements">5. Distinguish neighboring resources from project requirements</h2>
-<p>Pay particular attention to resources that are nearby but not actually part of the scoped project.</p>
-<p>Examples:</p>
+<p>Resources closely associated with the project may not be part of its selected current-state source set. Examples include:</p>
 <ul>
-<li>upstream source databases;</li>
-<li>regulatory documents from which the project extracts information;</li>
-<li>external ontologies used for normalization;</li>
-<li>downstream KGs;</li>
-<li>APIs or user interfaces that add derived information;</li>
+<li>upstream source databases or curated knowledge resources;</li>
+<li>regulatory or scientific documents from which the project extracts information;</li>
+<li>external ontologies used for terminology normalization;</li>
+<li>downstream knowledge graphs;</li>
+<li>APIs and user interfaces that add derived or display-only information;</li>
 <li>historical or superseded releases.</li>
 </ul>
-<p>These may be useful for context, but they should not automatically control current-state answers.</p>
-<p>They may inform desired state only when the selected scope explicitly permits them and the evidence is genuinely project-specific.</p>
+<p>These may help explain what the project does, but should not automatically determine [F1] answers. They may inform [F2] only if allowed by the selected scope <strong>and</strong> if they establish a project-specific requirement rather than just a capability of an adjacent system.</p>
+<p>Maintain distinctions among:</p>
+<ul>
+<li><strong>scientific evidence</strong>: information evaluated as supporting or disputing a claim or concept-definition statement;</li>
+<li><strong>provenance</strong>: information about origins, activities, decisions, agents, and transformations;</li>
+<li><strong>requirements support</strong>: sources and rationale justifying why a form response is <code>Y</code>, <code>N</code>, or <code>M</code>.</li>
+</ul>
+<p>A copied external assertion may establish <em>where a record came from</em> without independently corroborating its truth. The same external source can play different roles in different workflows; explain its actual role rather than treating the resource name alone as sufficient.</p>
 <hr />
 <h2 id="6-record-versions-and-conflicts">6. Record versions and conflicts</h2>
-<p>For every important resource, record:</p>
+<p>For every important resource, record the most specific reproducible identifier available:</p>
 <ul>
-<li>version;</li>
-<li>release;</li>
-<li>tag;</li>
+<li>version or release number;</li>
+<li>release tag;</li>
 <li>commit SHA;</li>
 <li>DOI/archive version;</li>
-<li>retrieval date when no immutable version is available.</li>
+<li>retrieval date if the source is mutable or lacks an immutable version identifier.</li>
 </ul>
 <p>If two resources disagree:</p>
 <ol>
-<li>identify the conflict;</li>
-<li>identify which source controls current state;</li>
-<li>state whether the other source may still inform desired state;</li>
-<li>do not silently merge the two.</li>
+<li>describe the conflict and the relevant source IDs;</li>
+<li>identify which scoped source controls [F1];</li>
+<li>explain whether the other source is permitted to support [F2];</li>
+<li>record unresolved interpretation or authority questions for human review;</li>
+<li>do not silently merge or reconcile the accounts.</li>
 </ol>
-<p>Example:</p>
-<blockquote>
-<p>Release v1.3 lacks qualifier fields, but the current project paper explicitly describes contextual hyperrelations. v1.3 controls current state; the paper may support desired state under a maximal scope.</p>
-</blockquote>
+<p><strong>Example:</strong> Release v1.3 lacks qualifier fields, but a current project paper explicitly describes intended contextual hyperrelations. Release v1.3 controls current state; the paper may support desired state under a scope that permits it.</p>
+<p>If a later curator discussion or project decision changes an earlier interpretation, retain a traceable decision note rather than silently replacing the old rationale. The inventory need not become a full decision-management system, but it should point to a separate decision log or review memo when that is where the rationale is maintained.</p>
 <hr />
 <h2 id="7-recommended-resource-inventory-fields">7. Recommended Resource Inventory fields</h2>
 <p>A useful inventory table includes:</p>
-<ul>
-<li>Source ID</li>
-<li>Name</li>
-<li>Type</li>
-<li>URL / repository path</li>
-<li>Version / release / commit</li>
-<li>Authority level</li>
-<li>Requirements role</li>
-<li>Desired-state support type</li>
-<li>Requirement dimensions supported</li>
-<li>Important directly observed facts</li>
-<li>Access status</li>
-<li>Retrieval / human-assistance guidance</li>
-<li>Notes / cautions</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source ID</strong></td>
+<td>Stable identifier for citing this resource in forms and review materials</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Descriptive resource title</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>Dataset, schema, data dictionary, documentation, guideline, issue, record collection, etc.</td>
+</tr>
+<tr>
+<td><strong>URL / repository path</strong></td>
+<td>Direct, usable locator, preferably version-pinned</td>
+</tr>
+<tr>
+<td><strong>Version / release / commit</strong></td>
+<td>Reproducible version information and retrieval date as appropriate</td>
+</tr>
+<tr>
+<td><strong>Authority level</strong></td>
+<td>Whether the resource is canonical, authoritative for future intent, supporting, or contextual</td>
+</tr>
+<tr>
+<td><strong>Requirements role</strong></td>
+<td>Permitted use for current-state, desired-state, or context only</td>
+</tr>
+<tr>
+<td><strong>Desired-state support type</strong></td>
+<td>Nature of any affirmative future-requirement support</td>
+</tr>
+<tr>
+<td><strong>Requirement dimensions supported</strong></td>
+<td>Claim types/semantics, Evidence Items, interpretation, confidence, provenance, etc.</td>
+</tr>
+<tr>
+<td><strong>Important directly observed facts</strong></td>
+<td>Concise findings, distinguished from interpretation or inference</td>
+</tr>
+<tr>
+<td><strong>Example record link(s)</strong></td>
+<td>Actual representative record IDs/URLs and what they illustrate</td>
+</tr>
+<tr>
+<td><strong>Access status</strong></td>
+<td>Accessible, restricted, missing, broken link, unverified, etc.</td>
+</tr>
+<tr>
+<td><strong>Retrieval / human-assistance guidance</strong></td>
+<td>What may be fetched directly and what needs provision or confirmation</td>
+</tr>
+<tr>
+<td><strong>Notes / cautions</strong></td>
+<td>Conflicts, scope restrictions, limitations, unresolved interpretations</td>
+</tr>
+</tbody>
+</table>
 <p>Suggested requirements-role values:</p>
 <ul>
 <li><code>CURRENT_STATE_CANONICAL</code></li>
@@ -661,51 +705,55 @@
 <li><code>DOCUMENTED_MODEL_INTENT</code></li>
 <li><code>N/A</code></li>
 </ul>
+<p>If using <code>CURRENT_AND_DESIRED</code>, be explicit about the source's <strong>canonical authority for [F1]</strong>; a general dual-role label must not silently broaden the current-state source set. The selected scope remains the controlling authority.</p>
+<p>A single markdown table, spreadsheet, or other structured inventory is acceptable if it preserves these distinctions. For complex projects, companion sections for example records, scope alternatives, access problems, and unresolved decisions may be easier to review than extremely long table cells.</p>
 <hr />
 <h2 id="8-access-and-retrieval-guidance">8. Access and retrieval guidance</h2>
-<p>The requirements agent should normally retrieve public resources itself.</p>
-<p>A human should need to intervene only when:</p>
+<p>When AI assistance is used, the agent should normally attempt to retrieve <strong>publicly accessible</strong> materials directly, including specified source files and versioned examples, rather than requiring a representative to upload everything in advance.</p>
+<p>Human assistance may be needed when:</p>
 <ul>
 <li>public retrieval fails;</li>
-<li>authentication/private access is required;</li>
-<li>the file exists only locally;</li>
-<li>multiple plausible versions/files exist and the canonical one is unclear;</li>
-<li>the human must decide which scope/version is authoritative.</li>
+<li>authentication or private access is required;</li>
+<li>a resource exists only locally;</li>
+<li>several plausible versions or files exist and the canonical one is unclear;</li>
+<li>a project representative must decide the authoritative scope or interpretation.</li>
 </ul>
-<p>When human help is needed, the inventory should say:</p>
+<p>For each blocker, record:</p>
 <ul>
-<li>exactly what file/resource is needed;</li>
-<li>why it matters;</li>
-<li>what question it will resolve;</li>
-<li>whether the requirements review can proceed provisionally without it.</li>
+<li>the exact file/resource and attempted locator;</li>
+<li>why it matters and what question it would resolve;</li>
+<li>the access problem or required decision;</li>
+<li>whether the review can proceed provisionally without it.</li>
 </ul>
+<p>Human-led inventory creation can use the same access-status and provenance conventions; no AI agent or automated retrieval capability is required. Never assume that a link has been inspected merely because it appears in the inventory.</p>
 <hr />
 <h2 id="9-candidate-scope-statements">9. Candidate scope statements</h2>
-<p>A good Resource Inventory should end with candidate scope statements.</p>
-<p>At minimum:</p>
+<p>A Resource Inventory should support selection of a <strong>project scope statement</strong> before definitive requirements completion. If the appropriate scope is already known, it may simply document that selected scope; if not, prepare and compare reasonable alternatives.</p>
 <h3 id="minimal-canonical-distribution-only">Minimal / canonical-distribution-only</h3>
-<p>Use the canonical distribution as both the current-state and desired-state evidence base.</p>
-<p>Best when the goal is to describe one concrete release conservatively.</p>
+<p>Use the designated canonical source set for [F1] and limit [F2] to requirements supported by that same set.</p>
+<p>Best when the goal is a conservative description of one concrete release or distribution. Do not infer broad future requirements merely from what the release makes technically possible.</p>
 <h3 id="maximal-canonical-current-state-broad-desired-state">Maximal / canonical current state + broad desired state</h3>
-<p>Use only the named canonical source(s) for current-state answers, but allow broader project evidence for desired-state requirements.</p>
-<p>Best when the goal is to discover the broadest evidence-supported requirements set before human review.</p>
-<p>Additional scopes may be useful for projects with multiple legitimate products or distributions.</p>
-<p>The project representative should review and select/refine one scope before final requirements completion.</p>
+<p>Use only the named canonical source(s) and explicitly designated companions for [F1], while allowing a broader, approved set of project-specific sources for [F2].</p>
+<p>Best when the goal is to identify the broadest <strong>supported</strong> requirements set for subsequent project-representative review and refinement.</p>
+<p>Additional scope alternatives may be appropriate for projects with multiple canonical products, domain subsets, or significantly different publication/curation pathways. Separate reviews may be preferable when the products have materially different EPC requirements.</p>
+<p>The project representative should review, select, and, if necessary, refine the scope. <strong>Do not silently combine alternative scopes.</strong> Record the final selected statement and which sources have authority under it.</p>
 <hr />
 <h2 id="10-final-handoff">10. Final handoff</h2>
-<p>Before giving the inventory to the requirements agent, make sure it clearly answers:</p>
+<p>Before the inventory is used to complete the requirements forms, confirm that it answers:</p>
 <ul>
-<li>What controls current-state answers?</li>
-<li>What may inform desired-state answers?</li>
-<li>Which scope was selected?</li>
+<li>What exact resources control [F1] current-state responses?</li>
+<li>What additional resources may support [F2] desired-state responses?</li>
+<li>Which scope has been selected, and who confirmed it?</li>
 <li>Which sources are context only?</li>
-<li>Which examples should the agent inspect?</li>
-<li>What versions should it use?</li>
-<li>What public resources should it retrieve itself?</li>
-<li>Is any human-provided material genuinely required?</li>
-<li>What important questions remain unresolved?</li>
+<li>Which representative records should be inspected, and where can they be accessed?</li>
+<li>What versions or immutable identifiers should be used?</li>
+<li>Which resources are accessible, and which are not yet inspected?</li>
+<li>What materials must a human provide or what decisions require representative input?</li>
+<li>What conflicts, implicit data conventions, or unanswered questions remain?</li>
 </ul>
-<p>If those questions are clear, the inventory is ready to accompany <code>REQUIREMENTS_FORM_PROMPT.md</code>.</p>
+<p>If these questions are adequately addressed, the inventory is ready for use with <code>REQUIREMENTS_FORM_PROMPT.md</code> and <code>Requirements_Instructions_and_Guidance_for_Agents.md</code>.</p>
+<p>The forms may then be populated through <strong>human-led work, independent AI drafting followed by review, or collaborative interview-style elicitation</strong>. In the collaborative approach, a facilitator or AI agent can present each requirement, examine real examples with the representative, propose responses, and record decisions or open questions. This is particularly useful where a source's semantics are implicit in curation conventions or expert practice.</p>
+<p><strong>The completed requirements remain provisional until an authorized project representative confirms them.</strong> Mapping those requirements to SEPIO and deriving a candidate Covering Model are separate downstream activities; neither should determine the project's requirement responses during elicitation.</p>
 
 
 

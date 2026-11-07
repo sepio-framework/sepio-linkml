@@ -13,6 +13,26 @@ After you review and confirm the completed forms, a separate **SEPIO requirement
 
 ---
 
+## How Requirements Collection Fits into the SEPIO Modeling Process
+
+Requirements collection is the first phase of a broader, four-phase process for developing and validating SEPIO-based models that meet the representational needs of participating projects.
+
+1. **Project Requirements Collection:** Identify what the project currently represents and what capabilities it needs in a future SEPIO-based representation. Review relevant project resources, complete the Requirements Collection Forms, and confirm the requirements with a project representative.
+
+2. **Requirements-to-SEPIO Mapping:** Map the confirmed requirements to classes, properties, and modeling patterns in the SEPIO Core Model. Identify requirements that are directly supported, only partially supported, or may require model extensions.
+
+3. **Covering Model Derivation and Review:** Use the confirmed requirements and their SEPIO mappings to systematically generate an initial candidate Covering Model. SEPIO modelers and project representatives review and refine this model. Covering Models identify shared representational capabilities and are distinct from project-specific implementation profiles.
+
+4. **Project Data Mapping and Validation:** Map representative project records into the proposed SEPIO-based representation and evaluate whether the required information and semantics are preserved. Use the findings to refine the model and mappings as needed.
+
+**AI-assisted execution is recommended but optional.** The starter-kit guidance and prompts are designed to help AI agents support these phases, including resource discovery, requirements elicitation, proposed SEPIO mappings, and initial Covering Model generation. Agents may prepare drafts for human review or collaborate directly with project representatives in an interactive interview-style process.
+
+**This Quick Start focuses on Phase 1.** Once your requirements are reviewed and confirmed, they become the input for Phases 2–4. You do not need to understand or select SEPIO model elements while completing the requirements forms.
+
+For the detailed four-phase workflow, see `Requirements_Instructions_and_Guidance_for_AI.md`.
+
+---
+
 ## What is in this folder
 
 - `Requirements_Collection_Forms.xlsx` — the authoritative blank requirements workbook your agent should complete.
@@ -21,7 +41,6 @@ After you review and confirm the completed forms, a separate **SEPIO requirement
 - `REQUIREMENTS_FORM_PROMPT.md` — the ready-to-copy prompt for asking an AI agent to complete the forms.
 - `RESOURCE_INVENTORY_PROMPT.md` — an optional prompt that asks an AI agent to discover, classify, and organize project resources and propose candidate scope statements.
 - `RESOURCE_INVENTORY_GUIDANCE.md` — practical guidance for assembling and reviewing a Resource Inventory.
-- `RESOURCE_INVENTORY_GUIDANCE.md` — guidance for gathering and reviewing project schemas, documentation, examples, and other evidence.
 - `Requirements_Collection_Overview.md` — the comprehensive human-facing overview of the requirements-collection workflow.
 - `examples/example_scope_statement.md` — examples of project scope statements.
 - `examples/example_completed_requirements_review.md` — an example Requirements Review Memo.
@@ -31,8 +50,8 @@ After you review and confirm the completed forms, a separate **SEPIO requirement
 
 ## Process at a glance
 
-1. **Define the scope.** Decide exactly which canonical source(s) control current-state answers and which broader sources may inform desired-state requirements.
-2. **Create a Resource Inventory.** Identify the best evidence, examples, versions, conflicts, and candidate scope statements.
+1. **Discover resources and establish scope.** Identify relevant project materials, designate authoritative current-state sources and broader desired-state support, and confirm the selected scope.
+2. **Finalize the Resource Inventory.** Document the selected resources, source roles, versions, representative examples, and any conflicts or uncertainties; review and approve the inventory before form completion.
 3. **Give the agent everything it needs; have it complete the Requirements Forms, Review Memo, and Feedback Log.**
 4. **Inspect the workbook and review memo; triage Feedback Log suggestions separately.** Resolve uncertainties and correct anything that does not reflect the project.
 5. **Move to SEPIO mapping.** Once confirmed, use the requirements record as input to the separate requirements-to-model workflow.

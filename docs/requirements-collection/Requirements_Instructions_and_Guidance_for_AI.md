@@ -1,10 +1,11 @@
 # Evidence, Provenance, Confidence (EPC) Requirements Collection
 
-**Detailed Instructions & Guidance for AI Agents Completing the SEPIO Requirements Forms**
 
-This document provides the detailed semantic and field-level guidance an AI agent should use when completing `Requirements_Collection_Forms.xlsx` on behalf of a project. It is intended to be used together with `REQUIREMENTS_FORM_PROMPT.md`, the selected project scope statement, the reviewed project Resource Inventory, and the project-specific source materials identified there.
+**Detailed Instructions & Guidance for Agents Completing the SEPIO Requirements Forms**
 
-For human-facing orientation to the overall process, see `QUICK_START.md` and `Requirements_Collection_Overview.md`. For guidance on assembling and classifying the evidence base before requirements completion, see `RESOURCE_INVENTORY_GUIDANCE.md` and `RESOURCE_INVENTORY_PROMPT.md`.
+This document provides the detailed semantic and field-level guidance an agent should use when completing `Requirements_Collection_Forms.xlsx` on behalf of a project. It is written with sufficient detail to guide AI agents in performing this work, but is also useful for human agents. It is intended to be used together with `REQUIREMENTS_FORM_PROMPT.md`, the selected project scope statement, the reviewed project Resource Inventory, and the project-specific source materials identified there.
+
+For more focused human-facing orientation to the overall process, see `QUICK_START.md` and `Requirements_Collection_Overview.md`. For guidance on assembling and classifying the evidence base before requirements completion, see `RESOURCE_INVENTORY_GUIDANCE.md` and `RESOURCE_INVENTORY_PROMPT.md`.
 
 # I. Why Start with Requirements Collection
 
@@ -16,29 +17,88 @@ This separation also supports later implementation with LinkML and LinkML-Map. I
 
 ## Recommended Overall Process
 
-A practical path is to organize the consolidation effort into four phases:
+The SEPIO modeling effort follows a four-phase workflow that progresses from project-specific requirements collection through semantic mapping, model derivation, and validation. The process is designed to be **requirements-driven and grounded in real project data**, with project representatives and SEPIO modelers providing review and oversight at appropriate stages.
 
-- **Phase 1 — Project requirements collection.** Each project establishes a reviewed Resource Inventory, selects a project scope, and describes the claim, evidence, provenance, and confidence information that is currently represented or desired.  
-  **Agent-assisted execution:** The Resource Inventory first identifies and classifies relevant project sources, including the exact source set that controls **current-state/F1** answers and the broader evidence set allowed to inform **desired-state/F2** answers. The project representative selects or refines one proposed scope. A requirements agent then uses `REQUIREMENTS_FORM_PROMPT.md`, the selected scope, the reviewed Resource Inventory, this guidance, and the required project materials to prepare a first-pass population of the forms. A project representative reviews, corrects, and confirms the requirements.
+The requirements collection tools, guidance documents, and associated workflows have been designed to facilitate **AI-assisted execution**, which is a recommended but optional approach. AI agents can help inspect project resources, elicit and document requirements, propose mappings to the SEPIO Core Model, and generate candidate Covering Models and related artifacts. These activities may also be performed manually or through a combination of human and AI-assisted work.
 
-- **Phase 2 — Cross-project semantic analysis.** The modeling group compares requirements across projects and asks which SEPIO concepts are involved, which needs recur, and which differences are semantic rather than merely structural.  
-  **Agent-assisted execution:** After project requirements are confirmed, an agent can apply the Requirement → SEPIO Mapping Registry to identify direct mappings, partial coverage, implementation guidance, open questions, and recurrent requirements across projects.
+### Phase 1 — Project Requirements Collection
 
-- **Phase 3 — Model architecture.** Based on that analysis, determine what belongs in the Covering Model, how many Covering Models are useful, which reusable profiles are warranted, and which requirements may require extension of SEPIO. Mapping from elements in the requirements forms to specific features of the SEPIO model can help to automate some of this process.  
-  **Agent-assisted execution:** During the current pilot phase, an AI agent may generate candidate covering-model content and associated review artifacts from the confirmed forms and mapping registry. These outputs remain candidates for modeler review.
+**Objective:** Establish what each participating project currently represents, and what it needs to represent in a future SEPIO-based data model, with respect to claims, evidence, evidence interpretation, provenance, and confidence.
 
-- **Phase 4 — Mapping and validation.** Use real source examples from each project to demonstrate that required semantics can be represented in the chosen profile and mapped using LinkML-Map without unacceptable information loss.  
-  **Agent-assisted execution:** Agents can help compare representative project records with the proposed SEPIO-based representation, identify information loss or ambiguity, and document issues for project and SEPIO modelers.
+**General approach:** Identify and review relevant project resources, establish the scope of the requirements collection effort, and complete the Requirements Collection Forms to characterize both current-state and desired-state representational needs. Document the basis for important requirements, provide concrete examples from project data, and identify uncertainties requiring further discussion. Project representatives review and confirm the resulting requirements.
 
-Real example records should be required throughout this process. Abstract descriptions alone often hide important distinctions—for example, whether something called “evidence” is actually source information, an interpretation of that information, a provenance activity, or a higher-order argument. Representative examples allow the modeling group to classify these objects correctly before assigning SEPIO classes or defining profile constraints.
+**Recommended AI-assisted execution:**
+
+- **Resource discovery and scoping:** An AI agent examines project materials and prepares a Resource Inventory identifying authoritative current-state sources, additional resources supporting desired-state requirements, and representative data records. A project representative reviews the inventory and confirms the scope of the effort.
+- **Requirements form completion:** An agent uses the selected scope, Resource Inventory, project source materials, and starter-kit guidance to prepare responses to the Requirements Collection Forms. It independently assesses current-state ([F1]) and desired-state ([F2]) requirements, documents the basis for these responses, and provides concrete examples.
+- **Collaborative elicitation as an alternative:** Rather than completing an initial draft independently, the agent may work interactively with a project representative to populate the forms through a structured discussion or interview. The agent presents each requirement question, proposes an initial interpretation or response based on available project materials, and works with the representative to clarify the project's needs and agree on an appropriate answer. This approach can be particularly valuable when important requirements are implicit in existing data conventions, curation practices, or expert knowledge rather than explicitly documented. It was successfully used in the MONDO ontology-curation pilot.
+- **Supporting outputs and review:** The agent can generate project-specific Claim–Evidence Matrices and a Requirements Review Memo summarizing the project's data landscape, principal requirements, current-versus-desired distinctions, and unresolved questions. The project representative reviews, refines, and confirms the results.
+
+**Primary outcome:** A reviewed, project-specific requirements package describing the project's representational needs independently of the SEPIO modeling constructs that may ultimately satisfy them.
+
+### Phase 2 — Requirements-to-SEPIO Mapping and Analysis
+
+**Objective:** Determine how the collected project requirements correspond to capabilities of the SEPIO Core Model, and identify requirements that are directly supported, require particular modeling patterns, are only partially supported, or reveal potential model gaps.
+
+**General approach:** Analyze the confirmed requirements against the authoritative SEPIO Core Model to identify relevant classes, properties, relationships, and modeling patterns. Document the mappings, their rationale, any conditions governing their applicability, and areas where requirements are not fully supported. As requirements from multiple projects become available, compare their mappings to identify recurring capabilities, common modeling patterns, and project-specific differences.
+
+**Recommended AI-assisted execution:**
+
+- Apply the maintained **Requirement → SEPIO Mapping Registry** and associated specifications to the confirmed requirements.
+- Identify the SEPIO classes, properties, relationships, and supported modeling patterns corresponding to the requirements, including any conditions or constraints governing their use.
+- Generate traceable mapping results and review artifacts that document direct coverage, alternative approaches, partial matches, unresolved questions, and potential gaps or extension needs.
+- Support cross-project comparison of mapped requirements to identify common capabilities and project-specific distinctions.
+
+**Primary outcome:** A reviewed set of traceable Requirement → SEPIO mappings, including any unresolved mapping questions or identified gaps in the SEPIO Core Model.
+
+### Phase 3 — SEPIO Covering Model Derivation and Review
+
+**Objective:** Derive candidate SEPIO Covering Models that collectively provide the representational capabilities needed to satisfy the mapped requirements of participating projects.
+
+**General approach:** Use the confirmed requirements and their mappings to the SEPIO Core Model as the basis for deriving an initial candidate Covering Model. Evaluate the proposed model for completeness, semantic coherence, unnecessary complexity, and compatibility with the SEPIO Core Model. Review and refine the candidate through collaboration among SEPIO modelers and participating project representatives.
+
+The initial derivation of a candidate Covering Model is intended to be **systematic and driven by the approved requirement mappings**, rather than beginning with a manually designed model architecture. Human review then focuses on evaluating the generated model, resolving modeling alternatives, addressing gaps, and refining its structure.
+
+**Recommended AI-assisted execution:**
+
+- Generate an initial candidate Covering Model from the confirmed project requirements and their mappings to SEPIO.
+- Produce supporting artifacts identifying which requirements are satisfied by each model element, how they are represented, and where important modeling choices or unresolved gaps remain.
+- Check the candidate model for consistency with the authoritative SEPIO Core Model, completeness relative to the mapped requirements, and potential redundancies or unnecessary complexity.
+- Support iterative review and refinement by SEPIO modelers and project representatives, including analysis of potential extensions where existing SEPIO capabilities are insufficient.
+
+**Covering Models versus project-specific profiles:** The purpose of a SEPIO Covering Model is to assemble the shared representational capabilities needed to satisfy a set of project requirements. It is distinct from a project-specific implementation profile, which may subsequently impose additional constraints, cardinalities, controlled vocabularies, or structural conventions appropriate to a particular dataset or application. Defining such profiles may be a useful follow-on activity, but is not a required output of this phase.
+
+**Primary outcome:** A reviewed candidate SEPIO Covering Model, with traceability to the requirements it addresses and documentation of any unresolved modeling decisions or extension needs.
+
+### Phase 4 — Project Data Mapping and Validation
+
+**Objective:** Demonstrate that representative project data can be transformed into SEPIO-based representations using the proposed Covering Model without losing information or semantic distinctions required by the project.
+
+**General approach:** Develop mappings from project-specific data structures to the relevant SEPIO classes, properties, and modeling patterns. Apply these mappings to representative source records, including important variations and edge cases. Evaluate whether the resulting representations preserve the required information and support the project's intended uses. Use the findings to refine the mappings, Covering Model, or original requirements where necessary.
+
+**Recommended AI-assisted execution:**
+
+- Develop or propose mappings from project-specific source models into the proposed SEPIO-based representation, using tools such as LinkML-Map where appropriate.
+- Apply these mappings to representative records spanning different Claim Types, Evidence Item Types, evidence interpretation patterns, provenance structures, and important edge cases.
+- Evaluate the transformed representations for semantic fidelity, completeness, and consistency with the confirmed requirements.
+- Identify information loss, ambiguous mappings, unsupported requirements, or missing modeling capabilities, and document proposed corrections for review.
+
+**Primary outcome:** A validated approach for representing project knowledge and its associated evidence, provenance, and confidence information using SEPIO-based models, together with any outstanding implementation or modeling issues.
+
+### Role of Representative Data Throughout the Process
+
+Concrete source records are important throughout all four phases. They help establish what information a project actually represents, reveal implicit semantics and distinctions that abstract requirements may miss, support evaluation of proposed SEPIO mappings, and demonstrate whether the candidate Covering Model can adequately represent the project's information.
+
+Representative records should therefore be identified early in the requirements collection process, referenced in the completed forms where useful, and reused during mapping and validation. When examples are illustrative rather than drawn from actual project data, they should be clearly labeled as such.
+
 
 ## Role of AI Agents in Requirements Collection
 
 The detailed guidance, documentation, and forms described below are designed with the expectation that AI agents will assist in preparing a first-pass set of project requirements. A project representative may task an AI agent with reviewing the project's available materials and preparing an initial population of the forms.
 
-To do this effectively, the agent needs a reviewed **Resource Inventory** and a selected **project scope statement**. The Resource Inventory is the evidence catalog: it assigns stable Source IDs, records versions and roles, identifies representative examples, and distinguishes canonical current-state sources from broader desired-state support. Relevant resources may include data-model and schema documentation, canonical datasets or distributions, representative records, project documentation, provenance conventions, curation guidelines, software or pipeline artifacts, papers, requirements, issues, competency questions, and other project-specific materials.
+To do this effectively, the agent needs a reviewed **Resource Inventory** and a selected **project scope statement**. The Resource Inventory is the supporting-source catalog: it assigns stable Source IDs, records versions and roles, identifies representative examples, and distinguishes canonical current-state sources from broader desired-state support. Relevant resources may include data-model and schema documentation, canonical datasets or distributions, representative records, project documentation, provenance conventions, curation guidelines, software or pipeline artifacts, papers, requirements, issues, competency questions, and other project-specific materials.
 
-The selected scope determines how those resources may be used. **F1/current-state answers must be based only on the sources explicitly designated as CURRENT_STATE_CANONICAL or CURRENT_STATE_CANONICAL_COMPANION in the selected scope.** Richer information found elsewhere in the project must not be used to broaden F1. **F2/desired-state answers may draw on the broader DESIRED_STATE_SUPPORT sources allowed by the selected scope**, but only where those sources provide affirmative project-specific evidence. The agent should clearly identify uncertainties or gaps and leave final validation and refinement to project representatives.
+The selected scope determines how those resources may be used. **[F1]/current-state answers must be based only on the sources explicitly designated as CURRENT_STATE_CANONICAL or CURRENT_STATE_CANONICAL_COMPANION in the selected scope.** Richer information found elsewhere in the project must not be used to broaden [F1]. **[F2]/desired-state answers may draw on the broader DESIRED_STATE_SUPPORT sources allowed by the selected scope**, but only where those sources provide affirmative project-specific support. The agent should clearly identify uncertainties or gaps and leave final validation and refinement to project representatives.
 
 AI agents completing the requirements forms should not attempt to assign SEPIO classes or slots on the project's behalf unless explicitly asked to perform the later mapping step. Respondent-facing answers should remain grounded in the project's own concepts, data structures, and requirements. Stable Requirement IDs provide the later machine-facing bridge from these project-centered descriptions to the Requirement → SEPIO Mapping Registry.
 
@@ -46,15 +106,15 @@ AI agents completing the requirements forms should not attempt to assign SEPIO c
 
 The following behavioral instructions apply when an AI agent prepares a first-pass population of the requirements forms (and may also be useful to human respondents).
 
-- **Ground responses in project evidence, not plausibility.** Populate fields from project schemas, documentation, example records, publications, repositories, curation guides, meeting notes, or other supplied materials. Do not infer that a project has a requirement simply because that requirement would be sensible for a project of that type.
+- **Ground responses in project sources, not plausibility.** Populate fields from project schemas, documentation, example records, publications, repositories, curation guides, meeting notes, or other supplied materials. Do not infer that a project has a requirement simply because that requirement would be sensible for a project of that type.
 
-- **Treat the Resource Inventory as the evidence catalog and the selected scope as the authority for source use.** Refer to sources by their Resource Inventory Source IDs where useful. Do not silently expand the allowed source set during form completion. If a source appears important but is not permitted by the selected scope, flag it for human review rather than using it.
+- **Treat the Resource Inventory as the supporting-source catalog and the selected scope as the authority for source use.** Refer to sources by their Resource Inventory Source IDs where useful. Do not silently expand the allowed source set during form completion. If a source appears important but is not permitted by the selected scope, flag it for human review rather than using it.
 
-- **Classify broader desired-state support when F2 goes beyond F1.** Where useful, use the Resource Inventory support labels: `EXPLICIT_FUTURE_REQUIREMENT`, `EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT`, or `DOCUMENTED_MODEL_INTENT`. If no project-specific evidence supports a broader desired-state capability, do not mark it Y simply because it seems useful.
+- **Classify broader desired-state support when [F2] goes beyond [F1].** Where useful, use the Resource Inventory support labels: `EXPLICIT_FUTURE_REQUIREMENT`, `EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT`, or `DOCUMENTED_MODEL_INTENT`. If no project-specific supporting source justifies a desired-state capability, do not mark it Y or M simply because it seems useful.
 
-- **When F2 differs from F1, make the evidence for that difference explicit.** In the form's `Explanation / Considerations` field, identify the supporting Source ID + source name/version and, when applicable, the desired-state support type. A useful pattern is: `Current state: [canonical observation]. Desired-state support: [SUPPORT TYPE] — [Source ID — source name/version]: [brief rationale].`
+- **When [F2] differs from [F1], make the support for that difference explicit.** In [F4] Basis for F2 Response, identify the supporting Source ID + source name/version and, where relevant, the desired-state support type. Summarize the same basis in the self-contained [F5] Explanation / Considerations field. A useful pattern is: `Current state: [canonical observation]. Desired-state support: [SUPPORT TYPE] — [Source ID — source name/version]: [brief rationale].`
 
-- **Apply the selected scope literally when distinguishing current and desired state.** For F1/current-state questions, use only the exact canonical source set named in the selected scope. A capability found only in an intermediate artifact, alternate release, paper, roadmap, upstream source, downstream representation, or process description must not be marked current unless that resource is explicitly included in the current-state canonical source set. For F2/desired-state questions, use the broader source set allowed by the selected scope and capture a **maximal but evidence-supported** requirement set rather than a speculative one.
+- **Apply the selected scope literally when distinguishing current and desired state.** For [F1]/current-state questions, use only the exact canonical source set named in the selected scope. A capability found only in an intermediate artifact, alternate release, paper, roadmap, upstream source, downstream representation, or process description must not be marked current unless that resource is explicitly included in the current-state canonical source set. For [F2]/desired-state questions, use the broader source set allowed by the selected scope and capture a **maximal but source-supported** requirement set rather than a speculative one.
 
 - **Do not convert project terminology into SEPIO classes prematurely.** Describe the project's native information and requirements first. For example, report that a project stores publication excerpts and assesses whether they support a mechanism; do not decide on the project's behalf that these “must be DataItem and EvidenceLine objects.” Mapping to SEPIO is a later modeling task. Unless explicitly asked to perform the later modeling step, do not edit content in the **SEPIO Mapping Summary** columns or use those summaries to decide what the project's requirements should be. Do not edit predefined Requirement IDs. For any new project-specific row added under an “Other” option, assign a stable custom ID using the form-specific prefix shown in the guidance (for example EI.CUSTOM.001) so that the new requirement can later be added to the mapping registry.
 
@@ -64,7 +124,7 @@ The following behavioral instructions apply when an AI agent prepares a first-pa
 
 - **Do not manufacture specificity.** Never invent identifiers, evidence types, workflows, agent names, confidence scales, interpretation rules, or provenance requirements to make a form look complete. Enter **Unknown**, **Not documented**, **Needs discussion**, or **Not applicable** where appropriate.
 
-- **Treat lack of evidence carefully.** For F1, if the relevant canonical artifact has been directly inspected and a capability is demonstrably absent, `N` may be appropriate. If the canonical source was not fully inspected or the documentation is incomplete, use `M` / Needs discussion rather than assuming `N`. For F2, absence from current data does not imply the capability is undesired; use the allowed desired-state evidence set to determine whether there is affirmative support.
+- **Treat lack of support carefully.** For [F1], if the relevant canonical artifact has been directly inspected and a capability is demonstrably absent, `N` may be appropriate. If the canonical source was not fully inspected or the documentation is incomplete, use `M` / Needs discussion rather than assuming `N`. For [F2], absence from current data does not imply the capability is undesired; use the allowed desired-state source set to determine whether there is affirmative support.
 
 - **Identify meaningful variation within the project.** Do not assume that one workflow applies everywhere. Look for differences among claim types, data sources, human versus automated curation, or production versus experimental pipelines. Conversely, do not create separate claim types merely because their predicates differ if their evidence/provenance requirements are essentially identical.
 
@@ -84,7 +144,7 @@ The following behavioral instructions apply when an AI agent prepares a first-pa
 
 - **Make proposed additions obvious.** If the agent thinks a requirement may be useful but cannot find evidence that the project actually needs it, put it in a clearly labeled *Suggested follow-up / Possible requirement* note rather than filling it in as a project requirement.
 
-- **Preserve traceability to source material.** For every substantive requirement, retain the relevant Resource Inventory Source ID(s) and, where useful, representative Example ID(s). F1 conclusions should trace to the selected current-state canonical source set. Broader F2 conclusions should trace to allowed desired-state support sources. When F2 differs from F1, this traceability **should appear in the form's `Explanation / Considerations` field**, not merely in private drafting notes.
+- **Preserve traceability to source material.** For every substantive requirement, retain the relevant Resource Inventory Source ID(s) and, where useful, representative Example ID(s). [F1] conclusions should trace to the selected current-state canonical source set. Broader [F2] conclusions should trace to allowed desired-state support sources. [F1]/[F2] support should be captured in [F3] Basis for F1 Response and [F4] Basis for F2 Response **and** summarized in the self-contained [F5] Explanation / Considerations field, not merely in private drafting notes.
 
 - **End with unresolved questions for the project representative.** After populating the forms, generate a short list of the highest-value uncertainties that need human confirmation—for example, “Is evidence strength actually authored or intended to be derived?” or “Are multiple publication excerpts normally treated as independent arguments or grouped by study?”
 
@@ -98,8 +158,8 @@ Finally, requirements-completion agents should produce **two outputs**:
 
 2. **A Requirements Review Memo**, named `[PROJECT]_Requirements_Review_Memo_v[VERSION]_[YYYYMMDD]_[HHMM].md`, containing:
    - the selected project scope;
-   - the exact current-state canonical source set used for F1;
-   - the broader desired-state evidence set used for F2;
+   - the exact current-state canonical source set used for [F1];
+   - the broader desired-state supporting-source set used for [F2];
    - relevant source versions/releases/commits;
    - high-confidence conclusions;
    - fields or answers requiring human review;
@@ -121,13 +181,13 @@ Below we define and share preferred names for several foundational concepts wher
 
 > **Description:** An information artifact that expresses a proposition, hypothesis, or judgment about the world. A Statement may be an assertion which states a purported fact about our objective reality, or a more subjective judgement or definition that is offered from a particular point of view, but not grounded in an objective, provable reality.
 >
-> In our work we are concerned with **two high level kinds of Statements**: Claims and Concept Definitions. It is important to define and distinguish these two types of Statements because it represents a fundamental divide across the statements reported by projects in our consortium, which may ultimately use different models, and require different requirements collection forms.
+> In our work we are concerned with **two high level kinds of Statements**: Claims and Concept Definitions. It is important to define and distinguish these two types of Statements because it represents a fundamental divide across the statements reported by projects in our consortium, which may require different handling or levels of representation. Both may be assessed using these EPC requirements forms when evidence, provenance, interpretation, or confidence is applicable.
 
 - **“Claims”:** put forth propositions about how entities in the domain of discourse relate or behave, and that can in principle be evaluated for truth or validity.
 
   - **Examples:** “Variant X causes loss of function in Protein X”, “CFTR dysfunction contributes to the pathophysiology of cystic fibrosis.”
 
-  - Claims are the types of things that have evidence and confidence, and are reported in Knowledgebases such as the Monarch KG, Translator, and DisMech.
+  - Claims of this kind commonly have associated evidence and confidence assessments in resources such as the Monarch KG, Translator, and DisMech. Concept-definition statements can also be assessed when a project treats names, definitions, synonyms, classifications, or mappings as claims supported by source information or subject to confidence judgments.
 
   - Note that a particular claim is defined/identified by both its “proposition” (the inherent meaning of what it is putting forth as true), and the occasion on which it is made (when and by whom it was put forth). If two curators put forth the same proposition that “Variant X causes loss of function in Protein X”, these are separate Claims instances because they were made by different people on different occasions.
 
@@ -137,7 +197,7 @@ Below we define and share preferred names for several foundational concepts wher
 
   - Such ‘definitions’ represent **expert** but ultimately **subjective** opinions about the best way to define or name a concept - they are given from a particular point of view but not grounded in an objective, provable reality.
 
-  - Concept Definitions are most often reported in ontologies and other terminological artifacts such as Mondo. They typically have provenance and rationale describing why a particular naming, classification, or mapping decision was made. They are not usually supported or assessed using the same evidence-and-confidence framework applied to empirical Claims, because they represent terminological or modeling judgments rather than assertions about objective states of the world. For this reason. collect their modeling requirements separately in our effort.
+  - Concept Definitions are most often reported in ontologies and other terminological artifacts such as Mondo. They typically have provenance and rationale describing why a particular naming, classification, or mapping decision was made. Their assessment can differ from empirical claims, but they are **not excluded** from EPC requirements collection. Use the Claim Type, EIT, EINT, and PROV forms to capture applicable evidentiary support, curation provenance, confidence, review, and interpretation requirements for names, synonyms, definitions, classification, and mappings. Preserve the project’s actual semantics; do not presume that every terminological judgment has an EvidenceLine.
 
   - In our work, we will use “**Concept**” to refer to the abstract notion of some thing that exists in reality, “**Name**” to refer to labels used to refer to concepts in speech or writing, and “**Term**” to refer to a formal characterization of a concept in a terminological artifact - which often provides things like identifiers, preferred and alternate names, synonyms, and mappings to other terms.)
 
@@ -151,7 +211,7 @@ Below we define and share preferred names for several foundational concepts wher
 >
 > **Example 2:** One or more passages from biomedical publications describing CFTR dysfunction, in Cystic Fibrosis (CF) together with the source publications or other structured information from which those passages were obtained - from which an AI Agent derives a structured claim purporting that CFTR dysfunction is causal for CF.
 >
-> Note that the notion of “**evidence**” is relevant for **Claims**, but not **Concept Definitions** - which are more subjective characterizations of concepts or terms rather than statements about the entities in reality that these terms reference.
+> Evidence can also be relevant to concept-definition statements—for example, an external terminology record that corroborates a synonym or a classification source used to evaluate a subclass placement. Whether a source is evidence, origin provenance, or both depends on how it is used in the particular judgment.
 
 ### “Evidence Interpretation”
 
@@ -177,7 +237,7 @@ Below we define and share preferred names for several foundational concepts wher
 >
 > **Example 2:** An AI-Agent reports a numerical score of 0.6 that indicates its confidence that it correctly identified and mapped a concept in text to a correct ontology term.
 >
-> Note that, like “evidence”, the notion of “**confidence**” is relevant for **Claims**, but not **Concept Definitions** - which are more subjective characterizations of concepts or terms, rather than statements about the entities in reality that these terms reference.
+> Confidence may apply to empirical claims **and** concept-definition statements, such as confidence in an equivalence mapping, synonym assignment, or subclass placement. Distinguish confidence in semantic alignment from confidence in the statement being asserted.
 
 ### “Agent”
 
@@ -191,11 +251,11 @@ Below we define and share preferred names for several foundational concepts wher
 
 > **Definition:** Information about the origins and history of data or knowledge artifacts, including the processes, inputs, agents, and transformations involved in their creation, interpretation, curation, retrieval, or modification.
 >
-> Note that, unlike “**evidence**” and “**confidence**”, the notion of “**provenance**” is relevant to both **Claims** and **Concept Definitions** - however the levels and kinds of provenance differ between them. In this document we focus on characterization of **Claim Provenance**.
+> Provenance applies to both empirical claims and concept-definition statements. The applicable provenance layers depend on the record and workflow; use the same framework to elicit the types needed for a given project without assuming every layer applies.
 >
 > Below, we make an explicit distinction between five ‘levels’ of provenance relevant to Claims encoded in biomedical knowledgebases. It is important to understand these levels, as they **provide a framework for understanding and collecting EPC requirements** in the forms that follow.
 
-#### Five Levels of Claim Provenance
+#### Five Levels of Provenance
 
 1. **Evidence Item Provenance:** Describes how information items that may *later* be used as evidence for claims - such as experimental measurements or observations, derived statistical results, images, datasets, or prior claims - were originally generated, measured, extracted, curated, or otherwise produced - before they were used in evidence-based reasoning.
 
@@ -249,494 +309,287 @@ Below we define and share preferred names for several foundational concepts wher
 5. **Retrieval Provenance:**  
    On May 12, 2026, the dismech-to-monarch pipeline retrieved the YAML record, mapped its identifiers and relationships into the Monarch/Biolink representation, generated the corresponding knowledge-graph edge and provenance metadata, and loaded them into the Monarch KG.
 
-
 # III. Populating Requirements Collection Forms
 
-The bundled `Requirements_Collection_Forms.xlsx` workbook contains the following worksheets for collecting Evidence, Provenance, and Confidence (EPC) requirements for your project:
+The `Requirements_Collection_Forms.xlsx` workbook contains **Project Overview (PO), Claim Type (CT), Claim Representation Structure (CRS), Reified Claim Semantics (RCS), Evidence Item Types (EIT), Evidence Interpretation (EINT), Provenance Types (PROV), and Claim–Evidence Matrix (CEM)** worksheets. Work within the selected project scope and reviewed Resource Inventory. The respondent-facing definitions below reflect the worksheet’s field order; every numbered field is shown with its bracketed identifier.
 
-1.  **Project Overview Form:** reports on the scope and goals for your project
+## General conventions for completing every form
 
-2.  **Claim Type Form:** enumerates the key kinds of claims your project reports (as context for understanding/enumerating the kinds of evidence and provenance that need to be represented)
+- **Y / N / M:** `Y` = Yes, `N` = No / not established in the assessed scope, `M` = Maybe / needs discussion. For an [F1] `N`, say whether absence was demonstrated or the capability was not established from the inspected canonical set; do not claim definite absence from an incomplete inspection. For [F2], `Y` and `M` require project-specific support from allowed desired-state resources. An `M` must identify both the affirmative indication and the unresolved issue. A desired capability is not established simply because an agent thinks it useful.
+- **[F1] and [F2] are independent.** An existing feature is not automatically a desired feature, and a missing [F1] feature is not automatically desired. A target redesign may intentionally retire current features. Distinguish documented intent from conjecture.
+- **Support versus scientific evidence:** use *support*, *basis*, *source*, *rationale*, and *justification* for what substantiates form assessments; reserve *evidence* for the domain information bearing on claims or concept-definition statements.
+- **Source citations:** identify Resource Inventory Source IDs, release/commit, document section or record key, and relevant access limitations. The chosen canonical [F1] source set must be verified. Never silently upgrade a live website, intermediate artifact, or external documentation example to canonical current-state data.
+- **Basis fields:** In the assessment sheets, [F3] Basis for F1 Response gives a concise, traceable [F1] rationale. [F4] Basis for F2 Response gives the corresponding [F2] rationale, with maturity/commitment and uncertainty when relevant. For [F2] `Y` or `M`, start with the applicable maturity designation where a controlled vocabulary has been defined (for example *Exploratory*, *Proposed*, or *Established*), then give source support; for `M`, explain what prevents `Y`. The column header itself does not impose a new controlled vocabulary.
+- **Complete explanations:** [F5] Explanation / Considerations must be sufficiently detailed and self-contained to explain both [F1] and [F2] judgments, applicability, source fields, semantic distinctions, qualifiers, limitations, process granularity and unresolved questions. It is fine—and often helpful—to repeat supporting information already summarized in [F3], [F4], or other columns.
+- **Concrete examples:** where a worksheet asks for examples from your data, give a short explanation, a minimal snippet of actual source-native fields and values when available, and a source/record reference. Clearly label schematic examples; invented or composite values are never proof of [F1]. Link to a larger memo example (EX01, EX02, etc.) for a complex record.
+- **Required and optional:** `(r)` is required and `(o)` is optional; `(r*)` is conditionally required according to the corresponding definition. Complete optional fields when relevant; do not fill them with speculative mappings.
+- **Preserve forms and downstream boundaries:** Do not change predefined Requirement IDs or the informational `SEPIO Mapping Summary` cells. Use stable IDs for any allowed `Other` rows. The later Requirements → SEPIO mapping stage is separate from requirements elicitation.
 
-3.  **Claim Representation Structure Form:** reports how claims are packaged or embedded in current project data, and what representation structures the project wants to preserve or support in future implementations
+## 1. Project Overview Form (PO)
 
-4.  **Reified Claim Semantics Form:** for projects requiring a reified Claim / Statement object, reports what semantic information that object must represent, including textual and structured proposition semantics, proposition placement, and qualifiers.
+**Purpose.** Provide concise project-level context: the project’s scope, its main data and use cases, and why representing evidence, provenance and confidence matters. Use canonical sources for current-state descriptions and approved project materials for future goals; distinguish them clearly.
 
-5.  **Evidence Item Type Form:** reports the kinds of information or artifacts the project currently represents, or wants to represent, as evidence for its claims
+### Field dictionary (worksheet order)
 
-6.  **Evidence Interpretation Form:** reports what information about evidence interpretation and organization need to be captured in your project.
+- **Project Name (r):** The official name of the project/resource.
+- **Representative(s) (r):** People contributing or validating the requirements on the project’s behalf; do not invent names.
+- **Description (o):** The project’s purposes, major datasets, kinds of claims or concept-definition statements, workflows, consumers, and known current/future distinctions. Keep this an orientation, not a substitute for the detailed form rows.
+- **Evidence/Provenance Needs (o):** Why EPC representation is needed, the primary use cases, and important known limitations. Include concept definitions, synonyms, classification and mapping judgments when they are in project scope.
 
-7.  **Provenance Types Form:** reports what types of provenance information you want to be able to capture about how information used as evidence is originally produced, how this evidence is organized and interpreted, and how claims are generated and encoded, and retrieved across systems.
+## 2. Claim Type Form (CT)
 
-Guidance and instructions for populating each form are provided below; complete the corresponding worksheet in `Requirements_Collection_Forms.xlsx`. Note that a separate set of requirements forms will be provided for Concept Definitions and related terminological statements that make up much of the content of ontologies and other terminological systems.
+**Purpose.** Identify the main kinds of statements whose semantics or EPC needs differ. These may include empirical/domain claims **or** concept-definition statements (such as synonym, subclass, mapping, and naming assertions) when the project evaluates, supports, or curates them. The goal is a useful number of Claim Types, not exhaustive enumeration of every predicate.
 
-## General Requests for Populating Forms
+**Defining a Claim Type.** Describe its **subject category → relationship type → object category**, with contextual qualifiers as needed. For example, `Drug — treats — Disease`, `Disease — has phenotype — Phenotype`, or `Ontology term — is subclass of — Ontology term`. Combine related types only when their EPC requirements are substantially the same; split them where evidence sources, interpretation, provenance, or confidence differ. A small project may list closely related types separately for clarity, while a project with many predicates may group several subject/object categories or relationships under one Claim Type when their EPC needs are similar. For example, an NLP resource might group `Gene/Chemical — causes/interacts_with/affects — Gene/Chemical` statements if they share the same evidence and provenance patterns. Avoid both one-row-per-predicate proliferation and broad groupings that conceal genuine EPC differences. Preserve source vocabulary, even if a relationship is expressed by multiple domain-specific fields. The form includes removable example Claim Types; replace them with project types.
 
-- **Use Key Concepts and Terminology:** Respondents do not need to understand the SEPIO model. But please describe your project and data using terms from the “Key Concepts and Terminology” section above where possible. This will provide requirements with maximal clarity, consistency, and utility for data modelers.
+### Field dictionary (worksheet column order)
 
-- **Response conventions used across the forms:**
-  - Y = Yes, N = No, and M = Maybe / Needs discussion.
-  - For **F1/current-state** questions, use only the current-state canonical sources and explicitly designated canonical companions named in the selected scope. If an allowed canonical artifact was directly inspected and the feature is demonstrably absent, `N` may be appropriate. If the evidence is incomplete or ambiguous, use `M` and explain why.
-  - For **F2/desired-state** questions, use only sources included in the selected desired-state evidence set. Answer `Y` when there is affirmative project-specific support for the capability, including support documented as `EXPLICIT_FUTURE_REQUIREMENT`, `EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT`, or `DOCUMENTED_MODEL_INTENT`. Do not mark a feature desired merely because it seems useful.
-  - “Desired in SEPIO-based Data” means desired support in the project’s future SEPIO-based representation; in this phase, these answers are used to determine what must be available in a project-level SEPIO Covering Model, not to define profile-level cardinality or requiredness constraints.
-  - When **F2 differs from F1**, identify the supporting desired-state Source ID + source name/version and support type in `Explanation / Considerations`.
-  - Agents should complete only respondent-facing fields. **Do not edit content in the SEPIO Mapping Summary columns, and do not use those summaries to decide what the project's requirements should be.**
-  - Where a field provides a predefined set of permissible values, use the labels exactly as written rather than paraphrasing them. Multiple permitted values should be separated with semicolons. Free-text explanation and example fields provide context for mapping and validation, but should not by themselves be treated as deterministic mapping triggers unless a mapping rule explicitly says so.
-  - **Required vs. optional fields:** Each respondent-facing question/field is marked as required (`r`) or optional (`o`). A few fields are marked (`r*`) - which indicates a conditional requirement that is described in the Dictionary for that form. Please complete optional fields whenever you reasonably can, as these details often provide important context for modeling and implementation. If an optional field cannot be completed or is not relevant, it is still helpful to say so briefly (for example, “n/a” “not available,” “not applicable,” or “not currently known”) and explain why when useful.
-  - **“Used in Current Data?” vs. “Desired in SEPIO-based Data?”:** These columns intentionally use different evidence rules. F1 is a conservative description of the selected canonical source set. F2 is a maximal but evidence-supported statement of what the project should support under the selected desired-state scope. A current capability will often also be desired, unless evidence indicates that it is legacy, incidental, deprecated, or intentionally excluded. A capability absent from F1 may still be `Y` in F2 when allowed project evidence supports it. If desired-state intent remains uncertain, use **M (Maybe / Needs discussion)** and explain the uncertainty. All AI-generated F2 responses remain provisional until human review.
+- **Identifier (r):** Stable project Claim Type reference, usually `C001`, `C002`, etc. These are **not** requirement IDs and do not directly trigger SEPIO mappings.
+- **Descriptor (r):** Short, interpretable name, e.g., `Disease–Phenotype Association`, `Synonym Assignment`, `Variant–Drug Response`.
+- **Subject Category(ies) (r):** One or more source-relevant subject categories; separate multiple categories with semicolons. Use the narrowest useful distinctions without gratuitous fragmentation.
+- **Relationship Type(s) (r):** The relationship(s) asserted (e.g., `has phenotype`, `causes`, `is synonym of`, `subclass of`). Semicolon-separate multiple values; distinguish proposition semantics from record encoding.
+- **Object Category(ies) (r):** Object categories for this type, with the same granularity guidance as subjects.
+- **Qualifying Information (o):** Context that refines the proposition, such as disease context, population, anatomy, severity, frequency, evidence modality, or validity interval. Do not confuse a qualifier with the object merely because a project stores both in adjacent fields.
+- **Example Claim(s) from Your Data (r):** Actual human-readable example statements, ideally drawn from canonical project records. Include a source-native phrase and, where helpful, indicate how domain fields encode the assertion. Keep examples representative rather than invented.
+- **Link(s) to Example Record(s) (o):** One or more labeled, traceable references to records of the type: `Web UI: …`, `API/query: …`, `Dataset/release: …; record ID: …`, `Documentation: …`. Prefer records corresponding to the preceding example claims, but another type-matched record is acceptable. A general portal link is not a substitute for a specific record pointer; do not invent endpoints.
+- **Evidence/Provenance Notes (o):** State the evidence, interpretation, provenance, and confidence information the project wants represented *for this Claim Type*, explaining meaningful type-specific differences. This is not just the information a curator might have consulted internally.
+- **Additional Notes (o):** Other limitations, terminology nuances, differences across subtypes, decision questions, or future intentions.
 
+### Short populated example (column order)
 
-## 1. Project Overview Form (PO) 
+| Identifier | Descriptor | Subject Category(ies) | Relationship Type(s) | Object Category(ies) | Qualifying Information | Example Claim(s) from Your Data | Link(s) to Example Record(s) | Evidence/Provenance Notes | Additional Notes |
+|---|---|---|---|---|---|---|---|---|---|
+| C001 | Disease–Phenotype Association | Disease | has phenotype | Phenotype | Frequency; severity | Cystic fibrosis has phenotype chronic respiratory infection | Dataset/release and record ID to be supplied for the actual project | Capture authoritative source and relevant support; specify whether frequency is a proposition qualifier | Illustrative pattern only, not a verified record |
 
-**Purpose:** Use this form to provide enough high-level context for the modeling group to understand your project, the kinds of knowledge it manages, and why evidence/provenance representation matters for your use cases. Keep responses concise; detailed requirements are collected in the later forms.
+When claim types span several categories, additional semicolon-separated subject, relationship and object values are appropriate provided EPC requirements remain similar.
 
-**How to complete it:** Describe the project according to the **selected scope**. Current-state descriptions should be grounded in the designated canonical source set; planned or desired capabilities should be drawn only from the allowed desired-state evidence set. AI agents should not infer requirements from what similar projects do. If something is uncertain, use “Unknown” or “Needs discussion.”
-### **Dictionary**
-- **Project Name (`r`)** is the name of the project or resource.
+## 3. Claim Representation Structure Form (CRS)
 
-- **Representative(s) (`r`)** identifies the people contributing requirements on its behalf.
+**Purpose.** Record **how claims are packaged or embedded** in project data, separately from what the propositions mean. A project may represent some claims as parent-record slot/value pairs, others as nested records, reified Statement objects, or graph edges. Several rows may be selected. The source structure need not be preserved in the desired SEPIO-based representation unless the project actually requires that form; document this in [F5].
 
-- **Description (`o`)** briefly summarizes the kinds and sources of knowledge the project contains, major workflows, and primary users/use cases.
+### Field dictionary (worksheet column order)
 
-- **Evidence/Provenance Needs (`o`):** briefly explains why the project needs evidence and provenance represented and the main use cases those representations need to support. Provides high level context/use cases for the more specific requirements captured in the remaining forms.
+**Prepopulated informational fields**
 
-## 2. Claim Type Form (CT) 
+- **Requirement ID:** Fixed `CS.*` identifier for each structural pattern; do not change. If an `Other` structure is needed, create a stable project-specific ID such as `CS.CUSTOM.001`.
+- **Claim Representation Structure:** Names the predefined packaging pattern being evaluated.
+- **Description:** Defines what the representation physically/structurally looks like and what surrounding context supplies.
+- **Illustrative Example(s):** Schematic examples to orient the respondent, not mandatory syntax.
+- **General Utility / Implications of this Structure:** Explains typical addressability, metadata, and transformation implications; not itself a project requirement.
 
-**Purpose:** Use this form to identify the main kinds of claims for which your project needs evidence, provenance, or confidence represented. The goal is not necessarily to enumerate every predicate in your data, but to distinguish claim types where the underlying semantics or EPC requirements differ.
+**Respondent fields**
 
-**How to complete it:** Define Claim Types using the categories of entities involved, the relationship asserted between them, and important qualifiers. See guidance below about the granularity at which to distinguish claim types when reporting them in the form. Use real project examples wherever possible. Claim Types with essentially the same evidence/provenance requirements may be grouped; separate them when their EPC requirements materially differ. Do not try to map these claims to SEPIO classes yet.
+- **[F1] Used in Current Data? (r):** Enter `Y`, `N`, or `M` for the specified structure in the canonical source. Assess every row independently; give [F3] support.
+- **[F2] Desired in SEPIO-based Data? (r):** Enter `Y`, `N`, or `M` for genuinely desired representation. A current parent slot/value may be transformed to a reified Statement if project support favors that design. Do not select an approach merely because SEPIO supports it.
+- **[F3] Basis for F1 Response (o):** Give concise canonical schema/record examples, identifiers, locations, and inspection limits that justify [F1].
+- **[F4] Basis for F2 Response (o):** State the project-specific basis for [F2], relevant maturity or design status, and, for `M`, the unresolved choice about preserving versus transforming the source structure. Cite sources.
+- **[F5] Explanation / Considerations (o):** Provide a self-contained account of which Claim Types use the structure, what is implicit in parent context, whether qualifiers and metadata can be attached, and the rationale for both judgments. Explicitly state whether the original packaging **must be preserved** in the SEPIO-based representation or **may be transformed** into a different structure that preserves the proposition semantics. For example, a direct knowledge-graph edge might become a reified Statement so evidence and provenance can be attached; if retaining an edge-based shape is itself required, explain the project-specific basis. Distinguish a source implementation convention from a genuine future representation requirement.
+- **SEPIO Mapping Summary (informational):** A downstream reference only. Do not populate or use it to justify a requirement.
 
-**Guidance for AI agents:** Do not create separate Claim Types simply because predicates differ if the project treats their evidence/provenance identically. Conversely, do not collapse claims that have materially different evidence or provenance requirements.
+**Pattern examples.** A parent record property (`disease: {phenotype: ...}`) differs from a nested claim object with its own fields, a first-class association with its own identifier, and an RDF subject–predicate–object edge. More than one pattern may apply to different Claim Types. Select `M` rather than guessing when the intended future packaging is unresolved.
 
-**Additional Resources**: See the Guidance below for How to Define/Distinguish Claim Types, as well as a Dictionary that defines and provides examples of values in each column/field in the form, as well as Populated Example of the form.
-
-## How to Define / Distinguish Claim Types
-
-A Claim Type is defined based on the category of things the claims connect (**subject** **category**, **object category**), and the type of relationship they assert to hold between them (**relationship**). Formally, Claim Type = S<sub>cat</sub> + Rel + O<sub>cat</sub>. Examples:
-
-- **Drug** - treats - **Disease**
-
-- **Disease** - characterized by - **Phenotype**
-
-- **Chemical** - affects - **Gene/GeneProduct**
-
-You can be as granular as you see fit in distinguishing types of claims defined in this way - depending on the number/diversity of claim types in your dataset, and the specific evidence and provenance requirements for each.
-
-In selecting the subject and object categories to define a Claim Type, you can use very specific categories (e.g. “Drug”, “Pathological Process”), or broad categories / sets of categories (e.g. “Thing”, “Chemical Entity”, “Process”, “Gene Protein or Transcript”) as appropriate. *But try **NOT** to lump claim types together if they have different evidence/provenance modeling requirements.*
-
-If your project deals in only a handful of claim types, it may be reasonable to list each separately even if they have the same types of E/P requirements.
-
-If your project reports very many and diverse claim types, feel free to collapse them to a reasonable number by specifying many subject/object categories or relationship types in one Claim Type description - as long as the evidence and provenance modeling requirements for those claims are roughly the same.
-
-For example, if your project uses NLP to extract several kinds of triples from text, and the EPC for all types of triples is the same, you can define your Claim Type as “**Thing** - related to - **Thing**”, or enumerate categories and say **“Gene/Chemical** - causes / interacts_with / affects - **Gene/Chemical”**.
-
-The goal here is to distinguish as few Claim types as necessary to convey the diversity of knowledge in your datasets, while reporting areas where different types of claims may require different modeling.
-### **Dictionary**
-The data dictionary below describes the types of information to provide about each claim type (r= required, o = optional).
-
-***NOTE** that the form includes **two example entries** for illustrative purposes. The second one shows a case where multiple subject and object types and predicates are grouped together into a single Claim Type entry for brevity/convenience - because claims of this type generally have the same kind and level of EPC metadata and modeling requirements. You can leave these examples in the form or delete and overwrite them.*
-
-- **Identifier (`r`):** A numerical identifier of the form “C###” that serves as the project-level stable key for the Claim Type and can be used to reference that Claim Type from elsewhere in the requirements package. Claim Type identifiers are reference identifiers only; they are not Requirement IDs and do not directly trigger mappings to SEPIO model elements.
-
-  - <u>Examples</u>: “C001”. “C002”, …
-
-- **Descriptor (`r`)**: A short name by which we can reference the type of claim
-
-  - <u>Examples</u>: “Causal Relationships”. “Disease Treatment” “Disease-Phenotype Association”, “Disease Pathophysiology”, “All Term-Level Relationships”.
-
-- **Subject Categor(ies) (`r`):** The types of entities that are subjects of this type of claim (semi-colon separated list if more than one)
-
-  - <u>Examples</u>: “Entity”, “Gene; Protein; Transcript”, "Chemical Entity”, “Biological Process; Molecular Function”, “Drug; Small Molecule; Molecular Mixture”, “Disease; Phenotype”
-
-- **Object Categor(ies) (`r`):** The types of entities that are objects of this type of claim (semi-colon separated list if more than one)
-
-  - <u>Examples</u>: “Entity”, “Gene; Protein; Transcript”, "Chemical Entity”, “Biological Process; Molecular Function”, “Drug; Small Molecule; Molecular Mixture”, “Disease; Phenotype”
-
-- **Relationship Type(s) (`r`):** The types of relationships asserted to hold between entities in the subject and object categories (semi-colon separated list if more than one)
-
-  - <u>Examples: “associated with”, “causes”, “treats”, “has phenotype”, “affects”, “acts upstream of”</u>
-
-- **Qualifying Information (`o`):** types of additional information that refine, extend, or add context to the claim expressed by the subject–relationship–object structure.
-
-  - <u>Examples</u>: “anatomical context”, “frequency; severity”, “disease context”, “relevant population”
-
-- **Example Claim(s) from Your Data (`r`):** One or more concrete examples of an instance of this type of claim, to illustrate the nature of the subjects and objects and relationships reported and how they are encoded/framed.
-
-  - <u>Examples</u>:
-
-    - “Cystic fibrosis has phenotype chronic respiratory infection“,
-
-    - “The EGFR V600E variant predicts sensitivity to afatinib in patients with Lung Carcinoma”;
-
-- **Evidence/Provenance Notes (`o`):** Free-text description of the evidence, provenance, and confidence information the project wants represented for this Claim Type. Focus on information that should be captured, exchanged, or exposed in the data—not merely information that may have been used during claim generation.
-
-  - <u>Examples</u>:
-
-    - “We generally need to capture only the source from which the knowledge was retrieved, and any publications or evidence types reported by those sources.”;
-
-    - “For all claims extracted from text by our AI agents, we need to capture detailed information about the extraction, grounding, and normalization of each concept in a claim the AI agent identifies in text and structures into a Statement in our data. We also need to capture the name and version of the agents and tools used, and the raw text that was used, the id and name of the publication, and the section of the publication it was found in.”
-
-- **Additional Notes (`o`):** Additional descriptions or notes, as needed to convey additional useful nuances of considerations for this type of claim.
-
-A Populated Example
-
-An example of a few claim types described using these fields:
-
-| **Identifier (`r`)** | **Descriptor (`r`)**            | **Subject Category(ies) (`r`)** | **Object Category(ies) (`r`)**           | **Relationship Type(s) (`r`)**      | **Qualifying Information (`o`)**       | **Example(s) (`r`)**                                                                       | **Evidence/Provenance Notes (`o`)**                                                                                                                                                                          |
-|--------------------|-------------------------------|-------------------------------|----------------------------------------|-----------------------------------|--------------------------------------|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| C001               | Disease-Phenotype Association | Disease                       | Phenotype                              | has phenotype                     | frequency; severity                  | Cystic fibrosis has phenotype chronic respiratory infection.                             | Capture the source from which the association was retrieved, relevant supporting publications, and any evidence type reported by the source.                                                               |
-| C002               | Variant-Drug Response         | Genetic Variant               | Drug; Small Molecule                   | predicts sensitivity to           | disease context; relevant population | The EGFR V600E variant predicts sensitivity to afatinib in patients with Lung Carcinoma. | Capture supporting clinical or experimental evidence, the source publication, disease/population context, and provenance of any automated extraction or normalization.                                     |
-| C003               | Causal Relationships          | Gene; Protein; Transcript     | Biological Process; Molecular Function | affects; causes; acts upstream of | anatomical context                   | Loss of CFTR function causes impaired chloride transport in airway epithelium.           | For claims extracted from text by AI agents, capture the raw text and publication location; the agent/model and version; extraction, grounding, and normalization steps; and any human review or approval. |
-
-## 3. Claim Representation Structure Form (CRS) 
-
-**Purpose**: Use this form to describe how claims are packaged or embedded in your project’s data, both in the current implementation and in the future project representation you want to support. This form focuses on representation structure—for example, whether a claim appears as a slot/value on a parent record, a nested object, a first-class claim/association object, or a direct graph edge. It does not ask where the semantic components of the claim itself (such as subject, relationship, object, and qualifiers) should live; those requirements are collected separately in the Claim Semantics Form.
-
-The structures reported here are important for understanding project architecture, transformation requirements, and later profile or serialization design. They generally do not directly select SEPIO classes or slots for a Covering Model. A source structure may be transformed into a different SEPIO-based representation as long as the required claim semantics are preserved. If preserving a particular structural pattern is itself important to the project, say so explicitly in Explanation / Considerations.
-
-A project may use or require more than one representation structure. For example, one class of claims may be represented as direct graph edges while another is represented as reified Association objects. Review each row independently and indicate whether the structure is used now and whether the project wants it supported in its future representation.
-### **When completing the form**
-- Select all structures that apply to any claim type in your data; these options are not mutually exclusive.
-
-- Base responses on real project data, schemas, documentation, or examples wherever possible.
-
-- Distinguish current implementation from desired future representation.
-
-- For source-specific structures such as parent slot/value representations, nested objects, and direct graph edges, do not assume that the future SEPIO-based representation must preserve the same structural shape. Use Explanation / Considerations to state whether the structure must be preserved, may be transformed into a semantically equivalent representation, or is still undecided.
-
-- If different Claim Types use different structures, list the relevant Claim Type reference IDs (for example C001, C002) where feasible.
-
-- If you are unsure, use M / Needs discussion rather than guessing.
-
-- AI agents completing a first pass should not invent project requirements or examples. Where possible, retain a traceable source for substantive conclusions and flag uncertain items for human review.
-
-- Focus on the organization or packaging of claim records, rather than the semantic fields that express what the claim means or the evidence/provenance represented around it.
-### **Dictionary**
-**Pre-populated:**
-
-- **Requirement ID:** a stable identifier for the predefined representation-structure row (prefix CS.). These identifiers support cross-reference, traceability, and transformation/profile analysis; they are not Requirement IDs that directly trigger SEPIO class/slot mappings. Do not edit these values. If a genuinely new structure is added under Other, assign a stable custom identifier such as CS.CUSTOM.001.
-
-- **Claim Representation Structure:** a predefined pattern describing how a claim is packaged or embedded in project data. Review the provided options rather than editing these values unless the project requires an additional structure.
-
-- **Description:** defines what the representation structure means and what aspects of a claim are explicit versus supplied by surrounding context.
-
-- **Illustrative Example(s):** illustrates what the structure might look like in actual data. These examples are for orientation and do not prescribe a particular syntax, schema, identifier system, or implementation.
-
-- **General Utility / Transformation Implications:** summarizes practical consequences of the structure, including compactness, ability to attach metadata, dependence on surrounding context, and likely transformation considerations.
-
-**To be completed by respondent:**
-
-- **\[F1\] Used in Current Data? (Y / N / M):** Using only the current-state canonical sources allowed by the selected scope, enter Y if the project currently uses this representation structure for any relevant claims; N if direct inspection of those sources establishes that it does not; or M if the answer is uncertain / needs discussion.
-
-- **\[F2\] Desired in SEPIO-based Data? (Y / N / M):** Using the desired-state evidence sources allowed by the selected scope, enter Y if the project wants a future SEPIO-based representation to support this structural pattern; N if the pattern does not need to be supported; or M if the requirement is unresolved. This is a structural or implementation preference and does not by itself determine which SEPIO classes or slots belong in the Covering Model.
-
-- **\[F3\] Explanation / Considerations (`o`):** provide important additional details, especially whether the structure must be preserved in a SEPIO-based implementation, may be transformed into another structure as long as its semantics are retained, applies only to particular workflows or data sources, or raises unresolved transformation questions. Provide project examples where useful.
-
-- **Relevant Claim Type IDs (`o`):** list the project-level Claim Type reference IDs (for example C001, C002) for which this structure is relevant.
-
-## 4. Reified Claim Semantics Form (RCS) 
-
-**Purpose:** This is a **conditional follow-on form** for projects that need to represent one or more **Reified Claim / Statement Objects** in their future data model. This includes reified objects used to represent the project’s own primary claims, as indicated in the **Claim Representation Structure Form**, as well as reified prior claims that are represented as evidence. Complete the RCS form whenever the project needs any such first-class Claim / Statement object represented in its SEPIO-based data.
-
-A reified claim is represented as a first-class information object that can be independently identified, referenced, and annotated—for example with evidence, provenance, confidence, or other metadata. This form identifies what semantic information that first-class claim object must be able to represent.
-
-If the project does **not** require a Reified Claim / Statement Object in its future representation, this form may be skipped. If the need for a reified representation is unresolved (M) in the Claim Representation Structure Form, this form may either be deferred until that question is resolved or completed provisionally with the uncertainty clearly noted. If only some Claim Types use a reified representation, complete the form with respect to those Claim Types and identify their Claim Type reference IDs where useful.
-
-The form asks whether the reified claim representation must support:
-
-- a human-readable textual expression of the claim;
-
-- structured subject–predicate–object semantics represented directly on the Statement;
-
-- structured subject–predicate–object semantics represented in a separate Proposition object referenced by the Statement; and
-
-- additional qualifying or contextual information that extends or refines the core subject–predicate–object proposition.
-
-These requirements directly inform generation of a project-specific SEPIO Covering Model because they determine which Statement and Proposition capabilities must be available.
-
-In the current SEPIO model, a reified Statement can represent the structured meaning of the proposition it puts forth in either of two supported ways:
-
-- **SPO Semantics on Statement:** the subject, predicate, object, and any qualifiers are represented directly on the Statement.
-
-- **SPO Semantics in nested Proposition:** the Statement references a separate Proposition object, and the subject, predicate, object, and any qualifiers are represented on that Proposition.
-
-These alternatives are represented as separate rows in the form rather than as a single choice. A project may therefore indicate that it needs the Statement pattern, the Proposition pattern, both patterns, or neither. If the project needs only a human-readable claim expression and no structured proposition semantics, it may select only the Human-Readable Claim Text requirement.
-
-The **Reified Claim Semantics Form** should be interpreted together with, but kept distinct from, the **Claim Representation Structure Form**. The Claim Representation Structure Form determines whether a first-class reified claim object is needed at all. The RCS form is used only after that structural requirement is established, to determine what semantic capabilities that object must provide.
-### **When completing the form**
-- Complete this form only if **Reified Claim / Statement Object = Y** under **Desired in Future Project Representation** in the Claim Representation Structure Form.
-
-- If **Reified Claim / Statement Object = M**, either defer this form or complete it provisionally and clearly flag unresolved questions.
-
-- Answer each row based on what the project currently represents and what it wants its future SEPIO-based reified claim representation to support.
-
-- Human-readable text and structured SPO semantics are not mutually exclusive. Mark both as desired if the project needs both a natural-language expression and a machine-computable structured representation of the claim.
-
-- **SPO Semantics on Statement** and **SPO Semantics in nested Proposition** are also not necessarily mutually exclusive. Mark both as desired if the Covering Model must support both patterns.
-
-- Do not select both structured patterns merely because both are available in SEPIO. Select only the pattern or patterns the project actually needs.
-
-- Treat **Qualifying / Contextual Information** as a separate requirement from the core subject–predicate–object representation. Mark it as desired only if the project needs to represent information that refines, constrains, or adds context to the proposition.
-
-- If qualifiers are needed, they should be supported on whichever semantic carrier is required by the project: the Statement, the nested Proposition, or both if both structured patterns are needed.
-
-- If different Claim Types require different semantic patterns, identify the relevant Claim Type reference IDs and explain the distinction.
-
-- If a requirement is unresolved, use M and explain the uncertainty rather than selecting a pattern simply because it appears more expressive.
-
-- AI agents should report the project’s actual semantic requirements and should not choose among alternative SEPIO-supported patterns unless project documentation or a project representative supports that choice.
-### **Dictionary**
-**Pre-populated:**
-
-- **Requirement ID:** a stable machine-facing identifier for the predefined reified-claim semantic requirement row (prefix RCS.). These IDs may be used by the Requirement → SEPIO Mapping Registry to select SEPIO classes, slots, or supported modeling patterns. Do not edit these values.
-
-- **Reified Claim Semantic Requirement:** a short name for the semantic capability being assessed.
-
-- **Description:** defines the information-content requirement for the reified claim representation.
-
-- **Illustrative Example(s):** provides examples of the semantic information that may need to be represented. Examples are illustrative and should not be treated as prescribing a particular syntax, schema, or identifier system.
-
-- **General Utility / Modeling Implications:** summarizes why the distinction matters and how it may affect the generated SEPIO Covering Model.
-
-
-**To be completed by respondent:**
-
-- **\[F1\] Represented in Current Data? (Y / N / M):** using only the current-state canonical sources allowed by the selected scope, enter Y if the project currently represents this semantic capability explicitly in any relevant reified claim objects; N if direct inspection establishes that it does not; or M if the answer is uncertain / needs discussion. If the project does not currently use reified claim objects, N may be appropriate even when the capability is desired in the future.
-
-- **\[F2\] Desired in SEPIO-based Data? (Y / N / M):** using the desired-state evidence sources allowed by the selected scope, enter Y if the future SEPIO-based reified claim representation must support this semantic capability; N if it is not required; or M if the requirement is unresolved. A Y in this field can act as a trigger for inclusion of mapped SEPIO elements in the generated Covering Model.
-
-- **\[F3\] Explanation / Considerations (`o`):** provide additional project-specific details, examples, exceptions, unresolved questions, or distinctions among workflows. Use this field especially when different Claim Types require different semantic patterns or when both structured representation patterns are needed for different reasons.
-
-- **\[F4\] Relevant Claim Type IDs (`o`):** list the project-level Claim Type reference IDs for which the semantic requirement applies when it does not apply uniformly across all reified Claim Types.
-
-Interpretation of the predefined rows:
-
-- **RCS.FREE_TEXT — Human-Readable Claim Text:** select when the project needs the reified claim object to carry a natural-language expression of what the claim asserts. This may be used alone or in addition to structured proposition semantics.
-
-- **RCS.STRUCTURED_STATEMENT — SPO Semantics on Statement:** select when the core proposition expressed by the reified claim must be represented directly on the Statement using explicit subject, predicate/relationship, and object fields.
-
-- **RCS.STRUCTURED_PROPOSITION — SPO Semantics in nested Proposition:** select when the Statement should reference a separate Proposition object that carries the structured subject, predicate/relationship, and object semantics.
-
-- **RCS.QUALIFIERS — Qualifying / Contextual Information:** select when the project needs the proposition meaning to include additional information that extends, refines, constrains, or contextualizes its core subject–predicate–object semantics—for example disease context, anatomical context, population, frequency, severity, or another claim-specific qualifier. Qualifier support should be applied to the Statement and/or Proposition pattern selected by the project.
-
-## 5. Evidence Item Type Form (EIT) 
-
-**Purpose:** Use this form to identify the kinds of information or artifacts your project needs to represent as evidence for its claims, and to describe requirements for representing them.
-
-**How to complete it:** Review each inventoried evidence item type and indicate whether your project needs to represent it as evidence for at least one claim type. Add project-specific examples and relevant details where useful. If an important evidence type is missing, add it under Other or create an additional row. A project may capture multiple levels of the same evidence chain—for example, a publication, a passage within it, a structured statement extracted from that passage, and a study result reported by the publication.
-
-Note that the listed categories are intended as a **practical, respondent-facing framework for requirements collection, not a complete taxonomy of evidence or a proposed SEPIO class hierarchy**. They intentionally include evidence artifacts at different levels of granularity—for example individual measurements, study results, prior claims, database records, publication passages, and whole documents—because projects may represent and reference evidence at different levels. A given evidence item in a project may reasonably correspond to more than one category in this inventory; for example, a ClinVar record used as evidence might be classified both as an **External Data Record** and, if the relevant content is a specific pathogenicity assertion, as a **Directly Corresponding Prior Claim — Structured Data**. In such cases, select all applicable types and explain the overlap or distinction in the Explanations field. Additional types may be added as new use cases emerge, and later semantic modeling will determine how these requirements map to formal SEPIO classes, relationships, and profiles.
-### **Dictionary**
-**Pre-populated:**
-
-- **Requirement ID:** a stable machine-facing identifier for the predefined evidence requirement row (prefix EI.). Do not edit these values. For a new project-specific evidence type added under Other, assign a custom identifier such as EI.CUSTOM.001, EI.CUSTOM.002, et**c.**
-
-- **Evidence Item Group:** column B groups the specific evidence item types for navigation and comparison; it is not a separate requirement row.
-
-- **Evidence Item Type:** names the respondent-facing evidence type represented by the row.
-
-- **Description:** defines what the evidence item type represents.
-
-- **Illustrative Example(s):** provides illustrative examples for orienting the respondent.
-
-**To be completed by respondent:**
-
-- **\[F1\] Represented in Current Data? (`r`):** using only the current-state canonical sources allowed by the selected scope, indicate whether this type of evidence information is currently represented explicitly for at least one Claim Type. Answer **Yes** only if the evidence item itself is captured or referenced in those canonical data—not merely because it appears in an intermediate workflow, paper, upstream source, or other noncanonical resource.
-
-- **\[F2\] Desired in SEPIO-based Data? (`r`):** using the desired-state evidence sources allowed by the selected scope, indicate whether the future SEPIO-based model should support explicit representation of this type of evidence information for at least one Claim Type. This should reflect an evidence-supported project requirement, not merely the fact that the evidence type was involved in generating the claim.
-
-> **Conditional completion:** If Desired in SEPIO-based Data = No, the desired-location, local-representation, addressability, and attribute columns can usually be left blank. If Desired = Yes or Maybe, complete those columns as far as the available project requirements support.
-
-- **\[F3\] Desired Evidence Item Location:** Where should instances of this evidence type be represented or maintained? Select all that apply, using the stable option codes exactly as written:
-
-  - **LOCAL** — In project data ecosystem: the evidence item has some representation within a dataset or resource controlled by the project.
-
-  - **EXTERNAL** — Referenced by external ID/URL: the authoritative or fuller representation exists in an external resource and is referenced using a resolvable identifier or URL.
-
-> Select both where a local representation is maintained together with a link to an external source.
-
-- **\[F4\] Desired Local Representation Form (required when F3 includes `LOCAL`):** If this evidence type is represented within the project’s data ecosystem, indicate how much of the evidence item itself should be represented. Select all that apply where appropriate, using the stable option codes exactly as written.
-
-  - **FREE_TEXT** — Free-text representation: information about or from the evidence item is present only in free-text content and is not separately structured.
-
-    - Example: a DisMech evidence snippet contains the statement that chloride transport was reduced by 42%, but the measurement itself is not separately modeled.
-
-  - **STRUCTURED_METADATA** — Structured metadata / proxy record: a structured object describes or identifies the evidence item, but does not itself encode the evidentiary content carried by that item.
-
-    - Example: a local Figure record stores figure_number, caption, publication, and url, but does not contain the image or the data shown in it.
-
-    - Example: a Dataset record stores title, accession, creator, and URL, but not the dataset contents.
-
-  - **STRUCTURED_CONTENT —** Structured evidence content: the evidentiary information or value carried by the item is explicitly represented in structured fields.
-
-    - Example: an experimental measurement stores value: 42, unit: percent reduction, and confidence_interval.
-
-    - Example: a Prior Claim object stores its subject, relationship, object, qualifiers, and other claim content.
-
-  - **STORED_ARTIFACT —** Evidence artifact itself stored separately: the actual evidence artifact is stored separately within or directly managed by the project.
-
-    - Example: an image file, figure image, PDF, or data table is stored as part of the project’s data resource.
-
-- **\[F5\] Individual Addressability Needed? (required when F3 includes `LOCAL`):** Does the project need individual instances of this evidence type to be represented as separately identifiable/addressable items, so that provenance, evidence interpretation, confidence, or other metadata can be attached specifically to them? Use one of the stable values YES, NO, or NO_SPECIFIC_REQUIREMENT.
-
-  - Values:
-
-    - **Yes** = individual instances needed
-
-    - **No** = the item need only be represented/referenced as part of a larger object/container (e.g. a specific figure referenced from within a publication object)
-
-    - **No specific requirement** = not sure or neither of these (explain as possible)
-
-  - Example: a publication may currently be cited only by PMID at the claim level, whereas a particular figure within that publication may need its own identifier if a project wants to assert that the figure specifically supports the claim.
-
-- **\[F6\] Evidence Item Attributes to Represent (`o`):** What non-provenance-related info about this type of evidence item do you want to capture in the data explicitly? Focus on attributes intrinsic to the evidence item itself, especially those not already covered by the Provenance Type Form (you may want to complete that form first, then return here to add things it did not cover). e.g.
-
-  - for a **Scientific Publication**: title, publication year, journal, authors;
-
-  - for an **Experimental Measurement**: measured value, unit, reference range, confidence interval, detection limit;
-
-  - for a **Statistical Metric**: metric type, value, confidence interval, p-value threshold or significance interpretation;
-
-  - for a **Computational Prediction / Score**: score/value, categorical classification, scale/range, threshold used for interpretation;
-
-  - for a **Figure**: figure number/label, caption, panel identifier;
-
-> *Do not repeat provenance information here unless it is necessary to understand the evidence item itself. For example, “journal” may reasonably be treated as an attribute of a publication, whereas the software version used to generate a result belongs under provenance.*
-
-- **\[F7\] Specific Kinds of this Item Type (`o`):** List the specific kinds or subtypes of this high-level Evidence Item Type that occur in your data or that you want the future model to support. Use the terminology your project normally uses; a formal controlled vocabulary or taxonomy is not required. Be as specific as is useful for understanding modeling needs.
-
-  - For example, if you selected **Experimental or Observational Data Items**, you might list “in vitro and ex vivo measurements,” “cell counts,” “FACS measurements,” “protein-expression measurements,” or “cell-line survival times.” If you selected **Statistical Metrics**, you might list “p-values,” “z-scores,” “odds ratios,” “confidence intervals,” or “chi-square statistics for concept co-occurrence in medical records.” If you selected **Computational Predictions / Scores**, identify the kinds of predictions or scores represented, such as “variant pathogenicity scores,” “drug-sensitivity predictions,” or “protein-structure confidence scores.” If you selected **External Data Record**, describe the kinds of records and their source systems, such as “ClinVar variation records,” “DrugCentral drug records,” or “dbGaP study/phenotype records.” For **Documents, Images, Datasets, Study Results,** or other broad categories, similarly describe the concrete kinds relevant to your project.
-
-  - This field is intended to reveal distinctions that may affect modeling—for example, whether different subtypes require different attributes, provenance, representation patterns, or SEPIO specializations. Do not list every individual instance; describe the meaningful kinds represented across your data.
-
-- **\[F8\] Example(s) from Your Data (`o`):** where possible, provide one or two concrete examples of this evidence item type from the project’s current data. If the evidence type is desired but not currently represented, an illustrative future example may be provided and clearly labeled as such.
-
-- **\[F9\] Explanation / Considerations (`o`):** provide project-specific details about how this evidence type is or should be represented. Note any distinctions in granularity, overlap with other evidence types, important qualifiers, limitations of the current representation, or reasons why the project does or does not want to capture it.
-
-- **\[F10\] Relevant Claim Types (`o`):** optional, but helpful where possible; list the IDs of specific Claim Types from the Claim Type Form for which this evidence type is relevant.
-
-**Guidance for AI agents:** Describe what evidence information the project explicitly represents or wants to represent in its data. Do not infer a requirement simply because a type of evidence was used by a curator, algorithm, or external workflow to generate a claim. Evidence may influence claim generation without being part of the project’s desired data representation. Base selections on project data, documentation, examples, or explicit requirements, and flag uncertainty rather than assuming support is needed.
-
-**Complete respondent fields for each specific evidence-item-type row.**  F7 is optional: list meaningful subtypes where supported, but do not invent subtype distinctions. Do not edit the **SEPIO Mapping Summary** column, and do not use its content when describing the project's requirements.
-
-These questions intentionally separate several downstream modeling concerns: where an evidence item is maintained; how it is represented locally; whether individual instances must be separately addressable; and what intrinsic attributes the representation must carry.
-
-> where does it live? → what representation is needed? → must it be first-class/addressable? → what properties must it carry?
-
-Finally, note that while Documents are included as evidence item type rows in the EIT form, SEPIO does not represent Documents as evidence items. Rather they are represented as sources of evidence that contain / describe evidence items (text passages, data or results, figures or images).
-
-## 6. Evidence Interpretation Form (EINT) 
-
-This form is concerned with how evidence is attached to and interpreted as bearing on a target claim. It includes both lightweight evidence-linking requirements and richer Evidence Line requirements so that downstream mapping can determine whether the Covering Model needs direct Statement-to-evidence shortcuts, EvidenceLine structures, or both.
-
-**Purpose:** Use this form to describe whether and how your project evaluates information as evidence for or against claims, including evidence direction, strength, grouping, contradictory evidence, and aggregation.
-
-**Background Information:**
-
-- There is an important distinction between an **Evidence Item**—the information being considered—and an **Evidence Interpretation**—the judgment about how that information bears on a particular claim. The outcome of such interpretation is an argument for or against the claim - which we call an **Evidence Line**.
-
-- An Evidence Line may assess a single text snippet, observation, measurement, study result, or prior claim; several pieces of information of these types that come from one or many studies or publications; or even other lower-level Evidence Lines.
-
-- The types of and granularity at which evidence is assessed to produce an Evidence Line is up to the data provider - and matches the level at which they wish to assess the direction and strength of support evidence items have for the target claim.
-
-- For example, consider two projects that use LLM-agents to extract structured statements from literature to support Disease-Phenotype association claims: one project may wish to assess the direction and strength of evidence provided by each distinct snippet, while the other might want to assess all snippets from a single pub together. The SEPIO model supports both.
-
-- Notably, some projects aim to collect evidence that may argue against claims of interest (direction = disputes), in addition to evidence that argues for it (direction = supports) - which can provide a more complete picture of the evidence landscape.
-
-**How to complete the form:** For each topic, indicate whether the capability needs to be captured and explain the project-specific requirement where necessary. The first two rows ask about lightweight linking patterns: direct links from a claim to specific evidence items, and direct links from a claim to source resources that provided evidence when the specific evidence items are not represented. Subsequent rows concern explicit Evidence Interpretation / Evidence Line structures. Base answers on the level at which your project actually makes evidentiary judgments. Do not assume that there must be one Evidence Line per snippet, publication, or study; multiple items may contribute to a single argument, or a project may assess each individually.
-
-Note that for projects with simpler needs around representation of evidence interpretation and provenance, most of the questions in this form may not be relevant. But it is useful to review them in case it sparks ideas for future development.
-### **Dictionary**
-**Pre-populated:**
-
-- **Requirement ID:** a stable machine-facing identifier for the predefined evidence-linking or interpretation requirement (prefix EINT.). Do not edit these values.
-
-- **Topic:** identifies the interpretation feature being considered.
-
-- **Question:** describes the requirement to assess.
-
-- **Example Response/Explanation:** illustrates the kind of answer expected but is not a recommended design.
-
-> ***Note** that if you answer “No” to the first question (“Do you need to capture information about how evidence items are interpreted as bearing on a target claim?”) you may still want to review the subsequent questions to be sure that none of the features they describe are important - but likely do not need to complete the rest of this form.*
-
-**To be completed by respondent:**
-
-- **\[F1\] Represented in Current Data? (`r`):** using only the current-state canonical sources allowed by the selected scope, indicate whether this type of information is currently represented explicitly for at least one Claim Type. Answer **Yes** only if it is captured or referenced in those canonical data—not merely because the activity was performed elsewhere in the project workflow.
-
-- **\[F2\] Desired in SEPIO-based Data? (`r`):** using the desired-state evidence sources allowed by the selected scope, indicate whether the future SEPIO-based model should support explicit representation of this type of information for at least one Claim Type. This should be supported as a project requirement even when the capability is absent from canonical current data.
-
-- **\[F3\] Explanation / Considerations (`o`):** describe how the requirement works in your project, including relevant scales, grouping rules, examples, exceptions, or unresolved questions.
-
-- **\[F4\] Example(s) from Your Data (`o`):** where possible, provide one or two concrete examples of this type of information from the project’s current data. If the feature is desired but not currently represented, an illustrative future example may be provided and clearly labeled as such.
-
-Projects can also choose if they want to focus only on interpreting evidence that supports their claims, or also consider evidence that may argue against claims when determining if and with what degree of confidence they put forth a claim as true or false.
-
-The questions in the **Evidence Interpretation Form** collect requirements related to these types of characteristics of the evidence interpretation and synthesis task. It will be relevant for projects that need to capture how evidence is interpreted as bearing on claims; the modeling group will later determine whether and how this maps to SEPIO Evidence Lines.”
-
-## 7. Provenance Types Form (PROV) 
-
-**Purpose:** Use this form to identify what provenance information your project currently represents, and what provenance information it wants a future SEPIO-based model to support for evidence items, semantic alignment, evidence interpretation, assertions, encoding, and retrieval. Each provenance requirement occupies its own row; the **Provenance Level** column identifies the relevant level. The worksheet does not include separate informational rows describing provenance levels. The conceptual framework below provides that context:
-
-- **Evidence Item Provenance**: Describes how information used as evidence originally came to exist and get into the system of record (independent of and prior to their future use as evidence). Relevant only for projects that want to describe this type of provenance.
-
-- **Semantic Alignment Provenance:** Describes how a source representation was understood and mapped into the concepts/relationships used by the target curator or system, and relevant only for projects that want to describe this type of provenance. In principle, this can apply to human curation or mappings from structured source records; however, in practice this level of detailed provenance is expected to be needed primarily for automated or AI-assisted extraction and semantic alignment from text, where the intermediate extraction, grounding, and normalization steps that produce a structured target representation may need to be recorded and audited.
-
-- **Evidence Interpretation Provenance:** Describes how specific pieces of evidence were interpreted/weighed as arguments for or against a claim. Relevant only for projects that want to describe this type of provenance.
-
-- **Assertion Provenance**: Describes how evidence was ultimately reasoned over to make a claim. Relevant for all projects to some degree - as this is the provenance of how claims are made - but some may want to track provenance here in more detail than others.
-
-- **Encoding Provenance** : Describes how a claim or other information artifact was concretely serialized in a particular format or language (e.g. in a rdf triplestore, or a json document). Relevant only for projects that want to describe this type of provenance.
-
-- **Retrieval Provenance**: Describes a retrieval event in which an encoded representation of a claim or evidence item was moved or transformed between data systems on its way to its present location in the system of record. Examples: TTD → DGIdb → Monarch ingest; DrugCentral → Translator ingest → ARAX; Mondo → Monarch KG → Monarch UI. Relevant only for projects that want to describe this type of provenance.
-
-Not every project needs every provenance level. A lightweight knowledge resource may need only source and assertion level provenance. Projects following detailed evidence interpretation frameworks may require more granular provenance at the level of evidence organization and interpretation. And projects that utilize AI-assisted curation may require detailed provenance at the level of semantic-alignment and interpretation.
-
-**How to complete it:** Review each provenance type independently. For current state, use only the canonical sources allowed by the selected scope. For desired state, use the broader evidence set allowed by the selected scope. Provide concrete project examples where possible, and use the Explanation / Considerations column to record required granularity, value distinctions, exceptions, supporting Source IDs, or other project-specific requirements. Do not mark a provenance type as desired merely because it was involved in generating a claim; mark it desired only when the allowed project evidence supports representing that provenance in future data.
-### **Dictionary**
-**Pre-populated:**
-
-- **Requirement ID:** a stable machine-facing identifier for each provenance requirement row (prefix PROV.). Do not edit these values.
-
-- **Provenance Level:** identifies the type of artifact or task for which provenance is described, according to the Provenance Level Framework above (i.e. provenance of an evidence item, an assertion, an interpretation process, a semantic alignment task, etc)
-
-- **Provenance Area:** identifies the kind of provenance information being considered for the indicated artifact or task—for example Agent, Methods, Resources, Date, Confidence, or Review Level.
-
-- **Provenance Type / Question:** provides a short respondent-facing formulation of what the Provenance Attribute is asking about. Description explains the attribute in more detail at the indicated provenance level.
-
-- **Illustrative Example(s):** provides example values to orient the respondent. **SEPIO Mapping Summary** content is provided for downstream modeling context. Project respondents and AI agents should **not edit it or use it to determine the project's requirements.**
-
-**To be completed by respondent:**
-
-- **\[F1\] Represented in Current Data? (`r`):** using only the current-state canonical sources allowed by the selected scope, indicate whether this provenance information is explicitly captured or referenced for at least one type of Claim or other artifact. Do not mark it current merely because a paper, pipeline, intermediate artifact, or external service shows that the activity occurred.
-
-- **\[F2\] Desired in SEPIO-based Data? (`r`):** using the desired-state evidence sources allowed by the selected scope, indicate whether the future SEPIO-based model should support explicit representation of this provenance information for at least one type of Claim or other artifact. A documented process may support F2 only when the allowed source provides evidence that the capability is an existing project capability or intended requirement, not merely an incidental implementation detail.
-
-- **\[F3\] Example(s) from Your Data (`o`):** where possible, provide one or two concrete examples of this type of information from the project’s current data. If the feature is desired but not currently represented, an illustrative future example may be provided and clearly labeled as such.
-
-- **\[F4\] Explanation / Considerations (`o`)**: Where helpful, provide additional details about this requirement as relevant to your specific project / dataset.
-
-## 8. Claim–Evidence Matrix Form (CEM) — optional/conditional
-
-The CEM worksheet is already included in `Requirements_Collection_Forms.xlsx`. It is intended as a follow-on step after the project's Claim Types and Evidence Item Types have been defined.
-
-**Purpose:** This worksheet indicates which Evidence Item Types are relevant to which Claim Types, offering a compact view of the relationships identified separately in the Claim Type and Evidence Item Type forms. An AI agent may populate a first pass from the completed requirements and supporting project materials. Ambiguous cells should be flagged for human review rather than silently filled.
-
-Example of what this might look like:
-
-|                            | **Supporting Pubs** | **Evidence Type** | **Text Passage** | **Prior Claims** | **Expert Opinion** |
-|----------------------------|---------------------|-------------------|------------------|------------------|--------------------|
-| **Drug-Disease**           | X                   |                   |                  | X                |                    |
-| **Disease-Phenotype**      | X                   |                   |                  |                  |                    |
-| **Causal Chemical Gene**   | X                   | X                 |                  |                  |                    |
-| **Disease-Anatomy**        | X                   |                   |                  |                  |                    |
-| **Protein Interaction**    | X                   |                   | X                |                  |                    |
-| **Model System - Disease** | X                   |                   | X                |                  | X                  |
-
-**How to complete it:** Each row represents one Claim Type from the Claim Type Form. Each column represents one Evidence Item Type from the Evidence Item Type Form. Enter an X where that type of evidence is used or expected to be used for that Claim Type. Leave the cell blank where it is not relevant. Mark actual project requirements rather than every evidence type that could theoretically be useful. The generated matrix should preserve the **Claim Type reference ID** for each row and the **Evidence Item Requirement ID** for each column so that each marked cell can be interpreted as a machine-addressable pairwise requirement. A separate **generated matrix-cell Requirement ID** may be assigned to each marked relationship; this is distinct from the Claim Type reference ID and should not be edited.
-
-If an AI agent generates the initial matrix, it should derive relationships from the completed requirements and supporting project materials rather than assuming common biomedical evidence patterns. Ambiguous cells should be flagged for human review rather than silently filled.
-
----
+## 4. Reified Claim Semantics Form (RCS)
+
+**Purpose.** Use this conditional form when the project represents or may need first-class **reified Claim/Statement objects**—including reified prior claims that serve as Evidence Items. A reified Statement can carry text, explicit structured proposition semantics, qualifiers, evidence, provenance and confidence. If [F2] for reified claim structure is `M` in CRS, complete this form provisionally or defer it, explaining the dependency. RCS describes *semantic content*; CRS describes *packaging*.
+
+Two direct-on-Statement patterns are distinguished **by how semantic roles are identified by attributes**: domain-specific attribute names versus generic SPO role names. A third pattern places structured SPO information in a separate Proposition object. The patterns are independently assessable; do not select them merely because the model permits them.
+
+### Field dictionary (worksheet column order)
+
+**Prepopulated informational fields**
+
+- **Requirement ID:** Stable predefined `RCS.*` semantic requirement ID; do not modify.
+- **Claim Semantic Requirement:** The particular semantic capability to assess.
+- **Description:** Definition of that capability, including where the core proposition is represented.
+- **Illustrative Example(s):** Source-independent example of the capability, not a requirement to adopt the example’s vocabulary.
+- **General Utility / Modeling Implications:** Describes why the pattern matters and possible later modeling consequences, not a substitute for project-specific need.
+
+**Respondent fields**
+
+- **[F1] Used in Current Data? (r):** Judge whether current canonical records actually represent this semantic capability, including implicit domain conventions. Cite support in [F3].
+- **[F2] Desired in SEPIO-based Data? (r):** Independently judge the supported future need. Generic SPO representation is **not automatically required** when existing domain-specific fields can be interpreted as SPO.
+- **[F3] Basis for F1 Response (o):** Refer to source-native attributes, record types or documentation supporting the current assessment, including necessary inference rules.
+- **[F4] Basis for F2 Response (o):** State documentary/design support for future representation, its maturity, and what is unresolved for an `M` judgment.
+- **[F5] Explanation / Considerations (o):** Explain comprehensively which direct or nested semantic carrier applies, how the proposition is reconstructed, qualifiers, constraints, and differences between [F1] and [F2]. Explicitly mention relevant project claim types.
+- **[F6] Relevant Claim Type IDs (o):** List CT identifiers such as `C001; C004` to define applicability; no SEPIO class IDs here.
+- **SEPIO Mapping Summary (informational):** Read-only for requirements collection; later modeling use only.
+
+### Interpretation of the predefined rows
+
+- **`RCS.FREE_TEXT` — Human-Readable Claim Text:** A natural-language statement, alone or alongside structured semantics.
+- **`RCS.STRUCTURED_STATEMENT_DOMAIN_ATTRIBUTE_NAMES` — Structured Claim Semantics using Domain-Specific Attribute Names:** Proposition held directly on a Statement through domain-specific fields. The subject/object roles follow attribute meanings; the relationship can appear in a dedicated attribute or be derived from several fields and their values.
+- **`RCS.STRUCTURED_STATEMENT_SPO_ATTRIBUTE_NAMES` — Structured Claim Semantics using Generic SPO Attribute Names:** Proposition held directly on a Statement using attributes explicitly designating subject, predicate and object roles, regardless of domain. The names need not literally be `subject`, `predicate`, `object` if the generic roles are clearly designated.
+- **`RCS.STRUCTURED_PROPOSITION` — SPO Semantics in Nested Proposition:** The Statement references a separate Proposition object that carries the structured meaning.
+- **`RCS.QUALIFIERS` — Qualifying / Contextual Information:** Context added to the selected semantic carrier(s), such as disease, anatomical location, population or frequency.
+
+**Paired examples representing the same proposition (schematic):**
+
+```yaml
+# Domain-specific Statement attributes
+Statement:
+  gene: HGNC:1884              # Subject role inferred from attribute meaning
+  association_type: causal     # Relationship encoded via domain-specific attribute
+  disease: MONDO:0009061      # Object role inferred from attribute meaning
+```
+
+```yaml
+# Generic SPO Statement attributes
+Statement:
+  subject: HGNC:1884
+  predicate: biolink:causes
+  object: MONDO:0009061
+```
+
+A more complex predictive clinical relationship can be encoded via `molecular_profile_id`, `therapy_id`, `disease_id`, `evidence_type` and `clinical_significance`; translating that example to generic SPO may produce `subject: MP123`, `predicate: predicts_sensitivity_to`, `object: CIViC-T123`, with `disease_context: DOID:3908`. This is schematic: the relationship is inferred from **multiple** fields and disease serves as context *for this claim formulation*, not universally.
+
+## 5. Evidence Item Type Form (EIT)
+
+**Purpose.** Identify information artifacts and source content represented or desired **as evidence** for target statements—including concept-definition statements when relevant. Assess individual **Evidence Item Type** rows, not group labels. The listed groups form a respondent-friendly inventory of different levels of granularity (measurements, statistical metrics, study results, publication passages, documents, structured prior claims, external records, etc.), **not** a proposed SEPIO class hierarchy. An external database record may also qualify as a structured prior claim; indicate such overlapping interpretations in [F5].
+
+**Boundary:** An evidence item is information that may be assessed; an EvidenceLine is an interpretation of one or more items *relative to a proposition*. Do not treat every publication or database record as an EvidenceLine. Documents may be sources containing specific evidentiary information even where the project tracks them as coarse evidence references.
+
+### Field dictionary (worksheet column order)
+
+**Prepopulated informational fields**
+
+- **Requirement ID:** Fixed `EI.*` identifier for the specific evidence item type. Do not edit. Use `EI.CUSTOM.001`, etc., for genuinely new project-specific rows.
+- **Evidence Item Group:** Navigation/category label; not itself a requirement to answer.
+- **Evidence Item Type:** Name of the specific type being assessed, e.g., experimental measurement, study result, text passage or external record.
+- **Description:** Defines the item’s informational nature independently of how it was extracted or imported.
+- **Illustrative Example(s):** Orientation examples, not evidence that the project represents the type.
+
+**Respondent fields**
+
+- **[F1] Represented in Current Data? (r):** `Y/N/M` for whether the canonical source actually represents or identifies this type as evidence-bearing information. Citation or use in an unrecorded internal workflow does not alone establish that it is represented in project data.
+- **[F2] Desired in SEPIO-based Data? (r):** Independently assess supported desired representation of the item type; use broader project sources allowed for [F2], without presuming all potentially useful types are desired.
+- **[F3] Basis for F1 Response (o):** Brief canonical source references, types, records, attribute names and inspection boundaries supporting [F1]; distinguish direct source records from source documentation.
+- **[F4] Basis for F2 Response (o):** Brief source-based future requirement rationale, maturity and unresolved uncertainties where relevant. [F2] `Y` or `M` needs identifiable affirmative project support; an `M` also needs a specific open question.
+- **[F5] Explanation / Considerations (o):** Give a detailed, self-contained explanation of how this item type is represented and used, the rationale for both [F1] and [F2], and why the project does or does not need to represent it. Describe important granularity distinctions, overlap with other Evidence Item Types, qualifiers, applicable claims, whether the item is retained locally or merely cited/referenced, limitations of current representations, and differences between current and desired forms. Include the meanings of relevant source fields where useful, even if repeated in [F3], [F4], [F6], or other focused fields. Do not shorten this field merely to avoid intentional duplication.
+- **[F6] Relevant Source Data Elements (o):** Concise inventory of **existing [F1]** classes, fields, record types or concepts with brief source-native definitions. For example, `class: ClinicalEvidenceItem — interpreted publication-linked evidence record`; `attribute: rating — curator-assigned quality value`. Do not list speculative future fields. This identifies **existing** source elements; it is distinct from the desired attributes requested in [F11].
+- **[F7] Example(s) from Your Data (o):** Briefly describe a relevant item and provide a compact source-native snippet with actual field values and a traceable source ID/record where possible; label schematic future examples. If the full record is large, reference an identified EX## example in the Review Memo. Explain what the snippet illustrates instead of providing raw syntax alone.
+- **[F8] Desired Evidence Item Location (r):** Indicate **where instances of this Evidence Item Type need to be represented or maintained** in the project's desired data ecosystem. Select all applicable workbook codes, separated by semicolons:
+  - **`LOCAL` — In project data ecosystem:** Some representation of the item is maintained in a project-controlled dataset or resource. It may be full structured content, free text, a metadata/proxy record, or a locally stored artifact.
+  - **`EXTERNAL` — Referenced by external ID/URL:** The authoritative or fuller item representation exists outside the project and is referenced by a resolvable identifier or URL; the complete content need not be copied locally.
+  - **`UNSURE` — Needs discussion:** The desired location or the division between local and external representations remains unsettled.
+  Select both `LOCAL` and `EXTERNAL` when the project keeps a local summary/record and also links to its external source—for example, a structured account of publication findings linked to the publication by PMID or DOI. This field concerns **desired representation location**, not where a curator encountered the item or how it was retrieved; the latter are primarily provenance questions.
+- **[F9] Desired Local Representation Form (r\*):** **Required when [F8] includes `LOCAL`.** Indicate **how the item should be represented within project-controlled data**. Select all applicable workbook codes, separated by semicolons:
+  - **`FREE_TEXT` — Free-text representation:** Information about or from the item appears in natural-language text, without distinct structured fields for its substantive content. *Example:* A DisMech passage says chloride transport was reduced by 42%, but the measured property, value and unit are not encoded as separate attributes.
+  - **`STRUCTURED_METADATA` — Structured metadata/proxy:** A structured record identifies, describes or links the item but does not itself encode the substantive evidentiary information it conveys. *Examples:* A Figure object contains `figure_number`, `caption`, `publication` and `url`, but not the image or results depicted; a Dataset catalog record contains `title`, `accession`, `creator` and `url`, but not the observations.
+  - **`STRUCTURED_CONTENT` — Structured item content:** The substantive information or values in the item are separately modeled as structured fields. *Examples:* A measurement stores `value: 42`, `unit: percent_reduction` and `confidence_interval`; a structured prior claim stores subject, relationship, object and qualifiers.
+  - **`STORED_ARTIFACT` — Artifact stored or managed locally:** The item itself (for example a figure image, PDF, data table or other file) is held by or directly managed within the project, rather than merely referenced or described.
+  - **`UNSURE` — Needs discussion:** The intended local representation is not yet established; describe the question in [F4] and [F5].
+  These options **can coexist**: a project may store image metadata plus the image itself, or a textual summary alongside structured content. In particular, **structured metadata describing an artifact does not necessarily structure the evidentiary content that artifact conveys**. Explain significant combinations or ambiguities in [F5].
+- **[F10] Individual Addressability Needed? (r):** Decide whether **individual instances** need to be distinctly identifiable/addressable so they can be independently referenced or linked to provenance, confidence or evidence interpretation. Select one workbook value:
+  - **`YES`:** Individual instances require separate identity/addressability; an interpretation or metadata record can point to that specific item.
+  - **`NO`:** The item need only be present or referenced within a larger container; individual addressability is not required.
+  - **`NO_SPECIFIC_REQUIREMENT`:** No explicit project requirement for separate addressability is established, or it remains unspecified.
+  *Example:* A project may cite a publication by PMID without separately identifying its figures. If it needs to record that **Figure 3B specifically** supports a proposition, with figure-specific interpretation or provenance, the figure may need its own addressable identity. Addressability is a **logical modeling capability**, not a requirement for a separate database table or physical file. Explain subtype-dependent differences in [F5].
+- **[F11] Evidence Item Attributes to Represent (o):** Identify **intrinsic, non-provenance properties** that the project's **desired** representation should capture explicitly. These describe the item's content, characteristics or informational meaning, especially information not already asked about in PROV. Typical examples by type:
+  - **Scientific Publication:** title, publication year, journal, authors.
+  - **Experimental Measurement:** measured value, unit, reference range, confidence interval, detection limit.
+  - **Statistical Metric:** metric type, value, confidence interval, p-value threshold or significance interpretation.
+  - **Computational Prediction / Score:** predicted outcome, score, classification, scale/range, interpretation threshold.
+  - **Figure:** figure number/label, caption, panel identifier.
+  - **Structured Prior Claim:** subject, predicate/relationship, object, qualifiers.
+  Distinguish intrinsic information from **how an item was produced, extracted, curated, transformed or retrieved**, which typically belongs in PROV. For example, `journal` can be a bibliographic attribute of a publication, while the software version used to extract a result is provenance of the extraction activity. Some attributes have mixed significance; explain such cases in [F5] rather than forcing a false boundary. **[F11] specifies attributes desired in the future representation; [F6] names attributes already present in existing source data.**
+- **[F12] Specific Kinds of this Item Type (o):** Describe meaningful subtypes of the broad Evidence Item Type that occur in the project's data **or** should be supported in its desired representation. Use familiar project terminology; a formal taxonomy is not required. For example:
+  - **Experimental or Observational Data Items:** in vitro and ex vivo measurements, cell counts, flow-cytometry/FACS measurements, protein-expression measurements, cell-line survival times.
+  - **Statistical Metrics:** p-values, z-scores, odds ratios, confidence intervals, chi-square statistics for concept co-occurrence in medical records.
+  - **Computational Predictions / Scores:** variant-pathogenicity scores, drug-sensitivity predictions, protein-structure confidence scores.
+  - **External Data Records:** ClinVar variation records, DrugCentral drug records, dbGaP study or phenotype records.
+  - **Documents, Images, Datasets and Study Results:** project-specific kinds such as research publications, clinical reports, microscopy images, sequencing datasets or clinical-study outcomes.
+  List **kinds, not individual instances or an exhaustive taxonomy**. Note distinctions that affect information content, attributes, provenance, representation or possible SEPIO modeling in [F5] and, where relevant, [F11].
+- **[F13] Relevant Claim Types (o):** List relevant CT identifiers, separated by semicolons, e.g. `C001; C003`. An item type may be relevant only to particular claim types or may be interpreted differently depending on the target proposition; explain those differences in [F5]. Do not assume an Evidence Item Type applies to every Claim Type merely because it is present in project data.
+- **SEPIO Mapping Summary (informational):** Do not edit or use to determine which evidence types the project requires. Informational text may be updated later through the separate registry workflow.
+
+**Example of a suitable [F7] cell (schematic; not evidence of current [F1]):** “Curation quality attached to a literature-derived evidence record: `EvidenceItem: {rating: 4, evidence_level: B}`. Source: project evidence documentation, record/example ID if verified.” The actual completed form should use the source's real names and values whenever available.
+
+## 6. Evidence Interpretation Form (EINT)
+
+**Purpose.** Identify what the project represents or needs about **how one or more Evidence Items bear on a target proposition**: direct links, interpreted direction and strength, grouping/granularity, conflicting evidence, and higher-order synthesis. This can support empirical claims or concept-definition statements, depending on the project.
+
+**Interpretation boundary.** A source publication or record is not automatically an interpreted EvidenceLine. An EvidenceLine is an argument assessing its inputs relative to a specific target proposition. One line might interpret one snippet or several evidence items; it may also refer to lower-level EvidenceLines. `EINT.GRANULARITY` includes how items are grouped **within** one line. Synthesis of several lines into a higher-level Assertion is different.
+
+### Field dictionary (worksheet column order)
+
+**Prepopulated informational fields**
+
+- **Requirement ID:** Fixed `EINT.*` row identifier; do not modify.
+- **Topic:** Names the evidence-linking or interpretation feature.
+- **Question:** The exact respondent-facing requirement, including any conditional phrasing.
+- **Illustrative Example Responses/Explanations:** Examples of the kinds of answers expected, not definitive modeling prescriptions.
+
+**Respondent fields**
+
+- **[F1] Represented in Current Data? (r):** Assess whether the specified linking, interpretation or synthesis information is present in canonical records, as opposed to an inferred internal curator activity with no stored representation.
+- **[F2] Desired in SEPIO-based Data? (r):** Record the independently supported project need for the feature. `M` requires a credible project indication and a well-identified unresolved question.
+- **[F3] Basis for F1 Response (o):** Reference the observed record structures, fields, source release and relevant examples that substantiate [F1]. Distinguish direct linking from actual interpreted direction or strength.
+- **[F4] Basis for F2 Response (o):** Record the documented/proposed basis for [F2], maturity where relevant, and uncertainty or alternative patterns for an `M`.
+- **[F5] Explanation / Considerations (o):** Explain, independently of other cells, the unit of judgment, applicable Claim Types and Evidence Item Types, how direction and strength are determined, grouping criteria, conflict handling, higher-order reasoning, and [F1]/[F2] rationale.
+- **[F6] Relevant Source Data Elements (o):** Short source-native names and definitions of **existing** interpretation-related fields, entities or combinations; distinguish an explicit strength field from a score inferred from several fields.
+- **[F7] Example(s) from Your Data (o):** A representative small source-data snippet showing a relationship between assessed items and target claim and, where present, direction/strength. Include source ID and record locator; label synthetic examples as schematic.
+- **SEPIO Mapping Summary (informational):** Only for subsequent mapping; do not edit or use as input to EPC assessment.
+
+### Guidance for the specific EINT requirements
+
+- **`EINT.REQUIRED`:** Whether the project must capture interpretation of information relative to a target claim at all. Direct evidence links and richer explicit EvidenceLines need not be equivalent; examine downstream rows independently even if interpretation is lightweight.
+- **`EINT.DIRECTION`:** Whether evidence supports, disputes or is neutral toward a specified claim; distinguish scientific direction from confidence in extraction quality.
+- **`EINT.CATEGORICAL_STRENGTH`:** Qualitative or ranked strength **of an EvidenceLine relative to its target proposition**, rather than record-quality grades or final assertion confidence.
+- **`EINT.NUMERICAL_STRENGTH`:** Numeric strength/score for the interpreted contribution of evidence to a proposition; do not automatically include an overall claim score or curation queue rank.
+- **`EINT.GRANULARITY`:** Define whether an EvidenceLine assesses individual items, groups several items by study/publication/source/context, or uses other grouping rules, and state the **criteria** for each group. For example, consider two projects extracting disease–phenotype associations from publications: one assigns direction and strength separately to each extracted passage; the other combines passages from the same study into one EvidenceLine and assesses their joint contribution. Both are possible; report which occurs or is desired in the project. **Grouping items within one EvidenceLine is different from synthesizing multiple EvidenceLines into a higher-level Assertion.**
+- **`EINT.CONTRADICTION`:** Representation of both supporting and disputing evidence in the project’s final interpretation; do not assume it includes every kind of incompatible alternative proposition.
+- **`EINT.STACKING`:** Whether one EvidenceLine can be treated as input to a higher-order line and which distinct granularity/aggregation levels result.
+
+**Application example (schematic):** A project reads two separate passages from one study and assigns one study-level EvidenceLine to evaluate their joint support for a synonym assertion. [F5] should explain why they are grouped (same underlying source/study), whereas [F7] can show the two passage IDs and the one interpreted conclusion. The same paper appearing in multiple databases does not automatically create independent lines.
+
+## 7. Provenance Types Form (PROV)
+
+**Purpose.** Identify provenance, method, review, quality and confidence information represented or desired at different levels of the workflow. Apply these to empirical and concept-definition statements where relevant. Do not assume a provenance type must be captured merely because a process occurred outside the project’s desired representation.
+
+**Provenance layers.** Evidence Item (how source information came to exist); Semantic Alignment (extraction, grounding, normalization and semantic mapping); Evidence Interpretation (how items were judged relative to a proposition); Assertion (how claims were accepted or synthesized); Encoding (how records were serialized); Retrieval (how existing encoded representations were fetched/transferred/transformed). Layers are contextual, not automatically required everywhere. Provenance may be attached to individual records, datasets/releases, pipeline runs, activities, or retrieval events; identify which granularity is relevant.
+
+**Semantic boundaries.** Evidence Item **quality** assesses reliability/quality of the input information; evidence **strength** concerns its contribution to a proposition (EINT); semantic-alignment **confidence** concerns whether extracted/grounded meaning is correct; assertion **confidence** concerns the claim or conclusion. A source record can be provenance for *where an item originated* and, separately, scientific evidence when its content is assessed as support for a proposition. The distinctions belong in [F5] even if native fields conflate them.
+
+### Field dictionary (worksheet column order)
+
+**Prepopulated informational fields**
+
+- **Requirement ID:** Stable `PROV.*` identifier for each provenance requirement. Do not change or invent mapping triggers.
+- **Provenance Level:** The level/entity/activity to which the provenance concept applies (Evidence Item, Semantic Alignment, Evidence Interpretation, Assertion, Encoding, Retrieval).
+- **Provenance Area:** The topical category of provenance (e.g. Agent, Method, Resource, Date, Quality, Confidence, Review), not itself an F-numbered response.
+- **Provenance Type / Question:** The particular question or item to evaluate at that level.
+- **Description:** Defines the required information and distinctions; use this before interpreting an example.
+- **Illustrative Example(s):** Sample values that orient the response; they do not establish the feature in the project.
+
+**Respondent fields**
+
+- **[F1] Represented in Current Data? (r):** Decide whether the canonical data explicitly stores or faithfully conveys the provenance/quality/confidence information. Distinguish dataset/release metadata from record-level or activity-level provenance, and observed fields from undocumented workflow practice.
+- **[F2] Desired in SEPIO-based Data? (r):** Independently assess whether approved project materials show a need to represent this level/type. `M` needs some project-specific support, not just possible utility.
+- **[F3] Basis for F1 Response (o):** Give concise source references, exact fields/events/record examples, applicable versions, and inspection caveats supporting the current-state judgment.
+- **[F4] Basis for F2 Response (o):** Give project-specific future-design or requirements support, noting maturity, relevant uncertainty, and the precise resource basis; for `M`, explain the outstanding decision.
+- **[F5] Explanation / Considerations (o):** Give a complete rationale for both judgments. Identify affected Claim Types, Evidence Item Types, datasets or processes; provenance granularity; method steps; agent roles; confidence/quality semantics; distinction between source and assessed evidence; and any limitations or unresolved issues. Do not presume applicability is universal. Repeat details from other fields when needed for a self-sufficient explanation.
+- **[F6] Relevant Source Data Elements (o):** List actual [F1] classes/attributes/concepts and brief source-native definitions, e.g. `attribute: evidence_rating — curator-assigned 1–5-star assessment of quality of an Evidence Item summary`. Multiple fields may jointly encode a concept; do not propose target-model fields here.
+- **[F7] Example(s) from Your Data (o):** Include a short contextual note, concrete source-native field/value snippet, and traceable record. Show the level where the provenance lives (item, claim, run, release, retrieval). Clearly label hypothetical illustrations and link to a full EX## memo example for complex chains.
+- **SEPIO Mapping Summary (informational):** Not respondent-authored. Do not edit, or use old downstream mapping descriptions to infer the requirements.
+
+### Interpretive notes for provenance areas
+
+- **Evidence Item Provenance:** Describe creators, input resources, study/extraction methods, execution details, date/time, contextual location, and source-information quality when applicable. Keep upstream original-record provenance separate from a project-generated extraction artifact's creation provenance.
+- **Semantic Alignment Provenance:** Describe extraction/recognition, grounding, normalization, correspondence method, target ontology or schema, agent and model versions, review, and alignment confidence; an accurate mapping does not by itself establish the truth of an asserted claim.
+- **Evidence Interpretation Provenance:** Report who evaluated what information relative to which proposition, method/guideline, process, time, perspective, and assessment results. Do not mistake interpretation strength for information quality.
+- **Assertion Provenance:** Describe how the final assertion was made or reviewed, using what rules or supporting arguments, by which agents, and at what time or version. Where a confidence score exists, distinguish authored/stated values from computed values. Project-specific policy/decision-history needs can be described in [F5] and flagged for later model mapping if the existing rows do not capture them.
+- **Encoding Provenance:** Describe how an information artifact is expressed or serialized in a particular model, language or format when this is important to the project's representational requirements. Identify the encoding method or rules and their provenance **especially when an encoding decision changes the meaning, specificity or interpretation** of a statement (for example a cross-reference being emitted as an exact match). Different file formats alone do not automatically establish a requirement to preserve detailed encoding provenance.
+- **Retrieval Provenance:** Describe movement of an **already encoded** record between systems: the immediate system it was retrieved from, the destination/consuming system, each system's role, the retrieval event/time, and transformations along the way. Distinguish the **original creator/source of the knowledge** from the **immediate provider of a retrieved representation**. A system may be an upstream source in one activity and a downstream target in another, so specify the particular retrieval event and direction. Describe any transformation or export rule that changes the meaning of the retrieved record, rather than treating transfer as a purely technical step.
+
+**Cross-level example (schematic, not an observed record):** An AI agent extracts a quotation from a paper (Evidence Item creation and semantic-alignment provenance), resolves a disease term (alignment method/confidence), assesses whether the quote supports a subclass claim (Evidence Interpretation), and a curator accepts the assertion under a documented policy (Assertion Provenance). This illustrates why recording extraction confidence alone is not the same as recording confidence in the asserted subclass relationship.
+
+## 8. Claim–Evidence Matrix Form (CEM)
+
+**Purpose.** Produce **two project-specific matrices** on the existing CEM worksheet: one for **[F1]/current state**, one for **[F2]/desired state**. The matrices relate Claim Types (`C###`) to Evidence Item Types (`EI.*`) and complement—not replace—the detailed forms.
+
+**How to complete.** Use the completed CT and EIT forms and project-specific source support. Determine relevant claim-type rows and evidence-type columns for **each** state before writing. Preserve all applicable identifiers, preferably in a comparable ordering across [F1] and [F2]. Populate `Y` for an established supported relationship, `M` where source-supported applicability requires discussion, and leave blank if no relevant relationship is identified. **Do not use `X`, `N`, or an unrelated illustrative matrix.** For negative or disputing evidence, explain the polarity in the associated forms or memo rather than inventing a new cell-value convention.
+
+**Layout and validation.** The worksheet has designated [F1] and [F2] titles/areas, but no prepopulated example matrix. If more [F1] rows are needed than the allocated space (initially 24 Claim Type data rows), **insert rows above the [F2] title** to move the entire [F2] section safely; then size [F2] and the evidence-type columns as necessary. Preserve headings, cell content, styles, validations and any formulas. Confirm no rows/columns were truncated, no [F1] content overwrote [F2], and that every marked relationship has traceable project support. Do not mechanically copy [F1] cells to [F2]; assess the two separately.
 
 # IV. Completeness and Consistency Check Before Submission
 
@@ -744,9 +597,9 @@ Before returning the completed workbook to the project representative, the agent
 
 - check every required respondent-facing field;
 - verify that controlled values use the labels defined in the workbook/guidance;
-- verify that every F1/current-state conclusion is supported only by the current-state canonical sources/companions allowed by the selected scope;
-- verify that every broader F2/desired-state conclusion is supported by an allowed desired-state source;
-- when F2 differs from F1, verify that `Explanation / Considerations` names the supporting Source ID + source name/version and desired-state support type;
+- verify that every [F1]/current-state conclusion is supported only by the current-state canonical sources/companions allowed by the selected scope;
+- verify that every broader [F2]/desired-state conclusion is supported by an allowed desired-state source and not speculation;
+- for each [F2] `Y` or `M`, verify [F4] Basis for F2 Response cites a project-specific source and explains the rationale; for each `M`, verify uncertainty is explicit;
 - compare answers across forms for internal consistency;
 - identify contradictions between project sources or between current-state and desired-state answers;
 - identify required questions that remain unsupported or unresolved;
@@ -755,7 +608,7 @@ Before returning the completed workbook to the project representative, the agent
 - verify that intermediate project artifacts have not been treated as current canonical data unless the selected scope explicitly includes them;
 - verify that downstream/API/UI enrichments have not been treated as canonical project requirements unless the selected scope says otherwise;
 - retain traceability to the Resource Inventory sources supporting non-obvious conclusions; and
-- prepare the Requirements Review Memo described in the Core Behavioral Rules above.
+- prepare the Requirements Review Memo described in the Core Behavioral Rules above, including its current-state project/dataset overview and form-by-form synthesis.
 
 A partially completed workbook with clearly marked unknowns is preferable to a fully populated workbook containing inferred or invented requirements.
 
@@ -763,7 +616,7 @@ A partially completed workbook with clearly marked unknowns is preferable to a f
 
 After a project representative reviews and confirms the completed requirements workbook, the requirements-to-model workflow applies the maintained Requirement → SEPIO Mapping Registry against the controlled responses and stable Requirement IDs. That later stage can generate a candidate SEPIO covering model and associated summary, traceability, follow-up, gap/extension, implementation-guidance, form-feedback, and generation-manifest artifacts.
 
-During the current pilot phase, an AI agent may perform this later analysis and generation step. The confirmed workbook remains the formal project-requirements input; the selected scope and Resource Inventory provide supporting provenance for how those requirements were derived. The completed requirements forms should nevertheless remain requirements-first: **do not use the SEPIO Mapping Summary columns to decide what the project needs.**
+During the current pilot phase, an AI agent may perform this later analysis and generation step. The confirmed workbook remains the formal project-requirements input; the selected scope and Resource Inventory provide traceable support for how those requirements were derived. The completed requirements forms should nevertheless remain requirements-first: **do not use the SEPIO Mapping Summary columns to decide what the project needs.**
 
 Detailed downstream mapping, routing, and output-generation behavior is documented separately in the Requirement → SEPIO Mapping Registry/README and the Requirements-to-Model Report Specification.
 
@@ -771,3 +624,5 @@ Detailed downstream mapping, routing, and output-generation behavior is document
 ## Agent feedback after requirements completion
 
 After completing the requirements workbook and Review Memo, complete a project-specific copy of `Feedback_Log_Template.xlsx`. Record actionable observations about the forms, field wording, controlled responses, guidance, or workflow, using its `Agent Instructions` and `Controlled Vocabularies` tabs. This feedback is separate from the project requirements and from unresolved project-specific questions in the Review Memo. Do not modify the authoritative forms or guidance on the basis of feedback without review and approval.
+
+---

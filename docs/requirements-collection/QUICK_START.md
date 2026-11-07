@@ -37,7 +37,7 @@ For the detailed four-phase workflow, see `Requirements_Instructions_and_Guidanc
 
 - `Requirements_Collection_Forms.xlsx` — the authoritative blank requirements workbook your agent should complete.
 - `Feedback_Log_Template.xlsx` — a separate workbook for the agent’s post-completion feedback on the forms and process.
-- `Requirements_Instructions_and_Guidance_for_AI.md` — detailed semantic and field-by-field instructions intended primarily for the AI agent.
+- `Requirements_Instructions_and_Guidance_for_Agents.md` — detailed semantic and field-by-field instructions intended primarily for the AI agent.
 - `REQUIREMENTS_FORM_PROMPT.md` — the ready-to-copy prompt for asking an AI agent to complete the forms.
 - `RESOURCE_INVENTORY_PROMPT.md` — an optional prompt that asks an AI agent to discover, classify, and organize project resources and propose candidate scope statements.
 - `RESOURCE_INVENTORY_GUIDANCE.md` — practical guidance for assembling and reviewing a Resource Inventory.

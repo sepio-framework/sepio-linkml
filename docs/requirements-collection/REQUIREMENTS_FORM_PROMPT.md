@@ -1,28 +1,37 @@
 # Requirements Form Prompt — Complete the SEPIO Requirements Forms
 
-Use this prompt after the project evidence base has been reviewed and, ideally, after a Resource Inventory / Evidence Package has been prepared using `RESOURCE_INVENTORY_PROMPT.md`.
+Use this AI-specific prompt when choosing AI-assisted requirements collection. The underlying requirements-collection process may also be performed by humans. Before proceeding, establish a project scope and review relevant source materials, ideally with a Resource Inventory prepared using `RESOURCE_INVENTORY_PROMPT.md`.
 
-The requirements workflow deliberately distinguishes **current-state requirements** from **desired-state requirements**:
+The requirements workflow deliberately distinguishes **current-state representation** from **desired-state requirements**:
 
 - **Current state** is controlled by the canonical source(s), dataset(s), distribution(s), release(s), or explicitly designated companion artifacts named in the selected project scope statement.
-- **Desired state** may be informed by a broader, evidence-supported set of project resources identified in the selected scope statement and Resource Inventory.
+- **Desired state** may be informed by a broader set of project-specific supporting resources identified in the selected scope statement and Resource Inventory.
 
-This separation is intentional. The current-state columns should remain conservative and reproducible, while the desired-state columns may capture a broader **maximal evidence-supported requirements set** for later human review and refinement.
+This separation is intentional. The current-state columns should remain conservative and reproducible, while the desired-state columns may capture a broader **maximal but project-supported requirements set** for later project-representative review and refinement.
 
 Publicly accessible resources may be supplied as attachments, GitHub links, direct-download URLs, DOI/archive links, or version-pinned URLs. The agent should retrieve public resources itself whenever possible; human upload is a fallback.
 
 ## Copyable prompt
 
-Copy the prompt below into your AI agent's interface and replace the bracketed text.
+Copy the prompt below into your AI agent's interface and replace the bracketed text. Select **INDEPENDENT_DRAFT** for a source-based first pass followed by human review, or **COLLABORATIVE_ELICITATION** for an interview-style session in which the agent and project representative develop answers together. Both approaches produce the same requirements artifacts; AI-assisted execution is recommended but optional in the overall SEPIO process.
 
 ```text
-You are acting as a requirements analyst and as a knowledgeable representative of [PROJECT NAME].
+You are acting as a requirements analyst supporting [PROJECT NAME]. You are not the authoritative project representative; your draft findings and responses require confirmation by an authorized project representative.
 
-Your task is to populate the SEPIO Requirements Forms workbook based on the selected project scope and the project materials and workflow resources I provide.
+Your task is to help populate the SEPIO Requirements Forms workbook based on the selected project scope and the project materials and workflow resources I provide. Use the execution mode specified below. Preserve the project's terminology and separate requirements elicitation from downstream SEPIO mapping.
 
 PROJECT
 
 [PROJECT NAME]
+
+EXECUTION MODE (select one)
+
+[INDEPENDENT_DRAFT / COLLABORATIVE_ELICITATION]
+
+- INDEPENDENT_DRAFT (default): Inspect the allowed sources, prepare a first-pass workbook and Review Memo, and explicitly flag answers requiring the representative's confirmation. Do not present unreviewed answers as project-approved.
+- COLLABORATIVE_ELICITATION: Work with the project representative in a structured interview. For each row or a manageable group of related rows, summarize the question in project terms, offer a proposed response and its source basis when available, show a concrete record/example, and ask for clarification or confirmation. Record the agreed answer, rationale, source references, and unresolved points. Do not claim that an answer has been confirmed unless the representative actually confirms it. When the representative delegates particular answers for you to draft, mark them as **agent-proposed / unconfirmed** until reviewed. Allow later decisions to revise earlier answers and keep a brief, traceable decision log (in the Review Memo or another agreed project record) when the discussion requires it.
+
+Both modes apply the same source rules, field definitions, requirements-first boundary, and completion checks. A project may switch modes or use a hybrid approach when needed. In collaborative mode, the forms may be populated incrementally as the interview proceeds; generate final deliverables from the recorded responses when the session is completed. If the user has not selected a mode, use INDEPENDENT_DRAFT.
 
 SELECTED PROJECT SCOPE
 
@@ -33,7 +42,7 @@ The selected scope statement must identify, explicitly or by reference to the Re
 1. CURRENT-STATE CANONICAL SOURCE SET
    The exact source(s), dataset(s), distribution(s), release(s), or explicitly designated companion artifacts that control answers in the "Used in Current Data?" / current-state columns.
 
-2. DESIRED-STATE EVIDENCE SET
+2. DESIRED-STATE SUPPORTING-SOURCE SET
    The broader set of project resources that may be used to identify desired/future requirements.
 
 If the selected scope statement does not make these two source sets clear enough to apply reproducibly, stop and ask the project representative to clarify the scope before completing the forms.
@@ -48,14 +57,15 @@ You will be provided access to the materials needed for this task. They may be s
 - version-pinned GitHub URLs identifying a specific commit, tag, or release;
 - DOI/archive links;
 - other public project URLs or repository paths;
-- a reviewed Resource Inventory / Evidence Package produced using `RESOURCE_INVENTORY_PROMPT.md`-  which may contain pointers/links to the types of resources above.
+- a reviewed Resource Inventory produced using `RESOURCE_INVENTORY_PROMPT.md` — which may contain pointers/links to the types of resources above.
 
 The core requirements-collection materials are:
 
 1. `Requirements_Collection_Forms.xlsx`
-2. `Requirements_Instructions_and_Guidance_for_AI.md`
+2. `Requirements_Instructions_and_Guidance_for_Agents.md`
+3. `Feedback_Log_Template.xlsx` (for process feedback)
 
-A project Resource Inventory / Evidence Package should also be supplied when available.
+A reviewed project Resource Inventory should also be supplied when available; a scope selected without one must still clearly designate its allowed sources.
 
 REQUIREMENTS MATERIAL LOCATIONS
 
@@ -63,10 +73,13 @@ Requirements forms:
 [ATTACHMENT OR URL TO Requirements_Collection_Forms.xlsx]
 
 Instructions and guidance:
-[ATTACHMENT OR URL TO Requirements_Instructions_and_Guidance_for_AI.md]
+[ATTACHMENT OR URL TO Requirements_Instructions_and_Guidance_for_Agents.md]
 
-Resource inventory / evidence package, if available:
+Resource Inventory, if available:
 [ATTACHMENT OR URL TO PROJECT_Resource_Inventory.md]
+
+Feedback Log template:
+[ATTACHMENT OR URL TO Feedback_Log_Template.xlsx]
 
 Additional project materials, if any:
 [ATTACHMENTS, URLS, DOI LINKS, OR REPOSITORY PATHS]
@@ -124,7 +137,7 @@ A version-pinned source may identify:
 
 RESOURCE INVENTORY / EVIDENCE PACKAGE
 
-13. When a reviewed Resource Inventory / Evidence Package is supplied:
+13. When a reviewed Resource Inventory is supplied:
    - use the selected scope statement as the controlling rule for current-state and desired-state evidence;
    - use sources classified as CURRENT_STATE_CANONICAL only for current-state answers unless the scope statement explicitly designates additional canonical companion artifacts;
    - use DESIRED_STATE_SUPPORT sources only for desired-state reasoning, unless they are also designated CURRENT_STATE_CANONICAL;
@@ -141,17 +154,17 @@ RESOURCE INVENTORY / EVIDENCE PACKAGE
 
 16. If the Resource Inventory identifies material that a human may need to provide, first determine whether you can retrieve it yourself. Human upload is a fallback, not the default.
 
-Use `Requirements_Instructions_and_Guidance_for_AI.md` to understand each form, question, controlled value, and response convention.
+Use `Requirements_Instructions_and_Guidance_for_Agents.md` to understand each form, question, controlled value, and response convention.
 
 CURRENT-STATE VS DESIRED-STATE RULES
 
 17. Treat the two requirements columns as answering different questions.
 
-CURRENT STATE / F1:
+CURRENT STATE / [F1]:
 "What is represented in the canonical current-state source set selected for this review?"
 
-DESIRED STATE / F2:
-"What should the SEPIO-based representation support, based on the maximal evidence-supported project requirements allowed by the selected scope?"
+DESIRED STATE / [F2]:
+"What should the SEPIO-based representation support, based on the maximal project-supported project requirements allowed by the selected scope?"
 
 18. Populate CURRENT STATE strictly from the selected CURRENT-STATE CANONICAL SOURCE SET.
 
@@ -165,7 +178,7 @@ Do not mark a requirement as currently represented merely because it appears in:
 - a downstream application;
 unless that resource is explicitly included in the selected current-state canonical source set.
 
-19. Populate DESIRED STATE from the broader DESIRED-STATE EVIDENCE SET permitted by the selected scope statement.
+19. Populate DESIRED STATE from the broader DESIRED-STATE SUPPORTING-SOURCE SET permitted by the selected scope statement.
 
 This may include, when relevant and not explicitly out of scope:
 - explicit future requirements or roadmaps;
@@ -176,13 +189,13 @@ This may include, when relevant and not explicitly out of scope:
 - other project-maintained representations;
 - project examples, competency questions, or implementation guidance.
 
-20. For the initial requirements pass, prefer a MAXIMAL EVIDENCE-SUPPORTED desired-state requirements set when the selected scope authorizes it.
+20. For the initial requirements pass, prefer a MAXIMAL BUT PROJECT-SUPPORTED desired-state requirements set when the selected scope authorizes it.
 
-"Maximal" does NOT mean speculative. Every desired-state Y/M answer must be supported by project-specific evidence.
+"Maximal" does NOT mean speculative. Every [F2] `Y` or `M` must have an identifiable project-specific basis; `M` must additionally specify a genuine uncertainty rather than a speculative possibility.
 
-The human reviewer may later narrow or remove desired-state requirements.
+An authorized project representative must review and confirm the resulting requirements, and may refine, narrow, or remove proposed desired-state capabilities.
 
-21. When a desired-state answer differs from the current-state answer, explicitly document the supporting source in the form's `Explanation / Considerations` field.
+21. For every desired-state `Y` or `M`, document the project-specific basis in [F4] Basis for F2 Response, including maturity and unresolved questions where relevant. Summarize the basis in the independently readable [F5] Explanation / Considerations. When [F2] differs from [F1], make that distinction explicit.
 
 When useful, classify the desired-state support using one of these labels:
 
@@ -195,7 +208,7 @@ When useful, classify the desired-state support using one of these labels:
 - DOCUMENTED_MODEL_INTENT
   A paper, model/design document, curation guide, or other authoritative project documentation describes the capability as part of the intended project model or data product, even if it is absent from the selected canonical current-state source.
 
-Recommended explanation format when F1 and F2 differ:
+Recommended explanation format when [F1] and [F2] differ:
 
 "Current state: [brief canonical-source observation].
 Desired-state support: [SUPPORT TYPE] — [Source ID/title/version]: [brief evidence and rationale]."
@@ -233,7 +246,7 @@ IMPORTANT REQUIREMENTS-ELICITATION RULES
 
 30. Preserve project-specific terminology and examples in explanatory fields where useful.
 
-31. For each non-obvious answer, keep track of the source evidence that supports it so that the answer can be reviewed and traced back to its source.
+31. For each non-obvious answer, keep track of the source material that supports it so that the answer can be reviewed and traced back to its source.
 
 32. Assess the project comprehensively across:
    - claim/assertion types;
@@ -244,7 +257,7 @@ IMPORTANT REQUIREMENTS-ELICITATION RULES
    - provenance about information artifacts, agents, methods, processes, semantic alignment, encoding, and retrieval;
    - relationships between claim types and evidence types.
 
-33. Do not use the Requirement→SEPIO mapping registry to decide what the project's requirements should be unless explicitly instructed to do so. Requirements elicitation must remain independent of current SEPIO coverage.
+33. Do not use the Requirement→SEPIO mapping registry to decide what the project's requirements should be. Requirements elicitation must remain independent of current SEPIO coverage.
 
 34. Do not proceed to Requirement→SEPIO mapping or generate a SEPIO covering model unless explicitly asked.
 
@@ -281,15 +294,15 @@ COMPLETENESS AND CONSISTENCY REVIEW
    - identify contradictions;
    - identify unanswered or weakly supported questions;
    - identify places where free text implies a requirement not captured by a structured response;
-   - verify that every F1/current-state Y/M answer is supported by the selected current-state canonical source set;
-   - verify that every broader F2/desired-state Y/M answer is supported by an allowed desired-state source;
-   - verify that F1 and F2 were not conflated;
+   - verify that each [F1] assessment is traceable to the selected current-state canonical source set, with a clear distinction between demonstrated absence and insufficient inspection;
+   - verify that each [F2] `Y` or `M` has project-specific support from an allowed desired-state source, documented in [F4], and that each `M` specifies what remains unresolved;
+   - verify that [F1] and [F2] were not conflated, and that current features intentionally excluded from the future design are not automatically marked desired;
    - make sure upstream evidence/provenance capabilities were not incorrectly attributed to the canonical project source;
    - make sure process provenance described in documentation is not automatically treated as provenance stored in canonical records;
    - make sure downstream transformations are not treated as native current-state representation unless the selected scope says otherwise;
-   - verify that the Explanation / Considerations field names the desired-state supporting source whenever F2 differs materially from F1.
+   - verify that [F5] Explanation / Considerations gives a self-contained rationale for both assessments and, when [F2] differs materially from [F1], identifies the supporting source and explains the distinction.
 
-42. Preserve unresolved issues rather than forcing a Y/N answer when the evidence supports uncertainty.
+42. Preserve unresolved issues rather than forcing a Y/N answer when the project materials support uncertainty. When collaborative elicitation changes an earlier answer, record the reason for the revision and update the workbook consistently.
 
 DELIVERABLES
 
@@ -309,7 +322,7 @@ Use 24-hour/military time. Use `HHMM` without a colon for cross-platform filenam
 
 If a prior requirements version is supplied, increment or retain the version according to the project representative's instruction. If no version is specified, use `v0.1`.
 
-Preserve the original workbook formatting and structure, including existing row heights and any validation rules. Do not rebuild the template, change its field numbering, or add validation rules not present in the supplied workbook. In EIT, F7 (Specific Kinds of this Item Type) is optional; Evidence Item Group is a column, not a category row. In PROV, levels are identified by the Provenance Level column, not informational rows.
+Preserve the original workbook formatting and structure, including existing row heights and any validation rules. Do not rebuild the template, change its field numbering, or add validation rules not present in the supplied workbook. In EIT, [F7] Example(s) from Your Data and [F12] Specific Kinds of this Item Type are optional; Evidence Item Group is an informational column, not a requirement row. In PROV, levels are identified by the Provenance Level column, not informational rows. Use the supplied workbook's current headings, including [F3] Basis for F1 Response and [F4] Basis for F2 Response.
 
 B. Requirements Review Memo
 
@@ -322,40 +335,46 @@ The memo must contain:
 1. Project scope used
    - reproduce or precisely summarize the selected scope statement;
    - explicitly identify the CURRENT-STATE CANONICAL SOURCE SET;
-   - explicitly identify the DESIRED-STATE EVIDENCE SET.
+   - explicitly identify the DESIRED-STATE SUPPORTING-SOURCE SET.
 
 2. Requirements-workflow materials used
 
 3. Sources used for CURRENT-STATE requirements
-   - list the exact datasets/distributions/schema artifacts that controlled F1/current-state responses;
+   - list the exact datasets/distributions/schema artifacts that controlled [F1]/current-state responses;
    - record exact versions/releases/commits/DOI/archive versions/retrieval dates as applicable;
    - explain any explicitly designated canonical companion artifacts.
 
 4. Sources used for DESIRED-STATE requirements
-   - list the broader sources actually used to populate F2/desired-state responses;
+   - list the broader sources actually used to populate [F2]/desired-state responses;
    - group or annotate them where useful as:
      EXPLICIT_FUTURE_REQUIREMENT,
      EXISTING_PROJECT_CAPABILITY_NOT_IN_CANONICAL_EXPORT,
      DOCUMENTED_MODEL_INTENT;
    - identify sources considered but excluded from desired-state reasoning and why.
 
-5. High-confidence conclusions
+5. Project data landscape and current-state requirements findings
+   - begin with a concise executive overview of the project's EPC representation and principal findings;
+   - describe the principal datasets or products, their approximate scale when grounded, and their relationships;
+   - summarize what [F1] establishes across CT, CRS, RCS (where applicable), EIT, EINT, and PROV, and how the forms relate;
+   - explain important source-native semantics, especially where records combine several provenance or evidence meanings.
 
-6. Answers requiring human review
+6. High-confidence conclusions
 
-7. Apparent conflicts or missing information
+7. Answers requiring human review
 
-8. Files/resources the agent was unable to access, if any
+8. Apparent conflicts or missing information
 
-9. Form/guidance questions that were difficult to interpret
+9. Files/resources the agent was unable to access, if any
 
-10. Important assumptions made
+10. Form/guidance questions that were difficult to interpret
 
-11. Project observations that suggest improvements to the requirements forms or guidance
+11. Important assumptions made
 
-12. Diverse representative data examples
+12. Project observations that suggest improvements to the requirements forms or guidance
 
-Include a small but diverse set of concrete examples that make the requirements tangible.
+13. Diverse representative data examples
+
+Include a small but diverse set of concrete examples that make the requirements tangible; use stable IDs `EX01`, `EX02`, etc., with descriptions, compact source-native field/value snippets, and a verifiable record pointer where available.
 
 Provide:
 - a few CURRENT-STATE examples directly from the selected canonical source set; and
@@ -387,7 +406,7 @@ Represent the example as close to its source representation as practical:
 
 Do not fabricate values to make examples look complete.
 
-C. Source-access status
+C. Source-access status (section of the Review Memo, not a separate required file)
 
 Include a concise statement confirming:
 
@@ -397,9 +416,9 @@ Include a concise statement confirming:
 - whether the review used version-pinned or moving-source URLs;
 - any public resources that could not be retrieved.
 
-D. Requirements-collection Feedback Log
+D. Requirements-collection Feedback Log (separate process-improvement artifact)
 
-Return a completed project-specific copy of the supplied `Feedback_Log_Template.xlsx`, named `[PROJECT]_Requirements_Feedback_Log_v[VERSION]_[YYYYMMDD]_[HHMM].xlsx`. Follow the template’s `Agent Instructions` and `Controlled Vocabularies`. Record concrete suggestions to improve forms, fields, controlled responses, instructions, or the process, with sheet/field references and rationale where possible. Do not use this log to replace the Review Memo’s project-specific unresolved questions. Do not change the master requirements template or guidance on the basis of feedback. If no issues are identified, report that explicitly in the log or handoff.
+Return a completed project-specific copy of `Feedback_Log_Template.xlsx`, named `[PROJECT]_Requirements_Feedback_Log_v[VERSION]_[YYYYMMDD]_[HHMM].xlsx`. Follow the template’s `Agent Instructions` and `Controlled Vocabularies`. Record concrete suggestions to improve forms, fields, controlled responses, instructions, or the process, with sheet/field references and rationale where possible. Do not use this log to replace the Review Memo’s project-specific unresolved questions. Do not change the master requirements template or guidance on the basis of feedback. If no issues are identified, report that explicitly in the log or handoff. Do not put starter-kit feedback in place of project requirements or unresolved project-specific questions.
 
 Do not proceed to Requirement→SEPIO mapping or generate a SEPIO covering model unless I explicitly ask you to do so.
 ```
@@ -410,7 +429,7 @@ Provide access to:
 
 - `Requirements_Collection_Forms.xlsx`
 - `Feedback_Log_Template.xlsx`
-- `Requirements_Instructions_and_Guidance_for_AI.md`
+- `Requirements_Instructions_and_Guidance_for_Agents.md`
 - the **selected project scope statement**
 - the reviewed `[PROJECT]_Resource_Inventory.md`, when available
 - any private or local project materials identified as necessary
@@ -418,7 +437,7 @@ Provide access to:
 The selected scope statement should clearly identify:
 
 1. the canonical current-state source set controlling current-state answers; and
-2. the broader evidence set allowed to inform desired-state answers.
+2. the broader supporting-source set allowed to inform desired-state answers.
 
 If the Resource Inventory provides multiple provisional scope alternatives, the project representative should normally select one before requirements completion.
 
@@ -431,7 +450,7 @@ Requirements forms:
 https://github.com/sepio-framework/sepio-linkml/blob/main/docs/requirements-collection/Requirements_Collection_Forms.xlsx
 
 Instructions and guidance:
-https://github.com/sepio-framework/sepio-linkml/blob/main/docs/requirements-collection/Requirements_Instructions_and_Guidance_for_AI.md
+https://github.com/sepio-framework/sepio-linkml/blob/main/docs/requirements-collection/Requirements_Instructions_and_Guidance_for_Agents.md
 ```
 
 For a reproducible requirements run, prefer links pinned to an exact commit or release.
@@ -449,6 +468,9 @@ PROJECT:
 SELECTED PROJECT SCOPE:
 [PASTE THE SELECTED SCOPE STATEMENT]
 
+EXECUTION MODE:
+[INDEPENDENT_DRAFT or COLLABORATIVE_ELICITATION]
+
 REQUIREMENTS FORM PROMPT:
 [URL TO REQUIREMENTS_FORM_PROMPT.md]
 
@@ -456,7 +478,7 @@ REQUIREMENTS FORMS:
 [URL TO Requirements_Collection_Forms.xlsx]
 
 REQUIREMENTS GUIDANCE:
-[URL TO Requirements_Instructions_and_Guidance_for_AI.md]
+[URL TO Requirements_Instructions_and_Guidance_for_Agents.md]
 
 FEEDBACK LOG TEMPLATE:
 [URL OR ATTACHMENT TO Feedback_Log_Template.xlsx]
@@ -464,9 +486,9 @@ FEEDBACK LOG TEMPLATE:
 RESOURCE INVENTORY:
 [URL OR ATTACHMENT FOR PROJECT_Resource_Inventory.md]
 
-Use the selected current-state canonical source set strictly for F1/current-state answers.
-Use the broader desired-state source set allowed by the selected scope to build an evidence-supported maximal F2/desired-state requirements set.
-If F2 differs from F1, name the desired-state supporting source and support type in Explanation / Considerations.
+Use the selected current-state canonical source set strictly for [F1]/current-state answers.
+Use the broader desired-state source set allowed by the selected scope to build a maximal but project-supported [F2]/desired-state requirements set.
+If [F2] differs from F1, name the desired-state supporting source and support type in Explanation / Considerations.
 ```
 
 ## Relationship to resource discovery

@@ -1,5 +1,7 @@
+"""Data model package for sepio-linkml."""
+
 from pathlib import Path
-from .sepio_linkml import *
+from .sepio_linkml import *  # noqa: F403
 
 THIS_PATH = Path(__file__).parent
 

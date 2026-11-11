@@ -4,7 +4,7 @@
             "additionalProperties": false,
             "description": "An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -80,7 +80,7 @@
                         "null"
                     ]
                 },
-                "performedBy": {
+                "performed_by": {
                     "description": "An Agent who participated in executing the Activity.",
                     "items": {
                         "$ref": "#/$defs/Agent"
@@ -90,7 +90,7 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "specified_by": {
                     "description": "A method that was followed in performing an Activity, that describes how it was executed.",
                     "items": {
                         "$ref": "#/$defs/Method"
@@ -127,7 +127,7 @@
             "additionalProperties": false,
             "description": "An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent's activity.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -209,7 +209,7 @@
                     "description": "The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status').",
                     "type": "string"
                 },
-                "valueOperator": {
+                "value_operator": {
                     "description": "An operation that defines how to logically interpret a set of more than one Characteristic values ('AND', 'OR', 'NOT').",
                     "type": [
                         "string",
@@ -256,7 +256,7 @@
                         "null"
                     ]
                 },
-                "systemVersion": {
+                "system_version": {
                     "description": "Version of the terminology or code system that provided the code.",
                     "type": [
                         "string",
@@ -271,7 +271,7 @@
             "additionalProperties": false,
             "description": "An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.).",
             "properties": {
-                "activityType": {
+                "activity_type": {
                     "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc. . Values of this property may be framed as activities or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).",
                     "items": {
                         "$ref": "#/$defs/Coding"
@@ -281,7 +281,7 @@
                         "null"
                     ]
                 },
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -291,7 +291,7 @@
                         "null"
                     ]
                 },
-                "contributionMadeTo": {
+                "contribution_made_to": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/InformationEntity"
@@ -379,7 +379,7 @@
                         "null"
                     ]
                 },
-                "performedBy": {
+                "performed_by": {
                     "description": "An Agent who participated in executing the Activity.",
                     "items": {
                         "$ref": "#/$defs/Agent"
@@ -389,7 +389,7 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "specified_by": {
                     "description": "A method that was followed in performing an Activity, that describes how it was executed.",
                     "items": {
                         "$ref": "#/$defs/Method"
@@ -426,7 +426,7 @@
             "additionalProperties": false,
             "description": "An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -436,7 +436,7 @@
                         "null"
                     ]
                 },
-                "componentDataItem": {
+                "component_data_item": {
                     "description": "A more foundational data item that is a logical component of a compound data item.",
                     "items": {
                         "$ref": "#/$defs/DataItem"
@@ -446,7 +446,7 @@
                         "null"
                     ]
                 },
-                "confidenceInterval": {
+                "confidence_interval": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/DataItem"
@@ -467,14 +467,14 @@
                         "null"
                     ]
                 },
-                "dateAuthored": {
+                "date_authored": {
                     "description": "Indicates when the information content expressed in the Information Entity was generated.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "derivedFrom": {
+                "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -515,7 +515,7 @@
                         "null"
                     ]
                 },
-                "informationQuality": {
+                "information_quality": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -526,7 +526,7 @@
                     ],
                     "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
                 },
-                "isAbout": {
+                "is_about": {
                     "description": "An entity or concept in the world that the information entity describes/is about.",
                     "items": {
                         "type": "string"
@@ -543,7 +543,7 @@
                         "null"
                     ]
                 },
-                "recordMetadata": {
+                "record_metadata": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/RecordMetadata"
@@ -554,7 +554,7 @@
                     ],
                     "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)."
                 },
-                "reportedIn": {
+                "reported_in": {
                     "description": "A document in which the Information Entity is reported.",
                     "items": {
                         "type": "string"
@@ -564,7 +564,17 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "sources": {
+                    "description": "A document or other informtion resource in which the information entity, or evidence supporting it, is reported.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specified_by": {
                     "description": "A specification that describes all or part of the process that led to creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -585,7 +595,7 @@
                     ],
                     "description": "A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')"
                 },
-                "supportingMethodTypes": {
+                "supporting_method_types": {
                     "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "$ref": "#/$defs/Coding"
@@ -595,7 +605,7 @@
                         "null"
                     ]
                 },
-                "supportingMethods": {
+                "supporting_methods": {
                     "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -624,7 +634,7 @@
                     "description": "The value of the data item (could be quantitative or qualitative depending on the type of data item).",
                     "type": "string"
                 },
-                "variabilityMeasures": {
+                "variability_measures": {
                     "description": "A statistical score describing the variability inherent in a data item representing a statistical summary of a set of observations/measurements (e.g. the standard deviation associated with a statistical mean calculated across several experimental replicates).",
                     "items": {
                         "$ref": "#/$defs/DataItem"
@@ -647,7 +657,7 @@
             "additionalProperties": false,
             "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -667,14 +677,14 @@
                         "null"
                     ]
                 },
-                "dateAuthored": {
+                "date_authored": {
                     "description": "Indicates when the information content expressed in the Information Entity was generated.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "derivedFrom": {
+                "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -715,7 +725,7 @@
                         "null"
                     ]
                 },
-                "informationQuality": {
+                "information_quality": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -726,7 +736,7 @@
                     ],
                     "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
                 },
-                "isAbout": {
+                "is_about": {
                     "description": "An entity or concept in the world that the information entity describes/is about.",
                     "items": {
                         "type": "string"
@@ -750,7 +760,7 @@
                         "null"
                     ]
                 },
-                "recordMetadata": {
+                "record_metadata": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/RecordMetadata"
@@ -761,14 +771,14 @@
                     ],
                     "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)."
                 },
-                "releaseDate": {
+                "release_date": {
                     "description": "Indicates when a version of a DataSet was formally released.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "reportedIn": {
+                "reported_in": {
                     "description": "A document in which the Information Entity is reported.",
                     "items": {
                         "type": "string"
@@ -778,7 +788,17 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "sources": {
+                    "description": "A document or other informtion resource in which the information entity, or evidence supporting it, is reported.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specified_by": {
                     "description": "A specification that describes all or part of the process that led to creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -799,7 +819,7 @@
                     ],
                     "description": "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')."
                 },
-                "supportingMethodTypes": {
+                "supporting_method_types": {
                     "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "$ref": "#/$defs/Coding"
@@ -809,7 +829,7 @@
                         "null"
                     ]
                 },
-                "supportingMethods": {
+                "supporting_methods": {
                     "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -842,7 +862,7 @@
             "additionalProperties": false,
             "description": "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -862,14 +882,14 @@
                         "null"
                     ]
                 },
-                "dateAuthored": {
+                "date_authored": {
                     "description": "Indicates when the information content expressed in the Information Entity was generated.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "derivedFrom": {
+                "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -917,7 +937,7 @@
                         "null"
                     ]
                 },
-                "informationQuality": {
+                "information_quality": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -928,7 +948,7 @@
                     ],
                     "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
                 },
-                "isAbout": {
+                "is_about": {
                     "description": "An entity or concept in the world that the information entity describes/is about.",
                     "items": {
                         "type": "string"
@@ -959,7 +979,7 @@
                         "null"
                     ]
                 },
-                "recordMetadata": {
+                "record_metadata": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/RecordMetadata"
@@ -970,7 +990,7 @@
                     ],
                     "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)."
                 },
-                "reportedIn": {
+                "reported_in": {
                     "description": "A document in which the Information Entity is reported.",
                     "items": {
                         "type": "string"
@@ -980,7 +1000,17 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "sources": {
+                    "description": "A document or other informtion resource in which the information entity, or evidence supporting it, is reported.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specified_by": {
                     "description": "A specification that describes all or part of the process that led to creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -1001,7 +1031,7 @@
                     ],
                     "description": "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')"
                 },
-                "supportingMethodTypes": {
+                "supporting_method_types": {
                     "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "$ref": "#/$defs/Coding"
@@ -1011,7 +1041,7 @@
                         "null"
                     ]
                 },
-                "supportingMethods": {
+                "supporting_methods": {
                     "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -1054,7 +1084,7 @@
             "additionalProperties": false,
             "description": "Anything that exists, has existed, or will exist.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -1118,7 +1148,7 @@
             "additionalProperties": false,
             "description": "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -1138,14 +1168,14 @@
                         "null"
                     ]
                 },
-                "dateAuthored": {
+                "date_authored": {
                     "description": "Indicates when the information content expressed in the Information Entity was generated.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "derivedFrom": {
+                "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -1162,14 +1192,14 @@
                         "null"
                     ]
                 },
-                "directionOfEvidenceProvided": {
+                "direction_of_evidence_provided": {
                     "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral).",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "evidenceItemSources": {
+                "evidence_item_sources": {
                     "description": "An information resource (e.g. document, dataset, digital resource such as a database or  knowledgebase) that provides information interpreted as evidence in building an Evidence Line.",
                     "items": {
                         "type": "string"
@@ -1189,7 +1219,7 @@
                         "null"
                     ]
                 },
-                "hasEvidenceItems": {
+                "has_evidence_items": {
                     "description": "An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -1213,7 +1243,7 @@
                         "null"
                     ]
                 },
-                "informationQuality": {
+                "information_quality": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -1224,7 +1254,7 @@
                     ],
                     "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
                 },
-                "isAbout": {
+                "is_about": {
                     "description": "An entity or concept in the world that the information entity describes/is about.",
                     "items": {
                         "type": "string"
@@ -1241,7 +1271,7 @@
                         "null"
                     ]
                 },
-                "recordMetadata": {
+                "record_metadata": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/RecordMetadata"
@@ -1252,7 +1282,7 @@
                     ],
                     "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)."
                 },
-                "reportedIn": {
+                "reported_in": {
                     "description": "A document in which the Information Entity is reported.",
                     "items": {
                         "type": "string"
@@ -1262,14 +1292,24 @@
                         "null"
                     ]
                 },
-                "scoreOfEvidenceProvided": {
-                    "description": "A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.",
+                "score_of_evidence_provided": {
+                    "description": "A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided value.",
                     "type": [
                         "number",
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "sources": {
+                    "description": "A document or other informtion resource in which the information entity, or evidence supporting it, is reported.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specified_by": {
                     "description": "A specification that describes all or part of the process that led to creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -1279,8 +1319,8 @@
                         "null"
                     ]
                 },
-                "strengthOfEvidenceProvided": {
-                    "description": "The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided.",
+                "strength_of_evidence_provided": {
+                    "description": "The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided.",
                     "type": [
                         "string",
                         "null"
@@ -1297,7 +1337,7 @@
                     ],
                     "description": "A specific type of evidence the EvidenceLine instance represents (e.g. 'mutant phenotype evidence', 'evidence from manual interpretation', 'ACMG PM2 evidence')"
                 },
-                "supportingMethodTypes": {
+                "supporting_method_types": {
                     "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "$ref": "#/$defs/Coding"
@@ -1307,7 +1347,7 @@
                         "null"
                     ]
                 },
-                "supportingMethods": {
+                "supporting_methods": {
                     "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -1317,7 +1357,7 @@
                         "null"
                     ]
                 },
-                "targetProposition": {
+                "target_proposition": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Proposition"
@@ -1344,14 +1384,14 @@
             "additionalProperties": false,
             "description": "A structure for labels representing systematic expressions that describe an entity, as generated by formal nomenclatures (e.g. HGVS for genetic variants, ISCN for karyotypes, HLA nomenclature for HLA genes/alleles).",
             "properties": {
-                "systemURL": {
+                "system_url": {
                     "description": "A URL for the nomenclature system",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "systemVersion": {
+                "system_version": {
                     "description": "The version of the nomenclature system.",
                     "type": [
                         "string",
@@ -1373,7 +1413,7 @@
             "additionalProperties": false,
             "description": "A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification.",
             "properties": {
-                "extensionDescription": {
+                "extension_description": {
                     "description": "A free text description of the intended meaning and use of the extension element, which may include the types of values it takes, and how to interpret these values in the context of the parent Class.",
                     "type": [
                         "string",
@@ -1400,7 +1440,7 @@
             "additionalProperties": false,
             "description": "An abstract (non-physical) entity that is about something - representing the underlying 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -1420,14 +1460,14 @@
                         "null"
                     ]
                 },
-                "dateAuthored": {
+                "date_authored": {
                     "description": "Indicates when the information content expressed in the Information Entity was generated.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "derivedFrom": {
+                "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -1468,7 +1508,7 @@
                         "null"
                     ]
                 },
-                "informationQuality": {
+                "information_quality": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -1479,7 +1519,7 @@
                     ],
                     "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
                 },
-                "isAbout": {
+                "is_about": {
                     "description": "An entity or concept in the world that the information entity describes/is about.",
                     "items": {
                         "type": "string"
@@ -1496,7 +1536,7 @@
                         "null"
                     ]
                 },
-                "recordMetadata": {
+                "record_metadata": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/RecordMetadata"
@@ -1507,7 +1547,7 @@
                     ],
                     "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)."
                 },
-                "reportedIn": {
+                "reported_in": {
                     "description": "A document in which the Information Entity is reported.",
                     "items": {
                         "type": "string"
@@ -1517,7 +1557,17 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "sources": {
+                    "description": "A document or other informtion resource in which the information entity, or evidence supporting it, is reported.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specified_by": {
                     "description": "A specification that describes all or part of the process that led to creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -1527,7 +1577,7 @@
                         "null"
                     ]
                 },
-                "supportingMethodTypes": {
+                "supporting_method_types": {
                     "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "$ref": "#/$defs/Coding"
@@ -1537,7 +1587,7 @@
                         "null"
                     ]
                 },
-                "supportingMethods": {
+                "supporting_methods": {
                     "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -1563,7 +1613,7 @@
             "additionalProperties": false,
             "description": "A set of instructions that specify how to achieve some objective.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -1583,14 +1633,14 @@
                         "null"
                     ]
                 },
-                "dateAuthored": {
+                "date_authored": {
                     "description": "Indicates when the information content expressed in the Information Entity was generated.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "derivedFrom": {
+                "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -1631,7 +1681,7 @@
                         "null"
                     ]
                 },
-                "informationQuality": {
+                "information_quality": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -1642,7 +1692,7 @@
                     ],
                     "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
                 },
-                "isAbout": {
+                "is_about": {
                     "description": "An entity or concept in the world that the information entity describes/is about.",
                     "items": {
                         "type": "string"
@@ -1659,7 +1709,7 @@
                         "null"
                     ]
                 },
-                "recordMetadata": {
+                "record_metadata": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/RecordMetadata"
@@ -1670,7 +1720,7 @@
                     ],
                     "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)."
                 },
-                "reportedIn": {
+                "reported_in": {
                     "description": "A document in which the Information Entity is reported.",
                     "items": {
                         "type": "string"
@@ -1680,7 +1730,17 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "sources": {
+                    "description": "A document or other informtion resource in which the information entity, or evidence supporting it, is reported.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specified_by": {
                     "description": "A specification that describes all or part of the process that led to creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -1701,7 +1761,7 @@
                     ],
                     "description": "A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol')."
                 },
-                "supportingMethodTypes": {
+                "supporting_method_types": {
                     "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "$ref": "#/$defs/Coding"
@@ -1711,7 +1771,7 @@
                         "null"
                     ]
                 },
-                "supportingMethods": {
+                "supporting_methods": {
                     "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -1747,7 +1807,7 @@
             "additionalProperties": false,
             "description": "An abstract entity representing a possible fact that is either true or false.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -1810,7 +1870,7 @@
                     "$ref": "#/$defs/Coding",
                     "description": "The relationship declared to hold between the subject and the object of the Proposition."
                 },
-                "propositionText": {
+                "proposition_text": {
                     "description": "A natural-language expression of the Proposition's meaning (i.e. the 'possible fact' it expresses).",
                     "type": [
                         "string",
@@ -1880,14 +1940,14 @@
                         "null"
                     ]
                 },
-                "dateRecordCreated": {
+                "date_record_created": {
                     "description": "The date the record was initially created.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "derivedFromRecord": {
+                "derived_from_record": {
                     "description": "Another data record from which the record described here was derived, through a data ingest and/or transformation process.",
                     "items": {
                         "type": "string"
@@ -1897,14 +1957,14 @@
                         "null"
                     ]
                 },
-                "recordIdentifier": {
+                "record_identifier": {
                     "description": "The identifier of the record described in the RecordMetadata object (required when the record described is not the one in the present system).",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "recordVersion": {
+                "record_version": {
                     "description": "The version number of the record-level artifact the object describes.",
                     "type": [
                         "string",
@@ -1919,7 +1979,7 @@
             "additionalProperties": false,
             "description": "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -1939,14 +1999,14 @@
                         "null"
                     ]
                 },
-                "dateAuthored": {
+                "date_authored": {
                     "description": "Indicates when the information content expressed in the Information Entity was generated.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "derivedFrom": {
+                "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -1980,7 +2040,7 @@
                         "null"
                     ]
                 },
-                "hasEvidence": {
+                "has_evidence": {
                     "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -1990,7 +2050,17 @@
                         "null"
                     ]
                 },
-                "hasEvidenceLines": {
+                "has_evidence_from_sources": {
+                    "description": "An Information Entity (typically a publication, dataset, or database) that provided information used as evidence to generate the knowledge expressed in a Statement.",
+                    "items": {
+                        "$ref": "#/$defs/InformationEntity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_evidence_lines": {
                     "description": "An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes  the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).",
                     "items": {
                         "$ref": "#/$defs/EvidenceLine"
@@ -2000,7 +2070,7 @@
                         "null"
                     ]
                 },
-                "hasEvidenceOfTypes": {
+                "has_evidence_of_types": {
                     "description": "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').",
                     "items": {
                         "type": "string"
@@ -2024,7 +2094,7 @@
                         "null"
                     ]
                 },
-                "informationQuality": {
+                "information_quality": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -2035,7 +2105,7 @@
                     ],
                     "description": "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected."
                 },
-                "isAbout": {
+                "is_about": {
                     "description": "An entity or concept in the world that the information entity describes/is about.",
                     "items": {
                         "type": "string"
@@ -2091,7 +2161,7 @@
                         "null"
                     ]
                 },
-                "recordMetadata": {
+                "record_metadata": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/RecordMetadata"
@@ -2102,7 +2172,7 @@
                     ],
                     "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)."
                 },
-                "reportedIn": {
+                "reported_in": {
                     "description": "A document in which the Information Entity is reported.",
                     "items": {
                         "type": "string"
@@ -2119,7 +2189,17 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "sources": {
+                    "description": "A document or other informtion resource in which the information entity, or evidence supporting it, is reported.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specified_by": {
                     "description": "A specification that describes all or part of the process that led to creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -2129,7 +2209,7 @@
                         "null"
                     ]
                 },
-                "statementText": {
+                "statement_text": {
                     "description": "A natural-language expression of what a Statement asserts to be true.",
                     "type": [
                         "string",
@@ -2150,7 +2230,7 @@
                         "null"
                     ]
                 },
-                "subjectClassification": {
+                "subject_classification": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -2161,7 +2241,7 @@
                     ],
                     "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject."
                 },
-                "supportingMethodTypes": {
+                "supporting_method_types": {
                     "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "$ref": "#/$defs/Coding"
@@ -2171,7 +2251,7 @@
                         "null"
                     ]
                 },
-                "supportingMethods": {
+                "supporting_methods": {
                     "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -2197,7 +2277,7 @@
             "additionalProperties": false,
             "description": "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -2248,7 +2328,7 @@
                         "null"
                     ]
                 },
-                "isSubsetOf": {
+                "is_subset_of": {
                     "description": "A larger StudyGroup of which this StudyGroup represents a subset.",
                     "items": {
                         "$ref": "#/$defs/StudyGroup"
@@ -2265,7 +2345,7 @@
                         "null"
                     ]
                 },
-                "memberCount": {
+                "member_count": {
                     "description": "The total number of individual members in the StudyGroup.",
                     "type": [
                         "integer",
@@ -2288,7 +2368,7 @@
             "additionalProperties": false,
             "description": "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated.",
             "properties": {
-                "alternativeLabels": {
+                "alternative_labels": {
                     "description": "Alternative name(s) for the Entity.",
                     "items": {
                         "type": "string"
@@ -2298,7 +2378,7 @@
                         "null"
                     ]
                 },
-                "componentResult": {
+                "component_result": {
                     "description": "Another StudyResult comprised of data items about the same focus as its parent Result, but based on a more narrowly scoped analysis of the foundational data (e.g. an analysis based on data about a subset of the parent Results full study population).",
                     "items": {
                         "$ref": "#/$defs/StudyResult"
@@ -2318,7 +2398,7 @@
                         "null"
                     ]
                 },
-                "dataItems": {
+                "data_items": {
                     "description": "One or more data items that are included in the StudyResult because it pertains to the 'focus' of the result. This can be data that directly describes this 'focus' (e.g. the population frequency of an allele focus), or be metadata about how data about the 'focus' were generated (e.g the quality measures for the sequencing run used to determine this allele frequency).",
                     "items": {
                         "$ref": "#/$defs/DataItem"
@@ -2328,14 +2408,14 @@
                         "null"
                     ]
                 },
-                "dateAuthored": {
+                "date_authored": {
                     "description": "Indicates when the information content expressed in the Information Entity was generated.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "derivedFrom": {
+                "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
                         "$ref": "#/$defs/InformationEntity"
@@ -2383,7 +2463,7 @@
                         "null"
                     ]
                 },
-                "informationQuality": {
+                "information_quality": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Coding"
@@ -2405,7 +2485,7 @@
                     ],
                     "description": "The outcome of an interpretation of lower-level data item(s) in a StudyResult, that express some broader conclusion or insight that was made (e.g. that data indicates a result to be is high, normal, or low)."
                 },
-                "isAbout": {
+                "is_about": {
                     "description": "An entity or concept in the world that the information entity describes/is about.",
                     "items": {
                         "type": "string"
@@ -2422,7 +2502,7 @@
                         "null"
                     ]
                 },
-                "recordMetadata": {
+                "record_metadata": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/RecordMetadata"
@@ -2433,7 +2513,7 @@
                     ],
                     "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)."
                 },
-                "reportedIn": {
+                "reported_in": {
                     "description": "A document in which the Information Entity is reported.",
                     "items": {
                         "type": "string"
@@ -2443,7 +2523,7 @@
                         "null"
                     ]
                 },
-                "sourceDataSet": {
+                "source_data_set": {
                     "description": "A larger DataSet from which the content of the StudyResult was derived.",
                     "items": {
                         "$ref": "#/$defs/DataSet"
@@ -2453,7 +2533,17 @@
                         "null"
                     ]
                 },
-                "specifiedBy": {
+                "sources": {
+                    "description": "A document or other informtion resource in which the information entity, or evidence supporting it, is reported.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "specified_by": {
                     "description": "A specification that describes all or part of the process that led to creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -2463,7 +2553,7 @@
                         "null"
                     ]
                 },
-                "studyGroup": {
+                "study_group": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/StudyGroup"
@@ -2474,7 +2564,7 @@
                     ],
                     "description": "A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult."
                 },
-                "supportingMethodTypes": {
+                "supporting_method_types": {
                     "description": "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "$ref": "#/$defs/Coding"
@@ -2484,7 +2574,7 @@
                         "null"
                     ]
                 },
-                "supportingMethods": {
+                "supporting_methods": {
                     "description": "Specific methods that were executed to directly or indirectly support creation of the Information Entity.",
                     "items": {
                         "type": "string"
@@ -2516,7 +2606,7 @@
     "$id": "https://w3id.org/sepio-framework/sepio-linkml",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "metamodel_version": "1.7.0",
+    "metamodel_version": "1.12.0",
     "title": "sepio-linkml",
     "type": "object",
     "version": null

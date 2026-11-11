@@ -1,6 +1,23 @@
-/docs/
-/project/docs/
-/tmp/
+# generated part of documentation
+/docs/elements/*.md
+# linkml-run-examples output (not useful to have in git in its current form)
+/examples/output/
+
+# Derived schemas, generated from the schema.yaml
+tmp/
+# Only the formats listed below are tracked in git; others (java, typescript, ...) are ignored.
+project/*
+!project/README.md
+!project/excel/
+!project/graphql/
+!project/jsonld/
+!project/jsonschema/
+!project/owl/
+!project/prefixmap/
+!project/protobuf/
+!project/shacl/
+!project/shex/
+!project/sqlschema/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -132,5 +149,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# IDE config files
+# macOS
+.DS_Store
+
+# pycharm
 .idea
+# Local vscode editor config
+.vscode

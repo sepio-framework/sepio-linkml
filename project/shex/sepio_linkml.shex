@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0
+# metamodel_version: 1.12.0
 BASE <https://w3id.org/sepio-framework/sepio-linkml/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -50,8 +50,8 @@ sepio-model:Activity  (
              rdf:type [ sepio-model:Entity ] ? ;
              sepio-model:subtype @sepio-model:Coding ? ;
              sepio-model:date @linkml:Date ? ;
-             sepio-model:performedBy @sepio-model:Agent * ;
-             sepio-model:specifiedBy @sepio-model:Method * ;
+             sepio-model:performed_by @sepio-model:Agent * ;
+             sepio-model:specified_by @sepio-model:Method * ;
              sepio-model:input @sepio-model:Entity * ;
              sepio-model:output @sepio-model:Entity *
           ) ;
@@ -75,7 +75,7 @@ sepio-model:Characteristic CLOSED {
           rdf:type [ sepio-model:Utility ] ? ;
           sepio-model:name @linkml:String ;
           sepio-model:values @linkml:String + ;
-          sepio-model:valueOperator @linkml:String ?
+          sepio-model:value_operator @linkml:String ?
        ) ;
        rdf:type [ sepio-model:Characteristic ] ?
     )
@@ -87,7 +87,7 @@ sepio-model:Coding CLOSED {
           sepio-model:code @linkml:String ? ;
           sepio-model:label @linkml:String ? ;
           sepio-model:system @linkml:String ? ;
-          sepio-model:systemVersion @linkml:String ?
+          sepio-model:system_version @linkml:String ?
        ) ;
        rdf:type [ sepio-model:Coding ] ?
     )
@@ -97,8 +97,8 @@ sepio-model:Contribution CLOSED {
     (  $sepio-model:Contribution_tes (  &sepio-model:Activity_tes ;
           rdf:type [ sepio-model:Activity ] ? ;
           sepio-model:contributor @sepio-model:Agent ? ;
-          sepio-model:activityType @sepio-model:Coding * ;
-          sepio-model:contributionMadeTo @sepio-model:InformationEntity ?
+          sepio-model:activity_type @sepio-model:Coding * ;
+          sepio-model:contribution_made_to @sepio-model:InformationEntity ?
        ) ;
        rdf:type [ sepio-model:Contribution ] ?
     )
@@ -110,9 +110,9 @@ sepio-model:DataItem CLOSED {
           sepio-model:subtype @sepio-model:Coding ? ;
           sepio-model:value @linkml:String ;
           sepio-model:unit @sepio-model:Coding ? ;
-          sepio-model:variabilityMeasures @sepio-model:DataItem * ;
-          sepio-model:confidenceInterval @sepio-model:DataItem ? ;
-          sepio-model:componentDataItem @sepio-model:DataItem *
+          sepio-model:variability_measures @sepio-model:DataItem * ;
+          sepio-model:confidence_interval @sepio-model:DataItem ? ;
+          sepio-model:component_data_item @sepio-model:DataItem *
        ) ;
        rdf:type [ sepio-model:DataItem ] ?
     )
@@ -122,7 +122,7 @@ sepio-model:DataSet CLOSED {
     (  $sepio-model:DataSet_tes (  &sepio-model:InformationEntity_tes ;
           rdf:type [ sepio-model:InformationEntity ] ? ;
           sepio-model:subtype @sepio-model:Coding ? ;
-          sepio-model:releaseDate @linkml:String ? ;
+          sepio-model:release_date @linkml:String ? ;
           sepio-model:version @linkml:String ? ;
           sepio-model:license @linkml:String ?
        ) ;
@@ -150,7 +150,7 @@ sepio-model:Entity  (
              sepio-model:identifiers @linkml:String * ;
              sepio-model:type @linkml:String ;
              sepio-model:label @linkml:String ? ;
-             sepio-model:alternativeLabels @linkml:String * ;
+             sepio-model:alternative_labels @linkml:String * ;
              sepio-model:description @linkml:String ? ;
              sepio-model:extensions @sepio-model:Extension *
           ) ;
@@ -164,12 +164,12 @@ sepio-model:EvidenceLine CLOSED {
     (  $sepio-model:EvidenceLine_tes (  &sepio-model:InformationEntity_tes ;
           rdf:type [ sepio-model:InformationEntity ] ? ;
           sepio-model:subtype @sepio-model:Coding ? ;
-          sepio-model:targetProposition @sepio-model:Proposition ? ;
-          sepio-model:hasEvidenceItems @sepio-model:InformationEntity * ;
-          sepio-model:directionOfEvidenceProvided @linkml:String ? ;
-          sepio-model:strengthOfEvidenceProvided @linkml:String ? ;
-          sepio-model:scoreOfEvidenceProvided @linkml:Float ? ;
-          sepio-model:evidenceItemSources @linkml:String *
+          sepio-model:target_proposition @sepio-model:Proposition ? ;
+          sepio-model:has_evidence_items @sepio-model:InformationEntity * ;
+          sepio-model:direction_of_evidence_provided @linkml:String ? ;
+          sepio-model:strength_of_evidence_provided @linkml:String ? ;
+          sepio-model:score_of_evidence_provided @linkml:Float ? ;
+          sepio-model:evidence_item_sources @linkml:String *
        ) ;
        rdf:type [ sepio-model:EvidenceLine ] ?
     )
@@ -179,8 +179,8 @@ sepio-model:Expression CLOSED {
     (  $sepio-model:Expression_tes (  &sepio-model:Utility_tes ;
           rdf:type [ sepio-model:Utility ] ? ;
           sepio-model:value @linkml:String ;
-          sepio-model:systemURL @linkml:Uriorcurie ? ;
-          sepio-model:systemVersion @linkml:String ?
+          sepio-model:system_url @linkml:Uriorcurie ? ;
+          sepio-model:system_version @linkml:String ?
        ) ;
        rdf:type [ sepio-model:Expression ] ?
     )
@@ -189,7 +189,7 @@ sepio-model:Expression CLOSED {
 sepio-model:Extension CLOSED {
     (  $sepio-model:Extension_tes (  &sepio-model:Utility_tes ;
           rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:extensionDescription @linkml:String ? ;
+          sepio-model:extension_description @linkml:String ? ;
           sepio-model:name @linkml:String ;
           sepio-model:value @linkml:String
        ) ;
@@ -201,16 +201,17 @@ sepio-model:InformationEntity  (
     CLOSED {
        (  $sepio-model:InformationEntity_tes (  &sepio-model:Entity_tes ;
              rdf:type [ sepio-model:Entity ] ? ;
-             sepio-model:isAbout @linkml:String * ;
+             sepio-model:is_about @linkml:String * ;
              sepio-model:contributions @sepio-model:Contribution * ;
-             sepio-model:dateAuthored @linkml:String ? ;
-             sepio-model:specifiedBy @linkml:String * ;
-             sepio-model:supportingMethods @linkml:String * ;
-             sepio-model:supportingMethodTypes @sepio-model:Coding * ;
-             sepio-model:derivedFrom @sepio-model:InformationEntity * ;
-             sepio-model:reportedIn @linkml:String * ;
-             sepio-model:informationQuality @sepio-model:Coding ? ;
-             sepio-model:recordMetadata @sepio-model:RecordMetadata ?
+             sepio-model:date_authored @linkml:String ? ;
+             sepio-model:specified_by @linkml:String * ;
+             sepio-model:supporting_methods @linkml:String * ;
+             sepio-model:supporting_method_types @sepio-model:Coding * ;
+             sepio-model:derived_from @sepio-model:InformationEntity * ;
+             sepio-model:reported_in @linkml:String * ;
+             sepio-model:sources @linkml:String * ;
+             sepio-model:information_quality @sepio-model:Coding ? ;
+             sepio-model:record_metadata @sepio-model:RecordMetadata ?
           ) ;
           rdf:type [ sepio-model:InformationEntity ] ?
        )
@@ -231,7 +232,7 @@ sepio-model:Method CLOSED {
 sepio-model:Proposition CLOSED {
     (  $sepio-model:Proposition_tes (  &sepio-model:Entity_tes ;
           rdf:type [ sepio-model:Entity ] ? ;
-          sepio-model:propositionText @linkml:String ? ;
+          sepio-model:proposition_text @linkml:String ? ;
           sepio-model:subject @linkml:String ;
           sepio-model:predicate @sepio-model:Coding ;
           sepio-model:object @linkml:String ;
@@ -255,10 +256,10 @@ sepio-model:Qualifier CLOSED {
 sepio-model:RecordMetadata CLOSED {
     (  $sepio-model:RecordMetadata_tes (  &sepio-model:Utility_tes ;
           rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:recordIdentifier @linkml:String ? ;
-          sepio-model:recordVersion @linkml:String ? ;
-          sepio-model:derivedFromRecord @linkml:String * ;
-          sepio-model:dateRecordCreated @linkml:String ? ;
+          sepio-model:record_identifier @linkml:String ? ;
+          sepio-model:record_version @linkml:String ? ;
+          sepio-model:derived_from_record @linkml:String * ;
+          sepio-model:date_record_created @linkml:String ? ;
           sepio-model:contributions @sepio-model:Contribution *
        ) ;
        rdf:type [ sepio-model:RecordMetadata ] ?
@@ -268,7 +269,7 @@ sepio-model:RecordMetadata CLOSED {
 sepio-model:Statement CLOSED {
     (  $sepio-model:Statement_tes (  &sepio-model:InformationEntity_tes ;
           rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:statementText @linkml:String ? ;
+          sepio-model:statement_text @linkml:String ? ;
           sepio-model:proposition @sepio-model:Proposition ? ;
           sepio-model:subject @linkml:String ? ;
           sepio-model:predicate @sepio-model:Coding ? ;
@@ -277,10 +278,11 @@ sepio-model:Statement CLOSED {
           sepio-model:direction @linkml:String ? ;
           sepio-model:strength @linkml:String ? ;
           sepio-model:score @linkml:Float ? ;
-          sepio-model:subjectClassification @sepio-model:Coding ? ;
-          sepio-model:hasEvidenceOfTypes @linkml:String * ;
-          sepio-model:hasEvidenceLines @sepio-model:EvidenceLine * ;
-          sepio-model:hasEvidence @sepio-model:InformationEntity *
+          sepio-model:subject_classification @sepio-model:Coding ? ;
+          sepio-model:has_evidence_of_types @linkml:String * ;
+          sepio-model:has_evidence_lines @sepio-model:EvidenceLine * ;
+          sepio-model:has_evidence @sepio-model:InformationEntity * ;
+          sepio-model:has_evidence_from_sources @sepio-model:InformationEntity *
        ) ;
        rdf:type [ sepio-model:Statement ] ?
     )
@@ -289,8 +291,8 @@ sepio-model:Statement CLOSED {
 sepio-model:StudyGroup CLOSED {
     (  $sepio-model:StudyGroup_tes (  &sepio-model:Entity_tes ;
           rdf:type [ sepio-model:Entity ] ? ;
-          sepio-model:memberCount @linkml:Integer ? ;
-          sepio-model:isSubsetOf @sepio-model:StudyGroup * ;
+          sepio-model:member_count @linkml:Integer ? ;
+          sepio-model:is_subset_of @sepio-model:StudyGroup * ;
           sepio-model:characteristics @sepio-model:Characteristic *
        ) ;
        rdf:type [ sepio-model:StudyGroup ] ?
@@ -301,11 +303,11 @@ sepio-model:StudyResult CLOSED {
     (  $sepio-model:StudyResult_tes (  &sepio-model:InformationEntity_tes ;
           rdf:type [ sepio-model:InformationEntity ] ? ;
           sepio-model:focus @linkml:String ? ;
-          sepio-model:dataItems @sepio-model:DataItem * ;
+          sepio-model:data_items @sepio-model:DataItem * ;
           sepio-model:interpretation @sepio-model:Coding ? ;
-          sepio-model:sourceDataSet @sepio-model:DataSet * ;
-          sepio-model:componentResult @sepio-model:StudyResult * ;
-          sepio-model:studyGroup @sepio-model:StudyGroup ?
+          sepio-model:source_data_set @sepio-model:DataSet * ;
+          sepio-model:component_result @sepio-model:StudyResult * ;
+          sepio-model:study_group @sepio-model:StudyGroup ?
        ) ;
        rdf:type [ sepio-model:StudyResult ] ?
     )
@@ -319,4 +321,3 @@ sepio-model:Utility  (
     } OR @sepio-model:Characteristic OR @sepio-model:Coding OR @sepio-model:Expression OR @sepio-model:Extension OR
     @sepio-model:Qualifier OR @sepio-model:RecordMetadata
 )
-

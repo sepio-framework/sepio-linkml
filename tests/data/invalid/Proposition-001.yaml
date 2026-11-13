@@ -1,0 +1,5 @@
+# Invalid: a Proposition must have a subject, predicate and object; predicate is missing.
+id: ex:Proposition002
+type: Proposition
+subject: MONDO:0009061
+object: dismech:Airway_Surface_Liquid_Depletion

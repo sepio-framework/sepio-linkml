@@ -8,140 +8,140 @@
 example:sepio-model\/Activity dcterms:title "Activity" ;
 	a owl:Class ;
 	rdfs:label "Activity" ;
-	rdfs:subClassOf example:sepio-model\/Entity , _:c14n133 , _:c14n147 , _:c14n17 , _:c14n172 , _:c14n223 , _:c14n227 , _:c14n254 , _:c14n29 , _:c14n37 , _:c14n45 , _:c14n5 , _:c14n60 , _:c14n92 , _:c14n95 ;
+	rdfs:subClassOf example:sepio-model\/Entity , _:c14n139 , _:c14n153 , _:c14n180 , _:c14n19 , _:c14n235 , _:c14n239 , _:c14n267 , _:c14n32 , _:c14n40 , _:c14n48 , _:c14n5 , _:c14n64 , _:c14n96 , _:c14n99 ;
 	skos:definition "An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Activities relevant to scientific knowledge generation, and include things like observations of the natural world, designing and performing experiments, data analysis and transformation, publishing research results, data curation and interpretation, and assessment and care of patients in clinical settings.  These activities may produce information that gets encoded in sharable artifacts which are used to generate scientific knowledge. Agents can play different types of roles in the generation and use of such artifacts." .
 example:sepio-model\/Agent dcterms:title "Agent" ;
 	a owl:Class ;
 	rdfs:label "Agent" ;
-	rdfs:subClassOf example:sepio-model\/Entity , _:c14n180 , _:c14n190 , _:c14n200 , _:c14n246 , _:c14n250 , _:c14n41 ;
+	rdfs:subClassOf example:sepio-model\/Entity , _:c14n188 , _:c14n199 , _:c14n210 , _:c14n258 , _:c14n262 , _:c14n44 ;
 	skos:definition "An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent's activity." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Agents can belong to organizations, and act on behalf or in the context of an organizational affiliation when contributing to an entity. For example, curators generating these variant pathogenicity interpretations may do so in the context of their work with the ClinGen organization, which provides administrative, technical, and funding support for their contributions." , "Agents perform activities and make contributions to entities. An agent can be an individual person, an organization of multiple individuals acting together, or a computational agent such as a software program or automated pipeline." .
 example:sepio-model\/Characteristic dcterms:title "Characteristic" ;
 	a owl:Class ;
 	rdfs:label "Characteristic" ;
-	rdfs:subClassOf example:sepio-model\/Utility , _:c14n136 , _:c14n208 , _:c14n58 , _:c14n71 , _:c14n73 , _:c14n81 , _:c14n83 , _:c14n85 ;
+	rdfs:subClassOf example:sepio-model\/Utility , _:c14n142 , _:c14n218 , _:c14n62 , _:c14n75 , _:c14n77 , _:c14n85 , _:c14n87 , _:c14n89 ;
 	skos:definition "An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "This flexible key-value like object is where specific inclusion or exclusion criteria for membership in a StudyGroup are formally defined.  It should be used to capture characteristics that inhere in individual members of the StudyGroup (e.g. inherent traits like their sex, race, or age, or roles assigned to them in a particular context such as being a control in a study)." .
 example:sepio-model\/Coding dcterms:title "Coding" ;
 	a owl:Class ;
 	rdfs:label "Coding" ;
-	rdfs:subClassOf example:sepio-model\/Utility , _:c14n107 , _:c14n114 , _:c14n131 , _:c14n15 , _:c14n173 , _:c14n184 , _:c14n186 , _:c14n189 , _:c14n214 , _:c14n251 , _:c14n40 , _:c14n75 ;
+	rdfs:subClassOf example:sepio-model\/Utility , _:c14n112 , _:c14n119 , _:c14n137 , _:c14n17 , _:c14n181 , _:c14n193 , _:c14n195 , _:c14n198 , _:c14n224 , _:c14n264 , _:c14n43 , _:c14n79 ;
 	skos:definition "A structured representation of a code for a defined concept in a terminology or code system." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Coding supports use of terms form ontologies/terminologies in structured object that reports id, label, and metadata about system it came from.  follows FHIR approach.  Used in model when implementers are free to create own value sets of terms which get reported within coding objects in SEPIO data. Validation requires additional tooling - as constraints are not defined in schema itself." , "Either a code, label, or both must be provided." .
 example:sepio-model\/Contribution dcterms:title "Contribution" ;
 	a owl:Class ;
 	rdfs:label "Contribution" ;
-	rdfs:subClassOf example:sepio-model\/Activity , _:c14n103 , _:c14n151 , _:c14n158 , _:c14n21 , _:c14n236 , _:c14n262 , _:c14n39 , _:c14n72 ;
+	rdfs:subClassOf example:sepio-model\/Activity , _:c14n108 , _:c14n157 , _:c14n164 , _:c14n23 , _:c14n248 , _:c14n276 , _:c14n42 , _:c14n76 ;
 	skos:definition "An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.)." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Contributions are used to organize information about when, where, how (e.g. what roles were played), and on whose behalf these actions were performed." , "The scope of a Contribution instance includes only the actions of a single agent in contributing to a single artifact, which may be performed in one continuous effort, or several discontinuous sessions of work.  The agent can be an individual person, a software agent, or a group or organization of individuals acting together.'" .
 example:sepio-model\/DataItem dcterms:title "Data Item" ;
 	a owl:Class ;
 	rdfs:label "DataItem" ;
-	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n0 , _:c14n1 , _:c14n10 , _:c14n100 , _:c14n145 , _:c14n167 , _:c14n210 , _:c14n217 , _:c14n24 , _:c14n241 , _:c14n263 , _:c14n4 , _:c14n50 , _:c14n9 , _:c14n91 , _:c14n93 ;
+	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n0 , _:c14n1 , _:c14n105 , _:c14n12 , _:c14n151 , _:c14n175 , _:c14n220 , _:c14n228 , _:c14n253 , _:c14n27 , _:c14n277 , _:c14n4 , _:c14n54 , _:c14n9 , _:c14n95 , _:c14n97 ;
 	skos:definition "An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Examples include raw observations or measurements such as an allele count, or patient's weight, derived calculations such as frequency or mean, and computed statistical scores/metrics such as p-values and z-scores." .
 example:sepio-model\/DataSet dcterms:title "Data Set" ;
 	a owl:Class ;
 	rdfs:label "DataSet" ;
-	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n102 , _:c14n118 , _:c14n152 , _:c14n157 , _:c14n166 , _:c14n19 , _:c14n202 , _:c14n230 , _:c14n32 , _:c14n34 , _:c14n67 , _:c14n8 ;
+	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n107 , _:c14n123 , _:c14n158 , _:c14n163 , _:c14n174 , _:c14n21 , _:c14n212 , _:c14n242 , _:c14n35 , _:c14n37 , _:c14n71 , _:c14n8 ;
 	skos:definition "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Instances of this class represent a *specific version* of a given dataset. Examples include the  gnomAD version 3.1.2 dataset carrying allele population frequencies, or a specific version of a VCF file that describes variations observed in a particular patient and various annotations made on them, or a SIFT dataset of computational predictions functional impact for a set of variants." .
 example:sepio-model\/Document dcterms:title "Document" ;
 	a owl:Class ;
 	rdfs:label "Document" ;
-	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n113 , _:c14n124 , _:c14n141 , _:c14n149 , _:c14n155 , _:c14n179 , _:c14n191 , _:c14n204 , _:c14n213 , _:c14n258 , _:c14n259 , _:c14n264 , _:c14n265 , _:c14n266 , _:c14n55 , _:c14n64 , _:c14n74 ;
+	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n118 , _:c14n130 , _:c14n147 , _:c14n155 , _:c14n161 , _:c14n187 , _:c14n200 , _:c14n214 , _:c14n223 , _:c14n272 , _:c14n273 , _:c14n278 , _:c14n279 , _:c14n280 , _:c14n59 , _:c14n68 , _:c14n78 ;
 	skos:definition "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "As an abstract InformationEntity, a Document instance is defined by the informational content it conveys, not a particular physical concretization of this information. A single Document instance can simultaneously be concretized in different languages, formats, and physical mediums." .
 example:sepio-model\/Entity dcterms:title "Entity" ;
 	a owl:Class ;
 	rdfs:label "Entity" ;
-	rdfs:subClassOf _:c14n11 , _:c14n148 , _:c14n154 , _:c14n159 , _:c14n171 , _:c14n176 , _:c14n193 , _:c14n196 , _:c14n20 , _:c14n212 , _:c14n237 , _:c14n257 , _:c14n48 , _:c14n51 , _:c14n69 , _:c14n7 , _:c14n70 , _:c14n78 ;
+	rdfs:subClassOf _:c14n13 , _:c14n154 , _:c14n160 , _:c14n165 , _:c14n179 , _:c14n184 , _:c14n202 , _:c14n206 , _:c14n22 , _:c14n222 , _:c14n249 , _:c14n270 , _:c14n52 , _:c14n55 , _:c14n7 , _:c14n73 , _:c14n74 , _:c14n82 ;
 	skos:definition "Anything that exists, has existed, or will exist." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Entity is the root class of the 'gks-common' core information model. All common classes that have ids and other general metadata like label,  description, type, or extensions descend from this class and inherit its attributes." .
 example:sepio-model\/EvidenceLine dcterms:title "Evidence Line" ;
 	a owl:Class ;
 	rdfs:label "EvidenceLine" ;
-	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n110 , _:c14n111 , _:c14n119 , _:c14n121 , _:c14n127 , _:c14n135 , _:c14n14 , _:c14n153 , _:c14n163 , _:c14n170 , _:c14n188 , _:c14n219 , _:c14n226 , _:c14n233 , _:c14n235 , _:c14n33 , _:c14n66 , _:c14n80 , _:c14n99 ;
+	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n104 , _:c14n115 , _:c14n116 , _:c14n124 , _:c14n126 , _:c14n133 , _:c14n141 , _:c14n159 , _:c14n16 , _:c14n171 , _:c14n178 , _:c14n197 , _:c14n230 , _:c14n238 , _:c14n245 , _:c14n247 , _:c14n36 , _:c14n70 , _:c14n84 ;
 	skos:definition "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Evidence Lines are flexible with respect to the granularity of arguments they support, and the scope of evidence items they can collectively assess. Narrow scoping will bucket available evidence into many, fine-grained Evidence Lines that make the most atomic independently meaningful arguments possible. The ACMG Variant Pathogenicity Interpretation Guidelines are an example of a fairly fine-grained evidence interpretation framework. Broader scoping approaches may organize the same available evidence into fewer Evidence Lines that build and assess less atomic arguments based on a wider and more diverse set of evidence items.  For example, CIViC curators assess the strength and direction of evidence items at the level of *all information reported in a publication for a specific study* - which can encompass many different results and evidence types that under more fine-grained interpretation approaches might be split apart and assessed as separate lines of evidence." , "Evidence Lines are used to capture various pieces of information (i.e. 'evidence items') that are assessed together as an argument for or against some 'target proposition' - and to report the direction (supports or disputes) and strength (e.g. strong, moderate, weak) that the argument is determined to make. For example, the various allele counts and population frequency calculations for the BRCA2 c.8023A>G variant in the ExAC database are evidence items that may be collectively assessed to build an EvidenceLine making argument of 'moderate' strength that 'supports' a target proposition that the variant is pathogenic for Breast Cancer." , "This CIViC EID5682 record (https://civicdb.org/evidence/5682/summary) is a clear example of this - illustrating how ACMG-curated evidence assessed at a finer-grained level would lend itself to SEPIO representations that creates a larger number of more atomic Evidence Lines, as compared to how CIViC-curated evidence from the same source or publication would be represented. We see here that CIViC evidence assessments are performed at the level of all results reported in PMID:23143947 - which SEPIO would capture as a single Evidence Line that assigns a strength (level C) and direction (supports) to the collective argument made by this evidence. However, as detailed in the free-text summary of this EID, the more fine-grained ACMG framework breaks out and separately assess two arguments here - one based on criterion PP1 (disease co-segregation evidence), and one based on criterion PP4 (highly specific gene-phenotype information) - which SEPIO woudl capture as two distinct Evidence Lines." .
 example:sepio-model\/Expression dcterms:title "Expression" ;
 	a owl:Class ;
 	rdfs:label "Expression" ;
-	rdfs:subClassOf example:sepio-model\/Utility , _:c14n194 , _:c14n221 , _:c14n245 , _:c14n267 , _:c14n44 , _:c14n52 , _:c14n59 , _:c14n86 , _:c14n89 ;
+	rdfs:subClassOf example:sepio-model\/Utility , _:c14n204 , _:c14n232 , _:c14n257 , _:c14n281 , _:c14n47 , _:c14n56 , _:c14n63 , _:c14n90 , _:c14n93 ;
 	skos:definition "A structure for labels representing systematic expressions that describe an entity, as generated by formal nomenclatures (e.g. HGVS for genetic variants, ISCN for karyotypes, HLA nomenclature for HLA genes/alleles)." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Similar to the 'Coding' data type, which provides the same fields but for coded values, as opposed to human-readable names." .
 example:sepio-model\/Extension dcterms:title "Extension" ;
 	a owl:Class ;
 	rdfs:label "Extension" ;
-	rdfs:subClassOf example:sepio-model\/Utility , _:c14n116 , _:c14n137 , _:c14n195 , _:c14n255 , _:c14n42 , _:c14n46 , _:c14n47 , _:c14n79 , _:c14n84 ;
+	rdfs:subClassOf example:sepio-model\/Utility , _:c14n121 , _:c14n143 , _:c14n205 , _:c14n268 , _:c14n45 , _:c14n50 , _:c14n51 , _:c14n83 , _:c14n88 ;
 	skos:definition "A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Extension objects allow for  descriptions of an class with additional attributes unique to a content provider" , "The modeling pattern and use of Extensions is based on that defined by the FHIR Speciufication - see https://build.fhir.org/extensibility.html" .
 example:sepio-model\/InformationEntity dcterms:title "Information Entity" ;
 	a owl:Class ;
 	rdfs:label "InformationEntity" ;
-	rdfs:subClassOf example:sepio-model\/Entity , _:c14n104 , _:c14n115 , _:c14n117 , _:c14n120 , _:c14n122 , _:c14n123 , _:c14n128 , _:c14n144 , _:c14n18 , _:c14n183 , _:c14n192 , _:c14n203 , _:c14n22 , _:c14n232 , _:c14n240 , _:c14n252 , _:c14n28 , _:c14n3 , _:c14n30 , _:c14n61 , _:c14n62 , _:c14n63 , _:c14n65 , _:c14n88 , _:c14n90 ;
+	rdfs:subClassOf example:sepio-model\/Entity , _:c14n109 , _:c14n120 , _:c14n122 , _:c14n125 , _:c14n127 , _:c14n129 , _:c14n134 , _:c14n150 , _:c14n192 , _:c14n20 , _:c14n201 , _:c14n213 , _:c14n24 , _:c14n244 , _:c14n252 , _:c14n265 , _:c14n3 , _:c14n31 , _:c14n33 , _:c14n65 , _:c14n66 , _:c14n67 , _:c14n69 , _:c14n92 , _:c14n94 ;
 	skos:definition "An abstract (non-physical) entity that is about something - representing the underlying 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "As abstract, non-physical entities, Information Entities represent information independent of any specific language, format, or physical/digital medium. They can be simultaneously concretized in many distinct physical artifacts (e.g. all physical copies of the first edition of \"War and Peace\" carry the same information content, and thus concretize the same Information Entity)." .
 example:sepio-model\/Method dcterms:title "Method" ;
 	a owl:Class ;
 	rdfs:label "Method" ;
-	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n13 , _:c14n160 , _:c14n205 , _:c14n26 , _:c14n36 ;
+	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n15 , _:c14n168 , _:c14n215 , _:c14n29 , _:c14n39 ;
 	skos:definition "A set of instructions that specify how to achieve some objective." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "In scientific research, these include things like experimental protocols, study designs, data analysis parameters,  curation guidelines, cohort selection criteria, and rule sets." .
 example:sepio-model\/Proposition dcterms:title "Proposition" ;
 	a owl:Class ;
 	rdfs:label "Proposition" ;
-	rdfs:subClassOf example:sepio-model\/Entity , _:c14n125 , _:c14n126 , _:c14n129 , _:c14n162 , _:c14n174 , _:c14n182 , _:c14n187 , _:c14n228 , _:c14n231 , _:c14n243 , _:c14n253 , _:c14n260 , _:c14n261 , _:c14n56 , _:c14n76 , _:c14n87 , _:c14n94 ;
+	rdfs:subClassOf example:sepio-model\/Entity , _:c14n131 , _:c14n132 , _:c14n135 , _:c14n170 , _:c14n182 , _:c14n191 , _:c14n196 , _:c14n240 , _:c14n243 , _:c14n255 , _:c14n266 , _:c14n274 , _:c14n275 , _:c14n60 , _:c14n80 , _:c14n91 , _:c14n98 ;
 	skos:definition "An abstract entity representing a possible fact that is either true or false." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Propositions are taken to represent the semantic content of sentences or larger lexical entities formulated in some natural or artificial language.  As abstract entities, Propositions capture a 'sharable' piece of meaning that can be put forth as true or false in many different Statement instances made by different Agents on different occasions.  Their identity and existence are independent of space and time, and of whether they are ever asserted to be true by some agent." , "Propositions may be used in two contexts in this model: (1) in Statements to represent the possible fact that is put forth as true, or  that is subjected to an assessment of the level of evidence supporting it; (2) in Evidence Lines to represent the possible fact that an argument built from evidence items is evaluated against." .
 example:sepio-model\/Qualifier dcterms:title "Qualifier" ;
 	a owl:Class ;
 	rdfs:label "Qualifier" ;
-	rdfs:subClassOf example:sepio-model\/Utility , _:c14n156 , _:c14n161 , _:c14n164 , _:c14n168 , _:c14n234 , _:c14n248 ;
+	rdfs:subClassOf example:sepio-model\/Utility , _:c14n162 , _:c14n169 , _:c14n172 , _:c14n176 , _:c14n246 , _:c14n260 ;
 	skos:definition "A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Qualifiers allow representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if a triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. Qualifiers can also add information that 'quantifies' aspects of a Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest." .
 example:sepio-model\/RecordMetadata dcterms:title "Record Metadata" ;
 	a owl:Class ;
 	rdfs:label "RecordMetadata" ;
-	rdfs:subClassOf example:sepio-model\/Utility , _:c14n109 , _:c14n112 , _:c14n139 , _:c14n169 , _:c14n177 , _:c14n198 , _:c14n222 , _:c14n225 , _:c14n244 , _:c14n272 , _:c14n31 , _:c14n53 , _:c14n97 ;
+	rdfs:subClassOf example:sepio-model\/Utility , _:c14n102 , _:c14n114 , _:c14n117 , _:c14n145 , _:c14n177 , _:c14n185 , _:c14n208 , _:c14n233 , _:c14n237 , _:c14n256 , _:c14n286 , _:c14n34 , _:c14n57 ;
 	skos:definition "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents)." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Record-level metadata applies to a specific concrete encoding/serialization of information (e.g as a record in a specific data/knowlegebase, or an online digital resource). A RecordMetadata object can capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status." .
 example:sepio-model\/Statement dcterms:title "Statement" ;
 	a owl:Class ;
 	rdfs:label "Statement" ;
-	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n101 , _:c14n105 , _:c14n106 , _:c14n108 , _:c14n130 , _:c14n134 , _:c14n138 , _:c14n140 , _:c14n146 , _:c14n16 , _:c14n175 , _:c14n178 , _:c14n185 , _:c14n197 , _:c14n199 , _:c14n201 , _:c14n207 , _:c14n211 , _:c14n216 , _:c14n218 , _:c14n220 , _:c14n229 , _:c14n23 , _:c14n242 , _:c14n247 , _:c14n25 , _:c14n256 , _:c14n269 , _:c14n27 , _:c14n270 , _:c14n35 , _:c14n43 , _:c14n49 , _:c14n54 , _:c14n57 , _:c14n6 , _:c14n82 ;
+	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n106 , _:c14n110 , _:c14n111 , _:c14n113 , _:c14n136 , _:c14n140 , _:c14n144 , _:c14n146 , _:c14n152 , _:c14n18 , _:c14n183 , _:c14n186 , _:c14n194 , _:c14n207 , _:c14n209 , _:c14n211 , _:c14n217 , _:c14n221 , _:c14n227 , _:c14n229 , _:c14n231 , _:c14n241 , _:c14n254 , _:c14n259 , _:c14n26 , _:c14n269 , _:c14n28 , _:c14n283 , _:c14n284 , _:c14n30 , _:c14n38 , _:c14n46 , _:c14n53 , _:c14n58 , _:c14n6 , _:c14n61 , _:c14n86 ;
 	skos:definition "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "In \"Assertion Mode\" a Statement simply reports an SPOQ proposition to be true (e.g. that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\"), and 'direction', 'strength', and 'score' attributes are not populated.  Thos mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments." , "In \"Proposition Assessment Mode\" a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements to report that \"there is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'\", or \"we have high confidence that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is false\").  This mode is used in curation projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion." , "Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Every Statement puts forth a 'proposition' - a possible fact it assesses or reports to be true.  The semantics of this proposition are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slots (SPOQ)." , "The model supports two \" modes of use\" for Statements, which differ in what they say about their proposition, and can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated." .
 example:sepio-model\/StudyGroup dcterms:title "Study Group" ;
 	a owl:Class ;
 	rdfs:label "StudyGroup" ;
-	rdfs:subClassOf example:sepio-model\/Entity , _:c14n143 , _:c14n181 , _:c14n215 , _:c14n38 , _:c14n68 , _:c14n77 , _:c14n98 ;
+	rdfs:subClassOf example:sepio-model\/Entity , _:c14n103 , _:c14n149 , _:c14n189 , _:c14n226 , _:c14n41 , _:c14n72 , _:c14n81 ;
 	skos:definition "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "A Study Group may include all participants in a given study, or specific subsets that are designated based on shared roles or characteristics." .
 example:sepio-model\/StudyResult dcterms:title "Study Result" ;
 	a owl:Class ;
 	rdfs:label "StudyResult" ;
-	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n12 , _:c14n132 , _:c14n142 , _:c14n150 , _:c14n165 , _:c14n2 , _:c14n206 , _:c14n209 , _:c14n224 , _:c14n238 , _:c14n239 , _:c14n249 , _:c14n268 , _:c14n271 , _:c14n96 ;
+	rdfs:subClassOf example:sepio-model\/InformationEntity , _:c14n101 , _:c14n138 , _:c14n14 , _:c14n148 , _:c14n156 , _:c14n173 , _:c14n2 , _:c14n216 , _:c14n219 , _:c14n236 , _:c14n250 , _:c14n251 , _:c14n261 , _:c14n282 , _:c14n285 ;
 	skos:definition "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "- StudyResults provide a useful way to capture a subset of items from a study dataset that are used as evidence in generating higher order knowledge assertions about the entity that is the focus of the study result. For example, a subset of allele frequency data items about a particular variant of interest in the complete gnomAD dataset can be reported in a StudyResult object, along with relevant provenance information, so they can be referenced as evidence for a higher-order assertion about the variant's pathogenicity." , "As an example, consider the comprehensive allele frequency dataset provided by gnomAD, which covers millions of variants. A curator looking to assess the pathogenicity of a particular variant might create a StudyResult object to capture a subset of data related to this focus allele, including  its count, frequency, homozygous frequency, along with metadata concerning the shared provenance or quality of this data. The StudyResult could then be references as a piece of evidence used to inform the focus alleles final pathogenicity classification." , "Note that the use of a Study Results is not reserved only for defining subsets of data from a larger HTP/clinical study data sets.  A StudyResult might be used to organize the data from a simple, small scale bench experiment - e.g. a western blot analysis of protein expression, or an in vitro binding assay focused on a single protein.  Even such small 'studies' can generate multiple data items and metadata, and a StudyResult object can be used to collect all or some of these data points pertinent to a particular focus into an organized structure." .
@@ -452,6 +452,7 @@ example:sepio-model\/title a owl:DatatypeProperty ;
 	skos:inScheme <https://w3id.org/sepio-model> .
 example:sepio-model\/type a owl:DatatypeProperty ;
 	rdfs:label "type" ;
+	rdfs:range xsd:string ;
 	skos:definition "The name of the class that is instantiated by a data object representing the Entity." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "MUST be the label of a concrete class from the data model." .
@@ -494,816 +495,872 @@ _:c14n1 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/confidence_interval .
 _:c14n10 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty example:sepio-model\/value .
+	rdfs:subClassOf example:sepio-model\/Method ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/Method .
 _:c14n100 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/subtype .
+	rdfs:subClassOf example:sepio-model\/EvidenceLine ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/EvidenceLine .
 _:c14n101 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/subject .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/component_result .
 _:c14n102 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/version .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/derived_from_record .
 _:c14n103 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/contributor .
+	owl:onProperty example:sepio-model\/is_subset_of .
 _:c14n104 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/record_metadata .
+	owl:onProperty example:sepio-model\/score_of_evidence_provided .
 _:c14n105 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/statement_text .
+	owl:onProperty example:sepio-model\/subtype .
 _:c14n106 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/has_evidence_of_types .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/subject .
 _:c14n107 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/system_version .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/version .
 _:c14n108 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/score .
+	owl:onProperty example:sepio-model\/contributor .
 _:c14n109 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/record_version .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/record_metadata .
 _:c14n11 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/type .
+	rdfs:subClassOf example:sepio-model\/DataItem ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/DataItem .
 _:c14n110 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/strength_of_evidence_provided .
+	owl:onProperty example:sepio-model\/statement_text .
 _:c14n111 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/target_proposition .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/has_evidence_of_types .
 _:c14n112 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/record_identifier .
+	owl:onProperty example:sepio-model\/system_version .
 _:c14n113 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/score .
+_:c14n114 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/record_version .
+_:c14n115 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/strength_of_evidence_provided .
+_:c14n116 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/target_proposition .
+_:c14n117 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/record_identifier .
+_:c14n118 a owl:Restriction ;
 	owl:allValuesFrom example:sepio-model\/Coding ;
 	owl:onProperty example:sepio-model\/subtype .
-_:c14n114 a owl:Restriction ;
+_:c14n119 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/system .
-_:c14n115 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/InformationEntity ;
-	owl:onProperty example:sepio-model\/derived_from .
-_:c14n116 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/extension_description .
-_:c14n117 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/date_authored .
-_:c14n118 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/version .
-_:c14n119 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/target_proposition .
 _:c14n12 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/StudyResult ;
-	owl:onProperty example:sepio-model\/component_result .
-_:c14n120 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/contributions .
-_:c14n121 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/direction_of_evidence_provided .
-_:c14n122 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/date_authored .
-_:c14n123 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/derived_from .
-_:c14n124 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/subtype .
-_:c14n125 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/subject .
-_:c14n126 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/negated .
-_:c14n127 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/strength_of_evidence_provided .
-_:c14n128 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/information_quality .
-_:c14n129 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Qualifier ;
-	owl:onProperty example:sepio-model\/qualifier .
-_:c14n13 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
-	owl:onProperty example:sepio-model\/subtype .
-_:c14n130 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/InformationEntity ;
-	owl:onProperty example:sepio-model\/has_evidence .
-_:c14n131 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/code .
-_:c14n132 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/study_group .
-_:c14n133 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Entity ;
-	owl:onProperty example:sepio-model\/output .
-_:c14n134 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/strength .
-_:c14n135 a owl:Restriction ;
-	owl:allValuesFrom xsd:float ;
-	owl:onProperty example:sepio-model\/score_of_evidence_provided .
-_:c14n136 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/name .
-_:c14n137 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/name .
-_:c14n138 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/object .
-_:c14n139 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Contribution ;
-	owl:onProperty example:sepio-model\/contributions .
-_:c14n14 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/score_of_evidence_provided .
-_:c14n140 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/has_evidence .
-_:c14n141 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/urls .
-_:c14n142 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/interpretation .
-_:c14n143 a owl:Restriction ;
-	owl:allValuesFrom xsd:integer ;
-	owl:onProperty example:sepio-model\/member_count .
-_:c14n144 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/information_quality .
-_:c14n145 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/subtype .
-_:c14n146 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
-	owl:onProperty example:sepio-model\/subject_classification .
-_:c14n147 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/subtype .
-_:c14n148 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/id .
-_:c14n149 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/pmid .
-_:c14n15 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/system_version .
-_:c14n150 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
-	owl:onProperty example:sepio-model\/interpretation .
-_:c14n151 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/contribution_made_to .
-_:c14n152 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
-	owl:onProperty example:sepio-model\/subtype .
-_:c14n153 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
-	owl:onProperty example:sepio-model\/subtype .
-_:c14n154 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty example:sepio-model\/type .
-_:c14n155 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/title .
-_:c14n156 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty example:sepio-model\/value .
-_:c14n157 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/release_date .
-_:c14n158 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/contributor .
-_:c14n159 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/description .
-_:c14n16 a owl:Restriction ;
+_:c14n120 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/InformationEntity ;
+	owl:onProperty example:sepio-model\/derived_from .
+_:c14n121 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/has_evidence_lines .
-_:c14n160 a owl:Restriction ;
+	owl:onProperty example:sepio-model\/extension_description .
+_:c14n122 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/date_authored .
+_:c14n123 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/version .
+_:c14n124 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/target_proposition .
+_:c14n125 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/contributions .
+_:c14n126 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/direction_of_evidence_provided .
+_:c14n127 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/date_authored .
+_:c14n128 a owl:Restriction ;
+	rdfs:subClassOf example:sepio-model\/Proposition ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/Proposition .
+_:c14n129 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/derived_from .
+_:c14n13 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/type .
+_:c14n130 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/subtype .
-_:c14n161 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty example:sepio-model\/name .
-_:c14n162 a owl:Restriction ;
+_:c14n131 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/predicate .
+	owl:onProperty example:sepio-model\/subject .
+_:c14n132 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/negated .
+_:c14n133 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/strength_of_evidence_provided .
+_:c14n134 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/information_quality .
+_:c14n135 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Qualifier ;
+	owl:onProperty example:sepio-model\/qualifier .
+_:c14n136 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/InformationEntity ;
+	owl:onProperty example:sepio-model\/has_evidence .
+_:c14n137 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/code .
+_:c14n138 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/study_group .
+_:c14n139 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Entity ;
+	owl:onProperty example:sepio-model\/output .
+_:c14n14 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/StudyResult ;
+	owl:onProperty example:sepio-model\/component_result .
+_:c14n140 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/strength .
+_:c14n141 a owl:Restriction ;
+	owl:allValuesFrom xsd:float ;
+	owl:onProperty example:sepio-model\/score_of_evidence_provided .
+_:c14n142 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/name .
+_:c14n143 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/name .
+_:c14n144 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/object .
+_:c14n145 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Contribution ;
+	owl:onProperty example:sepio-model\/contributions .
+_:c14n146 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/has_evidence .
+_:c14n147 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/urls .
+_:c14n148 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/interpretation .
+_:c14n149 a owl:Restriction ;
+	owl:allValuesFrom xsd:integer ;
+	owl:onProperty example:sepio-model\/member_count .
+_:c14n15 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/subtype .
+_:c14n150 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/information_quality .
+_:c14n151 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/subtype .
+_:c14n152 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/subject_classification .
+_:c14n153 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/subtype .
+_:c14n154 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/id .
+_:c14n155 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/pmid .
+_:c14n156 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/interpretation .
+_:c14n157 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/contribution_made_to .
+_:c14n158 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/subtype .
+_:c14n159 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/subtype .
+_:c14n16 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/score_of_evidence_provided .
+_:c14n160 a owl:Restriction ;
+	owl:minCardinality 1 ;
+	owl:onProperty example:sepio-model\/type .
+_:c14n161 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/title .
+_:c14n162 a owl:Restriction ;
+	owl:minCardinality 1 ;
+	owl:onProperty example:sepio-model\/value .
 _:c14n163 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/direction_of_evidence_provided .
-_:c14n164 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/name .
-_:c14n165 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/DataItem ;
-	owl:onProperty example:sepio-model\/data_items .
-_:c14n166 a owl:Restriction ;
-	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/release_date .
+_:c14n164 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/contributor .
+_:c14n165 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/description .
+_:c14n166 a owl:Restriction ;
+	rdfs:subClassOf example:sepio-model\/Statement ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/Statement .
 _:c14n167 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
-	owl:onProperty example:sepio-model\/unit .
+	rdfs:subClassOf example:sepio-model\/StudyResult ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/StudyResult .
 _:c14n168 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/name .
-_:c14n169 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/record_identifier .
-_:c14n17 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/subtype .
+_:c14n169 a owl:Restriction ;
+	owl:minCardinality 1 ;
+	owl:onProperty example:sepio-model\/name .
+_:c14n17 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/system_version .
 _:c14n170 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/strength_of_evidence_provided .
+	owl:onProperty example:sepio-model\/predicate .
 _:c14n171 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty example:sepio-model\/id .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/direction_of_evidence_provided .
 _:c14n172 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/output .
-_:c14n173 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/system .
-_:c14n174 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/proposition_text .
-_:c14n175 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Proposition ;
-	owl:onProperty example:sepio-model\/proposition .
-_:c14n176 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/description .
-_:c14n177 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/derived_from_record .
-_:c14n178 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/has_evidence_from_sources .
-_:c14n179 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/pmid .
-_:c14n18 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/RecordMetadata ;
-	owl:onProperty example:sepio-model\/record_metadata .
-_:c14n180 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty example:sepio-model\/name .
-_:c14n181 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/characteristics .
-_:c14n182 a owl:Restriction ;
+_:c14n173 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/DataItem ;
+	owl:onProperty example:sepio-model\/data_items .
+_:c14n174 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/release_date .
+_:c14n175 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/unit .
+_:c14n176 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/name .
+_:c14n177 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/record_identifier .
+_:c14n178 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/strength_of_evidence_provided .
+_:c14n179 a owl:Restriction ;
 	owl:minCardinality 1 ;
-	owl:onProperty example:sepio-model\/predicate .
-_:c14n183 a owl:Restriction ;
+	owl:onProperty example:sepio-model\/id .
+_:c14n18 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/supporting_methods .
+	owl:onProperty example:sepio-model\/has_evidence_lines .
+_:c14n180 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/output .
+_:c14n181 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/system .
+_:c14n182 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/proposition_text .
+_:c14n183 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Proposition ;
+	owl:onProperty example:sepio-model\/proposition .
 _:c14n184 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/system .
+	owl:onProperty example:sepio-model\/description .
 _:c14n185 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/derived_from_record .
+_:c14n186 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/has_evidence_from_sources .
+_:c14n187 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/pmid .
+_:c14n188 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/name .
+_:c14n189 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/characteristics .
+_:c14n19 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/subtype .
+_:c14n190 a owl:Restriction ;
+	rdfs:subClassOf example:sepio-model\/Document ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/Document .
+_:c14n191 a owl:Restriction ;
+	owl:minCardinality 1 ;
+	owl:onProperty example:sepio-model\/predicate .
+_:c14n192 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/supporting_methods .
+_:c14n193 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/system .
+_:c14n194 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/proposition .
-_:c14n186 a owl:Restriction ;
+_:c14n195 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/code .
-_:c14n187 a owl:Restriction ;
+_:c14n196 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty example:sepio-model\/object .
-_:c14n188 a owl:Restriction ;
+_:c14n197 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/subtype .
-_:c14n189 a owl:Restriction ;
+_:c14n198 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty example:sepio-model\/label .
-_:c14n19 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/license .
-_:c14n190 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/subtype .
-_:c14n191 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/title .
-_:c14n192 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/is_about .
-_:c14n193 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/identifiers .
-_:c14n194 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/system_version .
-_:c14n195 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/extension_description .
-_:c14n196 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/identifiers .
-_:c14n197 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/object .
-_:c14n198 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/date_record_created .
 _:c14n199 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/proposition .
+	owl:onProperty example:sepio-model\/subtype .
 _:c14n2 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/data_items .
 _:c14n20 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/label .
+	owl:allValuesFrom example:sepio-model\/RecordMetadata ;
+	owl:onProperty example:sepio-model\/record_metadata .
 _:c14n200 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/name .
-_:c14n201 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/direction .
-_:c14n202 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/release_date .
-_:c14n203 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/reported_in .
-_:c14n204 a owl:Restriction ;
-	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/title .
+_:c14n201 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/is_about .
+_:c14n202 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/identifiers .
+_:c14n203 a owl:Restriction ;
+	rdfs:subClassOf example:sepio-model\/Agent ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/Agent .
+_:c14n204 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/system_version .
 _:c14n205 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/subtype .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/extension_description .
 _:c14n206 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/focus .
+	owl:onProperty example:sepio-model\/identifiers .
 _:c14n207 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/direction .
+	owl:onProperty example:sepio-model\/object .
 _:c14n208 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/value_operator .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/date_record_created .
 _:c14n209 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/interpretation .
+	owl:onProperty example:sepio-model\/proposition .
 _:c14n21 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Agent ;
-	owl:onProperty example:sepio-model\/contributor .
-_:c14n210 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/DataItem ;
-	owl:onProperty example:sepio-model\/component_data_item .
-_:c14n211 a owl:Restriction ;
-	owl:allValuesFrom xsd:float ;
-	owl:onProperty example:sepio-model\/score .
-_:c14n212 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Extension ;
-	owl:onProperty example:sepio-model\/extensions .
-_:c14n213 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/license .
+_:c14n210 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/name .
+_:c14n211 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/direction .
+_:c14n212 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/release_date .
+_:c14n213 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/reported_in .
 _:c14n214 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/system_version .
+	owl:onProperty example:sepio-model\/title .
 _:c14n215 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/member_count .
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/subtype .
 _:c14n216 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/EvidenceLine ;
-	owl:onProperty example:sepio-model\/has_evidence_lines .
-_:c14n217 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/DataItem ;
-	owl:onProperty example:sepio-model\/confidence_interval .
-_:c14n218 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/statement_text .
-_:c14n219 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/InformationEntity ;
-	owl:onProperty example:sepio-model\/has_evidence_items .
-_:c14n22 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/sources .
-_:c14n220 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
-	owl:onProperty example:sepio-model\/predicate .
-_:c14n221 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/system_version .
-_:c14n222 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/date_record_created .
-_:c14n223 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/specified_by .
+	owl:onProperty example:sepio-model\/focus .
+_:c14n217 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/direction .
+_:c14n218 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/value_operator .
+_:c14n219 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/interpretation .
+_:c14n22 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/label .
+_:c14n220 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/DataItem ;
+	owl:onProperty example:sepio-model\/component_data_item .
+_:c14n221 a owl:Restriction ;
+	owl:allValuesFrom xsd:float ;
+	owl:onProperty example:sepio-model\/score .
+_:c14n222 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Extension ;
+	owl:onProperty example:sepio-model\/extensions .
+_:c14n223 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/license .
 _:c14n224 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/focus .
+	owl:onProperty example:sepio-model\/system_version .
 _:c14n225 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/contributions .
+	rdfs:subClassOf example:sepio-model\/Entity ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/Entity .
 _:c14n226 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/evidence_item_sources .
+	owl:onProperty example:sepio-model\/member_count .
 _:c14n227 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/date .
+	owl:allValuesFrom example:sepio-model\/EvidenceLine ;
+	owl:onProperty example:sepio-model\/has_evidence_lines .
 _:c14n228 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/object .
+	owl:allValuesFrom example:sepio-model\/DataItem ;
+	owl:onProperty example:sepio-model\/confidence_interval .
 _:c14n229 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/qualifier .
-_:c14n23 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
+	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/statement_text .
+_:c14n23 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Agent ;
+	owl:onProperty example:sepio-model\/contributor .
 _:c14n230 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/subtype .
+	owl:allValuesFrom example:sepio-model\/InformationEntity ;
+	owl:onProperty example:sepio-model\/has_evidence_items .
 _:c14n231 a owl:Restriction ;
 	owl:allValuesFrom example:sepio-model\/Coding ;
 	owl:onProperty example:sepio-model\/predicate .
 _:c14n232 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/specified_by .
-_:c14n233 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/has_evidence_items .
-_:c14n234 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/value .
-_:c14n235 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/subtype .
+	owl:onProperty example:sepio-model\/system_version .
+_:c14n233 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/date_record_created .
+_:c14n234 a owl:Restriction ;
+	rdfs:subClassOf example:sepio-model\/Contribution ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/Contribution .
+_:c14n235 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/specified_by .
 _:c14n236 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/contribution_made_to .
+	owl:onProperty example:sepio-model\/focus .
 _:c14n237 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/description .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/contributions .
 _:c14n238 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/StudyGroup ;
-	owl:onProperty example:sepio-model\/study_group .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/evidence_item_sources .
 _:c14n239 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/study_group .
+	owl:onProperty example:sepio-model\/date .
 _:c14n24 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/value .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/sources .
 _:c14n240 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/supporting_methods .
+	owl:onProperty example:sepio-model\/object .
 _:c14n241 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/component_data_item .
-_:c14n242 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Qualifier ;
 	owl:onProperty example:sepio-model\/qualifier .
+_:c14n242 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/subtype .
 _:c14n243 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty example:sepio-model\/subject .
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/predicate .
 _:c14n244 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/date_record_created .
+	owl:onProperty example:sepio-model\/specified_by .
 _:c14n245 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/has_evidence_items .
+_:c14n246 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty example:sepio-model\/value .
-_:c14n246 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/name .
 _:c14n247 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/strength .
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/subtype .
 _:c14n248 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/value .
+	owl:onProperty example:sepio-model\/contribution_made_to .
 _:c14n249 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/source_data_set .
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/description .
 _:c14n25 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/direction .
+	rdfs:subClassOf example:sepio-model\/InformationEntity ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/InformationEntity .
 _:c14n250 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/subtype .
+	owl:allValuesFrom example:sepio-model\/StudyGroup ;
+	owl:onProperty example:sepio-model\/study_group .
 _:c14n251 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/code .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/study_group .
 _:c14n252 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/record_metadata .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/supporting_methods .
 _:c14n253 a owl:Restriction ;
-	owl:allValuesFrom xsd:boolean ;
-	owl:onProperty example:sepio-model\/negated .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/component_data_item .
 _:c14n254 a owl:Restriction ;
-	owl:allValuesFrom xsd:date ;
-	owl:onProperty example:sepio-model\/date .
+	owl:allValuesFrom example:sepio-model\/Qualifier ;
+	owl:onProperty example:sepio-model\/qualifier .
 _:c14n255 a owl:Restriction ;
 	owl:minCardinality 1 ;
-	owl:onProperty example:sepio-model\/value .
+	owl:onProperty example:sepio-model\/subject .
 _:c14n256 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/predicate .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/date_record_created .
 _:c14n257 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/label .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/value .
 _:c14n258 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/license .
+	owl:onProperty example:sepio-model\/name .
 _:c14n259 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/doi .
-_:c14n26 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/urls .
+	owl:onProperty example:sepio-model\/strength .
+_:c14n26 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/statement_text .
 _:c14n260 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/object .
+	owl:onProperty example:sepio-model\/value .
 _:c14n261 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/proposition_text .
-_:c14n262 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
-	owl:onProperty example:sepio-model\/activity_type .
-_:c14n263 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/confidence_interval .
-_:c14n264 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/doi .
-_:c14n265 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/urls .
-_:c14n266 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/subtype .
-_:c14n267 a owl:Restriction ;
-	owl:allValuesFrom xsd:anyURI ;
-	owl:onProperty example:sepio-model\/system_url .
-_:c14n268 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/focus .
-_:c14n269 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/subject .
-_:c14n27 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/InformationEntity ;
-	owl:onProperty example:sepio-model\/has_evidence_from_sources .
-_:c14n270 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/subject .
-_:c14n271 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/DataSet ;
 	owl:onProperty example:sepio-model\/source_data_set .
+_:c14n262 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/subtype .
+_:c14n263 a owl:Restriction ;
+	rdfs:subClassOf example:sepio-model\/Activity ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/Activity .
+_:c14n264 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/code .
+_:c14n265 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/record_metadata .
+_:c14n266 a owl:Restriction ;
+	owl:allValuesFrom xsd:boolean ;
+	owl:onProperty example:sepio-model\/negated .
+_:c14n267 a owl:Restriction ;
+	owl:allValuesFrom xsd:date ;
+	owl:onProperty example:sepio-model\/date .
+_:c14n268 a owl:Restriction ;
+	owl:minCardinality 1 ;
+	owl:onProperty example:sepio-model\/value .
+_:c14n269 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/predicate .
+_:c14n27 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/value .
+_:c14n270 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/label .
+_:c14n271 a owl:Restriction ;
+	rdfs:subClassOf example:sepio-model\/DataSet ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/DataSet .
 _:c14n272 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/record_version .
-_:c14n28 a owl:Restriction ;
+	owl:onProperty example:sepio-model\/license .
+_:c14n273 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/doi .
+_:c14n274 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/object .
+_:c14n275 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/sources .
+	owl:onProperty example:sepio-model\/proposition_text .
+_:c14n276 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/activity_type .
+_:c14n277 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/confidence_interval .
+_:c14n278 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/doi .
+_:c14n279 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/urls .
+_:c14n28 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/direction .
+_:c14n280 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/subtype .
+_:c14n281 a owl:Restriction ;
+	owl:allValuesFrom xsd:anyURI ;
+	owl:onProperty example:sepio-model\/system_url .
+_:c14n282 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/focus .
+_:c14n283 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/subject .
+_:c14n284 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/subject .
+_:c14n285 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/DataSet ;
+	owl:onProperty example:sepio-model\/source_data_set .
+_:c14n286 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/record_version .
 _:c14n29 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Agent ;
-	owl:onProperty example:sepio-model\/performed_by .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/urls .
 _:c14n3 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty example:sepio-model\/date_authored .
 _:c14n30 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/supporting_method_types .
+	owl:allValuesFrom example:sepio-model\/InformationEntity ;
+	owl:onProperty example:sepio-model\/has_evidence_from_sources .
 _:c14n31 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/record_version .
-_:c14n32 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/version .
+	owl:onProperty example:sepio-model\/sources .
+_:c14n32 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Agent ;
+	owl:onProperty example:sepio-model\/performed_by .
 _:c14n33 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/direction_of_evidence_provided .
+	owl:onProperty example:sepio-model\/supporting_method_types .
 _:c14n34 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/subtype .
+	owl:onProperty example:sepio-model\/record_version .
 _:c14n35 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/version .
+_:c14n36 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/direction_of_evidence_provided .
+_:c14n37 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/subtype .
+_:c14n38 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/score .
-_:c14n36 a owl:Restriction ;
+_:c14n39 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty example:sepio-model\/urls .
-_:c14n37 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Method ;
-	owl:onProperty example:sepio-model\/specified_by .
-_:c14n38 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Characteristic ;
-	owl:onProperty example:sepio-model\/characteristics .
-_:c14n39 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/activity_type .
 _:c14n4 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/unit .
 _:c14n40 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Method ;
+	owl:onProperty example:sepio-model\/specified_by .
+_:c14n41 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Characteristic ;
+	owl:onProperty example:sepio-model\/characteristics .
+_:c14n42 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/activity_type .
+_:c14n43 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/label .
-_:c14n41 a owl:Restriction ;
+_:c14n44 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/subtype .
-_:c14n42 a owl:Restriction ;
+_:c14n45 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty example:sepio-model\/name .
-_:c14n43 a owl:Restriction ;
+_:c14n46 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty example:sepio-model\/has_evidence_of_types .
-_:c14n44 a owl:Restriction ;
+_:c14n47 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty example:sepio-model\/value .
-_:c14n45 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/date .
-_:c14n46 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/extension_description .
-_:c14n47 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/name .
 _:c14n48 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/id .
+	owl:onProperty example:sepio-model\/date .
 _:c14n49 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/predicate .
+	rdfs:subClassOf example:sepio-model\/StudyGroup ;
+	owl:onProperty example:sepio-model\/type ;
+	owl:someValuesFrom example:sepio-model\/StudyGroup .
 _:c14n5 a owl:Restriction ;
 	owl:allValuesFrom example:sepio-model\/Entity ;
 	owl:onProperty example:sepio-model\/input .
 _:c14n50 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/extension_description .
+_:c14n51 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/name .
+_:c14n52 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/id .
+_:c14n53 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/predicate .
+_:c14n54 a owl:Restriction ;
 	owl:allValuesFrom example:sepio-model\/Coding ;
 	owl:onProperty example:sepio-model\/subtype .
-_:c14n51 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/alternative_labels .
-_:c14n52 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/system_url .
-_:c14n53 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/record_identifier .
-_:c14n54 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/object .
 _:c14n55 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/doi .
+	owl:onProperty example:sepio-model\/alternative_labels .
 _:c14n56 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/subject .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/system_url .
 _:c14n57 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/strength .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/record_identifier .
 _:c14n58 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/value_operator .
+	owl:onProperty example:sepio-model\/object .
 _:c14n59 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/system_url .
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/doi .
 _:c14n6 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/subject_classification .
 _:c14n60 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/performed_by .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/subject .
 _:c14n61 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Contribution ;
-	owl:onProperty example:sepio-model\/contributions .
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/strength .
 _:c14n62 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/specified_by .
+	owl:onProperty example:sepio-model\/value_operator .
 _:c14n63 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/system_url .
+_:c14n64 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/performed_by .
+_:c14n65 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/Contribution ;
+	owl:onProperty example:sepio-model\/contributions .
+_:c14n66 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/specified_by .
+_:c14n67 a owl:Restriction ;
 	owl:allValuesFrom example:sepio-model\/Coding ;
 	owl:onProperty example:sepio-model\/supporting_method_types .
-_:c14n64 a owl:Restriction ;
+_:c14n68 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty example:sepio-model\/license .
-_:c14n65 a owl:Restriction ;
+_:c14n69 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/is_about .
-_:c14n66 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Proposition ;
-	owl:onProperty example:sepio-model\/target_proposition .
-_:c14n67 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/license .
-_:c14n68 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/member_count .
-_:c14n69 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/label .
 _:c14n7 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/extensions .
 _:c14n70 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/alternative_labels .
+	owl:allValuesFrom example:sepio-model\/Proposition ;
+	owl:onProperty example:sepio-model\/target_proposition .
 _:c14n71 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty example:sepio-model\/values .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/license .
 _:c14n72 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/InformationEntity ;
-	owl:onProperty example:sepio-model\/contribution_made_to .
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/member_count .
 _:c14n73 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty example:sepio-model\/name .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/label .
 _:c14n74 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/pmid .
+	owl:onProperty example:sepio-model\/alternative_labels .
 _:c14n75 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/label .
+	owl:minCardinality 1 ;
+	owl:onProperty example:sepio-model\/values .
 _:c14n76 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/proposition_text .
+	owl:allValuesFrom example:sepio-model\/InformationEntity ;
+	owl:onProperty example:sepio-model\/contribution_made_to .
 _:c14n77 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/StudyGroup ;
-	owl:onProperty example:sepio-model\/is_subset_of .
+	owl:minCardinality 1 ;
+	owl:onProperty example:sepio-model\/name .
 _:c14n78 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/type .
+	owl:onProperty example:sepio-model\/pmid .
 _:c14n79 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/value .
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/label .
 _:c14n8 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty example:sepio-model\/license .
 _:c14n80 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/proposition_text .
+_:c14n81 a owl:Restriction ;
+	owl:allValuesFrom example:sepio-model\/StudyGroup ;
+	owl:onProperty example:sepio-model\/is_subset_of .
+_:c14n82 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/type .
+_:c14n83 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/value .
+_:c14n84 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty example:sepio-model\/evidence_item_sources .
-_:c14n81 a owl:Restriction ;
+_:c14n85 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty example:sepio-model\/values .
-_:c14n82 a owl:Restriction ;
+_:c14n86 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/subject_classification .
-_:c14n83 a owl:Restriction ;
+_:c14n87 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/value_operator .
-_:c14n84 a owl:Restriction ;
+_:c14n88 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/value .
-_:c14n85 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/name .
-_:c14n86 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/system_version .
-_:c14n87 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/qualifier .
-_:c14n88 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/Coding ;
-	owl:onProperty example:sepio-model\/information_quality .
 _:c14n89 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/value .
+	owl:onProperty example:sepio-model\/name .
 _:c14n9 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty example:sepio-model\/unit .
 _:c14n90 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/reported_in .
-_:c14n91 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty example:sepio-model\/value .
+	owl:onProperty example:sepio-model\/system_version .
+_:c14n91 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty example:sepio-model\/qualifier .
 _:c14n92 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty example:sepio-model\/subtype .
+	owl:allValuesFrom example:sepio-model\/Coding ;
+	owl:onProperty example:sepio-model\/information_quality .
 _:c14n93 a owl:Restriction ;
-	owl:allValuesFrom example:sepio-model\/DataItem ;
-	owl:onProperty example:sepio-model\/variability_measures .
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/value .
 _:c14n94 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/negated .
+	owl:onProperty example:sepio-model\/reported_in .
 _:c14n95 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/input .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty example:sepio-model\/value .
 _:c14n96 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/component_result .
+	owl:maxCardinality 1 ;
+	owl:onProperty example:sepio-model\/subtype .
 _:c14n97 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/derived_from_record .
+	owl:allValuesFrom example:sepio-model\/DataItem ;
+	owl:onProperty example:sepio-model\/variability_measures .
 _:c14n98 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/is_subset_of .
+	owl:onProperty example:sepio-model\/negated .
 _:c14n99 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty example:sepio-model\/score_of_evidence_provided .
+	owl:onProperty example:sepio-model\/input .
 

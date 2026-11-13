@@ -1,9 +1,9 @@
 # metamodel_version: 1.12.0
 type Activity
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -18,9 +18,9 @@ type Activity
 
 type Agent
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -46,9 +46,9 @@ type Coding
 
 type Contribution
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -66,9 +66,9 @@ type Contribution
 
 type DataItem
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -94,9 +94,9 @@ type DataItem
 
 type DataSet
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -120,9 +120,9 @@ type DataSet
 
 type Document
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -148,9 +148,9 @@ type Document
 
 type Entity
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -159,9 +159,9 @@ type Entity
 
 type EvidenceLine
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -202,9 +202,9 @@ type Extension
 
 type InformationEntity
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -224,9 +224,9 @@ type InformationEntity
 
 type Method
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -248,9 +248,9 @@ type Method
 
 type Proposition
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -280,9 +280,9 @@ type RecordMetadata
 
 type Statement
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -316,9 +316,9 @@ type Statement
 
 type StudyGroup
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String
@@ -330,9 +330,9 @@ type StudyGroup
 
 type StudyResult
   {
+    type: String!
     id: String!
     identifiers: [String]
-    type: String!
     label: String
     alternativeLabels: [String]
     description: String

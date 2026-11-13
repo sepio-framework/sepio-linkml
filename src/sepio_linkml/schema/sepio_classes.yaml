@@ -17,6 +17,8 @@ classes:
       or extensions descend from this class and inherit its attributes.
     from_schema: https://w3id.org/sepio-model
     status: Draft
+    slots:
+    - type
     attributes:
       id:
         description: The 'logical' identifier of the entity in the system of record,
@@ -50,15 +52,6 @@ classes:
         range: string
         required: false
         multivalued: true
-      type:
-        description: The name of the class that is instantiated by a data object representing
-          the Entity.
-        comments:
-        - MUST be the label of a concrete class from the data model.
-        status: Draft
-        range: string
-        required: true
-        multivalued: false
       label:
         description: A primary name for the Entity.
         status: Draft
@@ -1614,3 +1607,14 @@ classes:
         range: string
         required: false
         multivalued: false
+slots:
+  type:
+    description: The name of the class that is instantiated by a data object representing
+      the Entity.
+    comments:
+    - MUST be the label of a concrete class from the data model.
+    status: Draft
+    range: string
+    required: true
+    multivalued: false
+    designates_type: true

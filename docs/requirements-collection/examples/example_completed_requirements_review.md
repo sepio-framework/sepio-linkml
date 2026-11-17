@@ -1,6 +1,6 @@
 # Example Requirements Review Memo
 
-This is an example of the short memo an AI agent should return with the completed workbook.
+This is an example of the short memo an AI agent should return with the completed workbook. The agent also returns a separate project-specific `Feedback_Log_Template.xlsx` copy for actionable suggestions about the forms, guidance, or workflow. Project-specific uncertainties belong in this memo; proposed changes to the collection methodology belong in the Feedback Log.
 
 ## Project scope used
 
@@ -35,7 +35,7 @@ The project is the canonical example knowledge-graph build output. Requirements 
 - The current schema was treated as authoritative.
 - No current documentation was found defining a general evidence-strength model.
 
-## Form/guidance issues encountered
+## Form/guidance observations (summarized; actionable proposals belong in the Feedback Log)
 
 - The distinction between a supporting publication and a locally represented Evidence Item required careful interpretation.
 - The project has broad claim diversity but relatively uniform evidence/provenance; this should not be mistaken for many distinct evidence models.

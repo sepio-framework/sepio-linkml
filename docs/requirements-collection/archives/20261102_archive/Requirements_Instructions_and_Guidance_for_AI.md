@@ -4,7 +4,7 @@
 
 This document provides the detailed semantic and field-level guidance an AI agent should use when completing `Requirements_Collection_Forms.xlsx` on behalf of a project. It is intended to be used together with `REQUIREMENTS_FORM_PROMPT.md`, the selected project scope statement, the reviewed project Resource Inventory, and the project-specific source materials identified there.
 
-For human-facing orientation to the overall process, see `START_HERE.md` and `Requirements_Collection_Overview.md`. For guidance on assembling and classifying the evidence base before requirements completion, see `RESOURCE_INVENTORY_GUIDANCE.md` and `RESOURCE_INVENTORY_PROMPT.md`.
+For human-facing orientation to the overall process, see `QUICK_START.md` and `Requirements_Collection_Overview.md`. For guidance on assembling and classifying the evidence base before requirements completion, see `RESOURCE_INVENTORY_GUIDANCE.md` and `RESOURCE_INVENTORY_PROMPT.md`.
 
 # I. Why Start with Requirements Collection
 
@@ -529,11 +529,13 @@ Note that the listed categories are intended as a **practical, respondent-facing
 ### **Dictionary**
 **Pre-populated:**
 
-- **Requirement ID:** a stable machine-facing identifier for the predefined evidence requirement row (prefix EI.). Do not edit these values. Category/grouping rows also have IDs for organization but are not respondent mapping triggers. For a new project-specific evidence type added under Other, assign a custom identifier such as EI.CUSTOM.001, EI.CUSTOM.002, et**c.**
+- **Requirement ID:** a stable machine-facing identifier for the predefined evidence requirement row (prefix EI.). Do not edit these values. For a new project-specific evidence type added under Other, assign a custom identifier such as EI.CUSTOM.001, EI.CUSTOM.002, et**c.**
 
-- **Evidence Item Category / Type:** names the respondent-facing evidence category or specific evidence type represented by the row.
+- **Evidence Item Group:** column B groups the specific evidence item types for navigation and comparison; it is not a separate requirement row.
 
-- **Description:** defines what the category represents.
+- **Evidence Item Type:** names the respondent-facing evidence type represented by the row.
+
+- **Description:** defines what the evidence item type represents.
 
 - **Illustrative Example(s):** provides illustrative examples for orienting the respondent.
 
@@ -553,7 +555,7 @@ Note that the listed categories are intended as a **practical, respondent-facing
 
 > Select both where a local representation is maintained together with a link to an external source.
 
-- **\[F4\] Desired Local Representation Form (required when F3 includes’ In project data ecosystem’):** If this evidence type is represented within the project’s data ecosystem, indicate how much of the evidence item itself should be represented. Select all that apply where appropriate, using the stable option codes exactly as written.
+- **\[F4\] Desired Local Representation Form (required when F3 includes `LOCAL`):** If this evidence type is represented within the project’s data ecosystem, indicate how much of the evidence item itself should be represented. Select all that apply where appropriate, using the stable option codes exactly as written.
 
   - **FREE_TEXT** — Free-text representation: information about or from the evidence item is present only in free-text content and is not separately structured.
 
@@ -575,7 +577,7 @@ Note that the listed categories are intended as a **practical, respondent-facing
 
     - Example: an image file, figure image, PDF, or data table is stored as part of the project’s data resource.
 
-- **\[F5\] Individual Addressability Needed?:** Does the project need individual instances of this evidence type to be represented as separately identifiable/addressable items, so that provenance, evidence interpretation, confidence, or other metadata can be attached specifically to them? Use one of the stable values YES, NO, or NO_SPECIFIC_REQUIREMENT.
+- **\[F5\] Individual Addressability Needed? (required when F3 includes `LOCAL`):** Does the project need individual instances of this evidence type to be represented as separately identifiable/addressable items, so that provenance, evidence interpretation, confidence, or other metadata can be attached specifically to them? Use one of the stable values YES, NO, or NO_SPECIFIC_REQUIREMENT.
 
   - Values:
 
@@ -583,7 +585,7 @@ Note that the listed categories are intended as a **practical, respondent-facing
 
     - **No** = the item need only be represented/referenced as part of a larger object/container (e.g. a specific figure referenced from within a publication object)
 
-    - **No specific requiremen**t = not sure or neither of these (explain as possible)
+    - **No specific requirement** = not sure or neither of these (explain as possible)
 
   - Example: a publication may currently be cited only by PMID at the claim level, whereas a particular figure within that publication may need its own identifier if a project wants to assert that the figure specifically supports the claim.
 
@@ -601,25 +603,27 @@ Note that the listed categories are intended as a **practical, respondent-facing
 
 > *Do not repeat provenance information here unless it is necessary to understand the evidence item itself. For example, “journal” may reasonably be treated as an attribute of a publication, whereas the software version used to generate a result belongs under provenance.*
 
-- **\[F7\] Specific Kinds of this Item Type (`r`):** List the specific kinds or subtypes of this high-level Evidence Item Type that occur in your data or that you want the future model to support. Use the terminology your project normally uses; a formal controlled vocabulary or taxonomy is not required. Be as specific as is useful for understanding modeling needs.
+- **\[F7\] Specific Kinds of this Item Type (`o`):** List the specific kinds or subtypes of this high-level Evidence Item Type that occur in your data or that you want the future model to support. Use the terminology your project normally uses; a formal controlled vocabulary or taxonomy is not required. Be as specific as is useful for understanding modeling needs.
 
   - For example, if you selected **Experimental or Observational Data Items**, you might list “in vitro and ex vivo measurements,” “cell counts,” “FACS measurements,” “protein-expression measurements,” or “cell-line survival times.” If you selected **Statistical Metrics**, you might list “p-values,” “z-scores,” “odds ratios,” “confidence intervals,” or “chi-square statistics for concept co-occurrence in medical records.” If you selected **Computational Predictions / Scores**, identify the kinds of predictions or scores represented, such as “variant pathogenicity scores,” “drug-sensitivity predictions,” or “protein-structure confidence scores.” If you selected **External Data Record**, describe the kinds of records and their source systems, such as “ClinVar variation records,” “DrugCentral drug records,” or “dbGaP study/phenotype records.” For **Documents, Images, Datasets, Study Results,** or other broad categories, similarly describe the concrete kinds relevant to your project.
 
   - This field is intended to reveal distinctions that may affect modeling—for example, whether different subtypes require different attributes, provenance, representation patterns, or SEPIO specializations. Do not list every individual instance; describe the meaningful kinds represented across your data.
 
-- **\[F7\] Example(s) from Your Data (`o`):** where possible, provide one or two concrete examples of this evidence item type from the project’s current data. If the evidence type is desired but not currently represented, an illustrative future example may be provided and clearly labeled as such.
+- **\[F8\] Example(s) from Your Data (`o`):** where possible, provide one or two concrete examples of this evidence item type from the project’s current data. If the evidence type is desired but not currently represented, an illustrative future example may be provided and clearly labeled as such.
 
-- **\[F8\] Explanation / Considerations (`o`):** provide project-specific details about how this evidence type is or should be represented. Note any distinctions in granularity, overlap with other evidence types, important qualifiers, limitations of the current representation, or reasons why the project does or does not want to capture it.
+- **\[F9\] Explanation / Considerations (`o`):** provide project-specific details about how this evidence type is or should be represented. Note any distinctions in granularity, overlap with other evidence types, important qualifiers, limitations of the current representation, or reasons why the project does or does not want to capture it.
 
-- **\[F9\] Relevant Claim Types (`o`):** optional, but helpful where possible; list the IDs of specific Claim Types from the Claim Type Form for which this evidence type is relevant.
+- **\[F10\] Relevant Claim Types (`o`):** optional, but helpful where possible; list the IDs of specific Claim Types from the Claim Type Form for which this evidence type is relevant.
 
 **Guidance for AI agents:** Describe what evidence information the project explicitly represents or wants to represent in its data. Do not infer a requirement simply because a type of evidence was used by a curator, algorithm, or external workflow to generate a claim. Evidence may influence claim generation without being part of the project’s desired data representation. Base selections on project data, documentation, examples, or explicit requirements, and flag uncertainty rather than assuming support is needed.
 
-**Complete respondent fields for the specific evidence-type rows, not the higher-level category/grouping rows.** Do not edit the **SEPIO Mapping Summary** column, and do not use its content when describing the project's requirements.
+**Complete respondent fields for each specific evidence-item-type row.**  F7 is optional: list meaningful subtypes where supported, but do not invent subtype distinctions. Do not edit the **SEPIO Mapping Summary** column, and do not use its content when describing the project's requirements.
 
 These questions intentionally separate several downstream modeling concerns: where an evidence item is maintained; how it is represented locally; whether individual instances must be separately addressable; and what intrinsic attributes the representation must carry.
 
 > where does it live? → what representation is needed? → must it be first-class/addressable? → what properties must it carry?
+
+Finally, note that while Documents are included as evidence item type rows in the EIT form, SEPIO does not represent Documents as evidence items. Rather they are represented as sources of evidence that contain / describe evidence items (text passages, data or results, figures or images).
 
 ## 6. Evidence Interpretation Form (EINT) 
 
@@ -671,19 +675,19 @@ The questions in the **Evidence Interpretation Form** collect requirements relat
 
 ## 7. Provenance Types Form (PROV) 
 
-**Purpose:** Use this form to identify what provenance information your project currently represents, and what provenance information it wants a future SEPIO-based model to support for evidence items, semantic alignment, evidence interpretation, assertions, encoding, and retrieval. It is organized according to the provenance levels described above:
+**Purpose:** Use this form to identify what provenance information your project currently represents, and what provenance information it wants a future SEPIO-based model to support for evidence items, semantic alignment, evidence interpretation, assertions, encoding, and retrieval. Each provenance requirement occupies its own row; the **Provenance Level** column identifies the relevant level. The worksheet does not include separate informational rows describing provenance levels. The conceptual framework below provides that context:
 
-- **Evidence Item Provenance**: relevant only for projects that want to describe how info used as evidence was generated
+- **Evidence Item Provenance**: Describes how information used as evidence originally came to exist and get into the system of record (independent of and prior to their future use as evidence). Relevant only for projects that want to describe this type of provenance.
 
-- **Semantic Alignment Provenance:** relevant when a project wants to represent how source semantics were interpreted, extracted, grounded, normalized, or mapped into a structured target representation. In principle, this can apply to human curation or mappings from structured source records; however, in practice this level of detailed provenance is expected to be needed primarily for automated or AI-assisted extraction and semantic alignment from text, where the intermediate extraction, grounding, and normalization steps may need to be recorded and audited.
+- **Semantic Alignment Provenance:** Describes how a source representation was understood and mapped into the concepts/relationships used by the target curator or system, and relevant only for projects that want to describe this type of provenance. In principle, this can apply to human curation or mappings from structured source records; however, in practice this level of detailed provenance is expected to be needed primarily for automated or AI-assisted extraction and semantic alignment from text, where the intermediate extraction, grounding, and normalization steps that produce a structured target representation may need to be recorded and audited.
 
-- **Evidence Interpretation Provenance:** relevant only for projects that want to capture details of how specific kinds/pieces of evidence are interpreted in support of claims
+- **Evidence Interpretation Provenance:** Describes how specific pieces of evidence were interpreted/weighed as arguments for or against a claim. Relevant only for projects that want to describe this type of provenance.
 
-- **Assertion Provenance**: relevant for all projects to some degree - as this is the provenance of how claims are made. But some may want to track provenance here in more detail than others.
+- **Assertion Provenance**: Describes how evidence was ultimately reasoned over to make a claim. Relevant for all projects to some degree - as this is the provenance of how claims are made - but some may want to track provenance here in more detail than others.
 
-- **Encoding Provenance** : relevant only if your project is concerned with how a claim was concretely serialized in a particular format or language
+- **Encoding Provenance** : Describes how a claim or other information artifact was concretely serialized in a particular format or language (e.g. in a rdf triplestore, or a json document). Relevant only for projects that want to describe this type of provenance.
 
-- **Retrieval Provenance**: relevant only if your project is concerned with how data representing claims is moved/transformed between data systems
+- **Retrieval Provenance**: Describes a retrieval event in which an encoded representation of a claim or evidence item was moved or transformed between data systems on its way to its present location in the system of record. Examples: TTD → DGIdb → Monarch ingest; DrugCentral → Translator ingest → ARAX; Mondo → Monarch KG → Monarch UI. Relevant only for projects that want to describe this type of provenance.
 
 Not every project needs every provenance level. A lightweight knowledge resource may need only source and assertion level provenance. Projects following detailed evidence interpretation frameworks may require more granular provenance at the level of evidence organization and interpretation. And projects that utilize AI-assisted curation may require detailed provenance at the level of semantic-alignment and interpretation.
 
@@ -762,3 +766,8 @@ After a project representative reviews and confirms the completed requirements w
 During the current pilot phase, an AI agent may perform this later analysis and generation step. The confirmed workbook remains the formal project-requirements input; the selected scope and Resource Inventory provide supporting provenance for how those requirements were derived. The completed requirements forms should nevertheless remain requirements-first: **do not use the SEPIO Mapping Summary columns to decide what the project needs.**
 
 Detailed downstream mapping, routing, and output-generation behavior is documented separately in the Requirement → SEPIO Mapping Registry/README and the Requirements-to-Model Report Specification.
+
+
+## Agent feedback after requirements completion
+
+After completing the requirements workbook and Review Memo, complete a project-specific copy of `Feedback_Log_Template.xlsx`. Record actionable observations about the forms, field wording, controlled responses, guidance, or workflow, using its `Agent Instructions` and `Controlled Vocabularies` tabs. This feedback is separate from the project requirements and from unresolved project-specific questions in the Review Memo. Do not modify the authoritative forms or guidance on the basis of feedback without review and approval.

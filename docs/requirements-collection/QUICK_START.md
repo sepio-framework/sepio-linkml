@@ -13,14 +13,34 @@ After you review and confirm the completed forms, a separate **SEPIO requirement
 
 ---
 
+## How Requirements Collection Fits into the SEPIO Modeling Process
+
+Requirements collection is the first phase of a broader, four-phase process for developing and validating SEPIO-based models that meet the representational needs of participating projects.
+
+1. **Project Requirements Collection:** Identify what the project currently represents and what capabilities it needs in a future SEPIO-based representation. Review relevant project resources, complete the Requirements Collection Forms, and confirm the requirements with a project representative.
+
+2. **Requirements-to-SEPIO Mapping:** Map the confirmed requirements to classes, properties, and modeling patterns in the SEPIO Core Model. Identify requirements that are directly supported, only partially supported, or may require model extensions.
+
+3. **Covering Model Derivation and Review:** Use the confirmed requirements and their SEPIO mappings to systematically generate an initial candidate Covering Model. SEPIO modelers and project representatives review and refine this model. Covering Models identify shared representational capabilities and are distinct from project-specific implementation profiles.
+
+4. **Project Data Mapping and Validation:** Map representative project records into the proposed SEPIO-based representation and evaluate whether the required information and semantics are preserved. Use the findings to refine the model and mappings as needed.
+
+**AI-assisted execution is recommended but optional.** The starter-kit guidance and prompts are designed to help AI agents support these phases, including resource discovery, requirements elicitation, proposed SEPIO mappings, and initial Covering Model generation. Agents may prepare drafts for human review or collaborate directly with project representatives in an interactive interview-style process.
+
+**This Quick Start focuses on Phase 1.** Once your requirements are reviewed and confirmed, they become the input for Phases 2–4. You do not need to understand or select SEPIO model elements while completing the requirements forms.
+
+For the detailed four-phase workflow, see `Requirements_Instructions_and_Guidance_for_AI.md`.
+
+---
+
 ## What is in this folder
 
-- `Requirements_Collection_Forms.xlsx` — the empty workbook your agent should complete.
-- `Requirements_Instructions_and_Guidance_for_AI.md` — detailed semantic and field-by-field instructions intended primarily for the AI agent.
+- `Requirements_Collection_Forms.xlsx` — the authoritative blank requirements workbook your agent should complete.
+- `Feedback_Log_Template.xlsx` — a separate workbook for the agent’s post-completion feedback on the forms and process.
+- `Requirements_Instructions_and_Guidance_for_Agents.md` — detailed semantic and field-by-field instructions intended primarily for the AI agent.
 - `REQUIREMENTS_FORM_PROMPT.md` — the ready-to-copy prompt for asking an AI agent to complete the forms.
 - `RESOURCE_INVENTORY_PROMPT.md` — an optional prompt that asks an AI agent to discover, classify, and organize project resources and propose candidate scope statements.
 - `RESOURCE_INVENTORY_GUIDANCE.md` — practical guidance for assembling and reviewing a Resource Inventory.
-- `PROJECT_SOURCE_CHECKLIST.md` — a checklist for gathering useful project schemas, documentation, examples, and other evidence.
 - `Requirements_Collection_Overview.md` — the comprehensive human-facing overview of the requirements-collection workflow.
 - `examples/example_scope_statement.md` — examples of project scope statements.
 - `examples/example_completed_requirements_review.md` — an example Requirements Review Memo.
@@ -30,10 +50,10 @@ After you review and confirm the completed forms, a separate **SEPIO requirement
 
 ## Process at a glance
 
-1. **Define the scope.** Decide exactly which canonical source(s) control current-state answers and which broader sources may inform desired-state requirements.
-2. **Create a Resource Inventory.** Identify the best evidence, examples, versions, conflicts, and candidate scope statements.
-3. **Give the agent everything it needs and have it populate the Requirements Forms.**
-4. **Inspect the workbook and review memo.** Resolve uncertainties and correct anything that does not reflect the project.
+1. **Discover resources and establish scope.** Identify relevant project materials, designate authoritative current-state sources and broader desired-state support, and confirm the selected scope.
+2. **Finalize the Resource Inventory.** Document the selected resources, source roles, versions, representative examples, and any conflicts or uncertainties; review and approve the inventory before form completion.
+3. **Give the agent everything it needs; have it complete the Requirements Forms, Review Memo, and Feedback Log.**
+4. **Inspect the workbook and review memo; triage Feedback Log suggestions separately.** Resolve uncertainties and correct anything that does not reflect the project.
 5. **Move to SEPIO mapping.** Once confirmed, use the requirements record as input to the separate requirements-to-model workflow.
 
 ---
@@ -138,7 +158,7 @@ The agent should follow these principles:
 
 # Step 4 — Inspect the Deliverables
 
-The requirements agent should return two main deliverables.
+The requirements agent should return three deliverables. The Feedback Log is a separate process-improvement artifact, not part of the project requirements.
 
 ## 1. Completed Requirements Workbook
 
@@ -170,6 +190,10 @@ The memo should include:
 
 Examples should be represented as close to the source structure as practical—for example, table rows for tabular data, JSON/YAML for structured documents, or triples/edges for graph data.
 
+## 3. Project Feedback Log
+
+Return a project-specific copy of `Feedback_Log_Template.xlsx`, named `[PROJECT]_Requirements_Feedback_Log_v[VERSION]_[YYYYMMDD]_[HHMM].xlsx`. Follow the template’s **Agent Instructions** and **Controlled Vocabularies**. Record concrete problems or improvements in form wording, field structure, instructions, validation, or workflow, including the affected sheet/field where possible. Do not duplicate ordinary project-specific uncertainties that belong in the Review Memo. Feedback is for human triage; it does not authorize changing the master forms or guidance.
+
 ## What to review
 
 Focus especially on places where the agent had to interpret ambiguous evidence or infer desired-state intent.
@@ -189,7 +213,7 @@ Ask:
 - Did it flag unsupported answers instead of guessing?
 - Do the worksheets and memo tell a coherent story?
 
-Correct anything that does not accurately reflect the project.
+Correct anything that does not accurately reflect the project. Review the Feedback Log separately for proposed improvements to the collection process; accept or reject these through the maintained improvement process, not by silently editing the template.
 
 Once you are comfortable with the workbook, treat it as the **confirmed project requirements input**.
 
@@ -217,7 +241,7 @@ That downstream package can include:
 4. Requirements Follow-Up & Modeling Decisions
 5. Gap & Extension Analysis
 6. Implementation Guidance
-7. Requirements Collection & Form Feedback
+7. Requirements Collection & Form Feedback (downstream mapping artifact; distinct from the agent’s Starter Kit Feedback Log)
 8. Generation Manifest
 
 During the current pilot phase, an AI agent can generate these outputs with transparent provenance. Later, deterministic code can take over schema extraction, dependency closure, validation, traceability, and manifest generation.
@@ -244,4 +268,4 @@ Only after those requirements are reviewed should the mapping workflow ask:
 
 A more comprehensive overview of the workflow and tasks can be found in `Requirements_Collection_Overview.md`.
 
-Detailed guidance for building and reviewing the project evidence set can be found in `RESOURCE_INVENTORY.md`.
+Detailed guidance for building and reviewing the project evidence set can be found in `RESOURCE_INVENTORY_GUIDANCE.md`.

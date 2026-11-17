@@ -1,0 +1,16 @@
+# Changes here will be overwritten by Copier
+_commit: v0.5.0
+_src_path: https://github.com/linkml/linkml-project-copier
+add_example: false
+copyright_year: '2024'
+email: corey@tislab.org
+existing_license_file: LICENSE
+full_name: Corey Cox
+gh_action_docs_preview: true
+gh_action_pypi: true
+github_org: sepio-framework
+license: Apache-2.0
+project_description: LinkML-based specification of the SEPIO information model.
+project_name: sepio-linkml
+project_slug: sepio_linkml
+

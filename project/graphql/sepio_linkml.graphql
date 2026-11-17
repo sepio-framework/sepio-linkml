@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0
+# metamodel_version: 1.12.0
 type Activity
   {
     id: String!
@@ -9,7 +9,7 @@ type Activity
     description: String
     extensions: [Extension]
     subtype: Coding
-    date: Date
+    date: String
     performedBy: [Agent]
     specifiedBy: [Method]
     input: [Entity]
@@ -54,7 +54,7 @@ type Contribution
     description: String
     extensions: [Extension]
     subtype: Coding
-    date: Date
+    date: String
     performedBy: [Agent]
     specifiedBy: [Method]
     input: [Entity]
@@ -81,6 +81,7 @@ type DataItem
     supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
+    sources: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
     subtype: Coding
@@ -108,6 +109,7 @@ type DataSet
     supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
+    sources: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
     subtype: Coding
@@ -133,6 +135,7 @@ type Document
     supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
+    sources: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
     subtype: Coding
@@ -171,6 +174,7 @@ type EvidenceLine
     supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
+    sources: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
     subtype: Coding
@@ -185,7 +189,7 @@ type EvidenceLine
 type Expression
   {
     value: String!
-    systemURL: Uriorcurie
+    systemUrl: String
     systemVersion: String
   }
 
@@ -213,6 +217,7 @@ type InformationEntity
     supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
+    sources: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
   }
@@ -234,6 +239,7 @@ type Method
     supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
+    sources: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
     subtype: Coding
@@ -289,6 +295,7 @@ type Statement
     supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
+    sources: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
     statementText: String
@@ -304,6 +311,7 @@ type Statement
     hasEvidenceOfTypes: [String]
     hasEvidenceLines: [EvidenceLine]
     hasEvidence: [InformationEntity]
+    hasEvidenceFromSources: [InformationEntity]
   }
 
 type StudyGroup
@@ -315,7 +323,7 @@ type StudyGroup
     alternativeLabels: [String]
     description: String
     extensions: [Extension]
-    memberCount: Integer
+    memberCount: Int
     isSubsetOf: [StudyGroup]
     characteristics: [Characteristic]
   }
@@ -337,6 +345,7 @@ type StudyResult
     supportingMethodTypes: [Coding]
     derivedFrom: [InformationEntity]
     reportedIn: [String]
+    sources: [String]
     informationQuality: Coding
     recordMetadata: RecordMetadata
     focus: String
@@ -350,4 +359,3 @@ type StudyResult
 type Utility
   {
   }
-

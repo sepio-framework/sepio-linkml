@@ -19,26 +19,25 @@ The SEPIO Core-IM specified in this repository was written in a yaml format usin
 
 ## Repository Structure
 
-* [examples/](examples/) - example data
-* [project/](project/) - project files (do not edit these)
+* [docs/](docs/) - mkdocs-managed documentation
+  * [elements/](docs/elements/) - generated schema documentation
+* [examples/](examples/) - Examples of using the schema
+* [project/](project/) - project files (these files are auto-generated, do not edit)
 * [src/](src/) - source files (edit these)
   * [sepio_linkml](src/sepio_linkml)
-    * [schema](src/sepio_linkml/schema) -- LinkML schema
+    * [schema/](src/sepio_linkml/schema) -- LinkML schema
       (edit this)
-    * [datamodel](src/sepio_linkml/datamodel) -- generated
+    * [datamodel/](src/sepio_linkml/datamodel) -- generated
       Python datamodel
 * [tests/](tests/) - Python tests
+  * [data/](tests/data) - Example data
 
-## Developer Documentation
+## Developer Tools
 
-<details>
-Use the `make` command to generate project artefacts:
-
-* `make all`: make everything
-* `make deploy`: deploys site
-</details>
+There are several pre-defined command-recipes available.
+They are written for the command runner [just](https://github.com/casey/just/).
+To list all pre-defined commands, run `just` or `just --list`.
 
 ## Credits
 
-This project was made with
-[linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter).
+This project uses the template [linkml-project-copier](https://github.com/linkml/linkml-project-copier).

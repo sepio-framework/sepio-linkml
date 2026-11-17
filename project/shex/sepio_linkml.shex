@@ -1,9 +1,9 @@
 # metamodel_version: 1.12.0
 BASE <https://w3id.org/sepio-framework/sepio-linkml/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
-PREFIX sepio-model: <https://example.org/sepio-model/>
 
 
 linkml:String xsd:string
@@ -44,280 +44,277 @@ linkml:Jsonpath xsd:string
 
 linkml:Sparqlpath xsd:string
 
-sepio-model:Activity  (
+<Activity>  (
     CLOSED {
-       (  $sepio-model:Activity_tes (  &sepio-model:Entity_tes ;
-             rdf:type [ sepio-model:Entity ] ? ;
-             sepio-model:subtype @sepio-model:Coding ? ;
-             sepio-model:date @linkml:Date ? ;
-             sepio-model:performed_by @sepio-model:Agent * ;
-             sepio-model:specified_by @sepio-model:Method * ;
-             sepio-model:input @sepio-model:Entity * ;
-             sepio-model:output @sepio-model:Entity *
+       (  $<Activity_tes> (  &<Entity_tes> ;
+             rdf:type [ <http://purl.obolibrary.org/obo/BFO_0000001> ] ? ;
+             <subtype> @<Coding> ? ;
+             <http://purl.obolibrary.org/obo/SEPIO_0000160> @linkml:Date ? ;
+             <http://purl.obolibrary.org/obo/SEPIO_0000017> @<Agent> * ;
+             <http://purl.obolibrary.org/obo/SEPIO_0000041> @<Method> * ;
+             <http://purl.obolibrary.org/obo/OBI_0000293> @<Entity> * ;
+             <http://purl.obolibrary.org/obo/OBI_0000299> @<Entity> *
           ) ;
-          rdf:type [ sepio-model:Activity ] ?
+          rdf:type [ prov:Activity ] ?
        )
-    } OR @sepio-model:Contribution
+    } OR @<Contribution>
 )
 
-sepio-model:Agent CLOSED {
-    (  $sepio-model:Agent_tes (  &sepio-model:Entity_tes ;
-          rdf:type [ sepio-model:Entity ] ? ;
-          sepio-model:subtype @linkml:String ? ;
-          sepio-model:name @linkml:String ?
+<Agent> CLOSED {
+    (  $<Agent_tes> (  &<Entity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/BFO_0000001> ] ? ;
+          <subtype> @linkml:String ? ;
+          <name> @linkml:String ?
        ) ;
-       rdf:type [ sepio-model:Agent ] ?
+       rdf:type [ prov:Agent ] ?
     )
 }
 
-sepio-model:Characteristic CLOSED {
-    (  $sepio-model:Characteristic_tes (  &sepio-model:Utility_tes ;
-          rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:name @linkml:String ;
-          sepio-model:values @linkml:String + ;
-          sepio-model:value_operator @linkml:String ?
+<Characteristic> CLOSED {
+    (  $<Characteristic_tes> (  &<Utility_tes> ;
+          rdf:type [ <Utility> ] ? ;
+          <name> @linkml:String ;
+          <values> @linkml:String + ;
+          <value_operator> @linkml:String ?
        ) ;
-       rdf:type [ sepio-model:Characteristic ] ?
+       rdf:type [ <Characteristic> ] ?
     )
 }
 
-sepio-model:Coding CLOSED {
-    (  $sepio-model:Coding_tes (  &sepio-model:Utility_tes ;
-          rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:code @linkml:String ? ;
-          sepio-model:label @linkml:String ? ;
-          sepio-model:system @linkml:String ? ;
-          sepio-model:system_version @linkml:String ?
+<Coding> CLOSED {
+    (  $<Coding_tes> (  &<Utility_tes> ;
+          rdf:type [ <Utility> ] ? ;
+          <code> @linkml:String ? ;
+          <label> @linkml:String ? ;
+          <system> @linkml:String ? ;
+          <system_version> @linkml:String ?
        ) ;
-       rdf:type [ sepio-model:Coding ] ?
+       rdf:type [ <Coding> ] ?
     )
 }
 
-sepio-model:Contribution CLOSED {
-    (  $sepio-model:Contribution_tes (  &sepio-model:Activity_tes ;
-          rdf:type [ sepio-model:Activity ] ? ;
-          sepio-model:contributor @sepio-model:Agent ? ;
-          sepio-model:activity_type @sepio-model:Coding * ;
-          sepio-model:contribution_made_to @sepio-model:InformationEntity ?
+<Contribution> CLOSED {
+    (  $<Contribution_tes> (  &<Activity_tes> ;
+          rdf:type [ prov:Activity ] ? ;
+          <contributor> @<Agent> ? ;
+          <activity_type> @<Coding> * ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000188> @<InformationEntity> ?
        ) ;
-       rdf:type [ sepio-model:Contribution ] ?
+       rdf:type [ <http://purl.obolibrary.org/obo/SEPIO_0000158> ] ?
     )
 }
 
-sepio-model:DataItem CLOSED {
-    (  $sepio-model:DataItem_tes (  &sepio-model:InformationEntity_tes ;
-          rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:subtype @sepio-model:Coding ? ;
-          sepio-model:value @linkml:String ;
-          sepio-model:unit @sepio-model:Coding ? ;
-          sepio-model:variability_measures @sepio-model:DataItem * ;
-          sepio-model:confidence_interval @sepio-model:DataItem ? ;
-          sepio-model:component_data_item @sepio-model:DataItem *
+<DataItem> CLOSED {
+    (  $<DataItem_tes> (  &<InformationEntity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000030> ] ? ;
+          <subtype> @<Coding> ? ;
+          <value> @linkml:String ;
+          <unit> @<Coding> ? ;
+          <variability_measures> @<DataItem> * ;
+          <confidence_interval> @<DataItem> ? ;
+          <component_data_item> @<DataItem> *
        ) ;
-       rdf:type [ sepio-model:DataItem ] ?
+       rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000027> ] ?
     )
 }
 
-sepio-model:DataSet CLOSED {
-    (  $sepio-model:DataSet_tes (  &sepio-model:InformationEntity_tes ;
-          rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:subtype @sepio-model:Coding ? ;
-          sepio-model:release_date @linkml:String ? ;
-          sepio-model:version @linkml:String ? ;
-          sepio-model:license @linkml:String ?
+<DataSet> CLOSED {
+    (  $<DataSet_tes> (  &<InformationEntity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000030> ] ? ;
+          <subtype> @<Coding> ? ;
+          <release_date> @linkml:String ? ;
+          <version> @linkml:String ? ;
+          <license> @linkml:String ?
        ) ;
-       rdf:type [ sepio-model:DataSet ] ?
+       rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000100> ] ?
     )
 }
 
-sepio-model:Document CLOSED {
-    (  $sepio-model:Document_tes (  &sepio-model:InformationEntity_tes ;
-          rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:subtype @sepio-model:Coding ? ;
-          sepio-model:title @linkml:String ? ;
-          sepio-model:urls @linkml:String * ;
-          sepio-model:pmid @linkml:String ? ;
-          sepio-model:doi @linkml:String ? ;
-          sepio-model:license @linkml:String ?
+<Document> CLOSED {
+    (  $<Document_tes> (  &<InformationEntity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000030> ] ? ;
+          <subtype> @<Coding> ? ;
+          <title> @linkml:String ? ;
+          <urls> @linkml:String * ;
+          <pmid> @linkml:String ? ;
+          <doi> @linkml:String ? ;
+          <license> @linkml:String ?
        ) ;
-       rdf:type [ sepio-model:Document ] ?
+       rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000310> ] ?
     )
 }
 
-sepio-model:Entity  (
+<Entity>  (
     CLOSED {
-       (  $sepio-model:Entity_tes (  sepio-model:id @linkml:String ;
-             sepio-model:identifiers @linkml:String * ;
-             sepio-model:type @linkml:String ;
-             sepio-model:label @linkml:String ? ;
-             sepio-model:alternative_labels @linkml:String * ;
-             sepio-model:description @linkml:String ? ;
-             sepio-model:extensions @sepio-model:Extension *
+       (  $<Entity_tes> (  <id> @linkml:String ;
+             <identifiers> @linkml:String * ;
+             <type> @linkml:String ;
+             <label> @linkml:String ? ;
+             <alternative_labels> @linkml:String * ;
+             <description> @linkml:String ? ;
+             <extensions> @<Extension> *
           ) ;
-          rdf:type [ sepio-model:Entity ] ?
+          rdf:type [ <http://purl.obolibrary.org/obo/BFO_0000001> ] ?
        )
-    } OR @sepio-model:Activity OR @sepio-model:Agent OR @sepio-model:InformationEntity OR @sepio-model:Proposition OR
-    @sepio-model:StudyGroup
+    } OR @<Activity> OR @<Agent> OR @<InformationEntity> OR @<Proposition> OR @<StudyGroup>
 )
 
-sepio-model:EvidenceLine CLOSED {
-    (  $sepio-model:EvidenceLine_tes (  &sepio-model:InformationEntity_tes ;
-          rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:subtype @sepio-model:Coding ? ;
-          sepio-model:target_proposition @sepio-model:Proposition ? ;
-          sepio-model:has_evidence_items @sepio-model:InformationEntity * ;
-          sepio-model:direction_of_evidence_provided @linkml:String ? ;
-          sepio-model:strength_of_evidence_provided @linkml:String ? ;
-          sepio-model:score_of_evidence_provided @linkml:Float ? ;
-          sepio-model:evidence_item_sources @linkml:String *
+<EvidenceLine> CLOSED {
+    (  $<EvidenceLine_tes> (  &<InformationEntity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000030> ] ? ;
+          <subtype> @<Coding> ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000427> @<Proposition> ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000084> @<InformationEntity> * ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000183> @linkml:Uriorcurie ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000132> @linkml:Uriorcurie ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000429> @linkml:Float ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000124> @linkml:Uriorcurie *
        ) ;
-       rdf:type [ sepio-model:EvidenceLine ] ?
+       rdf:type [ <http://purl.obolibrary.org/obo/SEPIO_0000002> ] ?
     )
 }
 
-sepio-model:Expression CLOSED {
-    (  $sepio-model:Expression_tes (  &sepio-model:Utility_tes ;
-          rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:value @linkml:String ;
-          sepio-model:system_url @linkml:Uriorcurie ? ;
-          sepio-model:system_version @linkml:String ?
+<Expression> CLOSED {
+    (  $<Expression_tes> (  &<Utility_tes> ;
+          rdf:type [ <Utility> ] ? ;
+          <value> @linkml:String ;
+          <system_url> @linkml:Uriorcurie ? ;
+          <system_version> @linkml:String ?
        ) ;
-       rdf:type [ sepio-model:Expression ] ?
+       rdf:type [ <Expression> ] ?
     )
 }
 
-sepio-model:Extension CLOSED {
-    (  $sepio-model:Extension_tes (  &sepio-model:Utility_tes ;
-          rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:extension_description @linkml:String ? ;
-          sepio-model:name @linkml:String ;
-          sepio-model:value @linkml:String
+<Extension> CLOSED {
+    (  $<Extension_tes> (  &<Utility_tes> ;
+          rdf:type [ <Utility> ] ? ;
+          <extension_description> @linkml:String ? ;
+          <name> @linkml:String ;
+          <value> @linkml:String
        ) ;
-       rdf:type [ sepio-model:Extension ] ?
+       rdf:type [ <Extension> ] ?
     )
 }
 
-sepio-model:InformationEntity  (
+<InformationEntity>  (
     CLOSED {
-       (  $sepio-model:InformationEntity_tes (  &sepio-model:Entity_tes ;
-             rdf:type [ sepio-model:Entity ] ? ;
-             sepio-model:is_about @linkml:String * ;
-             sepio-model:contributions @sepio-model:Contribution * ;
-             sepio-model:date_authored @linkml:String ? ;
-             sepio-model:specified_by @linkml:String * ;
-             sepio-model:supporting_methods @linkml:String * ;
-             sepio-model:supporting_method_types @sepio-model:Coding * ;
-             sepio-model:derived_from @sepio-model:InformationEntity * ;
-             sepio-model:reported_in @linkml:String * ;
-             sepio-model:sources @linkml:String * ;
-             sepio-model:information_quality @sepio-model:Coding ? ;
-             sepio-model:record_metadata @sepio-model:RecordMetadata ?
+       (  $<InformationEntity_tes> (  &<Entity_tes> ;
+             rdf:type [ <http://purl.obolibrary.org/obo/BFO_0000001> ] ? ;
+             <http://purl.obolibrary.org/obo/IAO_0000136> @linkml:Uriorcurie * ;
+             <http://purl.obolibrary.org/obo/SEPIO_0000159> @<Contribution> * ;
+             <http://purl.obolibrary.org/obo/SEPIO_0000135> @linkml:String ? ;
+             <http://purl.obolibrary.org/obo/SEPIO_0000041> @linkml:Uriorcurie * ;
+             <supporting_methods> @linkml:String * ;
+             <supporting_method_types> @<Coding> * ;
+             <derived_from> @<InformationEntity> * ;
+             <http://purl.obolibrary.org/obo/SEPIO_0000108> @linkml:Uriorcurie * ;
+             <sources> @linkml:String * ;
+             <http://purl.obolibrary.org/obo/SEPIO_0000415> @<Coding> ? ;
+             <record_metadata> @<RecordMetadata> ?
           ) ;
-          rdf:type [ sepio-model:InformationEntity ] ?
+          rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000030> ] ?
        )
-    } OR @sepio-model:DataItem OR @sepio-model:DataSet OR @sepio-model:Document OR @sepio-model:EvidenceLine OR @sepio-model:Method
-    OR @sepio-model:Statement OR @sepio-model:StudyResult
+    } OR @<DataItem> OR @<DataSet> OR @<Document> OR @<EvidenceLine> OR @<Method> OR @<Statement> OR @<StudyResult>
 )
 
-sepio-model:Method CLOSED {
-    (  $sepio-model:Method_tes (  &sepio-model:InformationEntity_tes ;
-          rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:subtype @sepio-model:Coding ? ;
-          sepio-model:urls @linkml:String *
+<Method> CLOSED {
+    (  $<Method_tes> (  &<InformationEntity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000030> ] ? ;
+          <subtype> @<Coding> ? ;
+          <urls> @linkml:String *
        ) ;
-       rdf:type [ sepio-model:Method ] ?
+       rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000104> ] ?
     )
 }
 
-sepio-model:Proposition CLOSED {
-    (  $sepio-model:Proposition_tes (  &sepio-model:Entity_tes ;
-          rdf:type [ sepio-model:Entity ] ? ;
-          sepio-model:proposition_text @linkml:String ? ;
-          sepio-model:subject @linkml:String ;
-          sepio-model:predicate @sepio-model:Coding ;
-          sepio-model:object @linkml:String ;
-          sepio-model:qualifier @sepio-model:Qualifier * ;
-          sepio-model:negated @linkml:Boolean ?
+<Proposition> CLOSED {
+    (  $<Proposition_tes> (  &<Entity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/BFO_0000001> ] ? ;
+          <proposition_text> @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000388> @linkml:Uriorcurie ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000389> @<Coding> ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000390> @linkml:Uriorcurie ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000144> @<Qualifier> * ;
+          <negated> @linkml:Boolean ?
        ) ;
-       rdf:type [ sepio-model:Proposition ] ?
+       rdf:type [ <http://purl.obolibrary.org/obo/SEPIO_0000000> ] ?
     )
 }
 
-sepio-model:Qualifier CLOSED {
-    (  $sepio-model:Qualifier_tes (  &sepio-model:Utility_tes ;
-          rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:name @linkml:String ;
-          sepio-model:value @linkml:String
+<Qualifier> CLOSED {
+    (  $<Qualifier_tes> (  &<Utility_tes> ;
+          rdf:type [ <Utility> ] ? ;
+          <name> @linkml:String ;
+          <value> @linkml:String
        ) ;
-       rdf:type [ sepio-model:Qualifier ] ?
+       rdf:type [ <Qualifier> ] ?
     )
 }
 
-sepio-model:RecordMetadata CLOSED {
-    (  $sepio-model:RecordMetadata_tes (  &sepio-model:Utility_tes ;
-          rdf:type [ sepio-model:Utility ] ? ;
-          sepio-model:record_identifier @linkml:String ? ;
-          sepio-model:record_version @linkml:String ? ;
-          sepio-model:derived_from_record @linkml:String * ;
-          sepio-model:date_record_created @linkml:String ? ;
-          sepio-model:contributions @sepio-model:Contribution *
+<RecordMetadata> CLOSED {
+    (  $<RecordMetadata_tes> (  &<Utility_tes> ;
+          rdf:type [ <Utility> ] ? ;
+          <record_identifier> @linkml:String ? ;
+          <record_version> @linkml:String ? ;
+          <derived_from_record> @linkml:String * ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000436> @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000159> @<Contribution> *
        ) ;
-       rdf:type [ sepio-model:RecordMetadata ] ?
+       rdf:type [ <RecordMetadata> ] ?
     )
 }
 
-sepio-model:Statement CLOSED {
-    (  $sepio-model:Statement_tes (  &sepio-model:InformationEntity_tes ;
-          rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:statement_text @linkml:String ? ;
-          sepio-model:proposition @sepio-model:Proposition ? ;
-          sepio-model:subject @linkml:String ? ;
-          sepio-model:predicate @sepio-model:Coding ? ;
-          sepio-model:object @linkml:String ? ;
-          sepio-model:qualifier @sepio-model:Qualifier * ;
-          sepio-model:direction @linkml:String ? ;
-          sepio-model:strength @linkml:String ? ;
-          sepio-model:score @linkml:Float ? ;
-          sepio-model:subject_classification @sepio-model:Coding ? ;
-          sepio-model:has_evidence_of_types @linkml:String * ;
-          sepio-model:has_evidence_lines @sepio-model:EvidenceLine * ;
-          sepio-model:has_evidence @sepio-model:InformationEntity * ;
-          sepio-model:has_evidence_from_sources @sepio-model:InformationEntity *
+<Statement> CLOSED {
+    (  $<Statement_tes> (  &<InformationEntity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000030> ] ? ;
+          <statement_text> @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000030> @<Proposition> ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000388> @linkml:Uriorcurie ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000389> @<Coding> ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000390> @linkml:Uriorcurie ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000144> @<Qualifier> * ;
+          <direction> @linkml:String ? ;
+          <strength> @linkml:String ? ;
+          <score> @linkml:Float ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000197> @<Coding> ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000398> @linkml:Uriorcurie * ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000006> @<EvidenceLine> * ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000189> @<InformationEntity> * ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000145> @<InformationEntity> *
        ) ;
-       rdf:type [ sepio-model:Statement ] ?
+       rdf:type [ <http://purl.obolibrary.org/obo/SEPIO_0000001> ] ?
     )
 }
 
-sepio-model:StudyGroup CLOSED {
-    (  $sepio-model:StudyGroup_tes (  &sepio-model:Entity_tes ;
-          rdf:type [ sepio-model:Entity ] ? ;
-          sepio-model:member_count @linkml:Integer ? ;
-          sepio-model:is_subset_of @sepio-model:StudyGroup * ;
-          sepio-model:characteristics @sepio-model:Characteristic *
+<StudyGroup> CLOSED {
+    (  $<StudyGroup_tes> (  &<Entity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/BFO_0000001> ] ? ;
+          <member_count> @linkml:Integer ? ;
+          <is_subset_of> @<StudyGroup> * ;
+          <characteristics> @<Characteristic> *
        ) ;
-       rdf:type [ sepio-model:StudyGroup ] ?
+       rdf:type [ <StudyGroup> ] ?
     )
 }
 
-sepio-model:StudyResult CLOSED {
-    (  $sepio-model:StudyResult_tes (  &sepio-model:InformationEntity_tes ;
-          rdf:type [ sepio-model:InformationEntity ] ? ;
-          sepio-model:focus @linkml:String ? ;
-          sepio-model:data_items @sepio-model:DataItem * ;
-          sepio-model:interpretation @sepio-model:Coding ? ;
-          sepio-model:source_data_set @sepio-model:DataSet * ;
-          sepio-model:component_result @sepio-model:StudyResult * ;
-          sepio-model:study_group @sepio-model:StudyGroup ?
+<StudyResult> CLOSED {
+    (  $<StudyResult_tes> (  &<InformationEntity_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/IAO_0000030> ] ? ;
+          <focus> @linkml:String ? ;
+          <data_items> @<DataItem> * ;
+          <interpretation> @<Coding> ? ;
+          <source_data_set> @<DataSet> * ;
+          <component_result> @<StudyResult> * ;
+          <study_group> @<StudyGroup> ?
        ) ;
-       rdf:type [ sepio-model:StudyResult ] ?
+       rdf:type [ <StudyResult> ] ?
     )
 }
 
-sepio-model:Utility  (
+<Utility>  (
     CLOSED {
-       (  $sepio-model:Utility_tes rdf:type . * ;
-          rdf:type [ sepio-model:Utility ] ?
+       (  $<Utility_tes> rdf:type . * ;
+          rdf:type [ <Utility> ] ?
        )
-    } OR @sepio-model:Characteristic OR @sepio-model:Coding OR @sepio-model:Expression OR @sepio-model:Extension OR
-    @sepio-model:Qualifier OR @sepio-model:RecordMetadata
+    } OR @<Characteristic> OR @<Coding> OR @<Expression> OR @<Extension> OR @<Qualifier> OR @<RecordMetadata>
 )

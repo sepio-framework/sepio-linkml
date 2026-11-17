@@ -839,8 +839,8 @@ CREATE TABLE "Entity_alternative_labels" (
 	PRIMARY KEY ("Entity_uid", alternative_labels),
 	FOREIGN KEY("Entity_uid") REFERENCES "Entity" (uid)
 );
-CREATE INDEX "ix_Entity_alternative_labels_Entity_uid" ON "Entity_alternative_labels" ("Entity_uid");
 CREATE INDEX "ix_Entity_alternative_labels_alternative_labels" ON "Entity_alternative_labels" (alternative_labels);
+CREATE INDEX "ix_Entity_alternative_labels_Entity_uid" ON "Entity_alternative_labels" ("Entity_uid");
 
 CREATE TABLE "Entity_extensions" (
 	"Entity_uid" INTEGER,
@@ -867,8 +867,8 @@ CREATE TABLE "Agent_alternative_labels" (
 	PRIMARY KEY ("Agent_uid", alternative_labels),
 	FOREIGN KEY("Agent_uid") REFERENCES "Agent" (uid)
 );
-CREATE INDEX "ix_Agent_alternative_labels_Agent_uid" ON "Agent_alternative_labels" ("Agent_uid");
 CREATE INDEX "ix_Agent_alternative_labels_alternative_labels" ON "Agent_alternative_labels" (alternative_labels);
+CREATE INDEX "ix_Agent_alternative_labels_Agent_uid" ON "Agent_alternative_labels" ("Agent_uid");
 
 CREATE TABLE "Agent_extensions" (
 	"Agent_uid" INTEGER,
@@ -887,8 +887,8 @@ CREATE TABLE "StudyGroup_is_subset_of" (
 	FOREIGN KEY("StudyGroup_uid") REFERENCES "StudyGroup" (uid),
 	FOREIGN KEY(is_subset_of_uid) REFERENCES "StudyGroup" (uid)
 );
-CREATE INDEX "ix_StudyGroup_is_subset_of_StudyGroup_uid" ON "StudyGroup_is_subset_of" ("StudyGroup_uid");
 CREATE INDEX "ix_StudyGroup_is_subset_of_is_subset_of_uid" ON "StudyGroup_is_subset_of" (is_subset_of_uid);
+CREATE INDEX "ix_StudyGroup_is_subset_of_StudyGroup_uid" ON "StudyGroup_is_subset_of" ("StudyGroup_uid");
 
 CREATE TABLE "StudyGroup_characteristics" (
 	"StudyGroup_uid" INTEGER,
@@ -934,8 +934,8 @@ CREATE TABLE "RecordMetadata_derived_from_record" (
 	PRIMARY KEY ("RecordMetadata_id", derived_from_record),
 	FOREIGN KEY("RecordMetadata_id") REFERENCES "RecordMetadata" (id)
 );
-CREATE INDEX "ix_RecordMetadata_derived_from_record_derived_from_record" ON "RecordMetadata_derived_from_record" (derived_from_record);
 CREATE INDEX "ix_RecordMetadata_derived_from_record_RecordMetadata_id" ON "RecordMetadata_derived_from_record" ("RecordMetadata_id");
+CREATE INDEX "ix_RecordMetadata_derived_from_record_derived_from_record" ON "RecordMetadata_derived_from_record" (derived_from_record);
 
 CREATE TABLE "Characteristic_values" (
 	"Characteristic_id" INTEGER,
@@ -943,8 +943,8 @@ CREATE TABLE "Characteristic_values" (
 	PRIMARY KEY ("Characteristic_id", "values"),
 	FOREIGN KEY("Characteristic_id") REFERENCES "Characteristic" (id)
 );
-CREATE INDEX "ix_Characteristic_values_values" ON "Characteristic_values" ("values");
 CREATE INDEX "ix_Characteristic_values_Characteristic_id" ON "Characteristic_values" ("Characteristic_id");
+CREATE INDEX "ix_Characteristic_values_values" ON "Characteristic_values" ("values");
 
 CREATE TABLE "Contribution" (
 	uid INTEGER NOT NULL,
@@ -1065,8 +1065,8 @@ CREATE TABLE "InformationEntity_reported_in" (
 	PRIMARY KEY ("InformationEntity_uid", reported_in),
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_InformationEntity_reported_in_reported_in" ON "InformationEntity_reported_in" (reported_in);
 CREATE INDEX "ix_InformationEntity_reported_in_InformationEntity_uid" ON "InformationEntity_reported_in" ("InformationEntity_uid");
+CREATE INDEX "ix_InformationEntity_reported_in_reported_in" ON "InformationEntity_reported_in" (reported_in);
 
 CREATE TABLE "InformationEntity_sources" (
 	"InformationEntity_uid" INTEGER,
@@ -1102,8 +1102,8 @@ CREATE TABLE "InformationEntity_extensions" (
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_InformationEntity_extensions_InformationEntity_uid" ON "InformationEntity_extensions" ("InformationEntity_uid");
 CREATE INDEX "ix_InformationEntity_extensions_extensions_id" ON "InformationEntity_extensions" (extensions_id);
+CREATE INDEX "ix_InformationEntity_extensions_InformationEntity_uid" ON "InformationEntity_extensions" ("InformationEntity_uid");
 
 CREATE TABLE "Method_urls" (
 	"Method_uid" INTEGER,
@@ -1111,8 +1111,8 @@ CREATE TABLE "Method_urls" (
 	PRIMARY KEY ("Method_uid", urls),
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Method_urls_Method_uid" ON "Method_urls" ("Method_uid");
 CREATE INDEX "ix_Method_urls_urls" ON "Method_urls" (urls);
+CREATE INDEX "ix_Method_urls_Method_uid" ON "Method_urls" ("Method_uid");
 
 CREATE TABLE "Method_is_about" (
 	"Method_uid" INTEGER,
@@ -1129,8 +1129,8 @@ CREATE TABLE "Method_specified_by" (
 	PRIMARY KEY ("Method_uid", specified_by),
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Method_specified_by_specified_by" ON "Method_specified_by" (specified_by);
 CREATE INDEX "ix_Method_specified_by_Method_uid" ON "Method_specified_by" ("Method_uid");
+CREATE INDEX "ix_Method_specified_by_specified_by" ON "Method_specified_by" (specified_by);
 
 CREATE TABLE "Method_supporting_methods" (
 	"Method_uid" INTEGER,
@@ -1167,8 +1167,8 @@ CREATE TABLE "Method_reported_in" (
 	PRIMARY KEY ("Method_uid", reported_in),
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Method_reported_in_reported_in" ON "Method_reported_in" (reported_in);
 CREATE INDEX "ix_Method_reported_in_Method_uid" ON "Method_reported_in" ("Method_uid");
+CREATE INDEX "ix_Method_reported_in_reported_in" ON "Method_reported_in" (reported_in);
 
 CREATE TABLE "Method_sources" (
 	"Method_uid" INTEGER,
@@ -1176,8 +1176,8 @@ CREATE TABLE "Method_sources" (
 	PRIMARY KEY ("Method_uid", sources),
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Method_sources_sources" ON "Method_sources" (sources);
 CREATE INDEX "ix_Method_sources_Method_uid" ON "Method_sources" ("Method_uid");
+CREATE INDEX "ix_Method_sources_sources" ON "Method_sources" (sources);
 
 CREATE TABLE "Method_identifiers" (
 	"Method_uid" INTEGER,
@@ -1194,8 +1194,8 @@ CREATE TABLE "Method_alternative_labels" (
 	PRIMARY KEY ("Method_uid", alternative_labels),
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Method_alternative_labels_alternative_labels" ON "Method_alternative_labels" (alternative_labels);
 CREATE INDEX "ix_Method_alternative_labels_Method_uid" ON "Method_alternative_labels" ("Method_uid");
+CREATE INDEX "ix_Method_alternative_labels_alternative_labels" ON "Method_alternative_labels" (alternative_labels);
 
 CREATE TABLE "Method_extensions" (
 	"Method_uid" INTEGER,
@@ -1204,8 +1204,8 @@ CREATE TABLE "Method_extensions" (
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_Method_extensions_Method_uid" ON "Method_extensions" ("Method_uid");
 CREATE INDEX "ix_Method_extensions_extensions_id" ON "Method_extensions" (extensions_id);
+CREATE INDEX "ix_Method_extensions_Method_uid" ON "Method_extensions" ("Method_uid");
 
 CREATE TABLE "Document_urls" (
 	"Document_uid" INTEGER,
@@ -1213,8 +1213,8 @@ CREATE TABLE "Document_urls" (
 	PRIMARY KEY ("Document_uid", urls),
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid)
 );
-CREATE INDEX "ix_Document_urls_urls" ON "Document_urls" (urls);
 CREATE INDEX "ix_Document_urls_Document_uid" ON "Document_urls" ("Document_uid");
+CREATE INDEX "ix_Document_urls_urls" ON "Document_urls" (urls);
 
 CREATE TABLE "Document_is_about" (
 	"Document_uid" INTEGER,
@@ -1231,8 +1231,8 @@ CREATE TABLE "Document_specified_by" (
 	PRIMARY KEY ("Document_uid", specified_by),
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid)
 );
-CREATE INDEX "ix_Document_specified_by_Document_uid" ON "Document_specified_by" ("Document_uid");
 CREATE INDEX "ix_Document_specified_by_specified_by" ON "Document_specified_by" (specified_by);
+CREATE INDEX "ix_Document_specified_by_Document_uid" ON "Document_specified_by" ("Document_uid");
 
 CREATE TABLE "Document_supporting_methods" (
 	"Document_uid" INTEGER,
@@ -1250,8 +1250,8 @@ CREATE TABLE "Document_supporting_method_types" (
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid),
 	FOREIGN KEY(supporting_method_types_id) REFERENCES "Coding" (id)
 );
-CREATE INDEX "ix_Document_supporting_method_types_supporting_method_types_id" ON "Document_supporting_method_types" (supporting_method_types_id);
 CREATE INDEX "ix_Document_supporting_method_types_Document_uid" ON "Document_supporting_method_types" ("Document_uid");
+CREATE INDEX "ix_Document_supporting_method_types_supporting_method_types_id" ON "Document_supporting_method_types" (supporting_method_types_id);
 
 CREATE TABLE "Document_derived_from" (
 	"Document_uid" INTEGER,
@@ -1260,8 +1260,8 @@ CREATE TABLE "Document_derived_from" (
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid),
 	FOREIGN KEY(derived_from_uid) REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_Document_derived_from_Document_uid" ON "Document_derived_from" ("Document_uid");
 CREATE INDEX "ix_Document_derived_from_derived_from_uid" ON "Document_derived_from" (derived_from_uid);
+CREATE INDEX "ix_Document_derived_from_Document_uid" ON "Document_derived_from" ("Document_uid");
 
 CREATE TABLE "Document_reported_in" (
 	"Document_uid" INTEGER,
@@ -1306,8 +1306,8 @@ CREATE TABLE "Document_extensions" (
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_Document_extensions_Document_uid" ON "Document_extensions" ("Document_uid");
 CREATE INDEX "ix_Document_extensions_extensions_id" ON "Document_extensions" (extensions_id);
+CREATE INDEX "ix_Document_extensions_Document_uid" ON "Document_extensions" ("Document_uid");
 
 CREATE TABLE "DataItem_variability_measures" (
 	"DataItem_uid" INTEGER,
@@ -1326,8 +1326,8 @@ CREATE TABLE "DataItem_component_data_item" (
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid),
 	FOREIGN KEY(component_data_item_uid) REFERENCES "DataItem" (uid)
 );
-CREATE INDEX "ix_DataItem_component_data_item_DataItem_uid" ON "DataItem_component_data_item" ("DataItem_uid");
 CREATE INDEX "ix_DataItem_component_data_item_component_data_item_uid" ON "DataItem_component_data_item" (component_data_item_uid);
+CREATE INDEX "ix_DataItem_component_data_item_DataItem_uid" ON "DataItem_component_data_item" ("DataItem_uid");
 
 CREATE TABLE "DataItem_is_about" (
 	"DataItem_uid" INTEGER,
@@ -1382,8 +1382,8 @@ CREATE TABLE "DataItem_reported_in" (
 	PRIMARY KEY ("DataItem_uid", reported_in),
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid)
 );
-CREATE INDEX "ix_DataItem_reported_in_reported_in" ON "DataItem_reported_in" (reported_in);
 CREATE INDEX "ix_DataItem_reported_in_DataItem_uid" ON "DataItem_reported_in" ("DataItem_uid");
+CREATE INDEX "ix_DataItem_reported_in_reported_in" ON "DataItem_reported_in" (reported_in);
 
 CREATE TABLE "DataItem_sources" (
 	"DataItem_uid" INTEGER,
@@ -1391,8 +1391,8 @@ CREATE TABLE "DataItem_sources" (
 	PRIMARY KEY ("DataItem_uid", sources),
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid)
 );
-CREATE INDEX "ix_DataItem_sources_sources" ON "DataItem_sources" (sources);
 CREATE INDEX "ix_DataItem_sources_DataItem_uid" ON "DataItem_sources" ("DataItem_uid");
+CREATE INDEX "ix_DataItem_sources_sources" ON "DataItem_sources" (sources);
 
 CREATE TABLE "DataItem_identifiers" (
 	"DataItem_uid" INTEGER,
@@ -1437,8 +1437,8 @@ CREATE TABLE "DataSet_specified_by" (
 	PRIMARY KEY ("DataSet_uid", specified_by),
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid)
 );
-CREATE INDEX "ix_DataSet_specified_by_specified_by" ON "DataSet_specified_by" (specified_by);
 CREATE INDEX "ix_DataSet_specified_by_DataSet_uid" ON "DataSet_specified_by" ("DataSet_uid");
+CREATE INDEX "ix_DataSet_specified_by_specified_by" ON "DataSet_specified_by" (specified_by);
 
 CREATE TABLE "DataSet_supporting_methods" (
 	"DataSet_uid" INTEGER,
@@ -1446,8 +1446,8 @@ CREATE TABLE "DataSet_supporting_methods" (
 	PRIMARY KEY ("DataSet_uid", supporting_methods),
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid)
 );
-CREATE INDEX "ix_DataSet_supporting_methods_supporting_methods" ON "DataSet_supporting_methods" (supporting_methods);
 CREATE INDEX "ix_DataSet_supporting_methods_DataSet_uid" ON "DataSet_supporting_methods" ("DataSet_uid");
+CREATE INDEX "ix_DataSet_supporting_methods_supporting_methods" ON "DataSet_supporting_methods" (supporting_methods);
 
 CREATE TABLE "DataSet_supporting_method_types" (
 	"DataSet_uid" INTEGER,
@@ -1456,8 +1456,8 @@ CREATE TABLE "DataSet_supporting_method_types" (
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid),
 	FOREIGN KEY(supporting_method_types_id) REFERENCES "Coding" (id)
 );
-CREATE INDEX "ix_DataSet_supporting_method_types_DataSet_uid" ON "DataSet_supporting_method_types" ("DataSet_uid");
 CREATE INDEX "ix_DataSet_supporting_method_types_supporting_method_types_id" ON "DataSet_supporting_method_types" (supporting_method_types_id);
+CREATE INDEX "ix_DataSet_supporting_method_types_DataSet_uid" ON "DataSet_supporting_method_types" ("DataSet_uid");
 
 CREATE TABLE "DataSet_derived_from" (
 	"DataSet_uid" INTEGER,
@@ -1484,8 +1484,8 @@ CREATE TABLE "DataSet_sources" (
 	PRIMARY KEY ("DataSet_uid", sources),
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid)
 );
-CREATE INDEX "ix_DataSet_sources_DataSet_uid" ON "DataSet_sources" ("DataSet_uid");
 CREATE INDEX "ix_DataSet_sources_sources" ON "DataSet_sources" (sources);
+CREATE INDEX "ix_DataSet_sources_DataSet_uid" ON "DataSet_sources" ("DataSet_uid");
 
 CREATE TABLE "DataSet_identifiers" (
 	"DataSet_uid" INTEGER,
@@ -1493,8 +1493,8 @@ CREATE TABLE "DataSet_identifiers" (
 	PRIMARY KEY ("DataSet_uid", identifiers),
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid)
 );
-CREATE INDEX "ix_DataSet_identifiers_DataSet_uid" ON "DataSet_identifiers" ("DataSet_uid");
 CREATE INDEX "ix_DataSet_identifiers_identifiers" ON "DataSet_identifiers" (identifiers);
+CREATE INDEX "ix_DataSet_identifiers_DataSet_uid" ON "DataSet_identifiers" ("DataSet_uid");
 
 CREATE TABLE "DataSet_alternative_labels" (
 	"DataSet_uid" INTEGER,
@@ -1522,8 +1522,8 @@ CREATE TABLE "Activity_performed_by" (
 	FOREIGN KEY("Activity_uid") REFERENCES "Activity" (uid),
 	FOREIGN KEY(performed_by_uid) REFERENCES "Agent" (uid)
 );
-CREATE INDEX "ix_Activity_performed_by_performed_by_uid" ON "Activity_performed_by" (performed_by_uid);
 CREATE INDEX "ix_Activity_performed_by_Activity_uid" ON "Activity_performed_by" ("Activity_uid");
+CREATE INDEX "ix_Activity_performed_by_performed_by_uid" ON "Activity_performed_by" (performed_by_uid);
 
 CREATE TABLE "Activity_specified_by" (
 	"Activity_uid" INTEGER,
@@ -1542,8 +1542,8 @@ CREATE TABLE "Activity_input" (
 	FOREIGN KEY("Activity_uid") REFERENCES "Activity" (uid),
 	FOREIGN KEY(input_uid) REFERENCES "Entity" (uid)
 );
-CREATE INDEX "ix_Activity_input_Activity_uid" ON "Activity_input" ("Activity_uid");
 CREATE INDEX "ix_Activity_input_input_uid" ON "Activity_input" (input_uid);
+CREATE INDEX "ix_Activity_input_Activity_uid" ON "Activity_input" ("Activity_uid");
 
 CREATE TABLE "Activity_output" (
 	"Activity_uid" INTEGER,
@@ -1570,8 +1570,8 @@ CREATE TABLE "Activity_alternative_labels" (
 	PRIMARY KEY ("Activity_uid", alternative_labels),
 	FOREIGN KEY("Activity_uid") REFERENCES "Activity" (uid)
 );
-CREATE INDEX "ix_Activity_alternative_labels_alternative_labels" ON "Activity_alternative_labels" (alternative_labels);
 CREATE INDEX "ix_Activity_alternative_labels_Activity_uid" ON "Activity_alternative_labels" ("Activity_uid");
+CREATE INDEX "ix_Activity_alternative_labels_alternative_labels" ON "Activity_alternative_labels" (alternative_labels);
 
 CREATE TABLE "Activity_extensions" (
 	"Activity_uid" INTEGER,
@@ -1580,8 +1580,8 @@ CREATE TABLE "Activity_extensions" (
 	FOREIGN KEY("Activity_uid") REFERENCES "Activity" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_Activity_extensions_Activity_uid" ON "Activity_extensions" ("Activity_uid");
 CREATE INDEX "ix_Activity_extensions_extensions_id" ON "Activity_extensions" (extensions_id);
+CREATE INDEX "ix_Activity_extensions_Activity_uid" ON "Activity_extensions" ("Activity_uid");
 
 CREATE TABLE "StudyResult_data_items" (
 	"StudyResult_uid" INTEGER,
@@ -1600,8 +1600,8 @@ CREATE TABLE "StudyResult_source_data_set" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(source_data_set_uid) REFERENCES "DataSet" (uid)
 );
-CREATE INDEX "ix_StudyResult_source_data_set_source_data_set_uid" ON "StudyResult_source_data_set" (source_data_set_uid);
 CREATE INDEX "ix_StudyResult_source_data_set_StudyResult_uid" ON "StudyResult_source_data_set" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_source_data_set_source_data_set_uid" ON "StudyResult_source_data_set" (source_data_set_uid);
 
 CREATE TABLE "StudyResult_component_result" (
 	"StudyResult_uid" INTEGER,
@@ -1610,8 +1610,8 @@ CREATE TABLE "StudyResult_component_result" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(component_result_uid) REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_component_result_StudyResult_uid" ON "StudyResult_component_result" ("StudyResult_uid");
 CREATE INDEX "ix_StudyResult_component_result_component_result_uid" ON "StudyResult_component_result" (component_result_uid);
+CREATE INDEX "ix_StudyResult_component_result_StudyResult_uid" ON "StudyResult_component_result" ("StudyResult_uid");
 
 CREATE TABLE "StudyResult_is_about" (
 	"StudyResult_uid" INTEGER,
@@ -1628,8 +1628,8 @@ CREATE TABLE "StudyResult_specified_by" (
 	PRIMARY KEY ("StudyResult_uid", specified_by),
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_specified_by_specified_by" ON "StudyResult_specified_by" (specified_by);
 CREATE INDEX "ix_StudyResult_specified_by_StudyResult_uid" ON "StudyResult_specified_by" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_specified_by_specified_by" ON "StudyResult_specified_by" (specified_by);
 
 CREATE TABLE "StudyResult_supporting_methods" (
 	"StudyResult_uid" INTEGER,
@@ -1647,8 +1647,8 @@ CREATE TABLE "StudyResult_supporting_method_types" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(supporting_method_types_id) REFERENCES "Coding" (id)
 );
-CREATE INDEX "ix_StudyResult_supporting_method_types_StudyResult_uid" ON "StudyResult_supporting_method_types" ("StudyResult_uid");
 CREATE INDEX "ix_StudyResult_supporting_method_types_supporting_method_types_id" ON "StudyResult_supporting_method_types" (supporting_method_types_id);
+CREATE INDEX "ix_StudyResult_supporting_method_types_StudyResult_uid" ON "StudyResult_supporting_method_types" ("StudyResult_uid");
 
 CREATE TABLE "StudyResult_derived_from" (
 	"StudyResult_uid" INTEGER,
@@ -1657,8 +1657,8 @@ CREATE TABLE "StudyResult_derived_from" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(derived_from_uid) REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_StudyResult_derived_from_derived_from_uid" ON "StudyResult_derived_from" (derived_from_uid);
 CREATE INDEX "ix_StudyResult_derived_from_StudyResult_uid" ON "StudyResult_derived_from" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_derived_from_derived_from_uid" ON "StudyResult_derived_from" (derived_from_uid);
 
 CREATE TABLE "StudyResult_reported_in" (
 	"StudyResult_uid" INTEGER,
@@ -1675,8 +1675,8 @@ CREATE TABLE "StudyResult_sources" (
 	PRIMARY KEY ("StudyResult_uid", sources),
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_sources_sources" ON "StudyResult_sources" (sources);
 CREATE INDEX "ix_StudyResult_sources_StudyResult_uid" ON "StudyResult_sources" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_sources_sources" ON "StudyResult_sources" (sources);
 
 CREATE TABLE "StudyResult_identifiers" (
 	"StudyResult_uid" INTEGER,
@@ -1684,8 +1684,8 @@ CREATE TABLE "StudyResult_identifiers" (
 	PRIMARY KEY ("StudyResult_uid", identifiers),
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_identifiers_StudyResult_uid" ON "StudyResult_identifiers" ("StudyResult_uid");
 CREATE INDEX "ix_StudyResult_identifiers_identifiers" ON "StudyResult_identifiers" (identifiers);
+CREATE INDEX "ix_StudyResult_identifiers_StudyResult_uid" ON "StudyResult_identifiers" ("StudyResult_uid");
 
 CREATE TABLE "StudyResult_alternative_labels" (
 	"StudyResult_uid" INTEGER,
@@ -1693,8 +1693,8 @@ CREATE TABLE "StudyResult_alternative_labels" (
 	PRIMARY KEY ("StudyResult_uid", alternative_labels),
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_alternative_labels_alternative_labels" ON "StudyResult_alternative_labels" (alternative_labels);
 CREATE INDEX "ix_StudyResult_alternative_labels_StudyResult_uid" ON "StudyResult_alternative_labels" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_alternative_labels_alternative_labels" ON "StudyResult_alternative_labels" (alternative_labels);
 
 CREATE TABLE "StudyResult_extensions" (
 	"StudyResult_uid" INTEGER,
@@ -1741,8 +1741,8 @@ CREATE TABLE "Proposition_extensions" (
 	FOREIGN KEY("Proposition_uid") REFERENCES "Proposition" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_Proposition_extensions_Proposition_uid" ON "Proposition_extensions" ("Proposition_uid");
 CREATE INDEX "ix_Proposition_extensions_extensions_id" ON "Proposition_extensions" (extensions_id);
+CREATE INDEX "ix_Proposition_extensions_Proposition_uid" ON "Proposition_extensions" ("Proposition_uid");
 
 CREATE TABLE "InformationEntity_contributions" (
 	"InformationEntity_uid" INTEGER,
@@ -1761,8 +1761,8 @@ CREATE TABLE "Method_contributions" (
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid),
 	FOREIGN KEY(contributions_uid) REFERENCES "Contribution" (uid)
 );
-CREATE INDEX "ix_Method_contributions_contributions_uid" ON "Method_contributions" (contributions_uid);
 CREATE INDEX "ix_Method_contributions_Method_uid" ON "Method_contributions" ("Method_uid");
+CREATE INDEX "ix_Method_contributions_contributions_uid" ON "Method_contributions" (contributions_uid);
 
 CREATE TABLE "Document_contributions" (
 	"Document_uid" INTEGER,
@@ -1781,8 +1781,8 @@ CREATE TABLE "DataItem_contributions" (
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid),
 	FOREIGN KEY(contributions_uid) REFERENCES "Contribution" (uid)
 );
-CREATE INDEX "ix_DataItem_contributions_contributions_uid" ON "DataItem_contributions" (contributions_uid);
 CREATE INDEX "ix_DataItem_contributions_DataItem_uid" ON "DataItem_contributions" ("DataItem_uid");
+CREATE INDEX "ix_DataItem_contributions_contributions_uid" ON "DataItem_contributions" (contributions_uid);
 
 CREATE TABLE "DataSet_contributions" (
 	"DataSet_uid" INTEGER,
@@ -1801,8 +1801,8 @@ CREATE TABLE "Contribution_activity_type" (
 	FOREIGN KEY("Contribution_uid") REFERENCES "Contribution" (uid),
 	FOREIGN KEY(activity_type_id) REFERENCES "Coding" (id)
 );
-CREATE INDEX "ix_Contribution_activity_type_activity_type_id" ON "Contribution_activity_type" (activity_type_id);
 CREATE INDEX "ix_Contribution_activity_type_Contribution_uid" ON "Contribution_activity_type" ("Contribution_uid");
+CREATE INDEX "ix_Contribution_activity_type_activity_type_id" ON "Contribution_activity_type" (activity_type_id);
 
 CREATE TABLE "Contribution_performed_by" (
 	"Contribution_uid" INTEGER,
@@ -1821,8 +1821,8 @@ CREATE TABLE "Contribution_specified_by" (
 	FOREIGN KEY("Contribution_uid") REFERENCES "Contribution" (uid),
 	FOREIGN KEY(specified_by_uid) REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Contribution_specified_by_specified_by_uid" ON "Contribution_specified_by" (specified_by_uid);
 CREATE INDEX "ix_Contribution_specified_by_Contribution_uid" ON "Contribution_specified_by" ("Contribution_uid");
+CREATE INDEX "ix_Contribution_specified_by_specified_by_uid" ON "Contribution_specified_by" (specified_by_uid);
 
 CREATE TABLE "Contribution_input" (
 	"Contribution_uid" INTEGER,
@@ -1869,8 +1869,8 @@ CREATE TABLE "Contribution_extensions" (
 	FOREIGN KEY("Contribution_uid") REFERENCES "Contribution" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_Contribution_extensions_extensions_id" ON "Contribution_extensions" (extensions_id);
 CREATE INDEX "ix_Contribution_extensions_Contribution_uid" ON "Contribution_extensions" ("Contribution_uid");
+CREATE INDEX "ix_Contribution_extensions_extensions_id" ON "Contribution_extensions" (extensions_id);
 
 CREATE TABLE "Statement_qualifier" (
 	"Statement_uid" INTEGER,
@@ -1879,8 +1879,8 @@ CREATE TABLE "Statement_qualifier" (
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid),
 	FOREIGN KEY(qualifier_id) REFERENCES "Qualifier" (id)
 );
-CREATE INDEX "ix_Statement_qualifier_qualifier_id" ON "Statement_qualifier" (qualifier_id);
 CREATE INDEX "ix_Statement_qualifier_Statement_uid" ON "Statement_qualifier" ("Statement_uid");
+CREATE INDEX "ix_Statement_qualifier_qualifier_id" ON "Statement_qualifier" (qualifier_id);
 
 CREATE TABLE "Statement_has_evidence_of_types" (
 	"Statement_uid" INTEGER,
@@ -1888,8 +1888,8 @@ CREATE TABLE "Statement_has_evidence_of_types" (
 	PRIMARY KEY ("Statement_uid", has_evidence_of_types),
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
 );
-CREATE INDEX "ix_Statement_has_evidence_of_types_has_evidence_of_types" ON "Statement_has_evidence_of_types" (has_evidence_of_types);
 CREATE INDEX "ix_Statement_has_evidence_of_types_Statement_uid" ON "Statement_has_evidence_of_types" ("Statement_uid");
+CREATE INDEX "ix_Statement_has_evidence_of_types_has_evidence_of_types" ON "Statement_has_evidence_of_types" (has_evidence_of_types);
 
 CREATE TABLE "Statement_has_evidence_lines" (
 	"Statement_uid" INTEGER,
@@ -1898,8 +1898,8 @@ CREATE TABLE "Statement_has_evidence_lines" (
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid),
 	FOREIGN KEY(has_evidence_lines_uid) REFERENCES "EvidenceLine" (uid)
 );
-CREATE INDEX "ix_Statement_has_evidence_lines_has_evidence_lines_uid" ON "Statement_has_evidence_lines" (has_evidence_lines_uid);
 CREATE INDEX "ix_Statement_has_evidence_lines_Statement_uid" ON "Statement_has_evidence_lines" ("Statement_uid");
+CREATE INDEX "ix_Statement_has_evidence_lines_has_evidence_lines_uid" ON "Statement_has_evidence_lines" (has_evidence_lines_uid);
 
 CREATE TABLE "Statement_has_evidence" (
 	"Statement_uid" INTEGER,
@@ -1918,8 +1918,8 @@ CREATE TABLE "Statement_has_evidence_from_sources" (
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid),
 	FOREIGN KEY(has_evidence_from_sources_uid) REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_Statement_has_evidence_from_sources_has_evidence_from_sources_uid" ON "Statement_has_evidence_from_sources" (has_evidence_from_sources_uid);
 CREATE INDEX "ix_Statement_has_evidence_from_sources_Statement_uid" ON "Statement_has_evidence_from_sources" ("Statement_uid");
+CREATE INDEX "ix_Statement_has_evidence_from_sources_has_evidence_from_sources_uid" ON "Statement_has_evidence_from_sources" (has_evidence_from_sources_uid);
 
 CREATE TABLE "Statement_is_about" (
 	"Statement_uid" INTEGER,
@@ -1955,8 +1955,8 @@ CREATE TABLE "Statement_supporting_methods" (
 	PRIMARY KEY ("Statement_uid", supporting_methods),
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
 );
-CREATE INDEX "ix_Statement_supporting_methods_supporting_methods" ON "Statement_supporting_methods" (supporting_methods);
 CREATE INDEX "ix_Statement_supporting_methods_Statement_uid" ON "Statement_supporting_methods" ("Statement_uid");
+CREATE INDEX "ix_Statement_supporting_methods_supporting_methods" ON "Statement_supporting_methods" (supporting_methods);
 
 CREATE TABLE "Statement_supporting_method_types" (
 	"Statement_uid" INTEGER,
@@ -1975,8 +1975,8 @@ CREATE TABLE "Statement_derived_from" (
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid),
 	FOREIGN KEY(derived_from_uid) REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_Statement_derived_from_Statement_uid" ON "Statement_derived_from" ("Statement_uid");
 CREATE INDEX "ix_Statement_derived_from_derived_from_uid" ON "Statement_derived_from" (derived_from_uid);
+CREATE INDEX "ix_Statement_derived_from_Statement_uid" ON "Statement_derived_from" ("Statement_uid");
 
 CREATE TABLE "Statement_reported_in" (
 	"Statement_uid" INTEGER,
@@ -1984,8 +1984,8 @@ CREATE TABLE "Statement_reported_in" (
 	PRIMARY KEY ("Statement_uid", reported_in),
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
 );
-CREATE INDEX "ix_Statement_reported_in_Statement_uid" ON "Statement_reported_in" ("Statement_uid");
 CREATE INDEX "ix_Statement_reported_in_reported_in" ON "Statement_reported_in" (reported_in);
+CREATE INDEX "ix_Statement_reported_in_Statement_uid" ON "Statement_reported_in" ("Statement_uid");
 
 CREATE TABLE "Statement_sources" (
 	"Statement_uid" INTEGER,
@@ -2021,8 +2021,8 @@ CREATE TABLE "Statement_extensions" (
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_Statement_extensions_Statement_uid" ON "Statement_extensions" ("Statement_uid");
 CREATE INDEX "ix_Statement_extensions_extensions_id" ON "Statement_extensions" (extensions_id);
+CREATE INDEX "ix_Statement_extensions_Statement_uid" ON "Statement_extensions" ("Statement_uid");
 
 CREATE TABLE "StudyResult_contributions" (
 	"StudyResult_uid" INTEGER,
@@ -2031,8 +2031,8 @@ CREATE TABLE "StudyResult_contributions" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(contributions_uid) REFERENCES "Contribution" (uid)
 );
-CREATE INDEX "ix_StudyResult_contributions_StudyResult_uid" ON "StudyResult_contributions" ("StudyResult_uid");
 CREATE INDEX "ix_StudyResult_contributions_contributions_uid" ON "StudyResult_contributions" (contributions_uid);
+CREATE INDEX "ix_StudyResult_contributions_StudyResult_uid" ON "StudyResult_contributions" ("StudyResult_uid");
 
 CREATE TABLE "EvidenceLine_has_evidence_items" (
 	"EvidenceLine_uid" INTEGER,
@@ -2041,8 +2041,8 @@ CREATE TABLE "EvidenceLine_has_evidence_items" (
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid),
 	FOREIGN KEY(has_evidence_items_uid) REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_has_evidence_items_EvidenceLine_uid" ON "EvidenceLine_has_evidence_items" ("EvidenceLine_uid");
 CREATE INDEX "ix_EvidenceLine_has_evidence_items_has_evidence_items_uid" ON "EvidenceLine_has_evidence_items" (has_evidence_items_uid);
+CREATE INDEX "ix_EvidenceLine_has_evidence_items_EvidenceLine_uid" ON "EvidenceLine_has_evidence_items" ("EvidenceLine_uid");
 
 CREATE TABLE "EvidenceLine_evidence_item_sources" (
 	"EvidenceLine_uid" INTEGER,
@@ -2050,8 +2050,8 @@ CREATE TABLE "EvidenceLine_evidence_item_sources" (
 	PRIMARY KEY ("EvidenceLine_uid", evidence_item_sources),
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_evidence_item_sources_EvidenceLine_uid" ON "EvidenceLine_evidence_item_sources" ("EvidenceLine_uid");
 CREATE INDEX "ix_EvidenceLine_evidence_item_sources_evidence_item_sources" ON "EvidenceLine_evidence_item_sources" (evidence_item_sources);
+CREATE INDEX "ix_EvidenceLine_evidence_item_sources_EvidenceLine_uid" ON "EvidenceLine_evidence_item_sources" ("EvidenceLine_uid");
 
 CREATE TABLE "EvidenceLine_is_about" (
 	"EvidenceLine_uid" INTEGER,
@@ -2069,8 +2069,8 @@ CREATE TABLE "EvidenceLine_contributions" (
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid),
 	FOREIGN KEY(contributions_uid) REFERENCES "Contribution" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_contributions_contributions_uid" ON "EvidenceLine_contributions" (contributions_uid);
 CREATE INDEX "ix_EvidenceLine_contributions_EvidenceLine_uid" ON "EvidenceLine_contributions" ("EvidenceLine_uid");
+CREATE INDEX "ix_EvidenceLine_contributions_contributions_uid" ON "EvidenceLine_contributions" (contributions_uid);
 
 CREATE TABLE "EvidenceLine_specified_by" (
 	"EvidenceLine_uid" INTEGER,
@@ -2078,8 +2078,8 @@ CREATE TABLE "EvidenceLine_specified_by" (
 	PRIMARY KEY ("EvidenceLine_uid", specified_by),
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_specified_by_EvidenceLine_uid" ON "EvidenceLine_specified_by" ("EvidenceLine_uid");
 CREATE INDEX "ix_EvidenceLine_specified_by_specified_by" ON "EvidenceLine_specified_by" (specified_by);
+CREATE INDEX "ix_EvidenceLine_specified_by_EvidenceLine_uid" ON "EvidenceLine_specified_by" ("EvidenceLine_uid");
 
 CREATE TABLE "EvidenceLine_supporting_methods" (
 	"EvidenceLine_uid" INTEGER,
@@ -2097,8 +2097,8 @@ CREATE TABLE "EvidenceLine_supporting_method_types" (
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid),
 	FOREIGN KEY(supporting_method_types_id) REFERENCES "Coding" (id)
 );
-CREATE INDEX "ix_EvidenceLine_supporting_method_types_supporting_method_types_id" ON "EvidenceLine_supporting_method_types" (supporting_method_types_id);
 CREATE INDEX "ix_EvidenceLine_supporting_method_types_EvidenceLine_uid" ON "EvidenceLine_supporting_method_types" ("EvidenceLine_uid");
+CREATE INDEX "ix_EvidenceLine_supporting_method_types_supporting_method_types_id" ON "EvidenceLine_supporting_method_types" (supporting_method_types_id);
 
 CREATE TABLE "EvidenceLine_derived_from" (
 	"EvidenceLine_uid" INTEGER,
@@ -2125,8 +2125,8 @@ CREATE TABLE "EvidenceLine_sources" (
 	PRIMARY KEY ("EvidenceLine_uid", sources),
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_sources_sources" ON "EvidenceLine_sources" (sources);
 CREATE INDEX "ix_EvidenceLine_sources_EvidenceLine_uid" ON "EvidenceLine_sources" ("EvidenceLine_uid");
+CREATE INDEX "ix_EvidenceLine_sources_sources" ON "EvidenceLine_sources" (sources);
 
 CREATE TABLE "EvidenceLine_identifiers" (
 	"EvidenceLine_uid" INTEGER,
@@ -2143,8 +2143,8 @@ CREATE TABLE "EvidenceLine_alternative_labels" (
 	PRIMARY KEY ("EvidenceLine_uid", alternative_labels),
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_alternative_labels_EvidenceLine_uid" ON "EvidenceLine_alternative_labels" ("EvidenceLine_uid");
 CREATE INDEX "ix_EvidenceLine_alternative_labels_alternative_labels" ON "EvidenceLine_alternative_labels" (alternative_labels);
+CREATE INDEX "ix_EvidenceLine_alternative_labels_EvidenceLine_uid" ON "EvidenceLine_alternative_labels" ("EvidenceLine_uid");
 
 CREATE TABLE "EvidenceLine_extensions" (
 	"EvidenceLine_uid" INTEGER,

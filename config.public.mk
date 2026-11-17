@@ -24,7 +24,9 @@ LINKML_GENERATORS_DOC_ARGS="--template-directory docs/templates-linkml"
 ## pass args to workaround genowl rdfs config bug (linkml#1453)
 ##   (i.e. --no-type-objects --no-metaclasses --metadata-profile=rdfs)
 # LINKML_GENERATORS_OWL_ARGS="--no-type-objects --no-metaclasses --metadata-profile=rdfs"
-LINKML_GENERATORS_OWL_ARGS=
+## --no-use-native-uris: emit class_uri/slot_uri (SEPIO, BFO, IAO, OBI, PROV IRIs) as the OWL IRIs
+## --xsd-anyuri-as-iri: uriorcurie slots become object properties, matching sepio.owl
+LINKML_GENERATORS_OWL_ARGS="--no-use-native-uris --xsd-anyuri-as-iri"
 
 ## pass args to pydantic generator which isn't supported by gen-project
 ## https://github.com/linkml/linkml/issues/2537

@@ -1185,11 +1185,14 @@
         "Note that this must be a single agent (which can be a Person, or an Organization).  If multiple Agents contributed to an entity, a separate Contribution instances MUST be created for each."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000150"
+      ],
       "close_mappings": [
         "http://purl.obolibrary.org/obo/SEPIO_0000017"
       ],
       "status": "Draft",
-      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/contributor",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000150",
       "alias": "contributor",
       "owner": "Contribution",
       "domain_of": [
@@ -3062,6 +3065,7 @@
             "SEPIO:0000017"
           ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000150",
           "range": "Agent",
           "@type": "SlotDefinition"
         },

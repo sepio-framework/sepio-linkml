@@ -96,7 +96,7 @@ linkml:Sparqlpath xsd:string
 <Contribution> CLOSED {
     (  $<Contribution_tes> (  &<Activity_tes> ;
           rdf:type [ prov:Activity ] ? ;
-          <contributor> @<Agent> ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000150> @<Agent> ? ;
           <activity_type> @<Coding> * ;
           <http://purl.obolibrary.org/obo/SEPIO_0000188> @<InformationEntity> ?
        ) ;

@@ -1209,6 +1209,7 @@ class Contribution(Activity):
                       'entity, a separate Contribution instances MUST be created for '
                       'each.'],
          'domain_of': ['Contribution'],
+         'slot_uri': 'SEPIO:0000150',
          'status': 'Draft'} })
     activity_type: Optional[list[Coding]] = Field(default=None, description="""The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc. . Values of this property may be framed as activities or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).""", json_schema_extra = { "linkml_meta": {'comments': ['Each implementation can define terms for the specific types of '
                       'activities relevant to their use case/application. \\n- Note '

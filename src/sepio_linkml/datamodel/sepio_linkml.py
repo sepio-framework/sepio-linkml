@@ -1068,7 +1068,7 @@ slots.activity__input = Slot(uri=OBI['0000293'], name="activity__input", curie=O
 slots.activity__output = Slot(uri=OBI['0000299'], name="activity__output", curie=OBI.curie('0000299'),
                    model_uri=SEPIO_LINKML.activity__output, domain=None, range=Optional[Union[Union[dict, Entity], list[Union[dict, Entity]]]])
 
-slots.contribution__contributor = Slot(uri=SEPIO_MODEL.contributor, name="contribution__contributor", curie=SEPIO_MODEL.curie('contributor'),
+slots.contribution__contributor = Slot(uri=SEPIO['0000150'], name="contribution__contributor", curie=SEPIO.curie('0000150'),
                    model_uri=SEPIO_LINKML.contribution__contributor, domain=None, range=Optional[Union[dict, Agent]])
 
 slots.contribution__activity_type = Slot(uri=SEPIO_MODEL.activity_type, name="contribution__activity_type", curie=SEPIO_MODEL.curie('activity_type'),

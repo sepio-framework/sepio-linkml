@@ -624,6 +624,7 @@ classes:
     attributes:
       contributor:
         description: The Agent that made the contribution.
+        slot_uri: SEPIO:0000150 #has_contributor
         close_mappings:
         - SEPIO:0000017 #has_agent (no definition)
         comments:

@@ -90,7 +90,7 @@
       },
       "contributor": {
          "@type": "@id",
-         "@id": "sepio-model:contributor"
+         "@id": "SEPIO:0000150"
       },
       "component_data_item": {
          "@type": "@id",

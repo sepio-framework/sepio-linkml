@@ -124,9 +124,6 @@
       "identifiers": {
          "@id": "sepio-model:identifiers"
       },
-      "type": {
-         "@id": "sepio-model:type"
-      },
       "direction_of_evidence_provided": {
          "@id": "sepio-model:direction_of_evidence_provided"
       },
@@ -293,6 +290,9 @@
       "study_group": {
          "@type": "@id",
          "@id": "sepio-model:study_group"
+      },
+      "type": {
+         "@id": "sepio-model:type"
       },
       "Activity": {
          "@id": "sepio-model:Activity"

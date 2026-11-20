@@ -1,0 +1,48 @@
+# ClinGen gene-disease validity assertion: GDI1 and X-linked intellectual disability
+# (MONDO:0019181), classified Moderate (downgraded from a calculated Definitive).
+# Abridged from workspace/clingen-gdi1-gene-validity-example.json (genegraph record
+# a0a9ec11-ef90-4095-9c9e-696eabd0395b, version 1.0): one of the six genetic evidence
+# lines is kept.
+id: cggv:a0a9ec11-ef90-4095-9c9e-696eabd0395bv1.0
+type: Statement
+proposition:
+  id: cggv:20s_eD13bEk
+  type: Proposition
+  subject: HGNC:4226
+  predicate:
+    code: RO:0003302
+    label: causes or contributes to condition
+    system: RO
+  object: MONDO:0019181
+  qualifier:
+    - name: mode of inheritance
+      value: HP:0001417
+direction: supports
+strength: Moderate
+score: 11.3
+specified_by:
+  - cg:GeneValidityCriteria10
+contributions:
+  - id: cggv:8afc42b0-6c5e-460b-87d1-035c051fe7ca_contrib
+    type: Contribution
+    contributor:
+      id: cgagent:10006
+      type: Agent
+      subtype: organization
+    activity_type:
+      - code: Approver
+        system: cg
+has_evidence_lines:
+  - id: cggv:8afc42b0-6c5e-460b-87d1-035c051fe7ca_overall_genetic_evidence_line
+    type: EvidenceLine
+    specified_by:
+      - cg:GeneValidityOverallGeneticEvidenceCriteria
+    direction_of_evidence_provided: SEPIO:0000403
+    score_of_evidence_provided: 5.8
+    has_evidence_items:
+      - id: cggv:f13b920a-fcce-4133-a04b-24d8ffafcaae
+        type: EvidenceLine
+        specified_by:
+          - cg:GeneValidityNullVariantCriteria
+        direction_of_evidence_provided: SEPIO:0000403
+        score_of_evidence_provided: 1.5

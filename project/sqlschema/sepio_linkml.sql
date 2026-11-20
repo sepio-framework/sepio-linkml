@@ -1,14 +1,14 @@
 -- # Class: Entity Description: Anything that exists, has existed, or will exist.
 --     * Slot: uid
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 -- # Class: InformationEntity Description: An abstract (non-physical) entity that is about something - representing the underlying 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs.
 --     * Slot: uid
 --     * Slot: date_authored Description: Indicates when the information content expressed in the Information Entity was generated.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: information_quality_id Description: A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected.
@@ -16,8 +16,8 @@
 -- # Class: Method Description: A set of instructions that specify how to achieve some objective.
 --     * Slot: uid
 --     * Slot: date_authored Description: Indicates when the information content expressed in the Information Entity was generated.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: subtype_id Description: A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol').
@@ -30,8 +30,8 @@
 --     * Slot: doi Description: A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_` for the document.
 --     * Slot: license Description: A specific license that dictates legal permissions for how a document can be used (by whom, where, for what purposes, with what additional requirements, etc.)
 --     * Slot: date_authored Description: Indicates when the information content expressed in the Information Entity was generated.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: subtype_id Description: A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')
@@ -41,8 +41,8 @@
 --     * Slot: uid
 --     * Slot: value Description: The value of the data item (could be quantitative or qualitative depending on the type of data item).
 --     * Slot: date_authored Description: Indicates when the information content expressed in the Information Entity was generated.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: subtype_id Description: A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')
@@ -56,8 +56,8 @@
 --     * Slot: version Description: The version of the DataSet, as assigned by its creator.
 --     * Slot: license Description: A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.).
 --     * Slot: date_authored Description: Indicates when the information content expressed in the Information Entity was generated.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: subtype_id Description: A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set').
@@ -66,16 +66,16 @@
 -- # Class: Activity Description: An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities.
 --     * Slot: uid
 --     * Slot: date Description: The date that the Activity was completed.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: subtype_id Description: A specific type of activity the Activity instance represents.
 -- # Class: Contribution Description: An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.).
 --     * Slot: uid
 --     * Slot: date Description: The date that the Activity was completed.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: contributor_uid Description: The Agent that made the contribution.
@@ -85,8 +85,8 @@
 --     * Slot: uid
 --     * Slot: subtype Description: A specific type of agent the Agent object represents. Must be one of {person, organization, software}
 --     * Slot: name Description: The given name of the Agent.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 -- # Class: Statement Description: A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.
@@ -98,8 +98,8 @@
 --     * Slot: strength Description: A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how *confident* an agent is that the Proposition is true or false, or in terms of the *strength of all evidence* they believe supports or disputes it.
 --     * Slot: score Description: A quantitative score that indicates the strength of a Proposition's validity assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.
 --     * Slot: date_authored Description: Indicates when the information content expressed in the Information Entity was generated.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: proposition_uid Description: A possible fact that the Statement assesses or puts forth as true.
@@ -111,8 +111,8 @@
 --     * Slot: uid
 --     * Slot: focus Description: A specific subject or experimental unit in a Study, that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
 --     * Slot: date_authored Description: Indicates when the information content expressed in the Information Entity was generated.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: interpretation_id Description: The outcome of an interpretation of lower-level data item(s) in a StudyResult, that express some broader conclusion or insight that was made (e.g. that data indicates a result to be is high, normal, or low).
@@ -125,8 +125,8 @@
 --     * Slot: strength_of_evidence_provided Description: The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided.
 --     * Slot: score_of_evidence_provided Description: A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided value.
 --     * Slot: date_authored Description: Indicates when the information content expressed in the Information Entity was generated.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: subtype_id Description: A specific type of evidence the EvidenceLine instance represents (e.g. 'mutant phenotype evidence', 'evidence from manual interpretation', 'ACMG PM2 evidence')
@@ -139,16 +139,16 @@
 --     * Slot: subject Description: The Entity or concept about which the Proposition is made.
 --     * Slot: object Description: An Entity or concept that is related to the subject of a Proposition via its predicate.
 --     * Slot: negated Description: A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate, object, and qualifier(s) (e.g. that "Variant X is NOT pathogenic for Disease Y")
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 --     * Slot: predicate_id Description: The relationship declared to hold between the subject and the object of the Proposition.
 -- # Class: StudyGroup Description: A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings.
 --     * Slot: uid
 --     * Slot: member_count Description: The total number of individual members in the StudyGroup.
---     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: type Description: The name of the class that is instantiated by a data object representing the Entity.
+--     * Slot: id Description: The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.
 --     * Slot: label Description: A primary name for the Entity.
 --     * Slot: description Description: A free text description of the Entity.
 -- # Class: Utility Description: An abstract organizational class that groups classes acting as complex datatypes in the model - providing reusable collections of fields that can be plugged into other objects to capture sets of related information.
@@ -590,8 +590,8 @@
 
 CREATE TABLE "Entity" (
 	uid INTEGER NOT NULL,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	PRIMARY KEY (uid)
@@ -602,8 +602,8 @@ CREATE TABLE "Agent" (
 	uid INTEGER NOT NULL,
 	subtype TEXT,
 	name TEXT,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	PRIMARY KEY (uid)
@@ -613,8 +613,8 @@ CREATE INDEX "ix_Agent_uid" ON "Agent" (uid);
 CREATE TABLE "StudyGroup" (
 	uid INTEGER NOT NULL,
 	member_count INTEGER,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	PRIMARY KEY (uid)
@@ -683,8 +683,8 @@ CREATE INDEX "ix_Characteristic_id" ON "Characteristic" (id);
 CREATE TABLE "InformationEntity" (
 	uid INTEGER NOT NULL,
 	date_authored TEXT,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	information_quality_id INTEGER,
@@ -698,8 +698,8 @@ CREATE INDEX "ix_InformationEntity_uid" ON "InformationEntity" (uid);
 CREATE TABLE "Method" (
 	uid INTEGER NOT NULL,
 	date_authored TEXT,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	subtype_id INTEGER,
@@ -719,8 +719,8 @@ CREATE TABLE "Document" (
 	doi TEXT,
 	license TEXT,
 	date_authored TEXT,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	subtype_id INTEGER,
@@ -737,8 +737,8 @@ CREATE TABLE "DataItem" (
 	uid INTEGER NOT NULL,
 	value TEXT NOT NULL,
 	date_authored TEXT,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	subtype_id INTEGER,
@@ -761,8 +761,8 @@ CREATE TABLE "DataSet" (
 	version TEXT,
 	license TEXT,
 	date_authored TEXT,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	subtype_id INTEGER,
@@ -778,8 +778,8 @@ CREATE INDEX "ix_DataSet_uid" ON "DataSet" (uid);
 CREATE TABLE "Activity" (
 	uid INTEGER NOT NULL,
 	date DATE,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	subtype_id INTEGER,
@@ -792,8 +792,8 @@ CREATE TABLE "StudyResult" (
 	uid INTEGER NOT NULL,
 	focus TEXT,
 	date_authored TEXT,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	interpretation_id INTEGER,
@@ -814,8 +814,8 @@ CREATE TABLE "Proposition" (
 	subject TEXT NOT NULL,
 	object TEXT NOT NULL,
 	negated BOOLEAN,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	predicate_id INTEGER NOT NULL,
@@ -830,8 +830,8 @@ CREATE TABLE "Entity_identifiers" (
 	PRIMARY KEY ("Entity_uid", identifiers),
 	FOREIGN KEY("Entity_uid") REFERENCES "Entity" (uid)
 );
-CREATE INDEX "ix_Entity_identifiers_identifiers" ON "Entity_identifiers" (identifiers);
 CREATE INDEX "ix_Entity_identifiers_Entity_uid" ON "Entity_identifiers" ("Entity_uid");
+CREATE INDEX "ix_Entity_identifiers_identifiers" ON "Entity_identifiers" (identifiers);
 
 CREATE TABLE "Entity_alternative_labels" (
 	"Entity_uid" INTEGER,
@@ -849,8 +849,8 @@ CREATE TABLE "Entity_extensions" (
 	FOREIGN KEY("Entity_uid") REFERENCES "Entity" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_Entity_extensions_Entity_uid" ON "Entity_extensions" ("Entity_uid");
 CREATE INDEX "ix_Entity_extensions_extensions_id" ON "Entity_extensions" (extensions_id);
+CREATE INDEX "ix_Entity_extensions_Entity_uid" ON "Entity_extensions" ("Entity_uid");
 
 CREATE TABLE "Agent_identifiers" (
 	"Agent_uid" INTEGER,
@@ -906,8 +906,8 @@ CREATE TABLE "StudyGroup_identifiers" (
 	PRIMARY KEY ("StudyGroup_uid", identifiers),
 	FOREIGN KEY("StudyGroup_uid") REFERENCES "StudyGroup" (uid)
 );
-CREATE INDEX "ix_StudyGroup_identifiers_identifiers" ON "StudyGroup_identifiers" (identifiers);
 CREATE INDEX "ix_StudyGroup_identifiers_StudyGroup_uid" ON "StudyGroup_identifiers" ("StudyGroup_uid");
+CREATE INDEX "ix_StudyGroup_identifiers_identifiers" ON "StudyGroup_identifiers" (identifiers);
 
 CREATE TABLE "StudyGroup_alternative_labels" (
 	"StudyGroup_uid" INTEGER,
@@ -915,8 +915,8 @@ CREATE TABLE "StudyGroup_alternative_labels" (
 	PRIMARY KEY ("StudyGroup_uid", alternative_labels),
 	FOREIGN KEY("StudyGroup_uid") REFERENCES "StudyGroup" (uid)
 );
-CREATE INDEX "ix_StudyGroup_alternative_labels_StudyGroup_uid" ON "StudyGroup_alternative_labels" ("StudyGroup_uid");
 CREATE INDEX "ix_StudyGroup_alternative_labels_alternative_labels" ON "StudyGroup_alternative_labels" (alternative_labels);
+CREATE INDEX "ix_StudyGroup_alternative_labels_StudyGroup_uid" ON "StudyGroup_alternative_labels" ("StudyGroup_uid");
 
 CREATE TABLE "StudyGroup_extensions" (
 	"StudyGroup_uid" INTEGER,
@@ -925,8 +925,8 @@ CREATE TABLE "StudyGroup_extensions" (
 	FOREIGN KEY("StudyGroup_uid") REFERENCES "StudyGroup" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_StudyGroup_extensions_StudyGroup_uid" ON "StudyGroup_extensions" ("StudyGroup_uid");
 CREATE INDEX "ix_StudyGroup_extensions_extensions_id" ON "StudyGroup_extensions" (extensions_id);
+CREATE INDEX "ix_StudyGroup_extensions_StudyGroup_uid" ON "StudyGroup_extensions" ("StudyGroup_uid");
 
 CREATE TABLE "RecordMetadata_derived_from_record" (
 	"RecordMetadata_id" INTEGER,
@@ -934,8 +934,8 @@ CREATE TABLE "RecordMetadata_derived_from_record" (
 	PRIMARY KEY ("RecordMetadata_id", derived_from_record),
 	FOREIGN KEY("RecordMetadata_id") REFERENCES "RecordMetadata" (id)
 );
-CREATE INDEX "ix_RecordMetadata_derived_from_record_derived_from_record" ON "RecordMetadata_derived_from_record" (derived_from_record);
 CREATE INDEX "ix_RecordMetadata_derived_from_record_RecordMetadata_id" ON "RecordMetadata_derived_from_record" ("RecordMetadata_id");
+CREATE INDEX "ix_RecordMetadata_derived_from_record_derived_from_record" ON "RecordMetadata_derived_from_record" (derived_from_record);
 
 CREATE TABLE "Characteristic_values" (
 	"Characteristic_id" INTEGER,
@@ -949,8 +949,8 @@ CREATE INDEX "ix_Characteristic_values_Characteristic_id" ON "Characteristic_val
 CREATE TABLE "Contribution" (
 	uid INTEGER NOT NULL,
 	date DATE,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	contributor_uid INTEGER,
@@ -972,8 +972,8 @@ CREATE TABLE "Statement" (
 	strength TEXT,
 	score FLOAT,
 	date_authored TEXT,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	proposition_uid INTEGER,
@@ -996,8 +996,8 @@ CREATE TABLE "EvidenceLine" (
 	strength_of_evidence_provided TEXT,
 	score_of_evidence_provided FLOAT,
 	date_authored TEXT,
-	id TEXT NOT NULL,
 	type TEXT NOT NULL,
+	id TEXT NOT NULL,
 	label TEXT,
 	description TEXT,
 	subtype_id INTEGER,
@@ -1027,8 +1027,8 @@ CREATE TABLE "InformationEntity_specified_by" (
 	PRIMARY KEY ("InformationEntity_uid", specified_by),
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_InformationEntity_specified_by_InformationEntity_uid" ON "InformationEntity_specified_by" ("InformationEntity_uid");
 CREATE INDEX "ix_InformationEntity_specified_by_specified_by" ON "InformationEntity_specified_by" (specified_by);
+CREATE INDEX "ix_InformationEntity_specified_by_InformationEntity_uid" ON "InformationEntity_specified_by" ("InformationEntity_uid");
 
 CREATE TABLE "InformationEntity_supporting_methods" (
 	"InformationEntity_uid" INTEGER,
@@ -1036,8 +1036,8 @@ CREATE TABLE "InformationEntity_supporting_methods" (
 	PRIMARY KEY ("InformationEntity_uid", supporting_methods),
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_InformationEntity_supporting_methods_InformationEntity_uid" ON "InformationEntity_supporting_methods" ("InformationEntity_uid");
 CREATE INDEX "ix_InformationEntity_supporting_methods_supporting_methods" ON "InformationEntity_supporting_methods" (supporting_methods);
+CREATE INDEX "ix_InformationEntity_supporting_methods_InformationEntity_uid" ON "InformationEntity_supporting_methods" ("InformationEntity_uid");
 
 CREATE TABLE "InformationEntity_supporting_method_types" (
 	"InformationEntity_uid" INTEGER,
@@ -1065,8 +1065,8 @@ CREATE TABLE "InformationEntity_reported_in" (
 	PRIMARY KEY ("InformationEntity_uid", reported_in),
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_InformationEntity_reported_in_reported_in" ON "InformationEntity_reported_in" (reported_in);
 CREATE INDEX "ix_InformationEntity_reported_in_InformationEntity_uid" ON "InformationEntity_reported_in" ("InformationEntity_uid");
+CREATE INDEX "ix_InformationEntity_reported_in_reported_in" ON "InformationEntity_reported_in" (reported_in);
 
 CREATE TABLE "InformationEntity_sources" (
 	"InformationEntity_uid" INTEGER,
@@ -1092,8 +1092,8 @@ CREATE TABLE "InformationEntity_alternative_labels" (
 	PRIMARY KEY ("InformationEntity_uid", alternative_labels),
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_InformationEntity_alternative_labels_alternative_labels" ON "InformationEntity_alternative_labels" (alternative_labels);
 CREATE INDEX "ix_InformationEntity_alternative_labels_InformationEntity_uid" ON "InformationEntity_alternative_labels" ("InformationEntity_uid");
+CREATE INDEX "ix_InformationEntity_alternative_labels_alternative_labels" ON "InformationEntity_alternative_labels" (alternative_labels);
 
 CREATE TABLE "InformationEntity_extensions" (
 	"InformationEntity_uid" INTEGER,
@@ -1102,8 +1102,8 @@ CREATE TABLE "InformationEntity_extensions" (
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_InformationEntity_extensions_InformationEntity_uid" ON "InformationEntity_extensions" ("InformationEntity_uid");
 CREATE INDEX "ix_InformationEntity_extensions_extensions_id" ON "InformationEntity_extensions" (extensions_id);
+CREATE INDEX "ix_InformationEntity_extensions_InformationEntity_uid" ON "InformationEntity_extensions" ("InformationEntity_uid");
 
 CREATE TABLE "Method_urls" (
 	"Method_uid" INTEGER,
@@ -1120,8 +1120,8 @@ CREATE TABLE "Method_is_about" (
 	PRIMARY KEY ("Method_uid", is_about),
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Method_is_about_Method_uid" ON "Method_is_about" ("Method_uid");
 CREATE INDEX "ix_Method_is_about_is_about" ON "Method_is_about" (is_about);
+CREATE INDEX "ix_Method_is_about_Method_uid" ON "Method_is_about" ("Method_uid");
 
 CREATE TABLE "Method_specified_by" (
 	"Method_uid" INTEGER,
@@ -1158,8 +1158,8 @@ CREATE TABLE "Method_derived_from" (
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid),
 	FOREIGN KEY(derived_from_uid) REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_Method_derived_from_derived_from_uid" ON "Method_derived_from" (derived_from_uid);
 CREATE INDEX "ix_Method_derived_from_Method_uid" ON "Method_derived_from" ("Method_uid");
+CREATE INDEX "ix_Method_derived_from_derived_from_uid" ON "Method_derived_from" (derived_from_uid);
 
 CREATE TABLE "Method_reported_in" (
 	"Method_uid" INTEGER,
@@ -1176,8 +1176,8 @@ CREATE TABLE "Method_sources" (
 	PRIMARY KEY ("Method_uid", sources),
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Method_sources_sources" ON "Method_sources" (sources);
 CREATE INDEX "ix_Method_sources_Method_uid" ON "Method_sources" ("Method_uid");
+CREATE INDEX "ix_Method_sources_sources" ON "Method_sources" (sources);
 
 CREATE TABLE "Method_identifiers" (
 	"Method_uid" INTEGER,
@@ -1185,8 +1185,8 @@ CREATE TABLE "Method_identifiers" (
 	PRIMARY KEY ("Method_uid", identifiers),
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Method_identifiers_Method_uid" ON "Method_identifiers" ("Method_uid");
 CREATE INDEX "ix_Method_identifiers_identifiers" ON "Method_identifiers" (identifiers);
+CREATE INDEX "ix_Method_identifiers_Method_uid" ON "Method_identifiers" ("Method_uid");
 
 CREATE TABLE "Method_alternative_labels" (
 	"Method_uid" INTEGER,
@@ -1194,8 +1194,8 @@ CREATE TABLE "Method_alternative_labels" (
 	PRIMARY KEY ("Method_uid", alternative_labels),
 	FOREIGN KEY("Method_uid") REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Method_alternative_labels_alternative_labels" ON "Method_alternative_labels" (alternative_labels);
 CREATE INDEX "ix_Method_alternative_labels_Method_uid" ON "Method_alternative_labels" ("Method_uid");
+CREATE INDEX "ix_Method_alternative_labels_alternative_labels" ON "Method_alternative_labels" (alternative_labels);
 
 CREATE TABLE "Method_extensions" (
 	"Method_uid" INTEGER,
@@ -1222,8 +1222,8 @@ CREATE TABLE "Document_is_about" (
 	PRIMARY KEY ("Document_uid", is_about),
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid)
 );
-CREATE INDEX "ix_Document_is_about_Document_uid" ON "Document_is_about" ("Document_uid");
 CREATE INDEX "ix_Document_is_about_is_about" ON "Document_is_about" (is_about);
+CREATE INDEX "ix_Document_is_about_Document_uid" ON "Document_is_about" ("Document_uid");
 
 CREATE TABLE "Document_specified_by" (
 	"Document_uid" INTEGER,
@@ -1269,8 +1269,8 @@ CREATE TABLE "Document_reported_in" (
 	PRIMARY KEY ("Document_uid", reported_in),
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid)
 );
-CREATE INDEX "ix_Document_reported_in_Document_uid" ON "Document_reported_in" ("Document_uid");
 CREATE INDEX "ix_Document_reported_in_reported_in" ON "Document_reported_in" (reported_in);
+CREATE INDEX "ix_Document_reported_in_Document_uid" ON "Document_reported_in" ("Document_uid");
 
 CREATE TABLE "Document_sources" (
 	"Document_uid" INTEGER,
@@ -1278,8 +1278,8 @@ CREATE TABLE "Document_sources" (
 	PRIMARY KEY ("Document_uid", sources),
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid)
 );
-CREATE INDEX "ix_Document_sources_sources" ON "Document_sources" (sources);
 CREATE INDEX "ix_Document_sources_Document_uid" ON "Document_sources" ("Document_uid");
+CREATE INDEX "ix_Document_sources_sources" ON "Document_sources" (sources);
 
 CREATE TABLE "Document_identifiers" (
 	"Document_uid" INTEGER,
@@ -1296,8 +1296,8 @@ CREATE TABLE "Document_alternative_labels" (
 	PRIMARY KEY ("Document_uid", alternative_labels),
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid)
 );
-CREATE INDEX "ix_Document_alternative_labels_Document_uid" ON "Document_alternative_labels" ("Document_uid");
 CREATE INDEX "ix_Document_alternative_labels_alternative_labels" ON "Document_alternative_labels" (alternative_labels);
+CREATE INDEX "ix_Document_alternative_labels_Document_uid" ON "Document_alternative_labels" ("Document_uid");
 
 CREATE TABLE "Document_extensions" (
 	"Document_uid" INTEGER,
@@ -1344,8 +1344,8 @@ CREATE TABLE "DataItem_specified_by" (
 	PRIMARY KEY ("DataItem_uid", specified_by),
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid)
 );
-CREATE INDEX "ix_DataItem_specified_by_DataItem_uid" ON "DataItem_specified_by" ("DataItem_uid");
 CREATE INDEX "ix_DataItem_specified_by_specified_by" ON "DataItem_specified_by" (specified_by);
+CREATE INDEX "ix_DataItem_specified_by_DataItem_uid" ON "DataItem_specified_by" ("DataItem_uid");
 
 CREATE TABLE "DataItem_supporting_methods" (
 	"DataItem_uid" INTEGER,
@@ -1363,8 +1363,8 @@ CREATE TABLE "DataItem_supporting_method_types" (
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid),
 	FOREIGN KEY(supporting_method_types_id) REFERENCES "Coding" (id)
 );
-CREATE INDEX "ix_DataItem_supporting_method_types_supporting_method_types_id" ON "DataItem_supporting_method_types" (supporting_method_types_id);
 CREATE INDEX "ix_DataItem_supporting_method_types_DataItem_uid" ON "DataItem_supporting_method_types" ("DataItem_uid");
+CREATE INDEX "ix_DataItem_supporting_method_types_supporting_method_types_id" ON "DataItem_supporting_method_types" (supporting_method_types_id);
 
 CREATE TABLE "DataItem_derived_from" (
 	"DataItem_uid" INTEGER,
@@ -1382,8 +1382,8 @@ CREATE TABLE "DataItem_reported_in" (
 	PRIMARY KEY ("DataItem_uid", reported_in),
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid)
 );
-CREATE INDEX "ix_DataItem_reported_in_reported_in" ON "DataItem_reported_in" (reported_in);
 CREATE INDEX "ix_DataItem_reported_in_DataItem_uid" ON "DataItem_reported_in" ("DataItem_uid");
+CREATE INDEX "ix_DataItem_reported_in_reported_in" ON "DataItem_reported_in" (reported_in);
 
 CREATE TABLE "DataItem_sources" (
 	"DataItem_uid" INTEGER,
@@ -1391,8 +1391,8 @@ CREATE TABLE "DataItem_sources" (
 	PRIMARY KEY ("DataItem_uid", sources),
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid)
 );
-CREATE INDEX "ix_DataItem_sources_sources" ON "DataItem_sources" (sources);
 CREATE INDEX "ix_DataItem_sources_DataItem_uid" ON "DataItem_sources" ("DataItem_uid");
+CREATE INDEX "ix_DataItem_sources_sources" ON "DataItem_sources" (sources);
 
 CREATE TABLE "DataItem_identifiers" (
 	"DataItem_uid" INTEGER,
@@ -1400,8 +1400,8 @@ CREATE TABLE "DataItem_identifiers" (
 	PRIMARY KEY ("DataItem_uid", identifiers),
 	FOREIGN KEY("DataItem_uid") REFERENCES "DataItem" (uid)
 );
-CREATE INDEX "ix_DataItem_identifiers_identifiers" ON "DataItem_identifiers" (identifiers);
 CREATE INDEX "ix_DataItem_identifiers_DataItem_uid" ON "DataItem_identifiers" ("DataItem_uid");
+CREATE INDEX "ix_DataItem_identifiers_identifiers" ON "DataItem_identifiers" (identifiers);
 
 CREATE TABLE "DataItem_alternative_labels" (
 	"DataItem_uid" INTEGER,
@@ -1428,8 +1428,8 @@ CREATE TABLE "DataSet_is_about" (
 	PRIMARY KEY ("DataSet_uid", is_about),
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid)
 );
-CREATE INDEX "ix_DataSet_is_about_DataSet_uid" ON "DataSet_is_about" ("DataSet_uid");
 CREATE INDEX "ix_DataSet_is_about_is_about" ON "DataSet_is_about" (is_about);
+CREATE INDEX "ix_DataSet_is_about_DataSet_uid" ON "DataSet_is_about" ("DataSet_uid");
 
 CREATE TABLE "DataSet_specified_by" (
 	"DataSet_uid" INTEGER,
@@ -1437,8 +1437,8 @@ CREATE TABLE "DataSet_specified_by" (
 	PRIMARY KEY ("DataSet_uid", specified_by),
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid)
 );
-CREATE INDEX "ix_DataSet_specified_by_specified_by" ON "DataSet_specified_by" (specified_by);
 CREATE INDEX "ix_DataSet_specified_by_DataSet_uid" ON "DataSet_specified_by" ("DataSet_uid");
+CREATE INDEX "ix_DataSet_specified_by_specified_by" ON "DataSet_specified_by" (specified_by);
 
 CREATE TABLE "DataSet_supporting_methods" (
 	"DataSet_uid" INTEGER,
@@ -1456,8 +1456,8 @@ CREATE TABLE "DataSet_supporting_method_types" (
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid),
 	FOREIGN KEY(supporting_method_types_id) REFERENCES "Coding" (id)
 );
-CREATE INDEX "ix_DataSet_supporting_method_types_DataSet_uid" ON "DataSet_supporting_method_types" ("DataSet_uid");
 CREATE INDEX "ix_DataSet_supporting_method_types_supporting_method_types_id" ON "DataSet_supporting_method_types" (supporting_method_types_id);
+CREATE INDEX "ix_DataSet_supporting_method_types_DataSet_uid" ON "DataSet_supporting_method_types" ("DataSet_uid");
 
 CREATE TABLE "DataSet_derived_from" (
 	"DataSet_uid" INTEGER,
@@ -1493,8 +1493,8 @@ CREATE TABLE "DataSet_identifiers" (
 	PRIMARY KEY ("DataSet_uid", identifiers),
 	FOREIGN KEY("DataSet_uid") REFERENCES "DataSet" (uid)
 );
-CREATE INDEX "ix_DataSet_identifiers_DataSet_uid" ON "DataSet_identifiers" ("DataSet_uid");
 CREATE INDEX "ix_DataSet_identifiers_identifiers" ON "DataSet_identifiers" (identifiers);
+CREATE INDEX "ix_DataSet_identifiers_DataSet_uid" ON "DataSet_identifiers" ("DataSet_uid");
 
 CREATE TABLE "DataSet_alternative_labels" (
 	"DataSet_uid" INTEGER,
@@ -1532,8 +1532,8 @@ CREATE TABLE "Activity_specified_by" (
 	FOREIGN KEY("Activity_uid") REFERENCES "Activity" (uid),
 	FOREIGN KEY(specified_by_uid) REFERENCES "Method" (uid)
 );
-CREATE INDEX "ix_Activity_specified_by_Activity_uid" ON "Activity_specified_by" ("Activity_uid");
 CREATE INDEX "ix_Activity_specified_by_specified_by_uid" ON "Activity_specified_by" (specified_by_uid);
+CREATE INDEX "ix_Activity_specified_by_Activity_uid" ON "Activity_specified_by" ("Activity_uid");
 
 CREATE TABLE "Activity_input" (
 	"Activity_uid" INTEGER,
@@ -1561,8 +1561,8 @@ CREATE TABLE "Activity_identifiers" (
 	PRIMARY KEY ("Activity_uid", identifiers),
 	FOREIGN KEY("Activity_uid") REFERENCES "Activity" (uid)
 );
-CREATE INDEX "ix_Activity_identifiers_identifiers" ON "Activity_identifiers" (identifiers);
 CREATE INDEX "ix_Activity_identifiers_Activity_uid" ON "Activity_identifiers" ("Activity_uid");
+CREATE INDEX "ix_Activity_identifiers_identifiers" ON "Activity_identifiers" (identifiers);
 
 CREATE TABLE "Activity_alternative_labels" (
 	"Activity_uid" INTEGER,
@@ -1570,8 +1570,8 @@ CREATE TABLE "Activity_alternative_labels" (
 	PRIMARY KEY ("Activity_uid", alternative_labels),
 	FOREIGN KEY("Activity_uid") REFERENCES "Activity" (uid)
 );
-CREATE INDEX "ix_Activity_alternative_labels_alternative_labels" ON "Activity_alternative_labels" (alternative_labels);
 CREATE INDEX "ix_Activity_alternative_labels_Activity_uid" ON "Activity_alternative_labels" ("Activity_uid");
+CREATE INDEX "ix_Activity_alternative_labels_alternative_labels" ON "Activity_alternative_labels" (alternative_labels);
 
 CREATE TABLE "Activity_extensions" (
 	"Activity_uid" INTEGER,
@@ -1590,8 +1590,8 @@ CREATE TABLE "StudyResult_data_items" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(data_items_uid) REFERENCES "DataItem" (uid)
 );
-CREATE INDEX "ix_StudyResult_data_items_data_items_uid" ON "StudyResult_data_items" (data_items_uid);
 CREATE INDEX "ix_StudyResult_data_items_StudyResult_uid" ON "StudyResult_data_items" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_data_items_data_items_uid" ON "StudyResult_data_items" (data_items_uid);
 
 CREATE TABLE "StudyResult_source_data_set" (
 	"StudyResult_uid" INTEGER,
@@ -1610,8 +1610,8 @@ CREATE TABLE "StudyResult_component_result" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(component_result_uid) REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_component_result_StudyResult_uid" ON "StudyResult_component_result" ("StudyResult_uid");
 CREATE INDEX "ix_StudyResult_component_result_component_result_uid" ON "StudyResult_component_result" (component_result_uid);
+CREATE INDEX "ix_StudyResult_component_result_StudyResult_uid" ON "StudyResult_component_result" ("StudyResult_uid");
 
 CREATE TABLE "StudyResult_is_about" (
 	"StudyResult_uid" INTEGER,
@@ -1628,8 +1628,8 @@ CREATE TABLE "StudyResult_specified_by" (
 	PRIMARY KEY ("StudyResult_uid", specified_by),
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_specified_by_specified_by" ON "StudyResult_specified_by" (specified_by);
 CREATE INDEX "ix_StudyResult_specified_by_StudyResult_uid" ON "StudyResult_specified_by" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_specified_by_specified_by" ON "StudyResult_specified_by" (specified_by);
 
 CREATE TABLE "StudyResult_supporting_methods" (
 	"StudyResult_uid" INTEGER,
@@ -1637,8 +1637,8 @@ CREATE TABLE "StudyResult_supporting_methods" (
 	PRIMARY KEY ("StudyResult_uid", supporting_methods),
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_supporting_methods_StudyResult_uid" ON "StudyResult_supporting_methods" ("StudyResult_uid");
 CREATE INDEX "ix_StudyResult_supporting_methods_supporting_methods" ON "StudyResult_supporting_methods" (supporting_methods);
+CREATE INDEX "ix_StudyResult_supporting_methods_StudyResult_uid" ON "StudyResult_supporting_methods" ("StudyResult_uid");
 
 CREATE TABLE "StudyResult_supporting_method_types" (
 	"StudyResult_uid" INTEGER,
@@ -1647,8 +1647,8 @@ CREATE TABLE "StudyResult_supporting_method_types" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(supporting_method_types_id) REFERENCES "Coding" (id)
 );
-CREATE INDEX "ix_StudyResult_supporting_method_types_StudyResult_uid" ON "StudyResult_supporting_method_types" ("StudyResult_uid");
 CREATE INDEX "ix_StudyResult_supporting_method_types_supporting_method_types_id" ON "StudyResult_supporting_method_types" (supporting_method_types_id);
+CREATE INDEX "ix_StudyResult_supporting_method_types_StudyResult_uid" ON "StudyResult_supporting_method_types" ("StudyResult_uid");
 
 CREATE TABLE "StudyResult_derived_from" (
 	"StudyResult_uid" INTEGER,
@@ -1657,8 +1657,8 @@ CREATE TABLE "StudyResult_derived_from" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(derived_from_uid) REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_StudyResult_derived_from_derived_from_uid" ON "StudyResult_derived_from" (derived_from_uid);
 CREATE INDEX "ix_StudyResult_derived_from_StudyResult_uid" ON "StudyResult_derived_from" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_derived_from_derived_from_uid" ON "StudyResult_derived_from" (derived_from_uid);
 
 CREATE TABLE "StudyResult_reported_in" (
 	"StudyResult_uid" INTEGER,
@@ -1666,8 +1666,8 @@ CREATE TABLE "StudyResult_reported_in" (
 	PRIMARY KEY ("StudyResult_uid", reported_in),
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_reported_in_reported_in" ON "StudyResult_reported_in" (reported_in);
 CREATE INDEX "ix_StudyResult_reported_in_StudyResult_uid" ON "StudyResult_reported_in" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_reported_in_reported_in" ON "StudyResult_reported_in" (reported_in);
 
 CREATE TABLE "StudyResult_sources" (
 	"StudyResult_uid" INTEGER,
@@ -1684,8 +1684,8 @@ CREATE TABLE "StudyResult_identifiers" (
 	PRIMARY KEY ("StudyResult_uid", identifiers),
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_identifiers_StudyResult_uid" ON "StudyResult_identifiers" ("StudyResult_uid");
 CREATE INDEX "ix_StudyResult_identifiers_identifiers" ON "StudyResult_identifiers" (identifiers);
+CREATE INDEX "ix_StudyResult_identifiers_StudyResult_uid" ON "StudyResult_identifiers" ("StudyResult_uid");
 
 CREATE TABLE "StudyResult_alternative_labels" (
 	"StudyResult_uid" INTEGER,
@@ -1693,8 +1693,8 @@ CREATE TABLE "StudyResult_alternative_labels" (
 	PRIMARY KEY ("StudyResult_uid", alternative_labels),
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid)
 );
-CREATE INDEX "ix_StudyResult_alternative_labels_alternative_labels" ON "StudyResult_alternative_labels" (alternative_labels);
 CREATE INDEX "ix_StudyResult_alternative_labels_StudyResult_uid" ON "StudyResult_alternative_labels" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_alternative_labels_alternative_labels" ON "StudyResult_alternative_labels" (alternative_labels);
 
 CREATE TABLE "StudyResult_extensions" (
 	"StudyResult_uid" INTEGER,
@@ -1703,8 +1703,8 @@ CREATE TABLE "StudyResult_extensions" (
 	FOREIGN KEY("StudyResult_uid") REFERENCES "StudyResult" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_StudyResult_extensions_extensions_id" ON "StudyResult_extensions" (extensions_id);
 CREATE INDEX "ix_StudyResult_extensions_StudyResult_uid" ON "StudyResult_extensions" ("StudyResult_uid");
+CREATE INDEX "ix_StudyResult_extensions_extensions_id" ON "StudyResult_extensions" (extensions_id);
 
 CREATE TABLE "Proposition_qualifier" (
 	"Proposition_uid" INTEGER,
@@ -1713,8 +1713,8 @@ CREATE TABLE "Proposition_qualifier" (
 	FOREIGN KEY("Proposition_uid") REFERENCES "Proposition" (uid),
 	FOREIGN KEY(qualifier_id) REFERENCES "Qualifier" (id)
 );
-CREATE INDEX "ix_Proposition_qualifier_qualifier_id" ON "Proposition_qualifier" (qualifier_id);
 CREATE INDEX "ix_Proposition_qualifier_Proposition_uid" ON "Proposition_qualifier" ("Proposition_uid");
+CREATE INDEX "ix_Proposition_qualifier_qualifier_id" ON "Proposition_qualifier" (qualifier_id);
 
 CREATE TABLE "Proposition_identifiers" (
 	"Proposition_uid" INTEGER,
@@ -1722,8 +1722,8 @@ CREATE TABLE "Proposition_identifiers" (
 	PRIMARY KEY ("Proposition_uid", identifiers),
 	FOREIGN KEY("Proposition_uid") REFERENCES "Proposition" (uid)
 );
-CREATE INDEX "ix_Proposition_identifiers_Proposition_uid" ON "Proposition_identifiers" ("Proposition_uid");
 CREATE INDEX "ix_Proposition_identifiers_identifiers" ON "Proposition_identifiers" (identifiers);
+CREATE INDEX "ix_Proposition_identifiers_Proposition_uid" ON "Proposition_identifiers" ("Proposition_uid");
 
 CREATE TABLE "Proposition_alternative_labels" (
 	"Proposition_uid" INTEGER,
@@ -1751,8 +1751,8 @@ CREATE TABLE "InformationEntity_contributions" (
 	FOREIGN KEY("InformationEntity_uid") REFERENCES "InformationEntity" (uid),
 	FOREIGN KEY(contributions_uid) REFERENCES "Contribution" (uid)
 );
-CREATE INDEX "ix_InformationEntity_contributions_InformationEntity_uid" ON "InformationEntity_contributions" ("InformationEntity_uid");
 CREATE INDEX "ix_InformationEntity_contributions_contributions_uid" ON "InformationEntity_contributions" (contributions_uid);
+CREATE INDEX "ix_InformationEntity_contributions_InformationEntity_uid" ON "InformationEntity_contributions" ("InformationEntity_uid");
 
 CREATE TABLE "Method_contributions" (
 	"Method_uid" INTEGER,
@@ -1771,8 +1771,8 @@ CREATE TABLE "Document_contributions" (
 	FOREIGN KEY("Document_uid") REFERENCES "Document" (uid),
 	FOREIGN KEY(contributions_uid) REFERENCES "Contribution" (uid)
 );
-CREATE INDEX "ix_Document_contributions_Document_uid" ON "Document_contributions" ("Document_uid");
 CREATE INDEX "ix_Document_contributions_contributions_uid" ON "Document_contributions" (contributions_uid);
+CREATE INDEX "ix_Document_contributions_Document_uid" ON "Document_contributions" ("Document_uid");
 
 CREATE TABLE "DataItem_contributions" (
 	"DataItem_uid" INTEGER,
@@ -1831,8 +1831,8 @@ CREATE TABLE "Contribution_input" (
 	FOREIGN KEY("Contribution_uid") REFERENCES "Contribution" (uid),
 	FOREIGN KEY(input_uid) REFERENCES "Entity" (uid)
 );
-CREATE INDEX "ix_Contribution_input_Contribution_uid" ON "Contribution_input" ("Contribution_uid");
 CREATE INDEX "ix_Contribution_input_input_uid" ON "Contribution_input" (input_uid);
+CREATE INDEX "ix_Contribution_input_Contribution_uid" ON "Contribution_input" ("Contribution_uid");
 
 CREATE TABLE "Contribution_output" (
 	"Contribution_uid" INTEGER,
@@ -1859,8 +1859,8 @@ CREATE TABLE "Contribution_alternative_labels" (
 	PRIMARY KEY ("Contribution_uid", alternative_labels),
 	FOREIGN KEY("Contribution_uid") REFERENCES "Contribution" (uid)
 );
-CREATE INDEX "ix_Contribution_alternative_labels_Contribution_uid" ON "Contribution_alternative_labels" ("Contribution_uid");
 CREATE INDEX "ix_Contribution_alternative_labels_alternative_labels" ON "Contribution_alternative_labels" (alternative_labels);
+CREATE INDEX "ix_Contribution_alternative_labels_Contribution_uid" ON "Contribution_alternative_labels" ("Contribution_uid");
 
 CREATE TABLE "Contribution_extensions" (
 	"Contribution_uid" INTEGER,
@@ -1879,8 +1879,8 @@ CREATE TABLE "Statement_qualifier" (
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid),
 	FOREIGN KEY(qualifier_id) REFERENCES "Qualifier" (id)
 );
-CREATE INDEX "ix_Statement_qualifier_qualifier_id" ON "Statement_qualifier" (qualifier_id);
 CREATE INDEX "ix_Statement_qualifier_Statement_uid" ON "Statement_qualifier" ("Statement_uid");
+CREATE INDEX "ix_Statement_qualifier_qualifier_id" ON "Statement_qualifier" (qualifier_id);
 
 CREATE TABLE "Statement_has_evidence_of_types" (
 	"Statement_uid" INTEGER,
@@ -1888,8 +1888,8 @@ CREATE TABLE "Statement_has_evidence_of_types" (
 	PRIMARY KEY ("Statement_uid", has_evidence_of_types),
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
 );
-CREATE INDEX "ix_Statement_has_evidence_of_types_has_evidence_of_types" ON "Statement_has_evidence_of_types" (has_evidence_of_types);
 CREATE INDEX "ix_Statement_has_evidence_of_types_Statement_uid" ON "Statement_has_evidence_of_types" ("Statement_uid");
+CREATE INDEX "ix_Statement_has_evidence_of_types_has_evidence_of_types" ON "Statement_has_evidence_of_types" (has_evidence_of_types);
 
 CREATE TABLE "Statement_has_evidence_lines" (
 	"Statement_uid" INTEGER,
@@ -1898,8 +1898,8 @@ CREATE TABLE "Statement_has_evidence_lines" (
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid),
 	FOREIGN KEY(has_evidence_lines_uid) REFERENCES "EvidenceLine" (uid)
 );
-CREATE INDEX "ix_Statement_has_evidence_lines_has_evidence_lines_uid" ON "Statement_has_evidence_lines" (has_evidence_lines_uid);
 CREATE INDEX "ix_Statement_has_evidence_lines_Statement_uid" ON "Statement_has_evidence_lines" ("Statement_uid");
+CREATE INDEX "ix_Statement_has_evidence_lines_has_evidence_lines_uid" ON "Statement_has_evidence_lines" (has_evidence_lines_uid);
 
 CREATE TABLE "Statement_has_evidence" (
 	"Statement_uid" INTEGER,
@@ -1918,8 +1918,8 @@ CREATE TABLE "Statement_has_evidence_from_sources" (
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid),
 	FOREIGN KEY(has_evidence_from_sources_uid) REFERENCES "InformationEntity" (uid)
 );
-CREATE INDEX "ix_Statement_has_evidence_from_sources_has_evidence_from_sources_uid" ON "Statement_has_evidence_from_sources" (has_evidence_from_sources_uid);
 CREATE INDEX "ix_Statement_has_evidence_from_sources_Statement_uid" ON "Statement_has_evidence_from_sources" ("Statement_uid");
+CREATE INDEX "ix_Statement_has_evidence_from_sources_has_evidence_from_sources_uid" ON "Statement_has_evidence_from_sources" (has_evidence_from_sources_uid);
 
 CREATE TABLE "Statement_is_about" (
 	"Statement_uid" INTEGER,
@@ -1927,8 +1927,8 @@ CREATE TABLE "Statement_is_about" (
 	PRIMARY KEY ("Statement_uid", is_about),
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
 );
-CREATE INDEX "ix_Statement_is_about_is_about" ON "Statement_is_about" (is_about);
 CREATE INDEX "ix_Statement_is_about_Statement_uid" ON "Statement_is_about" ("Statement_uid");
+CREATE INDEX "ix_Statement_is_about_is_about" ON "Statement_is_about" (is_about);
 
 CREATE TABLE "Statement_contributions" (
 	"Statement_uid" INTEGER,
@@ -1946,8 +1946,8 @@ CREATE TABLE "Statement_specified_by" (
 	PRIMARY KEY ("Statement_uid", specified_by),
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
 );
-CREATE INDEX "ix_Statement_specified_by_specified_by" ON "Statement_specified_by" (specified_by);
 CREATE INDEX "ix_Statement_specified_by_Statement_uid" ON "Statement_specified_by" ("Statement_uid");
+CREATE INDEX "ix_Statement_specified_by_specified_by" ON "Statement_specified_by" (specified_by);
 
 CREATE TABLE "Statement_supporting_methods" (
 	"Statement_uid" INTEGER,
@@ -1955,8 +1955,8 @@ CREATE TABLE "Statement_supporting_methods" (
 	PRIMARY KEY ("Statement_uid", supporting_methods),
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
 );
-CREATE INDEX "ix_Statement_supporting_methods_supporting_methods" ON "Statement_supporting_methods" (supporting_methods);
 CREATE INDEX "ix_Statement_supporting_methods_Statement_uid" ON "Statement_supporting_methods" ("Statement_uid");
+CREATE INDEX "ix_Statement_supporting_methods_supporting_methods" ON "Statement_supporting_methods" (supporting_methods);
 
 CREATE TABLE "Statement_supporting_method_types" (
 	"Statement_uid" INTEGER,
@@ -1993,8 +1993,8 @@ CREATE TABLE "Statement_sources" (
 	PRIMARY KEY ("Statement_uid", sources),
 	FOREIGN KEY("Statement_uid") REFERENCES "Statement" (uid)
 );
-CREATE INDEX "ix_Statement_sources_sources" ON "Statement_sources" (sources);
 CREATE INDEX "ix_Statement_sources_Statement_uid" ON "Statement_sources" ("Statement_uid");
+CREATE INDEX "ix_Statement_sources_sources" ON "Statement_sources" (sources);
 
 CREATE TABLE "Statement_identifiers" (
 	"Statement_uid" INTEGER,
@@ -2069,8 +2069,8 @@ CREATE TABLE "EvidenceLine_contributions" (
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid),
 	FOREIGN KEY(contributions_uid) REFERENCES "Contribution" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_contributions_contributions_uid" ON "EvidenceLine_contributions" (contributions_uid);
 CREATE INDEX "ix_EvidenceLine_contributions_EvidenceLine_uid" ON "EvidenceLine_contributions" ("EvidenceLine_uid");
+CREATE INDEX "ix_EvidenceLine_contributions_contributions_uid" ON "EvidenceLine_contributions" (contributions_uid);
 
 CREATE TABLE "EvidenceLine_specified_by" (
 	"EvidenceLine_uid" INTEGER,
@@ -2078,8 +2078,8 @@ CREATE TABLE "EvidenceLine_specified_by" (
 	PRIMARY KEY ("EvidenceLine_uid", specified_by),
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_specified_by_EvidenceLine_uid" ON "EvidenceLine_specified_by" ("EvidenceLine_uid");
 CREATE INDEX "ix_EvidenceLine_specified_by_specified_by" ON "EvidenceLine_specified_by" (specified_by);
+CREATE INDEX "ix_EvidenceLine_specified_by_EvidenceLine_uid" ON "EvidenceLine_specified_by" ("EvidenceLine_uid");
 
 CREATE TABLE "EvidenceLine_supporting_methods" (
 	"EvidenceLine_uid" INTEGER,
@@ -2097,8 +2097,8 @@ CREATE TABLE "EvidenceLine_supporting_method_types" (
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid),
 	FOREIGN KEY(supporting_method_types_id) REFERENCES "Coding" (id)
 );
-CREATE INDEX "ix_EvidenceLine_supporting_method_types_supporting_method_types_id" ON "EvidenceLine_supporting_method_types" (supporting_method_types_id);
 CREATE INDEX "ix_EvidenceLine_supporting_method_types_EvidenceLine_uid" ON "EvidenceLine_supporting_method_types" ("EvidenceLine_uid");
+CREATE INDEX "ix_EvidenceLine_supporting_method_types_supporting_method_types_id" ON "EvidenceLine_supporting_method_types" (supporting_method_types_id);
 
 CREATE TABLE "EvidenceLine_derived_from" (
 	"EvidenceLine_uid" INTEGER,
@@ -2125,8 +2125,8 @@ CREATE TABLE "EvidenceLine_sources" (
 	PRIMARY KEY ("EvidenceLine_uid", sources),
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_sources_sources" ON "EvidenceLine_sources" (sources);
 CREATE INDEX "ix_EvidenceLine_sources_EvidenceLine_uid" ON "EvidenceLine_sources" ("EvidenceLine_uid");
+CREATE INDEX "ix_EvidenceLine_sources_sources" ON "EvidenceLine_sources" (sources);
 
 CREATE TABLE "EvidenceLine_identifiers" (
 	"EvidenceLine_uid" INTEGER,
@@ -2134,8 +2134,8 @@ CREATE TABLE "EvidenceLine_identifiers" (
 	PRIMARY KEY ("EvidenceLine_uid", identifiers),
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid)
 );
-CREATE INDEX "ix_EvidenceLine_identifiers_EvidenceLine_uid" ON "EvidenceLine_identifiers" ("EvidenceLine_uid");
 CREATE INDEX "ix_EvidenceLine_identifiers_identifiers" ON "EvidenceLine_identifiers" (identifiers);
+CREATE INDEX "ix_EvidenceLine_identifiers_EvidenceLine_uid" ON "EvidenceLine_identifiers" ("EvidenceLine_uid");
 
 CREATE TABLE "EvidenceLine_alternative_labels" (
 	"EvidenceLine_uid" INTEGER,
@@ -2153,8 +2153,8 @@ CREATE TABLE "EvidenceLine_extensions" (
 	FOREIGN KEY("EvidenceLine_uid") REFERENCES "EvidenceLine" (uid),
 	FOREIGN KEY(extensions_id) REFERENCES "Extension" (id)
 );
-CREATE INDEX "ix_EvidenceLine_extensions_EvidenceLine_uid" ON "EvidenceLine_extensions" ("EvidenceLine_uid");
 CREATE INDEX "ix_EvidenceLine_extensions_extensions_id" ON "EvidenceLine_extensions" (extensions_id);
+CREATE INDEX "ix_EvidenceLine_extensions_EvidenceLine_uid" ON "EvidenceLine_extensions" ("EvidenceLine_uid");
 
 CREATE TABLE "RecordMetadata_contributions" (
 	"RecordMetadata_id" INTEGER,
@@ -2163,5 +2163,5 @@ CREATE TABLE "RecordMetadata_contributions" (
 	FOREIGN KEY("RecordMetadata_id") REFERENCES "RecordMetadata" (id),
 	FOREIGN KEY(contributions_uid) REFERENCES "Contribution" (uid)
 );
-CREATE INDEX "ix_RecordMetadata_contributions_RecordMetadata_id" ON "RecordMetadata_contributions" ("RecordMetadata_id");
 CREATE INDEX "ix_RecordMetadata_contributions_contributions_uid" ON "RecordMetadata_contributions" (contributions_uid);
+CREATE INDEX "ix_RecordMetadata_contributions_RecordMetadata_id" ON "RecordMetadata_contributions" ("RecordMetadata_id");

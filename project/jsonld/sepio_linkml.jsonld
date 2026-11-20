@@ -351,6 +351,25 @@
   ],
   "slots": [
     {
+      "name": "type",
+      "definition_uri": "https://example.org/sepio-model/type",
+      "description": "The name of the class that is instantiated by a data object representing the Entity.",
+      "comments": [
+        "MUST be the label of a concrete class from the data model."
+      ],
+      "from_schema": "https://w3id.org/sepio-model",
+      "status": "Draft",
+      "slot_uri": "https://example.org/sepio-model/type",
+      "designates_type": true,
+      "owner": "Entity",
+      "domain_of": [
+        "Entity"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "entity__id",
       "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.",
       "comments": [
@@ -385,24 +404,6 @@
       ],
       "range": "string",
       "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "entity__type",
-      "description": "The name of the class that is instantiated by a data object representing the Entity.",
-      "comments": [
-        "MUST be the label of a concrete class from the data model."
-      ],
-      "from_schema": "https://w3id.org/sepio-model",
-      "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/type",
-      "alias": "type",
-      "owner": "Entity",
-      "domain_of": [
-        "Entity"
-      ],
-      "range": "string",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2136,9 +2137,9 @@
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -2167,17 +2168,6 @@
           "status": "Informative",
           "range": "string",
           "multivalued": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "type",
-          "description": "The name of the class that is instantiated by a data object representing the Entity.",
-          "comments": [
-            "MUST be the label of a concrete class from the data model."
-          ],
-          "status": "Draft",
-          "range": "string",
-          "required": true,
           "@type": "SlotDefinition"
         },
         {
@@ -2229,9 +2219,9 @@
       "status": "Draft",
       "is_a": "Entity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -2386,9 +2376,9 @@
       "from_schema": "https://w3id.org/sepio-model",
       "is_a": "InformationEntity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -2443,9 +2433,9 @@
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -2534,9 +2524,9 @@
       "status": "Informative",
       "is_a": "InformationEntity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -2638,9 +2628,9 @@
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -2719,9 +2709,9 @@
       "status": "Informative",
       "is_a": "Entity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -2804,9 +2794,9 @@
       "status": "Draft",
       "is_a": "Activity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -2868,9 +2858,9 @@
       "status": "Draft",
       "is_a": "Entity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -2916,9 +2906,9 @@
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -3113,9 +3103,9 @@
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -3220,9 +3210,9 @@
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -3335,9 +3325,9 @@
       "status": "Informative",
       "is_a": "Entity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",
@@ -3429,9 +3419,9 @@
       "status": "Draft",
       "is_a": "Entity",
       "slots": [
+        "type",
         "entity__id",
         "entity__identifiers",
-        "entity__type",
         "entity__label",
         "entity__alternative_labels",
         "entity__description",

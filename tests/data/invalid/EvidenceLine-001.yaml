@@ -1,0 +1,11 @@
+# Invalid: uses the DisMech evidence item property names (supports, evidence_source)
+# instead of direction_of_evidence_provided and subtype.
+id: ex:EvidenceLine002
+type: EvidenceLine
+supports: SUPPORT
+evidence_source: HUMAN_CLINICAL
+has_evidence_items:
+  - id: ex:EvidenceItem002
+    type: DataItem
+    value: "The CFTR is composed of five domains: two membrane-spanning domains (MSDs),
+      two nucleotide-binding domains (NBDs), and a regulatory (R) domain."

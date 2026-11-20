@@ -102,6 +102,10 @@ class Entity(ConfiguredBaseModel):
          'status': 'Draft',
          'title': 'Entity'})
 
+    type: Literal["Entity"] = Field(default="Entity", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -121,9 +125,6 @@ class Entity(ConfiguredBaseModel):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -210,7 +211,7 @@ class InformationEntity(Entity):
                       "or application.'"],
          'domain_of': ['InformationEntity'],
          'status': 'Informative'} })
-    derived_from: Optional[list[InformationEntity]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
+    derived_from: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
     reported_in: Optional[list[str]] = Field(default=None, description="""A document in which the Information Entity is reported.""", json_schema_extra = { "linkml_meta": {'comments': ['This attribute is used specifically to reference '
                       'documents/publications where the Information Entity is '
                       'expressed or reported.  For a Statement, this might be a '
@@ -257,6 +258,10 @@ class InformationEntity(Entity):
                       'status.'],
          'domain_of': ['InformationEntity'],
          'status': 'Draft'} })
+    type: Literal["InformationEntity"] = Field(default="InformationEntity", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -276,9 +281,6 @@ class InformationEntity(Entity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -374,7 +376,7 @@ class Method(InformationEntity):
                       "or application.'"],
          'domain_of': ['InformationEntity'],
          'status': 'Informative'} })
-    derived_from: Optional[list[InformationEntity]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
+    derived_from: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
     reported_in: Optional[list[str]] = Field(default=None, description="""A document in which the Information Entity is reported.""", json_schema_extra = { "linkml_meta": {'comments': ['This attribute is used specifically to reference '
                       'documents/publications where the Information Entity is '
                       'expressed or reported.  For a Statement, this might be a '
@@ -421,6 +423,10 @@ class Method(InformationEntity):
                       'status.'],
          'domain_of': ['InformationEntity'],
          'status': 'Draft'} })
+    type: Literal["Method"] = Field(default="Method", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -440,9 +446,6 @@ class Method(InformationEntity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -551,7 +554,7 @@ class Document(InformationEntity):
                       "or application.'"],
          'domain_of': ['InformationEntity'],
          'status': 'Informative'} })
-    derived_from: Optional[list[InformationEntity]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
+    derived_from: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
     reported_in: Optional[list[str]] = Field(default=None, description="""A document in which the Information Entity is reported.""", json_schema_extra = { "linkml_meta": {'comments': ['This attribute is used specifically to reference '
                       'documents/publications where the Information Entity is '
                       'expressed or reported.  For a Statement, this might be a '
@@ -598,6 +601,10 @@ class Document(InformationEntity):
                       'status.'],
          'domain_of': ['InformationEntity'],
          'status': 'Draft'} })
+    type: Literal["Document"] = Field(default="Document", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -617,9 +624,6 @@ class Document(InformationEntity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -750,7 +754,7 @@ class DataItem(InformationEntity):
                       "or application.'"],
          'domain_of': ['InformationEntity'],
          'status': 'Informative'} })
-    derived_from: Optional[list[InformationEntity]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
+    derived_from: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
     reported_in: Optional[list[str]] = Field(default=None, description="""A document in which the Information Entity is reported.""", json_schema_extra = { "linkml_meta": {'comments': ['This attribute is used specifically to reference '
                       'documents/publications where the Information Entity is '
                       'expressed or reported.  For a Statement, this might be a '
@@ -797,6 +801,10 @@ class DataItem(InformationEntity):
                       'status.'],
          'domain_of': ['InformationEntity'],
          'status': 'Draft'} })
+    type: Literal["DataItem"] = Field(default="DataItem", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -816,9 +824,6 @@ class DataItem(InformationEntity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -940,7 +945,7 @@ class DataSet(InformationEntity):
                       "or application.'"],
          'domain_of': ['InformationEntity'],
          'status': 'Informative'} })
-    derived_from: Optional[list[InformationEntity]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
+    derived_from: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
     reported_in: Optional[list[str]] = Field(default=None, description="""A document in which the Information Entity is reported.""", json_schema_extra = { "linkml_meta": {'comments': ['This attribute is used specifically to reference '
                       'documents/publications where the Information Entity is '
                       'expressed or reported.  For a Statement, this might be a '
@@ -987,6 +992,10 @@ class DataSet(InformationEntity):
                       'status.'],
          'domain_of': ['InformationEntity'],
          'status': 'Draft'} })
+    type: Literal["DataSet"] = Field(default="DataSet", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -1006,9 +1015,6 @@ class DataSet(InformationEntity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -1058,8 +1064,12 @@ class Activity(Entity):
          'status': 'Draft'} })
     performed_by: Optional[list[Agent]] = Field(default=None, description="""An Agent who participated in executing the Activity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Draft'} })
     specified_by: Optional[list[Method]] = Field(default=None, description="""A method that was followed in performing an Activity, that describes how it was executed.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity', 'Activity'], 'status': 'Informative'} })
-    input: Optional[list[Entity]] = Field(default=None, description="""An entity that was input into the Activity (could be material or information)""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Informative'} })
-    output: Optional[list[Entity]] = Field(default=None, description="""An entity that was output from the Activity (could be material or information)""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Informative'} })
+    input: Optional[list[Union[Entity,InformationEntity,Activity,Agent,Proposition,StudyGroup,Contribution,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""An entity that was input into the Activity (could be material or information)""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Informative'} })
+    output: Optional[list[Union[Entity,InformationEntity,Activity,Agent,Proposition,StudyGroup,Contribution,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""An entity that was output from the Activity (could be material or information)""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Informative'} })
+    type: Literal["Activity"] = Field(default="Activity", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -1079,9 +1089,6 @@ class Activity(Entity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -1126,7 +1133,7 @@ class Contribution(Activity):
                       'be created for each activity.'],
          'domain_of': ['Contribution'],
          'status': 'Draft'} })
-    contribution_made_to: Optional[InformationEntity] = Field(default=None, description="""The artifact toward which the contribution was made.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Contribution'], 'status': 'Informative'} })
+    contribution_made_to: Optional[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]] = Field(default=None, description="""The artifact toward which the contribution was made.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Contribution'], 'status': 'Informative'} })
     subtype: Optional[Coding] = Field(default=None, description="""A specific type of activity the Activity instance represents.""", json_schema_extra = { "linkml_meta": {'comments': ['This attribute can be used to report a specific type for the '
                       'Activity, in cases where a model does not define Activity '
                       'subclasses for this purpose.  Implementers can define their own '
@@ -1148,8 +1155,12 @@ class Contribution(Activity):
          'status': 'Draft'} })
     performed_by: Optional[list[Agent]] = Field(default=None, description="""An Agent who participated in executing the Activity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Draft'} })
     specified_by: Optional[list[Method]] = Field(default=None, description="""A method that was followed in performing an Activity, that describes how it was executed.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity', 'Activity'], 'status': 'Informative'} })
-    input: Optional[list[Entity]] = Field(default=None, description="""An entity that was input into the Activity (could be material or information)""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Informative'} })
-    output: Optional[list[Entity]] = Field(default=None, description="""An entity that was output from the Activity (could be material or information)""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Informative'} })
+    input: Optional[list[Union[Entity,InformationEntity,Activity,Agent,Proposition,StudyGroup,Contribution,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""An entity that was input into the Activity (could be material or information)""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Informative'} })
+    output: Optional[list[Union[Entity,InformationEntity,Activity,Agent,Proposition,StudyGroup,Contribution,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""An entity that was output from the Activity (could be material or information)""", json_schema_extra = { "linkml_meta": {'domain_of': ['Activity'], 'status': 'Informative'} })
+    type: Literal["Contribution"] = Field(default="Contribution", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -1169,9 +1180,6 @@ class Contribution(Activity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -1217,6 +1225,10 @@ class Agent(Entity):
          'status': 'Draft'} })
     name: Optional[str] = Field(default=None, description="""The given name of the Agent.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Agent', 'Qualifier', 'Extension', 'Characteristic'],
          'status': 'Draft'} })
+    type: Literal["Agent"] = Field(default="Agent", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -1236,9 +1248,6 @@ class Agent(Entity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -1439,7 +1448,7 @@ class Statement(InformationEntity):
                       'information is not available or needed.'],
          'domain_of': ['Statement'],
          'status': 'Draft'} })
-    has_evidence: Optional[list[InformationEntity]] = Field(default=None, description="""A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.""", json_schema_extra = { "linkml_meta": {'comments': ['- Evidence is any information that is interpreted in assessing '
+    has_evidence: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.""", json_schema_extra = { "linkml_meta": {'comments': ['- Evidence is any information that is interpreted in assessing '
                       'the truth of  the proposition a Statement puts forth as true or '
                       'false.  A piece of information only becomes evidence when it is '
                       'interpreted in this way. Different types of information '
@@ -1455,7 +1464,7 @@ class Statement(InformationEntity):
                       'create an Evidence Line object.'],
          'domain_of': ['Statement'],
          'status': 'Informative'} })
-    has_evidence_from_sources: Optional[list[InformationEntity]] = Field(default=None, description="""An Information Entity (typically a publication, dataset, or database) that provided information used as evidence to generate the knowledge expressed in a Statement.""", json_schema_extra = { "linkml_meta": {'comments': ["This is a 'shortcut property' that can be used to directly link "
+    has_evidence_from_sources: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""An Information Entity (typically a publication, dataset, or database) that provided information used as evidence to generate the knowledge expressed in a Statement.""", json_schema_extra = { "linkml_meta": {'comments': ["This is a 'shortcut property' that can be used to directly link "
                       'a Statement to sources that provided evidence '
                       'supporting/disputing it, without having to create Evidence '
                       'Lines or Evidence Items in the data.'],
@@ -1520,7 +1529,7 @@ class Statement(InformationEntity):
                       "or application.'"],
          'domain_of': ['InformationEntity'],
          'status': 'Informative'} })
-    derived_from: Optional[list[InformationEntity]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
+    derived_from: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
     reported_in: Optional[list[str]] = Field(default=None, description="""A document in which the Information Entity is reported.""", json_schema_extra = { "linkml_meta": {'comments': ['This attribute is used specifically to reference '
                       'documents/publications where the Information Entity is '
                       'expressed or reported.  For a Statement, this might be a '
@@ -1567,6 +1576,10 @@ class Statement(InformationEntity):
                       'status.'],
          'domain_of': ['InformationEntity'],
          'status': 'Draft'} })
+    type: Literal["Statement"] = Field(default="Statement", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -1586,9 +1599,6 @@ class Statement(InformationEntity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -1755,7 +1765,7 @@ class StudyResult(InformationEntity):
                       "or application.'"],
          'domain_of': ['InformationEntity'],
          'status': 'Informative'} })
-    derived_from: Optional[list[InformationEntity]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
+    derived_from: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
     reported_in: Optional[list[str]] = Field(default=None, description="""A document in which the Information Entity is reported.""", json_schema_extra = { "linkml_meta": {'comments': ['This attribute is used specifically to reference '
                       'documents/publications where the Information Entity is '
                       'expressed or reported.  For a Statement, this might be a '
@@ -1802,6 +1812,10 @@ class StudyResult(InformationEntity):
                       'status.'],
          'domain_of': ['InformationEntity'],
          'status': 'Draft'} })
+    type: Literal["StudyResult"] = Field(default="StudyResult", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -1821,9 +1835,6 @@ class StudyResult(InformationEntity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -1917,7 +1928,7 @@ class EvidenceLine(InformationEntity):
                       'target proposition.'],
          'domain_of': ['EvidenceLine'],
          'status': 'Informative'} })
-    has_evidence_items: Optional[list[InformationEntity]] = Field(default=None, description="""An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.""", json_schema_extra = { "linkml_meta": {'comments': ['A given Evidence Line may be supported by one or many '
+    has_evidence_items: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.""", json_schema_extra = { "linkml_meta": {'comments': ['A given Evidence Line may be supported by one or many '
                       'individual evidence items. What matters is that all evidence '
                       'items in a given Evidence Line get collectively assessed and '
                       'assigned direction and strength  as a single argument for or '
@@ -2012,7 +2023,7 @@ class EvidenceLine(InformationEntity):
                       "or application.'"],
          'domain_of': ['InformationEntity'],
          'status': 'Informative'} })
-    derived_from: Optional[list[InformationEntity]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
+    derived_from: Optional[list[Union[InformationEntity,Method,Document,DataItem,DataSet,Statement,StudyResult,EvidenceLine]]] = Field(default=None, description="""Another Information Entity from which this Information Entity is derived, in whole or in part.""", json_schema_extra = { "linkml_meta": {'domain_of': ['InformationEntity'], 'status': 'Draft'} })
     reported_in: Optional[list[str]] = Field(default=None, description="""A document in which the Information Entity is reported.""", json_schema_extra = { "linkml_meta": {'comments': ['This attribute is used specifically to reference '
                       'documents/publications where the Information Entity is '
                       'expressed or reported.  For a Statement, this might be a '
@@ -2059,6 +2070,10 @@ class EvidenceLine(InformationEntity):
                       'status.'],
          'domain_of': ['InformationEntity'],
          'status': 'Draft'} })
+    type: Literal["EvidenceLine"] = Field(default="EvidenceLine", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -2078,9 +2093,6 @@ class EvidenceLine(InformationEntity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -2178,6 +2190,10 @@ class Proposition(Entity):
                       "of the 'possible fact' that a Proposition expresses."],
          'domain_of': ['Proposition'],
          'status': 'Informative'} })
+    type: Literal["Proposition"] = Field(default="Proposition", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -2197,9 +2213,6 @@ class Proposition(Entity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
@@ -2225,6 +2238,10 @@ class StudyGroup(Entity):
     member_count: Optional[int] = Field(default=None, description="""The total number of individual members in the StudyGroup.""", json_schema_extra = { "linkml_meta": {'domain_of': ['StudyGroup'], 'status': 'Informative'} })
     is_subset_of: Optional[list[StudyGroup]] = Field(default=None, description="""A larger StudyGroup of which this StudyGroup represents a subset.""", json_schema_extra = { "linkml_meta": {'domain_of': ['StudyGroup'], 'status': 'Draft'} })
     characteristics: Optional[list[Characteristic]] = Field(default=None, description="""A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group.""", json_schema_extra = { "linkml_meta": {'domain_of': ['StudyGroup'], 'status': 'Draft'} })
+    type: Literal["StudyGroup"] = Field(default="StudyGroup", description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
+         'designates_type': True,
+         'domain_of': ['Entity'],
+         'status': 'Draft'} })
     id: str = Field(default=..., description="""The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another.""", json_schema_extra = { "linkml_meta": {'comments': ['Note that it is common for implementers to create their own '
                       'internal logical ids - typically a serially or randomly '
                       'generated value like a UUID that is assigned to the data object '
@@ -2244,9 +2261,6 @@ class StudyGroup(Entity):
                       'they represent the same thing.'],
          'domain_of': ['Entity'],
          'status': 'Informative'} })
-    type: str = Field(default=..., description="""The name of the class that is instantiated by a data object representing the Entity.""", json_schema_extra = { "linkml_meta": {'comments': ['MUST be the label of a concrete class from the data model.'],
-         'domain_of': ['Entity'],
-         'status': 'Draft'} })
     label: Optional[str] = Field(default=None, description="""A primary name for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'Coding'], 'status': 'Draft'} })
     alternative_labels: Optional[list[str]] = Field(default=None, description="""Alternative name(s) for the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })
     description: Optional[str] = Field(default=None, description="""A free text description of the Entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'status': 'Draft'} })

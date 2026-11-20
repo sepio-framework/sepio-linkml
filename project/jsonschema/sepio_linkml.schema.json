@@ -56,7 +56,50 @@
                 "input": {
                     "description": "An entity that was input into the Activity (could be material or information)",
                     "items": {
-                        "$ref": "#/$defs/Entity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Entity"
+                            },
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Activity"
+                            },
+                            {
+                                "$ref": "#/$defs/Agent"
+                            },
+                            {
+                                "$ref": "#/$defs/Proposition"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyGroup"
+                            },
+                            {
+                                "$ref": "#/$defs/Contribution"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -73,7 +116,50 @@
                 "output": {
                     "description": "An entity that was output from the Activity (could be material or information)",
                     "items": {
-                        "$ref": "#/$defs/Entity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Entity"
+                            },
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Activity"
+                            },
+                            {
+                                "$ref": "#/$defs/Agent"
+                            },
+                            {
+                                "$ref": "#/$defs/Proposition"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyGroup"
+                            },
+                            {
+                                "$ref": "#/$defs/Contribution"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -113,12 +199,15 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "Activity"
+                    ],
                     "type": "string"
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "Activity",
             "type": "object"
@@ -191,12 +280,15 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "Agent"
+                    ],
                     "type": "string"
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "Agent",
             "type": "object"
@@ -297,6 +389,27 @@
                             "$ref": "#/$defs/InformationEntity"
                         },
                         {
+                            "$ref": "#/$defs/Method"
+                        },
+                        {
+                            "$ref": "#/$defs/Document"
+                        },
+                        {
+                            "$ref": "#/$defs/DataItem"
+                        },
+                        {
+                            "$ref": "#/$defs/DataSet"
+                        },
+                        {
+                            "$ref": "#/$defs/Statement"
+                        },
+                        {
+                            "$ref": "#/$defs/StudyResult"
+                        },
+                        {
+                            "$ref": "#/$defs/EvidenceLine"
+                        },
+                        {
                             "type": "null"
                         }
                     ],
@@ -355,7 +468,50 @@
                 "input": {
                     "description": "An entity that was input into the Activity (could be material or information)",
                     "items": {
-                        "$ref": "#/$defs/Entity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Entity"
+                            },
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Activity"
+                            },
+                            {
+                                "$ref": "#/$defs/Agent"
+                            },
+                            {
+                                "$ref": "#/$defs/Proposition"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyGroup"
+                            },
+                            {
+                                "$ref": "#/$defs/Contribution"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -372,7 +528,50 @@
                 "output": {
                     "description": "An entity that was output from the Activity (could be material or information)",
                     "items": {
-                        "$ref": "#/$defs/Entity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Entity"
+                            },
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Activity"
+                            },
+                            {
+                                "$ref": "#/$defs/Agent"
+                            },
+                            {
+                                "$ref": "#/$defs/Proposition"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyGroup"
+                            },
+                            {
+                                "$ref": "#/$defs/Contribution"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -412,12 +611,15 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "Contribution"
+                    ],
                     "type": "string"
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "Contribution",
             "type": "object"
@@ -477,7 +679,32 @@
                 "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -617,6 +844,9 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "DataItem"
+                    ],
                     "type": "string"
                 },
                 "unit": {
@@ -647,8 +877,8 @@
             },
             "required": [
                 "value",
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "DataItem",
             "type": "object"
@@ -687,7 +917,32 @@
                 "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -841,6 +1096,9 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "DataSet"
+                    ],
                     "type": "string"
                 },
                 "version": {
@@ -852,8 +1110,8 @@
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "DataSet",
             "type": "object"
@@ -892,7 +1150,32 @@
                 "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1060,6 +1343,9 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "Document"
+                    ],
                     "type": "string"
                 },
                 "urls": {
@@ -1074,8 +1360,8 @@
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "Document",
             "type": "object"
@@ -1134,12 +1420,15 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "Entity"
+                    ],
                     "type": "string"
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "Entity",
             "type": "object"
@@ -1178,7 +1467,32 @@
                 "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1222,7 +1536,32 @@
                 "has_evidence_items": {
                     "description": "An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1370,12 +1709,15 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "EvidenceLine"
+                    ],
                     "type": "string"
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "EvidenceLine",
             "type": "object"
@@ -1470,7 +1812,32 @@
                 "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1599,12 +1966,15 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "InformationEntity"
+                    ],
                     "type": "string"
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "InformationEntity",
             "type": "object"
@@ -1643,7 +2013,32 @@
                 "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1783,6 +2178,9 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "Method"
+                    ],
                     "type": "string"
                 },
                 "urls": {
@@ -1797,8 +2195,8 @@
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "Method",
             "type": "object"
@@ -1893,6 +2291,9 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "Proposition"
+                    ],
                     "type": "string"
                 }
             },
@@ -1900,8 +2301,8 @@
                 "subject",
                 "predicate",
                 "object",
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "Proposition",
             "type": "object"
@@ -2009,7 +2410,32 @@
                 "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2043,7 +2469,32 @@
                 "has_evidence": {
                     "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2053,7 +2504,32 @@
                 "has_evidence_from_sources": {
                     "description": "An Information Entity (typically a publication, dataset, or database) that provided information used as evidence to generate the knowledge expressed in a Statement.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2263,12 +2739,15 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "Statement"
+                    ],
                     "type": "string"
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "Statement",
             "type": "object"
@@ -2354,12 +2833,15 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "StudyGroup"
+                    ],
                     "type": "string"
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "StudyGroup",
             "type": "object"
@@ -2418,7 +2900,32 @@
                 "derived_from": {
                     "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
                     "items": {
-                        "$ref": "#/$defs/InformationEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/InformationEntity"
+                            },
+                            {
+                                "$ref": "#/$defs/Method"
+                            },
+                            {
+                                "$ref": "#/$defs/Document"
+                            },
+                            {
+                                "$ref": "#/$defs/DataItem"
+                            },
+                            {
+                                "$ref": "#/$defs/DataSet"
+                            },
+                            {
+                                "$ref": "#/$defs/Statement"
+                            },
+                            {
+                                "$ref": "#/$defs/StudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/EvidenceLine"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2586,12 +3093,15 @@
                 },
                 "type": {
                     "description": "The name of the class that is instantiated by a data object representing the Entity.",
+                    "enum": [
+                        "StudyResult"
+                    ],
                     "type": "string"
                 }
             },
             "required": [
-                "id",
-                "type"
+                "type",
+                "id"
             ],
             "title": "StudyResult",
             "type": "object"

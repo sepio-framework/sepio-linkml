@@ -90,8 +90,8 @@ class Entity(YAMLRoot):
     class_name: ClassVar[str] = "Entity"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Entity
 
-    id: str = None
     type: str = None
+    id: str = None
     identifiers: Optional[Union[str, list[str]]] = empty_list()
     label: Optional[str] = None
     alternative_labels: Optional[Union[str, list[str]]] = empty_list()
@@ -99,15 +99,14 @@ class Entity(YAMLRoot):
     extensions: Optional[Union[Union[dict, "Extension"], list[Union[dict, "Extension"]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
+
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, str):
             self.id = str(self.id)
-
-        if self._is_empty(self.type):
-            self.MissingRequiredField("type")
-        if not isinstance(self.type, str):
-            self.type = str(self.type)
 
         if not isinstance(self.identifiers, list):
             self.identifiers = [self.identifiers] if self.identifiers is not None else []
@@ -128,6 +127,23 @@ class Entity(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+    def __new__(cls, *args, **kwargs):
+
+        type_designator = "type"
+        if not type_designator in kwargs:
+            return super().__new__(cls,*args,**kwargs)
+        else:
+            type_designator_value = kwargs[type_designator]
+            target_cls = cls._class_for("class_name", type_designator_value)
+
+
+            if target_cls is None:
+                raise ValueError(f"Wrong type designator value: class {cls.__name__} "
+                                 f"has no subclass with ['class_name']='{kwargs[type_designator]}'")
+            return super().__new__(target_cls,*args,**kwargs)
+
+
+
 @dataclass(repr=False)
 class InformationEntity(Entity):
     """
@@ -141,8 +157,8 @@ class InformationEntity(Entity):
     class_name: ClassVar[str] = "InformationEntity"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.InformationEntity
 
-    id: str = None
     type: str = None
+    id: str = None
     is_about: Optional[Union[str, list[str]]] = empty_list()
     contributions: Optional[Union[Union[dict, "Contribution"], list[Union[dict, "Contribution"]]]] = empty_list()
     date_authored: Optional[str] = None
@@ -160,7 +176,7 @@ class InformationEntity(Entity):
             self.is_about = [self.is_about] if self.is_about is not None else []
         self.is_about = [v if isinstance(v, str) else str(v) for v in self.is_about]
 
-        self._normalize_inlined_as_list(slot_name="contributions", slot_type=Contribution, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="contributions", slot_type=Contribution, key_name="type", keyed=False)
 
         if self.date_authored is not None and not isinstance(self.date_authored, str):
             self.date_authored = str(self.date_authored)
@@ -177,7 +193,7 @@ class InformationEntity(Entity):
             self.supporting_method_types = [self.supporting_method_types] if self.supporting_method_types is not None else []
         self.supporting_method_types = [v if isinstance(v, Coding) else Coding(**as_dict(v)) for v in self.supporting_method_types]
 
-        self._normalize_inlined_as_list(slot_name="derived_from", slot_type=InformationEntity, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="derived_from", slot_type=InformationEntity, key_name="type", keyed=False)
 
         if not isinstance(self.reported_in, list):
             self.reported_in = [self.reported_in] if self.reported_in is not None else []
@@ -194,6 +210,9 @@ class InformationEntity(Entity):
             self.record_metadata = RecordMetadata(**as_dict(self.record_metadata))
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -208,8 +227,8 @@ class Method(InformationEntity):
     class_name: ClassVar[str] = "Method"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Method
 
-    id: str = None
     type: str = None
+    id: str = None
     subtype: Optional[Union[dict, "Coding"]] = None
     urls: Optional[Union[str, list[str]]] = empty_list()
 
@@ -222,6 +241,9 @@ class Method(InformationEntity):
         self.urls = [v if isinstance(v, str) else str(v) for v in self.urls]
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -237,8 +259,8 @@ class Document(InformationEntity):
     class_name: ClassVar[str] = "Document"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Document
 
-    id: str = None
     type: str = None
+    id: str = None
     subtype: Optional[Union[dict, "Coding"]] = None
     title: Optional[str] = None
     urls: Optional[Union[str, list[str]]] = empty_list()
@@ -267,6 +289,9 @@ class Document(InformationEntity):
             self.license = str(self.license)
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -282,8 +307,8 @@ class DataItem(InformationEntity):
     class_name: ClassVar[str] = "DataItem"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.DataItem
 
-    id: str = None
     type: str = None
+    id: str = None
     value: str = None
     subtype: Optional[Union[dict, "Coding"]] = None
     unit: Optional[Union[dict, "Coding"]] = None
@@ -303,14 +328,17 @@ class DataItem(InformationEntity):
         if self.unit is not None and not isinstance(self.unit, Coding):
             self.unit = Coding(**as_dict(self.unit))
 
-        self._normalize_inlined_as_list(slot_name="variability_measures", slot_type=DataItem, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="variability_measures", slot_type=DataItem, key_name="type", keyed=False)
 
         if self.confidence_interval is not None and not isinstance(self.confidence_interval, DataItem):
             self.confidence_interval = DataItem(**as_dict(self.confidence_interval))
 
-        self._normalize_inlined_as_list(slot_name="component_data_item", slot_type=DataItem, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="component_data_item", slot_type=DataItem, key_name="type", keyed=False)
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -326,8 +354,8 @@ class DataSet(InformationEntity):
     class_name: ClassVar[str] = "DataSet"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.DataSet
 
-    id: str = None
     type: str = None
+    id: str = None
     subtype: Optional[Union[dict, "Coding"]] = None
     release_date: Optional[str] = None
     version: Optional[str] = None
@@ -347,6 +375,9 @@ class DataSet(InformationEntity):
             self.license = str(self.license)
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -362,8 +393,8 @@ class Activity(Entity):
     class_name: ClassVar[str] = "Activity"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Activity
 
-    id: str = None
     type: str = None
+    id: str = None
     subtype: Optional[Union[dict, "Coding"]] = None
     date: Optional[Union[str, XSDDate]] = None
     performed_by: Optional[Union[Union[dict, "Agent"], list[Union[dict, "Agent"]]]] = empty_list()
@@ -378,15 +409,18 @@ class Activity(Entity):
         if self.date is not None and not isinstance(self.date, XSDDate):
             self.date = XSDDate(self.date)
 
-        self._normalize_inlined_as_list(slot_name="performed_by", slot_type=Agent, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="performed_by", slot_type=Agent, key_name="type", keyed=False)
 
-        self._normalize_inlined_as_list(slot_name="specified_by", slot_type=Method, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="specified_by", slot_type=Method, key_name="type", keyed=False)
 
-        self._normalize_inlined_as_list(slot_name="input", slot_type=Entity, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="input", slot_type=Entity, key_name="type", keyed=False)
 
-        self._normalize_inlined_as_list(slot_name="output", slot_type=Entity, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="output", slot_type=Entity, key_name="type", keyed=False)
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -402,8 +436,8 @@ class Contribution(Activity):
     class_name: ClassVar[str] = "Contribution"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Contribution
 
-    id: str = None
     type: str = None
+    id: str = None
     contributor: Optional[Union[dict, "Agent"]] = None
     activity_type: Optional[Union[Union[dict, "Coding"], list[Union[dict, "Coding"]]]] = empty_list()
     contribution_made_to: Optional[Union[dict, InformationEntity]] = None
@@ -420,6 +454,9 @@ class Contribution(Activity):
             self.contribution_made_to = InformationEntity(**as_dict(self.contribution_made_to))
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -435,8 +472,8 @@ class Agent(Entity):
     class_name: ClassVar[str] = "Agent"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Agent
 
-    id: str = None
     type: str = None
+    id: str = None
     subtype: Optional[str] = None
     name: Optional[str] = None
 
@@ -448,6 +485,9 @@ class Agent(Entity):
             self.name = str(self.name)
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -464,8 +504,8 @@ class Statement(InformationEntity):
     class_name: ClassVar[str] = "Statement"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Statement
 
-    id: str = None
     type: str = None
+    id: str = None
     statement_text: Optional[str] = None
     proposition: Optional[Union[dict, "Proposition"]] = None
     subject: Optional[str] = None
@@ -515,13 +555,16 @@ class Statement(InformationEntity):
             self.has_evidence_of_types = [self.has_evidence_of_types] if self.has_evidence_of_types is not None else []
         self.has_evidence_of_types = [v if isinstance(v, str) else str(v) for v in self.has_evidence_of_types]
 
-        self._normalize_inlined_as_list(slot_name="has_evidence_lines", slot_type=EvidenceLine, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="has_evidence_lines", slot_type=EvidenceLine, key_name="type", keyed=False)
 
-        self._normalize_inlined_as_list(slot_name="has_evidence", slot_type=InformationEntity, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="has_evidence", slot_type=InformationEntity, key_name="type", keyed=False)
 
-        self._normalize_inlined_as_list(slot_name="has_evidence_from_sources", slot_type=InformationEntity, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="has_evidence_from_sources", slot_type=InformationEntity, key_name="type", keyed=False)
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -537,8 +580,8 @@ class StudyResult(InformationEntity):
     class_name: ClassVar[str] = "StudyResult"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.StudyResult
 
-    id: str = None
     type: str = None
+    id: str = None
     focus: Optional[str] = None
     data_items: Optional[Union[Union[dict, DataItem], list[Union[dict, DataItem]]]] = empty_list()
     interpretation: Optional[Union[dict, "Coding"]] = None
@@ -550,19 +593,22 @@ class StudyResult(InformationEntity):
         if self.focus is not None and not isinstance(self.focus, str):
             self.focus = str(self.focus)
 
-        self._normalize_inlined_as_list(slot_name="data_items", slot_type=DataItem, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="data_items", slot_type=DataItem, key_name="type", keyed=False)
 
         if self.interpretation is not None and not isinstance(self.interpretation, Coding):
             self.interpretation = Coding(**as_dict(self.interpretation))
 
-        self._normalize_inlined_as_list(slot_name="source_data_set", slot_type=DataSet, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="source_data_set", slot_type=DataSet, key_name="type", keyed=False)
 
-        self._normalize_inlined_as_list(slot_name="component_result", slot_type=StudyResult, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="component_result", slot_type=StudyResult, key_name="type", keyed=False)
 
         if self.study_group is not None and not isinstance(self.study_group, StudyGroup):
             self.study_group = StudyGroup(**as_dict(self.study_group))
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -579,8 +625,8 @@ class EvidenceLine(InformationEntity):
     class_name: ClassVar[str] = "EvidenceLine"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.EvidenceLine
 
-    id: str = None
     type: str = None
+    id: str = None
     subtype: Optional[Union[dict, "Coding"]] = None
     target_proposition: Optional[Union[dict, "Proposition"]] = None
     has_evidence_items: Optional[Union[Union[dict, InformationEntity], list[Union[dict, InformationEntity]]]] = empty_list()
@@ -596,7 +642,7 @@ class EvidenceLine(InformationEntity):
         if self.target_proposition is not None and not isinstance(self.target_proposition, Proposition):
             self.target_proposition = Proposition(**as_dict(self.target_proposition))
 
-        self._normalize_inlined_as_list(slot_name="has_evidence_items", slot_type=InformationEntity, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="has_evidence_items", slot_type=InformationEntity, key_name="type", keyed=False)
 
         if self.direction_of_evidence_provided is not None and not isinstance(self.direction_of_evidence_provided, str):
             self.direction_of_evidence_provided = str(self.direction_of_evidence_provided)
@@ -612,6 +658,9 @@ class EvidenceLine(InformationEntity):
         self.evidence_item_sources = [v if isinstance(v, str) else str(v) for v in self.evidence_item_sources]
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -626,8 +675,8 @@ class Proposition(Entity):
     class_name: ClassVar[str] = "Proposition"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.Proposition
 
-    id: str = None
     type: str = None
+    id: str = None
     subject: str = None
     predicate: Union[dict, "Coding"] = None
     object: str = None
@@ -660,6 +709,9 @@ class Proposition(Entity):
             self.negated = Bool(self.negated)
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -676,8 +728,8 @@ class StudyGroup(Entity):
     class_name: ClassVar[str] = "StudyGroup"
     class_model_uri: ClassVar[URIRef] = SEPIO_LINKML.StudyGroup
 
-    id: str = None
     type: str = None
+    id: str = None
     member_count: Optional[int] = None
     is_subset_of: Optional[Union[Union[dict, "StudyGroup"], list[Union[dict, "StudyGroup"]]]] = empty_list()
     characteristics: Optional[Union[Union[dict, "Characteristic"], list[Union[dict, "Characteristic"]]]] = empty_list()
@@ -686,11 +738,14 @@ class StudyGroup(Entity):
         if self.member_count is not None and not isinstance(self.member_count, int):
             self.member_count = int(self.member_count)
 
-        self._normalize_inlined_as_list(slot_name="is_subset_of", slot_type=StudyGroup, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="is_subset_of", slot_type=StudyGroup, key_name="type", keyed=False)
 
         self._normalize_inlined_as_list(slot_name="characteristics", slot_type=Characteristic, key_name="name", keyed=False)
 
         super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_name)
 
 
 class Utility(YAMLRoot):
@@ -869,7 +924,7 @@ class RecordMetadata(Utility):
         if self.date_record_created is not None and not isinstance(self.date_record_created, str):
             self.date_record_created = str(self.date_record_created)
 
-        self._normalize_inlined_as_list(slot_name="contributions", slot_type=Contribution, key_name="id", keyed=False)
+        self._normalize_inlined_as_list(slot_name="contributions", slot_type=Contribution, key_name="type", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -915,14 +970,14 @@ class Characteristic(Utility):
 class slots:
     pass
 
+slots.type = Slot(uri=SEPIO_MODEL.type, name="type", curie=SEPIO_MODEL.curie('type'),
+                   model_uri=SEPIO_LINKML.type, domain=None, range=str)
+
 slots.entity__id = Slot(uri=SEPIO_MODEL.id, name="entity__id", curie=SEPIO_MODEL.curie('id'),
                    model_uri=SEPIO_LINKML.entity__id, domain=None, range=str)
 
 slots.entity__identifiers = Slot(uri=SEPIO_MODEL.identifiers, name="entity__identifiers", curie=SEPIO_MODEL.curie('identifiers'),
                    model_uri=SEPIO_LINKML.entity__identifiers, domain=None, range=Optional[Union[str, list[str]]])
-
-slots.entity__type = Slot(uri=SEPIO_MODEL.type, name="entity__type", curie=SEPIO_MODEL.curie('type'),
-                   model_uri=SEPIO_LINKML.entity__type, domain=None, range=str)
 
 slots.entity__label = Slot(uri=SEPIO_MODEL.label, name="entity__label", curie=SEPIO_MODEL.curie('label'),
                    model_uri=SEPIO_LINKML.entity__label, domain=None, range=Optional[str])

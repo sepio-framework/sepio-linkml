@@ -1,0 +1,33 @@
+# DisMech evidence for "Cystic Fibrosis has pathophysiology CFTR Dysfunction":
+# a text span from PMID:9922375 interpreted as human clinical evidence supporting
+# the proposition. Taken from the SEPIO sketch in workspace/dismech-examples.yaml.
+id: ex:EvidenceLine001
+type: EvidenceLine
+description: Comprehensive review establishes CFTR as chloride channel whose dysfunction
+  causes cystic fibrosis.
+subtype:
+  code: HUMAN_CLINICAL
+  system: dismech:EvidenceSourceEnum
+target_proposition:
+  id: ex:Proposition001
+  type: Proposition
+  proposition_text: Cystic Fibrosis has pathophysiology CFTR Dysfunction
+  subject: MONDO:0009061
+  predicate:
+    code: has_pathophysiology
+    system: dismech
+  object: dismech:CFTR_Dysfunction
+direction_of_evidence_provided: SEPIO:0000403
+has_evidence_items:
+  - id: ex:EvidenceItem001
+    type: DataItem
+    subtype:
+      code: TextSpan
+      system: dismech
+    value: The cystic fibrosis transmembrane conductance regulator (CFTR) is a unique
+      member of the ABC transporter family that forms a novel Cl- channel. It is located
+      predominantly in the apical membrane of epithelia where it mediates transepithelial
+      salt and liquid movement. Dysfunction of CFTR causes the genetic disease cystic
+      fibrosis.
+    reported_in:
+      - PMID:9922375

@@ -146,9 +146,9 @@ sepio-model:Document CLOSED {
 
 sepio-model:Entity  (
     CLOSED {
-       (  $sepio-model:Entity_tes (  sepio-model:id @linkml:String ;
+       (  $sepio-model:Entity_tes (  sepio-model:type @linkml:String ;
+             sepio-model:id @linkml:String ;
              sepio-model:identifiers @linkml:String * ;
-             sepio-model:type @linkml:String ;
              sepio-model:label @linkml:String ? ;
              sepio-model:alternative_labels @linkml:String * ;
              sepio-model:description @linkml:String ? ;

@@ -122,8 +122,9 @@ classes:
           indicate entities/concepts it is about, in lieu of providing a more precise
           description of what the Statement asserts to be true using subject, predicate,
           object, and qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G
-          is pathogenic for Breast Cancer" might be annotated to be about the variant
-          'BRCA2 c.8023A>G', and the disease 'Breast Cancer'.
+          is pathogenic for Breast Cancer" might be annotated to be about identifiers
+          for the variant 'BRCA2 c.8023A>G' and the disease 'Breast Cancer' (MONDO:0007254).
+        - Values are URIs or CURIEs, not free-text labels.
         status: Informative
         range: uriorcurie
         required: false
@@ -205,7 +206,7 @@ classes:
       derived_from:
         description: Another Information Entity from which this Information Entity
           is derived, in whole or in part.
-        exact_mappings: 
+        exact_mappings:
         - pav:derivedFrom #derived from
         status: Draft
         range: InformationEntity
@@ -223,7 +224,7 @@ classes:
         status: Draft
         range: uriorcurie
         required: false
-        multivalued: true        
+        multivalued: true
       sources:
         description: >-
           A document or other informtion resource in which the information entity,
@@ -280,7 +281,7 @@ classes:
   Method:
     description: A set of instructions that specify how to achieve some objective.
     title: Method
-    narrow_mappings: 
+    narrow_mappings:
     - SEPIO:0000037 #assertion method
     class_uri: IAO:0000104 #plan specification
     comments:
@@ -464,7 +465,7 @@ classes:
       together in a common format or structure, to enable their computational manipulation
       as a unit.
     title: Data Set
-    narrow_mappings: 
+    narrow_mappings:
     - SEPIO:0000400 #study data set
     class_uri: IAO:0000100 #data set
     comments:
@@ -531,10 +532,10 @@ classes:
       or more entities.
     class_uri: prov:Activity #Activity
     title: Activity
-    narrow_mappings: 
+    narrow_mappings:
       - SEPIO:0000003 #assertion process
       - SEPIO:0000004 #research activity
-      - SEPIO:0000131 #curation	
+      - SEPIO:0000131 #curation
     comments:
     - Activities relevant to scientific knowledge generation, and include things like
       observations of the natural world, designing and performing experiments, data
@@ -588,7 +589,7 @@ classes:
         description: An entity that was input into the Activity (could be material
           or information)
         slot_uri: OBI:0000293 #has_specified_input
-        exact_mappings: 
+        exact_mappings:
         - RO:0002233 #has input
         status: Informative
         range: Entity
@@ -598,7 +599,7 @@ classes:
         description: An entity that was output from the Activity (could be material
           or information)
         slot_uri: OBI:0000299 #has_specified_output
-        exact_mappings: 
+        exact_mappings:
         - RO:0002234 #has output
         status: Informative
         range: Entity
@@ -623,7 +624,7 @@ classes:
     attributes:
       contributor:
         description: The Agent that made the contribution.
-        close_mappings: 
+        close_mappings:
         - SEPIO:0000017 #has_agent (no definition)
         comments:
         - Note that this must be a single agent (which can be a Person, or an Organization).  If
@@ -702,14 +703,13 @@ classes:
       of confidence or evidence supporting a particular proposition.
     title: Statement
     class_uri: SEPIO:0000001 #assertion
-    related_mappings: 
+    related_mappings:
     - SEPIO:0000174 #statement
-    narrow_mappings: 
-    - SEPIO:0000173 #study finding 
+    narrow_mappings:
+    - SEPIO:0000173 #study finding
     - SEPIO:0000258 #provider interpretation
     - SEPIO:0000431 #recommendation
     - SEPIO:0000432 #hypothesis
-
     comments:
     - "Primary assertions of knowledge about some subject entity are captured in\
       \ self-contained Statement objects. Every Statement puts forth a 'proposition'\
@@ -855,7 +855,7 @@ classes:
           validity), or remains *neutral* (when conflicting or insufficient evidence
           exists to assert one direction or the other).  (Enumerated values = 'supports',
           'disputes', 'neutral').
-        related_mappings: 
+        related_mappings:
         - SEPIO:0000183 #evidence_direction
         status: Draft
         range: string
@@ -868,7 +868,7 @@ classes:
           assessment in terms of how *confident* an agent is that the Proposition
           is true or false, or in terms of the *strength of all evidence* they believe
           supports or disputes it.
-        close_mappings: 
+        close_mappings:
         - SEPIO:0000146 #has_evidence_level
         comments:
         - Statements put forth a Proposition that expresses some possible fact about
@@ -897,7 +897,7 @@ classes:
           a score may reflect how *confident* that agent is that the Proposition is
           true or false, or the *strength of evidence* they believe supports or disputes
           it.
-        close_mappings: 
+        close_mappings:
         - SEPIO:0000168 #has_confidence_score
         comments:
         - Statements put forth a Proposition that expresses some possible fact about
@@ -1010,11 +1010,10 @@ classes:
       particular subject or experimental unit in the study, along with optional provenance
       information describing how these data items were generated.
     title: Study Result
-    broad_mappings: 
+    broad_mappings:
     - SEPIO:0000400 #study data set
-    related_mappings: 
+    related_mappings:
     - SEPIO:0000173 #study finding
-
     comments:
     - "- StudyResults provide a useful way to capture a subset of items from a study\
       \ dataset that are used as evidence in generating higher order knowledge assertions\
@@ -1251,7 +1250,7 @@ classes:
           to provide toward its target Proposition (supports, disputes, neutral).
         slot_uri: SEPIO:0000183 #evidence_direction
         status: Draft
-        range: uriorcurie
+        range: EvidenceDirection
         required: false
         multivalued: false
       strength_of_evidence_provided:
@@ -1604,7 +1603,7 @@ classes:
       a serialized data record or object in a particular dataset (as opposed to provenance
       of the real world entity this record or object represents).
     title: Record Metadata
-    related_mappings: 
+    related_mappings:
     - SEPIO:0000058 #provenance
     comments:
     - Record-level metadata applies to a specific concrete encoding/serialization
@@ -1642,7 +1641,7 @@ classes:
       derived_from_record:
         description: Another data record from which the record described here was
           derived, through a data ingest and/or transformation process.
-        close_mappings: 
+        close_mappings:
         - pav:derivedFrom
         comments:
         - Value should be a string representing the identifier of the source record.
@@ -1706,3 +1705,21 @@ classes:
         range: string
         required: false
         multivalued: false
+enums:
+  EvidenceDirection:
+    description: The direction of support an Evidence Line provides toward its target
+      Proposition.
+    enum_uri: SEPIO:0000402 #evidence direction
+    permissible_values:
+      supports:
+        description: The Evidence Line provides an argument that supports the target
+          Proposition.
+        meaning: SEPIO:0000403 #supporting
+      disputes:
+        description: The Evidence Line provides an argument that disputes the target
+          Proposition.
+        meaning: SEPIO:0000404 #disputing
+      neutral:
+        description: The Evidence Line lacks sufficient credibility, relevance, or
+          completeness to argue for or against the target Proposition.
+        meaning: SEPIO:0000405 #inconclusive

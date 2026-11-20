@@ -68,8 +68,8 @@ OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
 SEPIO = CurieNamespace('SEPIO', 'http://purl.obolibrary.org/obo/SEPIO_')
-BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
-EXAMPLE = CurieNamespace('example', 'http://www.example.org/rdf#')
+BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
+EXAMPLE = CurieNamespace('example', 'https://example.org/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
@@ -591,7 +591,7 @@ class EvidenceLine(InformationEntity):
     subtype: Optional[Union[dict, "Coding"]] = None
     target_proposition: Optional[Union[dict, "Proposition"]] = None
     has_evidence_items: Optional[Union[Union[dict, InformationEntity], list[Union[dict, InformationEntity]]]] = empty_list()
-    direction_of_evidence_provided: Optional[Union[str, URIorCURIE]] = None
+    direction_of_evidence_provided: Optional[Union[str, "EvidenceDirection"]] = None
     strength_of_evidence_provided: Optional[Union[str, URIorCURIE]] = None
     score_of_evidence_provided: Optional[float] = None
     evidence_item_sources: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
@@ -605,8 +605,8 @@ class EvidenceLine(InformationEntity):
 
         self._normalize_inlined_as_list(slot_name="has_evidence_items", slot_type=InformationEntity, key_name="id", keyed=False)
 
-        if self.direction_of_evidence_provided is not None and not isinstance(self.direction_of_evidence_provided, URIorCURIE):
-            self.direction_of_evidence_provided = URIorCURIE(self.direction_of_evidence_provided)
+        if self.direction_of_evidence_provided is not None and not isinstance(self.direction_of_evidence_provided, EvidenceDirection):
+            self.direction_of_evidence_provided = EvidenceDirection(self.direction_of_evidence_provided)
 
         if self.strength_of_evidence_provided is not None and not isinstance(self.strength_of_evidence_provided, URIorCURIE):
             self.strength_of_evidence_provided = URIorCURIE(self.strength_of_evidence_provided)
@@ -916,7 +916,27 @@ class Characteristic(Utility):
 
 
 # Enumerations
+class EvidenceDirection(EnumDefinitionImpl):
+    """
+    The direction of support an Evidence Line provides toward its target Proposition.
+    """
+    supports = PermissibleValue(
+        text="supports",
+        description="The Evidence Line provides an argument that supports the target Proposition.",
+        meaning=SEPIO["0000403"])
+    disputes = PermissibleValue(
+        text="disputes",
+        description="The Evidence Line provides an argument that disputes the target Proposition.",
+        meaning=SEPIO["0000404"])
+    neutral = PermissibleValue(
+        text="neutral",
+        description="""The Evidence Line lacks sufficient credibility, relevance, or completeness to argue for or against the target Proposition.""",
+        meaning=SEPIO["0000405"])
 
+    _defn = EnumDefinition(
+        name="EvidenceDirection",
+        description="The direction of support an Evidence Line provides toward its target Proposition.",
+    )
 
 # Slots
 class slots:
@@ -1133,7 +1153,7 @@ slots.evidenceLine__has_evidence_items = Slot(uri=SEPIO['0000084'], name="eviden
                    model_uri=SEPIO_LINKML.evidenceLine__has_evidence_items, domain=None, range=Optional[Union[Union[dict, InformationEntity], list[Union[dict, InformationEntity]]]])
 
 slots.evidenceLine__direction_of_evidence_provided = Slot(uri=SEPIO['0000183'], name="evidenceLine__direction_of_evidence_provided", curie=SEPIO.curie('0000183'),
-                   model_uri=SEPIO_LINKML.evidenceLine__direction_of_evidence_provided, domain=None, range=Optional[Union[str, URIorCURIE]])
+                   model_uri=SEPIO_LINKML.evidenceLine__direction_of_evidence_provided, domain=None, range=Optional[Union[str, "EvidenceDirection"]])
 
 slots.evidenceLine__strength_of_evidence_provided = Slot(uri=SEPIO['0000132'], name="evidenceLine__strength_of_evidence_provided", curie=SEPIO.curie('0000132'),
                    model_uri=SEPIO_LINKML.evidenceLine__strength_of_evidence_provided, domain=None, range=Optional[Union[str, URIorCURIE]])

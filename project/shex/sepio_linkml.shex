@@ -165,7 +165,8 @@ linkml:Sparqlpath xsd:string
           <subtype> @<Coding> ? ;
           <http://purl.obolibrary.org/obo/SEPIO_0000427> @<Proposition> ? ;
           <http://purl.obolibrary.org/obo/SEPIO_0000084> @<InformationEntity> * ;
-          <http://purl.obolibrary.org/obo/SEPIO_0000183> @linkml:Uriorcurie ? ;
+          <http://purl.obolibrary.org/obo/SEPIO_0000183> [ <http://purl.obolibrary.org/obo/SEPIO_0000403>
+             <http://purl.obolibrary.org/obo/SEPIO_0000404> <http://purl.obolibrary.org/obo/SEPIO_0000405> ] ? ;
           <http://purl.obolibrary.org/obo/SEPIO_0000132> @linkml:Uriorcurie ? ;
           <http://purl.obolibrary.org/obo/SEPIO_0000429> @linkml:Float ? ;
           <http://purl.obolibrary.org/obo/SEPIO_0000124> @linkml:Uriorcurie *

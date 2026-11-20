@@ -11,145 +11,145 @@
 	rdfs:label "Entity" ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n122 ;
-	sh:property _:c14n10 , _:c14n155 , _:c14n228 , _:c14n241 , _:c14n246 , _:c14n262 , _:c14n63 ;
+	sh:property _:c14n10 , _:c14n156 , _:c14n230 , _:c14n243 , _:c14n248 , _:c14n264 , _:c14n63 ;
 	sh:targetClass <http://purl.obolibrary.org/obo/BFO_0000001> .
 IAO:0000027 a sh:NodeShape ;
 	rdfs:comment "An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something." ;
 	rdfs:label "Data Item" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n219 ;
-	sh:property _:c14n1 , _:c14n11 , _:c14n137 , _:c14n146 , _:c14n165 , _:c14n174 , _:c14n175 , _:c14n196 , _:c14n204 , _:c14n208 , _:c14n209 , _:c14n222 , _:c14n223 , _:c14n229 , _:c14n268 , _:c14n278 , _:c14n28 , _:c14n289 , _:c14n296 , _:c14n62 , _:c14n72 , _:c14n75 , _:c14n77 , _:c14n9 ;
+	sh:ignoredProperties _:c14n221 ;
+	sh:property _:c14n1 , _:c14n11 , _:c14n137 , _:c14n147 , _:c14n167 , _:c14n176 , _:c14n177 , _:c14n198 , _:c14n206 , _:c14n210 , _:c14n211 , _:c14n224 , _:c14n225 , _:c14n231 , _:c14n271 , _:c14n28 , _:c14n282 , _:c14n293 , _:c14n299 , _:c14n62 , _:c14n72 , _:c14n75 , _:c14n77 , _:c14n9 ;
 	sh:targetClass IAO:0000027 .
 IAO:0000030 a sh:NodeShape ;
 	rdfs:comment "An abstract (non-physical) entity that is about something - representing the underlying 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs." ;
 	rdfs:label "Information Entity" ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n111 ;
-	sh:property _:c14n101 , _:c14n106 , _:c14n166 , _:c14n169 , _:c14n191 , _:c14n254 , _:c14n261 , _:c14n269 , _:c14n279 , _:c14n280 , _:c14n283 , _:c14n295 , _:c14n309 , _:c14n321 , _:c14n34 , _:c14n42 , _:c14n87 , _:c14n88 ;
+	sh:property _:c14n101 , _:c14n106 , _:c14n168 , _:c14n171 , _:c14n193 , _:c14n256 , _:c14n263 , _:c14n273 , _:c14n283 , _:c14n284 , _:c14n287 , _:c14n298 , _:c14n312 , _:c14n324 , _:c14n34 , _:c14n42 , _:c14n87 , _:c14n88 ;
 	sh:targetClass IAO:0000030 .
 IAO:0000100 a sh:NodeShape ;
 	rdfs:comment "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit." ;
 	rdfs:label "Data Set" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n293 ;
-	sh:property _:c14n107 , _:c14n124 , _:c14n131 , _:c14n151 , _:c14n181 , _:c14n184 , _:c14n188 , _:c14n190 , _:c14n199 , _:c14n233 , _:c14n238 , _:c14n243 , _:c14n250 , _:c14n263 , _:c14n272 , _:c14n281 , _:c14n313 , _:c14n327 , _:c14n330 , _:c14n44 , _:c14n66 , _:c14n7 ;
+	sh:ignoredProperties _:c14n297 ;
+	sh:property _:c14n107 , _:c14n124 , _:c14n131 , _:c14n152 , _:c14n183 , _:c14n186 , _:c14n190 , _:c14n192 , _:c14n201 , _:c14n235 , _:c14n240 , _:c14n245 , _:c14n252 , _:c14n265 , _:c14n276 , _:c14n285 , _:c14n316 , _:c14n330 , _:c14n333 , _:c14n44 , _:c14n66 , _:c14n7 ;
 	sh:targetClass IAO:0000100 .
 IAO:0000104 a sh:NodeShape ;
 	rdfs:comment "A set of instructions that specify how to achieve some objective." ;
 	rdfs:label "Method" ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n16 ;
-	sh:property _:c14n109 , _:c14n112 , _:c14n121 , _:c14n127 , _:c14n128 , _:c14n133 , _:c14n17 , _:c14n216 , _:c14n218 , _:c14n251 , _:c14n266 , _:c14n29 , _:c14n299 , _:c14n30 , _:c14n41 , _:c14n51 , _:c14n59 , _:c14n76 , _:c14n79 , _:c14n99 ;
+	sh:property _:c14n109 , _:c14n112 , _:c14n121 , _:c14n127 , _:c14n128 , _:c14n133 , _:c14n17 , _:c14n218 , _:c14n220 , _:c14n253 , _:c14n269 , _:c14n29 , _:c14n30 , _:c14n302 , _:c14n41 , _:c14n51 , _:c14n59 , _:c14n76 , _:c14n79 , _:c14n99 ;
 	sh:targetClass IAO:0000104 .
 IAO:0000310 a sh:NodeShape ;
 	rdfs:comment "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole." ;
 	rdfs:label "Document" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n237 ;
-	sh:property _:c14n104 , _:c14n117 , _:c14n143 , _:c14n159 , _:c14n160 , _:c14n168 , _:c14n186 , _:c14n205 , _:c14n220 , _:c14n230 , _:c14n236 , _:c14n248 , _:c14n249 , _:c14n25 , _:c14n252 , _:c14n253 , _:c14n259 , _:c14n267 , _:c14n282 , _:c14n323 , _:c14n39 , _:c14n49 , _:c14n80 , _:c14n93 ;
+	sh:ignoredProperties _:c14n239 ;
+	sh:property _:c14n104 , _:c14n117 , _:c14n144 , _:c14n161 , _:c14n162 , _:c14n170 , _:c14n188 , _:c14n207 , _:c14n222 , _:c14n232 , _:c14n238 , _:c14n25 , _:c14n250 , _:c14n251 , _:c14n254 , _:c14n255 , _:c14n261 , _:c14n270 , _:c14n286 , _:c14n326 , _:c14n39 , _:c14n49 , _:c14n80 , _:c14n93 ;
 	sh:targetClass IAO:0000310 .
 SEPIO:0000000 a sh:NodeShape ;
 	rdfs:comment "An abstract entity representing a possible fact that is either true or false." ;
 	rdfs:label "Proposition" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n290 ;
-	sh:property _:c14n126 , _:c14n148 , _:c14n15 , _:c14n162 , _:c14n189 , _:c14n245 , _:c14n298 , _:c14n308 , _:c14n318 , _:c14n319 , _:c14n322 , _:c14n37 , _:c14n90 ;
+	sh:ignoredProperties _:c14n294 ;
+	sh:property _:c14n126 , _:c14n149 , _:c14n15 , _:c14n164 , _:c14n191 , _:c14n247 , _:c14n301 , _:c14n311 , _:c14n321 , _:c14n322 , _:c14n325 , _:c14n37 , _:c14n90 ;
 	sh:targetClass SEPIO:0000000 .
 SEPIO:0000001 a sh:NodeShape ;
 	rdfs:comment "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition." ;
 	rdfs:label "Statement" ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n22 ;
-	sh:property _:c14n110 , _:c14n142 , _:c14n150 , _:c14n163 , _:c14n177 , _:c14n183 , _:c14n19 , _:c14n207 , _:c14n21 , _:c14n212 , _:c14n232 , _:c14n244 , _:c14n247 , _:c14n26 , _:c14n264 , _:c14n291 , _:c14n292 , _:c14n302 , _:c14n310 , _:c14n316 , _:c14n317 , _:c14n35 , _:c14n36 , _:c14n38 , _:c14n55 , _:c14n60 , _:c14n61 , _:c14n70 , _:c14n74 , _:c14n89 , _:c14n91 , _:c14n92 ;
+	sh:property _:c14n110 , _:c14n143 , _:c14n151 , _:c14n165 , _:c14n179 , _:c14n185 , _:c14n19 , _:c14n209 , _:c14n21 , _:c14n214 , _:c14n234 , _:c14n246 , _:c14n249 , _:c14n26 , _:c14n266 , _:c14n295 , _:c14n296 , _:c14n305 , _:c14n313 , _:c14n319 , _:c14n320 , _:c14n35 , _:c14n36 , _:c14n38 , _:c14n55 , _:c14n60 , _:c14n61 , _:c14n70 , _:c14n74 , _:c14n89 , _:c14n91 , _:c14n92 ;
 	sh:targetClass SEPIO:0000001 .
 SEPIO:0000002 a sh:NodeShape ;
 	rdfs:comment "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition." ;
 	rdfs:label "Evidence Line" ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n56 ;
-	sh:property _:c14n0 , _:c14n100 , _:c14n102 , _:c14n103 , _:c14n135 , _:c14n141 , _:c14n147 , _:c14n156 , _:c14n185 , _:c14n201 , _:c14n217 , _:c14n224 , _:c14n234 , _:c14n239 , _:c14n24 , _:c14n256 , _:c14n257 , _:c14n270 , _:c14n284 , _:c14n285 , _:c14n287 , _:c14n294 , _:c14n311 , _:c14n326 , _:c14n86 ;
+	sh:property _:c14n0 , _:c14n100 , _:c14n102 , _:c14n103 , _:c14n135 , _:c14n141 , _:c14n142 , _:c14n148 , _:c14n158 , _:c14n187 , _:c14n203 , _:c14n219 , _:c14n226 , _:c14n236 , _:c14n24 , _:c14n241 , _:c14n258 , _:c14n259 , _:c14n274 , _:c14n288 , _:c14n289 , _:c14n291 , _:c14n314 , _:c14n329 , _:c14n86 ;
 	sh:targetClass SEPIO:0000002 .
 SEPIO:0000158 a sh:NodeShape ;
 	rdfs:comment "An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.)." ;
 	rdfs:label "Contribution" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n304 ;
-	sh:property _:c14n118 , _:c14n130 , _:c14n158 , _:c14n161 , _:c14n164 , _:c14n167 , _:c14n171 , _:c14n197 , _:c14n200 , _:c14n260 , _:c14n48 , _:c14n53 , _:c14n71 , _:c14n81 , _:c14n84 , _:c14n95 ;
+	sh:ignoredProperties _:c14n307 ;
+	sh:property _:c14n118 , _:c14n130 , _:c14n160 , _:c14n163 , _:c14n166 , _:c14n169 , _:c14n173 , _:c14n199 , _:c14n202 , _:c14n262 , _:c14n48 , _:c14n53 , _:c14n71 , _:c14n81 , _:c14n84 , _:c14n95 ;
 	sh:targetClass SEPIO:0000158 .
 prov:Activity a sh:NodeShape ;
 	rdfs:comment "An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities." ;
 	rdfs:label "Activity" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n213 ;
-	sh:property _:c14n113 , _:c14n119 , _:c14n129 , _:c14n194 , _:c14n227 , _:c14n235 , _:c14n258 , _:c14n301 , _:c14n43 , _:c14n50 , _:c14n54 , _:c14n65 , _:c14n69 ;
+	sh:ignoredProperties _:c14n215 ;
+	sh:property _:c14n113 , _:c14n119 , _:c14n129 , _:c14n196 , _:c14n229 , _:c14n237 , _:c14n260 , _:c14n304 , _:c14n43 , _:c14n50 , _:c14n54 , _:c14n65 , _:c14n69 ;
 	sh:targetClass prov:Activity .
 prov:Agent a sh:NodeShape ;
 	rdfs:comment "An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent's activity." ;
 	rdfs:label "Agent" ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n5 ;
-	sh:property _:c14n115 , _:c14n13 , _:c14n138 , _:c14n180 , _:c14n206 , _:c14n303 , _:c14n306 , _:c14n312 , _:c14n6 ;
+	sh:property _:c14n115 , _:c14n13 , _:c14n138 , _:c14n182 , _:c14n208 , _:c14n306 , _:c14n309 , _:c14n315 , _:c14n6 ;
 	sh:targetClass prov:Agent .
 sepio_linkml:Characteristic a sh:NodeShape ;
 	rdfs:comment "An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup." ;
 	rdfs:label "Characteristic" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n300 ;
-	sh:property _:c14n305 , _:c14n33 , _:c14n83 ;
+	sh:ignoredProperties _:c14n303 ;
+	sh:property _:c14n308 , _:c14n33 , _:c14n83 ;
 	sh:targetClass sepio_linkml:Characteristic .
 sepio_linkml:Coding a sh:NodeShape ;
 	rdfs:comment "A structured representation of a code for a defined concept in a terminology or code system." ;
 	rdfs:label "Coding" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n182 ;
-	sh:property _:c14n20 , _:c14n203 , _:c14n320 , _:c14n52 ;
+	sh:ignoredProperties _:c14n184 ;
+	sh:property _:c14n20 , _:c14n205 , _:c14n323 , _:c14n52 ;
 	sh:targetClass sepio_linkml:Coding .
 sepio_linkml:Expression a sh:NodeShape ;
 	rdfs:comment "A structure for labels representing systematic expressions that describe an entity, as generated by formal nomenclatures (e.g. HGVS for genetic variants, ISCN for karyotypes, HLA nomenclature for HLA genes/alleles)." ;
 	rdfs:label "Expression" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n307 ;
-	sh:property _:c14n116 , _:c14n136 , _:c14n173 ;
+	sh:ignoredProperties _:c14n310 ;
+	sh:property _:c14n116 , _:c14n136 , _:c14n175 ;
 	sh:targetClass sepio_linkml:Expression .
 sepio_linkml:Extension a sh:NodeShape ;
 	rdfs:comment "A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification." ;
 	rdfs:label "Extension" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n325 ;
-	sh:property _:c14n108 , _:c14n195 , _:c14n64 ;
+	sh:ignoredProperties _:c14n328 ;
+	sh:property _:c14n108 , _:c14n197 , _:c14n64 ;
 	sh:targetClass sepio_linkml:Extension .
 sepio_linkml:Qualifier a sh:NodeShape ;
 	rdfs:comment "A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context." ;
 	rdfs:label "Qualifier" ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n78 ;
-	sh:property _:c14n145 , _:c14n329 ;
+	sh:property _:c14n146 , _:c14n332 ;
 	sh:targetClass sepio_linkml:Qualifier .
 sepio_linkml:RecordMetadata a sh:NodeShape ;
 	rdfs:comment "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents)." ;
 	rdfs:label "Record Metadata" ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n2 ;
-	sh:property _:c14n139 , _:c14n211 , _:c14n242 , _:c14n314 , _:c14n67 ;
+	sh:property _:c14n139 , _:c14n213 , _:c14n244 , _:c14n317 , _:c14n67 ;
 	sh:targetClass sepio_linkml:RecordMetadata .
 sepio_linkml:StudyGroup a sh:NodeShape ;
 	rdfs:comment "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings." ;
 	rdfs:label "Study Group" ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n152 ;
-	sh:property _:c14n114 , _:c14n125 , _:c14n140 , _:c14n149 , _:c14n215 , _:c14n274 , _:c14n286 , _:c14n324 , _:c14n328 , _:c14n8 ;
+	sh:ignoredProperties _:c14n153 ;
+	sh:property _:c14n114 , _:c14n125 , _:c14n140 , _:c14n150 , _:c14n217 , _:c14n278 , _:c14n290 , _:c14n327 , _:c14n331 , _:c14n8 ;
 	sh:targetClass sepio_linkml:StudyGroup .
 sepio_linkml:StudyResult a sh:NodeShape ;
 	rdfs:comment "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated." ;
 	rdfs:label "Study Result" ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n3 ;
-	sh:property _:c14n105 , _:c14n154 , _:c14n172 , _:c14n179 , _:c14n18 , _:c14n193 , _:c14n202 , _:c14n214 , _:c14n221 , _:c14n225 , _:c14n231 , _:c14n240 , _:c14n255 , _:c14n297 , _:c14n45 , _:c14n47 , _:c14n58 , _:c14n68 , _:c14n73 , _:c14n85 , _:c14n94 , _:c14n96 , _:c14n97 , _:c14n98 ;
+	sh:property _:c14n105 , _:c14n155 , _:c14n174 , _:c14n18 , _:c14n181 , _:c14n195 , _:c14n204 , _:c14n216 , _:c14n223 , _:c14n227 , _:c14n233 , _:c14n242 , _:c14n257 , _:c14n300 , _:c14n45 , _:c14n47 , _:c14n58 , _:c14n68 , _:c14n73 , _:c14n85 , _:c14n94 , _:c14n96 , _:c14n97 , _:c14n98 ;
 	sh:targetClass sepio_linkml:StudyResult .
 sepio_linkml:Utility a sh:NodeShape ;
 	rdfs:comment "An abstract organizational class that groups classes acting as complex datatypes in the model - providing reusable collections of fields that can be plugged into other objects to capture sets of related information." ;
 	sh:closed true ;
-	sh:ignoredProperties _:c14n273 ;
+	sh:ignoredProperties _:c14n277 ;
 	sh:targetClass sepio_linkml:Utility .
 _:c14n0 sh:description "A document in which the Information Entity is reported." ;
 	sh:nodeKind sh:IRI ;
@@ -230,7 +230,7 @@ _:c14n110 sh:datatype xsd:string ;
 	sh:order 18 ;
 	sh:path sepio_linkml:supporting_methods .
 _:c14n111 rdf:first SEPIO:0000006 ;
-	rdf:rest _:c14n372 .
+	rdf:rest _:c14n375 .
 _:c14n112 sh:datatype xsd:string ;
 	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
 	sh:nodeKind sh:Literal ;
@@ -273,7 +273,7 @@ _:c14n119 sh:class IAO:0000104 ;
 	sh:order 3 ;
 	sh:path SEPIO:0000041 .
 _:c14n12 rdf:first <http://purl.obolibrary.org/obo/OBI_0000299> ;
-	rdf:rest _:c14n187 .
+	rdf:rest _:c14n189 .
 _:c14n120 rdf:first <http://purl.obolibrary.org/obo/OBI_0000293> ;
 	rdf:rest _:c14n12 .
 _:c14n121 sh:datatype xsd:string ;
@@ -284,7 +284,7 @@ _:c14n121 sh:datatype xsd:string ;
 _:c14n122 rdf:first IAO:0000136 ;
 	rdf:rest _:c14n120 .
 _:c14n123 rdf:first SEPIO:0000108 ;
-	rdf:rest _:c14n413 .
+	rdf:rest _:c14n416 .
 _:c14n124 sh:datatype xsd:string ;
 	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
 	sh:maxCount 1 ;
@@ -339,13 +339,13 @@ _:c14n131 sh:class sepio_linkml:RecordMetadata ;
 	sh:order 14 ;
 	sh:path sepio_linkml:record_metadata .
 _:c14n132 rdf:first sepio_linkml:derived_from_record ;
-	rdf:rest _:c14n265 .
+	rdf:rest _:c14n267 .
 _:c14n133 sh:description "An entity or concept in the world that the information entity describes/is about." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 2 ;
 	sh:path IAO:0000136 .
 _:c14n134 rdf:first SEPIO:0000135 ;
-	rdf:rest _:c14n403 .
+	rdf:rest _:c14n406 .
 _:c14n135 sh:datatype xsd:string ;
 	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
 	sh:maxCount 1 ;
@@ -378,7 +378,7 @@ _:c14n139 sh:datatype xsd:string ;
 	sh:order 1 ;
 	sh:path sepio_linkml:record_version .
 _:c14n14 rdf:first sepio_linkml:sources ;
-	rdf:rest _:c14n176 .
+	rdf:rest _:c14n178 .
 _:c14n140 sh:class sepio_linkml:Characteristic ;
 	sh:description "A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
@@ -389,53 +389,51 @@ _:c14n141 sh:datatype xsd:string ;
 	sh:nodeKind sh:Literal ;
 	sh:order 15 ;
 	sh:path sepio_linkml:sources .
-_:c14n142 sh:datatype xsd:string ;
+_:c14n142 sh:description "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)." ;
+	sh:in _:c14n268 ;
+	sh:maxCount 1 ;
+	sh:order 3 ;
+	sh:path SEPIO:0000183 .
+_:c14n143 sh:datatype xsd:string ;
 	sh:description "A document or other informtion resource in which the information entity, or evidence supporting it, is reported." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 22 ;
 	sh:path sepio_linkml:sources .
-_:c14n143 sh:datatype xsd:string ;
+_:c14n144 sh:datatype xsd:string ;
 	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 19 ;
 	sh:path sepio_linkml:type .
-_:c14n144 rdf:first sepio_linkml:system ;
-	rdf:rest _:c14n157 .
-_:c14n145 sh:datatype xsd:string ;
+_:c14n145 rdf:first sepio_linkml:system ;
+	rdf:rest _:c14n159 .
+_:c14n146 sh:datatype xsd:string ;
 	sh:description "The value of the qualifier - holding information that refines/extends the meaning of the Statement." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 1 ;
 	sh:path sepio_linkml:value .
-_:c14n146 sh:datatype xsd:string ;
+_:c14n147 sh:datatype xsd:string ;
 	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 19 ;
 	sh:path sepio_linkml:type .
-_:c14n147 sh:class sepio_linkml:Coding ;
+_:c14n148 sh:class sepio_linkml:Coding ;
 	sh:description "A specific type of evidence the EvidenceLine instance represents (e.g. 'mutant phenotype evidence', 'evidence from manual interpretation', 'ACMG PM2 evidence')" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 0 ;
 	sh:path sepio_linkml:subtype .
-_:c14n148 sh:datatype xsd:string ;
+_:c14n149 sh:datatype xsd:string ;
 	sh:description "A primary name for the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 9 ;
 	sh:path sepio_linkml:label .
-_:c14n149 sh:datatype xsd:string ;
-	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
-	sh:maxCount 1 ;
-	sh:minCount 1 ;
-	sh:nodeKind sh:Literal ;
-	sh:order 5 ;
-	sh:path sepio_linkml:type .
 _:c14n15 sh:datatype xsd:string ;
 	sh:description "A free text description of the Entity." ;
 	sh:maxCount 1 ;
@@ -443,111 +441,111 @@ _:c14n15 sh:datatype xsd:string ;
 	sh:order 11 ;
 	sh:path sepio_linkml:description .
 _:c14n150 sh:datatype xsd:string ;
+	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+	sh:maxCount 1 ;
+	sh:minCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 5 ;
+	sh:path sepio_linkml:type .
+_:c14n151 sh:datatype xsd:string ;
 	sh:description "A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 6 ;
 	sh:path sepio_linkml:direction .
-_:c14n151 sh:datatype xsd:string ;
+_:c14n152 sh:datatype xsd:string ;
 	sh:description "A document or other informtion resource in which the information entity, or evidence supporting it, is reported." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 12 ;
 	sh:path sepio_linkml:sources .
-_:c14n152 rdf:first rdf:type ;
+_:c14n153 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n153 rdf:first sepio_linkml:supporting_method_types ;
-	rdf:rest _:c14n315 .
-_:c14n154 sh:class sepio_linkml:Extension ;
+_:c14n154 rdf:first sepio_linkml:supporting_method_types ;
+	rdf:rest _:c14n318 .
+_:c14n155 sh:class sepio_linkml:Extension ;
 	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 23 ;
 	sh:path sepio_linkml:extensions .
-_:c14n155 sh:datatype xsd:string ;
+_:c14n156 sh:datatype xsd:string ;
 	sh:description "A primary name for the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 3 ;
 	sh:path sepio_linkml:label .
-_:c14n156 sh:datatype xsd:string ;
+_:c14n157 rdf:first SEPIO:0000405 ;
+	rdf:rest rdf:nil .
+_:c14n158 sh:datatype xsd:string ;
 	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 18 ;
 	sh:path sepio_linkml:id .
-_:c14n157 rdf:first sepio_linkml:system_url ;
-	rdf:rest _:c14n277 .
-_:c14n158 sh:class sepio_linkml:Extension ;
+_:c14n159 rdf:first sepio_linkml:system_url ;
+	rdf:rest _:c14n281 .
+_:c14n16 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n160 sh:class sepio_linkml:Extension ;
 	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 15 ;
 	sh:path sepio_linkml:extensions .
-_:c14n159 sh:datatype xsd:string ;
+_:c14n161 sh:datatype xsd:string ;
 	sh:description "A document or other informtion resource in which the information entity, or evidence supporting it, is reported." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 14 ;
 	sh:path sepio_linkml:sources .
-_:c14n16 rdf:first rdf:type ;
-	rdf:rest rdf:nil .
-_:c14n160 sh:datatype xsd:string ;
+_:c14n162 sh:datatype xsd:string ;
 	sh:description "A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_` for the document." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 4 ;
 	sh:path sepio_linkml:doi .
-_:c14n161 sh:datatype xsd:string ;
+_:c14n163 sh:datatype xsd:string ;
 	sh:description "A free text description of the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 14 ;
 	sh:path sepio_linkml:description .
-_:c14n162 sh:datatype xsd:string ;
+_:c14n164 sh:datatype xsd:string ;
 	sh:description "A natural-language expression of the Proposition's meaning (i.e. the 'possible fact' it expresses)." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 0 ;
 	sh:path sepio_linkml:proposition_text .
-_:c14n163 sh:datatype xsd:string ;
+_:c14n165 sh:datatype xsd:string ;
 	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 27 ;
 	sh:path sepio_linkml:type .
-_:c14n164 sh:class sepio_linkml:Coding ;
+_:c14n166 sh:class sepio_linkml:Coding ;
 	sh:description "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc. . Values of this property may be framed as activities or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO))." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 1 ;
 	sh:path sepio_linkml:activity_type .
-_:c14n165 sh:datatype xsd:string ;
+_:c14n167 sh:datatype xsd:string ;
 	sh:description "The value of the data item (could be quantitative or qualitative depending on the type of data item)." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 1 ;
 	sh:path sepio_linkml:value .
-_:c14n166 sh:datatype xsd:string ;
+_:c14n168 sh:datatype xsd:string ;
 	sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 2 ;
 	sh:path SEPIO:0000135 .
-_:c14n167 sh:datatype xsd:string ;
+_:c14n169 sh:datatype xsd:string ;
 	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 9 ;
 	sh:path sepio_linkml:id .
-_:c14n168 sh:class sepio_linkml:Coding ;
-	sh:description "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity." ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:order 11 ;
-	sh:path sepio_linkml:supporting_method_types .
-_:c14n169 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
-	sh:nodeKind sh:IRI ;
-	sh:order 3 ;
-	sh:path SEPIO:0000041 .
 _:c14n17 sh:datatype xsd:string ;
 	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
 	sh:maxCount 1 ;
@@ -555,162 +553,163 @@ _:c14n17 sh:datatype xsd:string ;
 	sh:nodeKind sh:Literal ;
 	sh:order 15 ;
 	sh:path sepio_linkml:type .
-_:c14n170 rdf:first SEPIO:0000415 ;
-	rdf:rest _:c14n395 .
-_:c14n171 sh:class sepio_linkml:Coding ;
+_:c14n170 sh:class sepio_linkml:Coding ;
+	sh:description "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity." ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:order 11 ;
+	sh:path sepio_linkml:supporting_method_types .
+_:c14n171 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
+	sh:nodeKind sh:IRI ;
+	sh:order 3 ;
+	sh:path SEPIO:0000041 .
+_:c14n172 rdf:first SEPIO:0000415 ;
+	rdf:rest _:c14n398 .
+_:c14n173 sh:class sepio_linkml:Coding ;
 	sh:description "A specific type of activity the Activity instance represents." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 3 ;
 	sh:path sepio_linkml:subtype .
-_:c14n172 sh:description "An entity or concept in the world that the information entity describes/is about." ;
+_:c14n174 sh:description "An entity or concept in the world that the information entity describes/is about." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 6 ;
 	sh:path IAO:0000136 .
-_:c14n173 sh:datatype xsd:string ;
+_:c14n175 sh:datatype xsd:string ;
 	sh:description "The version of the nomenclature system." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 2 ;
 	sh:path sepio_linkml:system_version .
-_:c14n174 sh:class IAO:0000030 ;
+_:c14n176 sh:class IAO:0000030 ;
 	sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 12 ;
 	sh:path sepio_linkml:derived_from .
-_:c14n175 sh:class sepio_linkml:Coding ;
+_:c14n177 sh:class sepio_linkml:Coding ;
 	sh:description "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 11 ;
 	sh:path sepio_linkml:supporting_method_types .
-_:c14n176 rdf:first sepio_linkml:specified_by ;
-	rdf:rest _:c14n401 .
-_:c14n177 sh:description "The Entity or concept about which the Statement is made." ;
+_:c14n178 rdf:first sepio_linkml:specified_by ;
+	rdf:rest _:c14n404 .
+_:c14n179 sh:description "The Entity or concept about which the Statement is made." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:order 2 ;
 	sh:path SEPIO:0000388 .
-_:c14n178 rdf:first sepio_linkml:contributor ;
-	rdf:rest rdf:nil .
-_:c14n179 sh:class sepio_linkml:StudyGroup ;
-	sh:description "A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult." ;
-	sh:maxCount 1 ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:order 5 ;
-	sh:path sepio_linkml:study_group .
 _:c14n18 sh:class SEPIO:0000158 ;
 	sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 7 ;
 	sh:path SEPIO:0000159 .
-_:c14n180 sh:datatype xsd:string ;
+_:c14n180 rdf:first sepio_linkml:contributor ;
+	rdf:rest rdf:nil .
+_:c14n181 sh:class sepio_linkml:StudyGroup ;
+	sh:description "A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult." ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:order 5 ;
+	sh:path sepio_linkml:study_group .
+_:c14n182 sh:datatype xsd:string ;
 	sh:description "The given name of the Agent." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 1 ;
 	sh:path sepio_linkml:name .
-_:c14n181 sh:class sepio_linkml:Coding ;
+_:c14n183 sh:class sepio_linkml:Coding ;
 	sh:description "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 9 ;
 	sh:path sepio_linkml:supporting_method_types .
-_:c14n182 rdf:first rdf:type ;
+_:c14n184 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n183 sh:datatype xsd:string ;
+_:c14n185 sh:datatype xsd:string ;
 	sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 16 ;
 	sh:path SEPIO:0000135 .
-_:c14n184 sh:datatype xsd:string ;
+_:c14n186 sh:datatype xsd:string ;
 	sh:description "A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 3 ;
 	sh:path sepio_linkml:license .
-_:c14n185 sh:datatype xsd:string ;
+_:c14n187 sh:datatype xsd:string ;
 	sh:description "Specific methods that were executed to directly or indirectly support creation of the Information Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 11 ;
 	sh:path sepio_linkml:supporting_methods .
-_:c14n186 sh:datatype xsd:string ;
+_:c14n188 sh:datatype xsd:string ;
 	sh:description "A free text description of the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 22 ;
 	sh:path sepio_linkml:description .
-_:c14n187 rdf:first SEPIO:0000006 ;
-	rdf:rest _:c14n288 .
-_:c14n188 sh:datatype xsd:string ;
-	sh:description "A primary name for the Entity." ;
-	sh:maxCount 1 ;
-	sh:nodeKind sh:Literal ;
-	sh:order 18 ;
-	sh:path sepio_linkml:label .
-_:c14n189 sh:datatype xsd:string ;
-	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
-	sh:maxCount 1 ;
-	sh:minCount 1 ;
-	sh:nodeKind sh:Literal ;
-	sh:order 6 ;
-	sh:path sepio_linkml:id .
+_:c14n189 rdf:first SEPIO:0000006 ;
+	rdf:rest _:c14n292 .
 _:c14n19 sh:class SEPIO:0000002 ;
 	sh:description "An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes  the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items)." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 11 ;
 	sh:path SEPIO:0000006 .
 _:c14n190 sh:datatype xsd:string ;
+	sh:description "A primary name for the Entity." ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 18 ;
+	sh:path sepio_linkml:label .
+_:c14n191 sh:datatype xsd:string ;
+	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+	sh:maxCount 1 ;
+	sh:minCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 6 ;
+	sh:path sepio_linkml:id .
+_:c14n192 sh:datatype xsd:string ;
 	sh:description "Specific methods that were executed to directly or indirectly support creation of the Information Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 8 ;
 	sh:path sepio_linkml:supporting_methods .
-_:c14n191 sh:datatype xsd:string ;
+_:c14n193 sh:datatype xsd:string ;
 	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 11 ;
 	sh:path sepio_linkml:id .
-_:c14n192 rdf:first sepio_linkml:proposition_text ;
-	rdf:rest _:c14n402 .
-_:c14n193 sh:datatype xsd:string ;
+_:c14n194 rdf:first sepio_linkml:proposition_text ;
+	rdf:rest _:c14n405 .
+_:c14n195 sh:datatype xsd:string ;
 	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 19 ;
 	sh:path sepio_linkml:type .
-_:c14n194 sh:datatype xsd:string ;
+_:c14n196 sh:datatype xsd:string ;
 	sh:description "A primary name for the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 9 ;
 	sh:path sepio_linkml:label .
-_:c14n195 sh:datatype xsd:string ;
+_:c14n197 sh:datatype xsd:string ;
 	sh:description "A free text description of the intended meaning and use of the extension element, which may include the types of values it takes, and how to interpret these values in the context of the parent Class." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 0 ;
 	sh:path sepio_linkml:extension_description .
-_:c14n196 sh:datatype xsd:string ;
+_:c14n198 sh:datatype xsd:string ;
 	sh:description "A primary name for the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 20 ;
 	sh:path sepio_linkml:label .
-_:c14n197 sh:class <http://purl.obolibrary.org/obo/BFO_0000001> ;
+_:c14n199 sh:class <http://purl.obolibrary.org/obo/BFO_0000001> ;
 	sh:description "An entity that was output from the Activity (could be material or information)" ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 8 ;
 	sh:path <http://purl.obolibrary.org/obo/OBI_0000299> .
-_:c14n198 rdf:first sepio_linkml:record_version ;
-	rdf:rest _:c14n144 .
-_:c14n199 sh:datatype xsd:string ;
-	sh:description "Indicates when a version of a DataSet was formally released." ;
-	sh:maxCount 1 ;
-	sh:nodeKind sh:Literal ;
-	sh:order 1 ;
-	sh:path sepio_linkml:release_date .
 _:c14n2 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
 _:c14n20 sh:datatype xsd:string ;
@@ -719,539 +718,531 @@ _:c14n20 sh:datatype xsd:string ;
 	sh:nodeKind sh:Literal ;
 	sh:order 0 ;
 	sh:path sepio_linkml:code .
-_:c14n200 sh:class prov:Agent ;
+_:c14n200 rdf:first sepio_linkml:record_version ;
+	rdf:rest _:c14n145 .
+_:c14n201 sh:datatype xsd:string ;
+	sh:description "Indicates when a version of a DataSet was formally released." ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 1 ;
+	sh:path sepio_linkml:release_date .
+_:c14n202 sh:class prov:Agent ;
 	sh:description "The Agent that made the contribution." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 0 ;
 	sh:path sepio_linkml:contributor .
-_:c14n201 sh:class IAO:0000030 ;
+_:c14n203 sh:class IAO:0000030 ;
 	sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 13 ;
 	sh:path sepio_linkml:derived_from .
-_:c14n202 sh:class IAO:0000027 ;
+_:c14n204 sh:class IAO:0000027 ;
 	sh:description "One or more data items that are included in the StudyResult because it pertains to the 'focus' of the result. This can be data that directly describes this 'focus' (e.g. the population frequency of an allele focus), or be metadata about how data about the 'focus' were generated (e.g the quality measures for the sequencing run used to determine this allele frequency)." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 1 ;
 	sh:path sepio_linkml:data_items .
-_:c14n203 sh:datatype xsd:string ;
+_:c14n205 sh:datatype xsd:string ;
 	sh:description "Version of the terminology or code system that provided the code." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 3 ;
 	sh:path sepio_linkml:system_version .
-_:c14n204 sh:description "An entity or concept in the world that the information entity describes/is about." ;
+_:c14n206 sh:description "An entity or concept in the world that the information entity describes/is about." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 6 ;
 	sh:path IAO:0000136 .
-_:c14n205 sh:class sepio_linkml:Coding ;
+_:c14n207 sh:class sepio_linkml:Coding ;
 	sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 15 ;
 	sh:path SEPIO:0000415 .
-_:c14n206 sh:class sepio_linkml:Extension ;
+_:c14n208 sh:class sepio_linkml:Extension ;
 	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 8 ;
 	sh:path sepio_linkml:extensions .
-_:c14n207 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
+_:c14n209 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 17 ;
 	sh:path SEPIO:0000041 .
-_:c14n208 sh:class SEPIO:0000158 ;
-	sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:order 7 ;
-	sh:path SEPIO:0000159 .
-_:c14n209 sh:class IAO:0000027 ;
-	sh:description "A more foundational data item that is a logical component of a compound data item." ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:order 5 ;
-	sh:path sepio_linkml:component_data_item .
 _:c14n21 sh:datatype xsd:string ;
 	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 26 ;
 	sh:path sepio_linkml:identifiers .
-_:c14n210 rdf:first sepio_linkml:derived_from ;
-	rdf:rest _:c14n408 .
-_:c14n211 sh:datatype xsd:string ;
+_:c14n210 sh:class SEPIO:0000158 ;
+	sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:order 7 ;
+	sh:path SEPIO:0000159 .
+_:c14n211 sh:class IAO:0000027 ;
+	sh:description "A more foundational data item that is a logical component of a compound data item." ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:order 5 ;
+	sh:path sepio_linkml:component_data_item .
+_:c14n212 rdf:first sepio_linkml:derived_from ;
+	rdf:rest _:c14n411 .
+_:c14n213 sh:datatype xsd:string ;
 	sh:description "The date the record was initially created." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 3 ;
 	sh:path SEPIO:0000436 .
-_:c14n212 sh:class IAO:0000030 ;
+_:c14n214 sh:class IAO:0000030 ;
 	sh:description "An Information Entity (typically a publication, dataset, or database) that provided information used as evidence to generate the knowledge expressed in a Statement." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 13 ;
 	sh:path SEPIO:0000145 .
-_:c14n213 rdf:first SEPIO:0000188 ;
-	rdf:rest _:c14n405 .
-_:c14n214 sh:datatype xsd:string ;
+_:c14n215 rdf:first SEPIO:0000188 ;
+	rdf:rest _:c14n408 .
+_:c14n216 sh:datatype xsd:string ;
 	sh:description "A primary name for the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 20 ;
 	sh:path sepio_linkml:label .
-_:c14n215 sh:datatype xsd:string ;
+_:c14n217 sh:datatype xsd:string ;
 	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 3 ;
 	sh:path sepio_linkml:id .
-_:c14n216 sh:class IAO:0000030 ;
+_:c14n218 sh:class IAO:0000030 ;
 	sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 8 ;
 	sh:path sepio_linkml:derived_from .
-_:c14n217 sh:class sepio_linkml:Coding ;
+_:c14n219 sh:class sepio_linkml:Coding ;
 	sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 16 ;
 	sh:path SEPIO:0000415 .
-_:c14n218 sh:datatype xsd:string ;
+_:c14n22 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n220 sh:datatype xsd:string ;
 	sh:description "Alternative name(s) for the Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 17 ;
 	sh:path sepio_linkml:alternative_labels .
-_:c14n219 rdf:first rdf:type ;
+_:c14n221 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n22 rdf:first rdf:type ;
-	rdf:rest rdf:nil .
-_:c14n220 sh:class sepio_linkml:RecordMetadata ;
+_:c14n222 sh:class sepio_linkml:RecordMetadata ;
 	sh:description "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 16 ;
 	sh:path sepio_linkml:record_metadata .
-_:c14n221 sh:class sepio_linkml:StudyResult ;
+_:c14n223 sh:class sepio_linkml:StudyResult ;
 	sh:description "Another StudyResult comprised of data items about the same focus as its parent Result, but based on a more narrowly scoped analysis of the foundational data (e.g. an analysis based on data about a subset of the parent Results full study population)." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 4 ;
 	sh:path sepio_linkml:component_result .
-_:c14n222 sh:class sepio_linkml:Coding ;
+_:c14n224 sh:class sepio_linkml:Coding ;
 	sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 15 ;
 	sh:path SEPIO:0000415 .
-_:c14n223 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
+_:c14n225 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 9 ;
 	sh:path SEPIO:0000041 .
-_:c14n224 sh:datatype xsd:float ;
+_:c14n226 sh:datatype xsd:float ;
 	sh:description "A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided value." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 5 ;
 	sh:path SEPIO:0000429 .
-_:c14n225 sh:class sepio_linkml:RecordMetadata ;
+_:c14n227 sh:class sepio_linkml:RecordMetadata ;
 	sh:description "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 16 ;
 	sh:path sepio_linkml:record_metadata .
-_:c14n226 rdf:first sepio_linkml:is_subset_of ;
-	rdf:rest _:c14n415 .
-_:c14n227 sh:class sepio_linkml:Coding ;
+_:c14n228 rdf:first sepio_linkml:is_subset_of ;
+	rdf:rest _:c14n418 .
+_:c14n229 sh:class sepio_linkml:Coding ;
 	sh:description "A specific type of activity the Activity instance represents." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 0 ;
 	sh:path sepio_linkml:subtype .
-_:c14n228 sh:datatype xsd:string ;
+_:c14n23 rdf:first SEPIO:0000160 ;
+	rdf:rest _:c14n419 .
+_:c14n230 sh:datatype xsd:string ;
 	sh:description "Alternative name(s) for the Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 4 ;
 	sh:path sepio_linkml:alternative_labels .
-_:c14n229 sh:class sepio_linkml:Coding ;
+_:c14n231 sh:class sepio_linkml:Coding ;
 	sh:description "A unit of measure for the value (e.g. meters, grams, fluorescent units, seconds, mg/ml, etc.)" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 2 ;
 	sh:path sepio_linkml:unit .
-_:c14n23 rdf:first SEPIO:0000160 ;
-	rdf:rest _:c14n416 .
-_:c14n230 sh:class IAO:0000030 ;
+_:c14n232 sh:class IAO:0000030 ;
 	sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 12 ;
 	sh:path sepio_linkml:derived_from .
-_:c14n231 sh:datatype xsd:string ;
+_:c14n233 sh:datatype xsd:string ;
 	sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 8 ;
 	sh:path SEPIO:0000135 .
-_:c14n232 sh:datatype xsd:float ;
+_:c14n234 sh:datatype xsd:float ;
 	sh:description "A quantitative score that indicates the strength of a Proposition's validity assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 8 ;
 	sh:path sepio_linkml:score .
-_:c14n233 sh:datatype xsd:string ;
+_:c14n235 sh:datatype xsd:string ;
 	sh:description "The version of the DataSet, as assigned by its creator." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 2 ;
 	sh:path sepio_linkml:version .
-_:c14n234 sh:class IAO:0000030 ;
+_:c14n236 sh:class IAO:0000030 ;
 	sh:description "An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 2 ;
 	sh:path SEPIO:0000084 .
-_:c14n235 sh:datatype xsd:string ;
+_:c14n237 sh:datatype xsd:string ;
 	sh:description "Alternative name(s) for the Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 10 ;
 	sh:path sepio_linkml:alternative_labels .
-_:c14n236 sh:datatype xsd:string ;
+_:c14n238 sh:datatype xsd:string ;
 	sh:description "A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_ for the document." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 3 ;
 	sh:path sepio_linkml:pmid .
-_:c14n237 rdf:first rdf:type ;
+_:c14n239 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n238 sh:datatype xsd:string ;
+_:c14n24 sh:description "An information resource (e.g. document, dataset, digital resource such as a database or  knowledgebase) that provides information interpreted as evidence in building an Evidence Line." ;
+	sh:nodeKind sh:IRI ;
+	sh:order 6 ;
+	sh:path SEPIO:0000124 .
+_:c14n240 sh:datatype xsd:string ;
 	sh:description "A free text description of the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 20 ;
 	sh:path sepio_linkml:description .
-_:c14n239 sh:class sepio_linkml:Extension ;
+_:c14n241 sh:class sepio_linkml:Extension ;
 	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 24 ;
 	sh:path sepio_linkml:extensions .
-_:c14n24 sh:description "An information resource (e.g. document, dataset, digital resource such as a database or  knowledgebase) that provides information interpreted as evidence in building an Evidence Line." ;
-	sh:nodeKind sh:IRI ;
-	sh:order 6 ;
-	sh:path SEPIO:0000124 .
-_:c14n240 sh:class sepio_linkml:Coding ;
+_:c14n242 sh:class sepio_linkml:Coding ;
 	sh:description "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 11 ;
 	sh:path sepio_linkml:supporting_method_types .
-_:c14n241 sh:datatype xsd:string ;
+_:c14n243 sh:datatype xsd:string ;
 	sh:description "A free text description of the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 5 ;
 	sh:path sepio_linkml:description .
-_:c14n242 sh:class SEPIO:0000158 ;
+_:c14n244 sh:class SEPIO:0000158 ;
 	sh:description "describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 4 ;
 	sh:path SEPIO:0000159 .
-_:c14n243 sh:datatype xsd:string ;
+_:c14n245 sh:datatype xsd:string ;
 	sh:description "Alternative name(s) for the Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 19 ;
 	sh:path sepio_linkml:alternative_labels .
-_:c14n244 sh:description "An entity or concept in the world that the information entity describes/is about." ;
+_:c14n246 sh:description "An entity or concept in the world that the information entity describes/is about." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 14 ;
 	sh:path IAO:0000136 .
-_:c14n245 sh:description "The Entity or concept about which the Proposition is made." ;
+_:c14n247 sh:description "The Entity or concept about which the Proposition is made." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:order 1 ;
 	sh:path SEPIO:0000388 .
-_:c14n246 sh:datatype xsd:string ;
+_:c14n248 sh:datatype xsd:string ;
 	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 1 ;
 	sh:path sepio_linkml:identifiers .
-_:c14n247 sh:description "A document in which the Information Entity is reported." ;
+_:c14n249 sh:description "A document in which the Information Entity is reported." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 21 ;
 	sh:path SEPIO:0000108 .
-_:c14n248 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
-	sh:nodeKind sh:IRI ;
-	sh:order 9 ;
-	sh:path SEPIO:0000041 .
-_:c14n249 sh:datatype xsd:string ;
-	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
-	sh:nodeKind sh:Literal ;
-	sh:order 18 ;
-	sh:path sepio_linkml:identifiers .
 _:c14n25 sh:class SEPIO:0000158 ;
 	sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 7 ;
 	sh:path SEPIO:0000159 .
-_:c14n250 sh:datatype xsd:string ;
+_:c14n250 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
+	sh:nodeKind sh:IRI ;
+	sh:order 9 ;
+	sh:path SEPIO:0000041 .
+_:c14n251 sh:datatype xsd:string ;
+	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+	sh:nodeKind sh:Literal ;
+	sh:order 18 ;
+	sh:path sepio_linkml:identifiers .
+_:c14n252 sh:datatype xsd:string ;
 	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 15 ;
 	sh:path sepio_linkml:id .
-_:c14n251 sh:datatype xsd:string ;
+_:c14n253 sh:datatype xsd:string ;
 	sh:description "Specific methods that were executed to directly or indirectly support creation of the Information Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 6 ;
 	sh:path sepio_linkml:supporting_methods .
-_:c14n252 sh:datatype xsd:string ;
+_:c14n254 sh:datatype xsd:string ;
 	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 17 ;
 	sh:path sepio_linkml:id .
-_:c14n253 sh:class sepio_linkml:Coding ;
+_:c14n255 sh:class sepio_linkml:Coding ;
 	sh:description "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 0 ;
 	sh:path sepio_linkml:subtype .
-_:c14n254 sh:datatype xsd:string ;
+_:c14n256 sh:datatype xsd:string ;
 	sh:description "A document or other informtion resource in which the information entity, or evidence supporting it, is reported." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 8 ;
 	sh:path sepio_linkml:sources .
-_:c14n255 sh:description "A document in which the Information Entity is reported." ;
+_:c14n257 sh:description "A document in which the Information Entity is reported." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 13 ;
 	sh:path SEPIO:0000108 .
-_:c14n256 sh:datatype xsd:string ;
+_:c14n258 sh:datatype xsd:string ;
 	sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 9 ;
 	sh:path SEPIO:0000135 .
-_:c14n257 sh:datatype xsd:string ;
+_:c14n259 sh:datatype xsd:string ;
 	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 19 ;
 	sh:path sepio_linkml:identifiers .
-_:c14n258 sh:datatype xsd:string ;
-	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
-	sh:maxCount 1 ;
-	sh:minCount 1 ;
-	sh:nodeKind sh:Literal ;
-	sh:order 6 ;
-	sh:path sepio_linkml:id .
-_:c14n259 sh:datatype xsd:string ;
-	sh:description "Alternative name(s) for the Entity." ;
-	sh:nodeKind sh:Literal ;
-	sh:order 21 ;
-	sh:path sepio_linkml:alternative_labels .
 _:c14n26 sh:class IAO:0000030 ;
 	sh:description "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 12 ;
 	sh:path SEPIO:0000189 .
 _:c14n260 sh:datatype xsd:string ;
+	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
+	sh:maxCount 1 ;
+	sh:minCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 6 ;
+	sh:path sepio_linkml:id .
+_:c14n261 sh:datatype xsd:string ;
+	sh:description "Alternative name(s) for the Entity." ;
+	sh:nodeKind sh:Literal ;
+	sh:order 21 ;
+	sh:path sepio_linkml:alternative_labels .
+_:c14n262 sh:datatype xsd:string ;
 	sh:description "A primary name for the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 12 ;
 	sh:path sepio_linkml:label .
-_:c14n261 sh:datatype xsd:string ;
+_:c14n263 sh:datatype xsd:string ;
 	sh:description "Specific methods that were executed to directly or indirectly support creation of the Information Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 4 ;
 	sh:path sepio_linkml:supporting_methods .
-_:c14n262 sh:datatype xsd:string ;
+_:c14n264 sh:datatype xsd:string ;
 	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 0 ;
 	sh:path sepio_linkml:id .
-_:c14n263 sh:class sepio_linkml:Coding ;
+_:c14n265 sh:class sepio_linkml:Coding ;
 	sh:description "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 13 ;
 	sh:path SEPIO:0000415 .
-_:c14n264 sh:class sepio_linkml:RecordMetadata ;
+_:c14n266 sh:class sepio_linkml:RecordMetadata ;
 	sh:description "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 24 ;
 	sh:path sepio_linkml:record_metadata .
-_:c14n265 rdf:first sepio_linkml:extension_description ;
+_:c14n267 rdf:first sepio_linkml:extension_description ;
 	rdf:rest _:c14n4 .
-_:c14n266 sh:class sepio_linkml:RecordMetadata ;
+_:c14n268 rdf:first SEPIO:0000403 ;
+	rdf:rest _:c14n272 .
+_:c14n269 sh:class sepio_linkml:RecordMetadata ;
 	sh:description "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 12 ;
 	sh:path sepio_linkml:record_metadata .
-_:c14n267 sh:datatype xsd:string ;
+_:c14n27 rdf:first sepio_linkml:code ;
+	rdf:rest _:c14n399 .
+_:c14n270 sh:datatype xsd:string ;
 	sh:description "One or more URLs from which the content of the Document can be retrieved." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 2 ;
 	sh:path sepio_linkml:urls .
-_:c14n268 sh:class IAO:0000027 ;
+_:c14n271 sh:class IAO:0000027 ;
 	sh:description "A statistical score describing the variability inherent in a data item representing a statistical summary of a set of observations/measurements (e.g. the standard deviation associated with a statistical mean calculated across several experimental replicates)." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 3 ;
 	sh:path sepio_linkml:variability_measures .
-_:c14n269 sh:datatype xsd:string ;
+_:c14n272 rdf:first SEPIO:0000404 ;
+	rdf:rest _:c14n157 .
+_:c14n273 sh:datatype xsd:string ;
 	sh:description "A free text description of the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 16 ;
 	sh:path sepio_linkml:description .
-_:c14n27 rdf:first sepio_linkml:code ;
-	rdf:rest _:c14n396 .
-_:c14n270 sh:class sepio_linkml:RecordMetadata ;
+_:c14n274 sh:class sepio_linkml:RecordMetadata ;
 	sh:description "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 17 ;
 	sh:path sepio_linkml:record_metadata .
-_:c14n271 rdf:first sepio_linkml:record_identifier ;
-	rdf:rest _:c14n198 .
-_:c14n272 sh:datatype xsd:string ;
+_:c14n275 rdf:first sepio_linkml:record_identifier ;
+	rdf:rest _:c14n200 .
+_:c14n276 sh:datatype xsd:string ;
 	sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 6 ;
 	sh:path SEPIO:0000135 .
-_:c14n273 rdf:first SEPIO:0000436 ;
-	rdf:rest _:c14n417 .
-_:c14n274 sh:datatype xsd:integer ;
+_:c14n277 rdf:first SEPIO:0000436 ;
+	rdf:rest _:c14n420 .
+_:c14n278 sh:datatype xsd:integer ;
 	sh:description "The total number of individual members in the StudyGroup." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 0 ;
 	sh:path sepio_linkml:member_count .
-_:c14n275 rdf:first sepio_linkml:member_count ;
-	rdf:rest _:c14n391 .
-_:c14n276 rdf:first sepio_linkml:record_metadata ;
-	rdf:rest _:c14n377 .
-_:c14n277 rdf:first sepio_linkml:system_version ;
-	rdf:rest _:c14n389 .
-_:c14n278 sh:datatype xsd:string ;
-	sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
-	sh:maxCount 1 ;
-	sh:nodeKind sh:Literal ;
-	sh:order 8 ;
-	sh:path SEPIO:0000135 .
-_:c14n279 sh:datatype xsd:string ;
-	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
-	sh:maxCount 1 ;
-	sh:minCount 1 ;
-	sh:nodeKind sh:Literal ;
-	sh:order 13 ;
-	sh:path sepio_linkml:type .
+_:c14n279 rdf:first sepio_linkml:member_count ;
+	rdf:rest _:c14n393 .
 _:c14n28 sh:class sepio_linkml:RecordMetadata ;
 	sh:description "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 16 ;
 	sh:path sepio_linkml:record_metadata .
-_:c14n280 sh:description "An entity or concept in the world that the information entity describes/is about." ;
+_:c14n280 rdf:first sepio_linkml:record_metadata ;
+	rdf:rest _:c14n380 .
+_:c14n281 rdf:first sepio_linkml:system_version ;
+	rdf:rest _:c14n392 .
+_:c14n282 sh:datatype xsd:string ;
+	sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 8 ;
+	sh:path SEPIO:0000135 .
+_:c14n283 sh:datatype xsd:string ;
+	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
+	sh:maxCount 1 ;
+	sh:minCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 13 ;
+	sh:path sepio_linkml:type .
+_:c14n284 sh:description "An entity or concept in the world that the information entity describes/is about." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 0 ;
 	sh:path IAO:0000136 .
-_:c14n281 sh:class IAO:0000030 ;
+_:c14n285 sh:class IAO:0000030 ;
 	sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 10 ;
 	sh:path sepio_linkml:derived_from .
-_:c14n282 sh:datatype xsd:string ;
+_:c14n286 sh:datatype xsd:string ;
 	sh:description "Specific methods that were executed to directly or indirectly support creation of the Information Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 10 ;
 	sh:path sepio_linkml:supporting_methods .
-_:c14n283 sh:class IAO:0000030 ;
+_:c14n287 sh:class IAO:0000030 ;
 	sh:description "Another Information Entity from which this Information Entity is derived, in whole or in part." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 6 ;
 	sh:path sepio_linkml:derived_from .
-_:c14n284 sh:description "An entity or concept in the world that the information entity describes/is about." ;
+_:c14n288 sh:description "An entity or concept in the world that the information entity describes/is about." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 7 ;
 	sh:path IAO:0000136 .
-_:c14n285 sh:class sepio_linkml:Coding ;
+_:c14n289 sh:class sepio_linkml:Coding ;
 	sh:description "Types of methodological approaches that were executed to directly or indirectly support creation of the Information Entity." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 12 ;
 	sh:path sepio_linkml:supporting_method_types .
-_:c14n286 sh:datatype xsd:string ;
-	sh:description "Alternative name(s) for the Entity." ;
-	sh:nodeKind sh:Literal ;
-	sh:order 7 ;
-	sh:path sepio_linkml:alternative_labels .
-_:c14n287 sh:description "The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided." ;
-	sh:maxCount 1 ;
-	sh:nodeKind sh:IRI ;
-	sh:order 4 ;
-	sh:path SEPIO:0000132 .
-_:c14n288 rdf:first SEPIO:0000017 ;
-	rdf:rest _:c14n407 .
-_:c14n289 sh:class sepio_linkml:Coding ;
-	sh:description "A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')" ;
-	sh:maxCount 1 ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:order 0 ;
-	sh:path sepio_linkml:subtype .
 _:c14n29 sh:datatype xsd:string ;
 	sh:description "A free text description of the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 18 ;
 	sh:path sepio_linkml:description .
-_:c14n290 rdf:first rdf:type ;
+_:c14n290 sh:datatype xsd:string ;
+	sh:description "Alternative name(s) for the Entity." ;
+	sh:nodeKind sh:Literal ;
+	sh:order 7 ;
+	sh:path sepio_linkml:alternative_labels .
+_:c14n291 sh:description "The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided." ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 4 ;
+	sh:path SEPIO:0000132 .
+_:c14n292 rdf:first SEPIO:0000017 ;
+	rdf:rest _:c14n410 .
+_:c14n293 sh:class sepio_linkml:Coding ;
+	sh:description "A specific type of data the DataItem instance represents (e.g. a 'specimen count', a 'patient weight', an 'allele frequency', a 'p-value')" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:order 0 ;
+	sh:path sepio_linkml:subtype .
+_:c14n294 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n291 sh:class sepio_linkml:Coding ;
+_:c14n295 sh:class sepio_linkml:Coding ;
 	sh:description "The relationship declared to hold between the subject and the object of the Statement." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 3 ;
 	sh:path SEPIO:0000389 .
-_:c14n292 sh:datatype xsd:string ;
+_:c14n296 sh:datatype xsd:string ;
 	sh:description "The 'logical' identifier of the entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference one object from another." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 25 ;
 	sh:path sepio_linkml:id .
-_:c14n293 rdf:first rdf:type ;
+_:c14n297 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n294 sh:description "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)." ;
-	sh:maxCount 1 ;
-	sh:nodeKind sh:IRI ;
-	sh:order 3 ;
-	sh:path SEPIO:0000183 .
-_:c14n295 sh:datatype xsd:string ;
+_:c14n298 sh:datatype xsd:string ;
 	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 12 ;
 	sh:path sepio_linkml:identifiers .
-_:c14n296 sh:class IAO:0000027 ;
+_:c14n299 sh:class IAO:0000027 ;
 	sh:description "A measure of the probability that a parameter of interest will fall within a defined range of values around a mean or other statistical calculation." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 4 ;
 	sh:path sepio_linkml:confidence_interval .
-_:c14n297 sh:datatype xsd:string ;
-	sh:description "Specific methods that were executed to directly or indirectly support creation of the Information Entity." ;
-	sh:nodeKind sh:Literal ;
-	sh:order 10 ;
-	sh:path sepio_linkml:supporting_methods .
-_:c14n298 sh:class sepio_linkml:Extension ;
-	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:order 12 ;
-	sh:path sepio_linkml:extensions .
-_:c14n299 sh:class sepio_linkml:Extension ;
-	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:order 19 ;
-	sh:path sepio_linkml:extensions .
 _:c14n3 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
 _:c14n30 sh:datatype xsd:string ;
@@ -1260,187 +1251,196 @@ _:c14n30 sh:datatype xsd:string ;
 	sh:nodeKind sh:Literal ;
 	sh:order 4 ;
 	sh:path SEPIO:0000135 .
-_:c14n300 rdf:first rdf:type ;
+_:c14n300 sh:datatype xsd:string ;
+	sh:description "Specific methods that were executed to directly or indirectly support creation of the Information Entity." ;
+	sh:nodeKind sh:Literal ;
+	sh:order 10 ;
+	sh:path sepio_linkml:supporting_methods .
+_:c14n301 sh:class sepio_linkml:Extension ;
+	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:order 12 ;
+	sh:path sepio_linkml:extensions .
+_:c14n302 sh:class sepio_linkml:Extension ;
+	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:order 19 ;
+	sh:path sepio_linkml:extensions .
+_:c14n303 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n301 sh:datatype xsd:date ;
+_:c14n304 sh:datatype xsd:date ;
 	sh:description "The date that the Activity was completed." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 1 ;
 	sh:path SEPIO:0000160 .
-_:c14n302 sh:class SEPIO:0000158 ;
+_:c14n305 sh:class SEPIO:0000158 ;
 	sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 15 ;
 	sh:path SEPIO:0000159 .
-_:c14n303 sh:datatype xsd:string ;
+_:c14n306 sh:datatype xsd:string ;
 	sh:description "A specific type of agent the Agent object represents. Must be one of {person, organization, software}" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 0 ;
 	sh:path sepio_linkml:subtype .
-_:c14n304 rdf:first rdf:type ;
+_:c14n307 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n305 sh:datatype xsd:string ;
+_:c14n308 sh:datatype xsd:string ;
 	sh:description "The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status')." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 0 ;
 	sh:path sepio_linkml:name .
-_:c14n306 sh:datatype xsd:string ;
+_:c14n309 sh:datatype xsd:string ;
 	sh:description "The name of the class that is instantiated by a data object representing the Entity." ;
 	sh:maxCount 1 ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 4 ;
 	sh:path sepio_linkml:type .
-_:c14n307 rdf:first rdf:type ;
+_:c14n31 rdf:first SEPIO:0000188 ;
+	rdf:rest _:c14n336 .
+_:c14n310 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n308 sh:datatype xsd:string ;
+_:c14n311 sh:datatype xsd:string ;
 	sh:description "Alternative name(s) for the Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 10 ;
 	sh:path sepio_linkml:alternative_labels .
-_:c14n309 sh:class sepio_linkml:RecordMetadata ;
+_:c14n312 sh:class sepio_linkml:RecordMetadata ;
 	sh:description "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries)." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 10 ;
 	sh:path sepio_linkml:record_metadata .
-_:c14n31 rdf:first SEPIO:0000188 ;
-	rdf:rest _:c14n333 .
-_:c14n310 sh:description "An Entity or concept that is related to the subject of a Statement via its predicate." ;
+_:c14n313 sh:description "An Entity or concept that is related to the subject of a Statement via its predicate." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:order 4 ;
 	sh:path SEPIO:0000390 .
-_:c14n311 sh:datatype xsd:string ;
+_:c14n314 sh:datatype xsd:string ;
 	sh:description "A free text description of the Entity." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 23 ;
 	sh:path sepio_linkml:description .
-_:c14n312 sh:datatype xsd:string ;
+_:c14n315 sh:datatype xsd:string ;
 	sh:description "Alternative name(s) for the Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 6 ;
 	sh:path sepio_linkml:alternative_labels .
-_:c14n313 sh:class SEPIO:0000158 ;
+_:c14n316 sh:class SEPIO:0000158 ;
 	sh:description "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 5 ;
 	sh:path SEPIO:0000159 .
-_:c14n314 sh:datatype xsd:string ;
+_:c14n317 sh:datatype xsd:string ;
 	sh:description "Another data record from which the record described here was derived, through a data ingest and/or transformation process." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 2 ;
 	sh:path sepio_linkml:derived_from_record .
-_:c14n315 rdf:first sepio_linkml:supporting_methods ;
-	rdf:rest _:c14n384 .
-_:c14n316 sh:datatype xsd:string ;
+_:c14n318 rdf:first sepio_linkml:supporting_methods ;
+	rdf:rest _:c14n387 .
+_:c14n319 sh:datatype xsd:string ;
 	sh:description "Alternative name(s) for the Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 29 ;
 	sh:path sepio_linkml:alternative_labels .
-_:c14n317 sh:class SEPIO:0000000 ;
+_:c14n32 rdf:first sepio_linkml:negated ;
+	rdf:rest _:c14n389 .
+_:c14n320 sh:class SEPIO:0000000 ;
 	sh:description "A possible fact that the Statement assesses or puts forth as true." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 1 ;
 	sh:path SEPIO:0000030 .
-_:c14n318 sh:class sepio_linkml:Qualifier ;
+_:c14n321 sh:class sepio_linkml:Qualifier ;
 	sh:description "An additional piece of information that extends or refines the meaning of a Propositions's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 4 ;
 	sh:path SEPIO:0000144 .
-_:c14n319 sh:datatype xsd:string ;
+_:c14n322 sh:datatype xsd:string ;
 	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 7 ;
 	sh:path sepio_linkml:identifiers .
-_:c14n32 rdf:first sepio_linkml:negated ;
-	rdf:rest _:c14n386 .
-_:c14n320 sh:datatype xsd:string ;
+_:c14n323 sh:datatype xsd:string ;
 	sh:description "The human-readable name for the coded concept, as defined by the code system." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 1 ;
 	sh:path sepio_linkml:label .
-_:c14n321 sh:datatype xsd:string ;
+_:c14n324 sh:datatype xsd:string ;
 	sh:description "Alternative name(s) for the Entity." ;
 	sh:nodeKind sh:Literal ;
 	sh:order 15 ;
 	sh:path sepio_linkml:alternative_labels .
-_:c14n322 sh:datatype xsd:boolean ;
+_:c14n325 sh:datatype xsd:boolean ;
 	sh:description "A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate, object, and qualifier(s) (e.g. that \"Variant X is NOT pathogenic for Disease Y\")" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 5 ;
 	sh:path sepio_linkml:negated .
-_:c14n323 sh:datatype xsd:string ;
+_:c14n326 sh:datatype xsd:string ;
 	sh:description "Indicates when the information content expressed in the Information Entity was generated." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 8 ;
 	sh:path SEPIO:0000135 .
-_:c14n324 sh:class sepio_linkml:StudyGroup ;
+_:c14n327 sh:class sepio_linkml:StudyGroup ;
 	sh:description "A larger StudyGroup of which this StudyGroup represents a subset." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 1 ;
 	sh:path sepio_linkml:is_subset_of .
-_:c14n325 rdf:first rdf:type ;
+_:c14n328 rdf:first rdf:type ;
 	rdf:rest rdf:nil .
-_:c14n326 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
+_:c14n329 sh:description "A specification that describes all or part of the process that led to creation of the Information Entity." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 10 ;
 	sh:path SEPIO:0000041 .
-_:c14n327 sh:class sepio_linkml:Extension ;
-	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:order 21 ;
-	sh:path sepio_linkml:extensions .
-_:c14n328 sh:datatype xsd:string ;
-	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
-	sh:nodeKind sh:Literal ;
-	sh:order 4 ;
-	sh:path sepio_linkml:identifiers .
-_:c14n329 sh:datatype xsd:string ;
-	sh:description "A descriptive name that describes the type of information captured in the Qualifier value." ;
-	sh:maxCount 1 ;
-	sh:minCount 1 ;
-	sh:nodeKind sh:Literal ;
-	sh:order 0 ;
-	sh:path sepio_linkml:name .
 _:c14n33 sh:datatype xsd:string ;
 	sh:description "An operation that defines how to logically interpret a set of more than one Characteristic values ('AND', 'OR', 'NOT')." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 2 ;
 	sh:path sepio_linkml:value_operator .
-_:c14n330 sh:class sepio_linkml:Coding ;
+_:c14n330 sh:class sepio_linkml:Extension ;
+	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:order 21 ;
+	sh:path sepio_linkml:extensions .
+_:c14n331 sh:datatype xsd:string ;
+	sh:description "A globally-unique 'business' identifier or accession number for the real-world entity represented by a data object. These are typically assigned by an external system or authority, and used to connect entities and share content across different systems." ;
+	sh:nodeKind sh:Literal ;
+	sh:order 4 ;
+	sh:path sepio_linkml:identifiers .
+_:c14n332 sh:datatype xsd:string ;
+	sh:description "A descriptive name that describes the type of information captured in the Qualifier value." ;
+	sh:maxCount 1 ;
+	sh:minCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 0 ;
+	sh:path sepio_linkml:name .
+_:c14n333 sh:class sepio_linkml:Coding ;
 	sh:description "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 0 ;
 	sh:path sepio_linkml:subtype .
-_:c14n331 rdf:first SEPIO:0000398 ;
-	rdf:rest _:c14n170 .
-_:c14n332 rdf:first SEPIO:0000197 ;
-	rdf:rest _:c14n331 .
-_:c14n333 rdf:first SEPIO:0000189 ;
-	rdf:rest _:c14n332 .
 _:c14n334 rdf:first SEPIO:0000398 ;
+	rdf:rest _:c14n172 .
+_:c14n335 rdf:first SEPIO:0000197 ;
+	rdf:rest _:c14n334 .
+_:c14n336 rdf:first SEPIO:0000189 ;
 	rdf:rest _:c14n335 .
-_:c14n335 rdf:first SEPIO:0000427 ;
-	rdf:rest _:c14n336 .
-_:c14n336 rdf:first SEPIO:0000429 ;
-	rdf:rest _:c14n337 .
-_:c14n337 rdf:first rdf:type ;
+_:c14n337 rdf:first SEPIO:0000398 ;
 	rdf:rest _:c14n338 .
-_:c14n338 rdf:first sepio_linkml:component_data_item ;
+_:c14n338 rdf:first SEPIO:0000427 ;
 	rdf:rest _:c14n339 .
-_:c14n339 rdf:first sepio_linkml:component_result ;
+_:c14n339 rdf:first SEPIO:0000429 ;
 	rdf:rest _:c14n340 .
 _:c14n34 sh:datatype xsd:string ;
 	sh:description "A primary name for the Entity." ;
@@ -1448,25 +1448,25 @@ _:c14n34 sh:datatype xsd:string ;
 	sh:nodeKind sh:Literal ;
 	sh:order 14 ;
 	sh:path sepio_linkml:label .
-_:c14n340 rdf:first sepio_linkml:confidence_interval ;
+_:c14n340 rdf:first rdf:type ;
 	rdf:rest _:c14n341 .
-_:c14n341 rdf:first sepio_linkml:data_items ;
+_:c14n341 rdf:first sepio_linkml:component_data_item ;
 	rdf:rest _:c14n342 .
-_:c14n342 rdf:first sepio_linkml:direction ;
+_:c14n342 rdf:first sepio_linkml:component_result ;
 	rdf:rest _:c14n343 .
-_:c14n343 rdf:first sepio_linkml:doi ;
+_:c14n343 rdf:first sepio_linkml:confidence_interval ;
 	rdf:rest _:c14n344 .
-_:c14n344 rdf:first sepio_linkml:focus ;
+_:c14n344 rdf:first sepio_linkml:data_items ;
 	rdf:rest _:c14n345 .
-_:c14n345 rdf:first sepio_linkml:interpretation ;
+_:c14n345 rdf:first sepio_linkml:direction ;
 	rdf:rest _:c14n346 .
-_:c14n346 rdf:first sepio_linkml:license ;
+_:c14n346 rdf:first sepio_linkml:doi ;
 	rdf:rest _:c14n347 .
-_:c14n347 rdf:first sepio_linkml:object ;
+_:c14n347 rdf:first sepio_linkml:focus ;
 	rdf:rest _:c14n348 .
-_:c14n348 rdf:first sepio_linkml:pmid ;
+_:c14n348 rdf:first sepio_linkml:interpretation ;
 	rdf:rest _:c14n349 .
-_:c14n349 rdf:first sepio_linkml:predicate ;
+_:c14n349 rdf:first sepio_linkml:license ;
 	rdf:rest _:c14n350 .
 _:c14n35 sh:datatype xsd:string ;
 	sh:description "A free text description of the Entity." ;
@@ -1474,25 +1474,25 @@ _:c14n35 sh:datatype xsd:string ;
 	sh:nodeKind sh:Literal ;
 	sh:order 30 ;
 	sh:path sepio_linkml:description .
-_:c14n350 rdf:first sepio_linkml:qualifier ;
+_:c14n350 rdf:first sepio_linkml:object ;
 	rdf:rest _:c14n351 .
-_:c14n351 rdf:first sepio_linkml:release_date ;
+_:c14n351 rdf:first sepio_linkml:pmid ;
 	rdf:rest _:c14n352 .
-_:c14n352 rdf:first sepio_linkml:score ;
+_:c14n352 rdf:first sepio_linkml:predicate ;
 	rdf:rest _:c14n353 .
-_:c14n353 rdf:first sepio_linkml:source_data_set ;
+_:c14n353 rdf:first sepio_linkml:qualifier ;
 	rdf:rest _:c14n354 .
-_:c14n354 rdf:first sepio_linkml:statement_text ;
+_:c14n354 rdf:first sepio_linkml:release_date ;
 	rdf:rest _:c14n355 .
-_:c14n355 rdf:first sepio_linkml:strength ;
+_:c14n355 rdf:first sepio_linkml:score ;
 	rdf:rest _:c14n356 .
-_:c14n356 rdf:first sepio_linkml:study_group ;
+_:c14n356 rdf:first sepio_linkml:source_data_set ;
 	rdf:rest _:c14n357 .
-_:c14n357 rdf:first sepio_linkml:subject ;
+_:c14n357 rdf:first sepio_linkml:statement_text ;
 	rdf:rest _:c14n358 .
-_:c14n358 rdf:first sepio_linkml:subtype ;
+_:c14n358 rdf:first sepio_linkml:strength ;
 	rdf:rest _:c14n359 .
-_:c14n359 rdf:first sepio_linkml:title ;
+_:c14n359 rdf:first sepio_linkml:study_group ;
 	rdf:rest _:c14n360 .
 _:c14n36 sh:datatype xsd:string ;
 	sh:description "A primary name for the Entity." ;
@@ -1500,25 +1500,25 @@ _:c14n36 sh:datatype xsd:string ;
 	sh:nodeKind sh:Literal ;
 	sh:order 28 ;
 	sh:path sepio_linkml:label .
-_:c14n360 rdf:first sepio_linkml:unit ;
+_:c14n360 rdf:first sepio_linkml:subject ;
 	rdf:rest _:c14n361 .
-_:c14n361 rdf:first sepio_linkml:urls ;
+_:c14n361 rdf:first sepio_linkml:subtype ;
 	rdf:rest _:c14n362 .
-_:c14n362 rdf:first sepio_linkml:value ;
+_:c14n362 rdf:first sepio_linkml:title ;
 	rdf:rest _:c14n363 .
-_:c14n363 rdf:first sepio_linkml:variability_measures ;
+_:c14n363 rdf:first sepio_linkml:unit ;
 	rdf:rest _:c14n364 .
-_:c14n364 rdf:first sepio_linkml:version ;
-	rdf:rest rdf:nil .
-_:c14n365 rdf:first SEPIO:0000197 ;
-	rdf:rest _:c14n334 .
-_:c14n366 rdf:first SEPIO:0000189 ;
+_:c14n364 rdf:first sepio_linkml:urls ;
 	rdf:rest _:c14n365 .
-_:c14n367 rdf:first SEPIO:0000183 ;
+_:c14n365 rdf:first sepio_linkml:value ;
 	rdf:rest _:c14n366 .
-_:c14n368 rdf:first SEPIO:0000145 ;
+_:c14n366 rdf:first sepio_linkml:variability_measures ;
 	rdf:rest _:c14n367 .
-_:c14n369 rdf:first SEPIO:0000132 ;
+_:c14n367 rdf:first sepio_linkml:version ;
+	rdf:rest rdf:nil .
+_:c14n368 rdf:first SEPIO:0000197 ;
+	rdf:rest _:c14n337 .
+_:c14n369 rdf:first SEPIO:0000189 ;
 	rdf:rest _:c14n368 .
 _:c14n37 sh:class sepio_linkml:Coding ;
 	sh:description "The relationship declared to hold between the subject and the object of the Proposition." ;
@@ -1527,125 +1527,131 @@ _:c14n37 sh:class sepio_linkml:Coding ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 2 ;
 	sh:path SEPIO:0000389 .
-_:c14n370 rdf:first SEPIO:0000124 ;
+_:c14n370 rdf:first SEPIO:0000183 ;
 	rdf:rest _:c14n369 .
-_:c14n371 rdf:first SEPIO:0000084 ;
+_:c14n371 rdf:first SEPIO:0000145 ;
 	rdf:rest _:c14n370 .
-_:c14n372 rdf:first SEPIO:0000030 ;
+_:c14n372 rdf:first SEPIO:0000132 ;
 	rdf:rest _:c14n371 .
-_:c14n373 rdf:first sepio_linkml:component_data_item ;
+_:c14n373 rdf:first SEPIO:0000124 ;
+	rdf:rest _:c14n372 .
+_:c14n374 rdf:first SEPIO:0000084 ;
+	rdf:rest _:c14n373 .
+_:c14n375 rdf:first SEPIO:0000030 ;
 	rdf:rest _:c14n374 .
-_:c14n374 rdf:first sepio_linkml:component_result ;
-	rdf:rest _:c14n375 .
-_:c14n375 rdf:first sepio_linkml:confidence_interval ;
-	rdf:rest _:c14n376 .
-_:c14n376 rdf:first sepio_linkml:contributions ;
-	rdf:rest _:c14n46 .
-_:c14n377 rdf:first sepio_linkml:release_date ;
+_:c14n376 rdf:first sepio_linkml:component_data_item ;
+	rdf:rest _:c14n377 .
+_:c14n377 rdf:first sepio_linkml:component_result ;
 	rdf:rest _:c14n378 .
-_:c14n378 rdf:first sepio_linkml:score ;
+_:c14n378 rdf:first sepio_linkml:confidence_interval ;
 	rdf:rest _:c14n379 .
-_:c14n379 rdf:first sepio_linkml:source_data_set ;
-	rdf:rest _:c14n14 .
+_:c14n379 rdf:first sepio_linkml:contributions ;
+	rdf:rest _:c14n46 .
 _:c14n38 sh:description "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence')." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 10 ;
 	sh:path SEPIO:0000398 .
-_:c14n380 rdf:first sepio_linkml:variability_measures ;
-	rdf:rest _:c14n385 .
-_:c14n381 rdf:first sepio_linkml:value ;
-	rdf:rest _:c14n380 .
-_:c14n382 rdf:first sepio_linkml:urls ;
+_:c14n380 rdf:first sepio_linkml:release_date ;
 	rdf:rest _:c14n381 .
-_:c14n383 rdf:first sepio_linkml:unit ;
+_:c14n381 rdf:first sepio_linkml:score ;
 	rdf:rest _:c14n382 .
-_:c14n384 rdf:first sepio_linkml:title ;
-	rdf:rest _:c14n383 .
-_:c14n385 rdf:first sepio_linkml:version ;
-	rdf:rest rdf:nil .
-_:c14n386 rdf:first sepio_linkml:object ;
-	rdf:rest _:c14n387 .
-_:c14n387 rdf:first sepio_linkml:pmid ;
+_:c14n382 rdf:first sepio_linkml:source_data_set ;
+	rdf:rest _:c14n14 .
+_:c14n383 rdf:first sepio_linkml:variability_measures ;
 	rdf:rest _:c14n388 .
-_:c14n388 rdf:first sepio_linkml:predicate ;
-	rdf:rest _:c14n192 .
-_:c14n389 rdf:first sepio_linkml:value ;
-	rdf:rest _:c14n57 .
+_:c14n384 rdf:first sepio_linkml:value ;
+	rdf:rest _:c14n383 .
+_:c14n385 rdf:first sepio_linkml:urls ;
+	rdf:rest _:c14n384 .
+_:c14n386 rdf:first sepio_linkml:unit ;
+	rdf:rest _:c14n385 .
+_:c14n387 rdf:first sepio_linkml:title ;
+	rdf:rest _:c14n386 .
+_:c14n388 rdf:first sepio_linkml:version ;
+	rdf:rest rdf:nil .
+_:c14n389 rdf:first sepio_linkml:object ;
+	rdf:rest _:c14n390 .
 _:c14n39 sh:datatype xsd:string ;
 	sh:description "The official title given to the document by its authors." ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:Literal ;
 	sh:order 1 ;
 	sh:path sepio_linkml:title .
-_:c14n390 rdf:first sepio_linkml:name ;
-	rdf:rest _:c14n271 .
-_:c14n391 rdf:first sepio_linkml:name ;
+_:c14n390 rdf:first sepio_linkml:pmid ;
+	rdf:rest _:c14n391 .
+_:c14n391 rdf:first sepio_linkml:predicate ;
+	rdf:rest _:c14n194 .
+_:c14n392 rdf:first sepio_linkml:value ;
+	rdf:rest _:c14n57 .
+_:c14n393 rdf:first sepio_linkml:name ;
 	rdf:rest _:c14n32 .
-_:c14n392 rdf:first SEPIO:0000429 ;
-	rdf:rest _:c14n393 .
-_:c14n393 rdf:first rdf:type ;
-	rdf:rest _:c14n394 .
-_:c14n394 rdf:first sepio_linkml:activity_type ;
-	rdf:rest _:c14n82 .
-_:c14n395 rdf:first SEPIO:0000427 ;
-	rdf:rest _:c14n392 .
-_:c14n396 rdf:first sepio_linkml:contributions ;
-	rdf:rest _:c14n132 .
-_:c14n397 rdf:first sepio_linkml:subtype ;
-	rdf:rest _:c14n153 .
-_:c14n398 rdf:first sepio_linkml:subject ;
+_:c14n394 rdf:first sepio_linkml:name ;
+	rdf:rest _:c14n275 .
+_:c14n395 rdf:first SEPIO:0000429 ;
+	rdf:rest _:c14n396 .
+_:c14n396 rdf:first rdf:type ;
 	rdf:rest _:c14n397 .
-_:c14n399 rdf:first sepio_linkml:study_group ;
-	rdf:rest _:c14n398 .
+_:c14n397 rdf:first sepio_linkml:activity_type ;
+	rdf:rest _:c14n82 .
+_:c14n398 rdf:first SEPIO:0000427 ;
+	rdf:rest _:c14n395 .
+_:c14n399 rdf:first sepio_linkml:contributions ;
+	rdf:rest _:c14n132 .
 _:c14n4 rdf:first sepio_linkml:label ;
-	rdf:rest _:c14n390 .
+	rdf:rest _:c14n394 .
 _:c14n40 rdf:first sepio_linkml:values ;
 	rdf:rest rdf:nil .
-_:c14n400 rdf:first sepio_linkml:strength ;
-	rdf:rest _:c14n399 .
-_:c14n401 rdf:first sepio_linkml:statement_text ;
+_:c14n400 rdf:first sepio_linkml:subtype ;
+	rdf:rest _:c14n154 .
+_:c14n401 rdf:first sepio_linkml:subject ;
 	rdf:rest _:c14n400 .
-_:c14n402 rdf:first sepio_linkml:qualifier ;
-	rdf:rest _:c14n276 .
-_:c14n403 rdf:first SEPIO:0000145 ;
+_:c14n402 rdf:first sepio_linkml:study_group ;
+	rdf:rest _:c14n401 .
+_:c14n403 rdf:first sepio_linkml:strength ;
+	rdf:rest _:c14n402 .
+_:c14n404 rdf:first sepio_linkml:statement_text ;
+	rdf:rest _:c14n403 .
+_:c14n405 rdf:first sepio_linkml:qualifier ;
+	rdf:rest _:c14n280 .
+_:c14n406 rdf:first SEPIO:0000145 ;
 	rdf:rest _:c14n23 .
-_:c14n404 rdf:first sepio_linkml:activity_type ;
-	rdf:rest _:c14n178 .
-_:c14n405 rdf:first rdf:type ;
-	rdf:rest _:c14n404 .
-_:c14n406 rdf:first SEPIO:0000084 ;
+_:c14n407 rdf:first sepio_linkml:activity_type ;
+	rdf:rest _:c14n180 .
+_:c14n408 rdf:first rdf:type ;
+	rdf:rest _:c14n407 .
+_:c14n409 rdf:first SEPIO:0000084 ;
 	rdf:rest _:c14n123 .
-_:c14n407 rdf:first SEPIO:0000030 ;
-	rdf:rest _:c14n406 .
-_:c14n408 rdf:first sepio_linkml:direction ;
-	rdf:rest _:c14n409 .
-_:c14n409 rdf:first sepio_linkml:doi ;
-	rdf:rest _:c14n410 .
 _:c14n41 sh:description "A document in which the Information Entity is reported." ;
 	sh:nodeKind sh:IRI ;
 	sh:order 9 ;
 	sh:path SEPIO:0000108 .
-_:c14n410 rdf:first sepio_linkml:focus ;
-	rdf:rest _:c14n411 .
-_:c14n411 rdf:first sepio_linkml:interpretation ;
-	rdf:rest _:c14n226 .
-_:c14n412 rdf:first SEPIO:0000132 ;
-	rdf:rest _:c14n134 .
-_:c14n413 rdf:first SEPIO:0000124 ;
+_:c14n410 rdf:first SEPIO:0000030 ;
+	rdf:rest _:c14n409 .
+_:c14n411 rdf:first sepio_linkml:direction ;
 	rdf:rest _:c14n412 .
-_:c14n414 rdf:first sepio_linkml:data_items ;
-	rdf:rest _:c14n210 .
-_:c14n415 rdf:first sepio_linkml:license ;
-	rdf:rest _:c14n275 .
-_:c14n416 rdf:first SEPIO:0000183 ;
+_:c14n412 rdf:first sepio_linkml:doi ;
+	rdf:rest _:c14n413 .
+_:c14n413 rdf:first sepio_linkml:focus ;
+	rdf:rest _:c14n414 .
+_:c14n414 rdf:first sepio_linkml:interpretation ;
+	rdf:rest _:c14n228 .
+_:c14n415 rdf:first SEPIO:0000132 ;
+	rdf:rest _:c14n134 .
+_:c14n416 rdf:first SEPIO:0000124 ;
+	rdf:rest _:c14n415 .
+_:c14n417 rdf:first sepio_linkml:data_items ;
+	rdf:rest _:c14n212 .
+_:c14n418 rdf:first sepio_linkml:license ;
+	rdf:rest _:c14n279 .
+_:c14n419 rdf:first SEPIO:0000183 ;
 	rdf:rest _:c14n31 .
-_:c14n417 rdf:first rdf:type ;
-	rdf:rest _:c14n27 .
 _:c14n42 sh:class sepio_linkml:Extension ;
 	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:order 17 ;
 	sh:path sepio_linkml:extensions .
+_:c14n420 rdf:first rdf:type ;
+	rdf:rest _:c14n27 .
 _:c14n43 sh:class sepio_linkml:Extension ;
 	sh:description "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model." ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
@@ -1660,7 +1666,7 @@ _:c14n45 sh:description "A specification that describes all or part of the proce
 	sh:order 9 ;
 	sh:path SEPIO:0000041 .
 _:c14n46 rdf:first sepio_linkml:contributor ;
-	rdf:rest _:c14n414 .
+	rdf:rest _:c14n417 .
 _:c14n47 sh:datatype xsd:string ;
 	sh:description "A specific subject or experimental unit in a Study, that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD." ;
 	sh:maxCount 1 ;
@@ -1865,7 +1871,7 @@ _:c14n81 sh:class IAO:0000030 ;
 	sh:order 2 ;
 	sh:path SEPIO:0000188 .
 _:c14n82 rdf:first sepio_linkml:characteristics ;
-	rdf:rest _:c14n373 .
+	rdf:rest _:c14n376 .
 _:c14n83 sh:datatype xsd:string ;
 	sh:description "The specific value(s) that the indicated traitor role  holds in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer')." ;
 	sh:minCount 1 ;

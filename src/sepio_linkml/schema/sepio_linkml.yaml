@@ -11,10 +11,10 @@ see_also:
 prefixes:
   sepio_linkml: https://w3id.org/sepio-framework/sepio-linkml/
   linkml: https://w3id.org/linkml/
-  biolink: https://w3id.org/biolink/vocab/
+  biolink: https://w3id.org/biolink/
   schema: http://schema.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
-  example: http://www.example.org/rdf#
+  example: https://example.org/
   SEPIO: http://purl.obolibrary.org/obo/SEPIO_
   IAO: http://purl.obolibrary.org/obo/IAO_
   RO: http://purl.obolibrary.org/obo/RO_

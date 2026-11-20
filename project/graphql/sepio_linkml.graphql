@@ -1,4 +1,11 @@
 # metamodel_version: 1.12.0
+enum EvidenceDirection
+  {
+    supports
+    disputes
+    neutral
+  }
+
 type Activity
   {
     id: String!
@@ -180,7 +187,7 @@ type EvidenceLine
     subtype: Coding
     targetProposition: Proposition
     hasEvidenceItems: [InformationEntity]
-    directionOfEvidenceProvided: String
+    directionOfEvidenceProvided: EvidenceDirection
     strengthOfEvidenceProvided: String
     scoreOfEvidenceProvided: Float
     evidenceItemSources: [String]

@@ -22,7 +22,7 @@
     },
     {
       "prefix_prefix": "biolink",
-      "prefix_reference": "https://w3id.org/biolink/vocab/"
+      "prefix_reference": "https://w3id.org/biolink/"
     },
     {
       "prefix_prefix": "schema",
@@ -34,7 +34,7 @@
     },
     {
       "prefix_prefix": "example",
-      "prefix_reference": "http://www.example.org/rdf#"
+      "prefix_reference": "https://example.org/"
     },
     {
       "prefix_prefix": "SEPIO",
@@ -369,6 +369,32 @@
       "@type": "TypeDefinition"
     }
   ],
+  "enums": [
+    {
+      "name": "EvidenceDirection",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/EvidenceDirection",
+      "description": "The direction of support an Evidence Line provides toward its target Proposition.",
+      "from_schema": "https://w3id.org/sepio-model",
+      "enum_uri": "SEPIO:0000402",
+      "permissible_values": [
+        {
+          "text": "supports",
+          "description": "The Evidence Line provides an argument that supports the target Proposition.",
+          "meaning": "SEPIO:0000403"
+        },
+        {
+          "text": "disputes",
+          "description": "The Evidence Line provides an argument that disputes the target Proposition.",
+          "meaning": "SEPIO:0000404"
+        },
+        {
+          "text": "neutral",
+          "description": "The Evidence Line lacks sufficient credibility, relevance, or completeness to argue for or against the target Proposition.",
+          "meaning": "SEPIO:0000405"
+        }
+      ]
+    }
+  ],
   "slots": [
     {
       "name": "entity__id",
@@ -492,7 +518,8 @@
       "name": "informationEntity__is_about",
       "description": "An entity or concept in the world that the information entity describes/is about.",
       "comments": [
-        "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about the variant 'BRCA2 c.8023A>G', and the disease 'Breast Cancer'."
+        "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about identifiers for the variant 'BRCA2 c.8023A>G' and the disease 'Breast Cancer' (MONDO:0007254).",
+        "Values are URIs or CURIEs, not free-text labels."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "mappings": [
@@ -1731,7 +1758,7 @@
       "domain_of": [
         "EvidenceLine"
       ],
-      "range": "uriorcurie",
+      "range": "EvidenceDirection",
       "@type": "SlotDefinition"
     },
     {
@@ -2406,7 +2433,8 @@
           "name": "is_about",
           "description": "An entity or concept in the world that the information entity describes/is about.",
           "comments": [
-            "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about the variant 'BRCA2 c.8023A>G', and the disease 'Breast Cancer'."
+            "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about identifiers for the variant 'BRCA2 c.8023A>G' and the disease 'Breast Cancer' (MONDO:0007254).",
+            "Values are URIs or CURIEs, not free-text labels."
           ],
           "status": "Informative",
           "slot_uri": "IAO:0000136",
@@ -3535,7 +3563,7 @@
           "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral).",
           "status": "Draft",
           "slot_uri": "SEPIO:0000183",
-          "range": "uriorcurie",
+          "range": "EvidenceDirection",
           "@type": "SlotDefinition"
         },
         {
@@ -4040,8 +4068,8 @@
   ],
   "metamodel_version": "1.12.0",
   "source_file": "sepio_linkml.yaml",
-  "source_file_date": "2026-11-17T17:44:31",
-  "source_file_size": 823,
+  "source_file_date": "2026-11-20T13:30:03",
+  "source_file_size": 810,
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/sepio_linkml.context.jsonld",

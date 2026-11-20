@@ -82,9 +82,9 @@ linkml_meta = LinkMLMeta({'default_prefix': 'sepio_linkml',
                   'SEPIO': {'prefix_prefix': 'SEPIO',
                             'prefix_reference': 'http://purl.obolibrary.org/obo/SEPIO_'},
                   'biolink': {'prefix_prefix': 'biolink',
-                              'prefix_reference': 'https://w3id.org/biolink/vocab/'},
+                              'prefix_reference': 'https://w3id.org/biolink/'},
                   'example': {'prefix_prefix': 'example',
-                              'prefix_reference': 'http://www.example.org/rdf#'},
+                              'prefix_reference': 'https://example.org/'},
                   'linkml': {'prefix_prefix': 'linkml',
                              'prefix_reference': 'https://w3id.org/linkml/'},
                   'pav': {'prefix_prefix': 'pav',
@@ -98,6 +98,24 @@ linkml_meta = LinkMLMeta({'default_prefix': 'sepio_linkml',
      'see_also': ['https://sepio-framework.github.io/sepio-linkml'],
      'source_file': 'src/sepio_linkml/schema/sepio_linkml.yaml',
      'title': 'sepio-linkml'} )
+
+class EvidenceDirection(str, Enum):
+    """
+    The direction of support an Evidence Line provides toward its target Proposition.
+    """
+    supports = "supports"
+    """
+    The Evidence Line provides an argument that supports the target Proposition.
+    """
+    disputes = "disputes"
+    """
+    The Evidence Line provides an argument that disputes the target Proposition.
+    """
+    neutral = "neutral"
+    """
+    The Evidence Line lacks sufficient credibility, relevance, or completeness to argue for or against the target Proposition.
+    """
+
 
 
 class Entity(ConfiguredBaseModel):
@@ -168,8 +186,9 @@ class InformationEntity(Entity):
                       'asserts to be true using subject, predicate, object, and '
                       'qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G '
                       'is pathogenic for Breast Cancer" might be annotated to be about '
-                      "the variant 'BRCA2 c.8023A>G', and the disease 'Breast "
-                      "Cancer'."],
+                      "identifiers for the variant 'BRCA2 c.8023A>G' and the disease "
+                      "'Breast Cancer' (MONDO:0007254).",
+                      'Values are URIs or CURIEs, not free-text labels.'],
          'domain_of': ['InformationEntity'],
          'slot_uri': 'IAO:0000136',
          'status': 'Informative'} })
@@ -342,8 +361,9 @@ class Method(InformationEntity):
                       'asserts to be true using subject, predicate, object, and '
                       'qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G '
                       'is pathogenic for Breast Cancer" might be annotated to be about '
-                      "the variant 'BRCA2 c.8023A>G', and the disease 'Breast "
-                      "Cancer'."],
+                      "identifiers for the variant 'BRCA2 c.8023A>G' and the disease "
+                      "'Breast Cancer' (MONDO:0007254).",
+                      'Values are URIs or CURIEs, not free-text labels.'],
          'domain_of': ['InformationEntity'],
          'slot_uri': 'IAO:0000136',
          'status': 'Informative'} })
@@ -528,8 +548,9 @@ class Document(InformationEntity):
                       'asserts to be true using subject, predicate, object, and '
                       'qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G '
                       'is pathogenic for Breast Cancer" might be annotated to be about '
-                      "the variant 'BRCA2 c.8023A>G', and the disease 'Breast "
-                      "Cancer'."],
+                      "identifiers for the variant 'BRCA2 c.8023A>G' and the disease "
+                      "'Breast Cancer' (MONDO:0007254).",
+                      'Values are URIs or CURIEs, not free-text labels.'],
          'domain_of': ['InformationEntity'],
          'slot_uri': 'IAO:0000136',
          'status': 'Informative'} })
@@ -736,8 +757,9 @@ class DataItem(InformationEntity):
                       'asserts to be true using subject, predicate, object, and '
                       'qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G '
                       'is pathogenic for Breast Cancer" might be annotated to be about '
-                      "the variant 'BRCA2 c.8023A>G', and the disease 'Breast "
-                      "Cancer'."],
+                      "identifiers for the variant 'BRCA2 c.8023A>G' and the disease "
+                      "'Breast Cancer' (MONDO:0007254).",
+                      'Values are URIs or CURIEs, not free-text labels.'],
          'domain_of': ['InformationEntity'],
          'slot_uri': 'IAO:0000136',
          'status': 'Informative'} })
@@ -936,8 +958,9 @@ class DataSet(InformationEntity):
                       'asserts to be true using subject, predicate, object, and '
                       'qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G '
                       'is pathogenic for Breast Cancer" might be annotated to be about '
-                      "the variant 'BRCA2 c.8023A>G', and the disease 'Breast "
-                      "Cancer'."],
+                      "identifiers for the variant 'BRCA2 c.8023A>G' and the disease "
+                      "'Breast Cancer' (MONDO:0007254).",
+                      'Values are URIs or CURIEs, not free-text labels.'],
          'domain_of': ['InformationEntity'],
          'slot_uri': 'IAO:0000136',
          'status': 'Informative'} })
@@ -1569,8 +1592,9 @@ class Statement(InformationEntity):
                       'asserts to be true using subject, predicate, object, and '
                       'qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G '
                       'is pathogenic for Breast Cancer" might be annotated to be about '
-                      "the variant 'BRCA2 c.8023A>G', and the disease 'Breast "
-                      "Cancer'."],
+                      "identifiers for the variant 'BRCA2 c.8023A>G' and the disease "
+                      "'Breast Cancer' (MONDO:0007254).",
+                      'Values are URIs or CURIEs, not free-text labels.'],
          'domain_of': ['InformationEntity'],
          'slot_uri': 'IAO:0000136',
          'status': 'Informative'} })
@@ -1814,8 +1838,9 @@ class StudyResult(InformationEntity):
                       'asserts to be true using subject, predicate, object, and '
                       'qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G '
                       'is pathogenic for Breast Cancer" might be annotated to be about '
-                      "the variant 'BRCA2 c.8023A>G', and the disease 'Breast "
-                      "Cancer'."],
+                      "identifiers for the variant 'BRCA2 c.8023A>G' and the disease "
+                      "'Breast Cancer' (MONDO:0007254).",
+                      'Values are URIs or CURIEs, not free-text labels.'],
          'domain_of': ['InformationEntity'],
          'slot_uri': 'IAO:0000136',
          'status': 'Informative'} })
@@ -2056,7 +2081,7 @@ class EvidenceLine(InformationEntity):
          'domain_of': ['EvidenceLine'],
          'slot_uri': 'SEPIO:0000084',
          'status': 'Draft'} })
-    direction_of_evidence_provided: Optional[str] = Field(default=None, description="""The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral).""", json_schema_extra = { "linkml_meta": {'domain_of': ['EvidenceLine'], 'slot_uri': 'SEPIO:0000183', 'status': 'Draft'} })
+    direction_of_evidence_provided: Optional[EvidenceDirection] = Field(default=None, description="""The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral).""", json_schema_extra = { "linkml_meta": {'domain_of': ['EvidenceLine'], 'slot_uri': 'SEPIO:0000183', 'status': 'Draft'} })
     strength_of_evidence_provided: Optional[str] = Field(default=None, description="""The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided.""", json_schema_extra = { "linkml_meta": {'comments': ['Values of this attribute can be defined by for a given profile '
                       'based on domain/application needs, but should be framed in '
                       "qualitative terms (e.g. 'strong', 'moderate', 'weak'). The "
@@ -2085,8 +2110,9 @@ class EvidenceLine(InformationEntity):
                       'asserts to be true using subject, predicate, object, and '
                       'qualifier properties. e.g. the Statement that "BRCA2 c.8023A>G '
                       'is pathogenic for Breast Cancer" might be annotated to be about '
-                      "the variant 'BRCA2 c.8023A>G', and the disease 'Breast "
-                      "Cancer'."],
+                      "identifiers for the variant 'BRCA2 c.8023A>G' and the disease "
+                      "'Breast Cancer' (MONDO:0007254).",
+                      'Values are URIs or CURIEs, not free-text labels.'],
          'domain_of': ['InformationEntity'],
          'slot_uri': 'IAO:0000136',
          'status': 'Informative'} })

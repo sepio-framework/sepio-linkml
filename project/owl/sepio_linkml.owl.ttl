@@ -9,11 +9,12 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
 @prefix pav: <http://purl.org/pav/> .
 <http://purl.obolibrary.org/obo/BFO_0000001> dcterms:title "Entity" ;
 	a owl:Class ;
 	rdfs:label "Entity" ;
-	rdfs:subClassOf _:c14n10 , _:c14n110 , _:c14n118 , _:c14n155 , _:c14n186 , _:c14n230 , _:c14n236 , _:c14n238 , _:c14n251 , _:c14n268 , _:c14n270 , _:c14n271 , _:c14n37 , _:c14n41 , _:c14n82 , _:c14n90 , _:c14n97 , _:c14n99 ;
+	rdfs:subClassOf _:c14n10 , _:c14n100 , _:c14n110 , _:c14n118 , _:c14n156 , _:c14n187 , _:c14n232 , _:c14n238 , _:c14n240 , _:c14n254 , _:c14n271 , _:c14n273 , _:c14n274 , _:c14n37 , _:c14n42 , _:c14n83 , _:c14n91 , _:c14n98 ;
 	skos:definition "Anything that exists, has existed, or will exist." ;
 	skos:exactMatch sepio_linkml:Entity ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -21,7 +22,7 @@
 IAO:0000027 dcterms:title "Data Item" ;
 	a owl:Class ;
 	rdfs:label "DataItem" ;
-	rdfs:subClassOf IAO:0000030 , _:c14n103 , _:c14n12 , _:c14n125 , _:c14n145 , _:c14n149 , _:c14n193 , _:c14n203 , _:c14n208 , _:c14n211 , _:c14n212 , _:c14n215 , _:c14n259 , _:c14n30 , _:c14n7 , _:c14n88 , _:c14n89 ;
+	rdfs:subClassOf IAO:0000030 , _:c14n104 , _:c14n12 , _:c14n126 , _:c14n146 , _:c14n150 , _:c14n194 , _:c14n204 , _:c14n209 , _:c14n212 , _:c14n213 , _:c14n216 , _:c14n262 , _:c14n30 , _:c14n7 , _:c14n89 , _:c14n90 ;
 	skos:definition "An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something." ;
 	skos:exactMatch sepio_linkml:DataItem ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -29,7 +30,7 @@ IAO:0000027 dcterms:title "Data Item" ;
 IAO:0000030 dcterms:title "Information Entity" ;
 	a owl:Class ;
 	rdfs:label "InformationEntity" ;
-	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n117 , _:c14n124 , _:c14n127 , _:c14n129 , _:c14n138 , _:c14n139 , _:c14n151 , _:c14n192 , _:c14n217 , _:c14n239 , _:c14n247 , _:c14n249 , _:c14n262 , _:c14n265 , _:c14n3 , _:c14n35 , _:c14n38 , _:c14n57 , _:c14n68 , _:c14n71 , _:c14n73 , _:c14n76 , _:c14n79 , _:c14n85 , _:c14n86 ;
+	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n117 , _:c14n125 , _:c14n128 , _:c14n130 , _:c14n139 , _:c14n140 , _:c14n152 , _:c14n193 , _:c14n218 , _:c14n241 , _:c14n249 , _:c14n251 , _:c14n265 , _:c14n268 , _:c14n3 , _:c14n35 , _:c14n38 , _:c14n58 , _:c14n69 , _:c14n72 , _:c14n74 , _:c14n77 , _:c14n80 , _:c14n86 , _:c14n87 ;
 	skos:definition "An abstract (non-physical) entity that is about something - representing the underlying 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs." ;
 	skos:exactMatch sepio_linkml:InformationEntity ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -37,7 +38,7 @@ IAO:0000030 dcterms:title "Information Entity" ;
 IAO:0000100 dcterms:title "Data Set" ;
 	a owl:Class ;
 	rdfs:label "DataSet" ;
-	rdfs:subClassOf IAO:0000030 , _:c14n11 , _:c14n112 , _:c14n159 , _:c14n17 , _:c14n174 , _:c14n176 , _:c14n187 , _:c14n235 , _:c14n253 , _:c14n47 , _:c14n53 , _:c14n75 ;
+	rdfs:subClassOf IAO:0000030 , _:c14n11 , _:c14n112 , _:c14n160 , _:c14n17 , _:c14n175 , _:c14n177 , _:c14n188 , _:c14n237 , _:c14n256 , _:c14n48 , _:c14n54 , _:c14n76 ;
 	skos:definition "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit." ;
 	skos:exactMatch sepio_linkml:DataSet ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -46,7 +47,7 @@ IAO:0000100 dcterms:title "Data Set" ;
 IAO:0000104 dcterms:title "Method" ;
 	a owl:Class ;
 	rdfs:label "Method" ;
-	rdfs:subClassOf IAO:0000030 , _:c14n108 , _:c14n216 , _:c14n22 , _:c14n222 , _:c14n263 ;
+	rdfs:subClassOf IAO:0000030 , _:c14n109 , _:c14n217 , _:c14n22 , _:c14n223 , _:c14n266 ;
 	skos:definition "A set of instructions that specify how to achieve some objective." ;
 	skos:exactMatch sepio_linkml:Method ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -56,11 +57,11 @@ IAO:0000136 a owl:ObjectProperty ;
 	rdfs:label "is_about" ;
 	skos:definition "An entity or concept in the world that the information entity describes/is about." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
-	skos:note "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about the variant 'BRCA2 c.8023A>G', and the disease 'Breast Cancer'." .
+	skos:note "Values are URIs or CURIEs, not free-text labels." , "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about identifiers for the variant 'BRCA2 c.8023A>G' and the disease 'Breast Cancer' (MONDO:0007254)." .
 IAO:0000310 dcterms:title "Document" ;
 	a owl:Class ;
 	rdfs:label "Document" ;
-	rdfs:subClassOf IAO:0000030 , _:c14n1 , _:c14n113 , _:c14n114 , _:c14n126 , _:c14n132 , _:c14n172 , _:c14n173 , _:c14n179 , _:c14n181 , _:c14n184 , _:c14n198 , _:c14n202 , _:c14n218 , _:c14n244 , _:c14n54 , _:c14n69 , _:c14n80 ;
+	rdfs:subClassOf IAO:0000030 , _:c14n1 , _:c14n113 , _:c14n114 , _:c14n127 , _:c14n133 , _:c14n173 , _:c14n174 , _:c14n180 , _:c14n182 , _:c14n185 , _:c14n199 , _:c14n203 , _:c14n219 , _:c14n246 , _:c14n55 , _:c14n70 , _:c14n81 ;
 	skos:definition "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole." ;
 	skos:exactMatch sepio_linkml:Document ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -78,7 +79,7 @@ IAO:0000310 dcterms:title "Document" ;
 SEPIO:0000000 dcterms:title "Proposition" ;
 	a owl:Class ;
 	rdfs:label "Proposition" ;
-	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n111 , _:c14n131 , _:c14n141 , _:c14n188 , _:c14n189 , _:c14n201 , _:c14n204 , _:c14n21 , _:c14n220 , _:c14n241 , _:c14n242 , _:c14n267 , _:c14n29 , _:c14n34 , _:c14n36 , _:c14n59 , _:c14n83 ;
+	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n111 , _:c14n132 , _:c14n142 , _:c14n189 , _:c14n190 , _:c14n202 , _:c14n205 , _:c14n21 , _:c14n221 , _:c14n243 , _:c14n244 , _:c14n270 , _:c14n29 , _:c14n34 , _:c14n36 , _:c14n60 , _:c14n84 ;
 	skos:definition "An abstract entity representing a possible fact that is either true or false." ;
 	skos:exactMatch sepio_linkml:Proposition ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -86,7 +87,7 @@ SEPIO:0000000 dcterms:title "Proposition" ;
 SEPIO:0000001 dcterms:title "Statement" ;
 	a owl:Class ;
 	rdfs:label "Statement" ;
-	rdfs:subClassOf IAO:0000030 , _:c14n0 , _:c14n102 , _:c14n105 , _:c14n116 , _:c14n119 , _:c14n147 , _:c14n154 , _:c14n16 , _:c14n160 , _:c14n165 , _:c14n168 , _:c14n182 , _:c14n190 , _:c14n2 , _:c14n207 , _:c14n214 , _:c14n227 , _:c14n23 , _:c14n232 , _:c14n246 , _:c14n248 , _:c14n257 , _:c14n264 , _:c14n266 , _:c14n33 , _:c14n4 , _:c14n42 , _:c14n49 , _:c14n5 , _:c14n56 , _:c14n58 , _:c14n60 , _:c14n64 , _:c14n81 , _:c14n87 , _:c14n9 , _:c14n91 ;
+	rdfs:subClassOf IAO:0000030 , _:c14n0 , _:c14n103 , _:c14n106 , _:c14n116 , _:c14n119 , _:c14n148 , _:c14n155 , _:c14n16 , _:c14n161 , _:c14n166 , _:c14n169 , _:c14n183 , _:c14n191 , _:c14n2 , _:c14n208 , _:c14n215 , _:c14n229 , _:c14n23 , _:c14n234 , _:c14n248 , _:c14n250 , _:c14n260 , _:c14n267 , _:c14n269 , _:c14n33 , _:c14n4 , _:c14n43 , _:c14n5 , _:c14n50 , _:c14n57 , _:c14n59 , _:c14n61 , _:c14n65 , _:c14n82 , _:c14n88 , _:c14n9 , _:c14n92 ;
 	skos:definition "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition." ;
 	skos:exactMatch sepio_linkml:Statement ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -96,7 +97,7 @@ SEPIO:0000001 dcterms:title "Statement" ;
 SEPIO:0000002 dcterms:title "Evidence Line" ;
 	a owl:Class ;
 	rdfs:label "EvidenceLine" ;
-	rdfs:subClassOf IAO:0000030 , _:c14n109 , _:c14n128 , _:c14n130 , _:c14n136 , _:c14n144 , _:c14n15 , _:c14n164 , _:c14n167 , _:c14n169 , _:c14n191 , _:c14n226 , _:c14n254 , _:c14n43 , _:c14n52 , _:c14n62 , _:c14n67 , _:c14n77 , _:c14n8 , _:c14n96 ;
+	rdfs:subClassOf IAO:0000030 , _:c14n129 , _:c14n131 , _:c14n137 , _:c14n145 , _:c14n15 , _:c14n165 , _:c14n168 , _:c14n170 , _:c14n192 , _:c14n228 , _:c14n257 , _:c14n41 , _:c14n44 , _:c14n53 , _:c14n63 , _:c14n68 , _:c14n78 , _:c14n8 , _:c14n97 ;
 	skos:definition "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition." ;
 	skos:exactMatch sepio_linkml:EvidenceLine ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -150,7 +151,7 @@ SEPIO:0000145 a owl:ObjectProperty ;
 SEPIO:0000158 dcterms:title "Contribution" ;
 	a owl:Class ;
 	rdfs:label "Contribution" ;
-	rdfs:subClassOf prov:Activity , _:c14n14 , _:c14n156 , _:c14n171 , _:c14n19 , _:c14n20 , _:c14n209 , _:c14n27 , _:c14n93 ;
+	rdfs:subClassOf prov:Activity , _:c14n14 , _:c14n157 , _:c14n172 , _:c14n19 , _:c14n20 , _:c14n210 , _:c14n27 , _:c14n94 ;
 	skos:definition "An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.)." ;
 	skos:exactMatch sepio_linkml:Contribution ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -187,6 +188,21 @@ SEPIO:0000398 a owl:ObjectProperty ;
 	skos:definition "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence')." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "This contrasts with has_evidence and hasEvidenceLine attributes that describe specific instances of evidence information, such as a particular data item, study result, or prior assertions, etc. Where possible, data cretors should use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO) to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity evidence')." .
+SEPIO:0000402 a owl:Class ;
+	rdfs:label "EvidenceDirection" ;
+	owl:oneOf _:c14n252 ;
+	skos:definition "The direction of support an Evidence Line provides toward its target Proposition." ;
+	skos:inScheme <https://w3id.org/sepio-model> ;
+	linkml:permissible_values SEPIO:0000403 , SEPIO:0000404 , SEPIO:0000405 .
+SEPIO:0000403 a SEPIO:0000402 , owl:NamedIndividual ;
+	rdfs:label "supports" ;
+	skos:definition "The Evidence Line provides an argument that supports the target Proposition." .
+SEPIO:0000404 a SEPIO:0000402 , owl:NamedIndividual ;
+	rdfs:label "disputes" ;
+	skos:definition "The Evidence Line provides an argument that disputes the target Proposition." .
+SEPIO:0000405 a SEPIO:0000402 , owl:NamedIndividual ;
+	rdfs:label "neutral" ;
+	skos:definition "The Evidence Line lacks sufficient credibility, relevance, or completeness to argue for or against the target Proposition." .
 SEPIO:0000415 a owl:ObjectProperty ;
 	rdfs:label "information_quality" ;
 	skos:definition "A qualitative term indicating the scientific rigor or reliability with which the information was generated/collected." ;
@@ -209,7 +225,7 @@ SEPIO:0000436 a owl:DatatypeProperty ;
 prov:Activity dcterms:title "Activity" ;
 	a owl:Class ;
 	rdfs:label "Activity" ;
-	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n140 , _:c14n152 , _:c14n163 , _:c14n166 , _:c14n180 , _:c14n197 , _:c14n205 , _:c14n206 , _:c14n210 , _:c14n255 , _:c14n32 , _:c14n45 , _:c14n55 , _:c14n72 ;
+	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n141 , _:c14n153 , _:c14n164 , _:c14n167 , _:c14n181 , _:c14n198 , _:c14n206 , _:c14n207 , _:c14n211 , _:c14n258 , _:c14n32 , _:c14n46 , _:c14n56 , _:c14n73 ;
 	skos:definition "An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities." ;
 	skos:exactMatch sepio_linkml:Activity ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -218,7 +234,7 @@ prov:Activity dcterms:title "Activity" ;
 prov:Agent dcterms:title "Agent" ;
 	a owl:Class ;
 	rdfs:label "Agent" ;
-	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n170 , _:c14n219 , _:c14n243 , _:c14n250 , _:c14n26 , _:c14n66 ;
+	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n171 , _:c14n220 , _:c14n245 , _:c14n253 , _:c14n26 , _:c14n67 ;
 	skos:definition "An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent's activity." ;
 	skos:exactMatch sepio_linkml:Agent ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -232,42 +248,42 @@ prov:Agent dcterms:title "Agent" ;
 sepio_linkml:Characteristic dcterms:title "Characteristic" ;
 	a owl:Class ;
 	rdfs:label "Characteristic" ;
-	rdfs:subClassOf sepio_linkml:Utility , _:c14n115 , _:c14n123 , _:c14n142 , _:c14n157 , _:c14n183 , _:c14n272 , _:c14n28 , _:c14n61 ;
+	rdfs:subClassOf sepio_linkml:Utility , _:c14n115 , _:c14n124 , _:c14n143 , _:c14n158 , _:c14n184 , _:c14n275 , _:c14n28 , _:c14n62 ;
 	skos:definition "An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "This flexible key-value like object is where specific inclusion or exclusion criteria for membership in a StudyGroup are formally defined.  It should be used to capture characteristics that inhere in individual members of the StudyGroup (e.g. inherent traits like their sex, race, or age, or roles assigned to them in a particular context such as being a control in a study)." .
 sepio_linkml:Coding dcterms:title "Coding" ;
 	a owl:Class ;
 	rdfs:label "Coding" ;
-	rdfs:subClassOf sepio_linkml:Utility , _:c14n100 , _:c14n121 , _:c14n137 , _:c14n153 , _:c14n177 , _:c14n18 , _:c14n213 , _:c14n221 , _:c14n245 , _:c14n261 , _:c14n31 , _:c14n95 ;
+	rdfs:subClassOf sepio_linkml:Utility , _:c14n101 , _:c14n121 , _:c14n138 , _:c14n154 , _:c14n178 , _:c14n18 , _:c14n214 , _:c14n222 , _:c14n247 , _:c14n264 , _:c14n31 , _:c14n96 ;
 	skos:definition "A structured representation of a code for a defined concept in a terminology or code system." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Coding supports use of terms form ontologies/terminologies in structured object that reports id, label, and metadata about system it came from.  follows FHIR approach.  Used in model when implementers are free to create own value sets of terms which get reported within coding objects in SEPIO data. Validation requires additional tooling - as constraints are not defined in schema itself." , "Either a code, label, or both must be provided." .
 sepio_linkml:Expression dcterms:title "Expression" ;
 	a owl:Class ;
 	rdfs:label "Expression" ;
-	rdfs:subClassOf sepio_linkml:Utility , _:c14n148 , _:c14n150 , _:c14n178 , _:c14n185 , _:c14n195 , _:c14n225 , _:c14n229 , _:c14n240 , _:c14n78 ;
+	rdfs:subClassOf sepio_linkml:Utility , _:c14n149 , _:c14n151 , _:c14n179 , _:c14n186 , _:c14n196 , _:c14n226 , _:c14n231 , _:c14n242 , _:c14n79 ;
 	skos:definition "A structure for labels representing systematic expressions that describe an entity, as generated by formal nomenclatures (e.g. HGVS for genetic variants, ISCN for karyotypes, HLA nomenclature for HLA genes/alleles)." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Similar to the 'Coding' data type, which provides the same fields but for coded values, as opposed to human-readable names." .
 sepio_linkml:Extension dcterms:title "Extension" ;
 	a owl:Class ;
 	rdfs:label "Extension" ;
-	rdfs:subClassOf sepio_linkml:Utility , _:c14n224 , _:c14n231 , _:c14n233 , _:c14n252 , _:c14n256 , _:c14n258 , _:c14n269 , _:c14n44 , _:c14n94 ;
+	rdfs:subClassOf sepio_linkml:Utility , _:c14n225 , _:c14n233 , _:c14n235 , _:c14n255 , _:c14n259 , _:c14n261 , _:c14n272 , _:c14n45 , _:c14n95 ;
 	skos:definition "A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Extension objects allow for  descriptions of an class with additional attributes unique to a content provider" , "The modeling pattern and use of Extensions is based on that defined by the FHIR Speciufication - see https://build.fhir.org/extensibility.html" .
 sepio_linkml:Qualifier dcterms:title "Qualifier" ;
 	a owl:Class ;
 	rdfs:label "Qualifier" ;
-	rdfs:subClassOf sepio_linkml:Utility , _:c14n161 , _:c14n162 , _:c14n199 , _:c14n223 , _:c14n63 , _:c14n98 ;
+	rdfs:subClassOf sepio_linkml:Utility , _:c14n162 , _:c14n163 , _:c14n200 , _:c14n224 , _:c14n64 , _:c14n99 ;
 	skos:definition "A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Qualifiers allow representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if a triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. Qualifiers can also add information that 'quantifies' aspects of a Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest." .
 sepio_linkml:RecordMetadata dcterms:title "Record Metadata" ;
 	a owl:Class ;
 	rdfs:label "RecordMetadata" ;
-	rdfs:subClassOf sepio_linkml:Utility , _:c14n101 , _:c14n104 , _:c14n122 , _:c14n133 , _:c14n143 , _:c14n234 , _:c14n237 , _:c14n39 , _:c14n40 , _:c14n51 , _:c14n70 , _:c14n74 , _:c14n84 ;
+	rdfs:subClassOf sepio_linkml:Utility , _:c14n102 , _:c14n105 , _:c14n122 , _:c14n134 , _:c14n144 , _:c14n236 , _:c14n239 , _:c14n39 , _:c14n40 , _:c14n52 , _:c14n71 , _:c14n75 , _:c14n85 ;
 	skos:definition "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents)." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "Record-level metadata applies to a specific concrete encoding/serialization of information (e.g as a record in a specific data/knowlegebase, or an online digital resource). A RecordMetadata object can capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status." ;
@@ -275,14 +291,14 @@ sepio_linkml:RecordMetadata dcterms:title "Record Metadata" ;
 sepio_linkml:StudyGroup dcterms:title "Study Group" ;
 	a owl:Class ;
 	rdfs:label "StudyGroup" ;
-	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n106 , _:c14n134 , _:c14n135 , _:c14n196 , _:c14n228 , _:c14n50 , _:c14n6 ;
+	rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> , _:c14n107 , _:c14n135 , _:c14n136 , _:c14n197 , _:c14n230 , _:c14n51 , _:c14n6 ;
 	skos:definition "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
 	skos:note "A Study Group may include all participants in a given study, or specific subsets that are designated based on shared roles or characteristics." .
 sepio_linkml:StudyResult dcterms:title "Study Result" ;
 	a owl:Class ;
 	rdfs:label "StudyResult" ;
-	rdfs:subClassOf IAO:0000030 , _:c14n107 , _:c14n120 , _:c14n13 , _:c14n146 , _:c14n158 , _:c14n175 , _:c14n194 , _:c14n200 , _:c14n24 , _:c14n25 , _:c14n260 , _:c14n46 , _:c14n48 , _:c14n65 , _:c14n92 ;
+	rdfs:subClassOf IAO:0000030 , _:c14n108 , _:c14n120 , _:c14n13 , _:c14n147 , _:c14n159 , _:c14n176 , _:c14n195 , _:c14n201 , _:c14n24 , _:c14n25 , _:c14n263 , _:c14n47 , _:c14n49 , _:c14n66 , _:c14n93 ;
 	skos:broadMatch SEPIO:0000400 ;
 	skos:definition "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated." ;
 	skos:inScheme <https://w3id.org/sepio-model> ;
@@ -530,35 +546,35 @@ _:c14n10 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:label .
 _:c14n100 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty sepio_linkml:id .
+_:c14n101 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:system_version .
-_:c14n101 a owl:Restriction ;
+_:c14n102 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:record_identifier .
-_:c14n102 a owl:Restriction ;
+_:c14n103 a owl:Restriction ;
 	owl:allValuesFrom IAO:0000030 ;
 	owl:onProperty SEPIO:0000189 .
-_:c14n103 a owl:Restriction ;
+_:c14n104 a owl:Restriction ;
 	owl:allValuesFrom IAO:0000027 ;
 	owl:onProperty sepio_linkml:component_data_item .
-_:c14n104 a owl:Restriction ;
+_:c14n105 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000436 .
-_:c14n105 a owl:Restriction ;
+_:c14n106 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000388 .
-_:c14n106 a owl:Restriction ;
+_:c14n107 a owl:Restriction ;
 	owl:allValuesFrom xsd:integer ;
 	owl:onProperty sepio_linkml:member_count .
-_:c14n107 a owl:Restriction ;
+_:c14n108 a owl:Restriction ;
 	owl:allValuesFrom IAO:0000100 ;
 	owl:onProperty sepio_linkml:source_data_set .
-_:c14n108 a owl:Restriction ;
+_:c14n109 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:urls .
-_:c14n109 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty SEPIO:0000183 .
 _:c14n11 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:license .
@@ -604,258 +620,257 @@ _:c14n121 a owl:Restriction ;
 _:c14n122 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:derived_from_record .
-_:c14n123 a owl:Restriction ;
+_:c14n123 rdf:first SEPIO:0000405 ;
+	rdf:rest rdf:nil .
+_:c14n124 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:value_operator .
-_:c14n124 a owl:Restriction ;
+_:c14n125 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000135 .
-_:c14n125 a owl:Restriction ;
+_:c14n126 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:variability_measures .
-_:c14n126 a owl:Restriction ;
+_:c14n127 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:title .
-_:c14n127 a owl:Restriction ;
+_:c14n128 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty SEPIO:0000135 .
-_:c14n128 a owl:Restriction ;
+_:c14n129 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:subtype .
-_:c14n129 a owl:Restriction ;
-	owl:allValuesFrom sepio_linkml:Coding ;
-	owl:onProperty sepio_linkml:supporting_method_types .
 _:c14n13 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:StudyGroup ;
 	owl:onProperty sepio_linkml:study_group .
 _:c14n130 a owl:Restriction ;
+	owl:allValuesFrom sepio_linkml:Coding ;
+	owl:onProperty sepio_linkml:supporting_method_types .
+_:c14n131 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000124 .
-_:c14n131 a owl:Restriction ;
+_:c14n132 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:Qualifier ;
 	owl:onProperty SEPIO:0000144 .
-_:c14n132 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:subtype .
 _:c14n133 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:record_version .
+	owl:onProperty sepio_linkml:subtype .
 _:c14n134 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:characteristics .
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:record_version .
 _:c14n135 a owl:Restriction ;
-	owl:allValuesFrom sepio_linkml:Characteristic ;
+	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:characteristics .
 _:c14n136 a owl:Restriction ;
+	owl:allValuesFrom sepio_linkml:Characteristic ;
+	owl:onProperty sepio_linkml:characteristics .
+_:c14n137 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:Coding ;
 	owl:onProperty sepio_linkml:subtype .
-_:c14n137 a owl:Restriction ;
+_:c14n138 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:label .
-_:c14n138 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:record_metadata .
 _:c14n139 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000108 .
+	owl:onProperty sepio_linkml:record_metadata .
 _:c14n14 a owl:Restriction ;
 	owl:allValuesFrom prov:Agent ;
 	owl:onProperty sepio_linkml:contributor .
 _:c14n140 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> .
+	owl:onProperty SEPIO:0000108 .
 _:c14n141 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> .
+_:c14n142 a owl:Restriction ;
 	owl:allValuesFrom xsd:boolean ;
 	owl:onProperty sepio_linkml:negated .
-_:c14n142 a owl:Restriction ;
+_:c14n143 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:value_operator .
-_:c14n143 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:record_version .
 _:c14n144 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000084 .
+	owl:onProperty sepio_linkml:record_version .
 _:c14n145 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty SEPIO:0000084 .
+_:c14n146 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:subtype .
-_:c14n146 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:component_result .
 _:c14n147 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000390 .
+	owl:onProperty sepio_linkml:component_result .
 _:c14n148 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty SEPIO:0000390 .
+_:c14n149 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:system_url .
-_:c14n149 a owl:Restriction ;
-	owl:allValuesFrom IAO:0000027 ;
-	owl:onProperty sepio_linkml:variability_measures .
 _:c14n15 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000429 .
 _:c14n150 a owl:Restriction ;
+	owl:allValuesFrom IAO:0000027 ;
+	owl:onProperty sepio_linkml:variability_measures .
+_:c14n151 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:system_version .
-_:c14n151 a owl:Restriction ;
+_:c14n152 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:supporting_method_types .
-_:c14n152 a owl:Restriction ;
+_:c14n153 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:Coding ;
 	owl:onProperty sepio_linkml:subtype .
-_:c14n153 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:system_version .
 _:c14n154 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000398 .
+	owl:onProperty sepio_linkml:system_version .
 _:c14n155 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty SEPIO:0000398 .
+_:c14n156 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:alternative_labels .
-_:c14n156 a owl:Restriction ;
+_:c14n157 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:contributor .
-_:c14n157 a owl:Restriction ;
+_:c14n158 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:name .
-_:c14n158 a owl:Restriction ;
+_:c14n159 a owl:Restriction ;
 	owl:allValuesFrom IAO:0000027 ;
 	owl:onProperty sepio_linkml:data_items .
-_:c14n159 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:release_date .
 _:c14n16 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty SEPIO:0000390 .
 _:c14n160 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty SEPIO:0000398 .
+	owl:onProperty sepio_linkml:release_date .
 _:c14n161 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:name .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty SEPIO:0000398 .
 _:c14n162 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:value .
+	owl:onProperty sepio_linkml:name .
 _:c14n163 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:value .
+_:c14n164 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000041 .
-_:c14n164 a owl:Restriction ;
+_:c14n165 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty SEPIO:0000132 .
-_:c14n165 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000389 .
 _:c14n166 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000017 .
+	owl:onProperty SEPIO:0000389 .
 _:c14n167 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000132 .
+	owl:onProperty SEPIO:0000017 .
 _:c14n168 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty SEPIO:0000132 .
+_:c14n169 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:statement_text .
-_:c14n169 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000183 .
 _:c14n17 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:subtype .
 _:c14n170 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty SEPIO:0000183 .
+_:c14n171 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:name .
-_:c14n171 a owl:Restriction ;
+_:c14n172 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:Coding ;
 	owl:onProperty sepio_linkml:activity_type .
-_:c14n172 a owl:Restriction ;
+_:c14n173 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:doi .
-_:c14n173 a owl:Restriction ;
+_:c14n174 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:urls .
-_:c14n174 a owl:Restriction ;
+_:c14n175 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:license .
-_:c14n175 a owl:Restriction ;
+_:c14n176 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:source_data_set .
-_:c14n176 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:version .
 _:c14n177 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:code .
+	owl:onProperty sepio_linkml:version .
 _:c14n178 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:value .
+	owl:onProperty sepio_linkml:code .
 _:c14n179 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:title .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty sepio_linkml:value .
 _:c14n18 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:system .
 _:c14n180 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:title .
+_:c14n181 a owl:Restriction ;
 	owl:allValuesFrom xsd:date ;
 	owl:onProperty SEPIO:0000160 .
-_:c14n181 a owl:Restriction ;
+_:c14n182 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:urls .
-_:c14n182 a owl:Restriction ;
+_:c14n183 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:score .
-_:c14n183 a owl:Restriction ;
+_:c14n184 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:value_operator .
-_:c14n184 a owl:Restriction ;
+_:c14n185 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:pmid .
-_:c14n185 a owl:Restriction ;
+_:c14n186 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty sepio_linkml:value .
-_:c14n186 a owl:Restriction ;
+_:c14n187 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:Extension ;
 	owl:onProperty sepio_linkml:extensions .
-_:c14n187 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:subtype .
 _:c14n188 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:proposition_text .
+	owl:onProperty sepio_linkml:subtype .
 _:c14n189 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
+	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:proposition_text .
 _:c14n19 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:activity_type .
 _:c14n190 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty sepio_linkml:proposition_text .
+_:c14n191 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000388 .
-_:c14n191 a owl:Restriction ;
+_:c14n192 a owl:Restriction ;
 	owl:allValuesFrom SEPIO:0000000 ;
 	owl:onProperty SEPIO:0000427 .
-_:c14n192 a owl:Restriction ;
+_:c14n193 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:Coding ;
 	owl:onProperty SEPIO:0000415 .
-_:c14n193 a owl:Restriction ;
+_:c14n194 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty sepio_linkml:value .
-_:c14n194 a owl:Restriction ;
+_:c14n195 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:study_group .
-_:c14n195 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:system_url .
 _:c14n196 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:member_count .
+	owl:onProperty sepio_linkml:system_url .
 _:c14n197 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:subtype .
+	owl:onProperty sepio_linkml:member_count .
 _:c14n198 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:subtype .
+_:c14n199 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:pmid .
-_:c14n199 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty sepio_linkml:value .
 _:c14n2 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000030 .
@@ -863,243 +878,250 @@ _:c14n20 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000188 .
 _:c14n200 a owl:Restriction ;
+	owl:minCardinality 1 ;
+	owl:onProperty sepio_linkml:value .
+_:c14n201 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:Coding ;
 	owl:onProperty sepio_linkml:interpretation .
-_:c14n201 a owl:Restriction ;
+_:c14n202 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty SEPIO:0000388 .
-_:c14n202 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:doi .
 _:c14n203 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:confidence_interval .
+	owl:onProperty sepio_linkml:doi .
 _:c14n204 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:negated .
+	owl:onProperty sepio_linkml:confidence_interval .
 _:c14n205 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:negated .
+_:c14n206 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000160 .
-_:c14n206 a owl:Restriction ;
+_:c14n207 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> .
-_:c14n207 a owl:Restriction ;
+_:c14n208 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:strength .
-_:c14n208 a owl:Restriction ;
+_:c14n209 a owl:Restriction ;
 	owl:allValuesFrom IAO:0000027 ;
 	owl:onProperty sepio_linkml:confidence_interval .
-_:c14n209 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:contributor .
 _:c14n21 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000389 .
 _:c14n210 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:contributor .
+_:c14n211 a owl:Restriction ;
 	owl:allValuesFrom IAO:0000104 ;
 	owl:onProperty SEPIO:0000041 .
-_:c14n211 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:unit .
 _:c14n212 a owl:Restriction ;
-	owl:allValuesFrom sepio_linkml:Coding ;
+	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:unit .
 _:c14n213 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:code .
+	owl:allValuesFrom sepio_linkml:Coding ;
+	owl:onProperty sepio_linkml:unit .
 _:c14n214 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000006 .
+	owl:onProperty sepio_linkml:code .
 _:c14n215 a owl:Restriction ;
-	owl:allValuesFrom sepio_linkml:Coding ;
-	owl:onProperty sepio_linkml:subtype .
+	owl:minCardinality 0 ;
+	owl:onProperty SEPIO:0000006 .
 _:c14n216 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:Coding ;
 	owl:onProperty sepio_linkml:subtype .
 _:c14n217 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:supporting_methods .
+	owl:allValuesFrom sepio_linkml:Coding ;
+	owl:onProperty sepio_linkml:subtype .
 _:c14n218 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:license .
+	owl:onProperty sepio_linkml:supporting_methods .
 _:c14n219 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:subtype .
+	owl:onProperty sepio_linkml:license .
 _:c14n22 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:subtype .
 _:c14n220 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty SEPIO:0000390 .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty sepio_linkml:subtype .
 _:c14n221 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:code .
+	owl:onProperty SEPIO:0000390 .
 _:c14n222 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:urls .
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:code .
 _:c14n223 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:name .
+	owl:onProperty sepio_linkml:urls .
 _:c14n224 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty sepio_linkml:name .
+_:c14n225 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty sepio_linkml:value .
-_:c14n225 a owl:Restriction ;
+_:c14n226 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:system_version .
-_:c14n226 a owl:Restriction ;
+_:c14n227 rdf:first SEPIO:0000404 ;
+	rdf:rest _:c14n123 .
+_:c14n228 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000427 .
-_:c14n227 a owl:Restriction ;
+_:c14n229 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000197 .
-_:c14n228 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:is_subset_of .
-_:c14n229 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:value .
 _:c14n23 a owl:Restriction ;
 	owl:allValuesFrom SEPIO:0000002 ;
 	owl:onProperty SEPIO:0000006 .
 _:c14n230 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:label .
+	owl:onProperty sepio_linkml:is_subset_of .
 _:c14n231 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:extension_description .
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:value .
 _:c14n232 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:strength .
+	owl:onProperty sepio_linkml:label .
 _:c14n233 a owl:Restriction ;
-	owl:maxCardinality 1 ;
+	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:extension_description .
 _:c14n234 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:record_version .
-_:c14n235 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:version .
+	owl:onProperty sepio_linkml:strength .
+_:c14n235 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:extension_description .
 _:c14n236 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:identifiers .
+	owl:onProperty sepio_linkml:record_version .
 _:c14n237 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:version .
+_:c14n238 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty sepio_linkml:identifiers .
+_:c14n239 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty SEPIO:0000436 .
-_:c14n238 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:alternative_labels .
-_:c14n239 a owl:Restriction ;
-	owl:allValuesFrom SEPIO:0000158 ;
-	owl:onProperty SEPIO:0000159 .
 _:c14n24 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:focus .
 _:c14n240 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:system_version .
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:alternative_labels .
 _:c14n241 a owl:Restriction ;
-	owl:allValuesFrom sepio_linkml:Coding ;
-	owl:onProperty SEPIO:0000389 .
+	owl:allValuesFrom SEPIO:0000158 ;
+	owl:onProperty SEPIO:0000159 .
 _:c14n242 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:proposition_text .
+	owl:onProperty sepio_linkml:system_version .
 _:c14n243 a owl:Restriction ;
+	owl:allValuesFrom sepio_linkml:Coding ;
+	owl:onProperty SEPIO:0000389 .
+_:c14n244 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:proposition_text .
+_:c14n245 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:name .
-_:c14n244 a owl:Restriction ;
+_:c14n246 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:title .
-_:c14n245 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:system .
-_:c14n246 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty SEPIO:0000030 .
 _:c14n247 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:supporting_methods .
+	owl:onProperty sepio_linkml:system .
 _:c14n248 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:statement_text .
+	owl:maxCardinality 1 ;
+	owl:onProperty SEPIO:0000030 .
 _:c14n249 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:sources .
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:supporting_methods .
 _:c14n25 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:data_items .
 _:c14n250 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:subtype .
+	owl:onProperty sepio_linkml:statement_text .
 _:c14n251 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty sepio_linkml:sources .
+_:c14n252 rdf:first SEPIO:0000403 ;
+	rdf:rest _:c14n227 .
+_:c14n253 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:subtype .
+_:c14n254 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:label .
-_:c14n252 a owl:Restriction ;
+_:c14n255 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:value .
-_:c14n253 a owl:Restriction ;
+_:c14n256 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:release_date .
-_:c14n254 a owl:Restriction ;
+_:c14n257 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000427 .
-_:c14n255 a owl:Restriction ;
+_:c14n258 a owl:Restriction ;
 	owl:allValuesFrom prov:Agent ;
 	owl:onProperty SEPIO:0000017 .
-_:c14n256 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:extension_description .
-_:c14n257 a owl:Restriction ;
-	owl:allValuesFrom sepio_linkml:Coding ;
-	owl:onProperty SEPIO:0000389 .
-_:c14n258 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:value .
 _:c14n259 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:subtype .
+	owl:onProperty sepio_linkml:extension_description .
 _:c14n26 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:subtype .
 _:c14n260 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:interpretation .
+	owl:allValuesFrom sepio_linkml:Coding ;
+	owl:onProperty SEPIO:0000389 .
 _:c14n261 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:system_version .
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:value .
 _:c14n262 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000135 .
+	owl:onProperty sepio_linkml:subtype .
 _:c14n263 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:subtype .
+	owl:onProperty sepio_linkml:interpretation .
 _:c14n264 a owl:Restriction ;
-	owl:allValuesFrom sepio_linkml:Qualifier ;
-	owl:onProperty SEPIO:0000144 .
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty sepio_linkml:system_version .
 _:c14n265 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000159 .
+	owl:onProperty SEPIO:0000135 .
 _:c14n266 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty SEPIO:0000390 .
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:subtype .
 _:c14n267 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty SEPIO:0000389 .
+	owl:allValuesFrom sepio_linkml:Qualifier ;
+	owl:onProperty SEPIO:0000144 .
 _:c14n268 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:id .
+	owl:minCardinality 0 ;
+	owl:onProperty SEPIO:0000159 .
 _:c14n269 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:name .
+	owl:onProperty SEPIO:0000390 .
 _:c14n27 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000188 .
 _:c14n270 a owl:Restriction ;
+	owl:minCardinality 1 ;
+	owl:onProperty SEPIO:0000389 .
+_:c14n271 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:id .
+_:c14n272 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:name .
+_:c14n273 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:type .
-_:c14n271 a owl:Restriction ;
+_:c14n274 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:type .
-_:c14n272 a owl:Restriction ;
+_:c14n275 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty sepio_linkml:values .
 _:c14n28 a owl:Restriction ;
@@ -1148,195 +1170,195 @@ _:c14n40 a owl:Restriction ;
 	owl:allValuesFrom SEPIO:0000158 ;
 	owl:onProperty SEPIO:0000159 .
 _:c14n41 a owl:Restriction ;
+	owl:allValuesFrom SEPIO:0000402 ;
+	owl:onProperty SEPIO:0000183 .
+_:c14n42 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty sepio_linkml:type .
-_:c14n42 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:strength .
 _:c14n43 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty SEPIO:0000124 .
+	owl:onProperty sepio_linkml:strength .
 _:c14n44 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:name .
+	owl:onProperty SEPIO:0000124 .
 _:c14n45 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty sepio_linkml:name .
+_:c14n46 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000160 .
-_:c14n46 a owl:Restriction ;
+_:c14n47 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:StudyResult ;
 	owl:onProperty sepio_linkml:component_result .
-_:c14n47 a owl:Restriction ;
+_:c14n48 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:release_date .
-_:c14n48 a owl:Restriction ;
+_:c14n49 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:focus .
-_:c14n49 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000144 .
 _:c14n5 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:direction .
 _:c14n50 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:member_count .
+	owl:minCardinality 0 ;
+	owl:onProperty SEPIO:0000144 .
 _:c14n51 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:record_identifier .
+	owl:onProperty sepio_linkml:member_count .
 _:c14n52 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:record_identifier .
+_:c14n53 a owl:Restriction ;
 	owl:allValuesFrom xsd:float ;
 	owl:onProperty SEPIO:0000429 .
-_:c14n53 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:version .
 _:c14n54 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:license .
+	owl:onProperty sepio_linkml:version .
 _:c14n55 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:license .
+_:c14n56 a owl:Restriction ;
 	owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000001> ;
 	owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> .
-_:c14n56 a owl:Restriction ;
+_:c14n57 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000189 .
-_:c14n57 a owl:Restriction ;
+_:c14n58 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:RecordMetadata ;
 	owl:onProperty sepio_linkml:record_metadata .
-_:c14n58 a owl:Restriction ;
+_:c14n59 a owl:Restriction ;
 	owl:allValuesFrom xsd:float ;
 	owl:onProperty sepio_linkml:score .
-_:c14n59 a owl:Restriction ;
-	owl:minCardinality 1 ;
-	owl:onProperty SEPIO:0000390 .
 _:c14n6 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:StudyGroup ;
 	owl:onProperty sepio_linkml:is_subset_of .
 _:c14n60 a owl:Restriction ;
+	owl:minCardinality 1 ;
+	owl:onProperty SEPIO:0000390 .
+_:c14n61 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000145 .
-_:c14n61 a owl:Restriction ;
+_:c14n62 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:values .
-_:c14n62 a owl:Restriction ;
+_:c14n63 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000429 .
-_:c14n63 a owl:Restriction ;
+_:c14n64 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:value .
-_:c14n64 a owl:Restriction ;
+_:c14n65 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:direction .
-_:c14n65 a owl:Restriction ;
+_:c14n66 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:focus .
-_:c14n66 a owl:Restriction ;
+_:c14n67 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:name .
-_:c14n67 a owl:Restriction ;
+_:c14n68 a owl:Restriction ;
 	owl:allValuesFrom IAO:0000030 ;
 	owl:onProperty SEPIO:0000084 .
-_:c14n68 a owl:Restriction ;
+_:c14n69 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:record_metadata .
-_:c14n69 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:license .
 _:c14n7 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:value .
 _:c14n70 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:derived_from_record .
+	owl:onProperty sepio_linkml:license .
 _:c14n71 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:derived_from_record .
+_:c14n72 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty SEPIO:0000108 .
-_:c14n72 a owl:Restriction ;
+_:c14n73 a owl:Restriction ;
 	owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000001> ;
 	owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> .
-_:c14n73 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty IAO:0000136 .
 _:c14n74 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:record_identifier .
+	owl:onProperty IAO:0000136 .
 _:c14n75 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:license .
+	owl:onProperty sepio_linkml:record_identifier .
 _:c14n76 a owl:Restriction ;
 	owl:minCardinality 0 ;
-	owl:onProperty sepio_linkml:sources .
+	owl:onProperty sepio_linkml:license .
 _:c14n77 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty sepio_linkml:sources .
+_:c14n78 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000183 .
-_:c14n78 a owl:Restriction ;
+_:c14n79 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty sepio_linkml:system_url .
-_:c14n79 a owl:Restriction ;
-	owl:minCardinality 0 ;
-	owl:onProperty SEPIO:0000415 .
 _:c14n8 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:subtype .
 _:c14n80 a owl:Restriction ;
+	owl:minCardinality 0 ;
+	owl:onProperty SEPIO:0000415 .
+_:c14n81 a owl:Restriction ;
 	owl:allValuesFrom sepio_linkml:Coding ;
 	owl:onProperty sepio_linkml:subtype .
-_:c14n81 a owl:Restriction ;
+_:c14n82 a owl:Restriction ;
 	owl:allValuesFrom SEPIO:0000000 ;
 	owl:onProperty SEPIO:0000030 .
-_:c14n82 a owl:Restriction ;
+_:c14n83 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:extensions .
-_:c14n83 a owl:Restriction ;
+_:c14n84 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000388 .
-_:c14n84 a owl:Restriction ;
+_:c14n85 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000159 .
-_:c14n85 a owl:Restriction ;
+_:c14n86 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty IAO:0000136 .
-_:c14n86 a owl:Restriction ;
+_:c14n87 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty SEPIO:0000041 .
-_:c14n87 a owl:Restriction ;
+_:c14n88 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty sepio_linkml:direction .
-_:c14n88 a owl:Restriction ;
+_:c14n89 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:component_data_item .
-_:c14n89 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:value .
 _:c14n9 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty SEPIO:0000388 .
 _:c14n90 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:value .
+_:c14n91 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty sepio_linkml:id .
-_:c14n91 a owl:Restriction ;
-	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:score .
 _:c14n92 a owl:Restriction ;
 	owl:maxCardinality 1 ;
-	owl:onProperty sepio_linkml:interpretation .
+	owl:onProperty sepio_linkml:score .
 _:c14n93 a owl:Restriction ;
+	owl:maxCardinality 1 ;
+	owl:onProperty sepio_linkml:interpretation .
+_:c14n94 a owl:Restriction ;
 	owl:allValuesFrom IAO:0000030 ;
 	owl:onProperty SEPIO:0000188 .
-_:c14n94 a owl:Restriction ;
+_:c14n95 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty sepio_linkml:name .
-_:c14n95 a owl:Restriction ;
+_:c14n96 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:label .
-_:c14n96 a owl:Restriction ;
+_:c14n97 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty SEPIO:0000132 .
-_:c14n97 a owl:Restriction ;
+_:c14n98 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty sepio_linkml:identifiers .
-_:c14n98 a owl:Restriction ;
+_:c14n99 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty sepio_linkml:name .
-_:c14n99 a owl:Restriction ;
-	owl:allValuesFrom xsd:string ;
-	owl:onProperty sepio_linkml:id .
 

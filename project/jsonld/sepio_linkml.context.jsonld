@@ -25,14 +25,15 @@
          "@id": "http://purl.obolibrary.org/obo/SEPIO_",
          "@prefix": true
       },
-      "biolink": "https://w3id.org/biolink/vocab/",
-      "example": "http://www.example.org/rdf#",
+      "biolink": "https://w3id.org/biolink/",
+      "example": "https://example.org/",
       "linkml": "https://w3id.org/linkml/",
       "pav": "http://purl.org/pav/",
       "prov": "http://www.w3.org/ns/prov#",
       "schema": "http://schema.org/",
       "sepio-model": "https://w3id.org/sepio-framework/sepio-linkml/",
       "sepio_linkml": "https://w3id.org/sepio-framework/sepio-linkml/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
       "@vocab": "https://w3id.org/sepio-framework/sepio-linkml/",
       "date": {
          "@type": "xsd:date",
@@ -151,7 +152,11 @@
          "@id": "sepio-model:type"
       },
       "direction_of_evidence_provided": {
-         "@type": "xsd:anyURI",
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
          "@id": "SEPIO:0000183"
       },
       "evidence_item_sources": {

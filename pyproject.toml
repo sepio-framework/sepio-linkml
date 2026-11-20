@@ -26,7 +26,6 @@ dev = [
     "mkdocs-pymdownx-material-extras>=2.5.6",
     "jupyter>=1.0.0",
     "mknotebooks>= 0.8.0",
-    "schemasheets>=0.1.14",
 ]
 
 # See https://hatch.pypa.io/latest/config/build/#file-selection for how to

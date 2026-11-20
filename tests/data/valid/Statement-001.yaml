@@ -37,6 +37,7 @@ has_evidence_lines:
     type: EvidenceLine
     specified_by:
       - cg:GeneValidityOverallGeneticEvidenceCriteria
+    direction_of_evidence_provided: SEPIO:0000403
     score_of_evidence_provided: 5.8
     has_evidence_items:
       - id: cggv:f13b920a-fcce-4133-a04b-24d8ffafcaae

@@ -1144,6 +1144,16 @@
             "title": "Entity",
             "type": "object"
         },
+        "EvidenceDirection": {
+            "description": "The direction of support an Evidence Line provides toward its target Proposition.",
+            "enum": [
+                "supports",
+                "disputes",
+                "neutral"
+            ],
+            "title": "EvidenceDirection",
+            "type": "string"
+        },
         "EvidenceLine": {
             "additionalProperties": false,
             "description": "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition.",
@@ -1193,11 +1203,15 @@
                     ]
                 },
                 "direction_of_evidence_provided": {
-                    "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral).",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EvidenceDirection"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)."
                 },
                 "evidence_item_sources": {
                     "description": "An information resource (e.g. document, dataset, digital resource such as a database or  knowledgebase) that provides information interpreted as evidence in building an Evidence Line.",

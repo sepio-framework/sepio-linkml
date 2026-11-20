@@ -317,7 +317,7 @@ message EvidenceLine {
   // An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
   repeated InformationEntity has_evidence_items = 21;
   // The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral).
-  string direction_of_evidence_provided = 22;
+  EvidenceDirection direction_of_evidence_provided = 22;
   // The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided.
   string strength_of_evidence_provided = 23;
   // A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the direction_of_evidence_provided value.
@@ -617,4 +617,12 @@ message StudyResult {
 }
 // An abstract organizational class that groups classes acting as complex datatypes in the model - providing reusable collections of fields that can be plugged into other objects to capture sets of related information.
 message Utility {
+}
+
+// The direction of support an Evidence Line provides toward its target Proposition.
+enum EvidenceDirection {
+  EVIDENCE_DIRECTION_UNSPECIFIED = 0;
+  EVIDENCE_DIRECTION_SUPPORTS = 1;
+  EVIDENCE_DIRECTION_DISPUTES = 2;
+  EVIDENCE_DIRECTION_NEUTRAL = 3;
 }

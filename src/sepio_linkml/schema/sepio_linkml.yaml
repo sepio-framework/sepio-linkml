@@ -15,6 +15,11 @@ prefixes:
   schema: http://schema.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
   example: https://example.org/
+  SEPIO: http://purl.obolibrary.org/obo/SEPIO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  RO: http://purl.obolibrary.org/obo/RO_
+  prov: http://www.w3.org/ns/prov#
+  pav: http://purl.org/pav/
 default_prefix: sepio_linkml
 default_range: string
 

@@ -19,7 +19,10 @@ LINKML_SCHEMA_GOOGLE_SHEET_TABS="sepio_classes"
 LINKML_GENERATORS_CONFIG_YAML=config.yaml
 
 ## pass args if gendoc ignores config.yaml (i.e. --no-mergeimports)
-LINKML_GENERATORS_DOC_ARGS="--template-directory docs/templates-linkml"
+## --subfolder-type-separation: classes/, slots/, types/ subfolders, so that e.g. the
+## Proposition class and the proposition slot don't overwrite each other on
+## case-insensitive filesystems (macOS)
+LINKML_GENERATORS_DOC_ARGS="--template-directory docs/templates-linkml --subfolder-type-separation"
 
 ## pass args to workaround genowl rdfs config bug (linkml#1453)
 ##   (i.e. --no-type-objects --no-metaclasses --metadata-profile=rdfs)

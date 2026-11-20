@@ -1,16 +1,23 @@
 {
+   "BFO": "http://purl.obolibrary.org/obo/BFO_",
+   "IAO": "http://purl.obolibrary.org/obo/IAO_",
+   "OBI": "http://purl.obolibrary.org/obo/OBI_",
    "PATO": "http://purl.obolibrary.org/obo/PATO_",
+   "RO": "http://purl.obolibrary.org/obo/RO_",
+   "SEPIO": "http://purl.obolibrary.org/obo/SEPIO_",
    "biolink": "https://w3id.org/biolink/",
    "example": "https://example.org/",
    "linkml": "https://w3id.org/linkml/",
+   "pav": "http://purl.org/pav/",
+   "prov": "http://www.w3.org/ns/prov#",
    "schema": "http://schema.org/",
-   "sepio-model": "https://example.org/sepio-model/",
+   "sepio-model": "https://w3id.org/sepio-framework/sepio-linkml/",
    "sepio_linkml": "https://w3id.org/sepio-framework/sepio-linkml/",
    "Activity": {
-      "@id": "sepio-model:Activity"
+      "@id": "prov:Activity"
    },
    "Agent": {
-      "@id": "sepio-model:Agent"
+      "@id": "prov:Agent"
    },
    "Characteristic": {
       "@id": "sepio-model:Characteristic"
@@ -19,22 +26,22 @@
       "@id": "sepio-model:Coding"
    },
    "Contribution": {
-      "@id": "sepio-model:Contribution"
+      "@id": "SEPIO:0000158"
    },
    "DataItem": {
-      "@id": "sepio-model:DataItem"
+      "@id": "IAO:0000027"
    },
    "DataSet": {
-      "@id": "sepio-model:DataSet"
+      "@id": "IAO:0000100"
    },
    "Document": {
-      "@id": "sepio-model:Document"
+      "@id": "IAO:0000310"
    },
    "Entity": {
-      "@id": "sepio-model:Entity"
+      "@id": "BFO:0000001"
    },
    "EvidenceLine": {
-      "@id": "sepio-model:EvidenceLine"
+      "@id": "SEPIO:0000002"
    },
    "Expression": {
       "@id": "sepio-model:Expression"
@@ -43,13 +50,13 @@
       "@id": "sepio-model:Extension"
    },
    "InformationEntity": {
-      "@id": "sepio-model:InformationEntity"
+      "@id": "IAO:0000030"
    },
    "Method": {
-      "@id": "sepio-model:Method"
+      "@id": "IAO:0000104"
    },
    "Proposition": {
-      "@id": "sepio-model:Proposition"
+      "@id": "SEPIO:0000000"
    },
    "Qualifier": {
       "@id": "sepio-model:Qualifier"
@@ -58,7 +65,7 @@
       "@id": "sepio-model:RecordMetadata"
    },
    "Statement": {
-      "@id": "sepio-model:Statement"
+      "@id": "SEPIO:0000001"
    },
    "StudyGroup": {
       "@id": "sepio-model:StudyGroup"

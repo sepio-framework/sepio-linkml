@@ -1,35 +1,59 @@
 {
    "@context": {
       "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "BFO": {
+         "@id": "http://purl.obolibrary.org/obo/BFO_",
+         "@prefix": true
+      },
+      "IAO": {
+         "@id": "http://purl.obolibrary.org/obo/IAO_",
+         "@prefix": true
+      },
+      "OBI": {
+         "@id": "http://purl.obolibrary.org/obo/OBI_",
+         "@prefix": true
+      },
       "PATO": {
          "@id": "http://purl.obolibrary.org/obo/PATO_",
+         "@prefix": true
+      },
+      "RO": {
+         "@id": "http://purl.obolibrary.org/obo/RO_",
+         "@prefix": true
+      },
+      "SEPIO": {
+         "@id": "http://purl.obolibrary.org/obo/SEPIO_",
          "@prefix": true
       },
       "biolink": "https://w3id.org/biolink/",
       "example": "https://example.org/",
       "linkml": "https://w3id.org/linkml/",
+      "pav": "http://purl.org/pav/",
+      "prov": "http://www.w3.org/ns/prov#",
       "schema": "http://schema.org/",
-      "sepio-model": "https://example.org/sepio-model/",
+      "sepio-model": "https://w3id.org/sepio-framework/sepio-linkml/",
       "sepio_linkml": "https://w3id.org/sepio-framework/sepio-linkml/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
       "@vocab": "https://w3id.org/sepio-framework/sepio-linkml/",
       "date": {
          "@type": "xsd:date",
-         "@id": "sepio-model:date"
+         "@id": "SEPIO:0000160"
       },
       "input": {
          "@type": "@id",
-         "@id": "sepio-model:input"
+         "@id": "OBI:0000293"
       },
       "output": {
          "@type": "@id",
-         "@id": "sepio-model:output"
+         "@id": "OBI:0000299"
       },
       "performed_by": {
          "@type": "@id",
-         "@id": "sepio-model:performed_by"
+         "@id": "SEPIO:0000017"
       },
       "specified_by": {
-         "@id": "sepio-model:specified_by"
+         "@type": "xsd:anyURI",
+         "@id": "SEPIO:0000041"
       },
       "subtype": {
          "@type": "@id",
@@ -62,11 +86,11 @@
       },
       "contribution_made_to": {
          "@type": "@id",
-         "@id": "sepio-model:contribution_made_to"
+         "@id": "SEPIO:0000188"
       },
       "contributor": {
          "@type": "@id",
-         "@id": "sepio-model:contributor"
+         "@id": "SEPIO:0000150"
       },
       "component_data_item": {
          "@type": "@id",
@@ -128,25 +152,32 @@
          "@id": "sepio-model:type"
       },
       "direction_of_evidence_provided": {
-         "@id": "sepio-model:direction_of_evidence_provided"
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "SEPIO:0000183"
       },
       "evidence_item_sources": {
-         "@id": "sepio-model:evidence_item_sources"
+         "@type": "xsd:anyURI",
+         "@id": "SEPIO:0000124"
       },
       "has_evidence_items": {
          "@type": "@id",
-         "@id": "sepio-model:has_evidence_items"
+         "@id": "SEPIO:0000084"
       },
       "score_of_evidence_provided": {
          "@type": "xsd:float",
-         "@id": "sepio-model:score_of_evidence_provided"
+         "@id": "SEPIO:0000429"
       },
       "strength_of_evidence_provided": {
-         "@id": "sepio-model:strength_of_evidence_provided"
+         "@type": "xsd:anyURI",
+         "@id": "SEPIO:0000132"
       },
       "target_proposition": {
          "@type": "@id",
-         "@id": "sepio-model:target_proposition"
+         "@id": "SEPIO:0000427"
       },
       "system_url": {
          "@type": "xsd:anyURI",
@@ -157,10 +188,10 @@
       },
       "contributions": {
          "@type": "@id",
-         "@id": "sepio-model:contributions"
+         "@id": "SEPIO:0000159"
       },
       "date_authored": {
-         "@id": "sepio-model:date_authored"
+         "@id": "SEPIO:0000135"
       },
       "derived_from": {
          "@type": "@id",
@@ -168,17 +199,19 @@
       },
       "information_quality": {
          "@type": "@id",
-         "@id": "sepio-model:information_quality"
+         "@id": "SEPIO:0000415"
       },
       "is_about": {
-         "@id": "sepio-model:is_about"
+         "@type": "xsd:anyURI",
+         "@id": "IAO:0000136"
       },
       "record_metadata": {
          "@type": "@id",
          "@id": "sepio-model:record_metadata"
       },
       "reported_in": {
-         "@id": "sepio-model:reported_in"
+         "@type": "xsd:anyURI",
+         "@id": "SEPIO:0000108"
       },
       "sources": {
          "@id": "sepio-model:sources"
@@ -195,24 +228,26 @@
          "@id": "sepio-model:negated"
       },
       "object": {
-         "@id": "sepio-model:object"
+         "@type": "xsd:anyURI",
+         "@id": "SEPIO:0000390"
       },
       "predicate": {
          "@type": "@id",
-         "@id": "sepio-model:predicate"
+         "@id": "SEPIO:0000389"
       },
       "proposition_text": {
          "@id": "sepio-model:proposition_text"
       },
       "qualifier": {
          "@type": "@id",
-         "@id": "sepio-model:qualifier"
+         "@id": "SEPIO:0000144"
       },
       "subject": {
-         "@id": "sepio-model:subject"
+         "@type": "xsd:anyURI",
+         "@id": "SEPIO:0000388"
       },
       "date_record_created": {
-         "@id": "sepio-model:date_record_created"
+         "@id": "SEPIO:0000436"
       },
       "derived_from_record": {
          "@id": "sepio-model:derived_from_record"
@@ -228,22 +263,23 @@
       },
       "has_evidence": {
          "@type": "@id",
-         "@id": "sepio-model:has_evidence"
+         "@id": "SEPIO:0000189"
       },
       "has_evidence_from_sources": {
          "@type": "@id",
-         "@id": "sepio-model:has_evidence_from_sources"
+         "@id": "SEPIO:0000145"
       },
       "has_evidence_lines": {
          "@type": "@id",
-         "@id": "sepio-model:has_evidence_lines"
+         "@id": "SEPIO:0000006"
       },
       "has_evidence_of_types": {
-         "@id": "sepio-model:has_evidence_of_types"
+         "@type": "xsd:anyURI",
+         "@id": "SEPIO:0000398"
       },
       "proposition": {
          "@type": "@id",
-         "@id": "sepio-model:proposition"
+         "@id": "SEPIO:0000030"
       },
       "score": {
          "@type": "xsd:float",
@@ -257,7 +293,7 @@
       },
       "subject_classification": {
          "@type": "@id",
-         "@id": "sepio-model:subject_classification"
+         "@id": "SEPIO:0000197"
       },
       "characteristics": {
          "@type": "@id",
@@ -295,10 +331,10 @@
          "@id": "sepio-model:study_group"
       },
       "Activity": {
-         "@id": "sepio-model:Activity"
+         "@id": "prov:Activity"
       },
       "Agent": {
-         "@id": "sepio-model:Agent"
+         "@id": "prov:Agent"
       },
       "Characteristic": {
          "@id": "sepio-model:Characteristic"
@@ -307,22 +343,22 @@
          "@id": "sepio-model:Coding"
       },
       "Contribution": {
-         "@id": "sepio-model:Contribution"
+         "@id": "SEPIO:0000158"
       },
       "DataItem": {
-         "@id": "sepio-model:DataItem"
+         "@id": "IAO:0000027"
       },
       "DataSet": {
-         "@id": "sepio-model:DataSet"
+         "@id": "IAO:0000100"
       },
       "Document": {
-         "@id": "sepio-model:Document"
+         "@id": "IAO:0000310"
       },
       "Entity": {
-         "@id": "sepio-model:Entity"
+         "@id": "BFO:0000001"
       },
       "EvidenceLine": {
-         "@id": "sepio-model:EvidenceLine"
+         "@id": "SEPIO:0000002"
       },
       "Expression": {
          "@id": "sepio-model:Expression"
@@ -331,13 +367,13 @@
          "@id": "sepio-model:Extension"
       },
       "InformationEntity": {
-         "@id": "sepio-model:InformationEntity"
+         "@id": "IAO:0000030"
       },
       "Method": {
-         "@id": "sepio-model:Method"
+         "@id": "IAO:0000104"
       },
       "Proposition": {
-         "@id": "sepio-model:Proposition"
+         "@id": "SEPIO:0000000"
       },
       "Qualifier": {
          "@id": "sepio-model:Qualifier"
@@ -346,7 +382,7 @@
          "@id": "sepio-model:RecordMetadata"
       },
       "Statement": {
-         "@id": "sepio-model:Statement"
+         "@id": "SEPIO:0000001"
       },
       "StudyGroup": {
          "@id": "sepio-model:StudyGroup"

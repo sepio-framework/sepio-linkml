@@ -35,6 +35,26 @@
     {
       "prefix_prefix": "example",
       "prefix_reference": "https://example.org/"
+    },
+    {
+      "prefix_prefix": "SEPIO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/SEPIO_"
+    },
+    {
+      "prefix_prefix": "IAO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
+    },
+    {
+      "prefix_prefix": "RO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/RO_"
+    },
+    {
+      "prefix_prefix": "prov",
+      "prefix_reference": "http://www.w3.org/ns/prov#"
+    },
+    {
+      "prefix_prefix": "pav",
+      "prefix_reference": "http://purl.org/pav/"
     }
   ],
   "default_prefix": "sepio_linkml",
@@ -349,6 +369,32 @@
       "@type": "TypeDefinition"
     }
   ],
+  "enums": [
+    {
+      "name": "EvidenceDirection",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/EvidenceDirection",
+      "description": "The direction of support an Evidence Line provides toward its target Proposition.",
+      "from_schema": "https://w3id.org/sepio-model",
+      "enum_uri": "SEPIO:0000402",
+      "permissible_values": [
+        {
+          "text": "supports",
+          "description": "The Evidence Line provides an argument that supports the target Proposition.",
+          "meaning": "SEPIO:0000403"
+        },
+        {
+          "text": "disputes",
+          "description": "The Evidence Line provides an argument that disputes the target Proposition.",
+          "meaning": "SEPIO:0000404"
+        },
+        {
+          "text": "neutral",
+          "description": "The Evidence Line lacks sufficient credibility, relevance, or completeness to argue for or against the target Proposition.",
+          "meaning": "SEPIO:0000405"
+        }
+      ]
+    }
+  ],
   "slots": [
     {
       "name": "entity__id",
@@ -358,7 +404,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/id",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/id",
       "alias": "id",
       "owner": "Entity",
       "domain_of": [
@@ -377,7 +423,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/identifiers",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/identifiers",
       "alias": "identifiers",
       "owner": "Entity",
       "domain_of": [
@@ -395,7 +441,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/type",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/type",
       "alias": "type",
       "owner": "Entity",
       "domain_of": [
@@ -410,7 +456,7 @@
       "description": "A primary name for the Entity.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/label",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/label",
       "alias": "label",
       "owner": "Entity",
       "domain_of": [
@@ -424,7 +470,7 @@
       "description": "Alternative name(s) for the Entity.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/alternative_labels",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/alternative_labels",
       "alias": "alternative_labels",
       "owner": "Entity",
       "domain_of": [
@@ -439,7 +485,7 @@
       "description": "A free text description of the Entity.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/description",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/description",
       "alias": "description",
       "owner": "Entity",
       "domain_of": [
@@ -456,7 +502,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/extensions",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/extensions",
       "alias": "extensions",
       "owner": "Entity",
       "domain_of": [
@@ -472,17 +518,21 @@
       "name": "informationEntity__is_about",
       "description": "An entity or concept in the world that the information entity describes/is about.",
       "comments": [
-        "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about the variant 'BRCA2 c.8023A>G', and the disease 'Breast Cancer'."
+        "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about identifiers for the variant 'BRCA2 c.8023A>G' and the disease 'Breast Cancer' (MONDO:0007254).",
+        "Values are URIs or CURIEs, not free-text labels."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000136"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/is_about",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
       "alias": "is_about",
       "owner": "InformationEntity",
       "domain_of": [
         "InformationEntity"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -493,8 +543,11 @@
         "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000159"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/contributions",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000159",
       "alias": "contributions",
       "owner": "InformationEntity",
       "domain_of": [
@@ -513,8 +566,11 @@
         "The term 'authored' as used in the model refers to the generation of 'information content' in the abstract  sense, as opposed to a concrete encoding of this information in a specific language or format. e.g. for a Statement, this attribute captures when the information content expressed in the Statement was first generated by an agent.  Information about when a particular concrete encoding of this information was created (e.g. as row in a table, or object in a json document) would live in a RecordMetadata object attached to the Information Entity)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000135"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/date_authored",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000135",
       "alias": "date_authored",
       "owner": "InformationEntity",
       "domain_of": [
@@ -531,14 +587,17 @@
         "Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/ cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. \"Transmission Electron Microscopy\")."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000041"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/specified_by",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000041",
       "alias": "specified_by",
       "owner": "InformationEntity",
       "domain_of": [
         "InformationEntity"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -551,7 +610,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/supporting_methods",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/supporting_methods",
       "alias": "supporting_methods",
       "owner": "InformationEntity",
       "domain_of": [
@@ -570,7 +629,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/supporting_method_types",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/supporting_method_types",
       "alias": "supporting_method_types",
       "owner": "InformationEntity",
       "domain_of": [
@@ -586,8 +645,11 @@
       "name": "informationEntity__derived_from",
       "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "http://purl.org/pav/derivedFrom"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/derived_from",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/derived_from",
       "alias": "derived_from",
       "owner": "InformationEntity",
       "domain_of": [
@@ -606,14 +668,17 @@
         "This attribute is used specifically to reference documents/publications where the Information Entity is expressed or reported.  For a Statement, this might be a publication where the authors express the statement in text. For a Data Item, this might be a publication with a table or figure that reports the value of the  data."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000108"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/reported_in",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000108",
       "alias": "reported_in",
       "owner": "InformationEntity",
       "domain_of": [
         "InformationEntity"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -625,7 +690,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/sources",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/sources",
       "alias": "sources",
       "owner": "InformationEntity",
       "domain_of": [
@@ -645,8 +710,11 @@
         "Implementers should define a relevant source of codes or terms to use here, based on the needs of the domain or application.'"
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000415"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/information_quality",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000415",
       "alias": "information_quality",
       "owner": "InformationEntity",
       "domain_of": [
@@ -665,7 +733,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/record_metadata",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/record_metadata",
       "alias": "record_metadata",
       "owner": "InformationEntity",
       "domain_of": [
@@ -684,7 +752,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/subtype",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/subtype",
       "alias": "subtype",
       "owner": "Method",
       "domain_of": [
@@ -700,7 +768,7 @@
       "description": "The URL/web address from which the Method can be retrieved.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/urls",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/urls",
       "alias": "urls",
       "owner": "Method",
       "domain_of": [
@@ -718,7 +786,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/subtype",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/subtype",
       "alias": "subtype",
       "owner": "Document",
       "domain_of": [
@@ -733,7 +801,7 @@
       "name": "document__title",
       "description": "The official title given to the document by its authors.",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/title",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/title",
       "alias": "title",
       "owner": "Document",
       "domain_of": [
@@ -747,7 +815,7 @@
       "description": "One or more URLs from which the content of the Document can be retrieved.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/urls",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/urls",
       "alias": "urls",
       "owner": "Document",
       "domain_of": [
@@ -762,7 +830,7 @@
       "description": "A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_ for the document.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/pmid",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/pmid",
       "alias": "pmid",
       "owner": "Document",
       "domain_of": [
@@ -776,7 +844,7 @@
       "description": "A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_` for the document.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/doi",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/doi",
       "alias": "doi",
       "owner": "Document",
       "domain_of": [
@@ -793,7 +861,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/license",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/license",
       "alias": "license",
       "owner": "Document",
       "domain_of": [
@@ -810,7 +878,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/subtype",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/subtype",
       "alias": "subtype",
       "owner": "DataItem",
       "domain_of": [
@@ -826,7 +894,7 @@
       "description": "The value of the data item (could be quantitative or qualitative depending on the type of data item).",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/value",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/value",
       "alias": "value",
       "owner": "DataItem",
       "domain_of": [
@@ -844,7 +912,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/unit",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/unit",
       "alias": "unit",
       "owner": "DataItem",
       "domain_of": [
@@ -863,7 +931,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/variability_measures",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/variability_measures",
       "alias": "variability_measures",
       "owner": "DataItem",
       "domain_of": [
@@ -884,7 +952,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/confidence_interval",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/confidence_interval",
       "alias": "confidence_interval",
       "owner": "DataItem",
       "domain_of": [
@@ -903,7 +971,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/component_data_item",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/component_data_item",
       "alias": "component_data_item",
       "owner": "DataItem",
       "domain_of": [
@@ -923,7 +991,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/subtype",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/subtype",
       "alias": "subtype",
       "owner": "DataSet",
       "domain_of": [
@@ -942,7 +1010,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/release_date",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/release_date",
       "alias": "release_date",
       "owner": "DataSet",
       "domain_of": [
@@ -959,7 +1027,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/version",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/version",
       "alias": "version",
       "owner": "DataSet",
       "domain_of": [
@@ -976,7 +1044,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/license",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/license",
       "alias": "license",
       "owner": "DataSet",
       "domain_of": [
@@ -993,7 +1061,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/subtype",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/subtype",
       "alias": "subtype",
       "owner": "Activity",
       "domain_of": [
@@ -1011,8 +1079,11 @@
         "By convention, populate this attribute with the date the activity was completed (e.g.  in cases where the activity spans multiple days). The date SHOULD be formatted as a date string in ISO format \"YYYY-MM-DD\"."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000160"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/date",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000160",
       "alias": "date",
       "owner": "Activity",
       "domain_of": [
@@ -1025,8 +1096,11 @@
       "name": "activity__performed_by",
       "description": "An Agent who participated in executing the Activity.",
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000017"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/performed_by",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000017",
       "alias": "performed_by",
       "owner": "Activity",
       "domain_of": [
@@ -1042,8 +1116,11 @@
       "name": "activity__specified_by",
       "description": "A method that was followed in performing an Activity, that describes how it was executed.",
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000041"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/specified_by",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000041",
       "alias": "specified_by",
       "owner": "Activity",
       "domain_of": [
@@ -1059,8 +1136,14 @@
       "name": "activity__input",
       "description": "An entity that was input into the Activity (could be material or information)",
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/OBI_0000293"
+      ],
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002233"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/input",
+      "slot_uri": "http://purl.obolibrary.org/obo/OBI_0000293",
       "alias": "input",
       "owner": "Activity",
       "domain_of": [
@@ -1076,8 +1159,14 @@
       "name": "activity__output",
       "description": "An entity that was output from the Activity (could be material or information)",
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/OBI_0000299"
+      ],
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002234"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/output",
+      "slot_uri": "http://purl.obolibrary.org/obo/OBI_0000299",
       "alias": "output",
       "owner": "Activity",
       "domain_of": [
@@ -1096,8 +1185,14 @@
         "Note that this must be a single agent (which can be a Person, or an Organization).  If multiple Agents contributed to an entity, a separate Contribution instances MUST be created for each."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000150"
+      ],
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000017"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/contributor",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000150",
       "alias": "contributor",
       "owner": "Contribution",
       "domain_of": [
@@ -1116,7 +1211,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/activity_type",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/activity_type",
       "alias": "activity_type",
       "owner": "Contribution",
       "domain_of": [
@@ -1132,8 +1227,11 @@
       "name": "contribution__contribution_made_to",
       "description": "The artifact toward which the contribution was made.",
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000188"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/contribution_made_to",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000188",
       "alias": "contribution_made_to",
       "owner": "Contribution",
       "domain_of": [
@@ -1152,7 +1250,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/subtype",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/subtype",
       "alias": "subtype",
       "owner": "Agent",
       "domain_of": [
@@ -1166,7 +1264,7 @@
       "description": "The given name of the Agent.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/name",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/name",
       "alias": "name",
       "owner": "Agent",
       "domain_of": [
@@ -1183,7 +1281,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/statement_text",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/statement_text",
       "alias": "statement_text",
       "owner": "Statement",
       "domain_of": [
@@ -1199,8 +1297,11 @@
         "This attribute supports an alternate modeling pattern where the structured semantics of the possible fact asserted or evaluated by a Statement is encapsulated in a separate 'Proposition' object. In such a case, the subject-predicate-object-qualifier properties on the Statement are not utilized. A given implementation should decide which pattern to follow and drop attributes not required for their approach."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000030"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/proposition",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000030",
       "alias": "proposition",
       "owner": "Statement",
       "domain_of": [
@@ -1215,14 +1316,17 @@
       "name": "statement__subject",
       "description": "The Entity or concept about which the Statement is made.",
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000388"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/subject",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000388",
       "alias": "subject",
       "owner": "Statement",
       "domain_of": [
         "Statement"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -1232,8 +1336,11 @@
         "When applied to represent a particular type of Statement (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000389"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/predicate",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000389",
       "alias": "predicate",
       "owner": "Statement",
       "domain_of": [
@@ -1251,14 +1358,17 @@
         "The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000390"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/object",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000390",
       "alias": "object",
       "owner": "Statement",
       "domain_of": [
         "Statement"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -1269,8 +1379,11 @@
         "The SEPIO core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Statement. But in practice, profiles for specific Statement types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers. For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier' attribute that is required, and a named 'geneContextQualifier' attribute that is optional - both of which conceptually specialize the core-im 'qualifier' property. Under this approach, the core 'qualifier' acts as a placeholder to seed such specializations, but is not used directly in Statement profiles."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000144"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/qualifier",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000144",
       "alias": "qualifier",
       "owner": "Statement",
       "domain_of": [
@@ -1289,8 +1402,11 @@
         "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject',  'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction', 'strength', and 'score' attributes. The 'direction'  attribute is used to indicate whether the Statement's Proposition is *supported* by the agent's assessment (when evidence favors its validity), is *disputed* by the agent's assessment (when evidence argues against its validity), or remains *neutral* (when conflicting or insufficient evidence exists to assert one direction or the other).  (Enumerated values = 'supports', 'disputes', 'neutral')."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000183"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/direction",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/direction",
       "alias": "direction",
       "owner": "Statement",
       "domain_of": [
@@ -1306,8 +1422,11 @@
         "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject,' 'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction',  'strength', and 'score' attributes. The 'strength' attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a *level of confidence* that the Proposition is true or false, or as a *level of evidence* that supports or disputes it. Data creators can define the permissible values for the 'strength' attribute to indicate which of these facets is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low')."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000146"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/strength",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/strength",
       "alias": "strength",
       "owner": "Statement",
       "domain_of": [
@@ -1323,8 +1442,11 @@
         "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength', and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000168"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/score",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/score",
       "alias": "score",
       "owner": "Statement",
       "domain_of": [
@@ -1340,8 +1462,11 @@
         "Permissible values for this attribute are  typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000197"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/subject_classification",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000197",
       "alias": "subject_classification",
       "owner": "Statement",
       "domain_of": [
@@ -1359,14 +1484,17 @@
         "This contrasts with has_evidence and hasEvidenceLine attributes that describe specific instances of evidence information, such as a particular data item, study result, or prior assertions, etc. Where possible, data cretors should use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO) to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity evidence')."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000398"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/has_evidence_of_types",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000398",
       "alias": "has_evidence_of_types",
       "owner": "Statement",
       "domain_of": [
         "Statement"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -1378,8 +1506,11 @@
         "Evidence Lines are useful in cases where a data provider wants to describe in detail how information was  assessed as evidence to generate and score different arguments for or against a Statement''s proposition. Evidence Lines can be omitted if such information is not available or needed."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000006"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/has_evidence_lines",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000006",
       "alias": "has_evidence_lines",
       "owner": "Statement",
       "domain_of": [
@@ -1399,8 +1530,11 @@
         "This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class - to be used data creators cannot or do not wish to create an Evidence Line object."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000189"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/has_evidence",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000189",
       "alias": "has_evidence",
       "owner": "Statement",
       "domain_of": [
@@ -1419,7 +1553,10 @@
         "This is a 'shortcut property' that can be used to directly link a Statement to sources that provided evidence supporting/disputing it, without having to create Evidence Lines or Evidence Items in the data."
       ],
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/has_evidence_from_sources",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000145"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000145",
       "alias": "has_evidence_from_sources",
       "owner": "Statement",
       "domain_of": [
@@ -1438,7 +1575,7 @@
         "The 'focus' of a StudyResult is the what anchors selection of all data items and provenance information that it contains. This focus may be a single participant or subject of a study (e.g. one patient in a clinical study, or one allele in a population frequency analysis). It may be a study group defined as an experimental unit in the study (e.g. a specific treatment arm of a clinical study). Or it may be a variable defined as a unit of analysis in the study (e.g. 'exposure to nicotine' in an analysis correlating this variable with clinical outcomes)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/focus",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/focus",
       "alias": "focus",
       "owner": "StudyResult",
       "domain_of": [
@@ -1456,7 +1593,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/data_items",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/data_items",
       "alias": "data_items",
       "owner": "StudyResult",
       "domain_of": [
@@ -1476,7 +1613,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/interpretation",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/interpretation",
       "alias": "interpretation",
       "owner": "StudyResult",
       "domain_of": [
@@ -1495,7 +1632,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/source_data_set",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/source_data_set",
       "alias": "source_data_set",
       "owner": "StudyResult",
       "domain_of": [
@@ -1515,7 +1652,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/component_result",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/component_result",
       "alias": "component_result",
       "owner": "StudyResult",
       "domain_of": [
@@ -1534,7 +1671,7 @@
         "For example, in a StudyResult holding allele frequency data, this attribute points to a StudyGroup object that describes characteristics of the population that the frequency data was generated from (e.g. 'East Asian', 'Female')."
       ],
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/study_group",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/study_group",
       "alias": "study_group",
       "owner": "StudyResult",
       "domain_of": [
@@ -1553,7 +1690,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/subtype",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/subtype",
       "alias": "subtype",
       "owner": "EvidenceLine",
       "domain_of": [
@@ -1571,8 +1708,11 @@
         "An example based on the ACMG Guidelines for germline variant pathogenicity interpretation: Consider a curator assessing the evidence provided by population frequency data for a specific variant based on the ACMG criteria. In order to assign a strength (e.g. moderate vs strong) and direction (supports vs disputes) to this data as evidence, there must be some 'target proposition' toward which the evidence is assessed - which in this cases is the proposition that the variant is pathogenic for the disease of interest. If the PM2 criteria is deemed 'met', this indicates that the population frequency evidence provides 'moderate' (strength) 'support' (direction) for this target proposition."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000427"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/target_proposition",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000427",
       "alias": "target_proposition",
       "owner": "EvidenceLine",
       "domain_of": [
@@ -1591,8 +1731,11 @@
         "Different types and scales of information entity can serve as evidence (experimental measurements or observations, data tables or figures, images, prior assertions, etc.) Only when assessed as evidence do we consider the information to be an 'Evidence Item'.  For example, a piece of population frequency data about BRCA2 c.8023A>G  becomes an Evidence Item when it is assessed for the support it may offer for a target proposition (e.g. the prospect of the variant\u2019s pathogenicity)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000084"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/has_evidence_items",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000084",
       "alias": "has_evidence_items",
       "owner": "EvidenceLine",
       "domain_of": [
@@ -1608,14 +1751,17 @@
       "name": "evidenceLine__direction_of_evidence_provided",
       "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral).",
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000183"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/direction_of_evidence_provided",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000183",
       "alias": "direction_of_evidence_provided",
       "owner": "EvidenceLine",
       "domain_of": [
         "EvidenceLine"
       ],
-      "range": "string",
+      "range": "EvidenceDirection",
       "@type": "SlotDefinition"
     },
     {
@@ -1625,14 +1771,17 @@
         "Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'score_of_evidence_provided' attribute can be used to report quantitative assessments of evidence provided."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000132"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/strength_of_evidence_provided",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000132",
       "alias": "strength_of_evidence_provided",
       "owner": "EvidenceLine",
       "domain_of": [
         "EvidenceLine"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -1642,8 +1791,11 @@
         "A given profile or implementation can define a scoring scale and rules that meet the needs of their domain or application."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000429"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/score_of_evidence_provided",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000429",
       "alias": "score_of_evidence_provided",
       "owner": "EvidenceLine",
       "domain_of": [
@@ -1659,14 +1811,17 @@
         "This is a 'shortcut relation' that can be used to directly link an Evidence Line to sources of its supporting Evidence Items, without having to represent those Evidence Items directly. Populate with the name or uri or curie of a source of information. Future work will define a more formal framework for referencing information sources."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000124"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/evidence_item_sources",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000124",
       "alias": "evidence_item_sources",
       "owner": "EvidenceLine",
       "domain_of": [
         "EvidenceLine"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -1675,7 +1830,7 @@
       "description": "A natural-language expression of the Proposition's meaning (i.e. the 'possible fact' it expresses).",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/proposition_text",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/proposition_text",
       "alias": "proposition_text",
       "owner": "Proposition",
       "domain_of": [
@@ -1691,14 +1846,17 @@
         "While the Core Information Model is domain-agnostic, and supports Propositions about any type of Entity, for most VA use cases, the subject will be  some type of genetic variation. But data creators may want to make statements about other entities or concepts that represent evidence for a statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000388"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/subject",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000388",
       "alias": "subject",
       "owner": "Proposition",
       "domain_of": [
         "Proposition"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -1709,8 +1867,11 @@
         "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000389"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/predicate",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000389",
       "alias": "predicate",
       "owner": "Proposition",
       "domain_of": [
@@ -1729,14 +1890,17 @@
         "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects this is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000390"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/object",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000390",
       "alias": "object",
       "owner": "Proposition",
       "domain_of": [
         "Proposition"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -1748,8 +1912,11 @@
         "The SEPIO core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Statement. But in practice, profiles for specific Proposition types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers. For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier' attribute that is required, and a named 'geneContextQualifier' attribute that is optional - both of which conceptually specialize the core-im 'qualifier' property. Under this approach, the core 'qualifier' acts as a placeholder to seed such specializations, but is not used directly in profiles."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000144"
+      ],
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/qualifier",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000144",
       "alias": "qualifier",
       "owner": "Proposition",
       "domain_of": [
@@ -1769,7 +1936,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/negated",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/negated",
       "alias": "negated",
       "owner": "Proposition",
       "domain_of": [
@@ -1783,7 +1950,7 @@
       "description": "The total number of individual members in the StudyGroup.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/member_count",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/member_count",
       "alias": "member_count",
       "owner": "StudyGroup",
       "domain_of": [
@@ -1797,7 +1964,7 @@
       "description": "A larger StudyGroup of which this StudyGroup represents a subset.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/is_subset_of",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/is_subset_of",
       "alias": "is_subset_of",
       "owner": "StudyGroup",
       "domain_of": [
@@ -1814,7 +1981,7 @@
       "description": "A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/characteristics",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/characteristics",
       "alias": "characteristics",
       "owner": "StudyGroup",
       "domain_of": [
@@ -1830,7 +1997,7 @@
       "name": "coding__code",
       "description": "A symbol uniquely identifying the concept, as in a syntax defined by the code system.  CURIE format is preferred where possible (e.g. \u2018SO:0000704\u2019 is the CURIE form of the Sequence Ontology code for 'gene').",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/code",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/code",
       "alias": "code",
       "owner": "Coding",
       "domain_of": [
@@ -1843,7 +2010,7 @@
       "name": "coding__label",
       "description": "The human-readable name for the coded concept, as defined by the code system.",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/label",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/label",
       "alias": "label",
       "owner": "Coding",
       "domain_of": [
@@ -1856,7 +2023,7 @@
       "name": "coding__system",
       "description": "The terminology/code system that defined the code.  May be reported as a free-text name (e.g. \u2018Sequence Ontology\u2019), but it is preferable to provide  a uri/url for the system. When the 'code' is reported as a CURIE, the 'system' should be reported as the uri that the CURIE's prefix expands to (e.g. 'http://purl.obofoundry.org/so.owl/' for the Sequence Ontology).",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/system",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/system",
       "alias": "system",
       "owner": "Coding",
       "domain_of": [
@@ -1869,7 +2036,7 @@
       "name": "coding__system_version",
       "description": "Version of the terminology or code system that provided the code.",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/system_version",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/system_version",
       "alias": "system_version",
       "owner": "Coding",
       "domain_of": [
@@ -1886,7 +2053,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/name",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/name",
       "alias": "name",
       "owner": "Qualifier",
       "domain_of": [
@@ -1904,7 +2071,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/value",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/value",
       "alias": "value",
       "owner": "Qualifier",
       "domain_of": [
@@ -1918,7 +2085,7 @@
       "name": "expression__value",
       "description": "A free-text rendering of the expression used as a label for the entity",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/value",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/value",
       "alias": "value",
       "owner": "Expression",
       "domain_of": [
@@ -1932,7 +2099,7 @@
       "name": "expression__system_url",
       "description": "A URL for the nomenclature system",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/system_url",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/system_url",
       "alias": "system_url",
       "owner": "Expression",
       "domain_of": [
@@ -1945,7 +2112,7 @@
       "name": "expression__system_version",
       "description": "The version of the nomenclature system.",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/system_version",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/system_version",
       "alias": "system_version",
       "owner": "Expression",
       "domain_of": [
@@ -1958,7 +2125,7 @@
       "name": "extension__extension_description",
       "description": "A free text description of the intended meaning and use of the extension element, which may include the types of values it takes, and how to interpret these values in the context of the parent Class.",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/extension_description",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/extension_description",
       "alias": "extension_description",
       "owner": "Extension",
       "domain_of": [
@@ -1971,7 +2138,7 @@
       "name": "extension__name",
       "description": "A name for the Extension. Should be indicative of its meaning and/or the type of information it value represents.",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/name",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/name",
       "alias": "name",
       "owner": "Extension",
       "domain_of": [
@@ -1985,7 +2152,7 @@
       "name": "extension__value",
       "description": "The value of the Extension - can be any primitive or structured object",
       "from_schema": "https://w3id.org/sepio-model",
-      "slot_uri": "https://example.org/sepio-model/value",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/value",
       "alias": "value",
       "owner": "Extension",
       "domain_of": [
@@ -2003,7 +2170,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/record_identifier",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/record_identifier",
       "alias": "record_identifier",
       "owner": "RecordMetadata",
       "domain_of": [
@@ -2017,7 +2184,7 @@
       "description": "The version number of the record-level artifact the object describes.",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/record_version",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/record_version",
       "alias": "record_version",
       "owner": "RecordMetadata",
       "domain_of": [
@@ -2033,8 +2200,11 @@
         "Value should be a string representing the identifier of the source record."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "close_mappings": [
+        "http://purl.org/pav/derivedFrom"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/derived_from_record",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/derived_from_record",
       "alias": "derived_from_record",
       "owner": "RecordMetadata",
       "domain_of": [
@@ -2048,8 +2218,11 @@
       "name": "recordMetadata__date_record_created",
       "description": "The date the record was initially created.",
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000436"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/date_record_created",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000436",
       "alias": "date_record_created",
       "owner": "RecordMetadata",
       "domain_of": [
@@ -2062,8 +2235,11 @@
       "name": "recordMetadata__contributions",
       "description": "describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object.",
       "from_schema": "https://w3id.org/sepio-model",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000159"
+      ],
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/contributions",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000159",
       "alias": "contributions",
       "owner": "RecordMetadata",
       "domain_of": [
@@ -2080,7 +2256,7 @@
       "description": "The type of the trait or role described by the trait (e.g. 'ethnicity', 'sex', 'age', 'disease status').",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/name",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/name",
       "alias": "name",
       "owner": "Characteristic",
       "domain_of": [
@@ -2095,7 +2271,7 @@
       "description": "The specific value(s) that the indicated traitor role  holds in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer').",
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Draft",
-      "slot_uri": "https://example.org/sepio-model/values",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/values",
       "alias": "values",
       "owner": "Characteristic",
       "domain_of": [
@@ -2114,7 +2290,7 @@
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "status": "Informative",
-      "slot_uri": "https://example.org/sepio-model/value_operator",
+      "slot_uri": "https://w3id.org/sepio-framework/sepio-linkml/value_operator",
       "alias": "value_operator",
       "owner": "Characteristic",
       "domain_of": [
@@ -2127,13 +2303,16 @@
   "classes": [
     {
       "name": "Entity",
-      "definition_uri": "https://example.org/sepio-model/Entity",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Entity",
       "description": "Anything that exists, has existed, or will exist.",
       "title": "Entity",
       "comments": [
         "Entity is the root class of the 'gks-common' core information model. All common classes that have ids and other general metadata like label,  description, type, or extensions descend from this class and inherit its attributes."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "BFO:0000001"
+      ],
       "status": "Draft",
       "slots": [
         "entity__id",
@@ -2214,18 +2393,21 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Entity",
+      "class_uri": "http://purl.obolibrary.org/obo/BFO_0000001",
       "@type": "ClassDefinition"
     },
     {
       "name": "InformationEntity",
-      "definition_uri": "https://example.org/sepio-model/InformationEntity",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/InformationEntity",
       "description": "An abstract (non-physical) entity that is about something - representing the underlying 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs.",
       "title": "Information Entity",
       "comments": [
         "As abstract, non-physical entities, Information Entities represent information independent of any specific language, format, or physical/digital medium. They can be simultaneously concretized in many distinct physical artifacts (e.g. all physical copies of the first edition of \"War and Peace\" carry the same information content, and thus concretize the same Information Entity)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "IAO:0000030"
+      ],
       "status": "Draft",
       "is_a": "Entity",
       "slots": [
@@ -2254,10 +2436,12 @@
           "name": "is_about",
           "description": "An entity or concept in the world that the information entity describes/is about.",
           "comments": [
-            "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about the variant 'BRCA2 c.8023A>G', and the disease 'Breast Cancer'."
+            "e.g. In the context of a Statement object, this attribute may be used to indicate entities/concepts it is about, in lieu of providing a more precise description of what the Statement asserts to be true using subject, predicate, object, and qualifier properties. e.g. the Statement that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\" might be annotated to be about identifiers for the variant 'BRCA2 c.8023A>G' and the disease 'Breast Cancer' (MONDO:0007254).",
+            "Values are URIs or CURIEs, not free-text labels."
           ],
           "status": "Informative",
-          "range": "string",
+          "slot_uri": "IAO:0000136",
+          "range": "uriorcurie",
           "multivalued": true,
           "@type": "SlotDefinition"
         },
@@ -2268,6 +2452,7 @@
             "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
           ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000159",
           "range": "Contribution",
           "multivalued": true,
           "@type": "SlotDefinition"
@@ -2279,6 +2464,7 @@
             "The term 'authored' as used in the model refers to the generation of 'information content' in the abstract  sense, as opposed to a concrete encoding of this information in a specific language or format. e.g. for a Statement, this attribute captures when the information content expressed in the Statement was first generated by an agent.  Information about when a particular concrete encoding of this information was created (e.g. as row in a table, or object in a json document) would live in a RecordMetadata object attached to the Information Entity)."
           ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000135",
           "range": "string",
           "@type": "SlotDefinition"
         },
@@ -2290,7 +2476,8 @@
             "Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/ cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. \"Transmission Electron Microscopy\")."
           ],
           "status": "Draft",
-          "range": "string",
+          "slot_uri": "SEPIO:0000041",
+          "range": "uriorcurie",
           "multivalued": true,
           "@type": "SlotDefinition"
         },
@@ -2321,6 +2508,9 @@
         {
           "name": "derived_from",
           "description": "Another Information Entity from which this Information Entity is derived, in whole or in part.",
+          "exact_mappings": [
+            "pav:derivedFrom"
+          ],
           "status": "Draft",
           "range": "InformationEntity",
           "multivalued": true,
@@ -2333,7 +2523,8 @@
             "This attribute is used specifically to reference documents/publications where the Information Entity is expressed or reported.  For a Statement, this might be a publication where the authors express the statement in text. For a Data Item, this might be a publication with a table or figure that reports the value of the  data."
           ],
           "status": "Draft",
-          "range": "string",
+          "slot_uri": "SEPIO:0000108",
+          "range": "uriorcurie",
           "multivalued": true,
           "@type": "SlotDefinition"
         },
@@ -2358,6 +2549,7 @@
             "Implementers should define a relevant source of codes or terms to use here, based on the needs of the domain or application.'"
           ],
           "status": "Informative",
+          "slot_uri": "SEPIO:0000415",
           "range": "Coding",
           "@type": "SlotDefinition"
         },
@@ -2372,18 +2564,24 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/InformationEntity",
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000030",
       "@type": "ClassDefinition"
     },
     {
       "name": "Method",
-      "definition_uri": "https://example.org/sepio-model/Method",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Method",
       "description": "A set of instructions that specify how to achieve some objective.",
       "title": "Method",
       "comments": [
         "In scientific research, these include things like experimental protocols, study designs, data analysis parameters,  curation guidelines, cohort selection criteria, and rule sets."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "IAO:0000104"
+      ],
+      "narrow_mappings": [
+        "SEPIO:0000037"
+      ],
       "is_a": "InformationEntity",
       "slots": [
         "entity__id",
@@ -2428,18 +2626,21 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Method",
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000104",
       "@type": "ClassDefinition"
     },
     {
       "name": "Document",
-      "definition_uri": "https://example.org/sepio-model/Document",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Document",
       "description": "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole.",
       "title": "Document",
       "comments": [
         "As an abstract InformationEntity, a Document instance is defined by the informational content it conveys, not a particular physical concretization of this information. A single Document instance can simultaneously be concretized in different languages, formats, and physical mediums."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "IAO:0000310"
+      ],
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
@@ -2519,18 +2720,21 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Document",
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000310",
       "@type": "ClassDefinition"
     },
     {
       "name": "DataItem",
-      "definition_uri": "https://example.org/sepio-model/DataItem",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/DataItem",
       "description": "An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something.",
       "title": "Data Item",
       "comments": [
         "Examples include raw observations or measurements such as an allele count, or patient's weight, derived calculations such as frequency or mean, and computed statistical scores/metrics such as p-values and z-scores."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "IAO:0000027"
+      ],
       "status": "Informative",
       "is_a": "InformationEntity",
       "slots": [
@@ -2623,18 +2827,24 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/DataItem",
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000027",
       "@type": "ClassDefinition"
     },
     {
       "name": "DataSet",
-      "definition_uri": "https://example.org/sepio-model/DataSet",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/DataSet",
       "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
       "title": "Data Set",
       "comments": [
         "Instances of this class represent a *specific version* of a given dataset. Examples include the  gnomAD version 3.1.2 dataset carrying allele population frequencies, or a specific version of a VCF file that describes variations observed in a particular patient and various annotations made on them, or a SIFT dataset of computational predictions functional impact for a set of variants."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "IAO:0000100"
+      ],
+      "narrow_mappings": [
+        "SEPIO:0000400"
+      ],
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
@@ -2704,18 +2914,26 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/DataSet",
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000100",
       "@type": "ClassDefinition"
     },
     {
       "name": "Activity",
-      "definition_uri": "https://example.org/sepio-model/Activity",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Activity",
       "description": "An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities.",
       "title": "Activity",
       "comments": [
         "Activities relevant to scientific knowledge generation, and include things like observations of the natural world, designing and performing experiments, data analysis and transformation, publishing research results, data curation and interpretation, and assessment and care of patients in clinical settings.  These activities may produce information that gets encoded in sharable artifacts which are used to generate scientific knowledge. Agents can play different types of roles in the generation and use of such artifacts."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "prov:Activity"
+      ],
+      "narrow_mappings": [
+        "SEPIO:0000003",
+        "SEPIO:0000004",
+        "SEPIO:0000131"
+      ],
       "status": "Informative",
       "is_a": "Entity",
       "slots": [
@@ -2752,6 +2970,7 @@
             "By convention, populate this attribute with the date the activity was completed (e.g.  in cases where the activity spans multiple days). The date SHOULD be formatted as a date string in ISO format \"YYYY-MM-DD\"."
           ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000160",
           "range": "date",
           "@type": "SlotDefinition"
         },
@@ -2759,6 +2978,7 @@
           "name": "performed_by",
           "description": "An Agent who participated in executing the Activity.",
           "status": "Draft",
+          "slot_uri": "SEPIO:0000017",
           "range": "Agent",
           "multivalued": true,
           "@type": "SlotDefinition"
@@ -2767,6 +2987,7 @@
           "name": "specified_by",
           "description": "A method that was followed in performing an Activity, that describes how it was executed.",
           "status": "Informative",
+          "slot_uri": "SEPIO:0000041",
           "range": "Method",
           "multivalued": true,
           "@type": "SlotDefinition"
@@ -2774,7 +2995,11 @@
         {
           "name": "input",
           "description": "An entity that was input into the Activity (could be material or information)",
+          "exact_mappings": [
+            "RO:0002233"
+          ],
           "status": "Informative",
+          "slot_uri": "OBI:0000293",
           "range": "Entity",
           "multivalued": true,
           "@type": "SlotDefinition"
@@ -2782,18 +3007,22 @@
         {
           "name": "output",
           "description": "An entity that was output from the Activity (could be material or information)",
+          "exact_mappings": [
+            "RO:0002234"
+          ],
           "status": "Informative",
+          "slot_uri": "OBI:0000299",
           "range": "Entity",
           "multivalued": true,
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Activity",
+      "class_uri": "http://www.w3.org/ns/prov#Activity",
       "@type": "ClassDefinition"
     },
     {
       "name": "Contribution",
-      "definition_uri": "https://example.org/sepio-model/Contribution",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Contribution",
       "description": "An action or actions taken by a particular agent in the creation, modification, assessment, or deprecation of some entity (e.g. a Statement, Evidence Line, DataSet, Publication, etc.).",
       "title": "Contribution",
       "comments": [
@@ -2801,6 +3030,9 @@
         "The scope of a Contribution instance includes only the actions of a single agent in contributing to a single artifact, which may be performed in one continuous effort, or several discontinuous sessions of work.  The agent can be an individual person, a software agent, or a group or organization of individuals acting together.'"
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "SEPIO:0000158"
+      ],
       "status": "Draft",
       "is_a": "Activity",
       "slots": [
@@ -2829,7 +3061,11 @@
           "comments": [
             "Note that this must be a single agent (which can be a Person, or an Organization).  If multiple Agents contributed to an entity, a separate Contribution instances MUST be created for each."
           ],
+          "close_mappings": [
+            "SEPIO:0000017"
+          ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000150",
           "range": "Agent",
           "@type": "SlotDefinition"
         },
@@ -2848,16 +3084,17 @@
           "name": "contribution_made_to",
           "description": "The artifact toward which the contribution was made.",
           "status": "Informative",
+          "slot_uri": "SEPIO:0000188",
           "range": "InformationEntity",
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Contribution",
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIO_0000158",
       "@type": "ClassDefinition"
     },
     {
       "name": "Agent",
-      "definition_uri": "https://example.org/sepio-model/Agent",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Agent",
       "description": "An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place,  for the existence of an entity, or for another agent's activity.",
       "title": "Agent",
       "comments": [
@@ -2865,6 +3102,9 @@
         "Agents can belong to organizations, and act on behalf or in the context of an organizational affiliation when contributing to an entity. For example, curators generating these variant pathogenicity interpretations may do so in the context of their work with the ClinGen organization, which provides administrative, technical, and funding support for their contributions."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "prov:Agent"
+      ],
       "status": "Draft",
       "is_a": "Entity",
       "slots": [
@@ -2898,12 +3138,12 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Agent",
+      "class_uri": "http://www.w3.org/ns/prov#Agent",
       "@type": "ClassDefinition"
     },
     {
       "name": "Statement",
-      "definition_uri": "https://example.org/sepio-model/Statement",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Statement",
       "description": "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.",
       "title": "Statement",
       "comments": [
@@ -2913,6 +3153,18 @@
         "In \"Proposition Assessment Mode\" a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements to report that \"there is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'\", or \"we have high confidence that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is false\").  This mode is used in curation projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "SEPIO:0000001"
+      ],
+      "related_mappings": [
+        "SEPIO:0000174"
+      ],
+      "narrow_mappings": [
+        "SEPIO:0000173",
+        "SEPIO:0000258",
+        "SEPIO:0000431",
+        "SEPIO:0000432"
+      ],
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
@@ -2968,6 +3220,7 @@
             "This attribute supports an alternate modeling pattern where the structured semantics of the possible fact asserted or evaluated by a Statement is encapsulated in a separate 'Proposition' object. In such a case, the subject-predicate-object-qualifier properties on the Statement are not utilized. A given implementation should decide which pattern to follow and drop attributes not required for their approach."
           ],
           "status": "Informative",
+          "slot_uri": "SEPIO:0000030",
           "range": "Proposition",
           "@type": "SlotDefinition"
         },
@@ -2975,7 +3228,8 @@
           "name": "subject",
           "description": "The Entity or concept about which the Statement is made.",
           "status": "Draft",
-          "range": "string",
+          "slot_uri": "SEPIO:0000388",
+          "range": "uriorcurie",
           "@type": "SlotDefinition"
         },
         {
@@ -2985,6 +3239,7 @@
             "When applied to represent a particular type of Statement (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845)."
           ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000389",
           "range": "Coding",
           "@type": "SlotDefinition"
         },
@@ -2995,7 +3250,8 @@
             "The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
           ],
           "status": "Draft",
-          "range": "string",
+          "slot_uri": "SEPIO:0000390",
+          "range": "uriorcurie",
           "@type": "SlotDefinition"
         },
         {
@@ -3006,6 +3262,7 @@
             "The SEPIO core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Statement. But in practice, profiles for specific Statement types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers. For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier' attribute that is required, and a named 'geneContextQualifier' attribute that is optional - both of which conceptually specialize the core-im 'qualifier' property. Under this approach, the core 'qualifier' acts as a placeholder to seed such specializations, but is not used directly in Statement profiles."
           ],
           "status": "Informative",
+          "slot_uri": "SEPIO:0000144",
           "range": "Qualifier",
           "multivalued": true,
           "@type": "SlotDefinition"
@@ -3015,6 +3272,9 @@
           "description": "A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.",
           "comments": [
             "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject',  'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction', 'strength', and 'score' attributes. The 'direction'  attribute is used to indicate whether the Statement's Proposition is *supported* by the agent's assessment (when evidence favors its validity), is *disputed* by the agent's assessment (when evidence argues against its validity), or remains *neutral* (when conflicting or insufficient evidence exists to assert one direction or the other).  (Enumerated values = 'supports', 'disputes', 'neutral')."
+          ],
+          "related_mappings": [
+            "SEPIO:0000183"
           ],
           "status": "Draft",
           "range": "string",
@@ -3026,6 +3286,9 @@
           "comments": [
             "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject,' 'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction',  'strength', and 'score' attributes. The 'strength' attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a *level of confidence* that the Proposition is true or false, or as a *level of evidence* that supports or disputes it. Data creators can define the permissible values for the 'strength' attribute to indicate which of these facets is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low')."
           ],
+          "close_mappings": [
+            "SEPIO:0000146"
+          ],
           "status": "Draft",
           "range": "string",
           "@type": "SlotDefinition"
@@ -3035,6 +3298,9 @@
           "description": "A quantitative score that indicates the strength of a Proposition's validity assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.",
           "comments": [
             "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength', and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score."
+          ],
+          "close_mappings": [
+            "SEPIO:0000168"
           ],
           "status": "Draft",
           "range": "float",
@@ -3047,6 +3313,7 @@
             "Permissible values for this attribute are  typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification."
           ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000197",
           "range": "Coding",
           "@type": "SlotDefinition"
         },
@@ -3057,7 +3324,8 @@
             "This contrasts with has_evidence and hasEvidenceLine attributes that describe specific instances of evidence information, such as a particular data item, study result, or prior assertions, etc. Where possible, data cretors should use of terms from ontologies such as the Evidence and Conclusion Ontology (ECO) to describe specific types of evidence (e.g. ECO:0000044 'sequence similarity evidence')."
           ],
           "status": "Informative",
-          "range": "string",
+          "slot_uri": "SEPIO:0000398",
+          "range": "uriorcurie",
           "multivalued": true,
           "@type": "SlotDefinition"
         },
@@ -3069,6 +3337,7 @@
             "Evidence Lines are useful in cases where a data provider wants to describe in detail how information was  assessed as evidence to generate and score different arguments for or against a Statement''s proposition. Evidence Lines can be omitted if such information is not available or needed."
           ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000006",
           "range": "EvidenceLine",
           "multivalued": true,
           "@type": "SlotDefinition"
@@ -3081,6 +3350,7 @@
             "This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class - to be used data creators cannot or do not wish to create an Evidence Line object."
           ],
           "status": "Informative",
+          "slot_uri": "SEPIO:0000189",
           "range": "InformationEntity",
           "multivalued": true,
           "@type": "SlotDefinition"
@@ -3091,17 +3361,18 @@
           "comments": [
             "This is a 'shortcut property' that can be used to directly link a Statement to sources that provided evidence supporting/disputing it, without having to create Evidence Lines or Evidence Items in the data."
           ],
+          "slot_uri": "SEPIO:0000145",
           "range": "InformationEntity",
           "multivalued": true,
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Statement",
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIO_0000001",
       "@type": "ClassDefinition"
     },
     {
       "name": "StudyResult",
-      "definition_uri": "https://example.org/sepio-model/StudyResult",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/StudyResult",
       "description": "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated.",
       "title": "Study Result",
       "comments": [
@@ -3110,6 +3381,12 @@
         "Note that the use of a Study Results is not reserved only for defining subsets of data from a larger HTP/clinical study data sets.  A StudyResult might be used to organize the data from a simple, small scale bench experiment - e.g. a western blot analysis of protein expression, or an in vitro binding assay focused on a single protein.  Even such small 'studies' can generate multiple data items and metadata, and a StudyResult object can be used to collect all or some of these data points pertinent to a particular focus into an organized structure."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "related_mappings": [
+        "SEPIO:0000173"
+      ],
+      "broad_mappings": [
+        "SEPIO:0000400"
+      ],
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
@@ -3203,12 +3480,12 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/StudyResult",
+      "class_uri": "https://w3id.org/sepio-framework/sepio-linkml/StudyResult",
       "@type": "ClassDefinition"
     },
     {
       "name": "EvidenceLine",
-      "definition_uri": "https://example.org/sepio-model/EvidenceLine",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/EvidenceLine",
       "description": "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition.",
       "title": "Evidence Line",
       "comments": [
@@ -3217,6 +3494,9 @@
         "This CIViC EID5682 record (https://civicdb.org/evidence/5682/summary) is a clear example of this - illustrating how ACMG-curated evidence assessed at a finer-grained level would lend itself to SEPIO representations that creates a larger number of more atomic Evidence Lines, as compared to how CIViC-curated evidence from the same source or publication would be represented. We see here that CIViC evidence assessments are performed at the level of all results reported in PMID:23143947 - which SEPIO would capture as a single Evidence Line that assigns a strength (level C) and direction (supports) to the collective argument made by this evidence. However, as detailed in the free-text summary of this EID, the more fine-grained ACMG framework breaks out and separately assess two arguments here - one based on criterion PP1 (disease co-segregation evidence), and one based on criterion PP4 (highly specific gene-phenotype information) - which SEPIO woudl capture as two distinct Evidence Lines."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "SEPIO:0000002"
+      ],
       "status": "Draft",
       "is_a": "InformationEntity",
       "slots": [
@@ -3265,6 +3545,7 @@
             "An example based on the ACMG Guidelines for germline variant pathogenicity interpretation: Consider a curator assessing the evidence provided by population frequency data for a specific variant based on the ACMG criteria. In order to assign a strength (e.g. moderate vs strong) and direction (supports vs disputes) to this data as evidence, there must be some 'target proposition' toward which the evidence is assessed - which in this cases is the proposition that the variant is pathogenic for the disease of interest. If the PM2 criteria is deemed 'met', this indicates that the population frequency evidence provides 'moderate' (strength) 'support' (direction) for this target proposition."
           ],
           "status": "Informative",
+          "slot_uri": "SEPIO:0000427",
           "range": "Proposition",
           "@type": "SlotDefinition"
         },
@@ -3276,6 +3557,7 @@
             "Different types and scales of information entity can serve as evidence (experimental measurements or observations, data tables or figures, images, prior assertions, etc.) Only when assessed as evidence do we consider the information to be an 'Evidence Item'.  For example, a piece of population frequency data about BRCA2 c.8023A>G  becomes an Evidence Item when it is assessed for the support it may offer for a target proposition (e.g. the prospect of the variant\u2019s pathogenicity)."
           ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000084",
           "range": "InformationEntity",
           "multivalued": true,
           "@type": "SlotDefinition"
@@ -3284,7 +3566,8 @@
           "name": "direction_of_evidence_provided",
           "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral).",
           "status": "Draft",
-          "range": "string",
+          "slot_uri": "SEPIO:0000183",
+          "range": "EvidenceDirection",
           "@type": "SlotDefinition"
         },
         {
@@ -3294,7 +3577,8 @@
             "Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'score_of_evidence_provided' attribute can be used to report quantitative assessments of evidence provided."
           ],
           "status": "Draft",
-          "range": "string",
+          "slot_uri": "SEPIO:0000132",
+          "range": "uriorcurie",
           "@type": "SlotDefinition"
         },
         {
@@ -3304,6 +3588,7 @@
             "A given profile or implementation can define a scoring scale and rules that meet the needs of their domain or application."
           ],
           "status": "Draft",
+          "slot_uri": "SEPIO:0000429",
           "range": "float",
           "@type": "SlotDefinition"
         },
@@ -3314,17 +3599,18 @@
             "This is a 'shortcut relation' that can be used to directly link an Evidence Line to sources of its supporting Evidence Items, without having to represent those Evidence Items directly. Populate with the name or uri or curie of a source of information. Future work will define a more formal framework for referencing information sources."
           ],
           "status": "Informative",
-          "range": "string",
+          "slot_uri": "SEPIO:0000124",
+          "range": "uriorcurie",
           "multivalued": true,
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/EvidenceLine",
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIO_0000002",
       "@type": "ClassDefinition"
     },
     {
       "name": "Proposition",
-      "definition_uri": "https://example.org/sepio-model/Proposition",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Proposition",
       "description": "An abstract entity representing a possible fact that is either true or false.",
       "title": "Proposition",
       "comments": [
@@ -3332,6 +3618,9 @@
         "Propositions may be used in two contexts in this model: (1) in Statements to represent the possible fact that is put forth as true, or  that is subjected to an assessment of the level of evidence supporting it; (2) in Evidence Lines to represent the possible fact that an argument built from evidence items is evaluated against."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "exact_mappings": [
+        "SEPIO:0000000"
+      ],
       "status": "Informative",
       "is_a": "Entity",
       "slots": [
@@ -3365,7 +3654,8 @@
             "While the Core Information Model is domain-agnostic, and supports Propositions about any type of Entity, for most VA use cases, the subject will be  some type of genetic variation. But data creators may want to make statements about other entities or concepts that represent evidence for a statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
           ],
           "status": "Informative",
-          "range": "string",
+          "slot_uri": "SEPIO:0000388",
+          "range": "uriorcurie",
           "required": true,
           "@type": "SlotDefinition"
         },
@@ -3376,6 +3666,7 @@
             "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845)."
           ],
           "status": "Informative",
+          "slot_uri": "SEPIO:0000389",
           "range": "Coding",
           "required": true,
           "@type": "SlotDefinition"
@@ -3387,7 +3678,8 @@
             "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects this is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
           ],
           "status": "Informative",
-          "range": "string",
+          "slot_uri": "SEPIO:0000390",
+          "range": "uriorcurie",
           "required": true,
           "@type": "SlotDefinition"
         },
@@ -3399,6 +3691,7 @@
             "The SEPIO core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Statement. But in practice, profiles for specific Proposition types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers. For example, a VariantPathogenicityStatement profile may define a named 'alleleOriginQualifier' attribute that is required, and a named 'geneContextQualifier' attribute that is optional - both of which conceptually specialize the core-im 'qualifier' property. Under this approach, the core 'qualifier' acts as a placeholder to seed such specializations, but is not used directly in profiles."
           ],
           "status": "Informative",
+          "slot_uri": "SEPIO:0000144",
           "range": "Qualifier",
           "multivalued": true,
           "@type": "SlotDefinition"
@@ -3414,12 +3707,12 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Proposition",
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIO_0000000",
       "@type": "ClassDefinition"
     },
     {
       "name": "StudyGroup",
-      "definition_uri": "https://example.org/sepio-model/StudyGroup",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/StudyGroup",
       "description": "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings.",
       "title": "Study Group",
       "comments": [
@@ -3466,24 +3759,24 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/StudyGroup",
+      "class_uri": "https://w3id.org/sepio-framework/sepio-linkml/StudyGroup",
       "@type": "ClassDefinition"
     },
     {
       "name": "Utility",
-      "definition_uri": "https://example.org/sepio-model/Utility",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Utility",
       "description": "An abstract organizational class that groups classes acting as complex datatypes in the model - providing reusable collections of fields that can be plugged into other objects to capture sets of related information.",
       "comments": [
         "The Utility class itself is abstract and has no direct attributes. Implementers would always use one of its concrete subtypes with specifically defined fields (e.g. Coding, Expression, Extension)."
       ],
       "from_schema": "https://w3id.org/sepio-model",
       "slot_usage": {},
-      "class_uri": "https://example.org/sepio-model/Utility",
+      "class_uri": "https://w3id.org/sepio-framework/sepio-linkml/Utility",
       "@type": "ClassDefinition"
     },
     {
       "name": "Coding",
-      "definition_uri": "https://example.org/sepio-model/Coding",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Coding",
       "description": "A structured representation of a code for a defined concept in a terminology or code system.",
       "title": "Coding",
       "comments": [
@@ -3525,12 +3818,12 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Coding",
+      "class_uri": "https://w3id.org/sepio-framework/sepio-linkml/Coding",
       "@type": "ClassDefinition"
     },
     {
       "name": "Qualifier",
-      "definition_uri": "https://example.org/sepio-model/Qualifier",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Qualifier",
       "description": "A key-value object used to capture additional piece of information that extends or refines the meaning of a Statement's core subject - predicate - object 'triple' - by providing additional detail, or constraining the statement to apply in a particular context.",
       "title": "Qualifier",
       "comments": [
@@ -3568,12 +3861,12 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Qualifier",
+      "class_uri": "https://w3id.org/sepio-framework/sepio-linkml/Qualifier",
       "@type": "ClassDefinition"
     },
     {
       "name": "Expression",
-      "definition_uri": "https://example.org/sepio-model/Expression",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Expression",
       "description": "A structure for labels representing systematic expressions that describe an entity, as generated by formal nomenclatures (e.g. HGVS for genetic variants, ISCN for karyotypes, HLA nomenclature for HLA genes/alleles).",
       "title": "Expression",
       "comments": [
@@ -3608,12 +3901,12 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Expression",
+      "class_uri": "https://w3id.org/sepio-framework/sepio-linkml/Expression",
       "@type": "ClassDefinition"
     },
     {
       "name": "Extension",
-      "definition_uri": "https://example.org/sepio-model/Extension",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Extension",
       "description": "A data structure that allows custom attributes to be defined for an Entity, to capture information unique to a given content provider, or not currently supported by the core specification.",
       "title": "Extension",
       "comments": [
@@ -3649,18 +3942,21 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Extension",
+      "class_uri": "https://w3id.org/sepio-framework/sepio-linkml/Extension",
       "@type": "ClassDefinition"
     },
     {
       "name": "RecordMetadata",
-      "definition_uri": "https://example.org/sepio-model/RecordMetadata",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/RecordMetadata",
       "description": "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance of the real world entity this record or object represents).",
       "title": "Record Metadata",
       "comments": [
         "Record-level metadata applies to a specific concrete encoding/serialization of information (e.g as a record in a specific data/knowlegebase, or an online digital resource). A RecordMetadata object can capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status."
       ],
       "from_schema": "https://w3id.org/sepio-model",
+      "related_mappings": [
+        "SEPIO:0000058"
+      ],
       "status": "Draft",
       "is_a": "Utility",
       "slots": [
@@ -3695,6 +3991,9 @@
           "comments": [
             "Value should be a string representing the identifier of the source record."
           ],
+          "close_mappings": [
+            "pav:derivedFrom"
+          ],
           "status": "Draft",
           "range": "string",
           "multivalued": true,
@@ -3704,6 +4003,7 @@
           "name": "date_record_created",
           "description": "The date the record was initially created.",
           "status": "Draft",
+          "slot_uri": "SEPIO:0000436",
           "range": "string",
           "@type": "SlotDefinition"
         },
@@ -3711,17 +4011,18 @@
           "name": "contributions",
           "description": "describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object.",
           "status": "Draft",
+          "slot_uri": "SEPIO:0000159",
           "range": "Contribution",
           "multivalued": true,
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/RecordMetadata",
+      "class_uri": "https://w3id.org/sepio-framework/sepio-linkml/RecordMetadata",
       "@type": "ClassDefinition"
     },
     {
       "name": "Characteristic",
-      "definition_uri": "https://example.org/sepio-model/Characteristic",
+      "definition_uri": "https://w3id.org/sepio-framework/sepio-linkml/Characteristic",
       "description": "An object holding a name-value pair used to describe a trait or role of an individual member of a StudyGroup.",
       "title": "Characteristic",
       "comments": [
@@ -3765,14 +4066,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://example.org/sepio-model/Characteristic",
+      "class_uri": "https://w3id.org/sepio-framework/sepio-linkml/Characteristic",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.12.0",
   "source_file": "sepio_linkml.yaml",
-  "source_file_date": "2026-01-19T12:04:28",
-  "source_file_size": 616,
+  "source_file_date": "2026-11-20T13:30:03",
+  "source_file_size": 810,
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/sepio_linkml.context.jsonld",
